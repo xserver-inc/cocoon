@@ -259,29 +259,29 @@ function gutenberg_stylesheets_custom() {
       $file = get_block_color_palette_css_cache_file();
       wp_filesystem_put_contents($file, $css, 0);
 
-      // ブロックエディタでは gutenberg_editor_settings() が同じ CSS を
-      // <style> タグとしてエディタ内に注入するため、wp_enqueue_style() による
-      // <link> タグの重複読み込みをスキップする
-      // ブロックエディタ以外の画面（Classic Editor 等）でのみ <link> タグでも読み込む
-      if ( !use_gutenberg_editor() ) {
-        //カラーパレットスタイル
-        wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
+      // ブロックエディタ画面でも管理画面 DOM 側（iframe 外）に <link> タグで CSS を
+      // 読み込む。これは右サイドバーのブロックスタイルプレビュー領域が iframe 外
+      // で描画されるため、$editor_settings['styles'] 注入だけでは届かないため必要。
+      // エディタ本体 iframe には gutenberg_editor_settings() が同じ CSS を注入する
+      // ため二重適用となるが、CSS は冪等のため視覚的な不具合は発生しない。
 
-        //スキンが設定されている場合
-        if (get_skin_url() &&
-            //エディター除外スキンの場合
-            !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
-          wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
-        }
+      //カラーパレットスタイル
+      wp_enqueue_style( THEME_NAME . '-color-palette-style', get_block_color_palette_css_cache_url() );
 
-        //カスタムスタイル
-        $cache_file_url = get_theme_css_cache_file_url();
-        wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+      //スキンが設定されている場合
+      if (get_skin_url() &&
+          //エディター除外スキンの場合
+          !is_exclude_skin(get_skin_url(), get_editor_exclude_skins())) {
+        wp_enqueue_style( THEME_NAME . '-skin-style', get_skin_url() );
+      }
 
-        //子テーマがある場合
-        if (is_child_theme()) {
-          wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
-        }
+      //カスタムスタイル
+      $cache_file_url = get_theme_css_cache_file_url();
+      wp_enqueue_style( THEME_NAME . '-css-cache-style', $cache_file_url );
+
+      //子テーマがある場合
+      if (is_child_theme()) {
+        wp_enqueue_style( THEME_NAME . '-child-style', CHILD_THEME_STYLE_CSS_URL );
       }
     }
 
@@ -517,8 +517,6 @@ add_filter('pre_option_link_manager_enabled','__return_true');
 // WordPress 6.9で変更されたブロックスタイルの個別読み込みを無効化（CSS縮小時などに不具合が出るため）
 add_filter( 'should_load_separate_core_block_assets', '__return_false' );
 
-//はてな oEmbed対応
-wp_oembed_add_provider('https://*', 'https://hatenablog.com/oembed');
 //oembed無効
 add_filter( 'embed_oembed_discover', '__return_false' );
 //Embeds

@@ -114,14 +114,23 @@ jobs:
           # テストスイートをダウンロード（gitを使用、svn不要）
           mkdir -p $WP_TESTS_DIR
           WP_VERSION=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | cut -d'"' -f4)
-          echo "WordPress version: $WP_VERSION"
+          echo "WordPress バージョン：$WP_VERSION"
           cd $WP_TESTS_DIR
           git init
           git remote add origin https://github.com/WordPress/wordpress-develop.git
           git config core.sparseCheckout true
           echo "tests/phpunit/includes/" >> .git/info/sparse-checkout
           echo "tests/phpunit/data/" >> .git/info/sparse-checkout
-          git fetch --depth=1 origin tag $WP_VERSION
+          # X.Y 形式のタグを試し、失敗した場合は X.Y.0 形式にフォールバック
+          # （WordPress 7.0 以降は 7.0.0 のような3パート形式のタグに変更された）
+          if git fetch --depth=1 origin tag $WP_VERSION 2>/dev/null; then
+            echo "タグ $WP_VERSION でフェッチしました"
+          else
+            WP_VERSION_FULL="${WP_VERSION}.0"
+            echo "タグ $WP_VERSION が見つかりません。$WP_VERSION_FULL で再試行します"
+            git fetch --depth=1 origin tag $WP_VERSION_FULL
+            WP_VERSION=$WP_VERSION_FULL
+          fi
           git checkout $WP_VERSION
           # テストファイルを期待されるディレクトリ構造に移動
           mv tests/phpunit/includes $WP_TESTS_DIR/includes

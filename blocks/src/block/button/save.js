@@ -23,6 +23,8 @@ export default function save( { attributes } ) {
     customBorderColor,
     fontSize,
     width,
+    justifyContent,
+    verticalAlignment,
   } = attributes;
 
   const backgroundClass = getColorClassName(
@@ -36,6 +38,8 @@ export default function save( { attributes } ) {
   // const classes = BUTTON_BLOCK;
   const classes = classnames( {
     [ BUTTON_BLOCK ]: true,
+    [ `is-content-justification-${ justifyContent }` ]: justifyContent,
+    [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
   } );
 
   const styles = {
@@ -56,8 +60,8 @@ export default function save( { attributes } ) {
         className={ classnames( {
           btn: true,
           [ size ]: size,
-          [ 'btn-circle' ]: !! isCircle,
-          [ 'btn-shine' ]: !! isShine,
+          'btn-circle': !! isCircle,
+          'btn-shine': !! isShine,
           'has-text-color': textColor || customTextColor,
           'has-background': backgroundColor || customBackgroundColor,
           'has-border-color': borderColor || customBorderColor,
@@ -65,7 +69,7 @@ export default function save( { attributes } ) {
           [ backgroundClass ]: backgroundClass,
           [ borderClass ]: borderClass,
           [ fontSizeClass ]: fontSizeClass,
-          [ 'has-custom-width' ]: width,
+          'has-custom-width': width,
           [ `cocoon-block-button__width-${ width }` ]: width,
         } ) }
         target={ target }

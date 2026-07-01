@@ -53,6 +53,10 @@ if ( is_any_sns_follow_buttons_exist()
     <a href="<?php echo esc_url($url); //ThreadsフォローURLの取得?>" class="sns-button follow-button threads-button threads-follow-button-sq" target="_blank" title="<?php _e( 'Threadsをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Threadsをフォロー', THEME_NAME ) ?>"><span class="icon-threads-logo"></span></a>
   <?php endif; ?>
 
+  <?php if ( $url = get_the_author_reddit_url($user_id) )://Redditフォローボタンを表示するか ?>
+    <a href="<?php echo esc_url($url); //RedditフォローURLの取得?>" class="sns-button follow-button reddit-button reddit-follow-button-sq" target="_blank" title="<?php _e( 'Redditをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Redditをフォロー', THEME_NAME ) ?>"><span class="icon-reddit-logo"></span></a>
+  <?php endif; ?>
+
   <?php if ( $url = get_the_author_hatebu_url($user_id) )://はてブフォローボタンを表示するか ?>
     <a href="<?php echo esc_url($url); //はてブフォローIDの取得 ?>" class="sns-button follow-button hatebu-button hatebu-follow-button-sq" target="_blank" title="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'はてブをフォロー', THEME_NAME ) ?>"><span class="icon-hatebu-logo"></span></a>
   <?php endif; ?>

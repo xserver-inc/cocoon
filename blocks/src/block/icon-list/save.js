@@ -51,11 +51,11 @@ export default function save( props ) {
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
     '--cocoon-custom-border-color': customBorderColor || undefined,
-    '--cooon-custom-icon-color': customIconColor || undefined,
+    '--cocoon-custom-icon-color': customIconColor || undefined,
   };
 
   const iconListBlockProps = useBlockProps.save( {
-    className: className,
+    className,
     style: styles,
   } );
 

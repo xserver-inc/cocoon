@@ -2755,8 +2755,8 @@ endif;
 //ブログカードの無効化を解除
 if ( !function_exists( 'cancel_blog_card_deactivation' ) ):
 function cancel_blog_card_deactivation($the_content, $is_p = true){
-  //テキストのみ
-  $not_url_reg = '!\s*(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+)';
+  //テキストのみ（URLの後ろに文字列が続く場合も「!」を解除し、後続テキストは保持する）
+  $not_url_reg = '!\s*(https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+.*?)';
   if ($is_p) {
     $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';
@@ -2766,8 +2766,9 @@ function cancel_blog_card_deactivation($the_content, $is_p = true){
   }
   $the_content = preg_replace($pattern, $append, $the_content);
 
-  //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容）
-  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[-_.!~*\'()a-zA-Z0-9;/?:\@&=+\$,%#]+\s*</a>)';
+  //URLリンク（<a>タグ内テキストの先頭・末尾スペースや!とaタグ間のスペースを許容。aタグ後ろに文字列が続く場合も解除する）
+  //※ aタグ内テキストは「<」以外を許容（[^<]+）。日本語スラッグなど未エンコードのマルチバイトURLでも「!」を解除できるようにする
+  $not_url_reg = '!\s*(<a[^>]+>\s*https?://[^<]+\s*</a>.*?)';
   if ($is_p) {
     $pattern = '{^\s*<p[^>]*>\s*'.$not_url_reg.'\s*</p>\s*$}im';
     $append = '<p>$1</p>';
@@ -3211,12 +3212,13 @@ function cocoon_template_part($slug, $name = null, $args = []){
     $args = [];
   }
 
+  // テンプレート読み込み前に発火させ、フック名「before」と実行順序を一致させる
+  // WP内部で判定されるためhas_filterを省略
+  do_action("cocoon_part_before__{$slug}", $name, $args);
+
   ob_start();
   get_template_part($slug, $name, $args);
   $content = ob_get_clean();
-
-  // WP内部で判定されるためhas_filterを省略
-  do_action("cocoon_part_before__{$slug}", $name, $args);
 
   // WP内部で判定されるためhas_filterを省略
   $content = apply_filters("cocoon_part__{$slug}", $content, $name, $args);

@@ -1033,8 +1033,10 @@ div.search-form{
 
 .btn:hover,
 .btn-wrap > a:hover{
+  // マウスを乗せた時にボタン全体を少し透けさせる（不透明度70%）
   opacity: 0.7;
-  color: var(--cocoon-white-color);
+  // マウスを乗せた時の文字色（カスタムカラー設定時はその色、未設定時は白色）
+  color: var(--cocoon-custom-text-color, var(--cocoon-white-color));
   &::after{
     right: -4px;
   }
@@ -1406,6 +1408,8 @@ div.search-form{
   float: none;
   margin: 0;
   // margin-bottom: 1.2em;
+  // WordPressコアによる意図しない枠線の表示防止
+  border: 0;
   &.alignleft{
     text-align: left;
   }
@@ -1414,6 +1418,58 @@ div.search-form{
   }
   &.alignright{
     text-align: right;
+  }
+
+  // JustifyToolbar による水平配置（グループのフレックスコンテナ内でも正しく機能する）
+  &.is-content-justification-left{
+    text-align: left;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  &.is-content-justification-center{
+    text-align: center;
+    margin: 0 auto;
+  }
+  &.is-content-justification-right{
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  // BlockVerticalAlignmentToolbar による垂直配置（フレックス行レイアウト内での align-self 制御）
+  &.is-vertically-aligned-top{
+    align-self: flex-start;
+  }
+  &.is-vertically-aligned-center{
+    align-self: center;
+  }
+  &.is-vertically-aligned-bottom{
+    align-self: flex-end;
+  }
+  &.is-vertically-aligned-stretch{
+    align-self: stretch;
+  }
+
+  // ボタンの横幅が100%のときは、左右の自動余白や回り込み（float）を打ち消して、
+  // 縦積み（flex）グループ内でも親要素いっぱいに広がるようにします
+  &:has(.cocoon-block-button__width-100) {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+// 縦積み（flex-direction: column）のフレックスコンテナ（グループブロック等）内でのボタン幅修正
+// column flex では align-self の cross-axis が horizontal になるため、
+// is-vertically-aligned-center/top/bottom が意図せずボタンの横幅を content-width に縮めてしまう
+.is-vertical > .button-block {
+  width: 100%; // 幅を明示して%幅ボタンの基準サイズを確保
+  // column flex 内では is-vertically-aligned-* の align-self をリセットし、
+  // 親の align-items: stretch を継承して横幅いっぱいに広がるようにする
+  &.is-vertically-aligned-top,
+  &.is-vertically-aligned-center,
+  &.is-vertically-aligned-bottom {
+    align-self: auto;
   }
 }
 
@@ -1986,7 +2042,6 @@ figcaption{
     position: absolute;
     top: -10px;
     width: 2px;
-    height: -webkit-calc(100% + 20px);
     height: calc(100% + 20px);
     background-color: #323232;
   }

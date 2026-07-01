@@ -87,7 +87,11 @@ function get_the_category_title($cat_id = null, $is_cat_name = true){
   }
   //タイトルが存在しない場合はカテゴリー名を利用する
   if (!$res && $is_cat_name) {
-    $res = get_category($cat_id)->name;
+    $category = get_category($cat_id);
+    //存在しないカテゴリーIDの場合はnullが返るため、正常に取得できたときのみ名前を利用する
+    if ($category && !is_wp_error($category)) {
+      $res = $category->name;
+    }
   }
   return $res;
 }
@@ -341,8 +345,12 @@ function save_extra_category_fileds( $term_id ) {
     }
 
     if ( isset( $_POST['the_category_content'] ) ) {
-      // HTMLを含むコンテンツを安全なタグのみ許可
-      $the_category_content = wp_kses_post($_POST['the_category_content']);
+      // HTMLを含むコンテンツを安全なタグのみ許可（権限がある場合はそのまま許可）
+      if ( current_user_can( 'unfiltered_html' ) ) {
+        $the_category_content = $_POST['the_category_content'];
+      } else {
+        $the_category_content = wp_kses_post($_POST['the_category_content']);
+      }
       update_term_meta( $cat_id, 'the_category_content', $the_category_content );
     }
 

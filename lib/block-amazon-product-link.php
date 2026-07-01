@@ -564,7 +564,7 @@ function cocoon_amazon_block_generate_static_html($item, $asin, $settings){
 
   // 画像リンクタグの生成
   $image_link_tag = '<a href="'.esc_url($associate_url).'" class="amazon-item-thumb-link product-item-thumb-link image-thumb" target="_blank" title="'.esc_attr($Title).'" rel="nofollow noopener">'.
-    '<img src="'.esc_url($ImageUrl).'" alt="'.esc_attr($Title).'" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
+    '<img src="'.esc_url($ImageUrl).'" alt="" width="'.esc_attr($ImageWidth).'" height="'.esc_attr($ImageHeight).'" class="amazon-item-thumb-image product-item-thumb-image">'.
     $moshimo_amazon_impression_tag.
     $image_l_tag.
   '</a>'.

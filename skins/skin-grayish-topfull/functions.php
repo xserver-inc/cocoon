@@ -856,6 +856,10 @@ if (!function_exists('skin_grayish_topmv_dotoverlay_customize')) :
         'setting_name' => 'threads',
       ),
       array(
+        'label'       => __('Reddit フォローボタンを表示', THEME_NAME),
+        'setting_name' => 'reddit',
+      ),
+      array(
         'label'       => __('はてブ フォローボタンを表示', THEME_NAME),
         'setting_name' => 'hatena',
       ),
@@ -1145,6 +1149,7 @@ if (!function_exists('skin_grayish_gnavi_snsbtn')) :
       'gnavi_sns_misskey' => get_theme_mod('snsbtn_select_misskey', 'snsbtn_select_Off'),
       'gnavi_sns_facebook' => get_theme_mod('snsbtn_select_facebook', 'snsbtn_select_Off'),
       'gnavi_sns_threads' => get_theme_mod('snsbtn_select_threads', 'snsbtn_select_Off'),
+      'gnavi_sns_reddit' => get_theme_mod('snsbtn_select_reddit', 'snsbtn_select_Off'),
       'gnavi_sns_hatena' => get_theme_mod('snsbtn_select_hatena', 'snsbtn_select_Off'),
       'gnavi_sns_instagram' => get_theme_mod('snsbtn_select_instagram', 'snsbtn_select_Off'),
       'gnavi_sns_pinterest' => get_theme_mod('snsbtn_select_pinterest', 'snsbtn_select_Off'),

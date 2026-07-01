@@ -37,9 +37,6 @@ update_theme_option(OP_CONTENT_IMAGE_CENTER_ENABLE);
 //サムネイル画像タイプ
 update_theme_option(OP_THUMBNAIL_IMAGE_TYPE);
 
-//Retinaディスプレイ
-update_theme_option(OP_RETINA_THUMBNAIL_ENABLE);
-
 //以前のNO IMAGE画像
 $old_no_image = get_no_image_url();
 //NO IMAGE画像

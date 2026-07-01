@@ -151,11 +151,13 @@ function url_to_internal_blogcard_tag($url){
     }
   }
   //タイトルのフック
-  $title = apply_filters('cocoon_blogcard_title',$title);
-  $title = apply_filters('cocoon_internal_blogcard_title',$title);
+  // 第2引数に内部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に（外部カードとフックの引数を統一）
+  $title = apply_filters('cocoon_blogcard_title',$title, $url);
+  $title = apply_filters('cocoon_internal_blogcard_title',$title, $url);
   //スニペットのフック
-  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet );
-  $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet );
+  // 第2引数に内部URL($url)を渡すことで、フック側でどのブログカードかを判別可能に（外部カードとフックの引数を統一）
+  $snippet = apply_filters( 'cocoon_blogcard_snippet', $snippet, $url );
+  $snippet = apply_filters( 'cocoon_internal_blogcard_snippet', $snippet, $url );
 
   //サムネイルが存在しない場合
   if ( !$thumbnail ) {
@@ -233,7 +235,8 @@ function url_to_internal_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (is_current_url_same($url)) {
+    //ただしウィジェットなどの the_content 以外からの呼び出し時は無限ループの恐れがないため許可する
+    if (doing_filter('the_content') && is_current_url_same($url)) {
       continue;
     }
 
@@ -258,6 +261,8 @@ if ( is_internal_blogcard_enable() ) {
   //add_filter('widget_classic_text', 'url_to_internal_blogcard', 11);
   add_filter('widget_text_mobile_text', 'url_to_internal_blogcard', 11);
   add_filter('the_category_tag_content', 'url_to_internal_blogcard', 11);
+  add_filter('appeal_area_message', 'url_to_internal_blogcard', 11);
+  add_filter('the_author_box_description', 'url_to_internal_blogcard', 11);
   //コメント内ブログカード
   if (is_comment_internal_blogcard_enable()) {
     add_filter('comment_text', 'url_to_internal_blogcard' ,11);
@@ -307,7 +312,8 @@ function url_shortcode_to_blogcard($the_content) {
     }
 
     //カレントページのURLと$urlが同じ場合は、ブログカード化しない
-    if (is_current_url_same($url)) {
+    //ただしウィジェットなどの the_content 以外からの呼び出し時は無限ループの恐れがないため許可する
+    if (doing_filter('the_content') && is_current_url_same($url)) {
       continue;
     }
 
@@ -339,6 +345,8 @@ add_filter('widget_text_pc_text', 'url_shortcode_to_blogcard', 11);
 add_filter('widget_text_mobile_text', 'url_shortcode_to_blogcard', 11);
 add_filter('comment_text', 'url_shortcode_to_blogcard', 11);
 add_filter('the_category_tag_content', 'url_shortcode_to_blogcard', 11);
+add_filter('appeal_area_message', 'url_shortcode_to_blogcard', 11);
+add_filter('the_author_box_description', 'url_shortcode_to_blogcard', 11);
 
 //ブログカード置換用テキストにpタグが含まれているかどうか
 if ( !function_exists( 'is_p_tag_appropriate' ) ):

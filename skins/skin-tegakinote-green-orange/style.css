@@ -3,10 +3,10 @@
   Skin Name: てがきノート(グリーンオレンジ)
   Description: アナログな手書き風をイメージした少し抜けのあるスキンです。
   Skin URI: https://usort.jp/cocoon/
-  Author: ゆうそうと
+  Author: ゆーそうと
   Author URI: https://usort.jp/
   Screenshot URI: https://im-cocoon.net/wp-content/uploads/tegakinote-green-orange.jpg
-  Version: 1.0.7.8
+  Version: 1.0.7.9
   Priority: 9140002000
 */
 
@@ -435,7 +435,7 @@ div:not(list-columns) .list:after {
 }
 
 /* モバイル */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1023px) {
 
 	#navi .navi-in > .menu-mobile {
 		padding-top: .2em;
@@ -1410,6 +1410,14 @@ pre {
 	color: var( --cocoon-rss-color);
 }
 
+.bc-brand-color.sns-share .threads-button, .bc-brand-color.sns-follow .threads-button {
+	color: var(--cocoon-threads-color);
+}
+
+.bc-brand-color.sns-share .reddit-button, .bc-brand-color.sns-follow .reddit-button {
+	color: var(--cocoon-reddit-color);
+}
+
 /* ブランドカラー(白抜き) */
 .bc-brand-color-white.sns-share span, .bc-brand-color-white.sns-follow span {
 	color: transparent;
@@ -1517,6 +1525,14 @@ pre {
 
 .bc-brand-color-white.sns-share .rss-button, .bc-brand-color-white.sns-follow .rss-button {
 	-webkit-text-stroke: 1px var( --cocoon-rss-color);
+}
+
+.bc-brand-color-white.sns-share .threads-button, .bc-brand-color-white.sns-follow .threads-button {
+	-webkit-text-stroke: 1px var(--cocoon-threads-color);
+}
+
+.bc-brand-color-white.sns-share .reddit-button, .bc-brand-color-white.sns-follow .reddit-button {
+	-webkit-text-stroke: 1px var(--cocoon-reddit-color);
 }
 
 /* メインコンテンツ用 */

@@ -3727,8 +3727,8 @@ msgid "SEOチェキを表示する"
 msgstr "SEO 체커 표시"
 
 #: lib/page-settings/admin-forms.php:263
-msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
-msgstr "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Check! 무료로 사용할 수 있는 SEO 툴</a> 링크 표시."
+msgid "<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
+msgstr "<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Check! 무료로 사용할 수 있는 SEO 툴</a> 링크 표시."
 
 #: lib/page-settings/admin-forms.php:265
 msgid "ツイート検索を表示する"
@@ -9864,8 +9864,8 @@ msgid "テーマ情報"
 msgstr "테마 정보"
 
 #: lib/page-speech-balloon/demo.php:26
-msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
-msgstr "이 아이콘은 いらすとや(이라스토야) 씨의 허가에 따라 본 테마의 CDN 서버에서 전송중아 데모입니다. 접속량이 증가하면 표시되지 않을 수도 있으므로 자신이 직접 사진을 제공하거나 <a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a> 씨의 많은 일러스트중에서 원하는 아이콘을 찾아 자신의 서버에 올려 사용하는 것을 추천합니다. 접속량 증가에 의해 CDN의 이미지가 표시되지 않아도 보증 할 수 없기 때문에 양해 바랍니다."
+msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
+msgstr "이 아이콘은 いらすとや(이라스토야) 씨의 허가에 따라 본 테마의 CDN 서버에서 전송중아 데모입니다. 접속량이 증가하면 표시되지 않을 수도 있으므로 자신이 직접 사진을 제공하거나 <a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a> 씨의 많은 일러스트중에서 원하는 아이콘을 찾아 자신의 서버에 올려 사용하는 것을 추천합니다. 접속량 증가에 의해 CDN의 이미지가 표시되지 않아도 보증 할 수 없기 때문에 양해 바랍니다."
 
 #: lib/page-speech-balloon/form.php:10
 msgid "吹き出し用の設定です。"

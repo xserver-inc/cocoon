@@ -158,35 +158,109 @@ class ContentProcessingTest extends TestCase
     }
 
     // ========================================================================
-    // ファイル拡張子除外正規表現テスト（OGPブログカード）
+    // ブログカード メディアファイル除外テスト（ホワイトリスト方式）
     // ========================================================================
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('mediaFileExtensionProvider')]
-    public function test_メディアファイルURLは除外される(string $url): void
+    /**
+     * URLからパス部分の拡張子を取得し、ブログカード化対象かどうかを判定するヘルパー。
+     * blogcard-out.php の url_to_external_ogp_blogcard_tag() と同じロジック。
+     *
+     * @return bool true = 除外（ブログカード化しない）, false = ブログカード化する
+     */
+    private static function shouldExcludeFromBlogcard(string $url): bool
     {
-        $pattern = '/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i';
-        $this->assertMatchesRegularExpression($pattern, $url);
+        // HTMLページ系の拡張子のホワイトリスト
+        $html_extensions = ['html', 'htm', 'xhtml', 'php', 'php5', 'php7', 'phtml', 'asp', 'aspx', 'jsp', 'cgi', 'shtml', 'do'];
+        $url_path = wp_parse_url($url, PHP_URL_PATH);
+        if ($url_path) {
+            $ext = strtolower(pathinfo($url_path, PATHINFO_EXTENSION));
+            // 拡張子が数字のみ（例: /release-2.0 や /v1.2）の場合は本当のファイル拡張子ではないため除外しない
+            if ($ext && !ctype_digit($ext) && !in_array($ext, $html_extensions, true)) {
+                return true; // 除外する
+            }
+        }
+        return false; // ブログカード化する
     }
 
-    public static function mediaFileExtensionProvider(): array
+    #[\PHPUnit\Framework\Attributes\DataProvider('excludedMediaFileProvider')]
+    public function test_メディアファイルURLは除外される(string $url): void
+    {
+        $this->assertTrue(self::shouldExcludeFromBlogcard($url), "除外されるべきURL: {$url}");
+    }
+
+    public static function excludedMediaFileProvider(): array
     {
         return [
-            'MP3'  => ['https://example.com/audio.mp3'],
+            // 動画
             'MP4'  => ['https://example.com/video.mp4'],
+            'M4V'  => ['https://example.com/video.m4v'],
+            'MOV'  => ['https://example.com/video.mov'],
+            'WMV'  => ['https://example.com/video.wmv'],
+            'AVI'  => ['https://example.com/video.avi'],
+            'WEBM' => ['https://example.com/video.webm'],
+            'OGV'  => ['https://example.com/video.ogv'],
+            'MKV'  => ['https://example.com/video.mkv'],
+            '3GP'  => ['https://example.com/video.3gp'],
+            // 音声
+            'MP3'  => ['https://example.com/audio.mp3'],
+            'M4A'  => ['https://example.com/audio.m4a'],
+            'WAV'  => ['https://example.com/audio.wav'],
+            'FLAC' => ['https://example.com/audio.flac'],
+            'OGG'  => ['https://example.com/audio.ogg'],
+            'AAC'  => ['https://example.com/audio.aac'],
+            'MIDI' => ['https://example.com/audio.midi'],
+            'MID'  => ['https://example.com/audio.mid'],
+            // 画像
             'JPG'  => ['https://example.com/image.jpg'],
             'JPEG' => ['https://example.com/image.jpeg'],
             'PNG'  => ['https://example.com/image.png'],
             'GIF'  => ['https://example.com/image.gif'],
             'SVG'  => ['https://example.com/image.svg'],
+            'WEBP' => ['https://example.com/image.webp'],
+            'AVIF' => ['https://example.com/image.avif'],
+            'BMP'  => ['https://example.com/image.bmp'],
+            'TIFF' => ['https://example.com/image.tiff'],
+            'ICO'  => ['https://example.com/favicon.ico'],
+            'HEIC' => ['https://example.com/photo.heic'],
+            // ドキュメント・アーカイブ
             'PDF'  => ['https://example.com/document.pdf'],
+            'ZIP'  => ['https://example.com/archive.zip'],
+            'DOC'  => ['https://example.com/document.doc'],
+            // クエリ文字列付きURL（すり抜け防止の確認）
+            'MP4+クエリ文字列' => ['https://example.com/video.mp4?autoplay=1'],
+            'JPG+クエリ文字列' => ['https://example.com/image.jpg?w=800&h=600'],
+            'MOV+フラグメント' => ['https://example.com/video.mov#section'],
+            // 大文字拡張子
+            'JPG大文字'  => ['https://example.com/image.JPG'],
+            'MP4大文字'  => ['https://example.com/video.MP4'],
         ];
     }
 
-    public function test_HTMLページURLは除外されない(): void
+    #[\PHPUnit\Framework\Attributes\DataProvider('allowedUrlProvider')]
+    public function test_HTMLページURLは除外されない(string $url): void
     {
-        $url = 'https://example.com/article/page';
-        $pattern = '/.+(\.mp3|\.midi|\.mp4|\.mpeg|\.mpg|\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pdf)$/i';
-        $this->assertDoesNotMatchRegularExpression($pattern, $url);
+        $this->assertFalse(self::shouldExcludeFromBlogcard($url), "ブログカード化されるべきURL: {$url}");
+    }
+
+    public static function allowedUrlProvider(): array
+    {
+        return [
+            '拡張子なし'           => ['https://example.com/article/page'],
+            'スラッシュ末尾'       => ['https://example.com/article/'],
+            'HTMLページ'           => ['https://example.com/page.html'],
+            'HTMページ'            => ['https://example.com/page.htm'],
+            'XHTMLページ'          => ['https://example.com/page.xhtml'],
+            'PHPページ'            => ['https://example.com/index.php'],
+            'PHP5ページ'           => ['https://example.com/page.php5'],
+            'PHP7ページ'           => ['https://example.com/page.php7'],
+            'PHTMLページ'          => ['https://example.com/page.phtml'],
+            'ASPXページ'           => ['https://example.com/page.aspx'],
+            'doアクション'         => ['https://example.com/login.do'],
+            'ドメインのみ'         => ['https://example.com'],
+            'クエリ文字列のみ'     => ['https://example.com/search?q=test'],
+            'バージョン番号(2.0)'  => ['https://example.com/release-2.0'],
+            'バージョン番号(v1.2)' => ['https://example.com/docs/v1.2'],
+        ];
     }
 
     // ========================================================================

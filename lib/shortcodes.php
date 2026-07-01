@@ -756,6 +756,7 @@ function get_box_menu_tag($atts){
   }
 
   $tag = null;
+  $has_image_icon = false;
   $menu_items = wp_get_nav_menu_items($name); // name: カスタムメニューの名前
   if (!$menu_items) {
     return;
@@ -780,7 +781,8 @@ function get_box_menu_tag($atts){
     //画像URLの場合
     if (preg_match('/(https?)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)\.(jpg|jpeg|gif|png|webp|avif)/', $attr_title)) {
       $img_url = $attr_title;
-      $icon_tag = '<img src="'.esc_url($img_url).'" alt="'.esc_attr($title).'" />';
+      $has_image_icon = true;
+      $icon_tag = '<img src="'.esc_url($img_url).'" alt="" />';
     } //アイコンフォントの場合
     elseif (preg_match('/fa.? fa-[a-z\-]+/', $classes)) {
       $icon_tag = '<div class="'.esc_attr($classes).'" aria-hidden="true"></div>';
@@ -799,7 +801,8 @@ function get_box_menu_tag($atts){
     $add_class = ' '.$class;
   }
   //ラッパーで囲む
-  $tag = '<div class="box-menus'.$add_class.' no-icon">'.$tag.'</div>';
+  $no_icon_class = $has_image_icon ? '' : ' no-icon';
+  $tag = '<div class="box-menus'.$add_class.$no_icon_class.'">'.$tag.'</div>';
 
   return apply_filters('get_box_menu_tag', $tag);
 }
@@ -1137,6 +1140,8 @@ function get_block_pattern_shortcode($atts) {
   }
   if (!is_classicpress()) {
     $content = do_blocks($content);
+    // core/shortcodeの整形で付く不要なpタグを除去
+    $content = shortcode_unautop($content);
   }
   return do_shortcode($content);
 }

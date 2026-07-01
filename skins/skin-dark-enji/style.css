@@ -282,7 +282,6 @@ body {
   left: 0.3em;
   content: "";
   width: 6px;
-  height: -webkit-calc(100% - 1em);
   height: calc(100% - 1.1em);
   background-color: #84172f;
   border-radius: 2px;

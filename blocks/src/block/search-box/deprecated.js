@@ -9,15 +9,17 @@ import { THEME_NAME } from '../../helpers';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
-const { RichText } = wp.editor;
+// wp.editor 経由だと WP7.0 で RichText の提供が外れ、
+// deprecated 版 save 評価時にクラッシュするため block-editor から明示 import する。
+import { RichText } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
 const DEFAULT_MSG = __( 'キーワード', THEME_NAME );
 
 //classの取得
 function getClasses() {
   const classes = classnames( {
-    [ 'search-form' ]: true,
-    [ 'block-box' ]: true,
+    'search-form': true,
+    'block-box': true,
   } );
   return classes;
 }

@@ -48,10 +48,10 @@ function amazon_creators_api_get_token_endpoint($version){
   if (strpos((string)$version, '3.') === 0) {
     // ユーザーが設定しているドメインを取得 (未定義時は日本)
     $domain = defined('AMAZON_DOMAIN') ? AMAZON_DOMAIN : 'amazon.co.jp';
-    
+
     // デフォルトはFE(日本等)用のエンドポイント
-    $lwa_endpoint = 'https://api.amazon.co.jp/auth/o2/token'; 
-    
+    $lwa_endpoint = 'https://api.amazon.co.jp/auth/o2/token';
+
     // EU諸国用エンドポイント
     if (preg_match('/\.co\.uk|\.de|\.fr|\.it|\.es|\.nl|\.se|\.pl|\.com\.be/i', $domain)) {
       $lwa_endpoint = 'https://api.amazon.co.uk/auth/o2/token';
@@ -60,7 +60,7 @@ function amazon_creators_api_get_token_endpoint($version){
     elseif (preg_match('/\.com$|\.ca|\.com\.mx|\.com\.br/i', $domain)) {
       $lwa_endpoint = 'https://api.amazon.com/auth/o2/token';
     }
-    
+
     return apply_filters('amazon_creators_api_lwa_token_endpoint', $lwa_endpoint);
   }
 
@@ -156,6 +156,8 @@ function amazon_creators_api_get_access_token($credential_id, $credential_secret
 
   if ($http_code >= 400) {
     $message = isset($data['error_description']) ? $data['error_description'] : (isset($data['error']) ? $data['error'] : 'token error');
+    // トークン取得時の400系エラーも常時記録する（再現困難な間欠エラー対策）
+    cocoon_product_block_debug_log('token http error: '.$http_code.' version='.$version.' message='.$message, 'CreatorsAPI', true);
     return array(
       'error' => amazon_creators_api_error_json('CreatorsApiTokenHttpError', $message),
     );
@@ -183,9 +185,11 @@ function cocoon_product_block_debug_enabled(){
 endif;
 
 // 商品ブロックのデバッグログを書き出す（Amazon・楽天 共通）
+// $force を true にすると、デバッグフラグが無効でも記録する（APIエラーなど常時残したい情報用）
 if ( !function_exists( 'cocoon_product_block_debug_log' ) ):
-function cocoon_product_block_debug_log($message, $tag = 'CreatorsAPI'){
-  if (!cocoon_product_block_debug_enabled()) {
+function cocoon_product_block_debug_log($message, $tag = 'CreatorsAPI', $force = false){
+  // 強制記録でなく、かつデバッグ無効なら何もしない
+  if (!$force && !cocoon_product_block_debug_enabled()) {
     return;
   }
   $log_file = apply_filters('cocoon_product_block_debug_log_file', get_theme_resources_path().'creators_api_debug.log');
@@ -594,7 +598,8 @@ function get_amazon_creators_itemlookup_json($asin, $tracking_id = null){
   $res = wp_remote_retrieve_body($wp_response);
 
   if ($http_code >= 400) {
-    cocoon_product_block_debug_log('api http error: '.$http_code);
+    // 400系の原因切り分けのため、Amazonが返すレスポンス本文も常時記録する（再現困難な間欠エラー対策）
+    cocoon_product_block_debug_log('api http error: '.$http_code.' asin='.$asin.' marketplace='.$marketplace.' version='.$version.' body='.substr((string)$res, 0, 1000), 'CreatorsAPI', true);
     // レスポンスが空の場合はHTTPステータスコードのみ返す
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
@@ -836,7 +841,8 @@ function get_amazon_creators_search_json($keyword, $tracking_id = null, $item_co
 
   // HTTPエラーの処理
   if ($http_code >= 400) {
-    cocoon_product_block_debug_log('search http error: '.$http_code);
+    // 400系の原因切り分けのため、Amazonが返すレスポンス本文も常時記録する（再現困難な間欠エラー対策）
+    cocoon_product_block_debug_log('search http error: '.$http_code.' keyword='.$keyword.' marketplace='.$marketplace.' version='.$version.' body='.substr((string)$res, 0, 1000), 'CreatorsAPI', true);
     if (!$res) {
       return amazon_creators_api_error_json('CreatorsApiHttpError', 'HTTP '.$http_code);
     }

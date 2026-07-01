@@ -57,6 +57,12 @@
     },
     "width": {
       "type": "string"
+    },
+    "justifyContent": {
+      "type": "string"
+    },
+    "verticalAlignment": {
+      "type": "string"
     }
   },
   "example": {

@@ -3727,8 +3727,8 @@ msgid "SEOチェキを表示する"
 msgstr "Display SEO Cheki"
 
 #: lib/page-settings/admin-forms.php:263
-msgid "<a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
-msgstr "Displays the <a href=\"http://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Check! Free SEO tools</a> link."
+msgid "<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
+msgstr "Displays the <a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEO Check! Free SEO tools</a> link."
 
 #: lib/page-settings/admin-forms.php:265
 msgid "ツイート検索を表示する"
@@ -9864,8 +9864,8 @@ msgid "テーマ情報"
 msgstr "Theme info"
 
 #: lib/page-speech-balloon/demo.php:26
-msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
-msgstr "This icon is a demo distributed on the CDN server of this theme with the permission of Irasutoya. Since there is a possibility that it may not be displayed when access increases, we recommend either preparing the image yourself, or looking up an icon of your choice from the abundant selection of illustrations in \" <a href=\"http://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">Irasutoya</a> \", and uploading it to your server for use. We cannot guarantee display of images on CDN when access concentration is high."
+msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
+msgstr "This icon is a demo distributed on the CDN server of this theme with the permission of Irasutoya. Since there is a possibility that it may not be displayed when access increases, we recommend either preparing the image yourself, or looking up an icon of your choice from the abundant selection of illustrations in \" <a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">Irasutoya</a> \", and uploading it to your server for use. We cannot guarantee display of images on CDN when access concentration is high."
 
 #: lib/page-speech-balloon/form.php:10
 msgid "吹き出し用の設定です。"

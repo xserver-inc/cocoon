@@ -210,6 +210,14 @@ strong {
     color: #e07c4c;
     border-color: #e07c4c;
 }
+.bc-brand-color-white.sns-share .threads-button, .bc-brand-color-white.sns-follow .threads-button {
+    color: #606060;
+    border-color: #606060;
+}
+.bc-brand-color-white.sns-share .reddit-button, .bc-brand-color-white.sns-follow .reddit-button {
+    color: #f2856d;
+    border-color: #f2856d;
+}
 
 .bc-brand-color.sns-share .x-corp-button, .bc-brand-color.sns-follow .x-corp-button {
     background-color: #505050;
@@ -237,6 +245,12 @@ strong {
 }
 .bc-brand-color.sns-share .misskey-button, .bc-brand-color.sns-follow .misskey-button {
     background-color: #c0e292;
+}
+.bc-brand-color.sns-share .threads-button, .bc-brand-color.sns-follow .threads-button {
+    background-color: #606060;
+}
+.bc-brand-color.sns-share .reddit-button, .bc-brand-color.sns-follow .reddit-button {
+    background-color: #f2856d;
 }
 .sns-follow-buttons a {
     border-radius: 7px;

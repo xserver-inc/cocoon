@@ -1,4 +1,4 @@
-/*
+﻿/*
   Skin Name: モノクロ
   Description: モノクロを基調としています。
   Author: yurukei20
@@ -400,7 +400,6 @@ div.item-label {
 	left: 0.5em;
 	content: "";
 	width: 6px;
-	height: -webkit-calc(100% - 1em);
 	height: calc(100% - 1em);
 	background-color: #9da5a0;
 	border-radius: 4px;
@@ -412,7 +411,6 @@ div.item-label {
 	right: 0.5em;
 	content: "";
 	width: 6px;
-	height: -webkit-calc(100% - 1em);
 	height: calc(100% - 1em);
 	background-color: #9da5a0;
 	border-radius: 4px;
@@ -1406,6 +1404,30 @@ table tr:nth-of-type(2n) {
 }
 .author-box .facebook-button:hover {
 	background-color: var(--cocoon-facebook-color) !important;
+}
+
+/* ■ threads ■ */
+.author-box .threads-button {
+	border: 1px solid var(--cocoon-threads-color) !important;
+	color: var(--cocoon-threads-color) !important;
+}
+.author-box .threads-button:after {
+	box-shadow: 0 0 0 2px var(--cocoon-threads-color);
+}
+.author-box .threads-button:hover {
+	background-color: var(--cocoon-threads-color) !important;
+}
+
+/* ■ reddit ■ */
+.author-box .reddit-button {
+	border: 1px solid var(--cocoon-reddit-color) !important;
+	color: var(--cocoon-reddit-color) !important;
+}
+.author-box .reddit-button:after {
+	box-shadow: 0 0 0 2px var(--cocoon-reddit-color);
+}
+.author-box .reddit-button:hover {
+	background-color: var(--cocoon-reddit-color) !important;
 }
 
 /* ■ line ■ */

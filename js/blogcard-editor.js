@@ -32,6 +32,8 @@
 
     // ブログカード埋め込みブロックを登録
     wp.blocks.registerBlockType( 'cocoon-blocks/embed-blogcard', {
+      // エディターのAPIバージョンを3に指定して、新しいiframeエディターに対応させる
+      apiVersion: 3,
       title: __( 'ブログカード（埋め込み）', 'cocoon' ),
       icon: 'admin-links',
       category: 'cocoon-block',
@@ -192,7 +194,10 @@
               var matchedUrl = null;
 
               // パターン1: 素のURL文字列のみ
-              if ( /^https?:\/\/[^\s<]+$/.test( content ) ) {
+              // URL構成文字（RFC的に許可される文字）だけで段落全体が構成される場合のみ対象とする。
+              // ※ [^\s<]+ だとURL直後にスペースなしで日本語等が続く場合に
+              //   後続文字までURLとして取り込んでしまうため、PHP側と同じ厳密な文字クラスに合わせる
+              if ( /^https?:\/\/[-_.!~*'()a-zA-Z0-9;\/?:@&=+$,%#]+$/.test( content ) ) {
                 matchedUrl = content;
               }
               // パターン2: <a>タグのみの構成（Gutenbergのエンベッドフォールバック形式）
@@ -327,6 +332,14 @@
         // 3. WordPressコアが知っているエンベッド対象かどうか（embedブロックのみ保持）
         var isKnownProvider = isEmbed ? !! ( block.attributes && block.attributes.providerNameSlug ) : false;
 
+        // 4. WordPressサイトの汎用埋め込み（type: "wp-embed"）かどうか
+        // YouTube/X等のリッチ埋め込み（video/rich/photo）と区別する。
+        // wp-embedはoEmbedに成功してもフロントではブログカード化されるため、エディターでも合わせる。
+        var embedType = ( block.attributes && block.attributes.type )
+          || ( preview && preview.type )
+          || '';
+        var isWpEmbed = isEmbed && embedType === 'wp-embed';
+
         // 設定の状態を取得
         var isInternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isInternalActive : true;
         var isExternalActive = typeof cocoonBlogcardSettings !== 'undefined' ? cocoonBlogcardSettings.isExternalActive : true;
@@ -337,6 +350,12 @@
         if ( isInternal ) {
           // 自サイトのURLは、プレビューの成否に関わらず内部ブログカード化（設定が有効な場合のみ）
           if ( isInternalActive ) {
+            shouldConvertToBlogcard = true;
+          }
+        } else if ( isWpEmbed ) {
+          // 外部のWordPressサイト埋め込みは、oEmbed成功時でもフロントでブログカード化される。
+          // エディターの表示をフロントに一致させるため、外部ブログカードが有効なら変換する。
+          if ( isExternalActive ) {
             shouldConvertToBlogcard = true;
           }
         } else if ( isFailed && ! isKnownProvider ) {

@@ -34,7 +34,6 @@ require_once abspath(__FILE__).'content-category.php';   //カテゴリー関係
 require_once abspath(__FILE__).'content-tag.php';   //タグ関係の関数
 require_once abspath(__FILE__).'entry-card.php'; //エントリーカード関数
 require_once abspath(__FILE__).'amp.php';        //AMP関係の関数
-require_once abspath(__FILE__).'content.php';    //本文関係の関数
 require_once abspath(__FILE__).'comments.php';   //コメント関係の関数
 require_once abspath(__FILE__).'related-entries.php';   //関連記事関係の関数
 require_once abspath(__FILE__).'walkers.php';    //Walker_Nav_Menuまとめ
@@ -146,6 +145,7 @@ if (apply_filters('cocoon_youtube_speed_up_enable', false)) {
 }
 require_once abspath(__FILE__).'font-awesome.php'; //Font Awesome
 require_once abspath(__FILE__).'admin.php'; //管理者機能
+require_once abspath(__FILE__).'settings-preview.php'; //テーマ設定画面の軽量プレビュー
 if ( function_exists( 'register_block_style' ) && is_block_editor_style_block_option_visible() && is_gutenberg_editor_enable() ){
   // require_once abspath(__FILE__).'block-editor-styles-paragraph.php'; //ブロックエディタースタイル（段落）
   // require_once abspath(__FILE__).'block-editor-styles-list.php'; //ブロックエディタースタイル（リスト）
@@ -172,9 +172,7 @@ if (is_admin()) {;
   require_once abspath(__FILE__).'tinymce/shortcodes.php'; //ショートコード追加
   require_once abspath(__FILE__).'admin-tools.php'; //外部ツールを利用したもの
   require_once abspath(__FILE__).'admin-forms.php'; //管理画面で使用するフォームパーツ
-  // if (is_dashboard_message_visible()) {
-  //   require_once abspath(__FILE__).'dashboard-message.php'; //ダッシュボードに表示するメッセージ
-  // }
+  require_once abspath(__FILE__).'dashboard-message.php'; //ダッシュボードに表示するメッセージ
 }
 
 require_once abspath(__FILE__).'settings.php';   //WordPressの設定

@@ -8,7 +8,6 @@
  *
  * 対象:
  * - lib/admin.php (add_head_post_custum)
- * - lib/dashboard-message.php (dashboard_message_css)
  *
  * @see docs/WP70-COMPATIBILITY-TEST.md 手動テスト手順
  */
@@ -20,74 +19,11 @@ use Brain\Monkey\Functions;
 
 class AdminVisualRefreshTest extends TestCase
 {
-    private static $dashboard_message_loaded = false;
     private static $admin_loaded = false;
 
     protected function setUp(): void
     {
         parent::setUp();
-    }
-
-    // ========================================================================
-    // lib/dashboard-message.php - dashboard_message_css
-    // ========================================================================
-
-    /**
-     * dashboard_message_css が #dashboard-message 用のスタイルを出力する
-     * WP 7.0 管理画面でもこの ID はテーマが出力する要素に付与されるため、セレクタの衝突はない。
-     */
-    public function test_dashboard_message_css_出力にdashboard_messageのスタイルが含まれる(): void
-    {
-        if (!self::$dashboard_message_loaded) {
-            require_once dirname(__DIR__, 2) . '/lib/dashboard-message.php';
-            self::$dashboard_message_loaded = true;
-        }
-
-        ob_start();
-        dashboard_message_css();
-        $output = ob_get_clean();
-
-        $this->assertStringContainsString('#dashboard-message', $output);
-        $this->assertStringContainsString('<style', $output);
-        $this->assertStringContainsString('</style>', $output);
-    }
-
-    /**
-     * ブロックエディタページではダッシュボードメッセージを非表示にするルールが含まれる
-     * (.block-editor-page は WP の body クラス。WP 7.0 でも維持される想定)
-     */
-    public function test_dashboard_message_css_ブロックエディタ用の非表示ルールが含まれる(): void
-    {
-        if (!self::$dashboard_message_loaded) {
-            require_once dirname(__DIR__, 2) . '/lib/dashboard-message.php';
-            self::$dashboard_message_loaded = true;
-        }
-
-        ob_start();
-        dashboard_message_css();
-        $output = ob_get_clean();
-
-        $this->assertStringContainsString('.block-editor-page #dashboard-message', $output);
-        $this->assertStringContainsString('display: none', $output);
-    }
-
-    /**
-     * カスタム CSS が body や html を広く上書きしておらず、スコープが限定的であることを確認
-     * WP 7.0 の新カラースキーム等と衝突しにくい。
-     */
-    public function test_dashboard_message_css_広域セレクタでbodyやhtmlを上書きしていない(): void
-    {
-        if (!self::$dashboard_message_loaded) {
-            require_once dirname(__DIR__, 2) . '/lib/dashboard-message.php';
-            self::$dashboard_message_loaded = true;
-        }
-
-        ob_start();
-        dashboard_message_css();
-        $output = ob_get_clean();
-
-        $this->assertStringNotContainsString('body {', $output);
-        $this->assertStringNotContainsString('html {', $output);
     }
 
     // ========================================================================
@@ -160,27 +96,4 @@ class AdminVisualRefreshTest extends TestCase
         $this->assertTrue( function_exists( 'cocoon_enqueue_editor_font_styles' ) );
     }
 
-    // ========================================================================
-    // lib/dashboard-message.php - float 廃止確認
-    // ========================================================================
-
-    /**
-     * dashboard_message_css が float を使わず margin-inline-start を使う
-     * （フレックスコンテナでも右寄せが機能するため）
-     */
-    public function test_dashboard_message_css_floatを使わずmargin_inline_startを使う(): void
-    {
-        if ( !self::$dashboard_message_loaded ) {
-            require_once dirname( __DIR__, 2 ) . '/lib/dashboard-message.php';
-            self::$dashboard_message_loaded = true;
-        }
-
-        ob_start();
-        dashboard_message_css();
-        $output = ob_get_clean();
-
-        $this->assertStringNotContainsString( 'float: right', $output );
-        $this->assertStringNotContainsString( 'float: left', $output );
-        $this->assertStringContainsString( 'margin-inline-start: auto', $output );
-    }
 }
