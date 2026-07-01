@@ -49,9 +49,59 @@
   border-radius: 2px;
   background: #ebedf0;
   transition: transform .1s;
+  /* ツールチップの基準点（relative）に設定します */
+  position: relative;
 }
 .cocoon-analytics-heatmap-cell:hover {
   transform: scale(1.25);
+  /* ホバー時にツールチップが手前に表示されるように z-index を引き上げます */
+  z-index: 10;
+}
+
+/* ツールチップの吹き出し本体（黒背景に白文字、セルの下部に表示） */
+.cocoon-analytics-heatmap-cell:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  background-color: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  z-index: 999;
+}
+
+/* ツールチップの上向き矢印（三角形） */
+.cocoon-analytics-heatmap-cell:before {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent transparent rgba(30, 30, 30, 0.9) transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+  z-index: 999;
+}
+
+/* 実際のデータがあるセル（data-tooltip属性を持つセル）のみ、ホバー時にツールチップを表示します */
+.cocoon-analytics-heatmap-cell[data-tooltip]:hover:after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.cocoon-analytics-heatmap-cell[data-tooltip]:hover:before {
+  opacity: 1;
 }
 .cocoon-analytics-heatmap-cell.is-empty {
   background: transparent;
@@ -78,6 +128,82 @@
 .cocoon-analytics-heatmap-legend .cocoon-analytics-heatmap-cell {
   display: inline-block;
   pointer-events: none;
+}
+
+/* PV推移トグルボタン */
+.cocoon-analytics-trend-switcher {
+  display: inline-flex;
+  background-color: #f1f3f4;
+  border-radius: 6px;
+  padding: 2px;
+  margin-bottom: 12px;
+}
+.cocoon-analytics-trend-btn {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #5f6368;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.cocoon-analytics-trend-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #202124;
+}
+.cocoon-analytics-trend-btn.is-active {
+  background-color: #fff;
+  color: #1a73e8;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.15), 0 1px 2px rgba(60,64,67,0.3);
+}
+
+/* 検索サジェスト用スタイル */
+.cocoon-analytics-suggest-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.cocoon-analytics-suggest-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 160px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+  margin-top: 2px;
+}
+.cocoon-analytics-suggest-item {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.cocoon-analytics-suggest-item:hover,
+.cocoon-analytics-suggest-item.is-selected {
+  background-color: #f1f3f4;
+  color: #1a73e8;
+}
+.cocoon-analytics-suggest-no-results {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #999;
+  font-style: italic;
+  text-align: left;
 }
 
 .cocoon-analytics-wrap .nav-tab-wrapper {
@@ -324,7 +450,8 @@
 
 .cocoon-analytics-ranking-item {
   display: grid;
-  grid-template-columns: 88px 1fr auto;
+  /* サムネイルの横幅を120pxに広げるため、グリッドの1列目の幅を120pxに変更 */
+  grid-template-columns: 120px 1fr auto;
   gap: 14px;
   align-items: center;
   padding: 12px 16px;
@@ -371,8 +498,12 @@
 
 .cocoon-analytics-ranking-thumb-wrap {
   position: relative;
-  width: 88px;
-  height: 88px;
+  /* サムネイル画像の横幅をYouTubeと同じ比率にするため120pxに設定 */
+  width: 120px;
+  /* 高さはアスペクト比率に合わせて自動計算されるように設定 */
+  height: auto;
+  /* YouTubeと同様の16:9のアスペクト比を適用 */
+  aspect-ratio: 16 / 9;
   overflow: visible;
   border-radius: 6px;
   background: #f5f6f8;
@@ -388,8 +519,12 @@
 }
 
 .cocoon-analytics-ranking-thumb {
-  width: 88px !important;
-  height: 88px !important;
+  /* サムネイル画像を枠（ラッパー）の幅いっぱいに広げる */
+  width: 100% !important;
+  /* 高さは幅に合わせて自動で伸縮させる */
+  height: auto !important;
+  /* 画像そのものにも16:9のアスペクト比を維持させる */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
@@ -538,17 +673,26 @@
 /* 狭い画面用 */
 @media screen and (max-width: 782px) {
   .cocoon-analytics-ranking-item {
-    grid-template-columns: 72px 1fr;
+    /* モバイルでもYouTubeの比率を保つため、サムネイル幅を96pxに変更 */
+    grid-template-columns: 96px 1fr;
     grid-template-rows: auto auto;
     row-gap: 8px;
   }
   .cocoon-analytics-ranking-thumb-wrap {
-    width: 72px !important;
-    height: 72px !important;
+    /* モバイル用にサムネイル幅を96pxに設定 */
+    width: 96px !important;
+    /* 高さは自動でアスペクト比に従う */
+    height: auto !important;
+    /* モバイルでも16:9の比率を適用 */
+    aspect-ratio: 16 / 9 !important;
   }
   .cocoon-analytics-ranking-thumb {
-    width: 72px !important;
-    height: 72px !important;
+    /* モバイルでも画像が枠いっぱいに広がるように設定 */
+    width: 100% !important;
+    /* 高さは自動で伸縮 */
+    height: auto !important;
+    /* 16:9の比率を維持 */
+    aspect-ratio: 16 / 9 !important;
   }
   .cocoon-analytics-ranking-pv {
     grid-column: 1 / -1;
@@ -566,6 +710,67 @@
 /* ==================================================================
  * ライフサイクルタブ: 左右2カラムレイアウト＆検索・無限スクロール用の追加スタイル
  * ================================================================== */
+
+/* 期間選択トグルボタンのコンテナ（横並びにする） */
+.lifecycle-period-selector {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* 期間選択ボタンの基本スタイル */
+.lifecycle-period-btn {
+  background: #f0f0f1;
+  border: 1px solid #8c8f94;
+  color: #2c3338;
+  padding: 4px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+.lifecycle-period-btn:hover {
+  background: #f6f7f7;
+  border-color: #2271b1;
+  color: #2271b1;
+}
+
+/* アクティブ（現在選択中）なボタンの強調スタイル */
+.lifecycle-period-btn.is-active {
+  background: #2271b1;
+  border-color: #2271b1;
+  color: #fff;
+}
+
+/* カスタム期間の入力フォームコンテナ（ボタンの隣に横並びにする） */
+.lifecycle-custom-range {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+/* カレンダー日付ピッカーのインプットスタイル */
+.lifecycle-date-picker {
+  background: #fff;
+  border: 1px solid #8c8f94;
+  color: #2c3338;
+  padding: 3px 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 4px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.lifecycle-date-picker:focus {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 1px #2271b1;
+  outline: 2px solid transparent;
+}
 
 /* 左右を並べるためのコンテナ（デスクトップ時は横並び） */
 .cocoon-analytics-lifecycle-container {

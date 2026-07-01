@@ -89,10 +89,11 @@ function cocoon_analytics_ajax_get_lifecycle(){
   $rows = cocoon_analytics_lifecycle($post_id);
   $title = get_the_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
 
-  // グラフ描画に必要なデータをJSON形式で即座に返却します
+  // グラフ描画に必要なデータ（投稿ID、タイトル、公開日、アクセス履歴）をJSON形式で即座に返却します
   wp_send_json_success(array(
     'post_id'   => $post_id,
     'title'     => $title,
+    'post_date' => get_the_date('Y-m-d', $post_id),
     'lifecycle' => $rows,
   ));
 }

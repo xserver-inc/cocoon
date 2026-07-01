@@ -76,9 +76,27 @@ function cocoon_analytics_print_data(){
     __('土', THEME_NAME),
   );
 
+  // サジェスト用の著者一覧を取得します（IDと表示名）
+  $authors = array();
+  $users = get_users(array('fields' => array('ID', 'display_name')));
+  foreach ($users as $u) {
+    $authors[] = array('id' => (int)$u->ID, 'name' => $u->display_name);
+  }
+
+  // サジェスト用のカテゴリー一覧を取得します（IDと名前）
+  $categories = array();
+  $cats = get_categories(array('hide_empty' => false));
+  foreach ($cats as $c) {
+    $categories[] = array('id' => (int)$c->term_id, 'name' => $c->name);
+  }
+
   $payload = array(
     'data'     => $chart_data,
     'weekdays' => $weekdays,
+    'suggest'  => array(
+      'authors'    => $authors,
+      'categories' => $categories,
+    ),
     'ajax'     => array(
       'url'   => admin_url('admin-ajax.php'),
       'nonce' => wp_create_nonce('cocoon_analytics_layout'),

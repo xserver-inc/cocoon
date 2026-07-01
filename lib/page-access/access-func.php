@@ -612,3 +612,390 @@ function get_all_pv($post_id = null){
   return $res;
 }
 endif;
+
+/**
+ * ダッシュボードにCocoonアクセス解析ウィジェットを登録します
+ */
+add_action('wp_dashboard_setup', 'cocoon_analytics_add_dashboard_widget');
+if ( !function_exists( 'cocoon_analytics_add_dashboard_widget' ) ):
+function cocoon_analytics_add_dashboard_widget() {
+  // 管理権限がないユーザーにはウィジェットを追加しないように制限します
+  if (!current_user_can('manage_options')) return;
+  // アクセス解析機能が無効の場合は処理を中断します
+  if (!is_access_count_enable()) return;
+
+  wp_add_dashboard_widget(
+    'cocoon_analytics_dashboard_widget', // ウィジェットを一意に識別するIDです
+    __('アクセス推移 (Cocoon)', THEME_NAME), // ダッシュボードに表示されるウィジェットのタイトルです
+    'cocoon_analytics_dashboard_widget_renderer' // グラフを描画するための表示関数です
+  );
+}
+endif;
+
+/**
+ * ダッシュボードウィジェットの表示HTMLとJSをレンダリングします
+ */
+if ( !function_exists( 'cocoon_analytics_dashboard_widget_renderer' ) ):
+function cocoon_analytics_dashboard_widget_renderer() {
+  $to = current_time('Y-m-d');
+  
+  // 1. 日別 (daily): 直近7日間（本日を含む）
+  $from_daily = date('Y-m-d', strtotime($to . ' -6 days'));
+  $daily = cocoon_analytics_daily_pv($from_daily, $to);
+  
+  // 2. 週別 (weekly): 直近7週分（今週を含む）
+  $from_weekly = date('Y-m-d', strtotime($to . ' -48 days')); // 約7週間前
+  $weekly = cocoon_analytics_weekly_pv($from_weekly, $to);
+  if (count($weekly) > 7) {
+    $weekly = array_slice($weekly, -7);
+  }
+  
+  // 3. 月別 (monthly): 直近7ヶ月分（当月を含む）
+  $from_monthly = date('Y-m-01', strtotime($to . ' -6 months'));
+  $monthly = cocoon_analytics_monthly_pv($from_monthly, $to);
+  if (count($monthly) > 7) {
+    $monthly = array_slice($monthly, -7);
+  }
+
+  // 4. 年別 (yearly): 直近7年分（今年を含む）
+  $current_year = (int) date('Y');
+  $from_year = $current_year - 6;
+  $from_yearly = $from_year . '-01-01';
+  $daily_all = cocoon_analytics_daily_pv($from_yearly, $to);
+  $yearly_buckets = array();
+  for ($y = $from_year; $y <= $current_year; $y++) {
+    $yearly_buckets[$y] = 0;
+  }
+  foreach ($daily_all as $d) {
+    $y = (int) substr($d['date'], 0, 4);
+    if (isset($yearly_buckets[$y])) {
+      $yearly_buckets[$y] += (int) $d['pv'];
+    }
+  }
+  $yearly = array();
+  foreach ($yearly_buckets as $y => $pv) {
+    $yearly[] = array('date' => (string) $y, 'pv' => $pv);
+  }
+
+  // 5. 人気記事の期間別データ取得 (today / 7days / 30days / 90days / 1year / all)
+  $periods = array(
+    'today'  => cocoon_analytics_resolve_period('today'),
+    '7days'  => cocoon_analytics_resolve_period('7days'),
+    '30days' => cocoon_analytics_resolve_period('30days'),
+    '90days' => cocoon_analytics_resolve_period('90days'),
+    '1year'  => array(
+      'from' => date('Y-m-d', strtotime($to . ' -1 year +1 day')),
+      'to'   => $to
+    ),
+    'all'    => array('from' => '1000-01-01', 'to' => $to),
+  );
+
+  $ranking_data = array();
+  foreach ($periods as $key => $p) {
+    $rows = cocoon_analytics_ranking($p['from'], $p['to'], null, 5);
+    $formatted = array();
+    $rank = 1;
+    foreach ($rows as $item) {
+      $post_id = $item['post_id'];
+      $title = get_the_title($post_id);
+      if (empty($title)) {
+        $title = __('(タイトルなし)', THEME_NAME);
+      }
+      $formatted[] = array(
+        'rank'  => $rank,
+        'title' => esc_html($title),
+        'url'   => esc_url(get_permalink($post_id)),
+        'pv'    => number_format_i18n($item['pv']),
+      );
+      $rank++;
+    }
+    $ranking_data[$key] = $formatted;
+  }
+
+  // JS側へデータを渡すJSON形式にエンコードします
+  $json_data = wp_json_encode(array(
+    'daily'   => $daily,
+    'weekly'  => $weekly,
+    'monthly' => $monthly,
+    'yearly'  => $yearly,
+    'ranking' => $ranking_data,
+  ));
+
+  // WordPressの管理画面「アクセス集計」ページのリンクURLを取得します
+  $analytics_page_url = admin_url('admin.php?page=theme-access');
+
+  // グラフ描画に必要なChart.jsスクリプトを読み込みリストに登録します
+  wp_enqueue_script(
+    'cocoon-analytics-chartjs',
+    'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
+    array(),
+    '4.4.1',
+    true
+  );
+  ?>
+  <!-- ダッシュボード専用の切り替えボタンスタイルを定義します -->
+  <style>
+    .cocoon-analytics-dashboard-btn:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: #202124;
+    }
+    .cocoon-analytics-dashboard-btn.is-active {
+      background-color: #000 !important; /* Jetpack Stats風の黒いアクティブ背景にします */
+      color: #fff !important;
+      font-weight: bold;
+    }
+  </style>
+
+  <div class="cocoon-analytics-dashboard-widget-container">
+    <!-- 日、週、月、年の切り替えトグルボタン群です -->
+    <div class="cocoon-analytics-dashboard-switcher" style="display: inline-flex; background-color: #fff; border: 1px solid #ccd0d4; border-radius: 6px; padding: 2px; margin-bottom: 12px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);">
+      <button type="button" class="cocoon-analytics-dashboard-btn" data-type="daily" style="background: transparent; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; font-weight: 500; color: #3c434a; cursor: pointer; outline: none; transition: background-color 0.2s, color 0.2s;"><?php _e('日', THEME_NAME); ?></button>
+      <button type="button" class="cocoon-analytics-dashboard-btn" data-type="weekly" style="background: transparent; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; font-weight: 500; color: #3c434a; cursor: pointer; outline: none; transition: background-color 0.2s, color 0.2s;"><?php _e('週', THEME_NAME); ?></button>
+      <button type="button" class="cocoon-analytics-dashboard-btn" data-type="monthly" style="background: transparent; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; font-weight: 500; color: #3c434a; cursor: pointer; outline: none; transition: background-color 0.2s, color 0.2s;"><?php _e('月', THEME_NAME); ?></button>
+      <button type="button" class="cocoon-analytics-dashboard-btn" data-type="yearly" style="background: transparent; border: none; border-radius: 4px; padding: 6px 16px; font-size: 12px; font-weight: 500; color: #3c434a; cursor: pointer; outline: none; transition: background-color 0.2s, color 0.2s;"><?php _e('年', THEME_NAME); ?></button>
+    </div>
+
+    <!-- グラフを描画するためのキャンバス領域です -->
+    <div style="height: 180px; position: relative; margin-bottom: 20px;">
+      <canvas id="cocoon-analytics-dashboard-chart"></canvas>
+    </div>
+
+    <!-- グラフとランキングの間に区切り線を引きます -->
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;" />
+
+    <!-- 人気記事ランキングセクションです -->
+    <div class="cocoon-analytics-dashboard-ranking-section">
+      <h4 style="margin: 0 0 10px 0; font-size: 13px; color: #23282d; display: flex; align-items: center; justify-content: space-between; gap: 5px;">
+        <span style="display: flex; align-items: center; gap: 5px;">
+          <span class="dashicons dashicons-editor-ol" style="font-size: 17px; width: 17px; height: 17px;"></span>
+          <?php _e('人気記事 TOP5', THEME_NAME); ?>
+        </span>
+        <!-- 期間切り替えのドロップダウンです -->
+        <select class="cocoon-analytics-dashboard-ranking-period" style="font-size: 11px; height: auto; padding: 2px 24px 2px 8px; margin: 0; line-height: 1.5; border-radius: 4px; border: 1px solid #ccd0d4; background-color: #f6f7f7; color: #2c3338; cursor: pointer;">
+          <option value="today"><?php _e('今日', THEME_NAME); ?></option>
+          <option value="7days" selected><?php _e('7日間', THEME_NAME); ?></option>
+          <option value="30days"><?php _e('30日間', THEME_NAME); ?></option>
+          <option value="90days"><?php _e('3ヶ月', THEME_NAME); ?></option>
+          <option value="1year"><?php _e('1年', THEME_NAME); ?></option>
+          <option value="all"><?php _e('全期間', THEME_NAME); ?></option>
+        </select>
+      </h4>
+      
+      <ul id="cocoon-analytics-dashboard-ranking-list" style="margin: 0; padding: 0; list-style: none;">
+        <!-- 初期表示時は直近7日間のデータをPHP側から出力します -->
+        <?php if (!empty($ranking_data['7days'])): ?>
+          <?php foreach ($ranking_data['7days'] as $item): 
+            $badge_bg = '#888';
+            if ($item['rank'] === 1) $badge_bg = '#dfb100'; // 金
+            if ($item['rank'] === 2) $badge_bg = '#a8a8a8'; // 銀
+            if ($item['rank'] === 3) $badge_bg = '#b06f00'; // 銅
+            ?>
+            <li style="display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #f0f0f0; font-size: 12px; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;">
+                <span style="display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; background-color: <?php echo $badge_bg; ?>; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; flex-shrink: 0;">
+                  <?php echo $item['rank']; ?>
+                </span>
+                <a href="<?php echo $item['url']; ?>" target="_blank" style="text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                  <?php echo $item['title']; ?>
+                </a>
+              </div>
+              <span style="color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;">
+                <?php echo $item['pv']; ?> PV
+              </span>
+            </li>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p class="cocoon-analytics-dashboard-ranking-empty" style="font-size: 12px; color: #999; margin: 10px 0; text-align: center;">
+            <?php _e('集計データがまだありません。', THEME_NAME); ?>
+          </p>
+        <?php endif; ?>
+      </ul>
+    </div>
+
+    <!-- アクセス集計詳細ページへのリンク動線を設置します -->
+    <div style="margin-top: 15px; text-align: right;">
+      <a href="<?php echo esc_url($analytics_page_url); ?>" style="display: inline-flex; align-items: center; gap: 3px; font-size: 12px; color: #0073aa; text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        <?php _e('アクセス集計の詳細を見る', THEME_NAME); ?>
+        <span class="dashicons dashicons-arrow-right-alt2" style="font-size: 14px; width: 14px; height: 14px; margin-top: 1px;"></span>
+      </a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // サーバーから渡されたPVおよび人気記事データです
+      var chartData = <?php echo $json_data; ?>;
+      var canvas = document.getElementById('cocoon-analytics-dashboard-chart');
+      if (!canvas || !chartData) return;
+
+      var chartInstance = null;
+      var buttons = document.querySelectorAll('.cocoon-analytics-dashboard-btn');
+
+      // グラフの描画およびアップデートを実行する関数です
+      var renderChart = function(type) {
+        if (typeof Chart === 'undefined') {
+          // スクリプトのロードが終わっていない場合は100ミリ秒後に再試行します
+          setTimeout(function() { renderChart(type); }, 100);
+          return;
+        }
+
+        var list = chartData[type];
+        if (!list || !list.length) {
+          if (chartInstance) {
+            chartInstance.destroy();
+            chartInstance = null;
+          }
+          return;
+        }
+
+        // 各種期間タイプに応じた日付ラベルの日本語フォーマット処理を行います
+        var labels = list.map(function(d) {
+          var parts = d.date.split('-');
+          if (type === 'daily' || type === 'weekly') {
+            // YYYY-MM-DD ➔ M月 D
+            if (parts.length === 3) {
+              return parseInt(parts[1], 10) + '月 ' + parseInt(parts[2], 10);
+            }
+          } else if (type === 'monthly') {
+            // YYYY-MM ➔ M月
+            if (parts.length === 2) {
+              return parseInt(parts[1], 10) + '月';
+            }
+          }
+          return d.date; // 年別の場合は YYYY そのまま
+        });
+        var pvData = list.map(function(d) { return d.pv; });
+
+        var config = {
+          type: 'bar', // すべての期間でJetpack Statsに合わせ「棒グラフ」に統一します
+          data: {
+            labels: labels,
+            datasets: [{
+              label: '<?php echo esc_js(__('PV数', THEME_NAME)); ?>',
+              data: pvData,
+              backgroundColor: 'rgba(0, 138, 32, 0.85)', // Jetpack風の鮮やかな緑色に統一します
+              borderColor: '#008a20',
+              borderWidth: 1,
+              borderRadius: 4, // 棒の頂点に丸みをつけてプレミアム感を演出します
+              barPercentage: 0.6 // 棒の太さをJetpack風に適度にすっきりさせます
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  afterLabel: function (ctx) {
+                    var row = list[ctx.dataIndex];
+                    if (type === 'weekly') {
+                      if (row && row.days && row.days < 7) {
+                        return '<?php echo esc_js(__('部分週', THEME_NAME)); ?>' + ': ' + row.days + '/7 ' + '<?php echo esc_js(__('日', THEME_NAME)); ?>';
+                      }
+                    } else if (type === 'monthly') {
+                      if (row && row.days) {
+                        return '<?php echo esc_js(__('日数', THEME_NAME)); ?>' + ': ' + row.days + ' ' + '<?php echo esc_js(__('日', THEME_NAME)); ?>';
+                      }
+                    }
+                    return '';
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { precision: 0 }
+              }
+            }
+          }
+        };
+
+        // すでに描画されているグラフを一旦破棄して再生成します
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+        chartInstance = new Chart(canvas, config);
+      };
+
+      // 切り替えトグルボタンのイベントハンドラーを設定します
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          renderChart(btn.getAttribute('data-type'));
+        });
+      });
+
+      // 初期選択状態として「日」を設定して描画します
+      var defaultBtn = document.querySelector('.cocoon-analytics-dashboard-btn[data-type="daily"]');
+      if (defaultBtn) {
+        defaultBtn.classList.add('is-active');
+      }
+      renderChart('daily');
+
+      // 人気記事の期間切り替えセレクトボックスのイベントハンドラーを設定します
+      var rankingPeriodSelect = document.querySelector('.cocoon-analytics-dashboard-ranking-period');
+      var rankingListContainer = document.getElementById('cocoon-analytics-dashboard-ranking-list');
+
+      if (rankingPeriodSelect && rankingListContainer && chartData.ranking) {
+        rankingPeriodSelect.addEventListener('change', function() {
+          var period = rankingPeriodSelect.value;
+          var items = chartData.ranking[period] || [];
+
+          rankingListContainer.innerHTML = '';
+
+          if (items.length === 0) {
+            var empty = document.createElement('p');
+            empty.className = 'cocoon-analytics-dashboard-ranking-empty';
+            empty.style.cssText = 'font-size: 12px; color: #999; margin: 10px 0; text-align: center;';
+            empty.textContent = '<?php echo esc_js(__('集計データがまだありません。', THEME_NAME)); ?>';
+            rankingListContainer.appendChild(empty);
+            return;
+          }
+
+          // 新しい期間の人気記事データを動的にリスト生成して描画します
+          items.forEach(function(item) {
+            var badgeBg = '#888';
+            if (item.rank === 1) badgeBg = '#dfb100';
+            else if (item.rank === 2) badgeBg = '#a8a8a8';
+            else if (item.rank === 3) badgeBg = '#b06f00';
+
+            var li = document.createElement('li');
+            li.style.cssText = 'display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #f0f0f0; font-size: 12px; gap: 10px;';
+
+            var leftDiv = document.createElement('div');
+            leftDiv.style.cssText = 'display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;';
+
+            var badge = document.createElement('span');
+            badge.style.cssText = 'display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; background-color: ' + badgeBg + '; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; flex-shrink: 0;';
+            badge.textContent = item.rank;
+
+            var link = document.createElement('a');
+            link.href = item.url;
+            link.target = '_blank';
+            link.style.cssText = 'text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;';
+            link.textContent = item.title;
+            
+            link.addEventListener('mouseover', function() { link.style.textDecoration = 'underline'; });
+            link.addEventListener('mouseout', function() { link.style.textDecoration = 'none'; });
+
+            leftDiv.appendChild(badge);
+            leftDiv.appendChild(link);
+
+            var pvSpan = document.createElement('span');
+            pvSpan.style.cssText = 'color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;';
+            pvSpan.textContent = item.pv + ' PV';
+
+            li.appendChild(leftDiv);
+            li.appendChild(pvSpan);
+
+            rankingListContainer.appendChild(li);
+          });
+        });
+      }
+    });
+  </script>
+  <?php
+}
+endif;

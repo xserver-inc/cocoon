@@ -172,7 +172,8 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
     $author    = $post ? get_the_author_meta('display_name', $post->post_author) : '';
     $pub_date  = $post ? mysql2date(get_option('date_format'), $post->post_date) : '';
     $mod_date  = $post ? mysql2date(get_option('date_format'), $post->post_modified) : '';
-    $thumb     = $post_id ? get_the_post_thumbnail($post_id, array(80, 80), array('class' => 'cocoon-analytics-ranking-thumb')) : '';
+    // YouTubeと同様のアスペクト比（16:9）を持つTHUMB120サイズを取得するように変更
+    $thumb     = $post_id ? get_the_post_thumbnail($post_id, THUMB120, array('class' => 'cocoon-analytics-ranking-thumb')) : '';
     $share     = $total_pv > 0 ? round($pv * 100 / $total_pv, 1) : 0;
     $bar       = max(2, round($pv * 100 / $max_pv));
     $rank_cls  = ($i === 1) ? ' is-rank-1' : (($i === 2) ? ' is-rank-2' : (($i === 3) ? ' is-rank-3' : ''));
@@ -281,7 +282,8 @@ function cocoon_analytics_render_trending_list($rows, $days = 7){
     $edit      = get_edit_post_link($post_id);
     $author    = $post ? get_the_author_meta('display_name', $post->post_author) : '';
     $pub_date  = $post ? mysql2date(get_option('date_format'), $post->post_date) : '';
-    $thumb     = $post_id ? get_the_post_thumbnail($post_id, array(80, 80), array('class' => 'cocoon-analytics-ranking-thumb')) : '';
+    // YouTubeと同様のアスペクト比（16:9）を持つTHUMB120サイズを取得するように変更
+    $thumb     = $post_id ? get_the_post_thumbnail($post_id, THUMB120, array('class' => 'cocoon-analytics-ranking-thumb')) : '';
     $bar       = max(2, round($cur_pv * 100 / $max_pv));
     $rank_cls  = ($i === 1) ? ' is-rank-1' : (($i === 2) ? ' is-rank-2' : (($i === 3) ? ' is-rank-3' : ''));
 
@@ -435,7 +437,8 @@ function cocoon_analytics_render_heatmap(){
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
       $tip = esc_attr($c['date'] . ' : ' . number_format_i18n($pv) . ' PV');
-      echo '<div class="' . esc_attr($cls) . '" title="' . $tip . '"></div>';
+      // ブラウザ標準の遅いツールチップの代わりに、モダンなカスタムツールチップ用の属性を付与します
+      echo '<div class="' . esc_attr($cls) . '" data-tooltip="' . $tip . '"></div>';
     }
     echo '</div>';
   }

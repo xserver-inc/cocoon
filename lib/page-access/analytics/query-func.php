@@ -645,17 +645,20 @@ if ( !function_exists( 'cocoon_analytics_lifecycle' ) ):
 function cocoon_analytics_lifecycle($post_id){
   $post_id = (int) $post_id;
   if ($post_id <= 0) return array();
-  return cocoon_analytics_cached(array('lifecycle', $post_id), function() use ($post_id){
+  // キャッシュキーを変更し、経過日数ではなく実際の日付データ（lifecycle_date）としてキャッシュします
+  return cocoon_analytics_cached(array('lifecycle_date', $post_id), function() use ($post_id){
     global $wpdb;
     $table = ACCESSES_TABLE_NAME;
-    $sql = "SELECT DATEDIFF(a.date, DATE(p.post_date)) AS day_after, SUM(a.count) AS pv
+    // 経過日数ではなく、公開日以降の実際の日付（a.date）ごとのPV数を集計するSQL文です
+    $sql = "SELECT a.date AS date, SUM(a.count) AS pv
             FROM `{$table}` a
             INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id
             WHERE a.post_id = %d AND a.date >= DATE(p.post_date)
-            GROUP BY day_after
-            ORDER BY day_after ASC";
+            GROUP BY a.date
+            ORDER BY a.date ASC";
     $rows = $wpdb->get_results($wpdb->prepare($sql, $post_id), ARRAY_A);
-    foreach ($rows as &$r) { $r['day_after'] = (int) $r['day_after']; $r['pv'] = (int) $r['pv']; }
+    // PV数のデータを数値型（整数）に正しく変換します
+    foreach ($rows as &$r) { $r['pv'] = (int) $r['pv']; }
     return $rows ?: array();
   });
 }

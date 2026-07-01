@@ -115,13 +115,14 @@ switch ($view) {
     $show_weekly  = true;
     $show_monthly = true;
     $weekly  = cocoon_analytics_weekly_pv($from, $to, $pt_arg);
+    // 月次PVデータも上部フィルターバーの期間選択と完全連動するように戻します
     $monthly = cocoon_analytics_monthly_pv($from, $to, $pt_arg);
     // 急上昇記事 TOP10（直近7日 vs その前7日）
     $trending = cocoon_analytics_trending(7, 10, 3);
 
     // 各タイルの可視性を組み立て、保存されたレイアウトを取得
     $visibility = array(
-      'daily' => true, 'weekly' => $show_weekly, 'monthly' => $show_monthly,
+      'trend' => true,
       'category' => true, 'tag' => true, 'type' => true,
       'top' => true, 'trending' => true, 'dow' => true,
     );
@@ -129,36 +130,56 @@ switch ($view) {
     $layout = cocoon_analytics_get_user_layout($tile_ids, 2);
 
     // タイル描画クロージャ（id => [title, body]）
-    $render_tile = function($id) use ($top, $period_total_pv, $trending) {
+    $render_tile = function($id) use ($top, $period_total_pv, $trending, $preset, $from, $to) {
+      $presets = array(
+        'today'     => __('今日', THEME_NAME),
+        'yesterday' => __('昨日', THEME_NAME),
+        '7days'     => __('直近7日', THEME_NAME),
+        '30days'    => __('直近30日', THEME_NAME),
+        '90days'    => __('直近90日', THEME_NAME),
+        'thismonth' => __('今月', THEME_NAME),
+        'lastmonth' => __('先月', THEME_NAME),
+        'ytd'       => __('年初来', THEME_NAME),
+        'all'       => __('全期間', THEME_NAME),
+      );
+      // 表示用の期間ラベルを作成します（カスタム期間の場合は日付範囲を表示します）
+      $period_label = isset($presets[$preset]) ? $presets[$preset] : '';
+      if ($preset === 'custom') {
+        $period_label = sprintf('%s 〜 %s', $from, $to);
+      }
+      $suffix = $period_label ? ' （' . $period_label . '）' : '';
+
       $title = '';
       ob_start();
       switch ($id) {
-        case 'daily':
-          $title = __('日次PV推移', THEME_NAME);
-          echo '<canvas id="cocoon-analytics-daily" role="img" aria-label="' . esc_attr__('日次PV推移グラフ', THEME_NAME) . '"></canvas>';
-          break;
-        case 'weekly':
-          $title = __('週次PV推移', THEME_NAME);
-          echo '<canvas id="cocoon-analytics-weekly" role="img" aria-label="' . esc_attr__('週次PV推移グラフ', THEME_NAME) . '"></canvas>';
-          break;
-        case 'monthly':
-          $title = __('月次PV推移', THEME_NAME);
-          echo '<canvas id="cocoon-analytics-monthly" role="img" aria-label="' . esc_attr__('月次PV推移グラフ', THEME_NAME) . '"></canvas>';
+        case 'trend':
+          // 日次・週次・月次の3つのグラフを1つのタイルにまとめ、タブで切り替えられるようにします
+          $title = __('PV推移', THEME_NAME) . $suffix;
+          ?>
+          <div class="cocoon-analytics-trend-switcher">
+            <button type="button" class="cocoon-analytics-trend-btn" data-type="daily"><?php _e('日', THEME_NAME); ?></button>
+            <button type="button" class="cocoon-analytics-trend-btn" data-type="weekly"><?php _e('週', THEME_NAME); ?></button>
+            <button type="button" class="cocoon-analytics-trend-btn" data-type="monthly"><?php _e('月', THEME_NAME); ?></button>
+          </div>
+          <div style="height: 250px; position: relative;">
+            <canvas id="cocoon-analytics-trend" role="img" aria-label="<?php echo esc_attr__('PV推移グラフ', THEME_NAME); ?>"></canvas>
+          </div>
+          <?php
           break;
         case 'category':
-          $title = __('カテゴリ別PV', THEME_NAME);
+          $title = __('カテゴリ別PV', THEME_NAME) . $suffix;
           echo '<canvas id="cocoon-analytics-category" role="img" aria-label="' . esc_attr__('カテゴリ別PV構成', THEME_NAME) . '"></canvas>';
           break;
         case 'tag':
-          $title = __('タグ別PV', THEME_NAME);
+          $title = __('タグ別PV', THEME_NAME) . $suffix;
           echo '<canvas id="cocoon-analytics-tag" role="img" aria-label="' . esc_attr__('タグ別PV構成', THEME_NAME) . '"></canvas>';
           break;
         case 'type':
-          $title = __('投稿タイプ別PV', THEME_NAME);
+          $title = __('投稿タイプ別PV', THEME_NAME) . $suffix;
           echo '<canvas id="cocoon-analytics-type" role="img" aria-label="' . esc_attr__('投稿タイプ別PV構成', THEME_NAME) . '"></canvas>';
           break;
         case 'top':
-          $title = __('人気記事 TOP10', THEME_NAME);
+          $title = __('人気記事 TOP10', THEME_NAME) . $suffix;
           cocoon_analytics_render_ranking_table($top, true, $period_total_pv);
           break;
         case 'trending':
@@ -166,7 +187,7 @@ switch ($view) {
           cocoon_analytics_render_trending_list($trending, 7);
           break;
         case 'dow':
-          $title = __('曜日別PV', THEME_NAME);
+          $title = __('曜日別PV', THEME_NAME) . $suffix;
           echo '<canvas id="cocoon-analytics-dow" role="img" aria-label="' . esc_attr__('曜日別PV', THEME_NAME) . '"></canvas>';
           break;
       }
@@ -237,6 +258,22 @@ switch ($view) {
     $max_pv = isset($_GET['max_pv']) && $_GET['max_pv'] !== '' ? (int) $_GET['max_pv'] : -1;
     $order = isset($_GET['order']) && strtoupper($_GET['order']) === 'ASC' ? 'ASC' : 'DESC';
     $page_num = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
+
+    // 初期表示時の著者名とカテゴリ名をIDから取得します
+    $author_name = '';
+    if ($author > 0) {
+      $user_info = get_userdata($author);
+      if ($user_info) {
+        $author_name = $user_info->display_name;
+      }
+    }
+    $category_name = '';
+    if ($category > 0) {
+      $cat_info = get_category($category);
+      if ($cat_info) {
+        $category_name = $cat_info->name;
+      }
+    }
     ?>
     <form method="get" class="cocoon-analytics-filter-bar">
       <input type="hidden" name="page" value="theme-access">
@@ -247,11 +284,17 @@ switch ($view) {
       <label><?php _e('投稿タイプ:', THEME_NAME); ?>
         <?php cocoon_analytics_render_post_type_filter($post_type_filter); ?>
       </label>
-      <label><?php _e('著者ID:', THEME_NAME); ?>
-        <input type="number" name="author" value="<?php echo esc_attr($author); ?>" min="0" style="width:80px;">
+      <!-- 著者名の検索サジェスト入力欄です（実際の送信値はhidden inputにセットされます） -->
+      <label class="cocoon-analytics-suggest-container"><?php _e('著者:', THEME_NAME); ?>
+        <input type="text" class="cocoon-analytics-suggest-input" data-type="author" value="<?php echo esc_attr($author_name); ?>" placeholder="<?php esc_attr_e('名前で検索...', THEME_NAME); ?>" style="width:130px;" autocomplete="off">
+        <input type="hidden" name="author" class="cocoon-analytics-suggest-hidden" value="<?php echo esc_attr($author); ?>">
+        <div class="cocoon-analytics-suggest-dropdown"></div>
       </label>
-      <label><?php _e('カテゴリID:', THEME_NAME); ?>
-        <input type="number" name="cat" value="<?php echo esc_attr($category); ?>" min="0" style="width:80px;">
+      <!-- カテゴリ名の検索サジェスト入力欄です -->
+      <label class="cocoon-analytics-suggest-container"><?php _e('カテゴリ:', THEME_NAME); ?>
+        <input type="text" class="cocoon-analytics-suggest-input" data-type="category" value="<?php echo esc_attr($category_name); ?>" placeholder="<?php esc_attr_e('カテゴリ名で検索...', THEME_NAME); ?>" style="width:130px;" autocomplete="off">
+        <input type="hidden" name="cat" class="cocoon-analytics-suggest-hidden" value="<?php echo esc_attr($category); ?>">
+        <div class="cocoon-analytics-suggest-dropdown"></div>
       </label>
       <label><?php _e('最小PV:', THEME_NAME); ?>
         <input type="number" name="min_pv" value="<?php echo $min_pv >= 0 ? esc_attr($min_pv) : ''; ?>" min="0" style="width:80px;">
@@ -409,7 +452,11 @@ switch ($view) {
     if ($post_id > 0) {
       $initial_lifecycle = cocoon_analytics_lifecycle($post_id);
       $initial_title = get_the_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
-      $GLOBALS['cocoon_analytics_chart_data'] = array('lifecycle' => $initial_lifecycle);
+      // 初期データとしてライフサイクル履歴と記事公開日（post_date）を格納します
+      $GLOBALS['cocoon_analytics_chart_data'] = array(
+        'lifecycle' => $initial_lifecycle,
+        'post_date' => get_the_date('Y-m-d', $post_id),
+      );
     }
     ?>
     <!-- ライフサイクル画面のメインコンテナ。初期投稿IDをデータ属性として保持させます -->
@@ -434,6 +481,23 @@ switch ($view) {
         <h3 id="lifecycle-chart-title">
           <?php echo $initial_title ? esc_html($initial_title) : esc_html__('記事を選択してください', THEME_NAME); ?>
         </h3>
+
+        <!-- 期間選択のトグルボタン（記事選択時のみJSで表示制御します） -->
+        <div id="lifecycle-period-selector" class="lifecycle-period-selector" style="<?php echo $post_id > 0 ? '' : 'display:none;'; ?>">
+          <button type="button" class="lifecycle-period-btn is-active" data-period="90"><?php _e('3ヶ月', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="180"><?php _e('6ヶ月', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="365"><?php _e('1年', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="all"><?php _e('全期間', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="custom" id="lifecycle-custom-period-btn"><?php _e('カスタム', THEME_NAME); ?></button>
+
+          <!-- カスタム期間の日付カレンダー選択フォーム（初期は非表示にします） -->
+          <div id="lifecycle-custom-range" class="lifecycle-custom-range" style="display:none;">
+            <input type="date" id="lifecycle-custom-from" class="lifecycle-date-picker">
+            <span>〜</span>
+            <input type="date" id="lifecycle-custom-to" class="lifecycle-date-picker">
+          </div>
+        </div>
+
         <div class="cocoon-analytics-card lifecycle-chart-card">
           <!-- 記事が選択されていないときに表示するメッセージエリア -->
           <div id="lifecycle-chart-placeholder" class="lifecycle-chart-placeholder" style="<?php echo $post_id > 0 ? 'display:none;' : ''; ?>">

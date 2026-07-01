@@ -84,8 +84,11 @@ function cocoon_analytics_output_csv($filename, $headers, $rows){
   // UTF-8 BOM（Excel互換）
   echo "\xEF\xBB\xBF";
   $out = fopen('php://output', 'w');
-  fputcsv($out, $headers);
-  foreach ($rows as $r) fputcsv($out, $r);
+  // PHP8.4以降の仕様変更に伴う非推奨警告を防ぐため、区切り文字、囲み文字、エスケープ文字を明示的に指定します
+  fputcsv($out, $headers, ',', '"', '\\');
+  foreach ($rows as $r) {
+    fputcsv($out, $r, ',', '"', '\\');
+  }
   fclose($out);
 }
 endif;

@@ -27,7 +27,7 @@ define('COCOON_ANALYTICS_LAYOUT_META_KEY', 'cocoon_analytics_dashboard_layout');
 if ( !function_exists( 'cocoon_analytics_default_tile_ids' ) ):
 function cocoon_analytics_default_tile_ids($visibility = array()){
   // 初心者向け: 新しいタイルを追加するときはここに id を追加するだけでOK
-  $all = array('daily', 'weekly', 'monthly', 'category', 'tag', 'type', 'top', 'trending', 'dow');
+  $all = array('trend', 'category', 'tag', 'type', 'top', 'trending', 'dow');
   $result = array();
   foreach ($all as $id) {
     if (!isset($visibility[$id]) || $visibility[$id]) {
