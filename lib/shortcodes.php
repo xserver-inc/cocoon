@@ -869,6 +869,10 @@ function get_rss_feed_tag( $atts ) {
 
       $maxitems = $rss->get_item_quantity( $feed_count );
       $rss_items = $rss->get_items( 0, $maxitems );
+
+      // カード群の出力をバッファリング（テンプレートは直接出力するため）
+      ob_start();
+
       foreach ( $rss_items as $item ) :
         $first_img = '';
         // get_content() が null を返す場合があるため、確実に文字列にしてから利用
@@ -891,33 +895,26 @@ function get_rss_feed_tag( $atts ) {
         // 上で文字列化した $item_content を再利用
         $feed_text = get_content_excerpt(strip_tags($item_content), get_entry_card_excerpt_max_length());
 
-        $feed_content .= '<a href="' . esc_url($feed_url) . '" title="' . esc_attr($feed_title) . '" class="rss-entry-card-link widget-entry-card-link a-wrap" target="'.esc_attr($target).'"'.get_rel_by_target($target).'>';
-        $feed_content .= '<div class="rss-entry-card widget-entry-card e-card cf">';
-        $feed_content .= '<figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">';
-        $feed_content .= '<img src="' . esc_url($feed_img) . '" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">';
-        $feed_content .= '</figure>';
-        $feed_content .= '<div class="rss-entry-card-content widget-entry-card-content card-content">';
+        // テンプレートに渡す引数（子テーマは cocoon_part_args__tmp/rss-card フックで上書き可能）
+        $template_args = array(
+          'url'          => $feed_url,
+          'title'        => $feed_title,
+          'target'       => $target,
+          'img'          => $feed_img,
+          'site'         => $site,
+          'site_title'   => $site_title,
+          'desc'         => $desc,
+          'date'         => $date,
+          'text'         => $feed_text,
+          'date_str'     => $feed_date,
+          'cache_minute' => $cache_minute,
+        );
 
-        // タイトルの後ろにサイト名（site=1なら出力）
-        $feed_content .= '<div class="rss-entry-card-title widget-entry-card-title card-title">';
-        $feed_content .= esc_html($feed_title);
-        if ($site == 1 && !empty($site_title)) {
-          $feed_content .= ' <span class="rss-entry-card-site">' . get_title_separator_caption() . ' ' . esc_html($site_title) . '</span>';
-        }
-        $feed_content .= '</div>';
-
-        if ($desc) {
-          $feed_content .= '<div class="rss-entry-card-snippet widget-entry-card-snippet card-snippet">' . esc_html($feed_text) . '</div>';
-        }
-        if ($date) {
-          $feed_content .= '<div class="rss-entry-card-date widget-entry-card-date">
-          <span class="rss-entry-card-post-date widget-entry-card-post-date post-date">' . esc_html($feed_date) . '</span>
-        </div>';
-        }
-        $feed_content .= '</div>';
-        $feed_content .= '</div>';
-        $feed_content .= '</a>';
+        // カード部分をテンプレートとして出力
+        cocoon_template_part('tmp/rss-card', null, $template_args);
       endforeach;
+
+      $feed_content = ob_get_clean();
     } else {
       $feed_content = '<p>' . __( 'RSSフィードを取得できません', THEME_NAME ) . '</p>';
     }
