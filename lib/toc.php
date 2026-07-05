@@ -128,6 +128,11 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
             $toc_counter = 0;
           }
 
+          // 閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は目次に追加しない
+          if (preg_match('/<[hH][1-6][\s>]/', $m[2])) {
+            continue;
+          }
+
           // 目次の深さ取得
           $now_depth = intval(substr(strtolower($m[1]), 1, 1));
 
@@ -148,6 +153,15 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
     $header_count = count($headers);
   }else {
     preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
+    $header_count = count($headers[0]);
+    // 閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は目次から除外
+    for ($hi = $header_count - 1; $hi >= 0; $hi--) {
+      if (preg_match('/<[hH][1-6][\s>]/', $headers[2][$hi])) {
+        array_splice($headers[0], $hi, 1);
+        array_splice($headers[1], $hi, 1);
+        array_splice($headers[2], $hi, 1);
+      }
+    }
     $header_count = count($headers[0]);
   }
 
@@ -371,6 +385,8 @@ function add_toc_before_1st_h2($the_content){
   ///////////////////////////////////////
   // PHPの見出し処理（条件によっては失敗するかも）
   ///////////////////////////////////////
+  // 正規表現に先読みを含めると大規模な本文で PREG_JIT_STACKLIMIT_ERROR を起こすため、
+  // パターンは単純なままにし、飲み込みの除外は下のループ内の PHP 判定で行う。
   $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/is', $the_content, $m);
 
   $tag_all_index = 0;
@@ -390,6 +406,13 @@ function add_toc_before_1st_h2($the_content){
       $tag_end = $m[$tag_end_index][$i];
 
       $now_depth = intval(str_replace('h', '', $h));
+
+      //閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は id を付与しない
+      //※破損記事で目次装飾が次の見出しまで伸びる不具合を防ぐ
+      if (preg_match('/<[hH][1-6][\s>]/', $m[$h_content_index][$i])) {
+        $i++;
+        continue;
+      }
 
       //設定より見出しが深い場合はスキップ
       if ($set_depth < $now_depth) {
