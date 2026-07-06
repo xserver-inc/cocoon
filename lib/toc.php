@@ -120,7 +120,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
     $page_num = 1;
     $past_page_num = 1;
     foreach ($pages as $page_content) {
-      if (preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6]>/us', $page_content, $matches, PREG_SET_ORDER)) {
+      if (preg_match_all('/<([hH][1-6]).*?>(.*?)<\/([hH][1-6])>/us', $page_content, $matches, PREG_SET_ORDER)) {
         foreach ($matches as $m) {
           // 違うページになったらカウンターをリセットする
           if ($page_num !== $past_page_num) {
@@ -128,8 +128,8 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
             $toc_counter = 0;
           }
 
-          // 閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は目次に追加しない
-          if (preg_match('/<[hH][1-6][\s>]/', $m[2])) {
+          // 破損した見出し（本文飲み込み）は目次に追加しない。(1)内容に別の見出し開始タグ (2)開始/終了レベル不一致
+          if (preg_match('/<[hH][1-6][\s>]/', $m[2]) || strtolower($m[1]) !== strtolower($m[3])) {
             continue;
           }
 
@@ -152,14 +152,16 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
     }
     $header_count = count($headers);
   }else {
-    preg_match_all('/<([hH][1-6]).*?>(.*?)<\/[hH][1-6].*?>/us', $content, $headers);
+    // 終了タグのレベルもキャプチャ（第3グループ）し、開始との不一致を判定できるようにする
+    preg_match_all('/<([hH][1-6]).*?>(.*?)<\/([hH][1-6]).*?>/us', $content, $headers);
     $header_count = count($headers[0]);
-    // 閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は目次から除外
+    // 破損した見出し（本文飲み込み）は目次から除外。(1)内容に別の見出し開始タグ (2)開始/終了レベル不一致
     for ($hi = $header_count - 1; $hi >= 0; $hi--) {
-      if (preg_match('/<[hH][1-6][\s>]/', $headers[2][$hi])) {
+      if (preg_match('/<[hH][1-6][\s>]/', $headers[2][$hi]) || strtolower($headers[1][$hi]) !== strtolower($headers[3][$hi])) {
         array_splice($headers[0], $hi, 1);
         array_splice($headers[1], $hi, 1);
         array_splice($headers[2], $hi, 1);
+        array_splice($headers[3], $hi, 1);
       }
     }
     $header_count = count($headers[0]);
@@ -407,9 +409,11 @@ function add_toc_before_1st_h2($the_content){
 
       $now_depth = intval(str_replace('h', '', $h));
 
-      //閉じタグ欠落で本文を飲み込んだ見出し（内容に別の見出し開始タグを含む）は id を付与しない
-      //※破損記事で目次装飾が次の見出しまで伸びる不具合を防ぐ
-      if (preg_match('/<[hH][1-6][\s>]/', $m[$h_content_index][$i])) {
+      //破損した見出し（本文飲み込み）は id を付与しない。次のいずれかで検出:
+      // (1) 内容に別の見出し開始タグを含む（例: </h2>欠落で <h3> を巻き込む）
+      // (2) 開始と終了のレベルが不一致（例: <h2>…</h3>。開始タグも欠落した破損）
+      $close_h = strtolower(str_replace(array('</', '>'), '', $tag_end));
+      if (preg_match('/<[hH][1-6][\s>]/', $m[$h_content_index][$i]) || strtolower($h) !== $close_h) {
         $i++;
         continue;
       }
