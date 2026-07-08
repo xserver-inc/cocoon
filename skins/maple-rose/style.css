@@ -668,20 +668,16 @@ input[type="submit"] {
 	background-color: #ba91e2; /* 枠線色 */
 	color: #fff; /* 文字色 */
 }
-/* note,slack */
+/* slack */
 .bc-brand-color-white.sns-share .slack-button,
-.bc-brand-color-white.sns-follow .slack-button,
-.bc-brand-color-white.sns-share .note-button,
-.bc-brand-color-white.sns-follow .note-button {
+.bc-brand-color-white.sns-follow .slack-button {
 	border: 1px solid #96e4df; /* 枠線色 */
 	color: #62dad2; /* 文字色 */
 }
 .bc-brand-color-white.sns-share .slack-button:hover, .bc-brand-color-white.sns-follow .slack-button:hover,
 /* color */
-.bc-brand-color-white.sns-share .note-button:hover, .bc-brand-color-white.sns-follow .note-button:hover,
 .bc-brand-color.sns-share .slack-button, .bc-brand-color.sns-follow .slack-button,
 /* profile */
-.author-box .sns-follow-buttons a.follow-button.note-button,
 .author-box .sns-follow-buttons a.follow-button.slack-button {
 	background-color: #96e4df;
 	color: #fff;
