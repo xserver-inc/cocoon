@@ -198,7 +198,7 @@ strong {
     color: #8caed9;
     border-color: #8caed9;
 }
-.bc-brand-color-white.sns-share .github-button, .bc-brand-color-white.sns-follow .github-button {
+.bc-brand-color-white.sns-share .codepen-button, .bc-brand-color-white.sns-follow .codepen-button {
     color: #848484;
     border-color: #848484;
 }
@@ -251,6 +251,18 @@ strong {
 }
 .bc-brand-color.sns-share .reddit-button, .bc-brand-color.sns-follow .reddit-button {
     background-color: #f2856d;
+}
+.bc-brand-color.sns-share .tiktok-button, .bc-brand-color.sns-follow .tiktok-button {
+    background-color: #606060;
+}
+.bc-brand-color.sns-share .note-button, .bc-brand-color.sns-follow .note-button {
+    background-color: #606060;
+}
+.bc-brand-color.sns-share .flickr-button, .bc-brand-color.sns-follow .flickr-button {
+    background-color: #707070;
+}
+.bc-brand-color.sns-share .codepen-button, .bc-brand-color.sns-follow .codepen-button {
+    background-color: #848484;
 }
 .sns-follow-buttons a {
     border-radius: 7px;
