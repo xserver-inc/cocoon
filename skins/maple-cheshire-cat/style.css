@@ -520,7 +520,7 @@ table th {
 
 /* LINE */
 .bc-brand-color-white.sns-share .line-button, .bc-brand-color-white.sns-follow .line-button {
-	border: 1px solid var(--cocoon-note-color); /* 枠線色 */
+	border: 1px solid #03c8a8; /* 枠線色 */
 	color: #03c8a8; /* 文字色 */
 }
 .bc-brand-color-white.sns-share .line-button:hover, .bc-brand-color-white.sns-follow .line-button:hover,
@@ -528,7 +528,7 @@ table th {
 .bc-brand-color.sns-share .line-button, .bc-brand-color.sns-follow .line-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.line-button{
-	background-color: var(--cocoon-note-color);
+	background-color: #03c8a8;
 	color: #fff;
 }
 /* コピーボタン */
@@ -719,15 +719,15 @@ border: 1px solid #ffbf7f; /* 枠線色 */
 }
 /* note */
 .bc-brand-color-white.sns-share .note-button, .bc-brand-color-white.sns-follow .note-button {
-	border: 1px solid #8dded2; /* 枠線色 */
-	color: #8dded2; /* 文字色 */
+	border: 1px solid #666666; /* 枠線色 */
+	color: #666666; /* 文字色 */
 }
 .bc-brand-color-white.sns-share .note-button:hover, .bc-brand-color-white.sns-follow .note-button:hover,
 /* color */
 .bc-brand-color.sns-share .note-button, .bc-brand-color.sns-follow .note-button,
 /* profile */
 .author-box .sns-follow-buttons a.follow-button.note-button {
-	background-color: #8dded2;
+	background-color: #666666;
 }
 /* soundcloud */
 .bc-brand-color-white.sns-share .soundcloud-button, .bc-brand-color-white.sns-follow .soundcloud-button {
