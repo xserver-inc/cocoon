@@ -962,4 +962,69 @@ class UtilsTest extends TestCase
         $this->assertSame(456, cocoon_url_to_postid($url));
     }
 
+    // ========================================================================
+    // get_update_time()
+    // ========================================================================
+
+    /**
+     * get_update_time() は get_post_timestamp($post_id, 'date'|'modified') で
+     * 投稿日時・更新日時を Unix タイムスタンプとして取得する。
+     * 不正な日付では get_post_timestamp が false を返す状況を模擬できるよう、
+     * 引数 $field に応じて投稿日時・更新日時を返すスタブを差し込む。
+     */
+    private function stubPostTimestamps($ptime, $mtime): void
+    {
+        \Brain\Monkey\Functions\when('get_post_timestamp')->alias(
+            fn($post_id, $field = 'date') => $field === 'modified' ? $mtime : $ptime
+        );
+    }
+
+    public function test_get_update_time_更新日が投稿日より新しい日付なら更新日を返す(): void
+    {
+        $this->stubPostTimestamps(
+            strtotime('2025-01-01 00:00:00'),
+            strtotime('2025-02-01 00:00:00')
+        );
+
+        $this->assertSame('2025/02/01', get_update_time('Y/m/d'));
+    }
+
+    public function test_get_update_time_更新日と投稿日が同日ならnullを返す(): void
+    {
+        // 時刻は更新日が後だが年月日が同じ場合は更新日なしとする
+        $this->stubPostTimestamps(
+            strtotime('2025-01-01 10:00:00'),
+            strtotime('2025-01-01 15:00:00')
+        );
+
+        $this->assertNull(get_update_time('Y/m/d'));
+    }
+
+    public function test_get_update_time_更新日が投稿日より過去ならnullを返す(): void
+    {
+        // 日付逆転（予約投稿など）は更新日なしとする
+        $this->stubPostTimestamps(
+            strtotime('2025-02-01 00:00:00'),
+            strtotime('2025-01-01 00:00:00')
+        );
+
+        $this->assertNull(get_update_time('Y/m/d'));
+    }
+
+    public function test_get_update_time_更新日時が不正_空ならnullを返す(): void
+    {
+        // 不正な更新日では get_post_timestamp が false を返す（0000-00-00 相当）
+        $this->stubPostTimestamps(strtotime('2025-01-01 00:00:00'), false);
+
+        $this->assertNull(get_update_time('Y/m/d'));
+    }
+
+    public function test_get_update_time_投稿日時が不正_空ならnullを返す(): void
+    {
+        // 投稿日時が取得できない場合も更新日なしとする
+        $this->stubPostTimestamps(false, strtotime('2025-02-01 00:00:00'));
+
+        $this->assertNull(get_update_time('Y/m/d'));
+    }
+
 }
