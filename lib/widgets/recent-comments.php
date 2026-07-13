@@ -60,36 +60,18 @@ class RecentCommentsWidgetItem extends WP_Widget {
             $format = get_site_date_format();
             $format = apply_filters('recent_comments_widget_date_format', $format);
 
-            $html = '<div class="recent-comments">';
+            echo '<div class="recent-comments">';
 
             foreach ( $comments as $comment ) {
-              //var_dump($comment);
-              $url = get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID;
-              $title = $comment->post_title;
-              $avatar = get_avatar( $comment, '42', null );
-              $author = get_comment_author($comment->comment_ID);
-              $date = get_comment_date($format, $comment->comment_ID);
-              $comment_content = $comment_content ?? '';
-              $comment_content = strip_tags($comment->comment_content);
-              $comment_content = str_replace(array("\r\n", "\r", "\n"), '', $comment_content);
-              if(mb_strlen($comment_content,"UTF-8") > $str_count) {
-                $comment_content = mb_substr($comment_content, 0, $str_count).'...';
-              }
-              $html .= '
-                <a class="recent-comment-link a-wrap cf" href="' . $url . '" title="' . esc_attr($title) . '">
-                  <div class="recent-comment cf">
-                    <div class="recent-comment-info cf">
-                      <figure class="recent-comment-avatar">' . $avatar . '</figure>
-                      <div class="recent-comment-author">' . $author . '</div>
-                      <div class="recent-comment-date">' . $date . '</div>
-                    </div>
-                    <div class="recent-comment-content">' . $comment_content . '</div>
-                    <div class="recent-comment-article"><span class="fa fa-link" aria-hidden="true"></span>' . $title . '</div>
-                  </div>
-                </a>';
+              //コメント1件分の出力をテンプレートに切り出し（子テーマで上書き可能）
+              cocoon_template_part('tmp/widget-recent-comments', null, array(
+                'comment'   => $comment,
+                'format'    => $format,
+                'str_count' => $str_count,
+              ));
             }
-            $html .= '</div>';
-            echo $html;
+
+            echo '</div>';
           } else { ?>
             <p><?php _e( 'コメントなし', THEME_NAME ) ?></p>
           <?php
