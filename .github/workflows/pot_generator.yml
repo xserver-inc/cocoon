@@ -1,6 +1,24 @@
 name: Generate POT file
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    # wp i18n make-pot の --include 対象と揃える（languages/ を含めないことで自己再トリガーも防止）
+    paths:
+      - 'blocks/src/**'
+      - 'lib/**'
+      - 'tmp/**'
+      - 'skins/**'
+      - 'templates/**'
+      - '*.php'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pot-generator
+  cancel-in-progress: false
 
 jobs:
   WP_POT_Generator:
@@ -29,6 +47,7 @@ jobs:
         DIFF_COUNT=$(git diff --cached --numstat | wc -l)
         if [ $DIFF_COUNT -ne 0 ]; then
           git commit -m "POT Regenerated"
+          git pull --rebase
           git push
         fi
       env:
