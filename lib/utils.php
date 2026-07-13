@@ -1061,15 +1061,18 @@ function get_update_time($format = null, $post_id = null) {
   if (empty($format)) {
     $format = get_site_date_format();
   }
-  $mtime = get_the_modified_time('Ymd', $post_id);
-  $ptime = get_the_time('Ymd', $post_id);
-  if ($ptime > $mtime) {
-    return get_the_time($format, $post_id);
-  } elseif ($ptime === $mtime) {
+  //タイムスタンプ（Unix時間）で取得して型を揃える（不正な更新日ではfalseが返る）
+  $ptime = get_post_timestamp($post_id, 'date');
+  $mtime = get_post_timestamp($post_id, 'modified');
+  //取得できない（不正値含む）、または投稿日が更新日以降（日付逆転・予約投稿）は更新日なしとする
+  if (!$ptime || !$mtime || $ptime >= $mtime) {
     return null;
-  } else {
-    return get_the_modified_time($format, $post_id);
   }
+  //年月日単位で同じ日付の場合も更新日なしとする
+  if (wp_date('Ymd', $ptime) === wp_date('Ymd', $mtime)) {
+    return null;
+  }
+  return wp_date($format, $mtime);
 }
 endif;
 

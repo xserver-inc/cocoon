@@ -132,9 +132,14 @@ function update_custom_insert_post_data( $data, $postarr ){
     unset( $data['post_modified_gmt'] );
 
     $last_modified = get_post_meta( $postarr['ID'], 'last_modified', true );
-    if ( isset($last_modified) ) {
+    //保存済みの更新日があればそれを維持する。なければ投稿日に揃える
+    //（空値を代入するとpost_modifiedが0000-00-00の不正値になり、また後続のadd_post_metaで未定義参照となるため）
+    if ( !empty($last_modified) ) {
       $data['post_modified'] = $last_modified;
       $data['post_modified_gmt'] = get_gmt_from_date( $last_modified );
+    } else {
+      $data['post_modified'] = $data['post_date'];
+      $data['post_modified_gmt'] = get_gmt_from_date( $data['post_date'] );
     }
   }
   elseif( $mydata === 'edit' ) {
