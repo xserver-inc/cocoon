@@ -18,9 +18,12 @@ $url = get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID
 $title = $comment->post_title;
 $avatar = get_avatar( $comment, '42', null );
 $author = get_comment_author($comment->comment_ID);
+//保存時にksesで正規化されたエンティティ（&amp;等）を一度実体に戻し、esc_htmlの二重エスケープを防ぐ
+$author = wp_specialchars_decode($author, ENT_QUOTES);
 $date = get_comment_date($format, $comment->comment_ID);
 
 $comment_content = strip_tags($comment->comment_content);
+$comment_content = wp_specialchars_decode($comment_content, ENT_QUOTES);
 $comment_content = str_replace(array("\r\n", "\r", "\n"), '', $comment_content);
 //指定文字数を超えるコメントは省略する
 if (mb_strlen($comment_content, "UTF-8") > $str_count) {
