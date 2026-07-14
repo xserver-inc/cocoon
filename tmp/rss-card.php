@@ -20,7 +20,7 @@ $text         = $args['text'] ?? '';
 $date_str     = $args['date_str'] ?? '';
 $cache_minute = $args['cache_minute'] ?? '60';
 ?>
-<a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>" class="rss-entry-card-link widget-entry-card-link a-wrap" target="<?php echo esc_attr($target); ?>"<?php echo get_rel_by_target($target); ?>>
+<a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr(wp_strip_all_tags($title)); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>" class="rss-entry-card-link widget-entry-card-link a-wrap" target="<?php echo esc_attr($target); ?>"<?php echo get_rel_by_target($target); ?>>
   <div class="rss-entry-card widget-entry-card e-card cf">
     <figure class="rss-entry-card-thumb widget-entry-card-thumb card-thumb">
       <img src="<?php echo esc_url($img); ?>" class="rss-entry-card-thumb-image widget-entry-card-thumb-image card-thumb-image" alt="">

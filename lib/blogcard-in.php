@@ -194,7 +194,7 @@ function url_to_internal_blogcard_tag($url){
   //取得した情報からブログカードのHTMLタグを作成
   //_v($url);
   $tag =
-  '<a href="'.$url.'" title="'.esc_attr($title).'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'.
+  '<a href="'.$url.'" title="'.esc_attr(wp_strip_all_tags($title)).'" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"'.$target.'>'. //HTMLタグを除去してツールチップにコードが表示されないようにする
     '<div class="blogcard internal-blogcard'.$additional_class.' cf">'.
       '<div class="blogcard-label internal-blogcard-label">'.
         '<span class="fa"></span>'.

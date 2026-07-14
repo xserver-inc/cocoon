@@ -21,7 +21,7 @@ $thumbnail    = $args['thumbnail'];
 $post_id      = $args['post_id'];
 $comment      = $args['comment'];
 ?>
-<a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(escape_shortcodes($title)); ?>"<?php echo $target_attr; ?>>
+<a href="<?php echo esc_url($url); ?>" class="<?php echo $prefix; ?>-entry-card-link widget-entry-card-link a-wrap<?php echo $class_text; ?><?php echo $swiper_slide; ?>" title="<?php echo esc_attr(wp_strip_all_tags($title ?? '')); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>"<?php echo $target_attr; ?>>
   <div <?php echo $div_class; ?>>
     <?php echo $ribbon_tag; ?>
     <figure class="<?php echo $prefix; ?>-entry-card-thumb widget-entry-card-thumb card-thumb">

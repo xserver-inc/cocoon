@@ -13,7 +13,7 @@ $prevpost = get_adjacent_post(is_post_navi_same_category_enable(), '', true); //
 <?php if (is_single() && $prevpost): ?>
 <!-- 前へボタン -->
 <li class="prev-menu-button menu-button">
-  <a href="<?php echo esc_url(get_the_permalink($prevpost->ID)); ?>" title="<?php echo esc_attr(get_the_title($prevpost->ID)); ?>" class="menu-button-in">
+  <a href="<?php echo esc_url(get_the_permalink($prevpost->ID)); ?>" title="<?php echo esc_attr(wp_strip_all_tags(get_the_title($prevpost->ID))); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>" class="menu-button-in">
     <span class="prev-menu-icon menu-icon">
       <span class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></span>
     </span>

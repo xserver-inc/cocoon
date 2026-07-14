@@ -19,7 +19,7 @@ if (is_entry_card_type_big_card_first() && is_front_top_page() && $count === 1) 
 }
 ?>
 
-<a href="<?php echo esc_url(get_the_permalink()); ?>" class="entry-card-wrap a-wrap border-element<?php echo $classes; ?> cf" title="<?php echo esc_attr(get_the_title()); ?>">
+<a href="<?php echo esc_url(get_the_permalink()); ?>" class="entry-card-wrap a-wrap border-element<?php echo $classes; ?> cf" title="<?php echo esc_attr(wp_strip_all_tags(get_the_title())); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>">
   <article<?php echo $article_id_attr; ?> <?php post_class( array('post-'.get_the_ID(), 'entry-card','e-card', 'cf') ); ?>>
     <figure class="entry-card-thumb card-thumb e-card-thumb">
       <?php

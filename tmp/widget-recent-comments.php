@@ -27,7 +27,7 @@ if (mb_strlen($comment_content, "UTF-8") > $str_count) {
   $comment_content = mb_substr($comment_content, 0, $str_count).'...';
 }
 ?>
-<a class="recent-comment-link a-wrap cf" href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
+<a class="recent-comment-link a-wrap cf" href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr(wp_strip_all_tags($title)); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>">
   <div class="recent-comment cf">
     <div class="recent-comment-info cf">
       <figure class="recent-comment-avatar"><?php echo $avatar; ?></figure>

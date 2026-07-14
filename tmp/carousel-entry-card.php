@@ -7,7 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<a href="<?php the_permalink(); ?>" class="carousel-entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
+<a href="<?php the_permalink(); ?>" class="carousel-entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(wp_strip_all_tags(get_the_title())); //HTMLタグを除去してツールチップにコードが表示されないようにする ?>">
 <article <?php post_class( array('post-'.get_the_ID(), 'carousel-entry-card', 'e-card', 'cf') ); ?>>
 
   <figure class="carousel-entry-card-thumb card-thumb">
