@@ -1,1 +1,97 @@
-docker-compose.wp6.8-php8.3.yml
+# Cocoon 開発用 Docker 環境（単一パラメータ化 Compose）
+#
+# 起動する WordPress / PHP の組み合わせは env/ 配下の env ファイルで切り替える。
+#   既定（WordPress 6.8 / PHP 8.3、安定版）:
+#     docker compose up -d
+#   別の組み合わせ:
+#     docker compose --env-file env/wp7.0-php8.4.env up -d
+#
+# 変数の既定値は下記 ${VAR:-default} で安定版に固定してあるため、env ファイル無しでも起動できる。
+# 複数の組み合わせを同時起動する場合は env ファイルごとに COMPOSE_PROJECT_NAME が異なるため
+# コンテナ・ネットワーク・ボリュームが自動的に分離される。
+
+services:
+  # uploads ディレクトリの権限を www-data に整える初期化コンテナ
+  init-permissions:
+    image: ${WP_IMAGE:-wordpress:6.8-php8.3-apache}
+    user: "root"
+    command: >
+      sh -c "mkdir -p /var/www/html/wp-content/uploads/cocoon-resources/css-cache &&
+             chown -R www-data:www-data /var/www/html/wp-content/uploads &&
+             chmod -R 755 /var/www/html/wp-content/uploads"
+    volumes:
+      - uploads:/var/www/html/wp-content/uploads
+
+  wordpress:
+    image: ${WP_IMAGE:-wordpress:6.8-php8.3-apache}
+    restart: unless-stopped
+    user: "33:33" # www-data
+    ports:
+      - "${WEB_PORT:-8085}:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME:-wordpress}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wordpress}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX:-wp_}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-1}
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
+    volumes:
+      # テーマ本体を wp-content/themes/cocoon にマウント
+      - ..:/var/www/html/wp-content/themes/cocoon
+      - wordpress_data:/var/www/html
+      - uploads:/var/www/html/wp-content/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+      init-permissions:
+        condition: service_completed_successfully
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME:-wordpress}
+      MYSQL_USER: ${WORDPRESS_DB_USER:-wordpress}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wordpress}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # 本番用 DB に加えて統合テスト用 DB (wordpress_test) を初期化時に作成する
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - "${DB_PORT:-3085}:3306"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "--password=${MYSQL_ROOT_PASSWORD:-rootpassword}",
+        ]
+      timeout: 20s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: unless-stopped
+    ports:
+      - "${PMA_PORT:-8185}:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: ${WORDPRESS_DB_USER:-wordpress}
+      PMA_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wordpress}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+    depends_on:
+      - mysql
+
+volumes:
+  wordpress_data:
+  mysql_data:
+  uploads:
