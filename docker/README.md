@@ -103,14 +103,27 @@ docker/
 | `WORDPRESS_TABLE_PREFIX` | `wp_`                         | テーブル接頭辞                          |
 | `MYSQL_ROOT_PASSWORD`    | `rootpassword`                | MySQL root パスワード                   |
 | `WORDPRESS_DEBUG`        | `1`                           | WordPress デバッグモード                |
+| `WORDPRESS_SITE_TITLE`   | `Cocoon Dev`                  | 自動セットアップ時のサイト名            |
+| `WORDPRESS_ADMIN_USER`   | `admin`                       | 管理者ユーザー名                        |
+| `WORDPRESS_ADMIN_PASSWORD` | `admin123`                  | 管理者パスワード                        |
+| `WORDPRESS_ADMIN_EMAIL`  | `admin@example.com`           | 管理者メールアドレス                    |
+| `WORDPRESS_CHILD_THEME_NAME` | `Cocoon Child`            | 生成する子テーマの表示名                |
 
-## テーマの有効化
+## 自動初期セットアップ
 
-1. WordPress 管理画面（各 URL）にアクセスし、初期設定を行う。
-2. 「外観」→「テーマ」で「Cocoon」を有効化する。
+`up` すると `wp-cli` サービスが初回起動時に一度だけ実行され、以下を自動で行う。手動での
+WordPress インストールやテーマ有効化は不要である。
 
-テーマはリポジトリのルートを `wp-content/themes/cocoon` にマウントしているため、ローカルの
-編集がそのまま反映される。
+1. `wp core install` による WordPress のインストール（サイト名・管理者は上記の環境変数から）
+2. Cocoon 公式が推奨する親子構成に合わせ、子テーマ `cocoon-child`
+   （親 = このリポジトリの `cocoon`）を `wp scaffold child-theme` で生成
+3. 子テーマ `cocoon-child` を有効化
+
+インストール済みの場合は再実行してもスキップされる（冪等）。既定の管理者は
+`admin` / `admin123`（`/wp-admin` からログイン）。
+
+親テーマ（このリポジトリ）はルートを `wp-content/themes/cocoon` にマウントしているため、
+ローカルの編集がそのまま反映される。子テーマは WordPress データボリューム側に生成される。
 
 ## 統合テスト用データベース
 

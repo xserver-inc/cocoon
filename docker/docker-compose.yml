@@ -10,6 +10,15 @@
 # 複数の組み合わせを同時起動する場合は env ファイルごとに COMPOSE_PROJECT_NAME が異なるため
 # コンテナ・ネットワーク・ボリュームが自動的に分離される。
 
+# wordpress 公式イメージの wp-config.php は DB 設定を実行時に環境変数から読む
+# （getenv_docker）。その wp-config を共有する wp-cli にも同じ変数が必要なため共通化する。
+x-wp-db-env: &wp-db-env
+  WORDPRESS_DB_HOST: mysql:3306
+  WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME:-wordpress}
+  WORDPRESS_DB_USER: ${WORDPRESS_DB_USER:-wordpress}
+  WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wordpress}
+  WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX:-wp_}
+
 services:
   # uploads ディレクトリの権限を www-data に整える初期化コンテナ
   init-permissions:
@@ -29,11 +38,7 @@ services:
     ports:
       - "${WEB_PORT:-8085}:80"
     environment:
-      WORDPRESS_DB_HOST: mysql:3306
-      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME:-wordpress}
-      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER:-wordpress}
-      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-wordpress}
-      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX:-wp_}
+      <<: *wp-db-env
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-1}
       APACHE_RUN_USER: www-data
       APACHE_RUN_GROUP: www-data
@@ -47,6 +52,12 @@ services:
         condition: service_healthy
       init-permissions:
         condition: service_completed_successfully
+    healthcheck:
+      # wp-config.php が生成され wp-cli が接続できる状態になるまで待つ
+      test: ["CMD-SHELL", "test -f /var/www/html/wp-config.php"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
 
   mysql:
     image: mysql:8.0
@@ -90,6 +101,43 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
     depends_on:
       - mysql
+
+  # WordPress を自動インストールし、Cocoon テーマを有効化するワンショットコンテナ。
+  # 実行後に終了する。インストール済みなら再実行してもスキップされる（冪等）。
+  wp-cli:
+    image: wordpress:cli
+    user: "33:33" # www-data（apache コンテナと UID を揃える）
+    restart: "no"
+    environment:
+      # wp-config.php が参照する DB 接続情報（wordpress サービスと共通）
+      <<: *wp-db-env
+      # uid 33 では既定の HOME/キャッシュが書けないため tmp に逃がす
+      HOME: /tmp
+      WP_CLI_CACHE_DIR: /tmp/wp-cli-cache
+    volumes:
+      - wordpress_data:/var/www/html
+      - ..:/var/www/html/wp-content/themes/cocoon
+      - uploads:/var/www/html/wp-content/uploads
+    depends_on:
+      wordpress:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    entrypoint: /bin/sh
+    command:
+      - -c
+      - >
+        wp core is-installed 2>/dev/null ||
+        wp core install
+        --url="http://localhost:${WEB_PORT:-8085}"
+        --title="${WORDPRESS_SITE_TITLE:-Cocoon Dev}"
+        --admin_user="${WORDPRESS_ADMIN_USER:-admin}"
+        --admin_password="${WORDPRESS_ADMIN_PASSWORD:-admin123}"
+        --admin_email="${WORDPRESS_ADMIN_EMAIL:-admin@example.com}"
+        --skip-email;
+        wp theme is-installed cocoon-child ||
+        wp scaffold child-theme cocoon-child --parent_theme=cocoon --theme_name="${WORDPRESS_CHILD_THEME_NAME:-Cocoon Child}";
+        wp theme activate cocoon-child
 
 volumes:
   wordpress_data:
