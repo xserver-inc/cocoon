@@ -16,7 +16,7 @@
     "start": "wp-scripts start"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.2",
+    "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.23.2",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -37,5 +37,10 @@
   "dependencies": {
     "caniuse-lite": "^1.0.30001662",
     "chart.js": "^4.4.4"
+  },
+  "overrides": {
+    "@babel/core": "$@babel/core",
+    "serialize-javascript": "^7.0.7",
+    "minimatch@<4": "^3.1.5"
   }
 }
