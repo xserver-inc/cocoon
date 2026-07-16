@@ -450,7 +450,8 @@ function move_ranking_item($id, $from, $to){
   $record = get_item_ranking($id);
   if ($record) {
     $items = isset($record->item_ranking) ? $record->item_ranking : array();
-    if (!empty($items)) {
+    //移動元・移動先のアイテムが存在しない場合は何もしない（URL改ざん対策）
+    if (!empty($items) && isset($items[$from]) && isset($items[$to])) {
       //相手の入れ替え
       $tmp_item = $items[$to];
       $items[$to] = $items[$from];
