@@ -49,6 +49,14 @@ docker compose --env-file env/wp7.0-php8.4.env up -d
 各 env ファイルは `COMPOSE_PROJECT_NAME` が異なるため、コンテナ・ネットワーク・ボリュームは
 組み合わせごとに自動的に分離される。
 
+> **注意**: `--env-file` を指定すると `.env` は読み込まれない（置き換えられる）。
+> `.env` で変更した資格情報などを `env/` の組み合わせにも適用したい場合は、
+> `--env-file` を複数指定する（Compose v2.17 以上。後に指定した方が優先）。
+>
+> ```bash
+> docker compose --env-file .env --env-file env/wp7.0-php8.4.env up -d
+> ```
+
 ### 停止・削除
 
 ```bash
@@ -131,3 +139,21 @@ MySQL コンテナは初回起動時に `mysql/init/` の SQL を実行し、本
 統合テスト用の `wordpress_test` データベースを作成する。WordPress テストスイートは指定した
 DB の全テーブルを破棄するため、開発用 DB と分離している。テストの実行方法はリポジトリの
 テスト関連ドキュメントを参照すること。
+
+## 旧構成（環境別 Compose ファイル）からの移行
+
+以前の `docker-compose.wp*.yml` 構成とはプロジェクト名・ボリューム名・DB 名
+（旧: `wordpress_68_php83` など → 新: `wordpress`）が異なるため、旧環境のデータは
+引き継がれず、初回起動時に新しい環境が作成される。
+
+旧環境のコンテナ・ボリュームが不要な場合は、以下で削除できる。
+
+```bash
+# 旧環境のコンテナを確認して削除（コンテナ名: cocoon-wordpress-* / cocoon-mysql-* / cocoon-phpmyadmin-*）
+docker ps -a --filter "name=cocoon-"
+docker rm -f <コンテナ名>
+
+# 未使用になった旧ボリューム・ネットワークを削除
+docker volume prune
+docker network prune
+```

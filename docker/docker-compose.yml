@@ -137,6 +137,7 @@ services:
         --skip-email;
         wp theme is-installed cocoon-child ||
         wp scaffold child-theme cocoon-child --parent_theme=cocoon --theme_name="${WORDPRESS_CHILD_THEME_NAME:-Cocoon Child}";
+        wp theme is-active cocoon-child ||
         wp theme activate cocoon-child
 
 volumes:
