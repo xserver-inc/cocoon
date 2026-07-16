@@ -201,21 +201,39 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
         </div>
 
         <div class="opration-menu-links">
-          <?php //アイテム移動リンクなど
-          //先頭と最後にはアイテム移動リンクを表示しないための判別
-          $is_move_link_visible = ($i != 1) && ($i != $count);
-          if ($is_move_link_visible):
-            // nonce付きURL生成（移動用）
-            $move_url = wp_nonce_url(add_query_arg(
-              array(
-                'action' => 'move',
-                'id' => $id,
-                'from' => $i,
-                'to' => $i - 1,
-              )
-            ), 'ranking_item_action');
-           ?>
-            <a href="<?php echo esc_url($move_url); ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+          <?php //アイテム移動リンク
+          //最後尾（$i == $count）のような未入力枠には移動リンクを表示しない
+          if ($i < $count): ?>
+
+            <?php //「上に移動」リンク：1番目以外に表示
+            if ($i > 1):
+              // nonce付きURL生成（上移動用）
+              $move_up_url = wp_nonce_url(add_query_arg(
+                array(
+                  'action' => 'move',
+                  'id' => $id,
+                  'from' => $i,
+                  'to' => $i - 1,
+                )
+              ), 'ranking_item_action');
+             ?>
+              <a href="<?php echo esc_url($move_up_url); ?>"><?php _e( 'アイテムを上に移動', THEME_NAME ) ?></a>
+            <?php endif ?>
+
+            <?php //「下に移動」リンク：最後尾のアイテム（$count - 1）以外に表示
+            if ($i < ($count - 1)):
+              // nonce付きURL生成（下移動用）
+              $move_down_url = wp_nonce_url(add_query_arg(
+                array(
+                  'action' => 'move',
+                  'id' => $id,
+                  'from' => $i,
+                  'to' => $i + 1,
+                )
+              ), 'ranking_item_action');
+             ?>
+              <a href="<?php echo esc_url($move_down_url); ?>"><?php _e( 'アイテムを下に移動', THEME_NAME ) ?></a>
+            <?php endif ?>
           <?php endif ?>
           <?php //削除リンク
           //最後は削除しないための判別

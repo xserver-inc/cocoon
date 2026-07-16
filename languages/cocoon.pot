@@ -3637,8 +3637,12 @@ msgstr ""
 msgid "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショートコードも入力できます。"
 msgstr ""
 
-#: lib/page-item-ranking/form.php:218
+#: lib/page-item-ranking/form.php:220
 msgid "アイテムを上に移動"
+msgstr ""
+
+#: lib/page-item-ranking/form.php:235
+msgid "アイテムを下に移動"
 msgstr ""
 
 #: lib/page-item-ranking/item-ranking-func.php:361
