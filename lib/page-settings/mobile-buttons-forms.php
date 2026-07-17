@@ -40,7 +40,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <td>
                 <?php
                 $options = array(
-                  'none' => __( 'ボタンを表示しない（ミドルメニューのみ）', THEME_NAME ),
+                  'none' => __( 'ボタンを表示しない', THEME_NAME ),
                   'top' => __( 'トップメニュー', THEME_NAME ),
                   'header_mobile_buttons' => __( 'ヘッダーモバイルボタン', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-header-buttons/'),
                   'footer_mobile_buttons' => __( 'フッターモバイルボタン', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/mobile-footer-menu/'),

@@ -8358,8 +8358,8 @@ msgid "モバイルメニュー"
 msgstr "Menú móvil"
 
 #: lib/page-settings/mobile-buttons-forms.php:43
-msgid "ボタンを表示しない（ミドルメニューのみ）"
-msgstr "Ocultar botón (solo menú medio)"
+msgid "ボタンを表示しない"
+msgstr "Ocultar botón"
 
 #: lib/page-settings/mobile-buttons-forms.php:45
 #: lib/settings.php:406
