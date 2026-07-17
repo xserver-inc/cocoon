@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-13T01:53:40+00:00\n"
-"PO-Revision-Date: 2026-07-13 03:08\n"
+"POT-Creation-Date: 2026-07-16T20:53:05+00:00\n"
+"PO-Revision-Date: 2026-07-16 21:08\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: wp-cocoon\n"
@@ -3095,7 +3095,7 @@ msgstr "제거하지 않고 목록으로 돌아가기"
 #: lib/widgets/mobile-text.php:73
 #: lib/widgets/navi-entries.php:101
 #: lib/widgets/pc-text.php:72
-#: lib/widgets/recent-comments.php:131
+#: lib/widgets/recent-comments.php:113
 #: lib/widgets/recommended-cards.php:87
 #: lib/widgets/sns-follow-buttons.php:56
 #: lib/widgets/toc.php:83
@@ -3212,7 +3212,7 @@ msgstr "수정"
 
 #: lib/page-affiliate-tag/list.php:88
 #: lib/page-func-text/list.php:88
-#: lib/page-item-ranking/form.php:233
+#: lib/page-item-ranking/form.php:251
 #: lib/page-item-ranking/list.php:102
 #: lib/page-speech-balloon/list.php:108
 #: blocks/src/block/cta/edit.js:143
@@ -3644,9 +3644,13 @@ msgstr "공식 페이지 등에 대한 링크(제휴) 태그를 입력합니다.
 msgid "アフィリエイトタグを直接入力する場合。タグ変更が無効なASP用設定です。ショートコードも入力できます。"
 msgstr "태그 변경은 ASP 설정에 유효하지 않기 때문에 제휴 태그를 직접 입력할 때 사용됩니다. 숏코드도 유효합니다."
 
-#: lib/page-item-ranking/form.php:218
+#: lib/page-item-ranking/form.php:220
 msgid "アイテムを上に移動"
 msgstr "항목을 위로 이동"
+
+#: lib/page-item-ranking/form.php:235
+msgid "アイテムを下に移動"
+msgstr ""
 
 #: lib/page-item-ranking/item-ranking-func.php:361
 #: lib/shortcodes-amazon.php:428
@@ -11950,54 +11954,54 @@ msgstr "공개"
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2520
+#: lib/utils.php:2523
 msgid "Cocoon："
 msgstr ""
 
-#: lib/utils.php:2521
+#: lib/utils.php:2524
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr "홈페이지 표시가 정적 페이지로 설정되어 있지만 표시할 페이지가 선택되지 않았습니다. 이 상태에서는 설정이 올바르게 반영되지 않을 수 있습니다."
 
-#: lib/utils.php:2523
+#: lib/utils.php:2526
 msgid "表示設定を開く"
 msgstr "읽기 설정 열기"
 
-#: lib/utils.php:2647
+#: lib/utils.php:2650
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s min"
 
-#: lib/utils.php:2655
+#: lib/utils.php:2658
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s hour"
 
-#: lib/utils.php:2663
+#: lib/utils.php:2666
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s day"
 
-#: lib/utils.php:2671
+#: lib/utils.php:2674
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s週間"
 
-#: lib/utils.php:2679
+#: lib/utils.php:2682
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s개월"
 
-#: lib/utils.php:2690
+#: lib/utils.php:2693
 #, php-format
 msgid "%s年"
 msgstr "%s년"
 
-#: lib/utils.php:2692
+#: lib/utils.php:2695
 #, php-format
 msgid "%s年%sヶ月"
 msgstr "%s년 %s월"
@@ -12740,8 +12744,8 @@ msgid "PV数を表示する"
 msgstr "PV 수 표시"
 
 #: lib/widgets/recent-comments.php:19
-#: lib/widgets/recent-comments.php:117
-#: lib/widgets/recent-comments.php:123
+#: lib/widgets/recent-comments.php:99
+#: lib/widgets/recent-comments.php:105
 msgid "最近のコメント"
 msgstr "최근 댓글"
 
@@ -12749,23 +12753,23 @@ msgstr "최근 댓글"
 msgid "最近投稿されたコメントを表示するウィジェットです。"
 msgstr "최근 작성된 댓글을 보여주는 위젯입니다."
 
-#: lib/widgets/recent-comments.php:94
+#: lib/widgets/recent-comments.php:76
 msgid "コメントなし"
 msgstr "댓글 없음"
 
-#: lib/widgets/recent-comments.php:138
+#: lib/widgets/recent-comments.php:120
 msgid "表示するコメント数"
 msgstr "표시할 댓글 수"
 
-#: lib/widgets/recent-comments.php:145
+#: lib/widgets/recent-comments.php:127
 msgid "コメント文字数"
 msgstr "댓글 글자 수"
 
-#: lib/widgets/recent-comments.php:152
+#: lib/widgets/recent-comments.php:134
 msgid "管理者の除外"
 msgstr "관리자 제외"
 
-#: lib/widgets/recent-comments.php:154
+#: lib/widgets/recent-comments.php:136
 msgid "管理者のコメントを表示しない"
 msgstr "관리자의 댓글은 표시하지 않기"
 
