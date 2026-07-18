@@ -491,8 +491,10 @@
 
 @media screen and (max-width: 782px) {
   /* 固定レイアウト（table-layout: fixed）による狭い画面でのタイトル列縦書き崩れを防ぐため内容に応じた列幅へ切り替え */
+  /* min-widthを指定し、コンテナ幅に収まりきらない分は横スクロールさせて列の過度な圧縮を防ぐ */
   .cocoon-analytics-table-scroll .cocoon-analytics-table {
     table-layout: auto;
+    min-width: 600px;
   }
 }
 
@@ -764,14 +766,15 @@
  * ライフサイクルタブ: 左右2カラムレイアウト＆検索・無限スクロール用の追加スタイル
  * ================================================================== */
 
-/* 期間選択トグルボタンのコンテナ（横並びにする） */
+/* 期間選択トグルボタンのコンテナ（横並びにする、幅が足りない場合は折り返す） */
 .lifecycle-period-selector {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 16px;
 }
 
-/* 期間選択ボタンの基本スタイル */
+/* 期間選択ボタンの基本スタイル。狭い画面でも文字が縦書きにならないよう幅を維持する */
 .lifecycle-period-btn {
   background: #f0f0f1;
   border: 1px solid #8c8f94;
@@ -783,6 +786,8 @@
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   user-select: none;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .lifecycle-period-btn:hover {
@@ -798,10 +803,11 @@
   color: #fff;
 }
 
-/* カスタム期間の入力フォームコンテナ（ボタンの隣に横並びにする） */
+/* カスタム期間の入力フォームコンテナ（ボタンの隣に横並びにする、狭い画面では折り返して次行へ） */
 .lifecycle-custom-range {
   display: none;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   margin-left: 10px;
 }

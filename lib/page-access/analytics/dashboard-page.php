@@ -392,6 +392,10 @@ switch ($view) {
     <form method="get" class="cocoon-analytics-filter-bar">
       <input type="hidden" name="page" value="theme-access">
       <input type="hidden" name="view" value="terms">
+      <?php /* タクソノミー切替時に選択中の期間が既定値へ戻ってしまわないよう、期間パラメータを維持します */ ?>
+      <input type="hidden" name="period" value="<?php echo esc_attr($preset); ?>">
+      <input type="hidden" name="from" value="<?php echo esc_attr($from); ?>">
+      <input type="hidden" name="to" value="<?php echo esc_attr($to); ?>">
       <label><?php _e('タクソノミー:', THEME_NAME); ?>
         <select name="tax">
           <?php foreach ($available_tax as $t): ?>
@@ -444,7 +448,7 @@ switch ($view) {
       // 狭い画面でのテーブル崩れ防止用の横スクロール領域
       echo '<div class="cocoon-analytics-table-scroll">';
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
-      echo '<thead><tr><th style="width:50px;">#</th><th>' . esc_html__('著者', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('記事数', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('総PV', THEME_NAME) . '</th><th style="width:120px;">' . esc_html__('平均PV/記事', THEME_NAME) . '</th></tr></thead><tbody>';
+      echo '<thead><tr><th style="width:36px;">#</th><th>' . esc_html__('著者', THEME_NAME) . '</th><th style="width:70px;">' . esc_html__('記事数', THEME_NAME) . '</th><th style="width:70px;">' . esc_html__('総PV', THEME_NAME) . '</th><th style="width:90px;">' . esc_html__('平均PV/記事', THEME_NAME) . '</th></tr></thead><tbody>';
       $i = 0;
       $chart_rows = array();
       foreach ($rows as $r) {
