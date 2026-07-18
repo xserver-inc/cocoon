@@ -113,6 +113,8 @@ function cocoon_analytics_print_data(){
       'saved'        => __('レイアウトを保存しました', THEME_NAME),
       'save_failed'  => __('レイアウトの保存に失敗しました', THEME_NAME),
       'reset_confirm'=> __('タイル配置を既定に戻しますか？', THEME_NAME),
+      // ライフサイクルで選択期間内にデータが無いときに表示するメッセージです
+      'no_period_data' => __('選択した期間のアクセスデータがありません。', THEME_NAME),
     ),
   );
 
