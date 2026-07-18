@@ -25,8 +25,8 @@ $period = cocoon_analytics_resolve_period($preset, $from_in, $to_in);
 $from = $period['from'];
 $to = $period['to'];
 
-// 初心者向け: パラメータ名に post_type を使うとWP管理画面の予約パラメータ（$typenow）と衝突し
-// 「Cannot load theme-access.」エラーになるため、独自名「pt」を使用します
+// パラメータ名に post_type を使うとWP管理画面の予約パラメータ（$typenow）と衝突し
+// 「Cannot load theme-access.」エラーになるため、独自名「pt」を使用
 $post_type_filter = isset($_GET['pt']) ? sanitize_key($_GET['pt']) : 'all';
 $pt_arg = $post_type_filter === 'all' ? null : $post_type_filter;
 
@@ -75,7 +75,7 @@ switch ($view) {
 
     $daily = cocoon_analytics_daily_pv($from, $to, $pt_arg);
     $by_type = cocoon_analytics_pv_by_post_type($from, $to);
-    // 初心者向け: 円グラフが煩雑にならないよう、上位10件+「その他」に集約
+    // 円グラフが煩雑にならないよう、上位10件+「その他」に集約
     if (is_array($by_type) && count($by_type) > 10) {
       $top_types = array_slice($by_type, 0, 10);
       $rest_types = array_slice($by_type, 10);
@@ -335,6 +335,8 @@ switch ($view) {
       cocoon_analytics_render_empty_notice();
     } else {
       echo '<p>' . esc_html(sprintf(__('全 %s 件', THEME_NAME), number_format_i18n($total))) . '</p>';
+      // 狭い画面でのテーブル崩れ防止用の横スクロール領域
+      echo '<div class="cocoon-analytics-table-scroll">';
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
       echo '<thead><tr><th>' . esc_html__('タイトル', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('タイプ', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('著者', THEME_NAME) . '</th><th style="width:130px;">' . esc_html__('公開日', THEME_NAME) . '</th><th style="width:80px;">PV</th></tr></thead><tbody>';
       foreach ($rows as $r) {
@@ -351,6 +353,7 @@ switch ($view) {
         echo '</tr>';
       }
       echo '</tbody></table>';
+      echo '</div>';
 
       // ページネーション
       $per_page = $result['per_page'];
@@ -408,6 +411,8 @@ switch ($view) {
       $tax_label = isset($available_tax[$tax]) ? $available_tax[$tax]->labels->name : $tax;
       echo '<div class="cocoon-analytics-grid-2">';
       echo '<div class="cocoon-analytics-card"><h3>' . esc_html(sprintf(__('%s 別PV ランキング', THEME_NAME), $tax_label)) . '</h3>';
+      // 狭い画面でのテーブル崩れ防止用の横スクロール領域
+      echo '<div class="cocoon-analytics-table-scroll">';
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
       echo '<thead><tr><th style="width:50px;">#</th><th>' . esc_html__('名称', THEME_NAME) . '</th><th style="width:120px;">PV</th></tr></thead><tbody>';
       $i = 0;
@@ -420,7 +425,7 @@ switch ($view) {
         if (!is_wp_error($link)) echo '</a>';
         echo '</td><td>' . esc_html(number_format_i18n($r['pv'])) . '</td></tr>';
       }
-      echo '</tbody></table></div>';
+      echo '</tbody></table></div></div>';
       echo '<div class="cocoon-analytics-card"><h3>' . esc_html__('上位10分布', THEME_NAME) . '</h3>';
       echo '<canvas id="cocoon-analytics-terms" role="img"></canvas></div>';
       echo '</div>';
@@ -436,6 +441,8 @@ switch ($view) {
     } else {
       echo '<div class="cocoon-analytics-grid-2">';
       echo '<div class="cocoon-analytics-card"><h3>' . esc_html__('著者別集計', THEME_NAME) . '</h3>';
+      // 狭い画面でのテーブル崩れ防止用の横スクロール領域
+      echo '<div class="cocoon-analytics-table-scroll">';
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
       echo '<thead><tr><th style="width:50px;">#</th><th>' . esc_html__('著者', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('記事数', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('総PV', THEME_NAME) . '</th><th style="width:120px;">' . esc_html__('平均PV/記事', THEME_NAME) . '</th></tr></thead><tbody>';
       $i = 0;
@@ -447,7 +454,7 @@ switch ($view) {
         echo '<tr><td>' . esc_html($i) . '</td><td>' . esc_html($name) . '</td><td>' . esc_html(number_format_i18n($r['posts_with_pv'])) . '</td><td>' . esc_html(number_format_i18n($r['pv'])) . '</td><td>' . esc_html(number_format_i18n($r['avg_pv'], 1)) . '</td></tr>';
         $chart_rows[] = array('name' => $name, 'pv' => $r['pv']);
       }
-      echo '</tbody></table></div>';
+      echo '</tbody></table></div></div>';
       echo '<div class="cocoon-analytics-card"><h3>' . esc_html__('著者別PV（上位10）', THEME_NAME) . '</h3>';
       echo '<canvas id="cocoon-analytics-authors" role="img"></canvas></div>';
       echo '</div>';

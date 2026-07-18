@@ -3,6 +3,8 @@
 /* カレンダーヒートマップ */
 .cocoon-analytics-heatmap {
   overflow-x: auto;
+  /* 非表示ツールチップ（擬似要素）のわずかなはみ出しによる縦スクロールバー表示を抑止 */
+  overflow-y: hidden;
   padding: 4px 0;
 }
 
@@ -335,6 +337,13 @@
   height: 320px !important;
 }
 
+/* 高さ固定のラッパー内に置かれるcanvasはラッパーに合わせる
+   （280px固定が勝つとラッパーからはみ出し、日付ラベルが枠外に描画されるため） */
+.cocoon-analytics-card canvas#cocoon-analytics-trend,
+.cocoon-analytics-card canvas#cocoon-analytics-lifecycle {
+  height: 100% !important;
+}
+
 /* 2カラムグリッド */
 .cocoon-analytics-grid-2 {
   display: grid;
@@ -356,6 +365,14 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
   align-items: start;
+}
+
+/* minmax(420px, 1fr)による最小幅確保がスマホ表示でのはみ出し原因となるため、狭い画面では1カラムに切り替え */
+@media screen and (max-width: 900px) {
+  .cocoon-analytics-grid-2,
+  .cocoon-analytics-grid-3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -465,6 +482,18 @@
 
 .cocoon-analytics-table td {
   vertical-align: middle;
+}
+
+/* テーブルを横スクロール可能な領域で包み、狭い画面で表が画面外にはみ出さないようにする */
+.cocoon-analytics-table-scroll {
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 782px) {
+  /* 固定レイアウト（table-layout: fixed）による狭い画面でのタイトル列縦書き崩れを防ぐため内容に応じた列幅へ切り替え */
+  .cocoon-analytics-table-scroll .cocoon-analytics-table {
+    table-layout: auto;
+  }
 }
 
 /* 人気記事ランキング（カード表示） */
