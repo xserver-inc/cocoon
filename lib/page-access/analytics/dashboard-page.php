@@ -25,7 +25,9 @@ $period = cocoon_analytics_resolve_period($preset, $from_in, $to_in);
 $from = $period['from'];
 $to = $period['to'];
 
-$post_type_filter = isset($_GET['post_type']) ? sanitize_key($_GET['post_type']) : 'all';
+// 初心者向け: パラメータ名に post_type を使うとWP管理画面の予約パラメータ（$typenow）と衝突し
+// 「Cannot load theme-access.」エラーになるため、独自名「pt」を使用します
+$post_type_filter = isset($_GET['pt']) ? sanitize_key($_GET['pt']) : 'all';
 $pt_arg = $post_type_filter === 'all' ? null : $post_type_filter;
 
 ?>
@@ -357,7 +359,7 @@ switch ($view) {
         $base = add_query_arg(array(
           'page' => 'theme-access', 'view' => 'posts',
           'period' => $preset, 'from' => $from, 'to' => $to,
-          'post_type' => $post_type_filter, 'author' => $author, 'cat' => $category,
+          'pt' => $post_type_filter, 'author' => $author, 'cat' => $category,
           'min_pv' => $min_pv >= 0 ? $min_pv : '', 'max_pv' => $max_pv >= 0 ? $max_pv : '',
           'order' => $order,
           'paged' => '%#%',

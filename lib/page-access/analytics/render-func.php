@@ -258,9 +258,11 @@ endif;
 
 /**
  * 投稿タイプセレクタ
+ *
+ * name属性に post_type を使うとWP管理画面の予約パラメータと衝突するため、既定名は「pt」にしています。
  */
 if ( !function_exists( 'cocoon_analytics_render_post_type_filter' ) ):
-function cocoon_analytics_render_post_type_filter($current = 'all', $name = 'post_type'){
+function cocoon_analytics_render_post_type_filter($current = 'all', $name = 'pt'){
   $types = cocoon_analytics_allowed_post_types();
   echo '<select name="' . esc_attr($name) . '">';
   echo '<option value="all"' . selected($current, 'all', false) . '>' . esc_html__('すべて', THEME_NAME) . '</option>';
