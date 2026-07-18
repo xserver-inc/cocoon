@@ -25,6 +25,17 @@ function cocoon_analytics_plain_title($post){
 endif;
 
 /**
+ * NO IMAGEサムネイルのimgタグを取得する
+ *
+ * アイキャッチ未設定の記事でも、テーマ標準のNO IMAGE画像（16:9）を表示します。
+ */
+if ( !function_exists( 'cocoon_analytics_get_no_image_thumb_tag' ) ):
+function cocoon_analytics_get_no_image_thumb_tag(){
+  return '<img src="' . esc_url(get_no_image_120x68_url()) . '" alt="' . esc_attr__('NO IMAGE', THEME_NAME) . '" class="cocoon-analytics-ranking-thumb cocoon-analytics-ranking-thumb-no-image" width="120" height="68" loading="lazy">';
+}
+endif;
+
+/**
  * タブナビを出力
  */
 if ( !function_exists( 'cocoon_analytics_render_tabs' ) ):
@@ -33,7 +44,7 @@ function cocoon_analytics_render_tabs($current){
     'dashboard' => __('ダッシュボード', THEME_NAME),
     'ranking'   => __('ランキング', THEME_NAME),
     'posts'     => __('記事別', THEME_NAME),
-    'terms'     => __('カテゴリ/タグ', THEME_NAME),
+    'terms'     => __('カテゴリー/タグ', THEME_NAME),
     'authors'   => __('著者', THEME_NAME),
     'lifecycle' => __('ライフサイクル', THEME_NAME),
     'export'    => __('エクスポート', THEME_NAME),
@@ -201,7 +212,8 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
     if ($thumb) {
       echo $thumb;
     } else {
-      echo '<div class="cocoon-analytics-ranking-thumb cocoon-analytics-ranking-thumb-placeholder"><span class="dashicons dashicons-format-aside"></span></div>';
+      // アイキャッチ未設定の場合はテーマ標準のNO IMAGE画像を表示します
+      echo cocoon_analytics_get_no_image_thumb_tag();
     }
     echo '</div>';
 
@@ -308,7 +320,8 @@ function cocoon_analytics_render_trending_list($rows, $days = 7){
     if ($thumb) {
       echo $thumb;
     } else {
-      echo '<div class="cocoon-analytics-ranking-thumb cocoon-analytics-ranking-thumb-placeholder"><span class="dashicons dashicons-format-aside"></span></div>';
+      // アイキャッチ未設定の場合はテーマ標準のNO IMAGE画像を表示します
+      echo cocoon_analytics_get_no_image_thumb_tag();
     }
     echo '</div>';
 

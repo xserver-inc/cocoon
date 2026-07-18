@@ -167,8 +167,8 @@ switch ($view) {
           <?php
           break;
         case 'category':
-          $title = __('カテゴリ別PV', THEME_NAME) . $suffix;
-          echo '<canvas id="cocoon-analytics-category" role="img" aria-label="' . esc_attr__('カテゴリ別PV構成', THEME_NAME) . '"></canvas>';
+          $title = __('カテゴリー別PV', THEME_NAME) . $suffix;
+          echo '<canvas id="cocoon-analytics-category" role="img" aria-label="' . esc_attr__('カテゴリー別PV構成', THEME_NAME) . '"></canvas>';
           break;
         case 'tag':
           $title = __('タグ別PV', THEME_NAME) . $suffix;
@@ -295,9 +295,9 @@ switch ($view) {
         <input type="hidden" name="author" class="cocoon-analytics-suggest-hidden" value="<?php echo esc_attr($author); ?>">
         <div class="cocoon-analytics-suggest-dropdown"></div>
       </label>
-      <!-- カテゴリ名の検索サジェスト入力欄です -->
-      <label class="cocoon-analytics-suggest-container"><?php _e('カテゴリ:', THEME_NAME); ?>
-        <input type="text" class="cocoon-analytics-suggest-input" data-type="category" value="<?php echo esc_attr($category_name); ?>" placeholder="<?php esc_attr_e('カテゴリ名で検索...', THEME_NAME); ?>" style="width:130px;" autocomplete="off">
+      <!-- カテゴリー名の検索サジェスト入力欄です -->
+      <label class="cocoon-analytics-suggest-container"><?php _e('カテゴリー:', THEME_NAME); ?>
+        <input type="text" class="cocoon-analytics-suggest-input" data-type="category" value="<?php echo esc_attr($category_name); ?>" placeholder="<?php esc_attr_e('カテゴリー名で検索...', THEME_NAME); ?>" style="width:130px;" autocomplete="off">
         <input type="hidden" name="cat" class="cocoon-analytics-suggest-hidden" value="<?php echo esc_attr($category); ?>">
         <div class="cocoon-analytics-suggest-dropdown"></div>
       </label>
@@ -378,8 +378,11 @@ switch ($view) {
 
   case 'terms':
     $tax = isset($_GET['tax']) ? sanitize_key($_GET['tax']) : 'category';
-    $available_tax = get_taxonomies(array('public' => true), 'names');
-    if (!in_array($tax, $available_tax, true)) $tax = 'category';
+    // タクソノミーはオブジェクトで取得し、管理画面と同じラベル名を表示できるようにします
+    $available_tax = get_taxonomies(array('public' => true), 'objects');
+    // 投稿フォーマット（post_format）は集計対象として適さないため選択肢から除外します
+    unset($available_tax['post_format']);
+    if (!array_key_exists($tax, $available_tax)) $tax = 'category';
     ?>
     <form method="get" class="cocoon-analytics-filter-bar">
       <input type="hidden" name="page" value="theme-access">
@@ -387,7 +390,7 @@ switch ($view) {
       <label><?php _e('タクソノミー:', THEME_NAME); ?>
         <select name="tax">
           <?php foreach ($available_tax as $t): ?>
-            <option value="<?php echo esc_attr($t); ?>" <?php selected($tax, $t); ?>><?php echo esc_html($t); ?></option>
+            <option value="<?php echo esc_attr($t->name); ?>" <?php selected($tax, $t->name); ?>><?php echo esc_html($t->labels->name); ?></option>
           <?php endforeach; ?>
         </select>
       </label>
@@ -399,8 +402,10 @@ switch ($view) {
     if (empty($rows)) {
       cocoon_analytics_render_empty_notice();
     } else {
+      // 見出しにはスラッグではなく管理画面と同じタクソノミーのラベル名を表示します
+      $tax_label = isset($available_tax[$tax]) ? $available_tax[$tax]->labels->name : $tax;
       echo '<div class="cocoon-analytics-grid-2">';
-      echo '<div class="cocoon-analytics-card"><h3>' . esc_html(sprintf(__('%s 別PV ランキング', THEME_NAME), $tax)) . '</h3>';
+      echo '<div class="cocoon-analytics-card"><h3>' . esc_html(sprintf(__('%s 別PV ランキング', THEME_NAME), $tax_label)) . '</h3>';
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
       echo '<thead><tr><th style="width:50px;">#</th><th>' . esc_html__('名称', THEME_NAME) . '</th><th style="width:120px;">PV</th></tr></thead><tbody>';
       $i = 0;

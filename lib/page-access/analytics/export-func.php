@@ -40,7 +40,8 @@ function cocoon_analytics_handle_export(){
     case 'ranking':
       $headers = array('post_id', 'post_type', 'title', 'pv', 'url');
       foreach (cocoon_analytics_ranking($from, $to, null, 500, 0) as $r) {
-        $rows[] = array($r['post_id'], $r['post_type'], get_the_title($r['post_id']), $r['pv'], get_permalink($r['post_id']));
+        // タイトルはHTMLエンティティを含まないプレーンテキストで出力します
+        $rows[] = array($r['post_id'], $r['post_type'], cocoon_analytics_plain_title($r['post_id']), $r['pv'], get_permalink($r['post_id']));
       }
       break;
     case 'posts':
@@ -49,7 +50,8 @@ function cocoon_analytics_handle_export(){
       do {
         $res = cocoon_analytics_posts_table($from, $to, array('per_page' => 500, 'page' => $page));
         foreach ($res['rows'] as $r) {
-          $rows[] = array($r['post_id'], $r['post_type'], get_the_title($r['post_id']), $r['post_author'], $r['post_date'], $r['pv']);
+          // タイトルはHTMLエンティティを含まないプレーンテキストで出力します
+          $rows[] = array($r['post_id'], $r['post_type'], cocoon_analytics_plain_title($r['post_id']), $r['post_author'], $r['post_date'], $r['pv']);
         }
         $page++;
         if ($page > ceil($res['total'] / $res['per_page'])) break;
