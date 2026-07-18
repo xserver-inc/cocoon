@@ -236,13 +236,18 @@ switch ($view) {
     <form method="get" class="cocoon-analytics-filter-bar">
       <input type="hidden" name="page" value="theme-access">
       <input type="hidden" name="view" value="ranking">
-      <?php cocoon_analytics_render_period_form($preset, $from, $to, 'ranking'); ?>
+      <!-- 期間フォームは別フォームのため、絞り込みフォーム側でも期間をhiddenで引き継ぎます -->
+      <input type="hidden" name="period" value="<?php echo esc_attr($preset); ?>">
+      <input type="hidden" name="from" value="<?php echo esc_attr($from); ?>">
+      <input type="hidden" name="to" value="<?php echo esc_attr($to); ?>">
       <label><?php _e('投稿タイプ:', THEME_NAME); ?>
         <?php cocoon_analytics_render_post_type_filter($post_type_filter); ?>
       </label>
       <?php submit_button(__('絞り込み', THEME_NAME), 'secondary', '', false); ?>
     </form>
     <?php
+    // 期間選択フォームは独立したformとして絞り込みフォームの下に配置します（form入れ子を避けるため）
+    cocoon_analytics_render_period_form($preset, $from, $to, 'ranking');
     $rows = cocoon_analytics_ranking($from, $to, $pt_arg, 100, 0);
     if (empty($rows)) { cocoon_analytics_render_empty_notice(); }
     else {
@@ -331,7 +336,7 @@ switch ($view) {
       echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
       echo '<thead><tr><th>' . esc_html__('タイトル', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('タイプ', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('著者', THEME_NAME) . '</th><th style="width:130px;">' . esc_html__('公開日', THEME_NAME) . '</th><th style="width:80px;">PV</th></tr></thead><tbody>';
       foreach ($rows as $r) {
-        $title = get_the_title($r['post_id']);
+        $title = cocoon_analytics_plain_title($r['post_id']);
         if (empty($title)) $title = '(' . __('無題', THEME_NAME) . ')';
         $author_obj = get_userdata($r['post_author']);
         $author_name = $author_obj ? $author_obj->display_name : '—';
@@ -451,7 +456,7 @@ switch ($view) {
     // 投稿IDが指定されている場合は、初期グラフ表示用のデータを読み込みます
     if ($post_id > 0) {
       $initial_lifecycle = cocoon_analytics_lifecycle($post_id);
-      $initial_title = get_the_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
+      $initial_title = cocoon_analytics_plain_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
       // 初期データとしてライフサイクル履歴と記事公開日（post_date）を格納します
       $GLOBALS['cocoon_analytics_chart_data'] = array(
         'lifecycle' => $initial_lifecycle,

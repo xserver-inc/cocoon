@@ -10,6 +10,21 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
+ * 投稿タイトルをプレーンテキスト用に取得する
+ *
+ * get_the_title() は the_title フィルタ（wptexturize 等）を通すため、
+ * 「&#8211;」のようなHTMLエンティティを含んだ文字列を返すことがあります。
+ * これをそのまま esc_html() や JavaScript の textContent に渡すと、
+ * 「&」がさらにエスケープされて画面にエンティティがそのまま表示されてしまいます。
+ * そこで一度エンティティを実体文字（–など）へデコードしてから返します。
+ */
+if ( !function_exists( 'cocoon_analytics_plain_title' ) ):
+function cocoon_analytics_plain_title($post){
+  return html_entity_decode(get_the_title($post), ENT_QUOTES, get_bloginfo('charset'));
+}
+endif;
+
+/**
  * タブナビを出力
  */
 if ( !function_exists( 'cocoon_analytics_render_tabs' ) ):
@@ -165,7 +180,7 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
     $pv        = (int) $r['pv'];
     $post_type = $r['post_type'];
     $post      = get_post($post_id);
-    $title     = $post ? get_the_title($post) : '';
+    $title     = $post ? cocoon_analytics_plain_title($post) : '';
     if (empty($title)) $title = '(' . __('削除済み', THEME_NAME) . ')';
     $permalink = get_permalink($post_id);
     $edit      = get_edit_post_link($post_id);
@@ -276,7 +291,7 @@ function cocoon_analytics_render_trending_list($rows, $days = 7){
     $growth    = isset($r['growth']) ? $r['growth'] : 0;
     $post_type = $r['post_type'];
     $post      = get_post($post_id);
-    $title     = $post ? get_the_title($post) : '';
+    $title     = $post ? cocoon_analytics_plain_title($post) : '';
     if (empty($title)) $title = '(' . __('削除済み', THEME_NAME) . ')';
     $permalink = get_permalink($post_id);
     $edit      = get_edit_post_link($post_id);

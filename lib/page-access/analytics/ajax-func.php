@@ -48,7 +48,7 @@ function cocoon_analytics_ajax_get_posts(){
   foreach ($data['rows'] as $row) {
     $posts[] = array(
       'post_id'  => $row['post_id'],
-      'title'    => get_the_title($row['post_id']) ?: '(' . __('不明', THEME_NAME) . ')',
+      'title'    => cocoon_analytics_plain_title($row['post_id']) ?: '(' . __('不明', THEME_NAME) . ')',
       'date'     => get_the_date('Y-m-d', $row['post_id']),
       'pv'       => number_format_i18n($row['pv']),
       'raw_pv'   => $row['pv'],
@@ -87,7 +87,7 @@ function cocoon_analytics_ajax_get_lifecycle(){
 
   // 記事公開からの経過日数ごとのPV数をデータベースから取得します
   $rows = cocoon_analytics_lifecycle($post_id);
-  $title = get_the_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
+  $title = cocoon_analytics_plain_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
 
   // グラフ描画に必要なデータ（投稿ID、タイトル、公開日、アクセス履歴）をJSON形式で即座に返却します
   wp_send_json_success(array(
