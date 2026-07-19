@@ -357,7 +357,7 @@ switch ($view) {
         $author_name = $author_obj ? $author_obj->display_name : '—';
         echo '<tr>';
         echo '<td><strong><a href="' . esc_url(get_edit_post_link($r['post_id'])) . '">' . esc_html($title) . '</a></strong></td>';
-        echo '<td>' . esc_html($r['post_type']) . '</td>';
+        echo '<td>' . esc_html(cocoon_analytics_post_type_label($r['post_type'])) . '</td>';
         echo '<td>' . esc_html($author_name) . '</td>';
         echo '<td>' . esc_html(mysql2date(get_option('date_format'), $r['post_date'])) . '</td>';
         echo '<td>' . esc_html(number_format_i18n($r['pv'])) . '</td>';

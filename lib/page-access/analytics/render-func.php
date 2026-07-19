@@ -263,6 +263,16 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
 endif;
 
 /**
+ * 投稿タイプのラベル名を取得（取得できない場合はスラッグをそのまま返す）
+ */
+if ( !function_exists( 'cocoon_analytics_post_type_label' ) ):
+function cocoon_analytics_post_type_label($post_type){
+  $type_object = get_post_type_object($post_type);
+  return ($type_object && !empty($type_object->labels->name)) ? $type_object->labels->name : $post_type;
+}
+endif;
+
+/**
  * 投稿タイプセレクタ
  *
  * name属性に post_type を使うとWP管理画面の予約パラメータと衝突するため、既定名は「pt」にしています。
@@ -273,7 +283,8 @@ function cocoon_analytics_render_post_type_filter($current = 'all', $name = 'pt'
   echo '<select name="' . esc_attr($name) . '">';
   echo '<option value="all"' . selected($current, 'all', false) . '>' . esc_html__('すべて', THEME_NAME) . '</option>';
   foreach ($types as $t) {
-    echo '<option value="' . esc_attr($t) . '"' . selected($current, $t, false) . '>' . esc_html($t) . '</option>';
+    // スラッグではなく管理画面と同じ投稿タイプのラベル名を表示します
+    echo '<option value="' . esc_attr($t) . '"' . selected($current, $t, false) . '>' . esc_html(cocoon_analytics_post_type_label($t)) . '</option>';
   }
   echo '</select>';
 }
