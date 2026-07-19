@@ -228,8 +228,25 @@
   text-align: left;
 }
 
+/* タブが1行に収まらない画面幅でも自然に折り返して整列するようflexレイアウトにします */
 .cocoon-analytics-wrap .nav-tab-wrapper {
   margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px 6px;
+}
+
+/* WordPress標準のfloat・左マージンを打ち消し、折り返し時の位置ズレを防ぎます */
+.cocoon-analytics-wrap .nav-tab {
+  float: none;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* アクティブタブは下線と重ねて「つながった」見た目を維持します */
+.cocoon-analytics-wrap .nav-tab-active {
+  margin-bottom: -1px;
 }
 
 .cocoon-analytics-period-form,
