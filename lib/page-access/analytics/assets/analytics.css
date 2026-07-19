@@ -353,7 +353,7 @@
 }
 
 /* 2カラム時に最終カードが奇数で余ったとき、横幅を半分に制限してバランスを保つ */
-@media (min-width: 880px) {
+@media (width >= 880px) {
   .cocoon-analytics-grid-2 > .cocoon-analytics-card:last-child:nth-child(odd) {
     max-width: calc(50% - 8px);
   }
@@ -368,7 +368,7 @@
 }
 
 /* minmax(420px, 1fr)による最小幅確保がスマホ表示でのはみ出し原因となるため、狭い画面では1カラムに切り替え */
-@media screen and (max-width: 900px) {
+@media screen and (width <= 900px) {
   .cocoon-analytics-grid-2,
   .cocoon-analytics-grid-3 {
     grid-template-columns: 1fr;
@@ -419,11 +419,11 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .cocoon-analytics-tiles { grid-template-columns: 1fr 1fr; }
 }
 
-@media (min-width: 1400px) {
+@media (width >= 1400px) {
   .cocoon-analytics-tiles[data-col-count="3"],
   .cocoon-analytics-tiles[data-col-count="4"] {
     grid-template-columns: 1fr 1fr 1fr;
@@ -496,7 +496,7 @@
   overflow-x: auto;
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (width <= 782px) {
   /* 固定レイアウト（table-layout: fixed）による狭い画面でのタイトル列縦書き崩れを防ぐため内容に応じた列幅へ切り替え */
   .cocoon-analytics-table-scroll .cocoon-analytics-table {
     table-layout: auto;
@@ -734,7 +734,7 @@
 }
 
 /* 狭い画面用 */
-@media screen and (max-width: 782px) {
+@media screen and (width <= 782px) {
   .cocoon-analytics-ranking-item {
     /* モバイルでもYouTubeの比率を保つため、サムネイル幅を96pxに変更 */
     grid-template-columns: 96px 1fr;
@@ -1019,7 +1019,7 @@
 }
 
 /* 画面幅が960px以下（タブレット・モバイル）の場合は縦並びに自動変換します */
-@media screen and (max-width: 960px) {
+@media screen and (width <= 960px) {
   .cocoon-analytics-lifecycle-container {
     flex-direction: column;
     height: auto;
