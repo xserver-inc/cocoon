@@ -139,6 +139,17 @@ async function main() {
   try {
     // make-pot コマンドを実行して出力をリアルタイムで表示する
     execSync( command, { stdio: 'inherit', cwd: THEME_DIR } );
+
+    // POT-Creation-Date ヘッダーを除去して出力を決定論的にする
+    // （生成時刻だけの差分でCIが毎回「POT Regenerated」をコミットするのを防ぐ）
+    const potPath = path.join( THEME_DIR, 'languages', 'cocoon.pot' );
+    const pot = fs.readFileSync( potPath, 'utf8' );
+    const normalized = pot.replace( /^"POT-Creation-Date: [^\n]*\n/m, '' );
+    if ( normalized !== pot ) {
+      fs.writeFileSync( potPath, normalized );
+      console.log( '🧹 POT-Creation-Date ヘッダーを除去しました（決定論的出力）。' );
+    }
+
     console.log( '\n✅ languages/cocoon.pot の更新が完了しました！' );
   } catch ( err ) {
     console.error( '\n❌ POT 生成に失敗しました。' );
