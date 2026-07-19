@@ -249,7 +249,8 @@ switch ($view) {
     </form>
     <?php
     // 期間選択フォームは独立したformとして絞り込みフォームの下に配置します（form入れ子を避けるため）
-    cocoon_analytics_render_period_form($preset, $from, $to, 'ranking');
+    // 期間変更時に投稿タイプの選択が失われないよう引き継ぎます
+    cocoon_analytics_render_period_form($preset, $from, $to, 'ranking', array('pt' => $post_type_filter));
     $rows = cocoon_analytics_ranking($from, $to, $pt_arg, 100, 0);
     if (empty($rows)) { cocoon_analytics_render_empty_notice(); }
     else {
@@ -317,7 +318,17 @@ switch ($view) {
       </label>
       <?php submit_button(__('絞り込み', THEME_NAME), 'secondary', '', false); ?>
     </form>
-    <?php cocoon_analytics_render_period_form($preset, $from, $to, 'posts'); ?>
+    <?php
+    // 期間変更時に投稿タイプ・著者・カテゴリー等の絞り込み条件が失われないよう引き継ぎます
+    cocoon_analytics_render_period_form($preset, $from, $to, 'posts', array(
+      'pt'     => $post_type_filter,
+      'author' => $author > 0 ? $author : '',
+      'cat'    => $category > 0 ? $category : '',
+      'min_pv' => $min_pv >= 0 ? $min_pv : '',
+      'max_pv' => $max_pv >= 0 ? $max_pv : '',
+      'order'  => $order,
+    ));
+    ?>
     <?php
     $result = cocoon_analytics_posts_table($from, $to, array(
       'post_types' => $pt_arg,
@@ -405,7 +416,10 @@ switch ($view) {
       </label>
       <?php submit_button(__('適用', THEME_NAME), 'secondary', '', false); ?>
     </form>
-    <?php cocoon_analytics_render_period_form($preset, $from, $to, 'terms'); ?>
+    <?php
+    // 期間変更時に選択中のタクソノミー（タグ等）がカテゴリーに戻らないよう引き継ぎます
+    cocoon_analytics_render_period_form($preset, $from, $to, 'terms', array('tax' => $tax));
+    ?>
     <?php
     $rows = cocoon_analytics_pv_by_taxonomy($from, $to, $tax, 100);
     if (empty($rows)) {

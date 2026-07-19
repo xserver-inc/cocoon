@@ -62,9 +62,10 @@ endif;
 
 /**
  * 期間選択フォーム
+ * $extra_params: 期間変更時に失われないよう引き継ぐフィルター値（例: tax、pt、author等）の連想配列
  */
 if ( !function_exists( 'cocoon_analytics_render_period_form' ) ):
-function cocoon_analytics_render_period_form($current_preset, $from, $to, $view){
+function cocoon_analytics_render_period_form($current_preset, $from, $to, $view, $extra_params = array()){
   $presets = array(
     'today'     => __('今日', THEME_NAME),
     'yesterday' => __('昨日', THEME_NAME),
@@ -81,6 +82,11 @@ function cocoon_analytics_render_period_form($current_preset, $from, $to, $view)
   <form method="get" class="cocoon-analytics-period-form">
     <input type="hidden" name="page" value="theme-access">
     <input type="hidden" name="view" value="<?php echo esc_attr($view); ?>">
+    <?php // タクソノミーや投稿タイプなどの絞り込み条件を、期間変更の送信でも維持できるようhiddenで出力します ?>
+    <?php foreach ((array) $extra_params as $param_key => $param_value): ?>
+      <?php if ($param_value === '' || $param_value === null) { continue; } ?>
+      <input type="hidden" name="<?php echo esc_attr($param_key); ?>" value="<?php echo esc_attr($param_value); ?>">
+    <?php endforeach; ?>
     <label><?php _e('期間:', THEME_NAME); ?>
       <select name="period">
         <?php foreach ($presets as $k => $v): ?>
