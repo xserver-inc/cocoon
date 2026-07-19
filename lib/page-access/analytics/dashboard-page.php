@@ -337,7 +337,7 @@ switch ($view) {
       echo '<p>' . esc_html(sprintf(__('全 %s 件', THEME_NAME), number_format_i18n($total))) . '</p>';
       // 狭い画面でのテーブル崩れ防止用の横スクロール領域
       echo '<div class="cocoon-analytics-table-scroll">';
-      echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table">';
+      echo '<table class="wp-list-table widefat fixed striped cocoon-analytics-table cocoon-analytics-table--wide">';
       echo '<thead><tr><th>' . esc_html__('タイトル', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('タイプ', THEME_NAME) . '</th><th style="width:100px;">' . esc_html__('著者', THEME_NAME) . '</th><th style="width:130px;">' . esc_html__('公開日', THEME_NAME) . '</th><th style="width:80px;">PV</th></tr></thead><tbody>';
       foreach ($rows as $r) {
         $title = cocoon_analytics_plain_title($r['post_id']);

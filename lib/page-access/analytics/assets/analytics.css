@@ -375,6 +375,13 @@
   }
 }
 
+/* グリッドアイテムの既定値 min-width: auto だと、中身のテーブル最小幅に
+   引っ張られてカードが列幅を突き破るため、明示的に0へ上書きして内部スクロールに委ねる */
+.cocoon-analytics-grid-2 > *,
+.cocoon-analytics-grid-3 > * {
+  min-width: 0;
+}
+
 /* ------------------------------------------------------------------
  * タイルレイアウト（WordPressダッシュボード風・ドラッグ&ドロップ対応）
  * 各列は独立した Sortable コンテナ。タイルは縦に隙間なく詰まる。
@@ -491,9 +498,13 @@
 
 @media screen and (max-width: 782px) {
   /* 固定レイアウト（table-layout: fixed）による狭い画面でのタイトル列縦書き崩れを防ぐため内容に応じた列幅へ切り替え */
-  /* min-widthを指定し、コンテナ幅に収まりきらない分は横スクロールさせて列の過度な圧縮を防ぐ */
   .cocoon-analytics-table-scroll .cocoon-analytics-table {
     table-layout: auto;
+  }
+
+  /* 列数の多いテーブルのみ最小幅を確保し、収まらない分は横スクロールさせて列の過度な圧縮を防ぐ
+     （列数の少ないterms/authorsのテーブルに一律適用すると不要な横スクロールが生じるため限定） */
+  .cocoon-analytics-table-scroll .cocoon-analytics-table--wide {
     min-width: 600px;
   }
 }
