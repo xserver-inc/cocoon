@@ -518,12 +518,12 @@ switch ($view) {
 
         <!-- 期間選択のトグルボタン（記事選択時のみJSで表示制御します） -->
         <div id="lifecycle-period-selector" class="lifecycle-period-selector" style="<?php echo $post_id > 0 ? '' : 'display:none;'; ?>">
-          <button type="button" class="lifecycle-period-btn" data-period="7"><?php _e('7日', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn is-active" data-period="30"><?php _e('30日', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn" data-period="90"><?php _e('90日', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn" data-period="365"><?php _e('1年', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn" data-period="all"><?php _e('全期間', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn" data-period="custom" id="lifecycle-custom-period-btn"><?php _e('カスタム', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button" data-period="7"><?php _e('7日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button is-active" data-period="30"><?php _e('30日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button" data-period="90"><?php _e('90日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button" data-period="365"><?php _e('1年', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button" data-period="all"><?php _e('全期間', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn button" data-period="custom" id="lifecycle-custom-period-btn"><?php _e('カスタム', THEME_NAME); ?></button>
 
           <!-- カスタム期間の日付カレンダー選択フォーム（初期は非表示にします） -->
           <div id="lifecycle-custom-range" class="lifecycle-custom-range" style="display:none;">

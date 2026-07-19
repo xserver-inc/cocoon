@@ -798,34 +798,21 @@
 .lifecycle-period-selector {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 6px;
   margin-bottom: 16px;
 }
 
-/* 期間選択ボタンの基本スタイル。狭い画面でも文字が縦書きにならないよう幅を維持する */
+/* ボタンの見た目はWordPress標準の.buttonに任せ、折り返し防止のみ行う */
 .lifecycle-period-btn {
-  background: #f0f0f1;
-  border: 1px solid #8c8f94;
-  color: #2c3338;
-  padding: 4px 12px;
-  font-size: 13px;
-  line-height: 1.5;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.15s ease-in-out;
-  user-select: none;
   flex-shrink: 0;
   white-space: nowrap;
 }
 
-.lifecycle-period-btn:hover {
-  background: #f6f7f7;
-  border-color: #2271b1;
-  color: #2271b1;
-}
-
-/* アクティブ（現在選択中）なボタンの強調スタイル */
-.lifecycle-period-btn.is-active {
+/* アクティブ（現在選択中）なボタンの強調スタイル（WP標準のhover/focusより優先させる） */
+.wp-core-ui .lifecycle-period-btn.is-active,
+.wp-core-ui .lifecycle-period-btn.is-active:hover,
+.wp-core-ui .lifecycle-period-btn.is-active:focus {
   background: #2271b1;
   border-color: #2271b1;
   color: #fff;
