@@ -518,7 +518,6 @@ switch ($view) {
 
         <!-- 期間選択のトグルボタン（記事選択時のみJSで表示制御します） -->
         <div id="lifecycle-period-selector" class="lifecycle-period-selector" style="<?php echo $post_id > 0 ? '' : 'display:none;'; ?>">
-          <button type="button" class="lifecycle-period-btn" data-period="1"><?php _e('1日', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn" data-period="7"><?php _e('7日', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn is-active" data-period="30"><?php _e('30日', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn" data-period="90"><?php _e('90日', THEME_NAME); ?></button>
