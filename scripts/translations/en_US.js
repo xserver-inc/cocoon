@@ -3,6 +3,7 @@ module.exports = {
   'Auto Draft': 'Auto Draft',
   公式ページURL: 'Official Page URL',
   '%s URL': '%s URL',
+  ボタンを表示しない: 'Hide button',
   Threads: 'Threads',
   Reddit: 'Reddit',
   '...': '...',

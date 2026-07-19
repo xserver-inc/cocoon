@@ -3,6 +3,7 @@ module.exports = {
   'Auto Draft': 'Brouillon automatique',
   公式ページURL: 'URL de la page officielle',
   '%s URL': 'URL de %s',
+  ボタンを表示しない: 'Ne pas afficher le bouton',
   Threads: 'Threads',
   Reddit: 'Reddit',
   '...': '...',

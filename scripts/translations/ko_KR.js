@@ -3,6 +3,7 @@ module.exports = {
   'Auto Draft': '자동 임시글',
   公式ページURL: '공식 페이지 URL',
   '%s URL': '%s URL',
+  ボタンを表示しない: '버튼 숨기기',
   Threads: 'Threads',
   Reddit: 'Reddit',
   '...': '...',

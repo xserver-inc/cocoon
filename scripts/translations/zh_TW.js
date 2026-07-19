@@ -3,6 +3,7 @@ module.exports = {
   'Auto Draft': '自動草稿',
   公式ページURL: '官方頁面URL',
   '%s URL': '%s URL',
+  ボタンを表示しない: '不顯示按鈕',
   Threads: 'Threads',
   Reddit: 'Reddit',
   '...': '...',
