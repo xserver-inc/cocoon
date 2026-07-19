@@ -127,35 +127,56 @@ function fetch_push7_info(){
 endif;
 
 
+// SNSフォローサービスの定義（プロフィール項目・設定画面のリストの単一のソース）
+// キー: ユーザーメタのキー名, 値: 翻訳済みのサービス表示名
+if ( !function_exists( 'get_theme_sns_follow_services' ) ):
+function get_theme_sns_follow_services(){
+  return array(
+    'twitter_url' => __( 'X（旧Twitter）', THEME_NAME ),
+    'mastodon_url' => __( 'Mastodon', THEME_NAME ),
+    'bluesky_url' => __( 'Bluesky', THEME_NAME ),
+    'misskey_url' => __( 'Misskey', THEME_NAME ),
+    'facebook_url' => __( 'Facebook', THEME_NAME ),
+    'threads_url' => __( 'Threads', THEME_NAME ),
+    'reddit_url' => __( 'Reddit', THEME_NAME ),
+    //'google_plus_url' => __( 'Google+', THEME_NAME ),
+    'hatebu_url' => __( 'はてなブックマーク', THEME_NAME ),
+    'instagram_url' => __( 'Instagram', THEME_NAME ),
+    'pinterest_url' => __( 'Pinterest', THEME_NAME ),
+    'youtube_url' => __( 'YouTube', THEME_NAME ),
+    'tiktok_url' => __( 'TikTok', THEME_NAME ),
+    'linkedin_url' => __( 'LinkedIn', THEME_NAME ),
+    'note_url' => __( 'note', THEME_NAME ),
+    'soundcloud_url' => __( 'SoundCloud', THEME_NAME ),
+    'flickr_url' => __( 'Flickr', THEME_NAME ),
+    'line_at_url' => __( 'LINE@', THEME_NAME ),
+    'amazon_url' => __( 'Amazon欲しい物リスト', THEME_NAME ),
+    'twitch_url' => __( 'Twitch', THEME_NAME ),
+    'rakuten_room_url' => __( '楽天ROOM', THEME_NAME ),
+    'slack_url' => __( 'Slack', THEME_NAME ),
+    'github_url' => __( 'GitHub', THEME_NAME ),
+    'codepen_url' => __( 'CodePen', THEME_NAME ),
+  );
+}
+endif;
+
 // ユーザープロフィールの項目のカスタマイズ
 add_filter('user_contactmethods', 'user_contactmethods_custom');
 if ( !function_exists( 'user_contactmethods_custom' ) ):
 function user_contactmethods_custom($prof_items){
-  //項目の追加
-  $prof_items['twitter_url'] = __( 'X（旧Twitter） URL', THEME_NAME );
-  $prof_items['mastodon_url'] = __( 'Mastodon URL', THEME_NAME );
-  $prof_items['bluesky_url'] = __( 'Bluesky URL', THEME_NAME );
-  $prof_items['misskey_url'] = __( 'Misskey URL', THEME_NAME );
-  $prof_items['facebook_url'] = __( 'Facebook URL', THEME_NAME );
-  $prof_items['threads_url'] = __( 'Threads URL', THEME_NAME );
-  $prof_items['reddit_url'] = __( 'Reddit URL', THEME_NAME );
-  //$prof_items['google_plus_url'] = __( 'Google+ URL', THEME_NAME );
-  $prof_items['hatebu_url'] = __( 'はてなブックマーク URL', THEME_NAME );
-  $prof_items['instagram_url'] = __( 'Instagram URL', THEME_NAME );
-  $prof_items['pinterest_url'] = __( 'Pinterest URL', THEME_NAME );
-  $prof_items['youtube_url'] = __( 'YouTube URL', THEME_NAME );
-  $prof_items['tiktok_url'] = __( 'TikTok URL', THEME_NAME );
-  $prof_items['linkedin_url'] = __( 'LinkedIn URL', THEME_NAME );
-  $prof_items['note_url'] = __( 'note URL', THEME_NAME );
-  $prof_items['soundcloud_url'] = __( 'SoundCloud URL', THEME_NAME );
-  $prof_items['flickr_url'] = __( 'Flickr URL', THEME_NAME );
-  $prof_items['line_at_url'] = __( 'LINE@ URL', THEME_NAME );
-  $prof_items['amazon_url'] = __( 'Amazon欲しい物リスト URL', THEME_NAME );
-  $prof_items['twitch_url'] = __( 'Twitch URL', THEME_NAME );
-  $prof_items['rakuten_room_url'] = __( '楽天 ROOM URL', THEME_NAME );
-  $prof_items['slack_url'] = __( 'Slack URL', THEME_NAME );
-  $prof_items['github_url'] = __( 'GitHub URL', THEME_NAME );
-  $prof_items['codepen_url'] = __( 'CodePen URL', THEME_NAME );
+  //定義済みのSNSフォローサービスを項目として追加
+  foreach ( get_theme_sns_follow_services() as $key => $label ) {
+    /* translators: %s: SNSサービス名 */
+    $format = __( '%s URL', THEME_NAME );
+    //位置指定プレースホルダー（%1$s）で書かれた翻訳も通常形式に揃える
+    $format = str_replace( '%1$s', '%s', $format );
+    //翻訳文に%sプレースホルダーが欠落している場合のフォールバック（訳文不備によるサービス名消失を防止）
+    if ( strpos( $format, '%s' ) === false ) {
+      $format = '%s URL';
+    }
+    //sprintfではなくstr_replaceを使い、誤訳（%sの重複等）による致命的エラーを防ぐ
+    $prof_items[$key] = str_replace( '%s', $label, $format );
+  }
 
   return $prof_items;
 }

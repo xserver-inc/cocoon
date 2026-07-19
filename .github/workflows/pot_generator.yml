@@ -4,14 +4,16 @@ on:
   push:
     branches:
       - master
-    # wp i18n make-pot の --include 対象と揃える（languages/ を含めないことで自己再トリガーも防止）
+    # scripts/setup-wpcli.js の --exclude 対象外のPHPソースと揃える
+    # （languages/ を含めないことで自己再トリガーも防止）
     paths:
-      - 'blocks/src/**'
+      - 'blocks/**'
       - 'lib/**'
       - 'tmp/**'
       - 'skins/**'
       - 'templates/**'
       - '*.php'
+      - 'theme.json'
 
 permissions:
   contents: write
@@ -25,32 +27,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Wordpress POT Generation
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    # ローカルと同一のコマンド（scripts/setup-wpcli.js）でPOTを生成し、引数の乖離を防ぐ
+    - name: Generate POT file
+      run: npm run make-pot
+    - name: Commit and push if changed
       shell: bash
       run: |
-        THEME_ROOT="/home/runner/work/cocoon/cocoon"
-        SAVE_FULL_PATH="$THEME_ROOT/$SAVE_DIR/$DOMAIN.pot"
-
-        # Download WP CLI
-        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-        chmod +x wp-cli.phar
-        sudo mv wp-cli.phar /usr/bin/wp
-
-        # Regenerate POT file
-        # wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --exclude="languages/*,plugins/*,blocks/dist/*,node_modules/*" --skip-audit
-        wp i18n make-pot "$THEME_ROOT" "$SAVE_FULL_PATH" --domain="$DOMAIN" --include="blocks/src/*,lib/*,tmp/*,skins/*,templates/*,*.php" --skip-audit --ignore-domain --debug
-
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
 
-        git add $SAVE_FULL_PATH
+        git add languages/cocoon.pot
         DIFF_COUNT=$(git diff --cached --numstat | wc -l)
         if [ $DIFF_COUNT -ne 0 ]; then
           git commit -m "POT Regenerated"
           git pull --rebase
           git push
         fi
-      env:
-        SAVE_DIR: 'languages'
-        DOMAIN: 'cocoon'
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

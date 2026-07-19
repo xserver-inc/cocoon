@@ -2,6 +2,9 @@
 module.exports = {
   'Auto Draft': 'Brouillon automatique',
   公式ページURL: 'URL de la page officielle',
+  '%s URL': 'URL de %s',
+  Threads: 'Threads',
+  Reddit: 'Reddit',
   '...': '...',
   '-': '-',
   '|': '|',

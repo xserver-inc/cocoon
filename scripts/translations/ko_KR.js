@@ -2,6 +2,9 @@
 module.exports = {
   'Auto Draft': '자동 임시글',
   公式ページURL: '공식 페이지 URL',
+  '%s URL': '%s URL',
+  Threads: 'Threads',
+  Reddit: 'Reddit',
   '...': '...',
   '-': '-',
   '|': '|',

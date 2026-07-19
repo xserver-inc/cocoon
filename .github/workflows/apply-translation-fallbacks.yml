@@ -1,0 +1,61 @@
+name: Apply Translation Fallbacks
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    # Crowdinの同期（.poの上書き）で新規msgidの訳が空欄化された場合に、
+    # scripts/translations/*.js の辞書で空欄msgstrのみを補完する。
+    # 既存の翻訳（Crowdin側の正式な訳）は上書きしない（apply-translations.jsの仕様）。
+    paths:
+      - 'languages/*.po'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-translation-fallbacks
+  cancel-in-progress: false
+
+jobs:
+  apply-fallbacks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply translation dictionary fallbacks (fills empty msgstr only)
+        run: node scripts/apply-translations.js
+
+      - name: Ensure WP-CLI phar (needed for compile-l10n-php)
+        run: |
+          mkdir -p vendor/bin
+          if [ ! -f vendor/bin/wp-cli.phar ]; then
+            curl -o vendor/bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x vendor/bin/wp-cli.phar
+          fi
+
+      - name: Recompile .mo / .l10n.php / blocks JSON
+        run: npm run compile-all
+
+      - name: Commit if changed
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "github.action@noreply.com"
+
+          git add languages/
+          DIFF_COUNT=$(git diff --cached --numstat | wc -l)
+          if [ "$DIFF_COUNT" -ne 0 ]; then
+            git commit -m "chore: 翻訳辞書フォールバックの再適用（空欄msgstrの補完）"
+            git pull --rebase
+            git push
+          fi

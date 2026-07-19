@@ -2,6 +2,9 @@
 module.exports = {
   'Auto Draft': 'Borrador automático',
   公式ページURL: 'URL de la página oficial',
+  '%s URL': 'URL de %s',
+  Threads: 'Threads',
+  Reddit: 'Reddit',
   '...': '...',
   '-': '-',
   '|': '|',

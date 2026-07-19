@@ -69,30 +69,12 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
             <p><?php _e( '以下のアカウントURLを設定する場合は、プロフィールページから設定してください。', THEME_NAME ) ?>(<a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a>)</p>
             <ul class="list-style-disc">
               <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
-              <li><?php _e( 'X（旧Twitter）', THEME_NAME ) ?></li>
-              <li><?php _e( 'Mastodon', THEME_NAME ) ?></li>
-              <li><?php _e( 'Bluesky', THEME_NAME ) ?></li>
-              <li><?php _e( 'Misskey', THEME_NAME ) ?></li>
-              <li><?php _e( 'Facebook', THEME_NAME ) ?></li>
-              <li><?php _e( 'Threads', THEME_NAME ) ?></li>
-              <li><?php _e( 'Reddit', THEME_NAME ) ?></li>
-              <!-- <li><?php _e( 'Google+', THEME_NAME ) ?></li> -->
-              <li><?php _e( 'はてなブックマーク', THEME_NAME ) ?></li>
-              <li><?php _e( 'Instagram', THEME_NAME ) ?></li>
-              <li><?php _e( 'Pinterest', THEME_NAME ) ?></li>
-              <li><?php _e( 'YouTube', THEME_NAME ) ?></li>
-              <li><?php _e( 'TikTok', THEME_NAME ) ?></li>
-              <li><?php _e( 'LinkedIn', THEME_NAME ) ?></li>
-              <li><?php _e( 'note', THEME_NAME ) ?></li>
-              <li><?php _e( 'SoundCloud', THEME_NAME ) ?></li>
-              <li><?php _e( 'Flickr', THEME_NAME ) ?></li>
-              <li><?php _e( 'LINE@', THEME_NAME ) ?></li>
-              <li><?php _e( 'Amazon欲しい物リスト', THEME_NAME ) ?></li>
-              <li><?php _e( 'Twitch', THEME_NAME ) ?></li>
-              <li><?php _e( '楽天ROOM', THEME_NAME ) ?></li>
-              <li><?php _e( 'Slack', THEME_NAME ) ?></li>
-              <li><?php _e( 'GitHub', THEME_NAME ) ?></li>
-              <li><?php _e( 'CodePen', THEME_NAME ) ?></li>
+              <?php
+              // sns-follow.php側のSNSフォローサービス定義から動的にリストを生成
+              foreach ( get_theme_sns_follow_services() as $label ) :
+                ?>
+                <li><?php echo esc_html( $label ); ?></li>
+              <?php endforeach; ?>
             </ul>
             <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a><?php _e( 'から設定', THEME_NAME ) ?></p>
             <p class="tips"><?php _e( '現ログインユーザーのSNSフォローページを設定します。', THEME_NAME ) ?></p>

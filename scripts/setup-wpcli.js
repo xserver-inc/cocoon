@@ -114,11 +114,14 @@ async function main() {
     'plugins', // サードパーティJSプラグイン（minified含む）を除外
     'fonts', // フォントファイルを除外
     'icomoon', // IcoMoon フォントJSを除外
+    'webfonts', // Font Awesomeの巨大JS（1.2MB）はパース時にメモリ枯渇するため除外
+    'blocks/dist', // ビルド成果物（minified）は除外し、抽出は blocks/src から行う
   ].join( ',' );
 
   // WP-CLI make-pot コマンドを組み立てる
   const command = [
-    `php "${ WP_CLI_PHAR }"`,
+    // 巨大JSパースに備えてメモリ上限を引き上げて実行する
+    `php -d memory_limit=512M "${ WP_CLI_PHAR }"`,
     'i18n make-pot',
     `"${ THEME_DIR }"`, // スキャン対象ディレクトリ
     `"${ path.join( THEME_DIR, 'languages', 'cocoon.pot' ) }"`, // 出力先
@@ -126,9 +129,8 @@ async function main() {
     '--domain=cocoon', // テキストドメイン
     '--ignore-domain', // ドメインを無視して全文字列を抽出
     `--exclude="${ excludePaths }"`, // 除外するパス
-    // PHP 8.5 では mck89/peast ライブラリの互換性問題でJSパースがクラッシュするためスキップ
-    // blocks/ のJS翻訳は -cocoon-blocks-js.json で別管理されているため影響なし
-    '--skip-js',
+    // ※ --skip-js は付けないこと！blocks/src のJS翻訳抽出に必要
+    //   （以前のクラッシュは webfonts の巨大JSによるメモリ枯渇が原因だった）
   ].join( ' ' );
 
   console.log( '\n🚀 cocoon.pot を生成中...' );

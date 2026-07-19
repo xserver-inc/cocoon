@@ -2,6 +2,9 @@
 module.exports = {
   'Auto Draft': '自动草稿',
   公式ページURL: '官方页面URL',
+  '%s URL': '%s URL',
+  Threads: 'Threads',
+  Reddit: 'Reddit',
   '...': '...',
   '-': '-',
   '|': '|',
