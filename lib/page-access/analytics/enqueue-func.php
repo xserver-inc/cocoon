@@ -115,6 +115,11 @@ function cocoon_analytics_print_data(){
       'reset_confirm'=> __('タイル配置を既定に戻しますか？', THEME_NAME),
       // ライフサイクルで選択期間内にデータが無いときに表示するメッセージです
       'no_period_data' => __('選択した期間のアクセスデータがありません。', THEME_NAME),
+      // ライフサイクルの期間サマリーとズームバッジに使う文言です
+      'shown_period_total' => __('表示期間の合計', THEME_NAME),
+      'list_period_total'  => __('リスト期間の合計', THEME_NAME),
+      'all_total'          => __('累計', THEME_NAME),
+      'zoom_notice'        => __('グラフはリストと異なる期間を表示中', THEME_NAME),
     ),
   );
 

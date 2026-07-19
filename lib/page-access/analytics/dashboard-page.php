@@ -486,6 +486,17 @@ switch ($view) {
     <div class="cocoon-analytics-lifecycle-container" data-initial-post-id="<?php echo esc_attr($post_id); ?>">
       <!-- 左側カラム: キーワード検索ボックスとスクロール可能な記事リスト -->
       <div class="lifecycle-sidebar">
+        <!-- 記事リストの集計期間セレクター（一覧のPV数と並び順に適用されます） -->
+        <div class="lifecycle-list-period-box">
+          <label for="lifecycle-list-period"><?php _e('集計期間:', THEME_NAME); ?></label>
+          <select id="lifecycle-list-period">
+            <option value="7days"><?php _e('直近7日', THEME_NAME); ?></option>
+            <option value="30days" selected><?php _e('直近30日', THEME_NAME); ?></option>
+            <option value="90days"><?php _e('直近90日', THEME_NAME); ?></option>
+            <option value="1year"><?php _e('直近1年', THEME_NAME); ?></option>
+            <option value="all"><?php _e('全期間', THEME_NAME); ?></option>
+          </select>
+        </div>
         <div class="lifecycle-search-box">
           <input type="text" id="lifecycle-search-input" placeholder="<?php esc_attr_e('記事タイトルで検索...', THEME_NAME); ?>" autocomplete="off">
           <span class="clear-search-btn" id="clear-search-btn" style="display:none;">&times;</span>
@@ -507,8 +518,10 @@ switch ($view) {
 
         <!-- 期間選択のトグルボタン（記事選択時のみJSで表示制御します） -->
         <div id="lifecycle-period-selector" class="lifecycle-period-selector" style="<?php echo $post_id > 0 ? '' : 'display:none;'; ?>">
-          <button type="button" class="lifecycle-period-btn is-active" data-period="90"><?php _e('3ヶ月', THEME_NAME); ?></button>
-          <button type="button" class="lifecycle-period-btn" data-period="180"><?php _e('6ヶ月', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="1"><?php _e('1日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="7"><?php _e('7日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn is-active" data-period="30"><?php _e('30日', THEME_NAME); ?></button>
+          <button type="button" class="lifecycle-period-btn" data-period="90"><?php _e('90日', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn" data-period="365"><?php _e('1年', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn" data-period="all"><?php _e('全期間', THEME_NAME); ?></button>
           <button type="button" class="lifecycle-period-btn" data-period="custom" id="lifecycle-custom-period-btn"><?php _e('カスタム', THEME_NAME); ?></button>
@@ -520,6 +533,15 @@ switch ($view) {
             <input type="date" id="lifecycle-custom-to" class="lifecycle-date-picker">
           </div>
         </div>
+
+        <!-- グラフがリストと異なる期間を表示中であることを知らせるバッジ（JSで表示制御します） -->
+        <div id="lifecycle-zoom-notice" class="lifecycle-zoom-notice" style="display:none;">
+          <span id="lifecycle-zoom-notice-text"></span>
+          <a href="#" id="lifecycle-zoom-reset"><?php _e('リスト期間に合わせる', THEME_NAME); ?></a>
+        </div>
+
+        <!-- 表示期間・リスト期間・累計それぞれの合計PVサマリー（JSで内容を更新します） -->
+        <p id="lifecycle-summary" class="lifecycle-summary" style="display:none;"></p>
 
         <div class="cocoon-analytics-card lifecycle-chart-card">
           <!-- 記事が選択されていないときに表示するメッセージエリア -->

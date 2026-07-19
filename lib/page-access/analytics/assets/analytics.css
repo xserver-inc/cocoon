@@ -823,6 +823,42 @@
   margin-left: 10px;
 }
 
+/* 左リストの集計期間セレクター（サイドバー上部に配置） */
+.lifecycle-list-period-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 12px 0;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.lifecycle-list-period-box select {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+/* グラフがリストと異なる期間を表示中であることを知らせるバッジ */
+.lifecycle-zoom-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background: #fcf9e8;
+  border: 1px solid #dba617;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* 表示期間・リスト期間・累計の合計PVサマリー行 */
+.lifecycle-summary {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #50575e;
+}
+
 /* カレンダー日付ピッカーのインプットスタイル */
 .lifecycle-date-picker {
   background: #fff;

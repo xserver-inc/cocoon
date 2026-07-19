@@ -28,10 +28,22 @@ function cocoon_analytics_ajax_get_posts(){
   $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
   $per_page = 20;
 
-  // 集計対象の期間を直近30日間に決定します
-  $period = cocoon_analytics_resolve_period('30days');
-  $from = $period['from'];
-  $to = $period['to'];
+  // リスト側で選択された集計期間を取得します（不正な値は既定の直近30日にフォールバック）
+  $list_period = isset($_GET['period']) ? sanitize_key($_GET['period']) : '30days';
+  $allowed_periods = array('7days', '30days', '90days', '1year', 'all');
+  if (!in_array($list_period, $allowed_periods, true)) {
+    $list_period = '30days';
+  }
+
+  if ($list_period === '1year') {
+    // resolve_periodに「1年」プリセットが無いため、今日を含む直近365日を直接計算します
+    $to = current_time('Y-m-d');
+    $from = date('Y-m-d', strtotime($to . ' -364 days'));
+  } else {
+    $period = cocoon_analytics_resolve_period($list_period);
+    $from = $period['from'];
+    $to = $period['to'];
+  }
 
   // 記事一覧を取得するためのクエリ引数を組み立てます
   $args = array(
