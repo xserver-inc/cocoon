@@ -39,10 +39,21 @@ jobs:
         git config user.name "GitHub Action"
         git config user.email "github.action@noreply.com"
 
-        git add languages/cocoon.pot
-        DIFF_COUNT=$(git diff --cached --numstat | wc -l)
-        if [ $DIFF_COUNT -ne 0 ]; then
+        # 「#: file:line」の行番号参照はソース側の行増減だけで頻繁にズレるため、
+        # その変化のみ（実質的な文字列変更なし）の場合はコミットしないようにする
+        # ※ GitHub Actions の bash は -eo pipefail 付きで動くため、フィルタ結果が
+        #   空（=grep が終了コード1）になるとステップが失敗してしまう。末尾の
+        #   「|| true」で終了コードを吸収し、if 文まで確実に到達させる。
+        CHANGED_LINES=$(git diff --unified=0 -- languages/cocoon.pot \
+          | grep -E '^[+-]' \
+          | grep -vE '^(\+\+\+|---)' \
+          | grep -vE '^[+-]#: ' || true)
+
+        if [ -n "$CHANGED_LINES" ]; then
+          git add languages/cocoon.pot
           git commit -m "POT Regenerated"
           git pull --rebase
           git push
+        else
+          echo "行番号参照の変化のみのため、コミットをスキップします。"
         fi
