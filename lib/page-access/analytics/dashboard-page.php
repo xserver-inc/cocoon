@@ -366,7 +366,7 @@ switch ($view) {
       echo '</tbody></table>';
       echo '</div>';
 
-      // ページネーション
+      // ページネーション（番号リンクにWP標準の.buttonクラスを付与して管理画面の配色に揃えます）
       $per_page = $result['per_page'];
       $total_pages = (int) ceil($total / $per_page);
       if ($total_pages > 1) {
@@ -378,16 +378,34 @@ switch ($view) {
           'order' => $order,
           'paged' => '%#%',
         ), admin_url('admin.php'));
-        echo '<div class="tablenav"><div class="tablenav-pages">';
-        echo paginate_links(array(
+        // paginate_links()でページ番号リンクを配列として受け取り、WP標準の.buttonクラスを付与して出力します
+        $links = paginate_links(array(
           'base' => $base,
           'format' => '',
           'current' => $page_num,
           'total' => $total_pages,
           'prev_text' => '‹',
           'next_text' => '›',
+          'type' => 'array',
         ));
-        echo '</div></div>';
+        echo '<div class="tablenav bottom"><div class="tablenav-pages">';
+        echo '<span class="pagination-links">';
+        if ($links) {
+          foreach ($links as $link) {
+            // URL側の文字列と誤マッチしないよう、class属性の値を基準に種類を判定します
+            if (strpos($link, 'class="page-numbers dots"') !== false) {
+              // 省略記号（…）はボタンではないのでそのまま出力します
+              echo $link . "\n";
+            } elseif (strpos($link, 'class="page-numbers current"') !== false) {
+              // 現在のページは押せない無効状態のボタン表示にします
+              echo str_replace('class="page-numbers current"', 'class="button disabled page-numbers current"', $link) . "\n";
+            } else {
+              // class属性の先頭に.buttonを追記します（href内は引用符がエンコードされるため誤置換の心配はない）
+              echo str_replace('class="', 'class="button ', $link) . "\n";
+            }
+          }
+        }
+        echo '</span></div></div>';
       }
     }
     break;

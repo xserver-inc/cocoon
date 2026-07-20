@@ -513,10 +513,27 @@
   overflow-x: auto;
 }
 
+/* WordPress標準のtablenavは上下マージンが狭いため、テーブルとの間隔を広げて見やすくする */
+.cocoon-analytics-wrap .cocoon-analytics-table-scroll + .tablenav {
+  margin: 16px 0 12px;
+}
+
 @media screen and (width <= 782px) {
   /* 固定レイアウト（table-layout: fixed）による狭い画面でのタイトル列縦書き崩れを防ぐため内容に応じた列幅へ切り替え */
   .cocoon-analytics-table-scroll .cocoon-analytics-table {
     table-layout: auto;
+  }
+
+  /* 横スクロールで対応済みのため折り返しを禁止し、列が圧縮されて1文字ずつ縦に表示される崩れを防ぐ */
+  .cocoon-analytics-table-scroll .cocoon-analytics-table th,
+  .cocoon-analytics-table-scroll .cocoon-analytics-table td {
+    white-space: nowrap;
+  }
+
+  /* タイトル列（長文になりやすい）のみ折り返しを許可して横スクロール量を抑える */
+  .cocoon-analytics-table-scroll .cocoon-analytics-table--wide th:first-child,
+  .cocoon-analytics-table-scroll .cocoon-analytics-table--wide td:first-child {
+    white-space: normal;
   }
 
   /* 列数の多いテーブルのみ最小幅を確保し、収まらない分は横スクロールさせて列の過度な圧縮を防ぐ
