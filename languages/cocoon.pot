@@ -714,7 +714,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:561
 #: lib/admin-tinymce-qtag.php:1694
-#: lib/page-access/analytics/dashboard-page.php:605
+#: lib/page-access/analytics/dashboard-page.php:623
 #: blocks/src/block/blogcard/deprecated.js:95
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -3070,7 +3070,7 @@ msgid "3ヶ月"
 msgstr ""
 
 #: lib/page-access/access-func.php:779
-#: lib/page-access/analytics/dashboard-page.php:538
+#: lib/page-access/analytics/dashboard-page.php:556
 #: lib/page-settings/single-forms.php:201
 #: blocks/src/block/popular-list/edit.js:186
 msgid "1年"
@@ -3078,8 +3078,8 @@ msgstr ""
 
 #: lib/page-access/access-func.php:780
 #: lib/page-access/analytics/dashboard-page.php:145
-#: lib/page-access/analytics/dashboard-page.php:511
-#: lib/page-access/analytics/dashboard-page.php:539
+#: lib/page-access/analytics/dashboard-page.php:529
+#: lib/page-access/analytics/dashboard-page.php:557
 #: lib/page-access/analytics/render-func.php:78
 #: lib/page-access/analytics/settings-forms.php:81
 #: lib/page-settings/carousel-forms.php:72
@@ -3114,8 +3114,8 @@ msgstr ""
 
 #: lib/page-access/analytics/ajax-func.php:63
 #: lib/page-access/analytics/ajax-func.php:102
-#: lib/page-access/analytics/dashboard-page.php:471
-#: lib/page-access/analytics/dashboard-page.php:491
+#: lib/page-access/analytics/dashboard-page.php:489
+#: lib/page-access/analytics/dashboard-page.php:509
 msgid "不明"
 msgstr ""
 
@@ -3138,7 +3138,7 @@ msgid "昨日"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:139
-#: lib/page-access/analytics/dashboard-page.php:507
+#: lib/page-access/analytics/dashboard-page.php:525
 #: lib/page-access/analytics/render-func.php:72
 #: lib/page-access/analytics/render-func.php:137
 #: lib/page-access/analytics/settings-forms.php:77
@@ -3146,14 +3146,14 @@ msgid "直近7日"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:140
-#: lib/page-access/analytics/dashboard-page.php:508
+#: lib/page-access/analytics/dashboard-page.php:526
 #: lib/page-access/analytics/render-func.php:73
 #: lib/page-access/analytics/settings-forms.php:78
 msgid "直近30日"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:141
-#: lib/page-access/analytics/dashboard-page.php:509
+#: lib/page-access/analytics/dashboard-page.php:527
 #: lib/page-access/analytics/render-func.php:74
 #: lib/page-access/analytics/settings-forms.php:79
 msgid "直近90日"
@@ -3329,7 +3329,7 @@ msgid "タイプ"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:352
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:483
 #: lib/page-access/analytics/render-func.php:48
 msgid "著者"
 msgstr ""
@@ -3342,123 +3342,123 @@ msgstr ""
 msgid "無題"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:410
+#: lib/page-access/analytics/dashboard-page.php:428
 msgid "タクソノミー:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:417
+#: lib/page-access/analytics/dashboard-page.php:435
 #: blocks/src/block-extension/group-link.js:134
 msgid "適用"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:431
+#: lib/page-access/analytics/dashboard-page.php:449
 #, php-format
 msgid "%s 別PV ランキング"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:435
+#: lib/page-access/analytics/dashboard-page.php:453
 msgid "名称"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:447
+#: lib/page-access/analytics/dashboard-page.php:465
 msgid "上位10分布"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:461
+#: lib/page-access/analytics/dashboard-page.php:479
 msgid "著者別集計"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:483
 msgid "記事数"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:483
 #: lib/page-access/analytics/render-func.php:139
 msgid "総PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:483
 msgid "平均PV/記事"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:476
+#: lib/page-access/analytics/dashboard-page.php:494
 msgid "著者別PV（上位10）"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:505
+#: lib/page-access/analytics/dashboard-page.php:523
 msgid "集計期間:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:510
+#: lib/page-access/analytics/dashboard-page.php:528
 msgid "直近1年"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:515
+#: lib/page-access/analytics/dashboard-page.php:533
 msgid "記事タイトルで検索..."
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:530
+#: lib/page-access/analytics/dashboard-page.php:548
 msgid "記事を選択してください"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:535
+#: lib/page-access/analytics/dashboard-page.php:553
 msgid "7日"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:536
+#: lib/page-access/analytics/dashboard-page.php:554
 msgid "30日"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:537
+#: lib/page-access/analytics/dashboard-page.php:555
 msgid "90日"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:540
+#: lib/page-access/analytics/dashboard-page.php:558
 #: lib/page-access/analytics/render-func.php:79
 msgid "カスタム"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:553
+#: lib/page-access/analytics/dashboard-page.php:571
 msgid "リスト期間に合わせる"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:563
+#: lib/page-access/analytics/dashboard-page.php:581
 msgid "左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:577
+#: lib/page-access/analytics/dashboard-page.php:595
 msgid "エクスポート機能は無効化されています。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:585
+#: lib/page-access/analytics/dashboard-page.php:603
 msgid "対象"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:587
+#: lib/page-access/analytics/dashboard-page.php:605
 msgid "日次PV推移"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:588
+#: lib/page-access/analytics/dashboard-page.php:606
 msgid "人気記事ランキング"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:589
+#: lib/page-access/analytics/dashboard-page.php:607
 msgid "記事別全量"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:590
+#: lib/page-access/analytics/dashboard-page.php:608
 msgid "著者別"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:593
+#: lib/page-access/analytics/dashboard-page.php:611
 msgid "形式"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:599
+#: lib/page-access/analytics/dashboard-page.php:617
 msgid "期間"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:601
+#: lib/page-access/analytics/dashboard-page.php:619
 #: lib/page-access/analytics/render-func.php:99
 msgid "〜"
 msgstr ""
@@ -11858,59 +11858,59 @@ msgstr ""
 msgid "検索結果ページです。"
 msgstr ""
 
-#: lib/settings-preview.php:178
+#: lib/settings-preview.php:181
 msgid "ページが見つかりませんでした"
 msgstr ""
 
-#: lib/settings-preview.php:203
+#: lib/settings-preview.php:206
 msgid "サンプル記事タイトル"
 msgstr ""
 
-#: lib/settings-preview.php:205
+#: lib/settings-preview.php:208
 msgid "これはテーマ設定の見え方を確認するためのサンプル本文です。文字サイズ・行間・配色などの設定がどのように反映されるかをプレビューできます。"
 msgstr ""
 
-#: lib/settings-preview.php:207
+#: lib/settings-preview.php:210
 msgid "見出し2のサンプル"
 msgstr ""
 
-#: lib/settings-preview.php:208
+#: lib/settings-preview.php:211
 msgid "見出し2の装飾（背景色・ボーダー・キーカラー）がここに反映されます。本文の段落スタイルもあわせて確認できます。"
 msgstr ""
 
-#: lib/settings-preview.php:210
+#: lib/settings-preview.php:213
 msgid "見出し3のサンプル"
 msgstr ""
 
-#: lib/settings-preview.php:211
+#: lib/settings-preview.php:214
 msgid "見出し3の装飾を確認するためのサンプルテキストです。"
 msgstr ""
 
-#: lib/settings-preview.php:214
+#: lib/settings-preview.php:217
 msgid "これは引用ブロックのサンプルです。引用の装飾を確認できます。"
 msgstr ""
 
-#: lib/settings-preview.php:218
+#: lib/settings-preview.php:221
 msgid "リスト項目のサンプル1"
 msgstr ""
 
-#: lib/settings-preview.php:219
+#: lib/settings-preview.php:222
 msgid "リスト項目のサンプル2"
 msgstr ""
 
-#: lib/settings-preview.php:220
+#: lib/settings-preview.php:223
 msgid "リスト項目のサンプル3"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "リンクの色を確認するための"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "サンプルリンク"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "です。"
 msgstr ""
 
