@@ -142,7 +142,10 @@ function cocoon_build_settings_preview_html($type){
 
   //実際のフッター（サイドバー・ウィジェット・wp_footer を含む）を出力
   get_footer();
-  return ob_get_clean();
+  $html = ob_get_clean();
+  //通常フロントは code_minify() 内で Font Awesome 5 へ変換されるが、プレビューは exit で早期終了しその処理を通らない。
+  //そのためここで明示的に変換し、FA5 設定時にアイコンが正しく表示されるようにする。
+  return change_fa( $html );
 }
 endif;
 
