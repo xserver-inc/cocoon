@@ -127,35 +127,153 @@ function fetch_push7_info(){
 endif;
 
 
-// SNSフォローサービスの定義（プロフィール項目・設定画面のリストの単一のソース）
-// キー: ユーザーメタのキー名, 値: 翻訳済みのサービス表示名
+// SNSフォローサービスの定義（プロフィール項目・設定画面のリスト・フォローボタン出力の単一のソース）
+// キー: ユーザーメタのキー名
+// 値: name=サービス表示名, title=ボタンのtitle文言, class=ボタンの追加クラス, icon=アイコンクラス
+//     aria=aria-label文言（省略時はtitleと同じ文言を使用）
+// ※配列の並び順がそのままフォローボタンの表示順になる
 if ( !function_exists( 'get_theme_sns_follow_services' ) ):
 function get_theme_sns_follow_services(){
   return array(
-    'twitter_url' => __( 'X（旧Twitter）', THEME_NAME ),
-    'mastodon_url' => __( 'Mastodon', THEME_NAME ),
-    'bluesky_url' => __( 'Bluesky', THEME_NAME ),
-    'misskey_url' => __( 'Misskey', THEME_NAME ),
-    'facebook_url' => __( 'Facebook', THEME_NAME ),
-    'threads_url' => __( 'Threads', THEME_NAME ),
-    'reddit_url' => __( 'Reddit', THEME_NAME ),
-    //'google_plus_url' => __( 'Google+', THEME_NAME ),
-    'hatebu_url' => __( 'はてなブックマーク', THEME_NAME ),
-    'instagram_url' => __( 'Instagram', THEME_NAME ),
-    'pinterest_url' => __( 'Pinterest', THEME_NAME ),
-    'youtube_url' => __( 'YouTube', THEME_NAME ),
-    'tiktok_url' => __( 'TikTok', THEME_NAME ),
-    'linkedin_url' => __( 'LinkedIn', THEME_NAME ),
-    'note_url' => __( 'note', THEME_NAME ),
-    'soundcloud_url' => __( 'SoundCloud', THEME_NAME ),
-    'flickr_url' => __( 'Flickr', THEME_NAME ),
-    'line_at_url' => __( 'LINE@', THEME_NAME ),
-    'amazon_url' => __( 'Amazon欲しい物リスト', THEME_NAME ),
-    'twitch_url' => __( 'Twitch', THEME_NAME ),
-    'rakuten_room_url' => __( '楽天ROOM', THEME_NAME ),
-    'slack_url' => __( 'Slack', THEME_NAME ),
-    'github_url' => __( 'GitHub', THEME_NAME ),
-    'codepen_url' => __( 'CodePen', THEME_NAME ),
+    'twitter_url' => array(
+      'name'  => __( 'X（旧Twitter）', THEME_NAME ),
+      'title' => __( 'Xをフォロー', THEME_NAME ),
+      'class' => 'twitter-button twitter-follow-button-sq x-corp-button x-corp-follow-button-sq',
+      'icon'  => 'icon-x-corp-logo',
+    ),
+    'mastodon_url' => array(
+      'name'  => __( 'Mastodon', THEME_NAME ),
+      'title' => __( 'Mastodonをフォロー', THEME_NAME ),
+      'class' => 'mastodon-button mastodon-follow-button-sq',
+      'icon'  => 'icon-mastodon-logo',
+    ),
+    'bluesky_url' => array(
+      'name'  => __( 'Bluesky', THEME_NAME ),
+      'title' => __( 'Blueskyをフォロー', THEME_NAME ),
+      'class' => 'bluesky-button bluesky-follow-button-sq',
+      'icon'  => 'icon-bluesky-logo',
+    ),
+    'misskey_url' => array(
+      'name'  => __( 'Misskey', THEME_NAME ),
+      'title' => __( 'Misskeyをフォロー', THEME_NAME ),
+      'class' => 'misskey-button misskey-follow-button-sq',
+      'icon'  => 'icon-misskey-logo',
+    ),
+    'facebook_url' => array(
+      'name'  => __( 'Facebook', THEME_NAME ),
+      'title' => __( 'Facebookをフォロー', THEME_NAME ),
+      'class' => 'facebook-button facebook-follow-button-sq',
+      'icon'  => 'icon-facebook-logo',
+    ),
+    'threads_url' => array(
+      'name'  => __( 'Threads', THEME_NAME ),
+      'title' => __( 'Threadsをフォロー', THEME_NAME ),
+      'class' => 'threads-button threads-follow-button-sq',
+      'icon'  => 'icon-threads-logo',
+    ),
+    'reddit_url' => array(
+      'name'  => __( 'Reddit', THEME_NAME ),
+      'title' => __( 'Redditをフォロー', THEME_NAME ),
+      'class' => 'reddit-button reddit-follow-button-sq',
+      'icon'  => 'icon-reddit-logo',
+    ),
+    'hatebu_url' => array(
+      'name'  => __( 'はてなブックマーク', THEME_NAME ),
+      'title' => __( 'はてブをフォロー', THEME_NAME ),
+      'class' => 'hatebu-button hatebu-follow-button-sq',
+      'icon'  => 'icon-hatebu-logo',
+    ),
+    'instagram_url' => array(
+      'name'  => __( 'Instagram', THEME_NAME ),
+      'title' => __( 'Instagramをフォロー', THEME_NAME ),
+      'class' => 'instagram-button instagram-follow-button-sq',
+      'icon'  => 'icon-instagram-logo',
+    ),
+    'youtube_url' => array(
+      'name'  => __( 'YouTube', THEME_NAME ),
+      'title' => __( 'YouTubeをフォロー', THEME_NAME ),
+      'class' => 'youtube-button youtube-follow-button-sq',
+      'icon'  => 'icon-youtube-logo',
+    ),
+    'tiktok_url' => array(
+      'name'  => __( 'TikTok', THEME_NAME ),
+      'title' => __( 'TikTokをフォロー', THEME_NAME ),
+      'class' => 'tiktok-button tiktok-follow-button-sq',
+      'icon'  => 'icon-tiktok-logo',
+    ),
+    'linkedin_url' => array(
+      'name'  => __( 'LinkedIn', THEME_NAME ),
+      'title' => __( 'LinkedInをフォロー', THEME_NAME ),
+      'class' => 'linkedin-button linkedin-follow-button-sq',
+      'icon'  => 'icon-linkedin-logo',
+    ),
+    'note_url' => array(
+      'name'  => __( 'note', THEME_NAME ),
+      'title' => __( 'noteをフォロー', THEME_NAME ),
+      'class' => 'note-button note-follow-button-sq',
+      'icon'  => 'icon-note-logo',
+    ),
+    'soundcloud_url' => array(
+      'name'  => __( 'SoundCloud', THEME_NAME ),
+      'title' => __( 'SoundCloudをフォロー', THEME_NAME ),
+      'class' => 'soundcloud-button soundcloud-follow-button-sq',
+      'icon'  => 'icon-soundcloud-logo',
+    ),
+    'flickr_url' => array(
+      'name'  => __( 'Flickr', THEME_NAME ),
+      'title' => __( 'Flickrをフォロー', THEME_NAME ),
+      'class' => 'flickr-button flickr-follow-button-sq',
+      'icon'  => 'icon-flickr-logo',
+    ),
+    'pinterest_url' => array(
+      'name'  => __( 'Pinterest', THEME_NAME ),
+      'title' => __( 'Pinterestをフォロー', THEME_NAME ),
+      'class' => 'pinterest-button pinterest-follow-button-sq',
+      'icon'  => 'icon-pinterest-logo',
+    ),
+    'line_at_url' => array(
+      'name'  => __( 'LINE@', THEME_NAME ),
+      'title' => __( 'LINE@をフォロー', THEME_NAME ),
+      'class' => 'line-button line-follow-button-sq',
+      'icon'  => 'icon-line-logo',
+    ),
+    'amazon_url' => array(
+      'name'  => __( 'Amazon欲しい物リスト', THEME_NAME ),
+      'title' => __( 'Amazon欲しい物リスト', THEME_NAME ),
+      'class' => 'amazon-button amazon-follow-button-sq',
+      'icon'  => 'icon-amazon-logo',
+      'aria'  => __( 'Amazonほしい物リストをチェック', THEME_NAME ),
+    ),
+    'twitch_url' => array(
+      'name'  => __( 'Twitch', THEME_NAME ),
+      'title' => __( 'Twitchをフォロー', THEME_NAME ),
+      'class' => 'twitch-button twitch-follow-button-sq',
+      'icon'  => 'icon-twitch-logo',
+    ),
+    'rakuten_room_url' => array(
+      'name'  => __( '楽天ROOM', THEME_NAME ),
+      'title' => __( '楽天ROOMをフォロー', THEME_NAME ),
+      'class' => 'rakuten-room-button rakuten-room-follow-button-sq',
+      'icon'  => 'icon-rakuten-room-logo',
+    ),
+    'slack_url' => array(
+      'name'  => __( 'Slack', THEME_NAME ),
+      'title' => __( 'Slackをフォロー', THEME_NAME ),
+      'class' => 'slack-button slack-follow-button-sq',
+      'icon'  => 'icon-slack-logo',
+    ),
+    'github_url' => array(
+      'name'  => __( 'GitHub', THEME_NAME ),
+      'title' => __( 'GitHubをフォロー', THEME_NAME ),
+      'class' => 'github-button github-follow-button-sq',
+      'icon'  => 'icon-github-logo',
+    ),
+    'codepen_url' => array(
+      'name'  => __( 'CodePen', THEME_NAME ),
+      'title' => __( 'CodePenをフォロー', THEME_NAME ),
+      'class' => 'codepen-button codepen-follow-button-sq',
+      'icon'  => 'icon-codepen-logo',
+    ),
   );
 }
 endif;
@@ -165,7 +283,8 @@ add_filter('user_contactmethods', 'user_contactmethods_custom');
 if ( !function_exists( 'user_contactmethods_custom' ) ):
 function user_contactmethods_custom($prof_items){
   //定義済みのSNSフォローサービスを項目として追加
-  foreach ( get_theme_sns_follow_services() as $key => $label ) {
+  foreach ( get_theme_sns_follow_services() as $key => $data ) {
+    $label = $data['name'];
     /* translators: %s: SNSサービス名 */
     $format = __( '%s URL', THEME_NAME );
     //位置指定プレースホルダー（%1$s）で書かれた翻訳も通常形式に揃える
@@ -473,30 +592,22 @@ endif;
 //フォローボタンが存在する場合（feedly、RSS以外）
 if ( !function_exists( 'is_author_follow_buttons_exits' ) ):
 function is_author_follow_buttons_exits(){
-  return get_the_author_website_url()
-         || get_the_author_twitter_url()
-         || get_the_author_mastodon_url()
-         || get_the_author_bluesky_url()
-         || get_the_author_misskey_url()
-         || get_the_author_facebook_url()
-         || get_the_author_threads_url()
-         || get_the_author_reddit_url()
-         //|| get_the_author_google_plus_url()
-         || get_the_author_hatebu_url()
-         || get_the_author_instagram_url()
-         || get_the_author_pinterest_url()
-         || get_the_author_youtube_url()
-         || get_the_author_linkedin_url()
-         || get_the_author_note_url()
-         || get_the_author_soundcloud_url()
-         || get_the_author_flickr_url()
-         || get_the_author_line_at_url()
-         || get_the_author_amazon_url()
-         || get_the_author_twitch_url()
-         || get_the_author_rakuten_room_url()
-         || get_the_author_slack_url()
-         || get_the_author_github_url()
-         || get_the_author_codepen_url();
+  //WordPress標準のウェブサイトURLをチェック
+  if ( get_the_author_website_url() ) {
+    return true;
+  }
+
+  //定義済みのSNSフォローサービスのうち、どれか一つでもURLが登録されていればtrue
+  foreach ( get_theme_sns_follow_services() as $meta_key => $data ) {
+    //従来の個別取得関数（子テーマで上書き可能）があれば優先して判定
+    $get_func = 'get_the_author_' . $meta_key;
+    $url = function_exists($get_func) ? call_user_func($get_func) : esc_url(get_the_author_meta($meta_key, get_the_posts_author_id()));
+    if ( $url ) {
+      return true;
+    }
+  }
+
+  return false;
 }
 endif;
 

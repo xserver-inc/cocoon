@@ -71,9 +71,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
               <li><?php _e( 'ウェブサイト', THEME_NAME ) ?></li>
               <?php
               // sns-follow.php側のSNSフォローサービス定義から動的にリストを生成
-              foreach ( get_theme_sns_follow_services() as $label ) :
+              foreach ( get_theme_sns_follow_services() as $data ) :
                 ?>
-                <li><?php echo esc_html( $label ); ?></li>
+                <li><?php echo esc_html( $data['name'] ); ?></li>
               <?php endforeach; ?>
             </ul>
             <p><a href="profile.php"><?php _e( 'あなたのプロフィール', THEME_NAME ) ?></a><?php _e( 'から設定', THEME_NAME ) ?></p>
