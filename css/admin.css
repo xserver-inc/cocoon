@@ -20374,7 +20374,6 @@ body.wp-admin {
 
 .demo #related-entries h2 {
   font-size: 1.3em;
-  margin: 1em 0;
   font-weight: bold;
   line-height: unset;
   margin: unset;
@@ -20420,27 +20419,27 @@ pre {
   margin: 0.4em 0;
 }
 
-/*記事一覧のサムネイル幅*/
+/* 記事一覧のサムネイル幅 */
 .column-thumbnail {
   width: 80px;
 }
 
-/*記事一覧のPV幅*/
+/* 記事一覧のPV幅 */
 .column-pv {
   width: 70px;
 }
 
-/*記事一覧の投稿ID幅*/
+/* 記事一覧の投稿ID幅 */
 .column-post-id {
   width: 56px;
 }
 
-/*記事一覧の文字数幅*/
+/* 記事一覧の文字数幅 */
 .column-word-count {
   width: 76px;
 }
 
-/*パターン一覧のショートコード幅*/
+/* パターン一覧のショートコード幅 */
 .column-shortcode {
   width: 160px;
 }
@@ -20631,7 +20630,7 @@ form.admin-settings .postbox {
   width: 100%;
 }
 
-/*文字数カウントエリア*/
+/* 文字数カウントエリア */
 .str-count {
   margin-left: 10px;
   background-color: #f7f7f7;
@@ -20688,7 +20687,7 @@ form.admin-settings .postbox {
   width: 100%;
   height: auto;
 }
-.tooltip .tip-content:after, .tooltip .tip-content:before {
+.tooltip .tip-content::after, .tooltip .tip-content::before {
   top: 100%;
   left: 205px;
   border: solid transparent;
@@ -20698,13 +20697,13 @@ form.admin-settings .postbox {
   position: absolute;
   pointer-events: none;
 }
-.tooltip .tip-content:after {
+.tooltip .tip-content::after {
   border-color: rgba(255, 255, 235, 0);
   border-top-color: #ffffeb;
   border-width: 5px;
   margin-left: -5px;
 }
-.tooltip .tip-content:before {
+.tooltip .tip-content::before {
   border-color: rgba(135, 135, 135, 0);
   border-top-color: #878787;
   border-width: 6px;
@@ -20735,7 +20734,7 @@ p.submit {
 select option.fa {
   display: block;
 }
-select option.fa:before {
+select option.fa::before {
   width: 18px;
   display: inline-block;
   text-align: center;
@@ -20897,7 +20896,7 @@ select option.fa:before {
 }
 #ranking-items textarea {
   resize: both;
-  min-height: 0px;
+  min-height: 0;
   height: 120px;
   max-height: 600px;
 }
@@ -20942,7 +20941,7 @@ select option.fa:before {
   border-top: 1px solid #ccc;
 }
 .balloon-box:first-child {
-  border-top: 0px solid transparent;
+  border-top: 0 solid transparent;
 }
 
 .balloon-top {
@@ -24390,7 +24389,7 @@ select option.fa:before {
   background-size: 20px 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (width <= 480px) {
   div.widget {
     margin: 0 !important;
   }
@@ -24425,7 +24424,7 @@ select option.fa:before {
   text-align: center;
   margin: 0 1em !important;
 }
-.tablenav-pages .page-numbers {
+.tablenav-pages .page-numbers:not(.button) {
   display: inline-block;
   padding: 6px 12px;
   margin: 0 4px;
@@ -24438,18 +24437,18 @@ select option.fa:before {
   font-size: 14px;
   line-height: 1;
 }
-.tablenav-pages .page-numbers:hover {
+.tablenav-pages .page-numbers:not(.button):hover {
   background-color: #eee;
   border-color: #999;
   color: #333;
 }
-.tablenav-pages .page-numbers.current {
+.tablenav-pages .page-numbers:not(.button).current {
   background-color: #eee;
   border-color: #999;
   color: #333;
   pointer-events: none;
 }
-.tablenav-pages .page-numbers.dots {
+.tablenav-pages .page-numbers:not(.button).dots {
   border: none;
   background: none;
   pointer-events: none;

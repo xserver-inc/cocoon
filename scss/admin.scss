@@ -7,13 +7,13 @@ body.wp-admin{
   color: #444;
 }
 
-//固定値
+// 固定値
 @import "defins";
 @import "admin-snippets";
+
 .admin-settings .demo{
   @import "amp-imports";
   @import "imports";
-
   @include base_font;
 
   overflow: auto;
@@ -121,7 +121,6 @@ body.wp-admin{
 
 .demo #related-entries h2{
   font-size: 1.3em;
-  margin: 1em 0;
   font-weight: bold;
   line-height: unset;
   margin: unset;
@@ -131,26 +130,26 @@ body.wp-admin{
   font-size: unset;
 }
 
-//管理画面でプレビューできないので.demo内で読みみたくない
+// 管理画面でプレビューできないので.demo内で読みみたくない
 @import "pre";
 
-/*記事一覧のサムネイル幅*/
+/* 記事一覧のサムネイル幅 */
 .column-thumbnail{
   width: 80px;
 }
-/*記事一覧のPV幅*/
+/* 記事一覧のPV幅 */
 .column-pv{
   width: 70px;
 }
-/*記事一覧の投稿ID幅*/
+/* 記事一覧の投稿ID幅 */
 .column-post-id{
   width: 56px;
 }
-/*記事一覧の文字数幅*/
+/* 記事一覧の文字数幅 */
 .column-word-count{
   width: 76px;
 }
-/*パターン一覧のショートコード幅*/
+/* パターン一覧のショートコード幅 */
 .column-shortcode{
   width: 160px;
 }
@@ -182,9 +181,11 @@ body.wp-admin{
 
 form.admin-settings{
   margin-top: 2em;
+
   .button-primary{
     margin: 1em 0;
   }
+
   .postbox{
     padding: 1em;
     margin: 1em 0;
@@ -219,6 +220,7 @@ form.admin-settings{
     border-width: 1px 1px medium;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+
     &:hover{
       background-color: #fff;
     }
@@ -361,7 +363,7 @@ form.admin-settings{
 /////////////////////////////////////
 @include toggle;
 
-/*文字数カウントエリア*/
+/* 文字数カウントエリア */
 .str-count{
   margin-left: 10px;
   background-color: #f7f7f7;
@@ -398,8 +400,9 @@ form.admin-settings{
   position: relative;
   color: orange;
   font-size: 0.9em !important;
-  //top: 3px;
-  //margin-left: 3px;
+
+  // top: 3px;
+  // margin-left: 3px;
 
   &:hover .tip-content{
     display: block;
@@ -425,7 +428,7 @@ form.admin-settings{
     }
   }
 
-  .tip-content:after, .tip-content:before {
+  .tip-content::after, .tip-content::before {
     top: 100%;
     left: 205px;
     border: solid transparent;
@@ -436,13 +439,14 @@ form.admin-settings{
     pointer-events: none;
   }
 
-  .tip-content:after {
+  .tip-content::after {
     border-color: rgba(255, 255, 235, 0);
     border-top-color: #ffffeb;
     border-width: 5px;
     margin-left: -5px;
   }
-  .tip-content:before {
+
+  .tip-content::before {
     border-color: rgba(135, 135, 135, 0);
     border-top-color: #878787;
     border-width: 6px;
@@ -476,7 +480,7 @@ p.submit{
 select option.fa{
   display: block;
 
-  &:before{
+  &::before{
     width: 18px;
     display: inline-block;
     text-align: center;
@@ -506,24 +510,28 @@ select option.fa{
   ul{
     margin: 0;
     padding-left: 20px;
+
     li{
       margin-bottom: 3px;
     }
   }
+
   >ul{
     padding-left: 0;
   }
 }
+
 .widget-content .tab-content{
   max-height: 140px;
   margin-bottom: 1em;
 }
+
 .tabs .tagcloud-list{
   height: auto;
   max-height: 200px;
 }
 
-//カテゴリ編集ページの横幅
+// カテゴリ編集ページの横幅
 #edittag{
   max-width: 1200px;
 }
@@ -541,6 +549,7 @@ select option.fa{
   input[type="range"]{
     width: calc(100% - 18px);
   }
+
   .range-wrap{
     width: 100%;
   }
@@ -551,7 +560,7 @@ select option.fa{
   text-align: center;
 }
 
-//ランキング入力フォーム
+// ランキング入力フォーム
 #ranking-items{
   counter-reset: ranking-item-number;
 
@@ -559,6 +568,7 @@ select option.fa{
     &::before{
       display: none;
     }
+
     &:last-of-type{
       background-color: #fff;
     }
@@ -579,8 +589,10 @@ select option.fa{
     ul{
       display: flex;
       padding-left: 0;
+
       li{
         margin-right: 12px;
+
         input{
           margin-right: 2px;
         }
@@ -623,7 +635,7 @@ select option.fa{
   }
 
   .ranking-title{
-    input[type=text]{
+    input[type="text"]{
       font-weight: bold;
     }
   }
@@ -659,9 +671,11 @@ select option.fa{
     label{
       float: left;
     }
+
     ul{
       margin: 0;
       display: flex;
+
       li{
         margin-right: 1em;
       }
@@ -670,7 +684,7 @@ select option.fa{
 
   textarea{
     resize: both;
-    min-height: 0px;
+    min-height: 0;
     height: 120px;
     max-height: 600px;
   }
@@ -691,9 +705,11 @@ select option.fa{
 
  .opration-area{
   display: flex;
+
   .opration-submit{
     width: 120px;
   }
+
   .opration-menu-links{
     width: 100%;
     text-align: right;
@@ -724,10 +740,12 @@ select option.fa{
   margin: 10px 0;
   padding: 12px;
   border-top: 1px solid #ccc;
+
   &:first-child{
-    border-top: 0px solid transparent;
+    border-top: 0 solid transparent;
   }
 }
+
 .balloon-top{
   display: flex;
   justify-content: space-between;
@@ -735,9 +753,11 @@ select option.fa{
 
 .balloon-content{
   display: flex;
+
   >div{
     width: 100%;
   }
+
   .balloon-option{
     width: 80px;
     text-align: center;
@@ -746,7 +766,8 @@ select option.fa{
     align-content: space-around;
     align-items: center;
     justify-content: center;
-    //height: 200px;
+
+    // height: 200px;
     >div{
       padding: 5px 0;
     }
@@ -762,6 +783,7 @@ select option.fa{
   .demo .speech-wrap{
     margin: 0;
   }
+
   // .htmlcode{
   //   margin-bottom: 20px;
   // }
@@ -780,7 +802,7 @@ select option.fa{
 }
 
 .widget-content{
-  input[type=text]{
+  input[type="text"]{
     width: 100%;
   }
 }
@@ -799,11 +821,13 @@ select option.fa{
     padding: 3px 10px;
     background: #1b95e0 -moz-linear-gradient(center top , #f9f9f9 5%, #e9e9e9 100%) repeat scroll 0 0;
     border: 1px solid #bbb;
+
     // border: 1px solid #bbb;
     // background-color: #e7e7e7;
     text-align: center;
     margin-bottom: 1em;
     border-radius: 3px;
+
     &:hover{
       border-color: #333;
     }
@@ -815,6 +839,7 @@ select option.fa{
     // overflow: hidden;
     // transition: all .3s;
     display: none;
+
     select{
       width: 100%;
     }
@@ -831,8 +856,10 @@ select option.fa{
   > input[type="checkbox"] {
     display: none;
   }
+
   > input[type="checkbox"]:checked ~ .toggle-content {
     display: block;
+
     // visibility: visible;
     // height: auto;
   }
@@ -842,6 +869,7 @@ select option.fa{
   ///////////////////////////////////////
   .tabs{
     margin-top: 12px;
+
     .tab-item{
       display: inline-block;
       border-top-left-radius: 3px;
@@ -853,18 +881,19 @@ select option.fa{
       padding: 3px 6px;
       border-bottom: none;
       font-size: 0.85em;
+
       &:hover{
         opacity: 0.7;
       }
     }
 
-    //ラジオボタンと内容を非表示
+    // ラジオボタンと内容を非表示
     input[name="tab_item"],
     .tab-content {
       display: none;
     }
 
-    //選択されているタブのスタイルを変える
+    // 選択されているタブのスタイルを変える
     input[name="tab_item"]:checked + .tab-item {
       background-color: #fff;
     }
@@ -872,6 +901,7 @@ select option.fa{
   }
 
 }
+
 .metaslider-ui .metaslider-slides-container .slide{
   display: flex;
 }
@@ -890,6 +920,7 @@ select option.fa{
 
 .range-wrap{
   display: table;
+
   output{
     display: block;
     text-align: center;
@@ -905,21 +936,25 @@ select option.fa{
   color: #333 !important;
 
 }
+
 .mce-menu-item{
   background: #fff !important;
   border: 0 !important;
+
   span{
     color: #333 !important;
   }
+
   &:hover{
     background-color: #0073aa !important;
+
     span{
       color: #fff !important;
     }
   }
 }
 
-//装飾中のスタイルドロップダウンアイテムを選択中にする
+// 装飾中のスタイルドロップダウンアイテムを選択中にする
 .mce-menu {
   .mce-menu-item-preview.mce-active,
   .mce-menu-item.mce-selected,
@@ -927,6 +962,7 @@ select option.fa{
   .mce-menu-item:hover{
     background: #0073aa !important;
     color: #fff !important;
+
     span{
       color: #fff !important;
     };
@@ -941,6 +977,7 @@ select option.fa{
 
 .wp-button{
   line-height: normal !important;
+
   span{
     width: 16px;
     height: 16px;
@@ -976,9 +1013,10 @@ select option.fa{
 }
 
 #singular_sns_image_settings{
-  input[type=text]{
+  input[type="text"]{
     width: 100%;
   }
+
   #sns_image_url_thumbnail img{
     width: 100%;
   }
@@ -1016,7 +1054,7 @@ select option.fa{
   display: none;
 }
 
-//ブロックエディターのインクリメントサーチボックス
+// ブロックエディターのインクリメントサーチボックス
 .editor-inserter__search {
   max-width: 370px;
 }
@@ -1026,12 +1064,14 @@ select option.fa{
 }
 
 .components-popover__content{
-  //拡張クラス
+  // 拡張クラス
   @import "extension";
+
   .red{
     margin: 0;
   }
-  //フォント
+
+  // フォント
   @import "font";
 }
 
@@ -1039,10 +1079,12 @@ select option.fa{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+
   .admin-tag {
     @include tagcloud_a;
     flex: 0 1 auto;
   }
+
   input{
     margin-right: 5px;
   }
@@ -1060,20 +1102,20 @@ select option.fa{
   margin-bottom: 1em;
 }
 
-//管理画面のカラーピッカーで色が選択されているかどうかを分かりやすく選択色を透明に変更
+// 管理画面のカラーピッカーで色が選択されているかどうかを分かりやすく選択色を透明に変更
 .wp-picker-container .wp-color-result:not([style*="background-color"]) {
   background-image: linear-gradient(45deg,#c3c4c7 25%,transparent 25%,transparent 75%,#c3c4c7 75%,#c3c4c7),linear-gradient(45deg,#c3c4c7 25%,transparent 25%,transparent 75%,#c3c4c7 75%,#c3c4c7);
   background-position: 0 0,10px 10px;
   background-size: 20px 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (width <= 480px) {
   div.widget {
     margin: 0 !important;
   }
 }
 
-//ClassicPressのレンジバーの対応
+// ClassicPressのレンジバーの対応
 .classicpress{
   .admin-settings input[type="range"]:not(.iris-slider-offset){
     position: relative;
@@ -1111,12 +1153,13 @@ select option.fa{
   margin-bottom: 6px;
 }
 
-//ページネーション
+// ページネーション
 .tablenav-pages{
   text-align: center;
   margin: 0 1em !important;
 
-  .page-numbers{
+  // WP標準の.buttonクラスが付与されたページネーション（アクセス集計など）には適用しない
+  .page-numbers:not(.button){
     display: inline-block;
     padding: 6px 12px;
     margin: 0 4px;
