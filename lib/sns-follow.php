@@ -132,9 +132,11 @@ endif;
 // 値: name=サービス表示名, title=ボタンのtitle文言, class=ボタンの追加クラス, icon=アイコンクラス
 //     aria=aria-label文言（省略時はtitleと同じ文言を使用）
 // ※配列の並び順がそのままフォローボタンの表示順になる
+// ※cocoon_sns_follow_servicesフィルターでサービスの追加・削除・並べ替えが可能
+//   追加時のキー名は既存の取得関数と衝突しない「xxx_url」形式を推奨
 if ( !function_exists( 'get_theme_sns_follow_services' ) ):
 function get_theme_sns_follow_services(){
-  return array(
+  $services = array(
     'twitter_url' => array(
       'name'  => __( 'X（旧Twitter）', THEME_NAME ),
       'title' => __( 'Xをフォロー', THEME_NAME ),
@@ -275,6 +277,9 @@ function get_theme_sns_follow_services(){
       'icon'  => 'icon-codepen-logo',
     ),
   );
+
+  //フィルターを通して返すことで、子テーマやプラグインからサービスを追加・削除できるようにする
+  return apply_filters( 'cocoon_sns_follow_services', $services );
 }
 endif;
 
