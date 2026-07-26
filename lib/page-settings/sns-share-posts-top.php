@@ -11,36 +11,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 update_theme_option(OP_SNS_TOP_SHARE_BUTTONS_VISIBLE);
 //SNSシェアメッセージ
 update_theme_option(OP_SNS_TOP_SHARE_MESSAGE);
-//Twitterシェアボタンの表示
-update_theme_option(OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE);
-//Mastodonシェアボタンの表示
-update_theme_option(OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE);
-//Blueskyシェアボタンの表示
-update_theme_option(OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE);
-//Misskeyシェアボタンの表示
-update_theme_option(OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE);
-//Facebookシェアボタンの表示
-update_theme_option(OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE);
-//Threadsシェアボタンの表示
-update_theme_option(OP_TOP_THREADS_SHARE_BUTTON_VISIBLE);
-//Redditシェアボタンの表示
-update_theme_option(OP_TOP_REDDIT_SHARE_BUTTON_VISIBLE);
-//はてなブックマークシェアボタンの表示
-update_theme_option(OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE);
-//Google+シェアボタンの表示
-update_theme_option(OP_TOP_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE);
-//Pocketシェアボタンの表示
-update_theme_option(OP_TOP_POCKET_SHARE_BUTTON_VISIBLE);
-//LINE@シェアボタンの表示
-update_theme_option(OP_TOP_LINE_AT_SHARE_BUTTON_VISIBLE);
-//Pinterestシェアボタンの表示
-update_theme_option(OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE);
-//LinkedInシェアボタンの表示
-update_theme_option(OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE);
-//コピーシェアボタンの表示
-update_theme_option(OP_TOP_COPY_SHARE_BUTTON_VISIBLE);
-//コメントボタンの表示
-update_theme_option(OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE);
+//個々のSNSシェアボタンの表示（定義一覧をもとに一括保存）
+foreach ( get_cocoon_sns_share_options() as $sns_option ) {
+  if ( !empty($sns_option['top_key']) ) {
+    update_theme_option($sns_option['top_key']);
+  }
+}
 //フロントページシェアボタンの表示
 update_theme_option(OP_SNS_FRONT_PAGE_TOP_SHARE_BUTTONS_VISIBLE);
 //投稿シェアボタンの表示

@@ -802,3 +802,330 @@ function get_share_cache_ID(){
   return $id;
 }
 endif;
+
+//Cocoon設定「表示切替」とフロントのシェアボタン出力で共用するSNSの定義一覧を取得する
+//フォーム生成（sns-share-forms-*.php）・設定保存（sns-share-posts-*.php）・
+//シェアボタン描画（tmp/sns-share-buttons.php）の3か所から参照する
+if ( !function_exists( 'get_cocoon_sns_share_options' ) ):
+function get_cocoon_sns_share_options(){
+  //定義の組み立て・翻訳・フィルター適用・エスケープは1リクエストにつき1回だけ行う
+  //（シェアボタンは1ページに何度も描画されるため、毎回作り直すと無駄になる）
+  static $options = null;
+  if ( $options !== null ) {
+    return $options;
+  }
+  $options = array(
+    'twitter' => array(
+      'label'             => __( 'X（旧Twitter）', THEME_NAME ),
+      'top_key'           => OP_TOP_TWITTER_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_twitter_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_twitter_share_button_visible',
+      'visible_fn'        => 'is_twitter_share_button_visible',
+      'url_fn'            => 'get_twitter_share_url',
+      'count_fn'          => 'get_twitter_count',
+      'class'             => 'twitter-button twitter-share-button-sq x-corp-button x-corp-share-button-sq',
+      'icon'              => 'icon-x-corp',
+      'count_class'       => 'twitter-share-count x-share-count',
+      'caption'           => __( 'X', THEME_NAME ),
+      'title'             => __( 'Xでシェア', THEME_NAME ),
+    ),
+    'mastodon' => array(
+      'label'             => __( 'Mastodon', THEME_NAME ),
+      'top_key'           => OP_TOP_MASTODON_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_MASTODON_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_mastodon_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_mastodon_share_button_visible',
+      'visible_fn'        => 'is_mastodon_share_button_visible',
+      'url_fn'            => 'get_mastodon_share_url',
+      'count_fn'          => 'get_mastodon_count',
+      'class'             => 'mastodon-button mastodon-share-button-sq',
+      'icon'              => 'icon-mastodon',
+      'count_class'       => 'mastodon-share-count',
+      'caption'           => __( 'Mastodon', THEME_NAME ),
+      'title'             => __( 'Mastodonでシェア', THEME_NAME ),
+    ),
+    'bluesky' => array(
+      'label'             => __( 'Bluesky', THEME_NAME ),
+      'top_key'           => OP_TOP_BLUESKY_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_BLUESKY_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_bluesky_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_bluesky_share_button_visible',
+      'visible_fn'        => 'is_bluesky_share_button_visible',
+      'url_fn'            => 'get_bluesky_share_url',
+      'count_fn'          => 'get_bluesky_count',
+      'class'             => 'bluesky-button bluesky-share-button-sq',
+      'icon'              => 'icon-bluesky',
+      'count_class'       => 'bluesky-share-count',
+      'caption'           => __( 'Bluesky', THEME_NAME ),
+      'title'             => __( 'Blueskyでシェア', THEME_NAME ),
+    ),
+    'misskey' => array(
+      'label'             => __( 'Misskey', THEME_NAME ),
+      'top_key'           => OP_TOP_MISSKEY_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_MISSKEY_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_misskey_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_misskey_share_button_visible',
+      'visible_fn'        => 'is_misskey_share_button_visible',
+      'url_fn'            => 'get_misskey_share_url',
+      'count_fn'          => 'get_misskey_count',
+      'class'             => 'misskey-button misskey-share-button-sq',
+      'icon'              => 'icon-misskey',
+      'count_class'       => 'misskey-share-count',
+      'caption'           => __( 'Misskey', THEME_NAME ),
+      'title'             => __( 'Misskeyでシェア', THEME_NAME ),
+    ),
+    'facebook' => array(
+      'label'             => __( 'Facebook', THEME_NAME ),
+      'top_key'           => OP_TOP_FACEBOOK_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_facebook_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_facebook_share_button_visible',
+      'visible_fn'        => 'is_facebook_share_button_visible',
+      'url_fn'            => 'get_facebook_share_url',
+      'count_fn'          => 'get_facebook_count',
+      'class'             => 'facebook-button facebook-share-button-sq',
+      'icon'              => 'icon-facebook',
+      'count_class'       => 'facebook-share-count',
+      'caption'           => __( 'Facebook', THEME_NAME ),
+      'title'             => __( 'Facebookでシェア', THEME_NAME ),
+    ),
+    'threads' => array(
+      'label'             => __( 'Threads', THEME_NAME ),
+      'top_key'           => OP_TOP_THREADS_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_THREADS_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_threads_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_threads_share_button_visible',
+      'visible_fn'        => 'is_threads_share_button_visible',
+      'url_fn'            => 'get_threads_share_url',
+      'count_fn'          => 'get_threads_count',
+      'class'             => 'threads-button threads-share-button-sq',
+      'icon'              => 'icon-threads',
+      'count_class'       => 'threads-share-count',
+      'caption'           => __( 'Threads', THEME_NAME ),
+      'title'             => __( 'Threadsでシェア', THEME_NAME ),
+    ),
+    //Redditは get_reddit_count() が存在するものの、従来からシェア数を表示していないため count_fn は持たせない
+    'reddit' => array(
+      'label'             => __( 'Reddit', THEME_NAME ),
+      'top_key'           => OP_TOP_REDDIT_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_REDDIT_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_reddit_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_reddit_share_button_visible',
+      'visible_fn'        => 'is_reddit_share_button_visible',
+      'url_fn'            => 'get_reddit_share_url',
+      'class'             => 'reddit-button reddit-share-button-sq',
+      'icon'              => 'icon-reddit',
+      'count_class'       => 'reddit-share-count',
+      'caption'           => __( 'Reddit', THEME_NAME ),
+      'title'             => __( 'Redditでシェア', THEME_NAME ),
+    ),
+    'hatebu' => array(
+      'label'             => __( 'はてなブックマーク', THEME_NAME ),
+      'top_key'           => OP_TOP_HATEBU_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_hatebu_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_hatebu_share_button_visible',
+      'visible_fn'        => 'is_hatebu_share_button_visible',
+      'url_fn'            => 'get_hatebu_share_url',
+      'count_fn'          => 'get_hatebu_count',
+      'class'             => 'hatebu-button hatena-bookmark-button hatebu-share-button-sq',
+      'icon'              => 'icon-hatena',
+      'count_class'       => 'hatebu-share-count',
+      'caption'           => __( 'はてブ', THEME_NAME ),
+      'title'             => __( 'はてブでブックマーク', THEME_NAME ),
+      //はてなブックマークのJSが参照する属性。従来のHTMLと同じくclass属性の直後に出力する
+      'attrs_after_class' => array( 'data-hatena-bookmark-layout' => 'simple' ),
+    ),
+    //Pocketはサービス終了により既定で非表示（is_pocket_share_button_visible() が0を返す）。
+    //フィルターで復活させている利用者のために定義は残すが、設定画面には出さないので top_key / bottom_key は持たせない
+    'pocket' => array(
+      'visible_fn'        => 'is_pocket_share_button_visible',
+      'url_fn'            => 'get_pocket_share_url',
+      'count_fn'          => 'get_pocket_count',
+      'class'             => 'pocket-button pocket-share-button-sq',
+      'icon'              => 'icon-pocket',
+      'count_class'       => 'pocket-share-count',
+      'caption'           => __( 'Pocket', THEME_NAME ),
+      'title'             => __( 'Pocketに保存', THEME_NAME ),
+    ),
+    'line_at' => array(
+      'label'             => __( 'LINE@', THEME_NAME ),
+      'top_key'           => OP_TOP_LINE_AT_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_line_at_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_line_at_share_button_visible',
+      'visible_fn'        => 'is_line_at_share_button_visible',
+      'url_fn'            => 'get_line_share_url',
+      'class'             => 'line-button line-share-button-sq',
+      'icon'              => 'icon-line',
+      'count_class'       => 'line-share-count',
+      'caption'           => __( 'LINE', THEME_NAME ),
+      'title'             => __( 'LINEでシェア', THEME_NAME ),
+    ),
+    'pinterest' => array(
+      'label'             => __( 'Pinterest', THEME_NAME ),
+      'top_key'           => OP_TOP_PINTEREST_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_pinterest_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_pinterest_share_button_visible',
+      'visible_fn'        => 'is_pinterest_share_button_visible',
+      'url_fn'            => 'get_pinterest_share_url',
+      'class'             => 'pinterest-button pinterest-share-button-sq',
+      'icon'              => 'icon-pinterest',
+      'count_class'       => 'pinterest-share-count',
+      'caption'           => __( 'Pinterest', THEME_NAME ),
+      'title'             => __( 'Pinterestでシェア', THEME_NAME ),
+      //PinterestのJSが参照する属性。従来のHTMLと同じくrel属性の直後に出力する
+      'attrs_after_rel'   => array( 'data-pin-do' => 'buttonBookmark', 'data-pin-custom' => 'true' ),
+    ),
+    'linkedin' => array(
+      'label'             => __( 'LinkedIn', THEME_NAME ),
+      'top_key'           => OP_TOP_LINKEDIN_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_LINKEDIN_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_linkedin_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_linkedin_share_button_visible',
+      'visible_fn'        => 'is_linkedin_share_button_visible',
+      'url_fn'            => 'get_linkedin_share_url',
+      'class'             => 'linkedin-button linkedin-share-button-sq',
+      'icon'              => 'icon-linkedin',
+      'count_class'       => 'linkedin-share-count',
+      'caption'           => __( 'LinkedIn', THEME_NAME ),
+      'title'             => __( 'LinkedInでシェア', THEME_NAME ),
+    ),
+    //コピーボタンはリンクではなくクリップボード操作用のボタンなので type で描画方法を切り替える
+    'copy' => array(
+      'label'             => __( 'タイトルとURLをコピー', THEME_NAME ),
+      'top_key'           => OP_TOP_COPY_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_COPY_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_copy_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_copy_share_button_visible',
+      'type'              => 'copy',
+      'visible_fn'        => 'is_copy_share_button_visible',
+      //AMPページではJavaScriptが動かないため出力しない
+      'exclude_amp'       => true,
+      'class'             => 'copy-button copy-share-button-sq',
+      'icon'              => 'icon-copy',
+      'count_class'       => 'copy-share-count',
+      'caption'           => __( 'コピー', THEME_NAME ),
+      'title'             => __( 'タイトルとURLをコピーする', THEME_NAME ),
+    ),
+    //コメントボタンは同一ページ内のコメント欄へのアンカー
+    'comment' => array(
+      'label'             => __( 'コメント', THEME_NAME ),
+      'top_key'           => OP_TOP_COMMENT_SHARE_BUTTON_VISIBLE,
+      'bottom_key'        => OP_BOTTOM_COMMENT_SHARE_BUTTON_VISIBLE,
+      'top_visible_fn'    => 'is_top_comment_share_button_visible',
+      'bottom_visible_fn' => 'is_bottom_comment_share_button_visible',
+      'type'              => 'comment',
+      'visible_fn'        => 'is_comment_share_button_visible',
+      //コメントが投稿できる状態かどうかの追加判定
+      'extra_visible_fn'  => 'is_comment_share_button_displayable',
+      'url'               => '#comments',
+      'class'             => 'comment-button comment-share-button-sq',
+      'icon'              => 'icon-comment',
+      'count_class'       => 'comment-share-count',
+      'caption'           => __( 'コメント', THEME_NAME ),
+      'title'             => __( 'コメントする', THEME_NAME ),
+    ),
+  );
+  //子テーマやプラグインからSNSの追加・削除・並び替えができるようにする
+  //※ フィルターの適用は1リクエストにつき1回だけなので、フックは init までに登録すること
+  $options = apply_filters( 'cocoon_sns_share_options', $options );
+  //描画のたびに同じ処理を繰り返さないよう、エスケープと関数の存在確認をここで済ませておく
+  foreach ( $options as $sns_key => $sns ) {
+    $sns['type']              = !empty($sns['type']) ? $sns['type'] : 'share';
+    $sns['class']             = esc_attr(get_cocoon_sns_share_option_text($sns, 'class'));
+    $sns['icon']              = esc_attr(get_cocoon_sns_share_option_text($sns, 'icon'));
+    $sns['count_class']       = esc_attr(get_cocoon_sns_share_option_text($sns, 'count_class'));
+    $sns['title']             = esc_attr(get_cocoon_sns_share_option_text($sns, 'title'));
+    $sns['caption']           = esc_html(get_cocoon_sns_share_option_text($sns, 'caption'));
+    //data属性は「 name="value"」の形にまとめておく
+    $sns['attrs_after_class'] = get_cocoon_sns_share_option_attrs($sns, 'attrs_after_class');
+    $sns['attrs_after_rel']   = get_cocoon_sns_share_option_attrs($sns, 'attrs_after_rel');
+    //存在しない関数が指定されていた場合は空にして、描画時に存在確認をしなくて済むようにする
+    foreach ( array( 'visible_fn', 'url_fn', 'count_fn', 'extra_visible_fn' ) as $fn_key ) {
+      if ( !empty($sns[$fn_key]) && !function_exists($sns[$fn_key]) ) {
+        $sns[$fn_key] = '';
+      }
+    }
+    $options[$sns_key] = $sns;
+  }
+  return $options;
+}
+endif;
+
+//SNSシェアボタン定義から、指定位置の現在の表示状態を取得する
+//$position には 'top' もしくは 'bottom' を渡す
+if ( !function_exists( 'is_cocoon_sns_share_option_visible' ) ):
+function is_cocoon_sns_share_option_visible($sns_option, $position){
+  $fn_name = $position.'_visible_fn';
+  //フィルターで追加されたSNSなどで判定関数が未定義の場合は非表示扱いにする
+  if ( empty($sns_option[$fn_name]) || !function_exists($sns_option[$fn_name]) ) {
+    return 0;
+  }
+  return call_user_func($sns_option[$fn_name]);
+}
+endif;
+
+//SNSシェアボタン定義のテキスト（label / caption / title）を取得する
+//フィルターで追加されたSNSで未指定だった場合は $default を返す
+if ( !function_exists( 'get_cocoon_sns_share_option_text' ) ):
+function get_cocoon_sns_share_option_text($sns_option, $key, $default = ''){
+  return !empty($sns_option[$key]) ? $sns_option[$key] : $default;
+}
+endif;
+
+//フロントのシェアボタンとして表示するかを判定する
+//$option には SS_TOP / SS_BOTTOM / SS_MOBILE のいずれかを渡す
+if ( !function_exists( 'is_cocoon_sns_share_button_visible' ) ):
+function is_cocoon_sns_share_button_visible($sns_option, $option){
+  //判定関数が無いものは表示しない（関数の存在確認は定義一覧の組み立て時に済んでいる）
+  if ( empty($sns_option['visible_fn']) ) {
+    return false;
+  }
+  $visible_fn = $sns_option['visible_fn'];
+  if ( !$visible_fn($option) ) {
+    return false;
+  }
+  //AMPページで出力できないボタン（コピーボタンなど）を除外する
+  if ( !empty($sns_option['exclude_amp']) && is_amp() ) {
+    return false;
+  }
+  //コメントボタンのように追加条件があるものを判定する
+  if ( !empty($sns_option['extra_visible_fn']) ) {
+    $extra_visible_fn = $sns_option['extra_visible_fn'];
+    if ( !$extra_visible_fn($option) ) {
+      return false;
+    }
+  }
+  return true;
+}
+endif;
+
+//SNSシェアボタン定義のdata属性などを「 name="value"」形式の文字列に組み立てる
+if ( !function_exists( 'get_cocoon_sns_share_option_attrs' ) ):
+function get_cocoon_sns_share_option_attrs($sns_option, $key){
+  if ( empty($sns_option[$key]) || !is_array($sns_option[$key]) ) {
+    return '';
+  }
+  $attrs = '';
+  foreach ( $sns_option[$key] as $attr_name => $attr_value ) {
+    $attrs .= sprintf(' %s="%s"', esc_attr($attr_name), esc_attr($attr_value));
+  }
+  return $attrs;
+}
+endif;
+
+//コメントシェアボタンを実際に表示できる状態か
+//投稿・固定ページで、コメントが開いているかコメントが付いていて、かつCocoon設定でもコメント表示が有効な場合に表示する
+if ( !function_exists( 'is_comment_share_button_displayable' ) ):
+function is_comment_share_button_displayable(){
+  //投稿・固定ページ以外、またはコメントが閉じていてコメントも無い場合は表示しない
+  if ( !is_singular() || (!is_comment_open() && !get_comments_number()) ) {
+    return false;
+  }
+  //Cocoon設定の固定ページ／投稿ページのコメント表示設定に従う
+  return (is_page() && is_page_comment_visible()) || (is_single() && is_single_comment_visible());
+}
+endif;

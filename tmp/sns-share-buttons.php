@@ -13,74 +13,63 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php endif; ?>
 
   <div class="sns-share-buttons sns-buttons">
-    <?php if ( is_twitter_share_button_visible($option) )://Twitterボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_twitter_share_url()); ?>" class="sns-button share-button twitter-button twitter-share-button-sq x-corp-button x-corp-share-button-sq" target="_blank" title="<?php _e( 'Xでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Xでシェア', THEME_NAME ) ?>"><span class="social-icon icon-x-corp"></span><span class="button-caption"><?php _e( 'X', THEME_NAME ) ?></span><span class="share-count twitter-share-count x-share-count"><?php echo get_twitter_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_mastodon_share_button_visible($option) )://Mastodonボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_mastodon_share_url()); ?>" class="sns-button share-button mastodon-button mastodon-share-button-sq" target="_blank" title="<?php _e( 'Mastodonでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Mastodonでシェア', THEME_NAME ) ?>"><span class="social-icon icon-mastodon"></span><span class="button-caption"><?php _e( 'Mastodon', THEME_NAME ) ?></span><span class="share-count mastodon-share-count"><?php echo get_mastodon_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_bluesky_share_button_visible($option) )://Blueskyボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_bluesky_share_url()); ?>" class="sns-button share-button bluesky-button bluesky-share-button-sq" target="_blank" title="<?php _e( 'Blueskyでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Blueskyでシェア', THEME_NAME ) ?>"><span class="social-icon icon-bluesky"></span><span class="button-caption"><?php _e( 'Bluesky', THEME_NAME ) ?></span><span class="share-count bluesky-share-count"><?php echo get_bluesky_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_misskey_share_button_visible($option) )://Misskeyボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_misskey_share_url()); ?>" class="sns-button share-button misskey-button misskey-share-button-sq" target="_blank" title="<?php _e( 'Misskeyでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Misskeyでシェア', THEME_NAME ) ?>"><span class="social-icon icon-misskey"></span><span class="button-caption"><?php _e( 'Misskey', THEME_NAME ) ?></span><span class="share-count misskey-share-count"><?php echo get_misskey_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_facebook_share_button_visible($option) )://Facebookボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_facebook_share_url()); ?>" class="sns-button share-button facebook-button facebook-share-button-sq" target="_blank" title="<?php _e( 'Facebookでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Facebookでシェア', THEME_NAME ) ?>"><span class="social-icon icon-facebook"></span><span class="button-caption"><?php _e( 'Facebook', THEME_NAME ) ?></span><span class="share-count facebook-share-count"><?php echo get_facebook_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_threads_share_button_visible($option) )://Threadsボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_threads_share_url()); ?>" class="sns-button share-button threads-button threads-share-button-sq" target="_blank" title="<?php _e( 'Threadsでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Threadsでシェア', THEME_NAME ) ?>"><span class="social-icon icon-threads"></span><span class="button-caption"><?php _e( 'Threads', THEME_NAME ) ?></span><span class="share-count threads-share-count"><?php echo get_threads_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_reddit_share_button_visible($option) )://Redditボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_reddit_share_url()); ?>" class="sns-button share-button reddit-button reddit-share-button-sq" target="_blank" title="<?php _e( 'Redditでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Redditでシェア', THEME_NAME ) ?>"><span class="social-icon icon-reddit"></span><span class="button-caption"><?php _e( 'Reddit', THEME_NAME ) ?></span><span class="share-count reddit-share-count"></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_hatebu_share_button_visible($option) )://はてなボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_hatebu_share_url()); ?>" class="sns-button share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" target="_blank" title="<?php _e( 'はてブでブックマーク', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'はてブでブックマーク', THEME_NAME ) ?>"><span class="social-icon icon-hatena"></span><span class="button-caption"><?php _e( 'はてブ', THEME_NAME ) ?></span><span class="share-count hatebu-share-count"><?php echo get_hatebu_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_pocket_share_button_visible($option) )://pocketボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_pocket_share_url()); ?>" class="sns-button share-button pocket-button pocket-share-button-sq" target="_blank" title="<?php _e( 'Pocketに保存', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'Pocketに保存', THEME_NAME ) ?>"><span class="social-icon icon-pocket"></span><span class="button-caption"><?php _e( 'Pocket', THEME_NAME ) ?></span><span class="share-count pocket-share-count"><?php echo get_pocket_count(); ?></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_line_at_share_button_visible($option) )://LINEボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_line_share_url()); ?>" class="sns-button share-button line-button line-share-button-sq" target="_blank" title="<?php _e( 'LINEでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'LINEでシェア', THEME_NAME ) ?>"><span class="social-icon icon-line"></span><span class="button-caption"><?php _e( 'LINE', THEME_NAME ) ?></span><span class="share-count line-share-count"></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_pinterest_share_button_visible($option) )://Pinterestボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_pinterest_share_url()); ?>" class="sns-button share-button pinterest-button pinterest-share-button-sq" target="_blank" title="<?php _e( 'Pinterestでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" data-pin-do="buttonBookmark" data-pin-custom="true" aria-label="<?php _e( 'Pinterestでシェア', THEME_NAME ) ?>"><span class="social-icon icon-pinterest"></span><span class="button-caption"><?php _e( 'Pinterest', THEME_NAME ) ?></span><span class="share-count pinterest-share-count"></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_linkedin_share_button_visible($option) )://LinkedInボタンを表示するか ?>
-      <a href="<?php echo esc_url(get_linkedin_share_url()); ?>" class="sns-button share-button linkedin-button linkedin-share-button-sq" target="_blank" title="<?php _e( 'LinkedInでシェア', THEME_NAME ) ?>" rel="nofollow noopener noreferrer" aria-label="<?php _e( 'LinkedInでシェア', THEME_NAME ) ?>"><span class="social-icon icon-linkedin"></span><span class="button-caption"><?php _e( 'LinkedIn', THEME_NAME ) ?></span><span class="share-count linkedin-share-count"></span></a>
-    <?php endif; ?>
-
-    <?php if ( is_copy_share_button_visible($option) && !is_amp() )://コピーボタンを表示するか
-        global $_MOBILE_COPY_BUTTON;
-        $_MOBILE_COPY_BUTTON = true; ?>
-      <a role="button" tabindex="0" class="sns-button share-button copy-button copy-share-button-sq" data-clipboard-text="<?php echo esc_attr(get_share_page_title()); ?> <?php echo get_share_page_url(); ?>" title="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>" aria-label="<?php _e( 'タイトルとURLをコピーする', THEME_NAME ) ?>"><span class="social-icon icon-copy"></span><span class="button-caption"><?php _e( 'コピー', THEME_NAME ) ?></span><span class="share-count copy-share-count"></span></a>
-    <?php endif; ?>
-
     <?php
-    if ( // コメントボタンを表示するか
-      // 投稿・固定ページのみでコメントが有効（オープンもしくはコメントがある）な時表示
-      (is_comment_share_button_visible($option) && is_singular() && (is_comment_open() || get_comments_number()))
-      && (
-        // Cocoon設定の固定ページコメント表示が有効の時
-        (is_page() && is_page_comment_visible())
-        // Cocoon設定の投稿ページコメント表示が有効の時
-        || (is_single() && is_single_comment_visible())
-        )
-      ):?>
-      <a href="#comments" class="sns-button share-button comment-button comment-share-button-sq" title="<?php _e( 'コメントする', THEME_NAME ) ?>" aria-label="<?php _e( 'コメントする', THEME_NAME ) ?>"><span class="social-icon icon-comment"></span><span class="button-caption"><?php _e( 'コメント', THEME_NAME ) ?></span><span class="share-count comment-share-count"></span></a>
-    <?php endif; ?>
+    //SNSの定義一覧（lib/sns-share.php の get_cocoon_sns_share_options()）をもとにシェアボタンを出力する
+    //新しいSNSを追加したいときは cocoon_sns_share_options フィルターで定義を足すだけでよい
+    //※ class・icon・count_class・title・caption は定義一覧を組み立てた時点でエスケープ済み
+    foreach ( get_cocoon_sns_share_options() as $sns ) {
+      //表示しないSNSはここで抜ける。URL取得やシェア数取得は表示するものだけで実行される
+      if ( !is_cocoon_sns_share_button_visible($sns, $option) ) {
+        continue;
+      }
 
+      $sns_url = '';
+      if ( $sns['type'] === 'share' ) {
+        //フィルターで追加されたSNSでURL取得関数が未定義の場合は出力しない
+        if ( empty($sns['url_fn']) ) {
+          continue;
+        }
+        $url_fn = $sns['url_fn'];
+        $sns_url = esc_url($url_fn());
+      } elseif ( $sns['type'] === 'comment' ) {
+        $sns_url = esc_url(!empty($sns['url']) ? $sns['url'] : '#comments');
+      } elseif ( $sns['type'] !== 'copy' ) {
+        //フィルターで未知の type を指定された場合は、リンク先の無いボタンを出さずに飛ばす
+        continue;
+      }
+
+      //シェア数を表示しないSNSは count_fn を持たない
+      $sns_count = '';
+      if ( !empty($sns['count_fn']) ) {
+        $count_fn = $sns['count_fn'];
+        $sns_count = esc_html($count_fn());
+      }
+      $sns_inner = '<span class="social-icon '.$sns['icon'].'"></span>'
+                 . '<span class="button-caption">'.$sns['caption'].'</span>'
+                 . '<span class="share-count '.$sns['count_class'].'">'.$sns_count.'</span>';
+
+      //ボタン同士の間に空白を入れる（従来のHTMLと同じくインライン要素の区切りを保つため）
+      echo "\n      ";
+
+      if ( $sns['type'] === 'copy' ) {
+        //コピーボタンを出力したことをモバイルシェアボタン側へ伝える
+        global $_MOBILE_COPY_BUTTON;
+        $_MOBILE_COPY_BUTTON = true;
+        echo '<a role="button" tabindex="0" class="sns-button share-button '.$sns['class'].'"'
+           . ' data-clipboard-text="'.esc_attr(get_share_page_title()).' '.get_share_page_url().'"'
+           . ' title="'.$sns['title'].'" aria-label="'.$sns['title'].'">'.$sns_inner.'</a>';
+      } elseif ( $sns['type'] === 'comment' ) {
+        echo '<a href="'.$sns_url.'" class="sns-button share-button '.$sns['class'].'"'
+           . ' title="'.$sns['title'].'" aria-label="'.$sns['title'].'">'.$sns_inner.'</a>';
+      } else {
+        //attrs_after_class / attrs_after_rel は、はてブやPinterestのように特定の位置へdata属性を差し込むためのもの
+        echo '<a href="'.$sns_url.'" class="sns-button share-button '.$sns['class'].'"'.$sns['attrs_after_class']
+           . ' target="_blank" title="'.$sns['title'].'" rel="nofollow noopener noreferrer"'.$sns['attrs_after_rel']
+           . ' aria-label="'.$sns['title'].'">'.$sns_inner.'</a>';
+      }
+    }
+    echo "\n    ";
+    ?>
   </div><!-- /.sns-share-buttons -->
 
 </div><!-- /.sns-share -->

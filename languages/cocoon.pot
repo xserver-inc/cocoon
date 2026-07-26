@@ -325,13 +325,12 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:351
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/sns-share-forms-bottom.php:110
-#: lib/page-settings/sns-share-forms-top.php:97
 #: lib/page-settings/_top-page.php:224
+#: lib/sns-share.php:1015
+#: lib/sns-share.php:1028
 #: lib/_defins.php:412
 #: skins/skin-made-in-heaven/lib/panel-option.php:81
 #: tmp/mobile-comments-button.php:12
-#: tmp/sns-share-buttons.php:81
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
 #: blocks/src/block/icon-box/deprecated.js:102
@@ -2624,8 +2623,8 @@ msgstr ""
 
 #: lib/html-forms.php:803
 #: lib/page-settings/sns-follow-forms.php:97
-#: lib/page-settings/sns-share-forms-bottom.php:130
-#: lib/page-settings/sns-share-forms-top.php:117
+#: lib/page-settings/sns-share-forms-bottom.php:101
+#: lib/page-settings/sns-share-forms-top.php:88
 #: lib/page-settings/_top-page.php:197
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
@@ -2634,8 +2633,8 @@ msgstr ""
 #: lib/html-forms.php:804
 #: lib/page-settings/about-forms.php:82
 #: lib/page-settings/sns-follow-forms.php:100
-#: lib/page-settings/sns-share-forms-bottom.php:133
-#: lib/page-settings/sns-share-forms-top.php:120
+#: lib/page-settings/sns-share-forms-bottom.php:104
+#: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/toc-forms.php:78
 #: lib/page-settings/_top-page.php:200
 #: lib/shortcodes.php:517
@@ -7147,8 +7146,8 @@ msgstr ""
 #: lib/page-settings/single-forms.php:129
 #: lib/page-settings/single-forms.php:350
 #: lib/page-settings/sns-follow-forms.php:103
-#: lib/page-settings/sns-share-forms-bottom.php:136
-#: lib/page-settings/sns-share-forms-top.php:123
+#: lib/page-settings/sns-share-forms-bottom.php:107
+#: lib/page-settings/sns-share-forms-top.php:94
 #: lib/shortcodes.php:534
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
@@ -7166,8 +7165,8 @@ msgstr ""
 #: lib/page-settings/editor-forms.php:83
 #: lib/page-settings/single-forms.php:130
 #: lib/page-settings/sns-follow-forms.php:106
-#: lib/page-settings/sns-share-forms-bottom.php:139
-#: lib/page-settings/sns-share-forms-top.php:126
+#: lib/page-settings/sns-share-forms-bottom.php:110
+#: lib/page-settings/sns-share-forms-top.php:97
 #: lib/tinymce/html-tags.php:48
 #: lib/widgets/display-widgets.php:173
 #: blocks/src/block/new-list/edit.js:117
@@ -10232,8 +10231,8 @@ msgid "現ログインユーザーのSNSフォローページを設定します�
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:88
-#: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108
+#: lib/page-settings/sns-share-forms-bottom.php:92
+#: lib/page-settings/sns-share-forms-top.php:79
 #: lib/page-settings/toc-forms.php:72
 msgid "表示ページ"
 msgstr ""
@@ -10243,14 +10242,14 @@ msgid "フォローボタンを表示するページの切り替え。"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:94
-#: lib/page-settings/sns-share-forms-bottom.php:127
-#: lib/page-settings/sns-share-forms-top.php:114
+#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-top.php:85
 msgid "フロントページ"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:94
-#: lib/page-settings/sns-share-forms-bottom.php:127
-#: lib/page-settings/sns-share-forms-top.php:114
+#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-top.php:85
 msgid "（インデックスページ）"
 msgstr ""
 
@@ -10283,27 +10282,27 @@ msgid "RSS購読用のボタンを表示します。"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:143
-#: lib/page-settings/sns-share-forms-bottom.php:150
-#: lib/page-settings/sns-share-forms-top.php:137
+#: lib/page-settings/sns-share-forms-bottom.php:121
+#: lib/page-settings/sns-share-forms-top.php:108
 msgid "ボタンカラー"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:148
-#: lib/page-settings/sns-share-forms-bottom.php:155
-#: lib/page-settings/sns-share-forms-top.php:142
+#: lib/page-settings/sns-share-forms-bottom.php:126
+#: lib/page-settings/sns-share-forms-top.php:113
 #: skins/skin-made-in-heaven/lib/panel-visual.php:110
 msgid "モノクロ"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:149
-#: lib/page-settings/sns-share-forms-bottom.php:156
-#: lib/page-settings/sns-share-forms-top.php:143
+#: lib/page-settings/sns-share-forms-bottom.php:127
+#: lib/page-settings/sns-share-forms-top.php:114
 msgid "ブランドカラー"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:150
-#: lib/page-settings/sns-share-forms-bottom.php:157
-#: lib/page-settings/sns-share-forms-top.php:144
+#: lib/page-settings/sns-share-forms-bottom.php:128
+#: lib/page-settings/sns-share-forms-top.php:115
 msgid "ブランドカラー（白抜き）"
 msgstr ""
 
@@ -10426,188 +10425,109 @@ msgstr ""
 msgid "個々のシェアボタンの表示切り替え。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:68
-#: lib/page-settings/sns-share-forms-top.php:55
-#: lib/sns-follow.php:139
-msgid "X（旧Twitter）"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:71
-#: lib/page-settings/sns-share-forms-top.php:58
-#: lib/sns-follow.php:145
-#: tmp/sns-share-buttons.php:21
-msgid "Mastodon"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:74
-#: lib/page-settings/sns-share-forms-top.php:61
-#: lib/sns-follow.php:151
-#: tmp/sns-share-buttons.php:25
-msgid "Bluesky"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:77
-#: lib/page-settings/sns-share-forms-top.php:64
-#: lib/sns-follow.php:157
-#: tmp/sns-share-buttons.php:29
-msgid "Misskey"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:80
-#: lib/page-settings/sns-share-forms-top.php:67
-#: lib/sns-follow.php:163
-#: tmp/sns-share-buttons.php:33
-msgid "Facebook"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:83
-#: lib/page-settings/sns-share-forms-top.php:70
-#: lib/sns-follow.php:169
-#: tmp/sns-share-buttons.php:37
-msgid "Threads"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:86
-#: lib/page-settings/sns-share-forms-top.php:73
-#: lib/sns-follow.php:175
-#: tmp/sns-share-buttons.php:41
-msgid "Reddit"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:89
-#: lib/page-settings/sns-share-forms-top.php:76
-#: lib/sns-follow.php:181
-msgid "はてなブックマーク"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:92
-#: lib/page-settings/sns-share-forms-top.php:79
+#: lib/page-settings/sns-share-forms-bottom.php:78
+#: lib/page-settings/sns-share-forms-top.php:65
 msgid "Google"
+msgstr ""
+
+#: lib/page-settings/sns-share-forms-bottom.php:81
+#: lib/page-settings/sns-share-forms-top.php:68
+#: lib/sns-share.php:949
+msgid "Pocket"
+msgstr ""
+
+#: lib/page-settings/sns-share-forms-bottom.php:84
+msgid "シェアボタンを選択してください。"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms-bottom.php:95
 #: lib/page-settings/sns-share-forms-top.php:82
-#: tmp/sns-share-buttons.php:49
-msgid "Pocket"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:98
-#: lib/page-settings/sns-share-forms-top.php:85
-#: lib/sns-follow.php:235
-msgid "LINE@"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:101
-#: lib/page-settings/sns-share-forms-top.php:88
-#: lib/sns-follow.php:229
-#: tmp/sns-share-buttons.php:57
-msgid "Pinterest"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:104
-#: lib/page-settings/sns-share-forms-top.php:91
-#: lib/sns-follow.php:205
-#: tmp/sns-share-buttons.php:61
-msgid "LinkedIn"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:107
-#: lib/page-settings/sns-share-forms-top.php:94
-msgid "タイトルとURLをコピー"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:113
-msgid "シェアボタンを選択してください。"
-msgstr ""
-
-#: lib/page-settings/sns-share-forms-bottom.php:124
-#: lib/page-settings/sns-share-forms-top.php:111
 msgid "シェアボタンを表示するページの切り替え。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:142
-#: lib/page-settings/sns-share-forms-top.php:129
+#: lib/page-settings/sns-share-forms-bottom.php:113
+#: lib/page-settings/sns-share-forms-top.php:100
 msgid "シェアボタンを表示するページを選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:160
+#: lib/page-settings/sns-share-forms-bottom.php:131
 msgid "ボトムシェアボタンの配色を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:168
-#: lib/page-settings/sns-share-forms-top.php:157
+#: lib/page-settings/sns-share-forms-bottom.php:139
+#: lib/page-settings/sns-share-forms-top.php:128
 msgid "カラム数"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:173
-#: lib/page-settings/sns-share-forms-top.php:162
+#: lib/page-settings/sns-share-forms-bottom.php:144
+#: lib/page-settings/sns-share-forms-top.php:133
 msgid "1列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:174
-#: lib/page-settings/sns-share-forms-top.php:163
+#: lib/page-settings/sns-share-forms-bottom.php:145
+#: lib/page-settings/sns-share-forms-top.php:134
 msgid "2列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:175
-#: lib/page-settings/sns-share-forms-top.php:164
+#: lib/page-settings/sns-share-forms-bottom.php:146
+#: lib/page-settings/sns-share-forms-top.php:135
 msgid "3列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:176
-#: lib/page-settings/sns-share-forms-top.php:165
+#: lib/page-settings/sns-share-forms-bottom.php:147
+#: lib/page-settings/sns-share-forms-top.php:136
 msgid "4列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:177
-#: lib/page-settings/sns-share-forms-top.php:166
+#: lib/page-settings/sns-share-forms-bottom.php:148
+#: lib/page-settings/sns-share-forms-top.php:137
 msgid "5列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:178
-#: lib/page-settings/sns-share-forms-top.php:167
+#: lib/page-settings/sns-share-forms-bottom.php:149
+#: lib/page-settings/sns-share-forms-top.php:138
 msgid "6列"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:181
+#: lib/page-settings/sns-share-forms-bottom.php:152
 msgid "ボトムシェアボタンのカラム数を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:189
-#: lib/page-settings/sns-share-forms-top.php:179
+#: lib/page-settings/sns-share-forms-bottom.php:160
+#: lib/page-settings/sns-share-forms-top.php:150
 msgid "ロゴ・キャプション配置"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:194
-#: lib/page-settings/sns-share-forms-top.php:184
+#: lib/page-settings/sns-share-forms-bottom.php:165
+#: lib/page-settings/sns-share-forms-top.php:155
 msgid "ロゴ・キャプション 左右"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:195
-#: lib/page-settings/sns-share-forms-top.php:185
+#: lib/page-settings/sns-share-forms-bottom.php:166
+#: lib/page-settings/sns-share-forms-top.php:156
 msgid "ロゴ・キャプション 上下"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:196
-#: lib/page-settings/sns-share-forms-top.php:186
+#: lib/page-settings/sns-share-forms-bottom.php:167
+#: lib/page-settings/sns-share-forms-top.php:157
 msgid "キャプション・ロゴ 上下"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:199
+#: lib/page-settings/sns-share-forms-bottom.php:170
 msgid "ボトムシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:207
-#: lib/page-settings/sns-share-forms-top.php:197
+#: lib/page-settings/sns-share-forms-bottom.php:178
+#: lib/page-settings/sns-share-forms-top.php:168
 msgid "シェア数の表示"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:211
-#: lib/page-settings/sns-share-forms-top.php:201
+#: lib/page-settings/sns-share-forms-bottom.php:182
+#: lib/page-settings/sns-share-forms-top.php:172
 msgid "シェア数を表示する"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-bottom.php:212
+#: lib/page-settings/sns-share-forms-bottom.php:183
 msgid "ボトムシェアボタンのシェア数表示を切り替えます。"
 msgstr ""
 
@@ -10631,23 +10551,23 @@ msgstr ""
 msgid "トップシェアボタンの表示を切り替えます。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-top.php:100
+#: lib/page-settings/sns-share-forms-top.php:71
 msgid "表示するシェアボタンを選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-top.php:147
+#: lib/page-settings/sns-share-forms-top.php:118
 msgid "トップシェアボタンの配色を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-top.php:170
+#: lib/page-settings/sns-share-forms-top.php:141
 msgid "トップシェアボタンのカラム数を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-top.php:189
+#: lib/page-settings/sns-share-forms-top.php:160
 msgid "トップシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr ""
 
-#: lib/page-settings/sns-share-forms-top.php:202
+#: lib/page-settings/sns-share-forms-top.php:173
 msgid "トップシェアボタンのシェア数表示を切り替えます。"
 msgstr ""
 
@@ -12151,175 +12071,314 @@ msgstr ""
 msgid "総計"
 msgstr ""
 
-#: lib/sns-follow.php:140
+#: lib/sns-follow.php:141
+#: lib/sns-share.php:819
+msgid "X（旧Twitter）"
+msgstr ""
+
+#: lib/sns-follow.php:142
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:59
 msgid "Xをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:146
+#: lib/sns-follow.php:147
+#: lib/sns-share.php:834
+#: lib/sns-share.php:845
+msgid "Mastodon"
+msgstr ""
+
+#: lib/sns-follow.php:148
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:71
 msgid "Mastodonをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:152
+#: lib/sns-follow.php:153
+#: lib/sns-share.php:849
+#: lib/sns-share.php:860
+msgid "Bluesky"
+msgstr ""
+
+#: lib/sns-follow.php:154
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:84
 msgid "Blueskyをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:158
+#: lib/sns-follow.php:159
+#: lib/sns-share.php:864
+#: lib/sns-share.php:875
+msgid "Misskey"
+msgstr ""
+
+#: lib/sns-follow.php:160
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:97
 msgid "Misskeyをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:164
+#: lib/sns-follow.php:165
+#: lib/sns-share.php:879
+#: lib/sns-share.php:890
+msgid "Facebook"
+msgstr ""
+
+#: lib/sns-follow.php:166
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:110
 msgid "Facebookをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:170
+#: lib/sns-follow.php:171
+#: lib/sns-share.php:894
+#: lib/sns-share.php:905
+msgid "Threads"
+msgstr ""
+
+#: lib/sns-follow.php:172
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:123
 msgid "Threadsをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:176
+#: lib/sns-follow.php:177
+#: lib/sns-share.php:910
+#: lib/sns-share.php:920
+msgid "Reddit"
+msgstr ""
+
+#: lib/sns-follow.php:178
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:135
 msgid "Redditをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:182
+#: lib/sns-follow.php:183
+#: lib/sns-share.php:924
+msgid "はてなブックマーク"
+msgstr ""
+
+#: lib/sns-follow.php:184
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:147
 msgid "はてブをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:187
+#: lib/sns-follow.php:189
 msgid "Instagram"
 msgstr ""
 
-#: lib/sns-follow.php:188
+#: lib/sns-follow.php:190
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:160
 msgid "Instagramをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:193
+#: lib/sns-follow.php:195
 msgid "YouTube"
 msgstr ""
 
-#: lib/sns-follow.php:194
+#: lib/sns-follow.php:196
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:186
 msgid "YouTubeをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:199
+#: lib/sns-follow.php:201
 msgid "TikTok"
 msgstr ""
 
-#: lib/sns-follow.php:200
+#: lib/sns-follow.php:202
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:316
 msgid "TikTokをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:206
+#: lib/sns-follow.php:207
+#: lib/sns-share.php:983
+#: lib/sns-share.php:993
+msgid "LinkedIn"
+msgstr ""
+
+#: lib/sns-follow.php:208
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:199
 msgid "LinkedInをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:211
+#: lib/sns-follow.php:213
 msgid "note"
 msgstr ""
 
-#: lib/sns-follow.php:212
+#: lib/sns-follow.php:214
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
 msgid "noteをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:217
+#: lib/sns-follow.php:219
 msgid "SoundCloud"
 msgstr ""
 
-#: lib/sns-follow.php:218
+#: lib/sns-follow.php:220
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:329
 msgid "SoundCloudをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:223
+#: lib/sns-follow.php:225
 msgid "Flickr"
 msgstr ""
 
-#: lib/sns-follow.php:224
+#: lib/sns-follow.php:226
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:225
 msgid "Flickrをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:230
+#: lib/sns-follow.php:231
+#: lib/sns-share.php:967
+#: lib/sns-share.php:977
+msgid "Pinterest"
+msgstr ""
+
+#: lib/sns-follow.php:232
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:173
 msgid "Pinterestをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:236
+#: lib/sns-follow.php:237
+#: lib/sns-share.php:953
+msgid "LINE@"
+msgstr ""
+
+#: lib/sns-follow.php:238
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:342
 msgid "LINE@をフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:241
-#: lib/sns-follow.php:242
+#: lib/sns-follow.php:243
+#: lib/sns-follow.php:244
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:238
 msgid "Amazon欲しい物リスト"
 msgstr ""
 
-#: lib/sns-follow.php:245
+#: lib/sns-follow.php:247
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:238
 msgid "Amazonほしい物リストをチェック"
 msgstr ""
 
-#: lib/sns-follow.php:248
+#: lib/sns-follow.php:250
 msgid "Twitch"
 msgstr ""
 
-#: lib/sns-follow.php:249
+#: lib/sns-follow.php:251
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:251
 msgid "Twitchをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:254
+#: lib/sns-follow.php:256
 msgid "楽天ROOM"
 msgstr ""
 
-#: lib/sns-follow.php:255
+#: lib/sns-follow.php:257
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:264
 msgid "楽天ROOMをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:260
+#: lib/sns-follow.php:262
 msgid "Slack"
 msgstr ""
 
-#: lib/sns-follow.php:261
+#: lib/sns-follow.php:263
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:277
 msgid "Slackをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:266
+#: lib/sns-follow.php:268
 msgid "GitHub"
 msgstr ""
 
-#: lib/sns-follow.php:267
+#: lib/sns-follow.php:269
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:290
 msgid "GitHubをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:272
+#: lib/sns-follow.php:274
 msgid "CodePen"
 msgstr ""
 
-#: lib/sns-follow.php:273
+#: lib/sns-follow.php:275
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:303
 msgid "CodePenをフォロー"
 msgstr ""
 
 #. translators: %s: SNSサービス名
-#: lib/sns-follow.php:289
+#: lib/sns-follow.php:294
 #, php-format
 msgid "%s URL"
+msgstr ""
+
+#: lib/sns-share.php:830
+msgid "X"
+msgstr ""
+
+#: lib/sns-share.php:831
+msgid "Xでシェア"
+msgstr ""
+
+#: lib/sns-share.php:846
+msgid "Mastodonでシェア"
+msgstr ""
+
+#: lib/sns-share.php:861
+msgid "Blueskyでシェア"
+msgstr ""
+
+#: lib/sns-share.php:876
+msgid "Misskeyでシェア"
+msgstr ""
+
+#: lib/sns-share.php:891
+msgid "Facebookでシェア"
+msgstr ""
+
+#: lib/sns-share.php:906
+msgid "Threadsでシェア"
+msgstr ""
+
+#: lib/sns-share.php:921
+msgid "Redditでシェア"
+msgstr ""
+
+#: lib/sns-share.php:935
+msgid "はてブ"
+msgstr ""
+
+#: lib/sns-share.php:936
+msgid "はてブでブックマーク"
+msgstr ""
+
+#: lib/sns-share.php:950
+msgid "Pocketに保存"
+msgstr ""
+
+#: lib/sns-share.php:963
+msgid "LINE"
+msgstr ""
+
+#: lib/sns-share.php:964
+msgid "LINEでシェア"
+msgstr ""
+
+#: lib/sns-share.php:978
+msgid "Pinterestでシェア"
+msgstr ""
+
+#: lib/sns-share.php:994
+msgid "LinkedInでシェア"
+msgstr ""
+
+#: lib/sns-share.php:998
+msgid "タイトルとURLをコピー"
+msgstr ""
+
+#: lib/sns-share.php:1010
+msgid "コピー"
+msgstr ""
+
+#: lib/sns-share.php:1011
+msgid "タイトルとURLをコピーする"
+msgstr ""
+
+#: lib/sns-share.php:1029
+msgid "コメントする"
 msgstr ""
 
 #: lib/sns.php:17
@@ -15284,78 +15343,6 @@ msgstr ""
 
 #: tmp/sns-follow-buttons.php:52
 msgid "RSSで更新情報を購読"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:17
-msgid "Xでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:17
-msgid "X"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:21
-msgid "Mastodonでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:25
-msgid "Blueskyでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:29
-msgid "Misskeyでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:33
-msgid "Facebookでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:37
-msgid "Threadsでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:41
-msgid "Redditでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:45
-msgid "はてブでブックマーク"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:45
-msgid "はてブ"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:49
-msgid "Pocketに保存"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:53
-msgid "LINEでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:53
-msgid "LINE"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:57
-msgid "Pinterestでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:61
-msgid "LinkedInでシェア"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:67
-msgid "タイトルとURLをコピーする"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:67
-msgid "コピー"
-msgstr ""
-
-#: tmp/sns-share-buttons.php:81
-msgid "コメントする"
 msgstr ""
 
 #: blocks/src/block-extension/group-link.js:76

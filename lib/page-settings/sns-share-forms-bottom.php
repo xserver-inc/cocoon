@@ -64,51 +64,22 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           <td>
             <p><?php _e( '個々のシェアボタンの表示切り替え。', THEME_NAME ) ?></p>
             <ul>
+              <?php //SNSシェアボタンの定義一覧をもとにチェックボックスを生成する
+              foreach ( get_cocoon_sns_share_options() as $sns_key => $sns_option ):
+                if ( empty($sns_option['bottom_key']) ) continue;
+                //ラベルはここで翻訳される。フィルターで追加されたSNSでラベル未指定の場合は配列のキー名で代用する
+                $sns_label = get_cocoon_sns_share_option_text($sns_option, 'label', $sns_key); ?>
               <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_TWITTER_SHARE_BUTTON_VISIBLE, is_bottom_twitter_share_button_visible(), __( 'X（旧Twitter）', THEME_NAME )); ?>
+                <?php generate_checkbox_tag($sns_option['bottom_key'], is_cocoon_sns_share_option_visible($sns_option, 'bottom'), $sns_label); ?>
               </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_MASTODON_SHARE_BUTTON_VISIBLE, is_bottom_mastodon_share_button_visible(), __( 'Mastodon', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_BLUESKY_SHARE_BUTTON_VISIBLE, is_bottom_bluesky_share_button_visible(), __( 'Bluesky', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_MISSKEY_SHARE_BUTTON_VISIBLE, is_bottom_misskey_share_button_visible(), __( 'Misskey', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_FACEBOOK_SHARE_BUTTON_VISIBLE, is_bottom_facebook_share_button_visible(), __( 'Facebook', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_THREADS_SHARE_BUTTON_VISIBLE, is_bottom_threads_share_button_visible(), __( 'Threads', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_REDDIT_SHARE_BUTTON_VISIBLE, is_bottom_reddit_share_button_visible(), __( 'Reddit', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_HATEBU_SHARE_BUTTON_VISIBLE, is_bottom_hatebu_share_button_visible(), __( 'はてなブックマーク', THEME_NAME )); ?>
-              </li>
+              <?php endforeach; ?>
+              <!-- 以下は現在無効化中のシェアボタン（is_bottom_*_share_button_visible() が常に0を返すため設定一覧には含めない） -->
               <!-- <li>
                 <?php generate_checkbox_tag(OP_BOTTOM_GOOGLE_PLUS_SHARE_BUTTON_VISIBLE, is_bottom_google_plus_share_button_visible(), __( 'Google', THEME_NAME )); ?>
               </li> -->
               <!-- <li>
                 <?php generate_checkbox_tag(OP_BOTTOM_POCKET_SHARE_BUTTON_VISIBLE, is_bottom_pocket_share_button_visible(), __( 'Pocket', THEME_NAME )); ?>
               </li> -->
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_LINE_AT_SHARE_BUTTON_VISIBLE, is_bottom_line_at_share_button_visible(), __( 'LINE@', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_PINTEREST_SHARE_BUTTON_VISIBLE, is_bottom_pinterest_share_button_visible(), __( 'Pinterest', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_LINKEDIN_SHARE_BUTTON_VISIBLE, is_bottom_linkedin_share_button_visible(), __( 'LinkedIn', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_COPY_SHARE_BUTTON_VISIBLE, is_bottom_copy_share_button_visible(), __( 'タイトルとURLをコピー', THEME_NAME )); ?>
-              </li>
-              <li>
-                <?php generate_checkbox_tag(OP_BOTTOM_COMMENT_SHARE_BUTTON_VISIBLE, is_bottom_comment_share_button_visible(), __( 'コメント', THEME_NAME )); ?>
-              </li>
             </ul>
             <p><?php _e( 'シェアボタンを選択してください。', THEME_NAME ) ?></p>
           </td>
