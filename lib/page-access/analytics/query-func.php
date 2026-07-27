@@ -366,17 +366,18 @@ function cocoon_analytics_trending($days = 7, $limit = 10, $min_pv = 3){
 
     // 初心者向け: 同じ post_id に対して「直近」と「直前」のPVを条件付き合計し、増加率で並べる
     // 注: MariaDBでは ORDER BY の式中で集約エイリアスを参照できない場合があるため、SUM()式を直接書く
-    $sql = "SELECT a.post_id, a.post_type,
+    $sql = "SELECT p.ID AS post_id, p.post_type,
               SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) AS cur_pv,
               SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) AS prev_pv
             FROM `{$table}` a
             INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND a.post_type IN ({$in['sql']})
-            GROUP BY a.post_id, a.post_type
+            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND p.post_type IN ({$in['sql']})
+            GROUP BY p.ID
             HAVING SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) >= %d
             ORDER BY (SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) /
                       (SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) + 1)) DESC,
-                     SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) DESC
+                     SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) DESC,
+                     p.post_date DESC, p.ID DESC
             LIMIT %d";
     $args = array_merge(
       array($cur_from, $cur_to, $prev_from, $prev_to, $prev_from, $cur_to),
@@ -459,12 +460,15 @@ function cocoon_analytics_ranking($from, $to, $post_types = null, $limit = 10, $
     $table = ACCESSES_TABLE_NAME;
     $types = cocoon_analytics_allowed_post_types($post_types);
     $in = cocoon_analytics_in_placeholder($types);
-    $sql = "SELECT a.post_id, a.post_type, SUM(a.count) AS pv
+    // 投稿タイプの判定は記事別タブと同じく現在の投稿タイプ（p.post_type）基準
+    // アクセス記録側（a.post_type）での判定・グループ化は投稿タイプ変更時のPV分割の原因
+    // 同PV時の並び固定のため、公開日・投稿IDを第2・第3ソートキーに指定
+    $sql = "SELECT p.ID AS post_id, p.post_type, SUM(a.count) AS pv
             FROM `{$table}` a
             INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND a.post_type IN ({$in['sql']})
-            GROUP BY a.post_id, a.post_type
-            ORDER BY pv DESC
+            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND p.post_type IN ({$in['sql']})
+            GROUP BY p.ID
+            ORDER BY pv DESC, p.post_date DESC, p.ID DESC
             LIMIT %d OFFSET %d";
     $args = array_merge(array($from, $to), $in['args'], array($limit, $offset));
     $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
@@ -545,7 +549,7 @@ function cocoon_analytics_posts_table($from, $to, $args = array()){
       WHERE " . implode(' AND ', $where_parts) . "
       GROUP BY p.ID
       {$having}
-      ORDER BY pv {$order}, p.post_date DESC
+      ORDER BY pv {$order}, p.post_date DESC, p.ID DESC
       LIMIT %d OFFSET %d";
     $main_params = array_merge(array($from, $to), $p2, array($per_page, $offset));
     $rows = $wpdb->get_results($wpdb->prepare($main_sql, $main_params), ARRAY_A);
@@ -577,7 +581,7 @@ function cocoon_analytics_pv_by_taxonomy($from, $to, $taxonomy = 'category', $li
             INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
             WHERE a.date BETWEEN %s AND %s AND a.post_id > 0
             GROUP BY t.term_id
-            ORDER BY pv DESC
+            ORDER BY pv DESC, t.term_id ASC
             LIMIT %d";
     $rows = $wpdb->get_results($wpdb->prepare($sql, $taxonomy, $from, $to, $limit), ARRAY_A);
     foreach ($rows as &$r) { $r['term_id'] = (int) $r['term_id']; $r['pv'] = (int) $r['pv']; }
@@ -600,7 +604,7 @@ function cocoon_analytics_pv_by_author($from, $to, $limit = 100){
             INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
             WHERE a.date BETWEEN %s AND %s AND a.post_id > 0
             GROUP BY p.post_author
-            ORDER BY pv DESC
+            ORDER BY pv DESC, p.post_author ASC
             LIMIT %d";
     $rows = $wpdb->get_results($wpdb->prepare($sql, $from, $to, $limit), ARRAY_A);
     foreach ($rows as &$r) {
