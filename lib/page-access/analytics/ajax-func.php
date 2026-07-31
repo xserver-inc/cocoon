@@ -106,7 +106,7 @@ function cocoon_analytics_ajax_get_lifecycle(){
     'post_id'   => $post_id,
     'title'     => $title,
     'post_date' => get_the_date('Y-m-d', $post_id),
-    'lifecycle' => $rows,
+    'lifecycle' => cocoon_analytics_chart_labels($rows, 'daily'),
   ));
 }
 endif;

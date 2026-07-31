@@ -223,9 +223,9 @@ switch ($view) {
     <?php
     // JS 側にデータを注入
     $GLOBALS['cocoon_analytics_chart_data'] = array(
-      'daily'       => $daily,
-      'weekly'      => $weekly,
-      'monthly'     => $monthly,
+      'daily'       => cocoon_analytics_chart_labels($daily, 'daily'),
+      'weekly'      => cocoon_analytics_chart_labels($weekly, 'weekly'),
+      'monthly'     => cocoon_analytics_chart_labels($monthly, 'monthly'),
       'by_type'     => $by_type,
       'by_dow'      => $by_dow,
       'by_category' => $by_category,
@@ -509,7 +509,7 @@ switch ($view) {
       $initial_title = cocoon_analytics_plain_title($post_id) ?: '(' . __('不明', THEME_NAME) . ')';
       // 初期データとしてライフサイクル履歴と記事公開日（post_date）を格納します
       $GLOBALS['cocoon_analytics_chart_data'] = array(
-        'lifecycle' => $initial_lifecycle,
+        'lifecycle' => cocoon_analytics_chart_labels($initial_lifecycle, 'daily'),
         'post_date' => get_the_date('Y-m-d', $post_id),
       );
     }

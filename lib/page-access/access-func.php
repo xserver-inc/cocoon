@@ -638,18 +638,18 @@ endif;
 if ( !function_exists( 'cocoon_analytics_dashboard_widget_renderer' ) ):
 function cocoon_analytics_dashboard_widget_renderer() {
   $to = current_time('Y-m-d');
-  
+
   // 1. 日別 (daily): 直近7日間（本日を含む）
   $from_daily = date('Y-m-d', strtotime($to . ' -6 days'));
   $daily = cocoon_analytics_daily_pv($from_daily, $to);
-  
+
   // 2. 週別 (weekly): 直近7週分（今週を含む）
   $from_weekly = date('Y-m-d', strtotime($to . ' -48 days')); // 約7週間前
   $weekly = cocoon_analytics_weekly_pv($from_weekly, $to);
   if (count($weekly) > 7) {
     $weekly = array_slice($weekly, -7);
   }
-  
+
   // 3. 月別 (monthly): 直近7ヶ月分（当月を含む）
   $from_monthly = date('Y-m-01', strtotime($to . ' -6 months'));
   $monthly = cocoon_analytics_monthly_pv($from_monthly, $to);
@@ -677,18 +677,42 @@ function cocoon_analytics_dashboard_widget_renderer() {
     $yearly[] = array('date' => (string) $y, 'pv' => $pv);
   }
 
-  // 5. 人気記事の期間別データ取得 (today / 7days / 30days / 90days / 1year / all)
+  // グラフ軸ラベルのサイト日付書式・言語への整形
+  $daily   = cocoon_analytics_chart_labels($daily, 'daily');
+  $weekly  = cocoon_analytics_chart_labels($weekly, 'weekly');
+  $monthly = cocoon_analytics_chart_labels($monthly, 'monthly');
+  $yearly  = cocoon_analytics_chart_labels($yearly, 'yearly');
+
+  // 5. 人気記事の期間別データ取得（アクセス集計ページの「既定の集計期間」と揃えた選択肢）
   $periods = array(
-    'today'  => cocoon_analytics_resolve_period('today'),
-    '7days'  => cocoon_analytics_resolve_period('7days'),
-    '30days' => cocoon_analytics_resolve_period('30days'),
-    '90days' => cocoon_analytics_resolve_period('90days'),
-    '1year'  => array(
+    'today'     => cocoon_analytics_resolve_period('today'),
+    '7days'     => cocoon_analytics_resolve_period('7days'),
+    '30days'    => cocoon_analytics_resolve_period('30days'),
+    '90days'    => cocoon_analytics_resolve_period('90days'),
+    'thismonth' => cocoon_analytics_resolve_period('thismonth'),
+    '1year'     => array(
       'from' => date('Y-m-d', strtotime($to . ' -1 year +1 day')),
       'to'   => $to
     ),
-    'all'    => array('from' => '1000-01-01', 'to' => $to),
+    'all'       => array('from' => '1000-01-01', 'to' => $to),
   );
+
+  // アクセス集計ページの期間セレクトボックスと統一した表記
+  $period_labels = array(
+    'today'     => __('今日', THEME_NAME),
+    '7days'     => __('直近7日', THEME_NAME),
+    '30days'    => __('直近30日', THEME_NAME),
+    '90days'    => __('直近90日', THEME_NAME),
+    'thismonth' => __('今月', THEME_NAME),
+    '1year'     => __('直近1年', THEME_NAME),
+    'all'       => __('全期間', THEME_NAME),
+  );
+
+  // アクセス集計ページの「既定の集計期間」設定に合わせた初期表示期間
+  $default_ranking_period = get_access_analytics_default_period();
+  if (!isset($periods[$default_ranking_period])) {
+    $default_ranking_period = '30days';
+  }
 
   $ranking_data = array();
   foreach ($periods as $key => $p) {
@@ -772,19 +796,16 @@ function cocoon_analytics_dashboard_widget_renderer() {
         </span>
         <!-- 期間切り替えのドロップダウンです -->
         <select class="cocoon-analytics-dashboard-ranking-period" style="font-size: 11px; height: auto; padding: 2px 24px 2px 8px; margin: 0; line-height: 1.5; border-radius: 4px; border: 1px solid #ccd0d4; background-color: #f6f7f7; color: #2c3338; cursor: pointer;">
-          <option value="today"><?php _e('今日', THEME_NAME); ?></option>
-          <option value="7days" selected><?php _e('7日間', THEME_NAME); ?></option>
-          <option value="30days"><?php _e('30日間', THEME_NAME); ?></option>
-          <option value="90days"><?php _e('3ヶ月', THEME_NAME); ?></option>
-          <option value="1year"><?php _e('1年', THEME_NAME); ?></option>
-          <option value="all"><?php _e('全期間', THEME_NAME); ?></option>
+          <?php foreach ($period_labels as $period_key => $period_label): ?>
+            <option value="<?php echo esc_attr($period_key); ?>" <?php selected($default_ranking_period, $period_key); ?>><?php echo esc_html($period_label); ?></option>
+          <?php endforeach; ?>
         </select>
       </h4>
-      
+
       <ul id="cocoon-analytics-dashboard-ranking-list" style="margin: 0; padding: 0; list-style: none;">
-        <!-- 初期表示時は直近7日間のデータをPHP側から出力します -->
-        <?php if (!empty($ranking_data['7days'])): ?>
-          <?php foreach ($ranking_data['7days'] as $item): 
+        <!-- 初期表示時は既定の集計期間のデータをPHP側から出力 -->
+        <?php if (!empty($ranking_data[$default_ranking_period])): ?>
+          <?php foreach ($ranking_data[$default_ranking_period] as $item):
             $badge_bg = '#888';
             if ($item['rank'] === 1) $badge_bg = '#dfb100'; // 金
             if ($item['rank'] === 2) $badge_bg = '#a8a8a8'; // 銀
@@ -847,22 +868,8 @@ function cocoon_analytics_dashboard_widget_renderer() {
           return;
         }
 
-        // 各種期間タイプに応じた日付ラベルの日本語フォーマット処理を行います
-        var labels = list.map(function(d) {
-          var parts = d.date.split('-');
-          if (type === 'daily' || type === 'weekly') {
-            // YYYY-MM-DD ➔ M月 D
-            if (parts.length === 3) {
-              return parseInt(parts[1], 10) + '月 ' + parseInt(parts[2], 10);
-            }
-          } else if (type === 'monthly') {
-            // YYYY-MM ➔ M月
-            if (parts.length === 2) {
-              return parseInt(parts[1], 10) + '月';
-            }
-          }
-          return d.date; // 年別の場合は YYYY そのまま
-        });
+        // ラベルはPHP側でサイトの日付書式・言語に合わせて整形済み
+        var labels = list.map(function(d) { return d.label || d.date; });
         var pvData = list.map(function(d) { return d.pv; });
 
         var config = {
@@ -976,7 +983,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
             link.target = '_blank';
             link.style.cssText = 'text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;';
             link.textContent = item.title;
-            
+
             link.addEventListener('mouseover', function() { link.style.textDecoration = 'underline'; });
             link.addEventListener('mouseout', function() { link.style.textDecoration = 'none'; });
 

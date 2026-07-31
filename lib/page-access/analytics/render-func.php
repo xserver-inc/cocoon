@@ -10,6 +10,47 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
+ * PV推移グラフの軸ラベルを、サイトの日付書式・言語で整形する
+ *
+ * 各行に label キーを付与して返します。JS側での日本語固定の整形を避けるため、
+ * PHP側で date_i18n() を使ってサイトの言語・日付フォーマットに追従させます。
+ */
+if ( !function_exists( 'cocoon_analytics_chart_labels' ) ):
+function cocoon_analytics_chart_labels($rows, $type){
+  if (empty($rows) || !is_array($rows)) return $rows;
+  // 最大3700行のループになるため、書式取得はループ外で1回のみ
+  $day_format = ($type === 'daily' || $type === 'weekly') ? get_site_date_format() : '';
+  // WordPress本体（defaultドメイン）のアーカイブ書式を流用したサイト言語追従
+  // cocoon.pot への無意味な抽出を避けるため、_x() ではなく下位関数を直接使用
+  $month_format = ($type === 'monthly') ? translate_with_gettext_context('F Y', 'monthly archives date format', 'default') : '';
+  $year_format  = ($type === 'yearly') ? translate_with_gettext_context('Y', 'yearly archives date format', 'default') : '';
+  foreach ($rows as $i => $row) {
+    $date = isset($row['date']) ? $row['date'] : '';
+    $label = $date;
+    if ($day_format !== '') {
+      $ts = strtotime($date);
+      if ($ts !== false) {
+        // Cocoon設定「全体→日付フォーマット」に従った表記
+        $label = date_i18n($day_format, $ts);
+      }
+    } elseif ($month_format !== '') {
+      $ts = strtotime($date . '-01');
+      if ($ts !== false) {
+        $label = date_i18n($month_format, $ts);
+      }
+    } elseif ($year_format !== '') {
+      $ts = strtotime($date . '-01-01');
+      if ($ts !== false) {
+        $label = date_i18n($year_format, $ts);
+      }
+    }
+    $rows[$i]['label'] = $label;
+  }
+  return $rows;
+}
+endif;
+
+/**
  * 投稿タイトルをプレーンテキスト用に取得する
  *
  * get_the_title() は the_title フィルタ（wptexturize 等）を通すため、
