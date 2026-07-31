@@ -407,7 +407,8 @@ add_action('after_setup_theme', function() {
   define('T404_PAGE_TITLE', __( '404 NOT FOUND', THEME_NAME ));
   define('T404_PAGE_MESSAGE', __( 'お探しのページは見つかりませんでした。', THEME_NAME ));
 
-  define('SITE_DATE_FORMAT', __( 'Y.m.d', THEME_NAME ));
+  //翻訳読み込み前に評価されるため、ここでは__()を使わず関数呼び出し時に翻訳する（get_site_date_format参照）
+  define('SITE_DATE_FORMAT', 'Y.m.d');
 
   define('COMMENT_HEADING', __( 'コメント', THEME_NAME ));
   define('COMMENT_FORM_HEADING', __( 'コメントをどうぞ', THEME_NAME ));

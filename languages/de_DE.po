@@ -14194,7 +14194,7 @@ msgstr "Die gesuchte Seite konnte nicht gefunden werden."
 
 #: lib/_defins.php:410
 msgid "Y.m.d"
-msgstr "Y.m.d"
+msgstr "d.m.Y"
 
 #: lib/_defins.php:413
 msgid "コメントをどうぞ"
@@ -16259,7 +16259,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:417
 #: blocks/src/block-extension/group-link.js:134
 msgid "適用"
-msgstr ""
+msgstr "Anwenden"
 
 #: blocks/src/block-extension/group-link.js:148
 msgid "リンク解除"
@@ -18457,20 +18457,20 @@ msgstr "Durchgestrichen (Korrektur)"
 
 #: lib/page-access/access-func.php:629
 msgid "アクセス推移 (Cocoon)"
-msgstr ""
+msgstr "Zugriffsverlauf (Cocoon)"
 
 #: lib/page-access/access-func.php:702
 msgid "(タイトルなし)"
-msgstr ""
+msgstr "(Kein Titel)"
 
 #: lib/page-access/access-func.php:753
 #: lib/page-access/analytics/dashboard-page.php:163
 msgid "週"
-msgstr ""
+msgstr "Woche"
 
 #: lib/page-access/access-func.php:771
 msgid "人気記事 TOP5"
-msgstr ""
+msgstr "Top 5 beliebte Beiträge"
 
 #: lib/page-access/access-func.php:775
 #: lib/page-access/analytics/dashboard-page.php:137
@@ -18478,55 +18478,59 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:135
 #: lib/page-access/analytics/settings-forms.php:76
 msgid "今日"
-msgstr ""
+msgstr "Heute"
 
 #: lib/page-access/access-func.php:809
 #: lib/page-access/access-func.php:952
 msgid "集計データがまだありません。"
-msgstr ""
+msgstr "Es liegen noch keine Erfassungsdaten vor."
 
 #: lib/page-access/access-func.php:818
 msgid "アクセス集計の詳細を見る"
-msgstr ""
+msgstr "Details zur Zugriffsanalyse anzeigen"
 
 #: lib/page-access/access-func.php:873
 msgid "PV数"
-msgstr ""
+msgstr "PV-Anzahl"
 
 #: lib/page-access/access-func.php:893
 #: lib/page-access/analytics/enqueue-func.php:112
 msgid "部分週"
-msgstr ""
+msgstr "Teilwoche"
 
 #: lib/page-access/access-func.php:897
 #: lib/page-access/analytics/enqueue-func.php:111
 msgid "日数"
-msgstr ""
+msgstr "Tage"
 
 #: lib/page-access/analytics/ajax-func.php:63
 #: lib/page-access/analytics/ajax-func.php:102
 #: lib/page-access/analytics/dashboard-page.php:471
 #: lib/page-access/analytics/dashboard-page.php:491
 msgid "不明"
-msgstr ""
+msgstr "Unbekannt"
 
 #: lib/page-access/analytics/dashboard-page.php:42
 msgid "アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。"
 msgstr ""
+"Die Zugriffsanalyse-Dashboard-Funktion ist derzeit deaktiviert. Bitte "
+"aktivieren Sie sie im Tab „Einstellungen“."
 
 #: lib/page-access/analytics/dashboard-page.php:51
 msgid "アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。"
 msgstr ""
+"Die Zugriffserfassungstabelle existiert nicht. Bitte öffnen Sie zuerst "
+"„Erfassungseinstellungen“, um die Tabelle zu erstellen."
 
 #: lib/page-access/analytics/dashboard-page.php:70
 msgid "アクセスカレンダー（直近52週）"
-msgstr ""
+msgstr "Zugriffskalender (letzte 52 Wochen)"
 
 #: lib/page-access/analytics/dashboard-page.php:138
 #: lib/page-access/analytics/render-func.php:71
 #: lib/page-access/analytics/render-func.php:136
 msgid "昨日"
-msgstr ""
+msgstr "Gestern"
 
 #: lib/page-access/analytics/dashboard-page.php:139
 #: lib/page-access/analytics/dashboard-page.php:507
@@ -18534,142 +18538,144 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:137
 #: lib/page-access/analytics/settings-forms.php:77
 msgid "直近7日"
-msgstr ""
+msgstr "Letzte 7 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:140
 #: lib/page-access/analytics/dashboard-page.php:508
 #: lib/page-access/analytics/render-func.php:73
 #: lib/page-access/analytics/settings-forms.php:78
 msgid "直近30日"
-msgstr ""
+msgstr "Letzte 30 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:141
 #: lib/page-access/analytics/dashboard-page.php:509
 #: lib/page-access/analytics/render-func.php:74
 #: lib/page-access/analytics/settings-forms.php:79
 msgid "直近90日"
-msgstr ""
+msgstr "Letzte 90 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:142
 #: lib/page-access/analytics/render-func.php:75
 #: lib/page-access/analytics/render-func.php:138
 #: lib/page-access/analytics/settings-forms.php:80
 msgid "今月"
-msgstr ""
+msgstr "Dieser Monat"
 
 #: lib/page-access/analytics/dashboard-page.php:143
 #: lib/page-access/analytics/render-func.php:76
 msgid "先月"
-msgstr ""
+msgstr "Letzter Monat"
 
 #: lib/page-access/analytics/dashboard-page.php:144
 #: lib/page-access/analytics/render-func.php:77
 msgid "年初来"
-msgstr ""
+msgstr "Seit Jahresbeginn"
 
 #: lib/page-access/analytics/dashboard-page.php:159
 msgid "PV推移"
-msgstr ""
+msgstr "PV-Verlauf"
 
 #: lib/page-access/analytics/dashboard-page.php:167
 msgid "PV推移グラフ"
-msgstr ""
+msgstr "PV-Verlaufsdiagramm"
 
 #: lib/page-access/analytics/dashboard-page.php:172
 msgid "カテゴリー別PV"
-msgstr ""
+msgstr "PV nach Kategorie"
 
 #: lib/page-access/analytics/dashboard-page.php:173
 msgid "カテゴリー別PV構成"
-msgstr ""
+msgstr "PV-Verteilung nach Kategorie"
 
 #: lib/page-access/analytics/dashboard-page.php:176
 msgid "タグ別PV"
-msgstr ""
+msgstr "PV nach Schlagwort"
 
 #: lib/page-access/analytics/dashboard-page.php:177
 msgid "タグ別PV構成"
-msgstr ""
+msgstr "PV-Verteilung nach Schlagwort"
 
 #: lib/page-access/analytics/dashboard-page.php:180
 msgid "投稿タイプ別PV"
-msgstr ""
+msgstr "PV nach Beitragstyp"
 
 #: lib/page-access/analytics/dashboard-page.php:181
 msgid "投稿タイプ別PV構成"
-msgstr ""
+msgstr "PV-Verteilung nach Beitragstyp"
 
 #: lib/page-access/analytics/dashboard-page.php:184
 msgid "人気記事 TOP10"
-msgstr ""
+msgstr "Top 10 beliebte Beiträge"
 
 #: lib/page-access/analytics/dashboard-page.php:188
 msgid "急上昇記事 TOP10（直近7日）"
-msgstr ""
+msgstr "Top 10 im Trend (letzte 7 Tage)"
 
 #: lib/page-access/analytics/dashboard-page.php:192
 #: lib/page-access/analytics/dashboard-page.php:193
 msgid "曜日別PV"
-msgstr ""
+msgstr "PV nach Wochentag"
 
 #: lib/page-access/analytics/dashboard-page.php:201
 msgid "タイトルバーをドラッグしてタイルを並び替えできます。配置はユーザーごとに保存されます。"
 msgstr ""
+"Ziehen Sie die Titelleisten, um die Kacheln neu anzuordnen. Die Anordnung "
+"wird pro Benutzer gespeichert."
 
 #: lib/page-access/analytics/dashboard-page.php:202
 msgid "タイル配置を既定に戻す"
-msgstr ""
+msgstr "Kachelanordnung zurücksetzen"
 
 #: lib/page-access/analytics/dashboard-page.php:245
 #: lib/page-access/analytics/dashboard-page.php:292
 msgid "投稿タイプ:"
-msgstr ""
+msgstr "Beitragstyp:"
 
 #: lib/page-access/analytics/dashboard-page.php:248
 #: lib/page-access/analytics/dashboard-page.php:319
 msgid "絞り込み"
-msgstr ""
+msgstr "Filter"
 
 #: lib/page-access/analytics/dashboard-page.php:296
 msgid "著者:"
-msgstr ""
+msgstr "Autor:"
 
 #: lib/page-access/analytics/dashboard-page.php:297
 msgid "名前で検索..."
-msgstr ""
+msgstr "Nach Namen suchen..."
 
 #: lib/page-access/analytics/dashboard-page.php:302
 msgid "カテゴリー:"
-msgstr ""
+msgstr "Kategorie:"
 
 #: lib/page-access/analytics/dashboard-page.php:303
 msgid "カテゴリー名で検索..."
-msgstr ""
+msgstr "Nach Kategoriename suchen..."
 
 #: lib/page-access/analytics/dashboard-page.php:307
 msgid "最小PV:"
-msgstr ""
+msgstr "Min. PV:"
 
 #: lib/page-access/analytics/dashboard-page.php:310
 msgid "最大PV:"
-msgstr ""
+msgstr "Max. PV:"
 
 #: lib/page-access/analytics/dashboard-page.php:313
 msgid "並び:"
-msgstr ""
+msgstr "Sortierung:"
 
 #: lib/page-access/analytics/dashboard-page.php:315
 msgid "PV降順"
-msgstr ""
+msgstr "PV absteigend"
 
 #: lib/page-access/analytics/dashboard-page.php:316
 msgid "PV昇順（低PV）"
-msgstr ""
+msgstr "PV aufsteigend (niedrige PV)"
 
 #: lib/page-access/analytics/dashboard-page.php:348
 #, php-format
 msgid "全 %s 件"
-msgstr ""
+msgstr "Insgesamt %s Einträge"
 
 #: lib/page-access/analytics/dashboard-page.php:352
 #: lib/page-access/analytics/dashboard-page.php:465
@@ -18679,118 +18685,120 @@ msgstr "Autor"
 
 #: lib/page-access/analytics/dashboard-page.php:352
 msgid "公開日"
-msgstr ""
+msgstr "Veröffentlichungsdatum"
 
 #: lib/page-access/analytics/dashboard-page.php:355
 msgid "無題"
-msgstr ""
+msgstr "Ohne Titel"
 
 #: lib/page-access/analytics/dashboard-page.php:410
 msgid "タクソノミー:"
-msgstr ""
+msgstr "Taxonomie:"
 
 #: lib/page-access/analytics/dashboard-page.php:431
 #, php-format
 msgid "%s 別PV ランキング"
-msgstr ""
+msgstr "PV-Rangliste nach %s"
 
 #: lib/page-access/analytics/dashboard-page.php:435
 msgid "名称"
-msgstr ""
+msgstr "Bezeichnung"
 
 #: lib/page-access/analytics/dashboard-page.php:447
 msgid "上位10分布"
-msgstr ""
+msgstr "Top-10-Verteilung"
 
 #: lib/page-access/analytics/dashboard-page.php:461
 msgid "著者別集計"
-msgstr ""
+msgstr "Auswertung nach Autor"
 
 #: lib/page-access/analytics/dashboard-page.php:465
 msgid "記事数"
-msgstr ""
+msgstr "Anzahl der Beiträge"
 
 #: lib/page-access/analytics/dashboard-page.php:465
 #: lib/page-access/analytics/render-func.php:139
 msgid "総PV"
-msgstr ""
+msgstr "PV gesamt"
 
 #: lib/page-access/analytics/dashboard-page.php:465
 msgid "平均PV/記事"
-msgstr ""
+msgstr "Durchschnittliche PV/Beitrag"
 
 #: lib/page-access/analytics/dashboard-page.php:476
 msgid "著者別PV（上位10）"
-msgstr ""
+msgstr "PV nach Autor (Top 10)"
 
 #: lib/page-access/analytics/dashboard-page.php:505
 msgid "集計期間:"
-msgstr ""
+msgstr "Erfassungszeitraum:"
 
 #: lib/page-access/analytics/dashboard-page.php:510
 msgid "直近1年"
-msgstr ""
+msgstr "Letztes Jahr"
 
 #: lib/page-access/analytics/dashboard-page.php:515
 msgid "記事タイトルで検索..."
-msgstr ""
+msgstr "Nach Beitragstitel suchen..."
 
 #: lib/page-access/analytics/dashboard-page.php:530
 msgid "記事を選択してください"
-msgstr ""
+msgstr "Bitte wählen Sie einen Beitrag aus"
 
 #: lib/page-access/analytics/dashboard-page.php:535
 msgid "7日"
-msgstr ""
+msgstr "7 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:536
 msgid "30日"
-msgstr ""
+msgstr "30 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:537
 msgid "90日"
-msgstr ""
+msgstr "90 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:540
 #: lib/page-access/analytics/render-func.php:79
 msgid "カスタム"
-msgstr ""
+msgstr "Benutzerdefiniert"
 
 #: lib/page-access/analytics/dashboard-page.php:553
 msgid "リスト期間に合わせる"
-msgstr ""
+msgstr "An Listenzeitraum anpassen"
 
 #: lib/page-access/analytics/dashboard-page.php:563
 msgid "左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。"
 msgstr ""
+"Wenn Sie einen Beitrag aus der Liste links auswählen, wird das "
+"Zugriffsverlaufsdiagramm nach der Veröffentlichung angezeigt."
 
 #: lib/page-access/analytics/dashboard-page.php:577
 msgid "エクスポート機能は無効化されています。"
-msgstr ""
+msgstr "Die Exportfunktion ist deaktiviert."
 
 #: lib/page-access/analytics/dashboard-page.php:585
 msgid "対象"
-msgstr ""
+msgstr "Ziel"
 
 #: lib/page-access/analytics/dashboard-page.php:587
 msgid "日次PV推移"
-msgstr ""
+msgstr "Täglicher PV-Verlauf"
 
 #: lib/page-access/analytics/dashboard-page.php:588
 msgid "人気記事ランキング"
-msgstr ""
+msgstr "Rangliste beliebter Beiträge"
 
 #: lib/page-access/analytics/dashboard-page.php:589
 msgid "記事別全量"
-msgstr ""
+msgstr "Alle Beiträge"
 
 #: lib/page-access/analytics/dashboard-page.php:590
 msgid "著者別"
-msgstr ""
+msgstr "Nach Autor"
 
 #: lib/page-access/analytics/dashboard-page.php:593
 msgid "形式"
-msgstr ""
+msgstr "Format"
 
 #: lib/page-access/analytics/dashboard-page.php:599
 msgid "期間"
@@ -18799,149 +18807,149 @@ msgstr "Zeitraum"
 #: lib/page-access/analytics/dashboard-page.php:601
 #: lib/page-access/analytics/render-func.php:99
 msgid "〜"
-msgstr ""
+msgstr "bis"
 
 #: lib/page-access/analytics/enqueue-func.php:72
 #: lib/page-access/analytics/render-func.php:423
 msgid "火"
-msgstr ""
+msgstr "Di"
 
 #: lib/page-access/analytics/enqueue-func.php:73
 #: lib/page-access/analytics/render-func.php:424
 msgid "水"
-msgstr ""
+msgstr "Mi"
 
 #: lib/page-access/analytics/enqueue-func.php:74
 #: lib/page-access/analytics/render-func.php:424
 msgid "木"
-msgstr ""
+msgstr "Do"
 
 #: lib/page-access/analytics/enqueue-func.php:75
 #: lib/page-access/analytics/render-func.php:424
 msgid "金"
-msgstr ""
+msgstr "Fr"
 
 #: lib/page-access/analytics/enqueue-func.php:76
 #: lib/page-access/analytics/render-func.php:424
 msgid "土"
-msgstr ""
+msgstr "Sa"
 
 #: lib/page-access/analytics/enqueue-func.php:108
 msgid "日付"
-msgstr ""
+msgstr "Datum"
 
 #: lib/page-access/analytics/enqueue-func.php:109
 msgid "公開後日数"
-msgstr ""
+msgstr "Tage seit Veröffentlichung"
 
 #: lib/page-access/analytics/enqueue-func.php:113
 msgid "レイアウトを保存しました"
-msgstr ""
+msgstr "Layout gespeichert"
 
 #: lib/page-access/analytics/enqueue-func.php:114
 msgid "レイアウトの保存に失敗しました"
-msgstr ""
+msgstr "Speichern des Layouts fehlgeschlagen"
 
 #: lib/page-access/analytics/enqueue-func.php:115
 msgid "タイル配置を既定に戻しますか？"
-msgstr ""
+msgstr "Kachelanordnung wirklich zurücksetzen?"
 
 #: lib/page-access/analytics/enqueue-func.php:117
 msgid "選択した期間のアクセスデータがありません。"
-msgstr ""
+msgstr "Für den ausgewählten Zeitraum liegen keine Zugriffsdaten vor."
 
 #: lib/page-access/analytics/enqueue-func.php:119
 msgid "表示期間の合計"
-msgstr ""
+msgstr "Summe für den angezeigten Zeitraum"
 
 #: lib/page-access/analytics/enqueue-func.php:120
 msgid "リスト期間の合計"
-msgstr ""
+msgstr "Summe für den Listenzeitraum"
 
 #: lib/page-access/analytics/enqueue-func.php:121
 msgid "累計"
-msgstr ""
+msgstr "Kumulierte Summe"
 
 #: lib/page-access/analytics/enqueue-func.php:122
 msgid "グラフはリストと異なる期間を表示中"
-msgstr ""
+msgstr "Das Diagramm zeigt einen anderen Zeitraum als die Liste"
 
 #: lib/page-access/analytics/export-func.php:19
 msgid "エクスポート機能が無効です。"
-msgstr ""
+msgstr "Die Exportfunktion ist deaktiviert."
 
 #: lib/page-access/analytics/export-func.php:68
 msgid "対象が不正です。"
-msgstr ""
+msgstr "Das Ziel ist ungültig."
 
 #: lib/page-access/analytics/render-func.php:34
 msgid "NO IMAGE"
-msgstr ""
+msgstr "KEIN BILD"
 
 #: lib/page-access/analytics/render-func.php:46
 msgid "記事別"
-msgstr ""
+msgstr "Nach Beitrag"
 
 #: lib/page-access/analytics/render-func.php:47
 msgid "カテゴリー/タグ"
-msgstr ""
+msgstr "Kategorie/Schlagwort"
 
 #: lib/page-access/analytics/render-func.php:49
 #: lib/page-access/analytics/render-func.php:247
 #: lib/page-access/analytics/render-func.php:374
 msgid "ライフサイクル"
-msgstr ""
+msgstr "Lebenszyklus"
 
 #: lib/page-access/analytics/render-func.php:50
 #: lib/page-access/analytics/settings-forms.php:88
 msgid "エクスポート"
-msgstr ""
+msgstr "Export"
 
 #: lib/page-access/analytics/render-func.php:90
 msgid "期間:"
-msgstr ""
+msgstr "Zeitraum:"
 
 #: lib/page-access/analytics/render-func.php:135
 msgid "昨日比"
-msgstr ""
+msgstr "im Vergleich zu gestern"
 
 #: lib/page-access/analytics/render-func.php:137
 msgid "前週比"
-msgstr ""
+msgstr "im Vergleich zur Vorwoche"
 
 #: lib/page-access/analytics/render-func.php:138
 msgid "前月比"
-msgstr ""
+msgstr "im Vergleich zum Vormonat"
 
 #: lib/page-access/analytics/render-func.php:180
 msgid "データがありません。"
-msgstr ""
+msgstr "Keine Daten vorhanden."
 
 #: lib/page-access/analytics/render-func.php:201
 #: lib/page-access/analytics/render-func.php:326
 msgid "削除済み"
-msgstr ""
+msgstr "Gelöscht"
 
 #: lib/page-access/analytics/render-func.php:254
 msgid "期間全体の総PVに占めるこの記事の割合"
-msgstr ""
+msgstr "Anteil dieses Beitrags an den Gesamt-PV des gesamten Zeitraums"
 
 #: lib/page-access/analytics/render-func.php:299
 msgid "指定した期間のアクセスデータがありません。"
-msgstr ""
+msgstr "Für den angegebenen Zeitraum liegen keine Zugriffsdaten vor."
 
 #: lib/page-access/analytics/render-func.php:310
 msgid "急上昇中の記事はありません。"
-msgstr ""
+msgstr "Es gibt keine im Trend liegenden Beiträge."
 
 #: lib/page-access/analytics/render-func.php:361
 #, php-format
 msgid "直近%1$d日 %2$s PV / 前%1$d日 %3$s PV"
-msgstr ""
+msgstr "Letzte %1$d Tage: %2$s PV / Vorherige %1$d Tage: %3$s PV"
 
 #: lib/page-access/analytics/render-func.php:382
 msgid "新登場"
-msgstr ""
+msgstr "Neu"
 
 #: lib/page-access/analytics/render-func.php:391
 #, php-format
@@ -18952,75 +18960,82 @@ msgstr ""
 
 #: lib/page-access/analytics/render-func.php:497
 msgid "少ない"
-msgstr ""
+msgstr "Niedrig"
 
 #: lib/page-access/analytics/render-func.php:501
 msgid "多い"
-msgstr ""
+msgstr "Hoch"
 
 #: lib/page-access/analytics/settings-forms.php:24
 msgid "アクセス解析のキャッシュをクリアしました。"
-msgstr ""
+msgstr "Der Zugriffsanalyse-Cache wurde geleert."
 
 #: lib/page-access/analytics/settings-forms.php:35
 msgid "テーマ内で独自にアクセス集計を行います。集計結果は「人気記事」ウィジェットや本ダッシュボードで使用されます。"
 msgstr ""
+"Das Theme führt eine eigene Zugriffserfassung durch. Die erfassten "
+"Ergebnisse werden im Widget „Beliebte Beiträge“ und in diesem Dashboard "
+"verwendet."
 
 #: lib/page-access/analytics/settings-forms.php:42
 msgid "アクセス解析ダッシュボード"
-msgstr ""
+msgstr "Zugriffsanalyse-Dashboard"
 
 #: lib/page-access/analytics/settings-forms.php:44
 msgid "集計済みデータを可視化するダッシュボードの設定です。"
-msgstr ""
+msgstr "Einstellungen für das Dashboard, das die erfassten Daten visualisiert."
 
 #: lib/page-access/analytics/settings-forms.php:47
 msgid "ダッシュボード機能"
-msgstr ""
+msgstr "Dashboard-Funktion"
 
 #: lib/page-access/analytics/settings-forms.php:49
 msgid "アクセス解析ダッシュボードを有効にする"
-msgstr ""
+msgstr "Zugriffsanalyse-Dashboard aktivieren"
 
 #: lib/page-access/analytics/settings-forms.php:50
 msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
 msgstr ""
+"Wenn deaktiviert, werden die Dashboard-Tabs ausgeblendet und nur der Tab "
+"„Einstellungen“ wird angezeigt."
 
 #: lib/page-access/analytics/settings-forms.php:54
 msgid "キャッシュTTL（分）"
-msgstr ""
+msgstr "Cache-TTL (Minuten)"
 
 #: lib/page-access/analytics/settings-forms.php:58
 msgid "5分"
-msgstr ""
+msgstr "5 Minuten"
 
 #: lib/page-access/analytics/settings-forms.php:59
 msgid "15分"
-msgstr ""
+msgstr "15 Minuten"
 
 #: lib/page-access/analytics/settings-forms.php:67
 msgid "ダッシュボード集計結果のキャッシュ時間。新規アクセス記録時は自動的に無効化されます。"
 msgstr ""
+"Cache-Dauer für die Dashboard-Erfassungsergebnisse. Wird bei neuer "
+"Zugriffserfassung automatisch ungültig."
 
 #: lib/page-access/analytics/settings-forms.php:72
 msgid "既定の集計期間"
-msgstr ""
+msgstr "Standard-Erfassungszeitraum"
 
 #: lib/page-access/analytics/settings-forms.php:90
 msgid "CSV/JSONエクスポートを有効にする"
-msgstr ""
+msgstr "CSV/JSON-Export aktivieren"
 
 #: lib/page-access/analytics/settings-forms.php:94
 msgid "キャッシュのクリア"
-msgstr ""
+msgstr "Cache leeren"
 
 #: lib/page-access/analytics/settings-forms.php:97
 msgid "ダッシュボードのキャッシュをクリア"
-msgstr ""
+msgstr "Dashboard-Cache leeren"
 
 #: lib/page-access/analytics/settings-forms.php:99
 msgid "集計結果の transient キャッシュを一括削除します。"
-msgstr ""
+msgstr "Löscht den Transient-Cache der Erfassungsergebnisse vollständig."
 
 #: lib/sns-follow.php:170
 #. translators: %s: SNSサービス名
