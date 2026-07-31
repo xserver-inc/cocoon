@@ -20,6 +20,9 @@
   .widget-entry-card-link {
     flex-shrink: 0;
     max-width: 320px;
+
+    // Swiper未初期化時（ブロックエディターなど）に.swiper-slideのheight:100%が効かず高さが揃わないための打ち消し
+    height: auto;
   }
 
   .card-title {
@@ -103,7 +106,7 @@
   }
 
   .swiper-button-next::after {
-    border-color: #ffffff;
+    border-color: #fff;
     margin-right: 0.4rem;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -126,7 +129,7 @@
   }
 
   .swiper-button-prev::after {
-    border-color: #ffffff;
+    border-color: #fff;
     margin-left: 0.4rem;
     transform: rotate(45deg);
     width: 12px;

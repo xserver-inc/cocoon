@@ -8900,6 +8900,7 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
   max-width: 320px;
+  height: auto;
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;
@@ -17594,6 +17595,7 @@ body.wp-admin {
 .admin-settings .demo .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
   max-width: 320px;
+  height: auto;
 }
 .admin-settings .demo .is-list-horizontal .card-title {
   font-size: 16px;

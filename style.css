@@ -9662,6 +9662,7 @@ https://codepen.io/nxworld/pen/oLdoWb
 .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
   max-width: 320px;
+  height: auto;
 }
 .is-list-horizontal .card-title {
   font-size: 16px;
