@@ -359,13 +359,12 @@ msgstr "备注"
 #: lib/admin-tinymce-qtag.php:351
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/sns-share-forms-bottom.php:110
-#: lib/page-settings/sns-share-forms-top.php:97
 #: lib/page-settings/_top-page.php:224
-#: lib/_defins.php:412
+#: lib/sns-share.php:1015
+#: lib/sns-share.php:1028
+#: lib/_defins.php:413
 #: skins/skin-made-in-heaven/lib/panel-option.php:81
 #: tmp/mobile-comments-button.php:12
-#: tmp/sns-share-buttons.php:81
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
 #: blocks/src/block/icon-box/deprecated.js:102
@@ -748,7 +747,7 @@ msgstr "书签"
 
 #: lib/admin-tinymce-qtag.php:561
 #: lib/admin-tinymce-qtag.php:1694
-#: lib/page-access/analytics/dashboard-page.php:605
+#: lib/page-access/analytics/dashboard-page.php:630
 #: blocks/src/block/blogcard/deprecated.js:95
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1328,7 +1327,7 @@ msgid "管理メニュー"
 msgstr "管理菜单"
 
 #: lib/admin.php:398
-#: lib/page-access/analytics/render-func.php:44
+#: lib/page-access/analytics/render-func.php:97
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "仪表盘"
@@ -2286,28 +2285,25 @@ msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:88
 #: lib/custom-fields/update-field.php:90
-#: lib/page-access/access-func.php:755
+#: lib/page-access/access-func.php:779
 msgid "年"
 msgstr "年"
 
 #: lib/custom-fields/update-field.php:92
-#: lib/page-access/access-func.php:754
-#: lib/page-access/analytics/dashboard-page.php:164
+#: lib/page-access/access-func.php:778
+#: lib/page-access/analytics/dashboard-page.php:171
 #: lib/page-access/analytics/enqueue-func.php:71
-#: lib/page-access/analytics/render-func.php:423
-#: lib/page-access/analytics/render-func.php:464
 msgid "月"
 msgstr "月"
 
 #: lib/custom-fields/update-field.php:102
 #: lib/custom-fields/update-field.php:104
-#: lib/page-access/access-func.php:752
-#: lib/page-access/access-func.php:893
-#: lib/page-access/access-func.php:897
-#: lib/page-access/analytics/dashboard-page.php:162
+#: lib/page-access/access-func.php:776
+#: lib/page-access/access-func.php:900
+#: lib/page-access/access-func.php:904
+#: lib/page-access/analytics/dashboard-page.php:169
 #: lib/page-access/analytics/enqueue-func.php:70
 #: lib/page-access/analytics/enqueue-func.php:110
-#: lib/page-access/analytics/render-func.php:423
 #: lib/page-settings/apis-forms.php:337
 msgid "日"
 msgstr "日"
@@ -2677,8 +2673,8 @@ msgstr "仅首页"
 
 #: lib/html-forms.php:803
 #: lib/page-settings/sns-follow-forms.php:97
-#: lib/page-settings/sns-share-forms-bottom.php:130
-#: lib/page-settings/sns-share-forms-top.php:117
+#: lib/page-settings/sns-share-forms-bottom.php:101
+#: lib/page-settings/sns-share-forms-top.php:88
 #: lib/page-settings/_top-page.php:197
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
@@ -2687,8 +2683,8 @@ msgstr "页面视图"
 #: lib/html-forms.php:804
 #: lib/page-settings/about-forms.php:82
 #: lib/page-settings/sns-follow-forms.php:100
-#: lib/page-settings/sns-share-forms-bottom.php:133
-#: lib/page-settings/sns-share-forms-top.php:120
+#: lib/page-settings/sns-share-forms-bottom.php:104
+#: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/toc-forms.php:78
 #: lib/page-settings/_top-page.php:200
 #: lib/shortcodes.php:517
@@ -2906,7 +2902,7 @@ msgid "アフィリエイトタグ"
 msgstr "联盟标签"
 
 #: lib/original-menu.php:18
-#: lib/page-access/analytics/render-func.php:45
+#: lib/page-access/analytics/render-func.php:98
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
 #: lib/widgets/item-ranking.php:19
@@ -3121,7 +3117,7 @@ msgstr "删除"
 msgid "削除しないで一覧に戻る"
 msgstr "不删除并返回列表"
 
-#: lib/page-access/analytics/dashboard-page.php:352
+#: lib/page-access/analytics/dashboard-page.php:359
 #: lib/page-affiliate-tag/form.php:30
 #: lib/page-func-text/form.php:30
 #: lib/page-item-ranking/form.php:80
@@ -3244,8 +3240,8 @@ msgstr "短代码："
 msgid "非表示"
 msgstr "隐藏"
 
-#: lib/page-access/analytics/render-func.php:246
-#: lib/page-access/analytics/render-func.php:373
+#: lib/page-access/analytics/render-func.php:299
+#: lib/page-access/analytics/render-func.php:426
 #: lib/page-affiliate-tag/list.php:87
 #: lib/page-func-text/list.php:87
 #: lib/page-item-ranking/list.php:101
@@ -3366,7 +3362,7 @@ msgstr "设置已恢复。"
 msgid "テーマで利用されている各種キャッシュを削除します。"
 msgstr "删除主题使用的各种缓存。"
 
-#: lib/page-access/analytics/render-func.php:284
+#: lib/page-access/analytics/render-func.php:337
 #: lib/page-cache/cache-forms.php:25
 msgid "すべて"
 msgstr "全部"
@@ -6653,13 +6649,11 @@ msgstr "按人气文章、类别、标签的顺序优先显示，其中之一将
 msgid "本日"
 msgstr "今天"
 
-#: lib/page-access/access-func.php:776
 #: lib/page-settings/carousel-forms.php:69
 #: lib/widgets/popular-entries.php:202
 msgid "7日間"
 msgstr "7天"
 
-#: lib/page-access/access-func.php:777
 #: lib/page-settings/carousel-forms.php:70
 #: lib/widgets/popular-entries.php:203
 msgid "30日間"
@@ -6670,11 +6664,11 @@ msgstr "30天"
 msgid "1年間"
 msgstr "1年"
 
-#: lib/page-access/access-func.php:780
+#: lib/page-access/access-func.php:708
 #: lib/page-access/analytics/dashboard-page.php:145
-#: lib/page-access/analytics/dashboard-page.php:511
-#: lib/page-access/analytics/dashboard-page.php:539
-#: lib/page-access/analytics/render-func.php:78
+#: lib/page-access/analytics/dashboard-page.php:536
+#: lib/page-access/analytics/dashboard-page.php:564
+#: lib/page-access/analytics/render-func.php:131
 #: lib/page-access/analytics/settings-forms.php:81
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
@@ -6695,8 +6689,8 @@ msgstr "选择人气文章时，将仅优先显示人气文章。"
 #: lib/page-settings/single-forms.php:129
 #: lib/page-settings/single-forms.php:350
 #: lib/page-settings/sns-follow-forms.php:103
-#: lib/page-settings/sns-share-forms-bottom.php:136
-#: lib/page-settings/sns-share-forms-top.php:123
+#: lib/page-settings/sns-share-forms-bottom.php:107
+#: lib/page-settings/sns-share-forms-top.php:94
 #: lib/shortcodes.php:534
 #: lib/widgets/display-widgets.php:156
 msgid "カテゴリー"
@@ -6714,8 +6708,8 @@ msgstr "（※如果希望显示类别相关文章，请不要选择人气文章
 #: lib/page-settings/editor-forms.php:83
 #: lib/page-settings/single-forms.php:130
 #: lib/page-settings/sns-follow-forms.php:106
-#: lib/page-settings/sns-share-forms-bottom.php:139
-#: lib/page-settings/sns-share-forms-top.php:126
+#: lib/page-settings/sns-share-forms-bottom.php:110
+#: lib/page-settings/sns-share-forms-top.php:97
 #: lib/tinymce/html-tags.php:48
 #: lib/widgets/display-widgets.php:173
 #: blocks/src/block/new-list/edit.js:117
@@ -8916,9 +8910,9 @@ msgstr "将日文Slug更改为短字符串，例如，投稿为“post-XXXX”�
 msgid "固定ページのコメント表示設定です。"
 msgstr "这是固定页面的评论显示设置。"
 
-#: lib/page-access/analytics/render-func.php:102
-#: lib/page-access/analytics/render-func.php:245
-#: lib/page-access/analytics/render-func.php:372
+#: lib/page-access/analytics/render-func.php:155
+#: lib/page-access/analytics/render-func.php:298
+#: lib/page-access/analytics/render-func.php:425
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
 #: lib/page-settings/single-forms.php:301
@@ -9609,7 +9603,6 @@ msgstr "1个月"
 msgid "2ヶ月"
 msgstr "2个月"
 
-#: lib/page-access/access-func.php:778
 #: lib/page-settings/single-forms.php:199
 #: blocks/src/block/popular-list/edit.js:178
 msgid "3ヶ月"
@@ -9619,8 +9612,7 @@ msgstr "3个月"
 msgid "6ヶ月"
 msgstr "6个月"
 
-#: lib/page-access/access-func.php:779
-#: lib/page-access/analytics/dashboard-page.php:538
+#: lib/page-access/analytics/dashboard-page.php:563
 #: lib/page-settings/single-forms.php:201
 #: blocks/src/block/popular-list/edit.js:186
 msgid "1年"
@@ -9876,127 +9868,116 @@ msgstr "您的个人资料"
 msgid "ウェブサイト"
 msgstr "网站"
 
-#: lib/page-settings/sns-share-forms-bottom.php:68
-#: lib/page-settings/sns-share-forms-top.php:55
-#: lib/sns-follow.php:135
+#: lib/sns-follow.php:141
+#: lib/sns-share.php:819
 msgid "X（旧Twitter）"
 msgstr "X（原Twitter）"
 
-#: lib/page-settings/sns-share-forms-bottom.php:71
-#: lib/page-settings/sns-share-forms-top.php:58
-#: lib/sns-follow.php:136
-#: tmp/sns-share-buttons.php:21
+#: lib/sns-follow.php:147
+#: lib/sns-share.php:834
+#: lib/sns-share.php:845
 msgid "Mastodon"
 msgstr "Mastodon"
 
-#: lib/page-settings/sns-share-forms-bottom.php:74
-#: lib/page-settings/sns-share-forms-top.php:61
-#: lib/sns-follow.php:137
-#: tmp/sns-share-buttons.php:25
+#: lib/sns-follow.php:153
+#: lib/sns-share.php:849
+#: lib/sns-share.php:860
 msgid "Bluesky"
 msgstr "Bluesky"
 
-#: lib/page-settings/sns-share-forms-bottom.php:77
-#: lib/page-settings/sns-share-forms-top.php:64
-#: lib/sns-follow.php:138
-#: tmp/sns-share-buttons.php:29
+#: lib/sns-follow.php:159
+#: lib/sns-share.php:864
+#: lib/sns-share.php:875
 msgid "Misskey"
 msgstr "Misskey"
 
-#: lib/page-settings/sns-share-forms-bottom.php:80
-#: lib/page-settings/sns-share-forms-top.php:67
-#: lib/sns-follow.php:139
-#: tmp/sns-share-buttons.php:33
+#: lib/sns-follow.php:165
+#: lib/sns-share.php:879
+#: lib/sns-share.php:890
 msgid "Facebook"
 msgstr "Facebook"
 
-#: lib/page-settings/sns-share-forms-bottom.php:83
-#: lib/page-settings/sns-share-forms-top.php:70
-#: lib/sns-follow.php:140
-#: tmp/sns-share-buttons.php:37
+#: lib/sns-follow.php:171
+#: lib/sns-share.php:894
+#: lib/sns-share.php:905
 msgid "Threads"
 msgstr "Threads"
 
-#: lib/page-settings/sns-share-forms-bottom.php:86
-#: lib/page-settings/sns-share-forms-top.php:73
-#: lib/sns-follow.php:141
-#: tmp/sns-share-buttons.php:41
+#: lib/sns-follow.php:177
+#: lib/sns-share.php:910
+#: lib/sns-share.php:920
 msgid "Reddit"
 msgstr "Reddit"
 
-#: lib/page-settings/sns-share-forms-bottom.php:89
-#: lib/page-settings/sns-share-forms-top.php:76
-#: lib/sns-follow.php:143
+#: lib/sns-follow.php:183
+#: lib/sns-share.php:924
 msgid "はてなブックマーク"
 msgstr "Hatena书签"
 
-#: lib/sns-follow.php:144
+#: lib/sns-follow.php:189
 msgid "Instagram"
 msgstr "Instagram"
 
-#: lib/page-settings/sns-share-forms-bottom.php:101
-#: lib/page-settings/sns-share-forms-top.php:88
-#: lib/sns-follow.php:145
-#: tmp/sns-share-buttons.php:57
+#: lib/sns-follow.php:231
+#: lib/sns-share.php:967
+#: lib/sns-share.php:977
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: lib/sns-follow.php:146
+#: lib/sns-follow.php:195
 msgid "YouTube"
 msgstr "Pinterest"
 
-#: lib/sns-follow.php:147
+#: lib/sns-follow.php:201
 msgid "TikTok"
 msgstr "TikTok"
 
-#: lib/page-settings/sns-share-forms-bottom.php:104
-#: lib/page-settings/sns-share-forms-top.php:91
-#: lib/sns-follow.php:148
-#: tmp/sns-share-buttons.php:61
+#: lib/sns-follow.php:207
+#: lib/sns-share.php:983
+#: lib/sns-share.php:993
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: lib/sns-follow.php:149
+#: lib/sns-follow.php:213
 msgid "note"
 msgstr "note"
 
-#: lib/sns-follow.php:150
+#: lib/sns-follow.php:219
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: lib/sns-follow.php:151
+#: lib/sns-follow.php:225
 msgid "Flickr"
 msgstr "Flickr"
 
-#: lib/page-settings/sns-share-forms-bottom.php:98
-#: lib/page-settings/sns-share-forms-top.php:85
-#: lib/sns-follow.php:152
+#: lib/sns-follow.php:237
+#: lib/sns-share.php:953
 msgid "LINE@"
 msgstr "LINE@"
 
-#: lib/sns-follow.php:153
+#: lib/sns-follow.php:243
+#: lib/sns-follow.php:244
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:238
-#: tmp/sns-follow-buttons.php:105
 msgid "Amazon欲しい物リスト"
 msgstr "Amazon愿望清单"
 
-#: lib/sns-follow.php:154
+#: lib/sns-follow.php:250
 msgid "Twitch"
 msgstr "Twitch"
 
-#: lib/sns-follow.php:155
+#: lib/sns-follow.php:256
 msgid "楽天ROOM"
 msgstr "乐天ROOM"
 
-#: lib/sns-follow.php:156
+#: lib/sns-follow.php:262
 msgid "Slack"
 msgstr "Slack"
 
-#: lib/sns-follow.php:157
+#: lib/sns-follow.php:268
 msgid "GitHub"
 msgstr "GitHub"
 
-#: lib/sns-follow.php:158
+#: lib/sns-follow.php:274
 msgid "CodePen"
 msgstr "CodePen"
 
@@ -10009,8 +9990,8 @@ msgid "現ログインユーザーのSNSフォローページを設定します�
 msgstr "设置当前登录用户的SNS关注页面。"
 
 #: lib/page-settings/sns-follow-forms.php:88
-#: lib/page-settings/sns-share-forms-bottom.php:121
-#: lib/page-settings/sns-share-forms-top.php:108
+#: lib/page-settings/sns-share-forms-bottom.php:92
+#: lib/page-settings/sns-share-forms-top.php:79
 #: lib/page-settings/toc-forms.php:72
 msgid "表示ページ"
 msgstr "显示页面"
@@ -10020,14 +10001,14 @@ msgid "フォローボタンを表示するページの切り替え。"
 msgstr "切换显示关注按钮的页面。"
 
 #: lib/page-settings/sns-follow-forms.php:94
-#: lib/page-settings/sns-share-forms-bottom.php:127
-#: lib/page-settings/sns-share-forms-top.php:114
+#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-top.php:85
 msgid "フロントページ"
 msgstr "前端页面"
 
 #: lib/page-settings/sns-follow-forms.php:94
-#: lib/page-settings/sns-share-forms-bottom.php:127
-#: lib/page-settings/sns-share-forms-top.php:114
+#: lib/page-settings/sns-share-forms-bottom.php:98
+#: lib/page-settings/sns-share-forms-top.php:85
 msgid "（インデックスページ）"
 msgstr "（索引页面）"
 
@@ -10060,27 +10041,27 @@ msgid "RSS購読用のボタンを表示します。"
 msgstr "显示RSS订阅按钮。"
 
 #: lib/page-settings/sns-follow-forms.php:143
-#: lib/page-settings/sns-share-forms-bottom.php:150
-#: lib/page-settings/sns-share-forms-top.php:137
+#: lib/page-settings/sns-share-forms-bottom.php:121
+#: lib/page-settings/sns-share-forms-top.php:108
 msgid "ボタンカラー"
 msgstr "按钮颜色"
 
 #: lib/page-settings/sns-follow-forms.php:148
-#: lib/page-settings/sns-share-forms-bottom.php:155
-#: lib/page-settings/sns-share-forms-top.php:142
+#: lib/page-settings/sns-share-forms-bottom.php:126
+#: lib/page-settings/sns-share-forms-top.php:113
 #: skins/skin-made-in-heaven/lib/panel-visual.php:110
 msgid "モノクロ"
 msgstr "单色"
 
 #: lib/page-settings/sns-follow-forms.php:149
-#: lib/page-settings/sns-share-forms-bottom.php:156
-#: lib/page-settings/sns-share-forms-top.php:143
+#: lib/page-settings/sns-share-forms-bottom.php:127
+#: lib/page-settings/sns-share-forms-top.php:114
 msgid "ブランドカラー"
 msgstr "品牌色"
 
 #: lib/page-settings/sns-follow-forms.php:150
-#: lib/page-settings/sns-share-forms-bottom.php:157
-#: lib/page-settings/sns-share-forms-top.php:144
+#: lib/page-settings/sns-share-forms-bottom.php:128
+#: lib/page-settings/sns-share-forms-top.php:115
 msgid "ブランドカラー（白抜き）"
 msgstr "品牌色（白色底）"
 
@@ -10207,114 +10188,113 @@ msgstr "显示切换"
 msgid "個々のシェアボタンの表示切り替え。"
 msgstr "切换各个分享按钮的显示。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:92
-#: lib/page-settings/sns-share-forms-top.php:79
+#: lib/page-settings/sns-share-forms-bottom.php:78
+#: lib/page-settings/sns-share-forms-top.php:65
 msgid "Google"
 msgstr "Google"
 
-#: lib/page-settings/sns-share-forms-bottom.php:95
-#: lib/page-settings/sns-share-forms-top.php:82
-#: tmp/sns-share-buttons.php:49
+#: lib/page-settings/sns-share-forms-bottom.php:81
+#: lib/page-settings/sns-share-forms-top.php:68
+#: lib/sns-share.php:949
 msgid "Pocket"
 msgstr "Pocket"
 
-#: lib/page-settings/sns-share-forms-bottom.php:107
-#: lib/page-settings/sns-share-forms-top.php:94
+#: lib/sns-share.php:998
 msgid "タイトルとURLをコピー"
 msgstr "复制标题和URL"
 
-#: lib/page-settings/sns-share-forms-bottom.php:113
+#: lib/page-settings/sns-share-forms-bottom.php:84
 msgid "シェアボタンを選択してください。"
 msgstr "请选择分享按钮。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:124
-#: lib/page-settings/sns-share-forms-top.php:111
+#: lib/page-settings/sns-share-forms-bottom.php:95
+#: lib/page-settings/sns-share-forms-top.php:82
 msgid "シェアボタンを表示するページの切り替え。"
 msgstr "切换显示分享按钮的页面。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:142
-#: lib/page-settings/sns-share-forms-top.php:129
+#: lib/page-settings/sns-share-forms-bottom.php:113
+#: lib/page-settings/sns-share-forms-top.php:100
 msgid "シェアボタンを表示するページを選択してください。"
 msgstr "请选择显示分享按钮的页面。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:160
+#: lib/page-settings/sns-share-forms-bottom.php:131
 msgid "ボトムシェアボタンの配色を選択してください。"
 msgstr "请选择底部分享按钮的配色。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:168
-#: lib/page-settings/sns-share-forms-top.php:157
+#: lib/page-settings/sns-share-forms-bottom.php:139
+#: lib/page-settings/sns-share-forms-top.php:128
 msgid "カラム数"
 msgstr "栏数"
 
-#: lib/page-settings/sns-share-forms-bottom.php:173
-#: lib/page-settings/sns-share-forms-top.php:162
+#: lib/page-settings/sns-share-forms-bottom.php:144
+#: lib/page-settings/sns-share-forms-top.php:133
 msgid "1列"
 msgstr "1列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:174
-#: lib/page-settings/sns-share-forms-top.php:163
+#: lib/page-settings/sns-share-forms-bottom.php:145
+#: lib/page-settings/sns-share-forms-top.php:134
 msgid "2列"
 msgstr "2列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:175
-#: lib/page-settings/sns-share-forms-top.php:164
+#: lib/page-settings/sns-share-forms-bottom.php:146
+#: lib/page-settings/sns-share-forms-top.php:135
 msgid "3列"
 msgstr "3列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:176
-#: lib/page-settings/sns-share-forms-top.php:165
+#: lib/page-settings/sns-share-forms-bottom.php:147
+#: lib/page-settings/sns-share-forms-top.php:136
 msgid "4列"
 msgstr "4列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:177
-#: lib/page-settings/sns-share-forms-top.php:166
+#: lib/page-settings/sns-share-forms-bottom.php:148
+#: lib/page-settings/sns-share-forms-top.php:137
 msgid "5列"
 msgstr "5列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:178
-#: lib/page-settings/sns-share-forms-top.php:167
+#: lib/page-settings/sns-share-forms-bottom.php:149
+#: lib/page-settings/sns-share-forms-top.php:138
 msgid "6列"
 msgstr "6列"
 
-#: lib/page-settings/sns-share-forms-bottom.php:181
+#: lib/page-settings/sns-share-forms-bottom.php:152
 msgid "ボトムシェアボタンのカラム数を選択してください。"
 msgstr "请选择底部分享按钮的栏数。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:189
-#: lib/page-settings/sns-share-forms-top.php:179
+#: lib/page-settings/sns-share-forms-bottom.php:160
+#: lib/page-settings/sns-share-forms-top.php:150
 msgid "ロゴ・キャプション配置"
 msgstr "徽标和说明的位置"
 
-#: lib/page-settings/sns-share-forms-bottom.php:194
-#: lib/page-settings/sns-share-forms-top.php:184
+#: lib/page-settings/sns-share-forms-bottom.php:165
+#: lib/page-settings/sns-share-forms-top.php:155
 msgid "ロゴ・キャプション 左右"
 msgstr "徽标和说明 左右"
 
-#: lib/page-settings/sns-share-forms-bottom.php:195
-#: lib/page-settings/sns-share-forms-top.php:185
+#: lib/page-settings/sns-share-forms-bottom.php:166
+#: lib/page-settings/sns-share-forms-top.php:156
 msgid "ロゴ・キャプション 上下"
 msgstr "徽标和说明 上下"
 
-#: lib/page-settings/sns-share-forms-bottom.php:196
-#: lib/page-settings/sns-share-forms-top.php:186
+#: lib/page-settings/sns-share-forms-bottom.php:167
+#: lib/page-settings/sns-share-forms-top.php:157
 msgid "キャプション・ロゴ 上下"
 msgstr "说明和徽标 上下"
 
-#: lib/page-settings/sns-share-forms-bottom.php:199
+#: lib/page-settings/sns-share-forms-bottom.php:170
 msgid "ボトムシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr "请选择底部分享按钮的徽标和说明的布局。"
 
-#: lib/page-settings/sns-share-forms-bottom.php:207
-#: lib/page-settings/sns-share-forms-top.php:197
+#: lib/page-settings/sns-share-forms-bottom.php:178
+#: lib/page-settings/sns-share-forms-top.php:168
 msgid "シェア数の表示"
 msgstr "显示分享数"
 
-#: lib/page-settings/sns-share-forms-bottom.php:211
-#: lib/page-settings/sns-share-forms-top.php:201
+#: lib/page-settings/sns-share-forms-bottom.php:182
+#: lib/page-settings/sns-share-forms-top.php:172
 msgid "シェア数を表示する"
 msgstr "显示分享数"
 
-#: lib/page-settings/sns-share-forms-bottom.php:212
+#: lib/page-settings/sns-share-forms-bottom.php:183
 msgid "ボトムシェアボタンのシェア数表示を切り替えます。"
 msgstr "切换底部分享按钮的分享数显示。"
 
@@ -10338,23 +10318,23 @@ msgstr "显示主栏顶部分享按钮"
 msgid "トップシェアボタンの表示を切り替えます。"
 msgstr "切换顶部分享按钮的显示。"
 
-#: lib/page-settings/sns-share-forms-top.php:100
+#: lib/page-settings/sns-share-forms-top.php:71
 msgid "表示するシェアボタンを選択してください。"
 msgstr "请选择要显示的分享按钮。"
 
-#: lib/page-settings/sns-share-forms-top.php:147
+#: lib/page-settings/sns-share-forms-top.php:118
 msgid "トップシェアボタンの配色を選択してください。"
 msgstr "请选择顶部分享按钮的配色。"
 
-#: lib/page-settings/sns-share-forms-top.php:170
+#: lib/page-settings/sns-share-forms-top.php:141
 msgid "トップシェアボタンのカラム数を選択してください。"
 msgstr "请选择顶部分享按钮的栏数。"
 
-#: lib/page-settings/sns-share-forms-top.php:189
+#: lib/page-settings/sns-share-forms-top.php:160
 msgid "トップシェアボタンのロゴとキャプションの配置を選択してください。"
 msgstr "请选择顶部分享按钮的徽标和说明的位置。"
 
-#: lib/page-settings/sns-share-forms-top.php:202
+#: lib/page-settings/sns-share-forms-top.php:173
 msgid "トップシェアボタンのシェア数表示を切り替えます。"
 msgstr "切换顶部分享按钮的分享数显示。"
 
@@ -11578,59 +11558,59 @@ msgstr "请输入输入您的个人资料信息的页面 URL。个人资料名�
 msgid "検索結果ページです。"
 msgstr "这是搜索结果页面。"
 
-#: lib/settings-preview.php:178
+#: lib/settings-preview.php:181
 msgid "ページが見つかりませんでした"
 msgstr ""
 
-#: lib/settings-preview.php:203
+#: lib/settings-preview.php:206
 msgid "サンプル記事タイトル"
 msgstr ""
 
-#: lib/settings-preview.php:205
+#: lib/settings-preview.php:208
 msgid "これはテーマ設定の見え方を確認するためのサンプル本文です。文字サイズ・行間・配色などの設定がどのように反映されるかをプレビューできます。"
 msgstr ""
 
-#: lib/settings-preview.php:207
+#: lib/settings-preview.php:210
 msgid "見出し2のサンプル"
 msgstr ""
 
-#: lib/settings-preview.php:208
+#: lib/settings-preview.php:211
 msgid "見出し2の装飾（背景色・ボーダー・キーカラー）がここに反映されます。本文の段落スタイルもあわせて確認できます。"
 msgstr ""
 
-#: lib/settings-preview.php:210
+#: lib/settings-preview.php:213
 msgid "見出し3のサンプル"
 msgstr ""
 
-#: lib/settings-preview.php:211
+#: lib/settings-preview.php:214
 msgid "見出し3の装飾を確認するためのサンプルテキストです。"
 msgstr ""
 
-#: lib/settings-preview.php:214
+#: lib/settings-preview.php:217
 msgid "これは引用ブロックのサンプルです。引用の装飾を確認できます。"
 msgstr ""
 
-#: lib/settings-preview.php:218
+#: lib/settings-preview.php:221
 msgid "リスト項目のサンプル1"
 msgstr ""
 
-#: lib/settings-preview.php:219
+#: lib/settings-preview.php:222
 msgid "リスト項目のサンプル2"
 msgstr ""
 
-#: lib/settings-preview.php:220
+#: lib/settings-preview.php:223
 msgid "リスト項目のサンプル3"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "リンクの色を確認するための"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "サンプルリンク"
 msgstr ""
 
-#: lib/settings-preview.php:223
+#: lib/settings-preview.php:226
 msgid "です。"
 msgstr ""
 
@@ -13002,7 +12982,7 @@ msgstr "在Cocoon设置的“目录”选项卡中未设置显示深度的内容
 msgid "例：Cocoon設定で「h2見出しまで」と設定されている場合、このウィジェットで「h3見出し」以降を表示することはできません。"
 msgstr "例如：如果在Cocoon设置中设置为“仅显示到h2标题”，则此组件无法显示“h3标题”及以后的内容。"
 
-#: lib/page-access/analytics/render-func.php:51
+#: lib/page-access/analytics/render-func.php:104
 #: lib/_defins.php:342
 #: blocks/src/block/faq/edit.js:127
 #: blocks/src/block/login-user-only/edit.js:34
@@ -13104,19 +13084,15 @@ msgstr "404 未找到"
 msgid "お探しのページは見つかりませんでした。"
 msgstr "未找到您要查找的页面。"
 
-#: lib/_defins.php:410
-msgid "Y.m.d"
-msgstr "Y-m-d"
-
-#: lib/_defins.php:413
+#: lib/_defins.php:414
 msgid "コメントをどうぞ"
 msgstr "请发表评论"
 
-#: lib/_defins.php:414
+#: lib/_defins.php:415
 msgid "コメントを送信"
 msgstr "发送评论"
 
-#: lib/_defins.php:417
+#: lib/_defins.php:418
 msgid "匿名"
 msgstr "匿名"
 
@@ -14104,118 +14080,118 @@ msgstr "关闭搜索表单"
 msgid "検索フォームを開く"
 msgstr "打开搜索表单"
 
+#: lib/sns-follow.php:142
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:59
-#: tmp/sns-follow-buttons.php:33
 msgid "Xをフォロー"
 msgstr "关注X"
 
+#: lib/sns-follow.php:148
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:71
-#: tmp/sns-follow-buttons.php:37
 msgid "Mastodonをフォロー"
 msgstr "关注Mastodon"
 
+#: lib/sns-follow.php:154
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:84
-#: tmp/sns-follow-buttons.php:41
 msgid "Blueskyをフォロー"
 msgstr "关注Bluesky"
 
+#: lib/sns-follow.php:160
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:97
-#: tmp/sns-follow-buttons.php:45
 msgid "Misskeyをフォロー"
 msgstr "关注Misskey"
 
+#: lib/sns-follow.php:166
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:110
-#: tmp/sns-follow-buttons.php:49
 msgid "Facebookをフォロー"
 msgstr "关注Facebook"
 
+#: lib/sns-follow.php:172
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:123
-#: tmp/sns-follow-buttons.php:53
 msgid "Threadsをフォロー"
 msgstr "在Threads上关注"
 
+#: lib/sns-follow.php:178
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:135
-#: tmp/sns-follow-buttons.php:57
 msgid "Redditをフォロー"
 msgstr ""
 
+#: lib/sns-follow.php:184
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:147
-#: tmp/sns-follow-buttons.php:61
 msgid "はてブをフォロー"
 msgstr "关注Hatena Bookmark"
 
+#: lib/sns-follow.php:190
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:160
-#: tmp/sns-follow-buttons.php:69
 msgid "Instagramをフォロー"
 msgstr "关注Instagram"
 
+#: lib/sns-follow.php:232
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:173
-#: tmp/sns-follow-buttons.php:97
 msgid "Pinterestをフォロー"
 msgstr "关注Pinterest"
 
+#: lib/sns-follow.php:196
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:186
-#: tmp/sns-follow-buttons.php:73
 msgid "YouTubeをフォロー"
 msgstr "关注YouTube"
 
+#: lib/sns-follow.php:208
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:199
-#: tmp/sns-follow-buttons.php:81
 msgid "LinkedInをフォロー"
 msgstr "关注LinkedIn"
 
+#: lib/sns-follow.php:214
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:212
-#: tmp/sns-follow-buttons.php:85
 msgid "noteをフォロー"
 msgstr "关注note"
 
+#: lib/sns-follow.php:226
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:225
-#: tmp/sns-follow-buttons.php:93
 msgid "Flickrをフォロー"
 msgstr "关注Flickr"
 
+#: lib/sns-follow.php:247
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:238
-#: tmp/sns-follow-buttons.php:105
 msgid "Amazonほしい物リストをチェック"
 msgstr "查看Amazon愿望清单"
 
+#: lib/sns-follow.php:251
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:251
-#: tmp/sns-follow-buttons.php:109
 msgid "Twitchをフォロー"
 msgstr "关注Twitch"
 
+#: lib/sns-follow.php:257
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:264
-#: tmp/sns-follow-buttons.php:113
 msgid "楽天ROOMをフォロー"
 msgstr "关注Rakuten ROOM"
 
+#: lib/sns-follow.php:263
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:277
-#: tmp/sns-follow-buttons.php:117
 msgid "Slackをフォロー"
 msgstr "关注Slack"
 
+#: lib/sns-follow.php:269
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:290
-#: tmp/sns-follow-buttons.php:121
 msgid "GitHubをフォロー"
 msgstr "关注GitHub"
 
+#: lib/sns-follow.php:275
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:303
-#: tmp/sns-follow-buttons.php:125
 msgid "CodePenをフォロー"
 msgstr "关注CodePen"
 
+#: lib/sns-follow.php:202
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:316
-#: tmp/sns-follow-buttons.php:77
 msgid "TikTokをフォロー"
 msgstr "关注TikTok"
 
+#: lib/sns-follow.php:220
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:329
-#: tmp/sns-follow-buttons.php:89
 msgid "SoundCloudをフォロー"
 msgstr "关注SoundCloud"
 
+#: lib/sns-follow.php:238
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:342
-#: tmp/sns-follow-buttons.php:101
 msgid "LINE@をフォロー"
 msgstr "关注LINE@"
 
@@ -14954,7 +14930,7 @@ msgstr "未找到帖子。"
 msgid "NOT FOUND"
 msgstr "未找到"
 
-#: lib/page-access/analytics/render-func.php:256
+#: lib/page-access/analytics/render-func.php:309
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
 msgstr "分享"
@@ -14975,87 +14951,83 @@ msgstr "作者网站"
 msgid "著作サイトをチェック"
 msgstr "查看作者网站"
 
-#: tmp/sns-follow-buttons.php:65
-msgid "Google＋をフォロー"
-msgstr "关注Google+"
-
-#: tmp/sns-follow-buttons.php:129
+#: tmp/sns-follow-buttons.php:48
 msgid "feedlyで更新情報を購読"
 msgstr "通过feedly订阅更新信息"
 
-#: tmp/sns-follow-buttons.php:133
+#: tmp/sns-follow-buttons.php:52
 msgid "RSSで更新情報を購読"
 msgstr "通过RSS订阅更新信息"
 
-#: tmp/sns-share-buttons.php:17
+#: lib/sns-share.php:831
 msgid "Xでシェア"
 msgstr "在X上分享"
 
-#: tmp/sns-share-buttons.php:17
+#: lib/sns-share.php:830
 msgid "X"
 msgstr "X"
 
-#: tmp/sns-share-buttons.php:21
+#: lib/sns-share.php:846
 msgid "Mastodonでシェア"
 msgstr "在Mastodon上分享"
 
-#: tmp/sns-share-buttons.php:25
+#: lib/sns-share.php:861
 msgid "Blueskyでシェア"
 msgstr "在Bluesky上分享"
 
-#: tmp/sns-share-buttons.php:29
+#: lib/sns-share.php:876
 msgid "Misskeyでシェア"
 msgstr "在Misskey上分享"
 
-#: tmp/sns-share-buttons.php:33
+#: lib/sns-share.php:891
 msgid "Facebookでシェア"
 msgstr "在Facebook上分享"
 
-#: tmp/sns-share-buttons.php:37
+#: lib/sns-share.php:906
 msgid "Threadsでシェア"
 msgstr "分享到Threads"
 
-#: tmp/sns-share-buttons.php:41
+#: lib/sns-share.php:921
 msgid "Redditでシェア"
 msgstr ""
 
-#: tmp/sns-share-buttons.php:45
+#: lib/sns-share.php:936
 msgid "はてブでブックマーク"
 msgstr "在Hatena Bookmark上收藏"
 
-#: tmp/sns-share-buttons.php:45
+#: lib/sns-share.php:935
 msgid "はてブ"
 msgstr "Hatena Bookmark"
 
-#: tmp/sns-share-buttons.php:49
+#: lib/sns-share.php:950
 msgid "Pocketに保存"
 msgstr "保存到Pocket"
 
-#: tmp/sns-share-buttons.php:53
+#: lib/sns-share.php:964
 msgid "LINEでシェア"
 msgstr "在LINE上分享"
 
-#: tmp/sns-share-buttons.php:53
+#: lib/sns-share.php:963
 msgid "LINE"
 msgstr "LINE"
 
-#: tmp/sns-share-buttons.php:57
+#: lib/sns-share.php:978
 msgid "Pinterestでシェア"
 msgstr "在Pinterest上分享"
 
-#: tmp/sns-share-buttons.php:61
+#: lib/sns-share.php:994
 msgid "LinkedInでシェア"
 msgstr "在LinkedIn上分享"
 
-#: tmp/sns-share-buttons.php:67
+#: lib/sns-share.php:1011
 msgid "タイトルとURLをコピーする"
 msgstr "复制标题和URL"
 
-#: tmp/sns-share-buttons.php:67
+#: lib/sns-share.php:1010
 msgid "コピー"
 msgstr "复制"
 
-#: tmp/sns-share-buttons.php:81
+#: lib/sns-share.php:1029
 msgid "コメントする"
 msgstr "发表评论"
 
@@ -15075,7 +15047,7 @@ msgstr ""
 msgid "設定するとグループブロック全体がリンク化されます。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:417
+#: lib/page-access/analytics/dashboard-page.php:442
 #: blocks/src/block-extension/group-link.js:134
 msgid "適用"
 msgstr "应用"
@@ -16033,7 +16005,7 @@ msgstr "请输入问题…"
 msgid "よくある質問と回答。"
 msgstr "常见问题及回答。"
 
-#: lib/page-access/analytics/dashboard-page.php:352
+#: lib/page-access/analytics/dashboard-page.php:359
 #: blocks/src/block/icon-box/deprecated.js:80
 #: blocks/src/block/icon-box/edit.js:27
 #: blocks/src/block/info-box/deprecated.js:79
@@ -17227,54 +17199,54 @@ msgstr "删除线（修正）"
 msgid "アクセス推移 (Cocoon)"
 msgstr "访问趋势 (Cocoon)"
 
-#: lib/page-access/access-func.php:702
+#: lib/page-access/access-func.php:726
 msgid "(タイトルなし)"
 msgstr "(无标题)"
 
-#: lib/page-access/access-func.php:753
-#: lib/page-access/analytics/dashboard-page.php:163
+#: lib/page-access/access-func.php:777
+#: lib/page-access/analytics/dashboard-page.php:170
 msgid "週"
 msgstr "周"
 
-#: lib/page-access/access-func.php:771
+#: lib/page-access/access-func.php:795
 msgid "人気記事 TOP5"
 msgstr "热门文章 TOP5"
 
-#: lib/page-access/access-func.php:775
+#: lib/page-access/access-func.php:702
 #: lib/page-access/analytics/dashboard-page.php:137
-#: lib/page-access/analytics/render-func.php:70
-#: lib/page-access/analytics/render-func.php:135
+#: lib/page-access/analytics/render-func.php:123
+#: lib/page-access/analytics/render-func.php:188
 #: lib/page-access/analytics/settings-forms.php:76
 msgid "今日"
 msgstr "今天"
 
-#: lib/page-access/access-func.php:809
-#: lib/page-access/access-func.php:952
+#: lib/page-access/access-func.php:830
+#: lib/page-access/access-func.php:959
 msgid "集計データがまだありません。"
 msgstr "尚无统计数据。"
 
-#: lib/page-access/access-func.php:818
+#: lib/page-access/access-func.php:839
 msgid "アクセス集計の詳細を見る"
 msgstr "查看访问统计详情"
 
-#: lib/page-access/access-func.php:873
+#: lib/page-access/access-func.php:880
 msgid "PV数"
 msgstr "PV数"
 
-#: lib/page-access/access-func.php:893
+#: lib/page-access/access-func.php:900
 #: lib/page-access/analytics/enqueue-func.php:112
 msgid "部分週"
 msgstr "部分周"
 
-#: lib/page-access/access-func.php:897
+#: lib/page-access/access-func.php:904
 #: lib/page-access/analytics/enqueue-func.php:111
 msgid "日数"
 msgstr "天数"
 
 #: lib/page-access/analytics/ajax-func.php:63
-#: lib/page-access/analytics/ajax-func.php:102
-#: lib/page-access/analytics/dashboard-page.php:471
-#: lib/page-access/analytics/dashboard-page.php:491
+#: lib/page-access/analytics/ajax-func.php:103
+#: lib/page-access/analytics/dashboard-page.php:496
+#: lib/page-access/analytics/dashboard-page.php:516
 msgid "不明"
 msgstr "未知"
 
@@ -17291,306 +17263,306 @@ msgid "アクセスカレンダー（直近52週）"
 msgstr "访问日历（最近52周）"
 
 #: lib/page-access/analytics/dashboard-page.php:138
-#: lib/page-access/analytics/render-func.php:71
-#: lib/page-access/analytics/render-func.php:136
+#: lib/page-access/analytics/render-func.php:124
+#: lib/page-access/analytics/render-func.php:189
 msgid "昨日"
 msgstr "昨天"
 
+#: lib/page-access/access-func.php:703
 #: lib/page-access/analytics/dashboard-page.php:139
-#: lib/page-access/analytics/dashboard-page.php:507
-#: lib/page-access/analytics/render-func.php:72
-#: lib/page-access/analytics/render-func.php:137
+#: lib/page-access/analytics/dashboard-page.php:532
+#: lib/page-access/analytics/render-func.php:125
+#: lib/page-access/analytics/render-func.php:190
 #: lib/page-access/analytics/settings-forms.php:77
 msgid "直近7日"
 msgstr "最近7天"
 
+#: lib/page-access/access-func.php:704
 #: lib/page-access/analytics/dashboard-page.php:140
-#: lib/page-access/analytics/dashboard-page.php:508
-#: lib/page-access/analytics/render-func.php:73
+#: lib/page-access/analytics/dashboard-page.php:533
+#: lib/page-access/analytics/render-func.php:126
 #: lib/page-access/analytics/settings-forms.php:78
 msgid "直近30日"
 msgstr "最近30天"
 
+#: lib/page-access/access-func.php:705
 #: lib/page-access/analytics/dashboard-page.php:141
-#: lib/page-access/analytics/dashboard-page.php:509
-#: lib/page-access/analytics/render-func.php:74
+#: lib/page-access/analytics/dashboard-page.php:534
+#: lib/page-access/analytics/render-func.php:127
 #: lib/page-access/analytics/settings-forms.php:79
 msgid "直近90日"
 msgstr "最近90天"
 
+#: lib/page-access/access-func.php:706
 #: lib/page-access/analytics/dashboard-page.php:142
-#: lib/page-access/analytics/render-func.php:75
-#: lib/page-access/analytics/render-func.php:138
+#: lib/page-access/analytics/render-func.php:128
+#: lib/page-access/analytics/render-func.php:191
 #: lib/page-access/analytics/settings-forms.php:80
 msgid "今月"
 msgstr "本月"
 
 #: lib/page-access/analytics/dashboard-page.php:143
-#: lib/page-access/analytics/render-func.php:76
+#: lib/page-access/analytics/render-func.php:129
 msgid "先月"
 msgstr "上月"
 
 #: lib/page-access/analytics/dashboard-page.php:144
-#: lib/page-access/analytics/render-func.php:77
+#: lib/page-access/analytics/render-func.php:130
 msgid "年初来"
 msgstr "年初至今"
 
-#: lib/page-access/analytics/dashboard-page.php:159
+#: lib/page-access/analytics/dashboard-page.php:166
 msgid "PV推移"
 msgstr "PV趋势"
 
-#: lib/page-access/analytics/dashboard-page.php:167
+#: lib/page-access/analytics/dashboard-page.php:174
 msgid "PV推移グラフ"
 msgstr "PV趋势图"
 
-#: lib/page-access/analytics/dashboard-page.php:172
+#: lib/page-access/analytics/dashboard-page.php:179
 msgid "カテゴリー別PV"
 msgstr "分类别PV"
 
-#: lib/page-access/analytics/dashboard-page.php:173
+#: lib/page-access/analytics/dashboard-page.php:180
 msgid "カテゴリー別PV構成"
 msgstr "分类别PV构成"
 
-#: lib/page-access/analytics/dashboard-page.php:176
+#: lib/page-access/analytics/dashboard-page.php:183
 msgid "タグ別PV"
 msgstr "标签别PV"
 
-#: lib/page-access/analytics/dashboard-page.php:177
+#: lib/page-access/analytics/dashboard-page.php:184
 msgid "タグ別PV構成"
 msgstr "标签别PV构成"
 
-#: lib/page-access/analytics/dashboard-page.php:180
+#: lib/page-access/analytics/dashboard-page.php:187
 msgid "投稿タイプ別PV"
 msgstr "按文章类型的PV"
 
-#: lib/page-access/analytics/dashboard-page.php:181
+#: lib/page-access/analytics/dashboard-page.php:188
 msgid "投稿タイプ別PV構成"
 msgstr "按文章类型的PV构成"
 
-#: lib/page-access/analytics/dashboard-page.php:184
+#: lib/page-access/analytics/dashboard-page.php:191
 msgid "人気記事 TOP10"
 msgstr "热门文章 TOP10"
 
-#: lib/page-access/analytics/dashboard-page.php:188
+#: lib/page-access/analytics/dashboard-page.php:195
 msgid "急上昇記事 TOP10（直近7日）"
 msgstr "热门上升文章 TOP10（最近7天）"
 
-#: lib/page-access/analytics/dashboard-page.php:192
-#: lib/page-access/analytics/dashboard-page.php:193
+#: lib/page-access/analytics/dashboard-page.php:199
+#: lib/page-access/analytics/dashboard-page.php:200
 msgid "曜日別PV"
 msgstr "按星期的PV"
 
-#: lib/page-access/analytics/dashboard-page.php:201
+#: lib/page-access/analytics/dashboard-page.php:208
 msgid "タイトルバーをドラッグしてタイルを並び替えできます。配置はユーザーごとに保存されます。"
 msgstr "拖动标题栏可重新排列图块，排列方式按用户保存。"
 
-#: lib/page-access/analytics/dashboard-page.php:202
+#: lib/page-access/analytics/dashboard-page.php:209
 msgid "タイル配置を既定に戻す"
 msgstr "恢复默认图块排列"
 
-#: lib/page-access/analytics/dashboard-page.php:245
-#: lib/page-access/analytics/dashboard-page.php:292
+#: lib/page-access/analytics/dashboard-page.php:252
+#: lib/page-access/analytics/dashboard-page.php:299
 msgid "投稿タイプ:"
 msgstr "文章类型："
 
-#: lib/page-access/analytics/dashboard-page.php:248
-#: lib/page-access/analytics/dashboard-page.php:319
+#: lib/page-access/analytics/dashboard-page.php:255
+#: lib/page-access/analytics/dashboard-page.php:326
 msgid "絞り込み"
 msgstr "筛选"
 
-#: lib/page-access/analytics/dashboard-page.php:296
+#: lib/page-access/analytics/dashboard-page.php:303
 msgid "著者:"
 msgstr "作者："
 
-#: lib/page-access/analytics/dashboard-page.php:297
+#: lib/page-access/analytics/dashboard-page.php:304
 msgid "名前で検索..."
 msgstr "按名称搜索..."
 
-#: lib/page-access/analytics/dashboard-page.php:302
+#: lib/page-access/analytics/dashboard-page.php:309
 msgid "カテゴリー:"
 msgstr "分类："
 
-#: lib/page-access/analytics/dashboard-page.php:303
+#: lib/page-access/analytics/dashboard-page.php:310
 msgid "カテゴリー名で検索..."
 msgstr "按分类名称搜索..."
 
-#: lib/page-access/analytics/dashboard-page.php:307
+#: lib/page-access/analytics/dashboard-page.php:314
 msgid "最小PV:"
 msgstr "最小PV："
 
-#: lib/page-access/analytics/dashboard-page.php:310
+#: lib/page-access/analytics/dashboard-page.php:317
 msgid "最大PV:"
 msgstr "最大PV："
 
-#: lib/page-access/analytics/dashboard-page.php:313
+#: lib/page-access/analytics/dashboard-page.php:320
 msgid "並び:"
 msgstr "排序："
 
-#: lib/page-access/analytics/dashboard-page.php:315
+#: lib/page-access/analytics/dashboard-page.php:322
 msgid "PV降順"
 msgstr "PV降序"
 
-#: lib/page-access/analytics/dashboard-page.php:316
+#: lib/page-access/analytics/dashboard-page.php:323
 msgid "PV昇順（低PV）"
 msgstr "PV升序（低PV优先）"
 
-#: lib/page-access/analytics/dashboard-page.php:348
+#: lib/page-access/analytics/dashboard-page.php:355
 #, php-format
 msgid "全 %s 件"
 msgstr "共 %s 项"
 
-#: lib/page-access/analytics/dashboard-page.php:352
-#: lib/page-access/analytics/dashboard-page.php:465
-#: lib/page-access/analytics/render-func.php:48
+#: lib/page-access/analytics/dashboard-page.php:359
+#: lib/page-access/analytics/dashboard-page.php:490
+#: lib/page-access/analytics/render-func.php:101
 msgid "著者"
 msgstr "作者"
 
-#: lib/page-access/analytics/dashboard-page.php:352
+#: lib/page-access/analytics/dashboard-page.php:359
 msgid "公開日"
 msgstr "发布日期"
 
-#: lib/page-access/analytics/dashboard-page.php:355
+#: lib/page-access/analytics/dashboard-page.php:362
 msgid "無題"
 msgstr "无标题"
 
-#: lib/page-access/analytics/dashboard-page.php:410
+#: lib/page-access/analytics/dashboard-page.php:435
 msgid "タクソノミー:"
 msgstr "分类法："
 
-#: lib/page-access/analytics/dashboard-page.php:431
+#: lib/page-access/analytics/dashboard-page.php:456
 #, php-format
 msgid "%s 別PV ランキング"
 msgstr "按%s的PV排名"
 
-#: lib/page-access/analytics/dashboard-page.php:435
+#: lib/page-access/analytics/dashboard-page.php:460
 msgid "名称"
 msgstr "名称"
 
-#: lib/page-access/analytics/dashboard-page.php:447
+#: lib/page-access/analytics/dashboard-page.php:472
 msgid "上位10分布"
 msgstr "前10分布"
 
-#: lib/page-access/analytics/dashboard-page.php:461
+#: lib/page-access/analytics/dashboard-page.php:486
 msgid "著者別集計"
 msgstr "按作者统计"
 
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:490
 msgid "記事数"
 msgstr "文章数"
 
-#: lib/page-access/analytics/dashboard-page.php:465
-#: lib/page-access/analytics/render-func.php:139
+#: lib/page-access/analytics/dashboard-page.php:490
+#: lib/page-access/analytics/render-func.php:192
 msgid "総PV"
 msgstr "总PV"
 
-#: lib/page-access/analytics/dashboard-page.php:465
+#: lib/page-access/analytics/dashboard-page.php:490
 msgid "平均PV/記事"
 msgstr "平均PV/篇"
 
-#: lib/page-access/analytics/dashboard-page.php:476
+#: lib/page-access/analytics/dashboard-page.php:501
 msgid "著者別PV（上位10）"
 msgstr "按作者的PV（前10）"
 
-#: lib/page-access/analytics/dashboard-page.php:505
+#: lib/page-access/analytics/dashboard-page.php:530
 msgid "集計期間:"
 msgstr "统计周期："
 
-#: lib/page-access/analytics/dashboard-page.php:510
+#: lib/page-access/access-func.php:707
+#: lib/page-access/analytics/dashboard-page.php:535
 msgid "直近1年"
 msgstr "最近1年"
 
-#: lib/page-access/analytics/dashboard-page.php:515
+#: lib/page-access/analytics/dashboard-page.php:540
 msgid "記事タイトルで検索..."
 msgstr "按文章标题搜索..."
 
-#: lib/page-access/analytics/dashboard-page.php:530
+#: lib/page-access/analytics/dashboard-page.php:555
 msgid "記事を選択してください"
 msgstr "请选择文章"
 
-#: lib/page-access/analytics/dashboard-page.php:535
+#: lib/page-access/analytics/dashboard-page.php:560
 msgid "7日"
 msgstr "7天"
 
-#: lib/page-access/analytics/dashboard-page.php:536
+#: lib/page-access/analytics/dashboard-page.php:561
 msgid "30日"
 msgstr "30天"
 
-#: lib/page-access/analytics/dashboard-page.php:537
+#: lib/page-access/analytics/dashboard-page.php:562
 msgid "90日"
 msgstr "90天"
 
-#: lib/page-access/analytics/dashboard-page.php:540
-#: lib/page-access/analytics/render-func.php:79
+#: lib/page-access/analytics/dashboard-page.php:565
+#: lib/page-access/analytics/render-func.php:132
 msgid "カスタム"
 msgstr "自定义"
 
-#: lib/page-access/analytics/dashboard-page.php:553
+#: lib/page-access/analytics/dashboard-page.php:578
 msgid "リスト期間に合わせる"
 msgstr "与列表周期一致"
 
-#: lib/page-access/analytics/dashboard-page.php:563
+#: lib/page-access/analytics/dashboard-page.php:588
 msgid "左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。"
 msgstr "从左侧列表中选择一篇文章后，将显示其发布后的访问趋势图。"
 
-#: lib/page-access/analytics/dashboard-page.php:577
+#: lib/page-access/analytics/dashboard-page.php:602
 msgid "エクスポート機能は無効化されています。"
 msgstr "导出功能已停用。"
 
-#: lib/page-access/analytics/dashboard-page.php:585
+#: lib/page-access/analytics/dashboard-page.php:610
 msgid "対象"
 msgstr "对象"
 
-#: lib/page-access/analytics/dashboard-page.php:587
+#: lib/page-access/analytics/dashboard-page.php:612
 msgid "日次PV推移"
 msgstr "每日PV趋势"
 
-#: lib/page-access/analytics/dashboard-page.php:588
+#: lib/page-access/analytics/dashboard-page.php:613
 msgid "人気記事ランキング"
 msgstr "热门文章排行"
 
-#: lib/page-access/analytics/dashboard-page.php:589
+#: lib/page-access/analytics/dashboard-page.php:614
 msgid "記事別全量"
 msgstr "全部文章"
 
-#: lib/page-access/analytics/dashboard-page.php:590
+#: lib/page-access/analytics/dashboard-page.php:615
 msgid "著者別"
 msgstr "按作者"
 
-#: lib/page-access/analytics/dashboard-page.php:593
+#: lib/page-access/analytics/dashboard-page.php:618
 msgid "形式"
 msgstr "格式"
 
-#: lib/page-access/analytics/dashboard-page.php:599
+#: lib/page-access/analytics/dashboard-page.php:624
 msgid "期間"
 msgstr "期间"
 
-#: lib/page-access/analytics/dashboard-page.php:601
-#: lib/page-access/analytics/render-func.php:99
+#: lib/page-access/analytics/dashboard-page.php:626
+#: lib/page-access/analytics/render-func.php:152
 msgid "〜"
 msgstr "至"
 
 #: lib/page-access/analytics/enqueue-func.php:72
-#: lib/page-access/analytics/render-func.php:423
 msgid "火"
 msgstr "周二"
 
 #: lib/page-access/analytics/enqueue-func.php:73
-#: lib/page-access/analytics/render-func.php:424
 msgid "水"
 msgstr "周三"
 
 #: lib/page-access/analytics/enqueue-func.php:74
-#: lib/page-access/analytics/render-func.php:424
 msgid "木"
 msgstr "周四"
 
 #: lib/page-access/analytics/enqueue-func.php:75
-#: lib/page-access/analytics/render-func.php:424
 msgid "金"
 msgstr "周五"
 
 #: lib/page-access/analytics/enqueue-func.php:76
-#: lib/page-access/analytics/render-func.php:424
 msgid "土"
 msgstr "周六"
 
@@ -17642,87 +17614,87 @@ msgstr "导出功能已停用。"
 msgid "対象が不正です。"
 msgstr "对象无效。"
 
-#: lib/page-access/analytics/render-func.php:34
+#: lib/page-access/analytics/render-func.php:87
 msgid "NO IMAGE"
 msgstr "无图片"
 
-#: lib/page-access/analytics/render-func.php:46
+#: lib/page-access/analytics/render-func.php:99
 msgid "記事別"
 msgstr "按文章"
 
-#: lib/page-access/analytics/render-func.php:47
+#: lib/page-access/analytics/render-func.php:100
 msgid "カテゴリー/タグ"
 msgstr "分类/标签"
 
-#: lib/page-access/analytics/render-func.php:49
-#: lib/page-access/analytics/render-func.php:247
-#: lib/page-access/analytics/render-func.php:374
+#: lib/page-access/analytics/render-func.php:102
+#: lib/page-access/analytics/render-func.php:300
+#: lib/page-access/analytics/render-func.php:427
 msgid "ライフサイクル"
 msgstr "生命周期"
 
-#: lib/page-access/analytics/render-func.php:50
+#: lib/page-access/analytics/render-func.php:103
 #: lib/page-access/analytics/settings-forms.php:88
 msgid "エクスポート"
 msgstr "导出"
 
-#: lib/page-access/analytics/render-func.php:90
+#: lib/page-access/analytics/render-func.php:143
 msgid "期間:"
 msgstr "期间："
 
-#: lib/page-access/analytics/render-func.php:135
+#: lib/page-access/analytics/render-func.php:188
 msgid "昨日比"
 msgstr "较昨日"
 
-#: lib/page-access/analytics/render-func.php:137
+#: lib/page-access/analytics/render-func.php:190
 msgid "前週比"
 msgstr "较上周"
 
-#: lib/page-access/analytics/render-func.php:138
+#: lib/page-access/analytics/render-func.php:191
 msgid "前月比"
 msgstr "较上月"
 
-#: lib/page-access/analytics/render-func.php:180
+#: lib/page-access/analytics/render-func.php:233
 msgid "データがありません。"
 msgstr "暂无数据。"
 
-#: lib/page-access/analytics/render-func.php:201
-#: lib/page-access/analytics/render-func.php:326
+#: lib/page-access/analytics/render-func.php:254
+#: lib/page-access/analytics/render-func.php:379
 msgid "削除済み"
 msgstr "已删除"
 
-#: lib/page-access/analytics/render-func.php:254
+#: lib/page-access/analytics/render-func.php:307
 msgid "期間全体の総PVに占めるこの記事の割合"
 msgstr "该文章占整个期间总PV的比例"
 
-#: lib/page-access/analytics/render-func.php:299
+#: lib/page-access/analytics/render-func.php:352
 msgid "指定した期間のアクセスデータがありません。"
 msgstr "指定期间没有访问数据。"
 
-#: lib/page-access/analytics/render-func.php:310
+#: lib/page-access/analytics/render-func.php:363
 msgid "急上昇中の記事はありません。"
 msgstr "暂无热门上升文章。"
 
-#: lib/page-access/analytics/render-func.php:361
+#: lib/page-access/analytics/render-func.php:414
 #, php-format
 msgid "直近%1$d日 %2$s PV / 前%1$d日 %3$s PV"
 msgstr "最近%1$d天 %2$s PV / 前%1$d天 %3$s PV"
 
-#: lib/page-access/analytics/render-func.php:382
+#: lib/page-access/analytics/render-func.php:435
 msgid "新登場"
 msgstr "新"
 
-#: lib/page-access/analytics/render-func.php:391
+#: lib/page-access/analytics/render-func.php:444
 #, php-format
 msgid ""
 "\\u76f4\\u8fd1%1$d\\u65e5\\u306ePV\\u3068\\u305d\\u306e\\u524d%1$d\\u65e5\\"
 "u306ePV\\u306e\\u6bd4\\u8f03"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:497
+#: lib/page-access/analytics/render-func.php:554
 msgid "少ない"
 msgstr "少"
 
-#: lib/page-access/analytics/render-func.php:501
+#: lib/page-access/analytics/render-func.php:558
 msgid "多い"
 msgstr "多"
 
@@ -17790,7 +17762,7 @@ msgstr "清除仪表盘缓存"
 msgid "集計結果の transient キャッシュを一括削除します。"
 msgstr "批量删除统计结果的临时（transient）缓存。"
 
-#: lib/sns-follow.php:170
+#: lib/sns-follow.php:294
 #. translators: %s: SNSサービス名
 #, php-format
 msgid "%s URL"
@@ -17803,6 +17775,12 @@ msgstr ""
 #: js/blogcard-editor.js:86
 msgid "URLが設定されていません"
 msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:154
+#. translators: 1: 開始日, 2: 終了日
+#, php-format
+msgid "%1$s 〜 %2$s"
+msgstr "%1$s ~ %2$s"
 
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
@@ -18113,3 +18091,8 @@ msgstr "仅向已登录的用户显示内容"
 msgctxt "block description"
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr "在编辑器内搜索并选择乐天商品，插入静态商品链接。"
+
+#: lib/page-access/analytics/render-func.php:21
+msgctxt "アクセス解析グラフ軸の短縮日付書式"
+msgid "n/j"
+msgstr "n-j"

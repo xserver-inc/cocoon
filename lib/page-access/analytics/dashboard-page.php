@@ -147,7 +147,14 @@ switch ($view) {
       // 表示用の期間ラベルを作成します（カスタム期間の場合は日付範囲を表示します）
       $period_label = isset($presets[$preset]) ? $presets[$preset] : '';
       if ($preset === 'custom') {
-        $period_label = sprintf('%s 〜 %s', $from, $to);
+        // タイル見出しに収める必要があるため短縮書式を使う
+        $short_format = cocoon_analytics_short_date_format();
+        $period_label = sprintf(
+          /* translators: 1: 開始日, 2: 終了日 */
+          __('%1$s 〜 %2$s', THEME_NAME),
+          date_i18n($short_format, strtotime($from)),
+          date_i18n($short_format, strtotime($to))
+        );
       }
       $suffix = $period_label ? ' （' . $period_label . '）' : '';
 

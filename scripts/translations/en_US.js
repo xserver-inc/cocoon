@@ -413,4 +413,6 @@ module.exports = {
   "ダッシュボードのキャッシュをクリア": "Clear Dashboard Cache",
   "集計結果の transient キャッシュを一括削除します。": "Bulk delete the transient cache of aggregation results.",
   "Y.m.d": "m/d/Y",
+  "n/j": "n/j",
+  "%1$s 〜 %2$s": "%1$s – %2$s",
 };

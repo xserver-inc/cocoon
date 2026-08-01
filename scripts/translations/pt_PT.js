@@ -410,4 +410,6 @@ module.exports = {
   "集計結果の transient キャッシュを一括削除します。": "Elimina em massa a cache transient dos resultados de agregação.",
   "適用": "Aplicar",
   "Y.m.d": "d/m/Y",
+  "n/j": "j/n",
+  "%1$s 〜 %2$s": "%1$s – %2$s",
 };

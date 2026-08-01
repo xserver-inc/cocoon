@@ -61,7 +61,8 @@ function cocoon_analytics_ajax_get_posts(){
     $posts[] = array(
       'post_id'  => $row['post_id'],
       'title'    => cocoon_analytics_plain_title($row['post_id']) ?: '(' . __('不明', THEME_NAME) . ')',
-      'date'     => get_the_date('Y-m-d', $row['post_id']),
+      //一覧に表示するだけの値なのでWordPressの日付フォーマット設定に従わせる
+      'date'     => get_the_date(get_option('date_format'), $row['post_id']),
       'pv'       => number_format_i18n($row['pv']),
       'raw_pv'   => $row['pv'],
     );

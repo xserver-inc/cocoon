@@ -413,4 +413,6 @@ module.exports = {
   "適用": "Anwenden",
   "期間": "Zeitraum",
   "Y.m.d": "d.m.Y",
+  "n/j": "j.n.",
+  "%1$s 〜 %2$s": "%1$s – %2$s",
 };

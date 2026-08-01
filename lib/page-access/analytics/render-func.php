@@ -10,7 +10,20 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
- * PV推移グラフの軸ラベルを、サイトの日付書式・言語で整形する
+ * グラフ軸など幅の限られる箇所で使う短縮日付書式を返す
+ *
+ * 管理画面のグラフ軸はラベル幅が非常に狭いため、年を含む書式では表示が崩れます。
+ * WordPress本体が月別アーカイブ書式を翻訳可能にしているのと同じ考え方で、
+ * ロケールごとに月日の並び順・区切り文字を差し替えられるようにしています。
+ */
+if ( !function_exists( 'cocoon_analytics_short_date_format' ) ):
+function cocoon_analytics_short_date_format(){
+  return _x('n/j', 'アクセス解析グラフ軸の短縮日付書式', THEME_NAME);
+}
+endif;
+
+/**
+ * PV推移グラフの軸ラベルを、サイトの言語・書式で整形する
  *
  * 各行に label キーを付与して返します。JS側での日本語固定の整形を避けるため、
  * PHP側で date_i18n() を使ってサイトの言語・日付フォーマットに追従させます。
@@ -19,7 +32,7 @@ if ( !function_exists( 'cocoon_analytics_chart_labels' ) ):
 function cocoon_analytics_chart_labels($rows, $type){
   if (empty($rows) || !is_array($rows)) return $rows;
   // 最大3700行のループになるため、書式取得はループ外で1回のみ
-  $day_format = ($type === 'daily' || $type === 'weekly') ? get_site_date_format() : '';
+  $day_format = ($type === 'daily' || $type === 'weekly') ? cocoon_analytics_short_date_format() : '';
   // WordPress本体（defaultドメイン）のアーカイブ書式を流用したサイト言語追従
   // cocoon.pot への無意味な抽出を避けるため、_x() ではなく下位関数を直接使用
   $month_format = ($type === 'monthly') ? translate_with_gettext_context('F Y', 'monthly archives date format', 'default') : '';
@@ -30,7 +43,6 @@ function cocoon_analytics_chart_labels($rows, $type){
     if ($day_format !== '') {
       $ts = strtotime($date);
       if ($ts !== false) {
-        // Cocoon設定「全体→日付フォーマット」に従った表記
         $label = date_i18n($day_format, $ts);
       }
     } elseif ($month_format !== '') {
@@ -459,11 +471,14 @@ function cocoon_analytics_render_heatmap(){
   $max_pv = 0;
   foreach ($map as $v) { if ($v > $max_pv) $max_pv = $v; }
 
-  // 日本語曜日
-  $wd = array(
-    __('日', THEME_NAME), __('月', THEME_NAME), __('火', THEME_NAME),
-    __('水', THEME_NAME), __('木', THEME_NAME), __('金', THEME_NAME), __('土', THEME_NAME)
-  );
+  //グリッドは日曜始まりなので、開始日からの相対日数で曜日名をロケール追従させる
+  $wd = array();
+  for ($i = 0; $i < 7; $i++) {
+    $wd[$i] = date_i18n('D', strtotime('+' . $i . ' days', $start_ts));
+  }
+
+  //ツールチップは371セル分生成するため、書式取得はループ外で1回のみ
+  $tip_format = get_option('date_format');
 
   // 週単位で配列化
   $weeks = array();
@@ -500,9 +515,10 @@ function cocoon_analytics_render_heatmap(){
     }
     $month_label = '';
     if ($first) {
-      $m = date('n', strtotime($first['date']));
+      $first_ts = strtotime($first['date']);
+      $m = date('n', $first_ts);
       if ($m !== $last_month) {
-        $month_label = $m . __('月', THEME_NAME);
+        $month_label = date_i18n('M', $first_ts);
         $last_month = $m;
       }
     }
@@ -524,7 +540,7 @@ function cocoon_analytics_render_heatmap(){
       }
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
-      $tip = esc_attr($c['date'] . ' : ' . number_format_i18n($pv) . ' PV');
+      $tip = esc_attr(date_i18n($tip_format, strtotime($c['date'])) . ' : ' . number_format_i18n($pv) . ' PV');
       // ブラウザ標準の遅いツールチップの代わりに、モダンなカスタムツールチップ用の属性を付与します
       echo '<div class="' . esc_attr($cls) . '" data-tooltip="' . $tip . '"></div>';
     }
