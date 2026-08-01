@@ -1,5 +1,6 @@
 // ko_KR（韓国語）翻訳辞書
 module.exports = {
+  'ラベルなし': '라벨 없음',
   'Auto Draft': '자동 임시글',
   公式ページURL: '공식 페이지 URL',
   '%s URL': '%s URL',

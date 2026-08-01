@@ -18232,3 +18232,7 @@ msgstr "에디터에서 라쿠텐 상품을 검색・선택하여 정적 상품 
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n.j"
+
+#: lib/utils.php
+msgid "ラベルなし"
+msgstr "라벨 없음"

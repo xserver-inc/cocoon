@@ -11,49 +11,37 @@ const LANG_DIR = path.join( __dirname, '..', 'languages' );
 // 追加する新規 msgid エントリ（ソースファイルのコメント付き）
 const newEntries = [
   {
-    // js/blogcard-editor.js で wp.i18n.__() を使用するために追加
-    comment: '#: js/blogcard-editor.js',
-    msgid: 'ブログカード（埋め込み）',
-  },
-  {
-    comment: '#: js/blogcard-editor.js',
-    msgid: 'URLが設定されていません',
+    // lib/utils.php のブログカードラベルCSS変数で使用するため追加
+    comment: '#: lib/utils.php',
+    msgid: 'ラベルなし',
   },
 ];
 
 // 言語ごとの翻訳
 const translations = {
   en_US: {
-    'ブログカード（埋め込み）': 'Blog Card (Embed)',
-    'URLが設定されていません': 'URL is not set',
+    'ラベルなし': 'No label',
   },
   de_DE: {
-    'ブログカード（埋め込み）': 'Blogkarte (Eingebettet)',
-    'URLが設定されていません': 'URL ist nicht festgelegt',
+    'ラベルなし': 'Kein Label',
   },
   es_ES: {
-    'ブログカード（埋め込み）': 'Tarjeta de blog (insertada)',
-    'URLが設定されていません': 'La URL no está configurada',
+    'ラベルなし': 'Sin etiqueta',
   },
   fr_FR: {
-    'ブログカード（埋め込み）': 'Carte de blog (intégrée)',
-    'URLが設定されていません': "L'URL n'est pas configurée",
+    'ラベルなし': 'Aucune étiquette',
   },
   ko_KR: {
-    'ブログカード（埋め込み）': '블로그 카드（임베드）',
-    'URLが設定されていません': 'URL이 설정되지 않았습니다',
+    'ラベルなし': '라벨 없음',
   },
   pt_PT: {
-    'ブログカード（埋め込み）': 'Cartão de blog (incorporado)',
-    'URLが設定されていません': 'O URL não está configurado',
+    'ラベルなし': 'Sem etiqueta',
   },
   zh_CN: {
-    'ブログカード（埋め込み）': '博客卡片（嵌入）',
-    'URLが設定されていません': '未设置URL',
+    'ラベルなし': '无标签',
   },
   zh_TW: {
-    'ブログカード（埋め込み）': '部落格卡片（嵌入）',
-    'URLが設定されていません': '未設定URL',
+    'ラベルなし': '無標籤',
   },
 };
 

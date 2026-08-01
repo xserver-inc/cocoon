@@ -1,5 +1,6 @@
 // en_US（英語）翻訳辞書
 module.exports = {
+  'ラベルなし': 'No label',
   'Auto Draft': 'Auto Draft',
   公式ページURL: 'Official Page URL',
   '%s URL': '%s URL',

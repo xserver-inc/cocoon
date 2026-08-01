@@ -1,5 +1,6 @@
 // fr_FR（フランス語）翻訳辞書
 module.exports = {
+  'ラベルなし': 'Aucune étiquette',
   'Auto Draft': 'Brouillon automatique',
   公式ページURL: 'URL de la page officielle',
   '%s URL': 'URL de %s',

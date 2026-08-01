@@ -1,5 +1,6 @@
 // zh_CN（簡体字中国語）翻訳辞書
 module.exports = {
+  'ラベルなし': '无标签',
   'Auto Draft': '自动草稿',
   公式ページURL: '官方页面URL',
   '%s URL': '%s URL',

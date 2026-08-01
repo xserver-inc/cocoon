@@ -1022,6 +1022,60 @@ function wp_add_css_custome_to_inline_style(){
 endif;
 
 
+//ブログカードラベルの翻訳済み文言をCSS変数として取得
+//（ラベル文言はCSSのcontentで描画されるため、翻訳を反映するにはCSS変数の上書きが必要）
+if ( !function_exists( 'get_blogcard_label_css_variables' ) ):
+function get_blogcard_label_css_variables(){
+  //CSS変数の接尾辞 => array( SCSS側のフォールバック文言, 翻訳済み文言 )
+  $labels = array(
+    'none'           => array( 'ラベルなし', __( 'ラベルなし', THEME_NAME ) ),
+    'related'        => array( '関連記事', __( '関連記事', THEME_NAME ) ),
+    'reference'      => array( '参考記事', __( '参考記事', THEME_NAME ) ),
+    'reference-link' => array( '参考リンク', __( '参考リンク', THEME_NAME ) ),
+    'popular'        => array( '人気記事', __( '人気記事', THEME_NAME ) ),
+    'pickup'         => array( 'ピックアップ', __( 'ピックアップ', THEME_NAME ) ),
+    'check'          => array( 'チェック', __( 'チェック', THEME_NAME ) ),
+    'together'       => array( 'あわせて読みたい', __( 'あわせて読みたい', THEME_NAME ) ),
+    'detail'         => array( '詳細はこちら', __( '詳細はこちら', THEME_NAME ) ),
+    'official'       => array( '公式サイト', __( '公式サイト', THEME_NAME ) ),
+    'dl'             => array( 'ダウンロード', __( 'ダウンロード', THEME_NAME ) ),
+    'prev'           => array( '前回の記事', __( '前回の記事', THEME_NAME ) ),
+    'next'           => array( '続きの記事', __( '続きの記事', THEME_NAME ) ),
+  );
+
+  $properties = '';
+  foreach ($labels as $suffix => $label) {
+    list($default, $translated) = $label;
+    //未翻訳の場合はSCSS側のフォールバック値がそのまま使われるため出力しない
+    if ($translated === $default) {
+      continue;
+    }
+    $properties .= '--cocoon-bct-'.$suffix.'-text:"'.escape_css_content_string($translated).'";';
+  }
+
+  //日本語サイトなど上書きが不要な場合は何も出力しない
+  if (!$properties) {
+    return '';
+  }
+
+  return ':root{'.$properties.'}';
+}
+endif;
+
+
+//CSSのcontent用文字列をエスケープする
+if ( !function_exists( 'escape_css_content_string' ) ):
+function escape_css_content_string($text){
+  //style要素からの脱出を防ぐためタグ文字を除去
+  $text = str_replace(array('<', '>'), '', $text);
+  //改行はCSS文字列リテラルに含められないため空白へ置換
+  $text = preg_replace('/[\r\n]+/u', ' ', $text);
+  //バックスラッシュとダブルクォートをエスケープ
+  return str_replace(array('\\', '"'), array('\\\\', '\\"'), $text);
+}
+endif;
+
+
 //投稿を1つランダム取得
 if ( !function_exists( 'get_random_posts' ) ):
 function get_random_posts($count = 1){

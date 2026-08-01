@@ -100,6 +100,16 @@ function wp_enqueue_scripts_custom() {
   ///////////////////////////////////////////
   wp_add_css_custome_to_inline_style();
 
+  ///////////////////////////////////////////
+  //ブログカードラベルの翻訳用CSS変数
+  ///////////////////////////////////////////
+  if ($blogcard_label_css = get_blogcard_label_css_variables()) {
+    //スキンやテーマの読み込み状況に左右されないダミーハンドルで出力
+    wp_register_style( THEME_NAME.'-blogcard-label-vars', false, array(), false );
+    wp_enqueue_style( THEME_NAME.'-blogcard-label-vars' );
+    wp_add_inline_style( THEME_NAME.'-blogcard-label-vars', $blogcard_label_css );
+  }
+
 ////////////////////////////////////////////////////////////////
 //
 //子テーマスタイルの呼び出し

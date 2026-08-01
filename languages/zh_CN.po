@@ -18096,3 +18096,7 @@ msgstr "在编辑器内搜索并选择乐天商品，插入静态商品链接。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n-j"
+
+#: lib/utils.php
+msgid "ラベルなし"
+msgstr "无标签"

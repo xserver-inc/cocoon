@@ -52,6 +52,12 @@ add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
 
+  // ブログカードラベルの翻訳用CSS変数をエディター内に反映する
+  $blogcard_label_css = get_blogcard_label_css_variables();
+  if ($blogcard_label_css) {
+    $init_array['content_style'] = (isset($init_array['content_style']) ? rtrim($init_array['content_style']) . ' ' : '') . $blogcard_label_css;
+  }
+
   // Cocoon設定のカラム幅をクラシックエディターに適用する
   if (is_visual_editor_style_enable()) {
     $default_width = 800;

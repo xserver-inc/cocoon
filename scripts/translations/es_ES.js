@@ -1,5 +1,6 @@
 // es_ES（スペイン語）翻訳辞書
 module.exports = {
+  'ラベルなし': 'Sin etiqueta',
   'Auto Draft': 'Borrador automático',
   公式ページURL: 'URL de la página oficial',
   '%s URL': 'URL de %s',

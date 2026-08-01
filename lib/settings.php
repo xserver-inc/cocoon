@@ -380,6 +380,11 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
         }
       }
     }
+    // ブログカードラベルの翻訳用CSS変数（キャッシュを経由せず毎回生成する）
+    if ( $blogcard_label_css = get_blogcard_label_css_variables() ) {
+      $styles[] = array( 'css' => $blogcard_label_css );
+    }
+
     // 他のプラグインが設定した既存スタイルを保持しつつ、Cocoon のスタイルを追加する
     $editor_settings['styles'] = array_merge(
       $editor_settings['styles'] ?? array(),

@@ -1,5 +1,6 @@
 // pt_PT（ポルトガル語）翻訳辞書
 module.exports = {
+  'ラベルなし': 'Sem etiqueta',
   'Auto Draft': 'Rascunho automático',
   公式ページURL: 'URL da página oficial',
   '%s URL': 'URL do %s',

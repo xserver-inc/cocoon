@@ -257,55 +257,55 @@ span.btn-wrap {
 }
 
 .blogcard-type.bct-none::before {
-  content: "\f0c8   ラベルなし";
+  content: "\f0c8" "  " var(--cocoon-bct-none-text, "ラベルなし");
 }
 
 .blogcard-type.bct-related::before {
-  content: "\f15c   関連記事";
+  content: "\f15c" "  " var(--cocoon-bct-related-text, "関連記事");
 }
 
 .blogcard-type.bct-reference::before {
-  content: "\f19d   参考記事";
+  content: "\f19d" "  " var(--cocoon-bct-reference-text, "参考記事");
 }
 
 .blogcard-type.bct-reference-link::before {
-  content: "\f19d   参考リンク";
+  content: "\f19d" "  " var(--cocoon-bct-reference-link-text, "参考リンク");
 }
 
 .blogcard-type.bct-popular::before {
-  content: "\f005   人気記事";
+  content: "\f005" "  " var(--cocoon-bct-popular-text, "人気記事");
 }
 
 .blogcard-type.bct-pickup::before {
-  content: "\f005   ピックアップ";
+  content: "\f005" "  " var(--cocoon-bct-pickup-text, "ピックアップ");
 }
 
 .blogcard-type.bct-check::before {
-  content: "\f00c   チェック";
+  content: "\f00c" "  " var(--cocoon-bct-check-text, "チェック");
 }
 
 .blogcard-type.bct-together::before {
-  content: "\f02d   あわせて読みたい";
+  content: "\f02d" "  " var(--cocoon-bct-together-text, "あわせて読みたい");
 }
 
 .blogcard-type.bct-detail::before {
-  content: "\f15c   詳細はこちら";
+  content: "\f15c" "  " var(--cocoon-bct-detail-text, "詳細はこちら");
 }
 
 .blogcard-type.bct-official::before {
-  content: "\f024   公式サイト";
+  content: "\f024" "  " var(--cocoon-bct-official-text, "公式サイト");
 }
 
 .blogcard-type.bct-dl::before {
-  content: "\f019   ダウンロード";
+  content: "\f019" "  " var(--cocoon-bct-dl-text, "ダウンロード");
 }
 
 .blogcard-type.bct-prev::before {
-  content: "\f137   前回の記事";
+  content: "\f137" "  " var(--cocoon-bct-prev-text, "前回の記事");
 }
 
 .blogcard-type.bct-next::before {
-  content: "\f138   続きの記事";
+  content: "\f138" "  " var(--cocoon-bct-next-text, "続きの記事");
 }
 
 /*ビジュアルエディターにinstagramの引用符が表示される対応*/

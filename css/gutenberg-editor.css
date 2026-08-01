@@ -2762,7 +2762,7 @@ div.search-form {
 }
 
 .bct-related .blogcard-label::after {
-  content: "関連記事";
+  content: var(--cocoon-bct-related-text, "関連記事");
 }
 
 .bct-reference .blogcard-label .fa::before {
@@ -2770,7 +2770,7 @@ div.search-form {
 }
 
 .bct-reference .blogcard-label::after {
-  content: "参考記事";
+  content: var(--cocoon-bct-reference-text, "参考記事");
 }
 
 .bct-reference-link .blogcard-label .fa::before {
@@ -2778,7 +2778,7 @@ div.search-form {
 }
 
 .bct-reference-link .blogcard-label::after {
-  content: "参考リンク";
+  content: var(--cocoon-bct-reference-link-text, "参考リンク");
 }
 
 .bct-popular .blogcard-label .fa::before {
@@ -2786,7 +2786,7 @@ div.search-form {
 }
 
 .bct-popular .blogcard-label::after {
-  content: "人気記事";
+  content: var(--cocoon-bct-popular-text, "人気記事");
 }
 
 .bct-pickup .blogcard-label .fa::before {
@@ -2794,7 +2794,7 @@ div.search-form {
 }
 
 .bct-pickup .blogcard-label::after {
-  content: "ピックアップ";
+  content: var(--cocoon-bct-pickup-text, "ピックアップ");
 }
 
 .bct-check .blogcard-label .fa::before {
@@ -2802,7 +2802,7 @@ div.search-form {
 }
 
 .bct-check .blogcard-label::after {
-  content: "チェック";
+  content: var(--cocoon-bct-check-text, "チェック");
 }
 
 .bct-together .blogcard-label .fa::before {
@@ -2810,7 +2810,7 @@ div.search-form {
 }
 
 .bct-together .blogcard-label::after {
-  content: "あわせて読みたい";
+  content: var(--cocoon-bct-together-text, "あわせて読みたい");
 }
 
 .bct-detail .blogcard-label .fa::before {
@@ -2818,7 +2818,7 @@ div.search-form {
 }
 
 .bct-detail .blogcard-label::after {
-  content: "詳細はこちら";
+  content: var(--cocoon-bct-detail-text, "詳細はこちら");
 }
 
 .bct-official .blogcard-label .fa::before {
@@ -2826,7 +2826,7 @@ div.search-form {
 }
 
 .bct-official .blogcard-label::after {
-  content: "公式サイト";
+  content: var(--cocoon-bct-official-text, "公式サイト");
 }
 
 .bct-dl .blogcard-label .fa::before {
@@ -2834,7 +2834,7 @@ div.search-form {
 }
 
 .bct-dl .blogcard-label::after {
-  content: "ダウンロード";
+  content: var(--cocoon-bct-dl-text, "ダウンロード");
 }
 
 .bct-prev .blogcard-label .fa::before {
@@ -2842,7 +2842,7 @@ div.search-form {
 }
 
 .bct-prev .blogcard-label::after {
-  content: "前回の記事";
+  content: var(--cocoon-bct-prev-text, "前回の記事");
 }
 
 .bct-next .blogcard-label .fa::before {
@@ -2850,7 +2850,7 @@ div.search-form {
 }
 
 .bct-next .blogcard-label::after {
-  content: "続きの記事";
+  content: var(--cocoon-bct-next-text, "続きの記事");
 }
 
 .button-block {

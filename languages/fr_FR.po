@@ -19372,3 +19372,7 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/utils.php
+msgid "ラベルなし"
+msgstr "Aucune étiquette"

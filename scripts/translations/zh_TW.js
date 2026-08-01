@@ -1,5 +1,6 @@
 // zh_TW（繁体字中国語）翻訳辞書
 module.exports = {
+  'ラベルなし': '無標籤',
   'Auto Draft': '自動草稿',
   公式ページURL: '官方頁面URL',
   '%s URL': '%s URL',

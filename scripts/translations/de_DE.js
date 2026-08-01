@@ -1,5 +1,6 @@
 // de_DE（ドイツ語）翻訳辞書
 module.exports = {
+  'ラベルなし': 'Kein Label',
   'Auto Draft': 'Automatischer Entwurf',
   公式ページURL: 'Offizielle Seiten-URL',
   '%s URL': '%s URL',

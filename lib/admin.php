@@ -27,9 +27,16 @@ function admin_print_styles_custom() {
   if (!is_screen_editor_page()) {
     //管理用スタイル
     wp_enqueue_style( 'admin-style', get_cocoon_template_directory_uri().'/css/admin.css' );
+    $blogcard_label_style_handle = 'admin-style';
   } else {
     //ブロックエディターページやクラシックエディターページ全体に適用されるCSS
     wp_enqueue_style( 'editor-page-style', get_cocoon_template_directory_uri().'/css/editor-page.css' );
+    $blogcard_label_style_handle = 'editor-page-style';
+  }
+
+  //ブログカードラベルの翻訳用CSS変数（設定画面のデモ表示やエディター周辺UI向け）
+  if ($blogcard_label_css = get_blogcard_label_css_variables()) {
+    wp_add_inline_style( $blogcard_label_style_handle, $blogcard_label_css );
   }
 
   //Font Awesome
