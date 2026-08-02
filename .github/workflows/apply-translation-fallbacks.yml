@@ -56,6 +56,20 @@ jobs:
           DIFF_COUNT=$(git diff --cached --numstat | wc -l)
           if [ "$DIFF_COUNT" -ne 0 ]; then
             git commit -m "chore: 翻訳辞書フォールバックの再適用（空欄msgstrの補完）"
-            git pull --rebase
-            git push
+
+            # 同時にmasterへpushする別ワークフロー（pot_generator等）がいる場合に備え、
+            # 拒否されたら取り込み直して再試行する
+            success=0
+            for i in 1 2 3 4 5; do
+              if git pull --rebase && git push; then
+                success=1
+                break
+              fi
+              echo "pushが失敗しました（${i}回目）。再試行します。"
+              sleep $((RANDOM % 5 + 1))
+            done
+            if [ "$success" -ne 1 ]; then
+              echo "pushがリトライ上限に達しました"
+              exit 1
+            fi
           fi
