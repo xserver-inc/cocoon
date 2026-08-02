@@ -132,7 +132,7 @@ msgstr ""
 
 #: functions.php:557
 #: functions.php:558
-#: lib/admin.php:407
+#: lib/admin.php:414
 msgid "パターン一覧"
 msgstr ""
 
@@ -142,12 +142,12 @@ msgid "ふりがな"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:25
-#: lib/admin-tinymce-qtag.php:95
+#: lib/admin-tinymce-qtag.php:101
 msgid "太字"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:26
-#: lib/admin-tinymce-qtag.php:100
+#: lib/admin-tinymce-qtag.php:106
 msgid "赤字"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgid "赤アンダー"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:29
-#: lib/admin-tinymce-qtag.php:150
+#: lib/admin-tinymce-qtag.php:156
 #: blocks/src/toolbutton/marker-yellow.js:15
 msgid "黄色マーカー"
 msgstr ""
@@ -170,12 +170,12 @@ msgid "黄色アンダーマーカー"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:31
-#: lib/admin-tinymce-qtag.php:135
+#: lib/admin-tinymce-qtag.php:141
 msgid "打ち消し線"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:32
-#: lib/admin-tinymce-qtag.php:840
+#: lib/admin-tinymce-qtag.php:846
 #: skins/skin-made-in-heaven/lib/panel-editor.php:58
 msgid "バッジ"
 msgstr ""
@@ -185,7 +185,7 @@ msgid "キーボード"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:34
-#: lib/admin-tinymce-qtag.php:189
+#: lib/admin-tinymce-qtag.php:195
 #: lib/block-editor-styles-group.php:18
 #: lib/block-editor-styles-paragraph.php:53
 #: blocks/src/block/icon-box/edit.js:33
@@ -193,7 +193,7 @@ msgid "情報(i)"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:35
-#: lib/admin-tinymce-qtag.php:194
+#: lib/admin-tinymce-qtag.php:200
 #: lib/block-editor-styles-group.php:26
 #: lib/block-editor-styles-paragraph.php:61
 #: blocks/src/block/icon-box/edit.js:37
@@ -201,7 +201,7 @@ msgid "質問(?)"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:36
-#: lib/admin-tinymce-qtag.php:199
+#: lib/admin-tinymce-qtag.php:205
 #: lib/block-editor-styles-group.php:34
 #: lib/block-editor-styles-paragraph.php:69
 #: blocks/src/block/icon-box/edit.js:41
@@ -224,88 +224,88 @@ msgstr ""
 msgid "danger"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:92
+#: lib/admin-tinymce-qtag.php:98
 msgid "インライン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:105
+#: lib/admin-tinymce-qtag.php:111
 #: blocks/src/toolbutton/bold-red.js:14
 msgid "赤太字"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:110
+#: lib/admin-tinymce-qtag.php:116
 msgid "赤アンダーライン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:115
+#: lib/admin-tinymce-qtag.php:121
 msgid "青"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:120
+#: lib/admin-tinymce-qtag.php:126
 #: blocks/src/toolbutton/bold-blue.js:14
 msgid "青太字"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:125
+#: lib/admin-tinymce-qtag.php:131
 msgid "緑"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:130
+#: lib/admin-tinymce-qtag.php:136
 #: blocks/src/toolbutton/bold-green.js:14
 msgid "緑太字"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:140
+#: lib/admin-tinymce-qtag.php:146
 #: blocks/src/toolbutton/keyboard-key.js:14
 msgid "キーボードキー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:147
+#: lib/admin-tinymce-qtag.php:153
 #: skins/skin-made-in-heaven/lib/panel-editor.php:41
 #: blocks/src/toolbutton/dropdown-markers.js:22
 #: blocks/src/toolbutton/dropdown-markers.js:35
 msgid "マーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:155
+#: lib/admin-tinymce-qtag.php:161
 #: blocks/src/toolbutton/marker-red.js:15
 msgid "赤色マーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:160
+#: lib/admin-tinymce-qtag.php:166
 #: blocks/src/toolbutton/marker-blue.js:15
 msgid "青色マーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:165
+#: lib/admin-tinymce-qtag.php:171
 #: blocks/src/toolbutton/marker-under-yellow.js:15
 msgid "黄色アンダーラインマーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:170
+#: lib/admin-tinymce-qtag.php:176
 #: blocks/src/toolbutton/marker-under-red.js:15
 msgid "赤色アンダーラインマーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:175
+#: lib/admin-tinymce-qtag.php:181
 #: blocks/src/toolbutton/marker-under-blue.js:15
 msgid "青色アンダーラインマーカー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:182
+#: lib/admin-tinymce-qtag.php:188
 #: blocks/src/block/radar/edit.js:339
 #: blocks/src/toolbutton/dropdown-font-sizes.js:54
 #: blocks/src/toolbutton/dropdown-font-sizes.js:67
 msgid "フォントサイズ"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:186
+#: lib/admin-tinymce-qtag.php:192
 msgid "ボックス（アイコン）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:204
-#: lib/admin-tinymce-qtag.php:531
-#: lib/admin.php:138
+#: lib/admin-tinymce-qtag.php:210
+#: lib/admin-tinymce-qtag.php:537
+#: lib/admin.php:145
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -321,8 +321,8 @@ msgstr ""
 msgid "メモ"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:209
-#: lib/admin-tinymce-qtag.php:351
+#: lib/admin-tinymce-qtag.php:215
+#: lib/admin-tinymce-qtag.php:357
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
 #: lib/page-settings/_top-page.php:224
@@ -341,8 +341,8 @@ msgstr ""
 msgid "コメント"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:214
-#: lib/admin-tinymce-qtag.php:653
+#: lib/admin-tinymce-qtag.php:220
+#: lib/admin-tinymce-qtag.php:659
 #: lib/block-editor-styles-group.php:58
 #: lib/block-editor-styles-paragraph.php:93
 #: blocks/src/block-extension/style-extension/style01.js:150
@@ -356,8 +356,8 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:219
-#: lib/admin-tinymce-qtag.php:684
+#: lib/admin-tinymce-qtag.php:225
+#: lib/admin-tinymce-qtag.php:690
 #: lib/block-editor-styles-group.php:66
 #: lib/block-editor-styles-paragraph.php:101
 #: blocks/src/block-extension/style-extension/style01.js:154
@@ -369,8 +369,8 @@ msgstr ""
 msgid "NG"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:224
-#: lib/admin-tinymce-qtag.php:715
+#: lib/admin-tinymce-qtag.php:230
+#: lib/admin-tinymce-qtag.php:721
 #: lib/block-editor-styles-group.php:74
 #: lib/block-editor-styles-paragraph.php:109
 #: blocks/src/block-extension/style-extension/style01.js:158
@@ -382,8 +382,8 @@ msgstr ""
 msgid "GOOD"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:229
-#: lib/admin-tinymce-qtag.php:746
+#: lib/admin-tinymce-qtag.php:235
+#: lib/admin-tinymce-qtag.php:752
 #: lib/block-editor-styles-group.php:82
 #: lib/block-editor-styles-paragraph.php:117
 #: blocks/src/block-extension/style-extension/style01.js:162
@@ -395,8 +395,8 @@ msgstr ""
 msgid "BAD"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:234
-#: lib/admin-tinymce-qtag.php:777
+#: lib/admin-tinymce-qtag.php:240
+#: lib/admin-tinymce-qtag.php:783
 #: lib/block-editor-styles-group.php:90
 #: lib/block-editor-styles-paragraph.php:125
 #: lib/tinymce/shortcodes.php:99
@@ -414,11 +414,11 @@ msgstr ""
 msgid "プロフィール"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:241
+#: lib/admin-tinymce-qtag.php:247
 msgid "ボックス（案内）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:244
+#: lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:101
 #: lib/block-editor-styles-paragraph.php:136
 #: blocks/src/block/info-box/deprecated.js:85
@@ -426,7 +426,7 @@ msgstr ""
 msgid "プライマリー（濃い水色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:249
+#: lib/admin-tinymce-qtag.php:255
 #: lib/block-editor-styles-group.php:109
 #: lib/block-editor-styles-paragraph.php:144
 #: blocks/src/block/info-box/deprecated.js:89
@@ -434,21 +434,21 @@ msgstr ""
 msgid "セカンダリー（濃い灰色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:254
+#: lib/admin-tinymce-qtag.php:260
 #: lib/block-editor-styles-group.php:125
 #: lib/block-editor-styles-paragraph.php:160
 #: blocks/src/block/info-box/edit.js:45
 msgid "サクセス（薄い緑色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:259
+#: lib/admin-tinymce-qtag.php:265
 #: lib/block-editor-styles-group.php:117
 #: lib/block-editor-styles-paragraph.php:152
 #: blocks/src/block/info-box/edit.js:41
 msgid "インフォ（薄い青色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:264
+#: lib/admin-tinymce-qtag.php:270
 #: lib/block-editor-styles-group.php:133
 #: lib/block-editor-styles-paragraph.php:168
 #: blocks/src/block/info-box/deprecated.js:101
@@ -456,7 +456,7 @@ msgstr ""
 msgid "ワーニング（薄い黄色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:269
+#: lib/admin-tinymce-qtag.php:275
 #: lib/block-editor-styles-group.php:141
 #: lib/block-editor-styles-paragraph.php:176
 #: blocks/src/block/info-box/deprecated.js:105
@@ -464,7 +464,7 @@ msgstr ""
 msgid "デンジャー（薄い赤色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:274
+#: lib/admin-tinymce-qtag.php:280
 #: lib/block-editor-styles-group.php:149
 #: lib/block-editor-styles-paragraph.php:184
 #: blocks/src/block/info-box/deprecated.js:109
@@ -472,7 +472,7 @@ msgstr ""
 msgid "ライト（白色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:279
+#: lib/admin-tinymce-qtag.php:285
 #: lib/block-editor-styles-group.php:157
 #: lib/block-editor-styles-paragraph.php:192
 #: blocks/src/block/info-box/deprecated.js:113
@@ -480,28 +480,28 @@ msgstr ""
 msgid "ダーク（暗い灰色）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:287
+#: lib/admin-tinymce-qtag.php:293
 msgid "ボックス（白抜き）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:290
-#: lib/admin-tinymce-qtag.php:324
-#: lib/admin-tinymce-qtag.php:354
-#: lib/admin-tinymce-qtag.php:384
-#: lib/admin-tinymce-qtag.php:414
-#: lib/admin-tinymce-qtag.php:444
-#: lib/admin-tinymce-qtag.php:474
-#: lib/admin-tinymce-qtag.php:504
-#: lib/admin-tinymce-qtag.php:534
-#: lib/admin-tinymce-qtag.php:564
-#: lib/admin-tinymce-qtag.php:594
-#: lib/admin-tinymce-qtag.php:625
-#: lib/admin-tinymce-qtag.php:656
-#: lib/admin-tinymce-qtag.php:687
-#: lib/admin-tinymce-qtag.php:718
-#: lib/admin-tinymce-qtag.php:749
-#: lib/admin-tinymce-qtag.php:780
-#: lib/admin-tinymce-qtag.php:813
+#: lib/admin-tinymce-qtag.php:296
+#: lib/admin-tinymce-qtag.php:330
+#: lib/admin-tinymce-qtag.php:360
+#: lib/admin-tinymce-qtag.php:390
+#: lib/admin-tinymce-qtag.php:420
+#: lib/admin-tinymce-qtag.php:450
+#: lib/admin-tinymce-qtag.php:480
+#: lib/admin-tinymce-qtag.php:510
+#: lib/admin-tinymce-qtag.php:540
+#: lib/admin-tinymce-qtag.php:570
+#: lib/admin-tinymce-qtag.php:600
+#: lib/admin-tinymce-qtag.php:631
+#: lib/admin-tinymce-qtag.php:662
+#: lib/admin-tinymce-qtag.php:693
+#: lib/admin-tinymce-qtag.php:724
+#: lib/admin-tinymce-qtag.php:755
+#: lib/admin-tinymce-qtag.php:786
+#: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:110
 #: lib/widgets/cta-box.php:184
 #: blocks/src/block/cta/edit.js:224
@@ -512,24 +512,24 @@ msgstr ""
 msgid "灰色"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:295
-#: lib/admin-tinymce-qtag.php:329
-#: lib/admin-tinymce-qtag.php:359
-#: lib/admin-tinymce-qtag.php:389
-#: lib/admin-tinymce-qtag.php:419
-#: lib/admin-tinymce-qtag.php:449
-#: lib/admin-tinymce-qtag.php:479
-#: lib/admin-tinymce-qtag.php:509
-#: lib/admin-tinymce-qtag.php:539
-#: lib/admin-tinymce-qtag.php:569
-#: lib/admin-tinymce-qtag.php:599
-#: lib/admin-tinymce-qtag.php:630
-#: lib/admin-tinymce-qtag.php:661
-#: lib/admin-tinymce-qtag.php:692
-#: lib/admin-tinymce-qtag.php:723
-#: lib/admin-tinymce-qtag.php:754
-#: lib/admin-tinymce-qtag.php:785
-#: lib/admin-tinymce-qtag.php:818
+#: lib/admin-tinymce-qtag.php:301
+#: lib/admin-tinymce-qtag.php:335
+#: lib/admin-tinymce-qtag.php:365
+#: lib/admin-tinymce-qtag.php:395
+#: lib/admin-tinymce-qtag.php:425
+#: lib/admin-tinymce-qtag.php:455
+#: lib/admin-tinymce-qtag.php:485
+#: lib/admin-tinymce-qtag.php:515
+#: lib/admin-tinymce-qtag.php:545
+#: lib/admin-tinymce-qtag.php:575
+#: lib/admin-tinymce-qtag.php:605
+#: lib/admin-tinymce-qtag.php:636
+#: lib/admin-tinymce-qtag.php:667
+#: lib/admin-tinymce-qtag.php:698
+#: lib/admin-tinymce-qtag.php:729
+#: lib/admin-tinymce-qtag.php:760
+#: lib/admin-tinymce-qtag.php:791
+#: lib/admin-tinymce-qtag.php:824
 #: lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:179
 #: blocks/src/block/cta/edit.js:213
@@ -547,24 +547,24 @@ msgstr ""
 msgid "黄色"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:300
-#: lib/admin-tinymce-qtag.php:334
-#: lib/admin-tinymce-qtag.php:364
-#: lib/admin-tinymce-qtag.php:394
-#: lib/admin-tinymce-qtag.php:424
-#: lib/admin-tinymce-qtag.php:454
-#: lib/admin-tinymce-qtag.php:484
-#: lib/admin-tinymce-qtag.php:514
-#: lib/admin-tinymce-qtag.php:544
-#: lib/admin-tinymce-qtag.php:574
-#: lib/admin-tinymce-qtag.php:604
-#: lib/admin-tinymce-qtag.php:635
-#: lib/admin-tinymce-qtag.php:666
-#: lib/admin-tinymce-qtag.php:697
-#: lib/admin-tinymce-qtag.php:728
-#: lib/admin-tinymce-qtag.php:759
-#: lib/admin-tinymce-qtag.php:790
-#: lib/admin-tinymce-qtag.php:823
+#: lib/admin-tinymce-qtag.php:306
+#: lib/admin-tinymce-qtag.php:340
+#: lib/admin-tinymce-qtag.php:370
+#: lib/admin-tinymce-qtag.php:400
+#: lib/admin-tinymce-qtag.php:430
+#: lib/admin-tinymce-qtag.php:460
+#: lib/admin-tinymce-qtag.php:490
+#: lib/admin-tinymce-qtag.php:520
+#: lib/admin-tinymce-qtag.php:550
+#: lib/admin-tinymce-qtag.php:580
+#: lib/admin-tinymce-qtag.php:610
+#: lib/admin-tinymce-qtag.php:641
+#: lib/admin-tinymce-qtag.php:672
+#: lib/admin-tinymce-qtag.php:703
+#: lib/admin-tinymce-qtag.php:734
+#: lib/admin-tinymce-qtag.php:765
+#: lib/admin-tinymce-qtag.php:796
+#: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:167
 #: blocks/src/block/cta/edit.js:189
@@ -585,24 +585,24 @@ msgstr ""
 msgid "赤色"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:305
-#: lib/admin-tinymce-qtag.php:339
-#: lib/admin-tinymce-qtag.php:369
-#: lib/admin-tinymce-qtag.php:399
-#: lib/admin-tinymce-qtag.php:429
-#: lib/admin-tinymce-qtag.php:459
-#: lib/admin-tinymce-qtag.php:489
-#: lib/admin-tinymce-qtag.php:519
-#: lib/admin-tinymce-qtag.php:549
-#: lib/admin-tinymce-qtag.php:579
-#: lib/admin-tinymce-qtag.php:609
-#: lib/admin-tinymce-qtag.php:640
-#: lib/admin-tinymce-qtag.php:671
-#: lib/admin-tinymce-qtag.php:702
-#: lib/admin-tinymce-qtag.php:733
-#: lib/admin-tinymce-qtag.php:764
-#: lib/admin-tinymce-qtag.php:795
-#: lib/admin-tinymce-qtag.php:828
+#: lib/admin-tinymce-qtag.php:311
+#: lib/admin-tinymce-qtag.php:345
+#: lib/admin-tinymce-qtag.php:375
+#: lib/admin-tinymce-qtag.php:405
+#: lib/admin-tinymce-qtag.php:435
+#: lib/admin-tinymce-qtag.php:465
+#: lib/admin-tinymce-qtag.php:495
+#: lib/admin-tinymce-qtag.php:525
+#: lib/admin-tinymce-qtag.php:555
+#: lib/admin-tinymce-qtag.php:585
+#: lib/admin-tinymce-qtag.php:615
+#: lib/admin-tinymce-qtag.php:646
+#: lib/admin-tinymce-qtag.php:677
+#: lib/admin-tinymce-qtag.php:708
+#: lib/admin-tinymce-qtag.php:739
+#: lib/admin-tinymce-qtag.php:770
+#: lib/admin-tinymce-qtag.php:801
+#: lib/admin-tinymce-qtag.php:834
 #: lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:172
 #: blocks/src/block/cta/edit.js:197
@@ -623,24 +623,24 @@ msgstr ""
 msgid "青色"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:310
-#: lib/admin-tinymce-qtag.php:344
-#: lib/admin-tinymce-qtag.php:374
-#: lib/admin-tinymce-qtag.php:404
-#: lib/admin-tinymce-qtag.php:434
-#: lib/admin-tinymce-qtag.php:464
-#: lib/admin-tinymce-qtag.php:494
-#: lib/admin-tinymce-qtag.php:524
-#: lib/admin-tinymce-qtag.php:554
-#: lib/admin-tinymce-qtag.php:584
-#: lib/admin-tinymce-qtag.php:614
-#: lib/admin-tinymce-qtag.php:645
-#: lib/admin-tinymce-qtag.php:676
-#: lib/admin-tinymce-qtag.php:707
-#: lib/admin-tinymce-qtag.php:738
-#: lib/admin-tinymce-qtag.php:769
-#: lib/admin-tinymce-qtag.php:800
-#: lib/admin-tinymce-qtag.php:833
+#: lib/admin-tinymce-qtag.php:316
+#: lib/admin-tinymce-qtag.php:350
+#: lib/admin-tinymce-qtag.php:380
+#: lib/admin-tinymce-qtag.php:410
+#: lib/admin-tinymce-qtag.php:440
+#: lib/admin-tinymce-qtag.php:470
+#: lib/admin-tinymce-qtag.php:500
+#: lib/admin-tinymce-qtag.php:530
+#: lib/admin-tinymce-qtag.php:560
+#: lib/admin-tinymce-qtag.php:590
+#: lib/admin-tinymce-qtag.php:620
+#: lib/admin-tinymce-qtag.php:651
+#: lib/admin-tinymce-qtag.php:682
+#: lib/admin-tinymce-qtag.php:713
+#: lib/admin-tinymce-qtag.php:744
+#: lib/admin-tinymce-qtag.php:775
+#: lib/admin-tinymce-qtag.php:806
+#: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:65
 #: lib/widgets/cta-box.php:176
 #: blocks/src/block/cta/edit.js:207
@@ -661,12 +661,13 @@ msgstr ""
 msgid "緑色"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:318
+#: lib/admin-tinymce-qtag.php:324
 msgid "ボックス（タブ）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:321
-#: lib/admin-tinymce-qtag.php:1676
+#: lib/admin-tinymce-qtag.php:327
+#: lib/admin-tinymce-qtag.php:1682
+#: lib/utils.php:1037
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:83
@@ -677,26 +678,27 @@ msgstr ""
 msgid "チェック"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:381
+#: lib/admin-tinymce-qtag.php:387
 #: blocks/src/block/tab-box/edit.js:79
 #: blocks/src/old/tab-box/block.js:89
 msgid "ポイント"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:411
+#: lib/admin-tinymce-qtag.php:417
 #: blocks/src/block/tab-box/edit.js:83
 #: blocks/src/old/tab-box/block.js:93
 msgid "ティップス"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:441
+#: lib/admin-tinymce-qtag.php:447
 #: blocks/src/block/tab-box/edit.js:87
 #: blocks/src/old/tab-box/block.js:97
 msgid "ヒント"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:471
-#: lib/admin-tinymce-qtag.php:1682
+#: lib/admin-tinymce-qtag.php:477
+#: lib/admin-tinymce-qtag.php:1688
+#: lib/utils.php:1036
 #: blocks/src/block/blogcard/deprecated.js:87
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -705,15 +707,16 @@ msgstr ""
 msgid "ピックアップ"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:501
+#: lib/admin-tinymce-qtag.php:507
 #: blocks/src/block/tab-box/edit.js:95
 #: blocks/src/old/tab-box/block.js:105
 msgid "ブックマーク"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:561
-#: lib/admin-tinymce-qtag.php:1694
+#: lib/admin-tinymce-qtag.php:567
+#: lib/admin-tinymce-qtag.php:1700
 #: lib/page-access/analytics/dashboard-page.php:630
+#: lib/utils.php:1041
 #: blocks/src/block/blogcard/deprecated.js:95
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -721,13 +724,13 @@ msgstr ""
 msgid "ダウンロード"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:591
+#: lib/admin-tinymce-qtag.php:597
 #: blocks/src/block/tab-box/edit.js:107
 #: blocks/src/old/tab-box/block.js:117
 msgid "ブレイク"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:622
+#: lib/admin-tinymce-qtag.php:628
 #: lib/page-settings/apis-forms.php:29
 #: lib/page-settings/apis-funcs.php:142
 #: blocks/src/block/tab-box/edit.js:111
@@ -735,11 +738,11 @@ msgstr ""
 msgid "Amazon"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:810
+#: lib/admin-tinymce-qtag.php:816
 msgid "ボックス（付箋風）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:843
+#: lib/admin-tinymce-qtag.php:849
 #: lib/gutenberg.php:90
 #: lib/widgets/cta-box.php:181
 #: blocks/src/block/cta/edit.js:218
@@ -749,13 +752,13 @@ msgstr ""
 msgid "オレンジ"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:848
+#: lib/admin-tinymce-qtag.php:854
 #: blocks/src/old/button-wrap/block.js:87
 #: blocks/src/old/button/block.js:105
 msgid "レッド"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:853
+#: lib/admin-tinymce-qtag.php:859
 #: lib/gutenberg.php:25
 #: lib/widgets/cta-box.php:168
 #: blocks/src/block/cta/edit.js:190
@@ -765,90 +768,90 @@ msgstr ""
 msgid "ピンク"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:858
+#: lib/admin-tinymce-qtag.php:864
 #: blocks/src/old/button-wrap/block.js:95
 #: blocks/src/old/button/block.js:113
 msgid "パープル"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:863
+#: lib/admin-tinymce-qtag.php:869
 #: blocks/src/old/button-wrap/block.js:107
 #: blocks/src/old/button/block.js:125
 msgid "ブルー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:868
+#: lib/admin-tinymce-qtag.php:874
 #: blocks/src/old/button-wrap/block.js:123
 #: blocks/src/old/button/block.js:141
 msgid "グリーン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:873
+#: lib/admin-tinymce-qtag.php:879
 #: blocks/src/old/button-wrap/block.js:135
 #: blocks/src/old/button/block.js:153
 msgid "イエロー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:878
+#: lib/admin-tinymce-qtag.php:884
 #: blocks/src/old/button-wrap/block.js:151
 #: blocks/src/old/button/block.js:169
 msgid "ブラウン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:883
+#: lib/admin-tinymce-qtag.php:889
 #: blocks/src/old/button-wrap/block.js:155
 #: blocks/src/old/button/block.js:173
 msgid "グレー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:890
+#: lib/admin-tinymce-qtag.php:896
 msgid "マイクロコピー"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:893
+#: lib/admin-tinymce-qtag.php:899
 msgid "テキスト（上）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:896
-#: lib/admin-tinymce-qtag.php:916
-#: lib/admin-tinymce-qtag.php:936
-#: lib/admin-tinymce-qtag.php:957
+#: lib/admin-tinymce-qtag.php:902
+#: lib/admin-tinymce-qtag.php:922
+#: lib/admin-tinymce-qtag.php:942
+#: lib/admin-tinymce-qtag.php:963
 #: lib/page-settings/blogcard-in-forms.php:91
 #: lib/page-settings/blogcard-out-forms.php:88
 #: blocks/src/block/comparison-box/items/block.js:28
 msgid "左側"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:901
-#: lib/admin-tinymce-qtag.php:921
-#: lib/admin-tinymce-qtag.php:941
-#: lib/admin-tinymce-qtag.php:962
+#: lib/admin-tinymce-qtag.php:907
+#: lib/admin-tinymce-qtag.php:927
+#: lib/admin-tinymce-qtag.php:947
+#: lib/admin-tinymce-qtag.php:968
 msgid "中央"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:906
-#: lib/admin-tinymce-qtag.php:926
-#: lib/admin-tinymce-qtag.php:946
-#: lib/admin-tinymce-qtag.php:967
+#: lib/admin-tinymce-qtag.php:912
+#: lib/admin-tinymce-qtag.php:932
+#: lib/admin-tinymce-qtag.php:952
+#: lib/admin-tinymce-qtag.php:973
 #: lib/page-settings/blogcard-in-forms.php:92
 #: lib/page-settings/blogcard-out-forms.php:89
 #: blocks/src/block/comparison-box/items/block.js:54
 msgid "右側"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:913
+#: lib/admin-tinymce-qtag.php:919
 msgid "テキスト（下）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:933
+#: lib/admin-tinymce-qtag.php:939
 msgid "吹き出し（上）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:953
+#: lib/admin-tinymce-qtag.php:959
 msgid "吹き出し（下）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:976
+#: lib/admin-tinymce-qtag.php:982
 #: lib/page-settings/editor-forms.php:139
 #: lib/page-settings/_top-page.php:242
 #: blocks/src/block/button/deprecated.js:29
@@ -860,305 +863,306 @@ msgstr ""
 msgid "ボタン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:980
-#: lib/admin-tinymce-qtag.php:1291
+#: lib/admin-tinymce-qtag.php:986
+#: lib/admin-tinymce-qtag.php:1297
 msgid "ブラック（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:985
-#: lib/admin-tinymce-qtag.php:1297
-msgid "ブラック（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:990
+#: lib/admin-tinymce-qtag.php:991
 #: lib/admin-tinymce-qtag.php:1303
-msgid "ブラック（大）"
+msgid "ブラック（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:996
 #: lib/admin-tinymce-qtag.php:1309
+msgid "ブラック（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1002
+#: lib/admin-tinymce-qtag.php:1315
 msgid "レッド（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1001
-#: lib/admin-tinymce-qtag.php:1315
-msgid "レッド（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1006
+#: lib/admin-tinymce-qtag.php:1007
 #: lib/admin-tinymce-qtag.php:1321
-msgid "レッド（大）"
+msgid "レッド（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1012
 #: lib/admin-tinymce-qtag.php:1327
+msgid "レッド（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1018
+#: lib/admin-tinymce-qtag.php:1333
 msgid "ピンク（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1017
-#: lib/admin-tinymce-qtag.php:1333
-msgid "ピンク（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1022
+#: lib/admin-tinymce-qtag.php:1023
 #: lib/admin-tinymce-qtag.php:1339
-msgid "ピンク（大）"
+msgid "ピンク（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1028
 #: lib/admin-tinymce-qtag.php:1345
+msgid "ピンク（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1034
+#: lib/admin-tinymce-qtag.php:1351
 msgid "パープル（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1033
-#: lib/admin-tinymce-qtag.php:1351
-msgid "パープル（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1038
+#: lib/admin-tinymce-qtag.php:1039
 #: lib/admin-tinymce-qtag.php:1357
-msgid "パープル（大）"
+msgid "パープル（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1044
 #: lib/admin-tinymce-qtag.php:1363
+msgid "パープル（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1050
+#: lib/admin-tinymce-qtag.php:1369
 msgid "ディープパープル（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1049
-#: lib/admin-tinymce-qtag.php:1369
-msgid "ディープパープル（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1054
+#: lib/admin-tinymce-qtag.php:1055
 #: lib/admin-tinymce-qtag.php:1375
-msgid "ディープパープル（大）"
+msgid "ディープパープル（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1060
 #: lib/admin-tinymce-qtag.php:1381
+msgid "ディープパープル（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1066
+#: lib/admin-tinymce-qtag.php:1387
 msgid "インディゴ[紺色]（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1065
-#: lib/admin-tinymce-qtag.php:1387
-msgid "インディゴ[紺色]（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1070
+#: lib/admin-tinymce-qtag.php:1071
 #: lib/admin-tinymce-qtag.php:1393
-msgid "インディゴ[紺色]（大）"
+msgid "インディゴ[紺色]（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1076
 #: lib/admin-tinymce-qtag.php:1399
+msgid "インディゴ[紺色]（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1082
+#: lib/admin-tinymce-qtag.php:1405
 msgid "ブルー（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1081
-#: lib/admin-tinymce-qtag.php:1405
-msgid "ブルー（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1086
+#: lib/admin-tinymce-qtag.php:1087
 #: lib/admin-tinymce-qtag.php:1411
-msgid "ブルー（大）"
+msgid "ブルー（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1092
 #: lib/admin-tinymce-qtag.php:1417
+msgid "ブルー（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1098
+#: lib/admin-tinymce-qtag.php:1423
 msgid "ライトブルー（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1097
-#: lib/admin-tinymce-qtag.php:1423
-msgid "ライトブルー（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1102
+#: lib/admin-tinymce-qtag.php:1103
 #: lib/admin-tinymce-qtag.php:1429
-msgid "ライトブルー（大）"
+msgid "ライトブルー（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1108
 #: lib/admin-tinymce-qtag.php:1435
+msgid "ライトブルー（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1114
+#: lib/admin-tinymce-qtag.php:1441
 msgid "シアン（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1113
-#: lib/admin-tinymce-qtag.php:1441
-msgid "シアン（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1118
+#: lib/admin-tinymce-qtag.php:1119
 #: lib/admin-tinymce-qtag.php:1447
-msgid "シアン（大）"
+msgid "シアン（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1124
 #: lib/admin-tinymce-qtag.php:1453
+msgid "シアン（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1130
+#: lib/admin-tinymce-qtag.php:1459
 msgid "ティール[緑色がかった青]（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1129
-#: lib/admin-tinymce-qtag.php:1459
-msgid "ティール[緑色がかった青]（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1134
+#: lib/admin-tinymce-qtag.php:1135
 #: lib/admin-tinymce-qtag.php:1465
-msgid "ティール[緑色がかった青]（大）"
+msgid "ティール[緑色がかった青]（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1140
 #: lib/admin-tinymce-qtag.php:1471
+msgid "ティール[緑色がかった青]（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1146
+#: lib/admin-tinymce-qtag.php:1477
 msgid "グリーン（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1145
-#: lib/admin-tinymce-qtag.php:1477
-msgid "グリーン（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1150
+#: lib/admin-tinymce-qtag.php:1151
 #: lib/admin-tinymce-qtag.php:1483
-msgid "グリーン（大）"
+msgid "グリーン（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1156
 #: lib/admin-tinymce-qtag.php:1489
+msgid "グリーン（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1162
+#: lib/admin-tinymce-qtag.php:1495
 msgid "ライトグリーン（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1161
-#: lib/admin-tinymce-qtag.php:1495
-msgid "ライトグリーン（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1166
+#: lib/admin-tinymce-qtag.php:1167
 #: lib/admin-tinymce-qtag.php:1501
-msgid "ライトグリーン（大）"
+msgid "ライトグリーン（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1172
 #: lib/admin-tinymce-qtag.php:1507
+msgid "ライトグリーン（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1178
+#: lib/admin-tinymce-qtag.php:1513
 msgid "ライム（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1177
-#: lib/admin-tinymce-qtag.php:1513
-msgid "ライム（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1182
+#: lib/admin-tinymce-qtag.php:1183
 #: lib/admin-tinymce-qtag.php:1519
-msgid "ライム（大）"
+msgid "ライム（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1188
 #: lib/admin-tinymce-qtag.php:1525
+msgid "ライム（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1194
+#: lib/admin-tinymce-qtag.php:1531
 msgid "イエロー（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1193
-#: lib/admin-tinymce-qtag.php:1531
-msgid "イエロー（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1198
+#: lib/admin-tinymce-qtag.php:1199
 #: lib/admin-tinymce-qtag.php:1537
-msgid "イエロー（大）"
+msgid "イエロー（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1204
 #: lib/admin-tinymce-qtag.php:1543
+msgid "イエロー（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1210
+#: lib/admin-tinymce-qtag.php:1549
 msgid "アンバー[琥珀色]（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1209
-#: lib/admin-tinymce-qtag.php:1549
-msgid "アンバー[琥珀色]（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1214
+#: lib/admin-tinymce-qtag.php:1215
 #: lib/admin-tinymce-qtag.php:1555
-msgid "アンバー[琥珀色]（大）"
+msgid "アンバー[琥珀色]（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1220
 #: lib/admin-tinymce-qtag.php:1561
+msgid "アンバー[琥珀色]（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1226
+#: lib/admin-tinymce-qtag.php:1567
 msgid "オレンジ（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1225
-#: lib/admin-tinymce-qtag.php:1567
-msgid "オレンジ（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1230
+#: lib/admin-tinymce-qtag.php:1231
 #: lib/admin-tinymce-qtag.php:1573
-msgid "オレンジ（大）"
+msgid "オレンジ（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1236
 #: lib/admin-tinymce-qtag.php:1579
+msgid "オレンジ（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1242
+#: lib/admin-tinymce-qtag.php:1585
 msgid "ディープオレンジ（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1241
-#: lib/admin-tinymce-qtag.php:1585
-msgid "ディープオレンジ（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1246
+#: lib/admin-tinymce-qtag.php:1247
 #: lib/admin-tinymce-qtag.php:1591
-msgid "ディープオレンジ（大）"
+msgid "ディープオレンジ（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1252
 #: lib/admin-tinymce-qtag.php:1597
+msgid "ディープオレンジ（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1258
+#: lib/admin-tinymce-qtag.php:1603
 msgid "ブラウン（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1257
-#: lib/admin-tinymce-qtag.php:1603
-msgid "ブラウン（中）"
-msgstr ""
-
-#: lib/admin-tinymce-qtag.php:1262
+#: lib/admin-tinymce-qtag.php:1263
 #: lib/admin-tinymce-qtag.php:1609
-msgid "ブラウン（大）"
+msgid "ブラウン（中）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1268
 #: lib/admin-tinymce-qtag.php:1615
+msgid "ブラウン（大）"
+msgstr ""
+
+#: lib/admin-tinymce-qtag.php:1274
+#: lib/admin-tinymce-qtag.php:1621
 msgid "グレー（小）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1273
-#: lib/admin-tinymce-qtag.php:1621
+#: lib/admin-tinymce-qtag.php:1279
+#: lib/admin-tinymce-qtag.php:1627
 msgid "グレー（中）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1278
-#: lib/admin-tinymce-qtag.php:1627
+#: lib/admin-tinymce-qtag.php:1284
+#: lib/admin-tinymce-qtag.php:1633
 msgid "グレー（大）"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1287
+#: lib/admin-tinymce-qtag.php:1293
 #: blocks/src/block/button-wrap/index.js:22
 #: blocks/src/old/button-wrap-1/block.js:50
 #: blocks/src/old/button-wrap/block.js:26
 msgid "囲みボタン"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1636
+#: lib/admin-tinymce-qtag.php:1642
 msgid "囲みブログカードラベル"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1640
+#: lib/admin-tinymce-qtag.php:1646
 #: lib/page-settings/image-forms.php:214
 #: lib/page-settings/single-funcs.php:76
+#: lib/utils.php:1032
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
@@ -1168,22 +1172,25 @@ msgstr ""
 msgid "関連記事"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1646
+#: lib/admin-tinymce-qtag.php:1652
+#: lib/utils.php:1033
 #: blocks/src/block/blogcard/deprecated.js:63
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
 msgid "参考記事"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1652
+#: lib/admin-tinymce-qtag.php:1658
+#: lib/utils.php:1034
 #: blocks/src/block/blogcard/deprecated.js:67
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1658
+#: lib/admin-tinymce-qtag.php:1664
 #: lib/page-settings/carousel-forms.php:64
 #: lib/page-settings/image-forms.php:213
+#: lib/utils.php:1035
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
@@ -1195,15 +1202,17 @@ msgstr ""
 msgid "人気記事"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1664
+#: lib/admin-tinymce-qtag.php:1670
+#: lib/utils.php:1038
 #: blocks/src/block/blogcard/deprecated.js:75
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
 msgid "あわせて読みたい"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1670
+#: lib/admin-tinymce-qtag.php:1676
 #: lib/shortcodes.php:1201
+#: lib/utils.php:1039
 #: lib/widgets/cta-box.php:34
 #: blocks/src/block/blogcard/deprecated.js:79
 #: blocks/src/block/blogcard/edit.js:60
@@ -1211,19 +1220,22 @@ msgstr ""
 msgid "詳細はこちら"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1688
+#: lib/admin-tinymce-qtag.php:1694
+#: lib/utils.php:1040
 #: blocks/src/block/blogcard/deprecated.js:91
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
 msgid "公式サイト"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1700
+#: lib/admin-tinymce-qtag.php:1706
+#: lib/utils.php:1042
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr ""
 
-#: lib/admin-tinymce-qtag.php:1706
+#: lib/admin-tinymce-qtag.php:1712
+#: lib/utils.php:1043
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr ""
@@ -1232,11 +1244,11 @@ msgstr ""
 msgid "商品リンクの追加"
 msgstr ""
 
-#: lib/admin.php:134
+#: lib/admin.php:141
 msgid "ID"
 msgstr ""
 
-#: lib/admin.php:135
+#: lib/admin.php:142
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1245,87 +1257,87 @@ msgstr ""
 msgid "文字数"
 msgstr ""
 
-#: lib/admin.php:136
+#: lib/admin.php:143
 #: lib/page-access/analytics/enqueue-func.php:107
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:137
+#: lib/admin.php:144
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr ""
 
-#: lib/admin.php:172
+#: lib/admin.php:179
 msgid "　題："
 msgstr ""
 
-#: lib/admin.php:180
+#: lib/admin.php:187
 msgid "本文："
 msgstr ""
 
-#: lib/admin.php:195
+#: lib/admin.php:202
 msgid "日："
 msgstr ""
 
-#: lib/admin.php:203
+#: lib/admin.php:210
 msgid "週："
 msgstr ""
 
-#: lib/admin.php:211
+#: lib/admin.php:218
 msgid "月："
 msgstr ""
 
-#: lib/admin.php:219
+#: lib/admin.php:226
 msgid "全："
 msgstr ""
 
-#: lib/admin.php:304
+#: lib/admin.php:311
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr ""
 
-#: lib/admin.php:392
+#: lib/admin.php:399
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr ""
 
-#: lib/admin.php:398
+#: lib/admin.php:405
 #: lib/page-access/analytics/render-func.php:97
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
-#: lib/admin.php:399
+#: lib/admin.php:406
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr ""
 
-#: lib/admin.php:400
+#: lib/admin.php:407
 msgid "固定ページ一覧"
 msgstr ""
 
-#: lib/admin.php:401
+#: lib/admin.php:408
 msgid "メディア一覧"
 msgstr ""
 
-#: lib/admin.php:402
+#: lib/admin.php:409
 msgid "テーマ"
 msgstr ""
 
-#: lib/admin.php:412
+#: lib/admin.php:419
 msgid "カスタマイズ"
 msgstr ""
 
-#: lib/admin.php:413
+#: lib/admin.php:420
 #: lib/page-settings/_top-page.php:264
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr ""
 
-#: lib/admin.php:414
+#: lib/admin.php:421
 #: skins/skin-made-in-heaven/lib/hook-wp.php:665
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
@@ -1333,21 +1345,21 @@ msgstr ""
 msgid "メニュー"
 msgstr ""
 
-#: lib/admin.php:415
+#: lib/admin.php:422
 msgid "テーマの編集"
 msgstr ""
 
-#: lib/admin.php:416
+#: lib/admin.php:423
 msgid "プラグイン一覧"
 msgstr ""
 
-#: lib/admin.php:516
+#: lib/admin.php:523
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:576
-#: lib/admin.php:590
+#: lib/admin.php:583
+#: lib/admin.php:597
 msgid "Excerpt"
 msgstr ""
 
@@ -1943,7 +1955,7 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:319
 #: lib/page-speech-balloon/form.php:90
-#: lib/settings.php:656
+#: lib/settings.php:661
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
@@ -8985,12 +8997,12 @@ msgid "ボタンを表示しない"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:45
-#: lib/settings.php:406
+#: lib/settings.php:411
 msgid "ヘッダーモバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:46
-#: lib/settings.php:408
+#: lib/settings.php:413
 msgid "フッターモバイルボタン"
 msgstr ""
 
@@ -11838,94 +11850,94 @@ msgstr ""
 msgid "です。"
 msgstr ""
 
-#: lib/settings.php:404
+#: lib/settings.php:409
 #: tmp/navi.php:9
 msgid "ヘッダーメニュー"
 msgstr ""
 
-#: lib/settings.php:405
+#: lib/settings.php:410
 msgid "ヘッダーモバイルメニュー"
 msgstr ""
 
-#: lib/settings.php:407
+#: lib/settings.php:412
 #: tmp/navi-footer.php:9
 msgid "フッターメニュー"
 msgstr ""
 
-#: lib/settings.php:409
+#: lib/settings.php:414
 msgid "モバイルスライドインメニュー"
 msgstr ""
 
-#: lib/settings.php:655
+#: lib/settings.php:660
 msgid "通常のカード表示"
 msgstr ""
 
-#: lib/settings.php:658
+#: lib/settings.php:663
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr ""
 
-#: lib/settings.php:659
+#: lib/settings.php:664
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
 msgid "カードの上下に区切り線を入れる"
 msgstr ""
 
-#: lib/settings.php:659
+#: lib/settings.php:664
 #: blocks/src/block/navicard/edit.js:111
 #: blocks/src/block/new-list/edit.js:156
 #: blocks/src/block/popular-list/edit.js:236
 msgid "（縦並び表示のみ）"
 msgstr ""
 
-#: lib/settings.php:661
+#: lib/settings.php:666
 msgid "カード自体を罫線で囲みます。"
 msgstr ""
 
-#: lib/settings.php:662
+#: lib/settings.php:667
 #: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:160
 #: blocks/src/block/popular-list/edit.js:240
 msgid "カードに枠線を表示する"
 msgstr ""
 
-#: lib/settings.php:664
+#: lib/settings.php:669
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr ""
 
-#: lib/settings.php:665
+#: lib/settings.php:670
 #: blocks/src/block/navicard/edit.js:119
 #: blocks/src/block/new-list/edit.js:164
 #: blocks/src/block/popular-list/edit.js:244
 msgid "大きなサムネイル表示にする"
 msgstr ""
 
-#: lib/settings.php:667
+#: lib/settings.php:672
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr ""
 
-#: lib/settings.php:668
+#: lib/settings.php:673
 #: blocks/src/block/navicard/edit.js:123
 #: blocks/src/block/new-list/edit.js:168
 #: blocks/src/block/popular-list/edit.js:248
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr ""
 
-#: lib/settings.php:677
+#: lib/settings.php:682
 #: blocks/src/block/amazon-product-link/components/SettingsPanel.js:64
 #: blocks/src/block/rakuten-product-link/components/SettingsPanel.js:62
 msgid "画像のみ"
 msgstr ""
 
-#: lib/settings.php:678
+#: lib/settings.php:683
 msgid "画像中央に白文字タイトル"
 msgstr ""
 
-#: lib/settings.php:679
+#: lib/settings.php:684
 msgid "画像中央にラベルでタイトル"
 msgstr ""
 
-#: lib/settings.php:680
+#: lib/settings.php:685
 msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr ""
 
@@ -12644,59 +12656,63 @@ msgstr ""
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:2523
+#: lib/utils.php:1031
+msgid "ラベルなし"
+msgstr ""
+
+#: lib/utils.php:2577
 msgid "Cocoon："
 msgstr ""
 
-#: lib/utils.php:2524
+#: lib/utils.php:2578
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 
-#: lib/utils.php:2526
+#: lib/utils.php:2580
 msgid "表示設定を開く"
 msgstr ""
 
-#: lib/utils.php:2650
+#: lib/utils.php:2704
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2658
+#: lib/utils.php:2712
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2666
+#: lib/utils.php:2720
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2674
+#: lib/utils.php:2728
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2682
+#: lib/utils.php:2736
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2693
+#: lib/utils.php:2747
 #, php-format
 msgid "%s年"
 msgstr ""
 
-#: lib/utils.php:2695
+#: lib/utils.php:2749
 #, php-format
 msgid "%s年%sヶ月"
 msgstr ""
