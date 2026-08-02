@@ -48,6 +48,7 @@ jobs:
         run: npm run compile-all
 
       - name: Commit if changed
+        shell: bash
         run: |
           git config user.name "GitHub Action"
           git config user.email "github.action@noreply.com"
@@ -65,6 +66,8 @@ jobs:
                 success=1
                 break
               fi
+              # rebase中断状態の後始末（残存すると次回以降のpullが必ず失敗）
+              git rebase --abort 2>/dev/null || true
               echo "pushが失敗しました（${i}回目）。再試行します。"
               sleep $((RANDOM % 5 + 1))
             done
