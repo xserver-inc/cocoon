@@ -1,44 +1,40 @@
-//変数などの定義
+// 変数などの定義
 
-//ブランドカラー
+// ブランドカラー
 @import '_root';
 
 $transparent_border_color: transparent;
 $transpalent_black_bgc: rgba(51,51,51,0.7);
 
-//メインカラム
+// メインカラム
 $main_inner_width: 800px;
 $main_border_width: 1px;
 $main_border_style: solid ;
 $main_border_color: var(--cocoon-basic-border-color);
 $main_padding_width: 29px;
 
-//メインカラムとサイドバーの余白
+// メインカラムとサイドバーの余白
 $between_main_and_sidebar: 20px;
 
-//サイドバー
+// サイドバー
 $sidebar_inner_width: 336px;
 $sidebar_border_width: 1px;
 $sidebar_border_style: solid ;
 $sidebar_border_color: var(--cocoon-basic-border-color);
 $sidebar_padding_width: 19px;
-
 $main_outer_width: $main_inner_width + $main_border_width*2 + $main_padding_width*2;
 $sidebar_outer_width: $sidebar_inner_width + $sidebar_border_width*2 + $sidebar_padding_width*2;
-
 $site_width: $main_outer_width + $between_main_and_sidebar + $sidebar_outer_width;
 
-//ウィジェットの最大幅
+// ウィジェットの最大幅
 $widget_max_width: 400px;
 
-
 $emtry_card_thumb_margin_top: 3px;
-
 $thumb_content_margin: 1.6%;
 
-//ブログカードラベル
-//文言はCSS変数経由で参照し、PHP側（get_blogcard_label_css_variables()）が
-//翻訳済み文字列を`:root`に出力して上書きする。第2引数は未出力時のフォールバック
+// ブログカードラベル
+// 文言はCSS変数経由で参照し、PHP側（get_blogcard_label_css_variables()）が
+// 翻訳済み文字列を`:root`に出力して上書きする。第2引数は未出力時のフォールバック
 $bct-none: '\f0c8';
 $bct-none-text: var(--cocoon-bct-none-text, 'ラベルなし');
 $bct-related: '\f15c';
@@ -66,20 +62,22 @@ $bct-prev-text: var(--cocoon-bct-prev-text, '前回の記事');
 $bct-next: '\f138';
 $bct-next-text: var(--cocoon-bct-next-text, '続きの記事');
 
-//背景ホバー
+// 背景ホバー
 $bgc_hover_color: #f5f8fa;
 $bgc_hover_anime: all .3s ease-in-out;
+
 @mixin bgc_hover($color: $bgc_hover_color) {
   background-color: $color;
   transition: $bgc_hover_anime;
   color: var(--cocoon-text-color);
 }
 
-//Font Awesomeアイコンを出力するとき
+// Font Awesomeアイコンを出力するとき
 @mixin fontawesome($unicode:'/f004') {
   // font-family: FontAwesome;
   content: $unicode;
-  //padding-right: 4px;
+
+  // padding-right: 4px;
 }
 
 .faw::before{
@@ -87,20 +85,20 @@ $bgc_hover_anime: all .3s ease-in-out;
   padding-right: 4px;
 }
 
-//リンクキャンセル
+// リンクキャンセル
 @mixin link_cancel($color: var(--cocoon-text-color)) {
   color: $color;
   text-decoration: none;
 }
 
-//リストキャンセル
+// リストキャンセル
 @mixin list_cancel {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-//リストキャンセル
+// リストキャンセル
 @mixin card_padding {
   padding: 1.6% 2.2% 2%;
 }
@@ -121,16 +119,16 @@ $bgc_hover_anime: all .3s ease-in-out;
   color: var(--cocoon-text-color);
 
   /* カーニングの設定 */
-  //letter-spacing: 1.2px;
-  //font-feature-settings: "palt" 1;
-  //font-kerning: auto;
+  // letter-spacing: 1.2px;
+  // font-feature-settings: "palt" 1;
+  // font-kerning: auto;
 
   /* 行間の設定 */
   line-height: 1.8;
 
   margin: 0;
 
-  //word-wrap: break-word;
+  // word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
@@ -155,7 +153,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 
 %card_title{
   font-size: 18px;
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.4em;
   line-height: 1.6;
   font-weight: bold;
   display: -webkit-box;
@@ -166,7 +164,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 
 %card_snippet{
   font-size: var(--cocoon-text-size-s);
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.4em;
   line-height: 1.3;
   display: -webkit-box;
   overflow: hidden;
@@ -242,8 +240,10 @@ $bgc_hover_anime: all .3s ease-in-out;
 @mixin fb_like_box($max_width: 640px){
   .fb-like-box{
     max-width: $max_width;
-    //display: block;
+
+    // display: block;
     flex-direction: column;
+
     // >div,
     // >figure{
     //   width: 100%;
@@ -293,7 +293,8 @@ $bgc_hover_anime: all .3s ease-in-out;
 ///////////////////////////////////////
 %entry_category{
   padding: 2px;
-  //margin-right: 8px;
+
+  // margin-right: 8px;
   display: inline;
   font-size: 0.7em;
 }
@@ -363,6 +364,7 @@ $bgc_hover_anime: all .3s ease-in-out;
 
   .tag-caption{
     word-break: break-all;
+
     .tax-icon {
       margin-right:0.4em;
     }
@@ -392,14 +394,17 @@ $form_padding: 11px;
   .recommended{
     .navi-entry-cards{
       flex-wrap: wrap;
+
       a{
         width: 50%;
       }
     }
+
     &.rcs-card-margin{
       a{
         margin: 1%;
         width: 48%;
+
         &:last-child{
           margin-right: 1%;
         }
@@ -463,6 +468,7 @@ $bb-profile-text: "PROFILE";
   text-align: center;
   margin: 0 auto;
   padding: 4px 7px 6px;
+
   // top: 8px;
   font-size: 14px;
   font-weight: bold;
@@ -479,6 +485,7 @@ $bb-profile-text: "PROFILE";
 @mixin follow_amp_button($unicode, $bc_color){
   background-color: $bc_color;
   margin-bottom: 0.6em;
+
   &::before{
     @include fontawesome($unicode);
     font-family: FontAwesome;
@@ -537,10 +544,10 @@ $bb-profile-text: "PROFILE";
 
 %copy_info{
   display: none;
-  /*初期状態は非表示*/padding: 1em 2em;
+  /* 初期状態は非表示 */padding: 1em 2em;
   color: #fff;
   border-radius: 8px;
-  /*画面上部に表示*/position: fixed;
+  /* 画面上部に表示 */position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
 // Swiperをパターンエディターなどでも読み込む（ブロックエディター、パターンエディターのiframe）
-@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
-
+@import 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
 @import "common-editor";
 
 
-/*ビジュアルエディターのスタイルを書く*/
+/* ビジュアルエディターのスタイルを書く */
 body#tinymce {
   padding: 1em 20px !important;
   margin-top: 0 !important;
@@ -14,7 +13,7 @@ body#tinymce {
   background-color: #fff;
 }
 
-//背景を適用しない
+// 背景を適用しない
 body#tinymce.wp-editor::before {
   background: none;
 }
@@ -82,7 +81,7 @@ html[lang="en"] .column-3::before{
 }
 
 span.btn-wrap {
-  padding: 6px 18px 6px;
+  padding: 6px 18px;
   display: inline-block;
   font-size: 0.8em;
 }
@@ -120,7 +119,7 @@ span.btn-wrap {
   background-color: #e6ecf0;
 }
 
-//ラベル文言はCSS変数のためスペース区切りのcontentリストで連結
+// ラベル文言はCSS変数のためスペース区切りのcontentリストで連結
 .blogcard-type.bct-none::before {
   content: $bct-none '  ' $bct-none-text;
 }
@@ -173,12 +172,12 @@ span.btn-wrap {
   content: $bct-next '  ' $bct-next-text;
 }
 
-/*ビジュアルエディターにinstagramの引用符が表示される対応*/
+/* ビジュアルエディターにinstagramの引用符が表示される対応 */
 .instagram-media {
   position: relative !important;
 }
 
-//wpForoの入力フォームをiPhoneでみた場合横揺れする場合の対処
+// wpForoの入力フォームをiPhoneでみた場合横揺れする場合の対処
 .postbody.main {
   width: auto;
 }
@@ -361,17 +360,17 @@ span.btn-wrap {
 }
 
 
-//クラシックエディターで選択した時にパディングが縮む不安修正
+// クラシックエディターで選択した時にパディングが縮む不安修正
 .mce-content-body .btn-wrap a[data-mce-selected]{
   padding: 7px 13px;
 }
 
-//クラシックエディターで入力したボタンHTMLがブロックエディターで出力される時
+// クラシックエディターで入力したボタンHTMLがブロックエディターで出力される時
 .wp-block-freeform.block-library-rich-text__tinymce .btn[class*="btn-"]{
   color: var(--cocoon-white-color);
 }
 
-//クラシックエディターはブログカード内のbr表示
+// クラシックエディターはブログカード内のbr表示
 .mce-content-body{
   .blogcard-type br {
     display: initial;
