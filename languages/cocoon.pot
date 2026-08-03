@@ -2,62 +2,38 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.3.13\n"
+"Project-Id-Version: Cocoon 2.9.3.14\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
-#: lib/page-item-ranking/form.php:135
-msgid "0"
-msgstr ""
-
-#: lib/page-item-ranking/form.php:137
-msgid "1"
-msgstr ""
-
-#: lib/page-item-ranking/form.php:139
-msgid "2"
-msgstr ""
-
-#: lib/page-item-ranking/form.php:141
-msgid "3"
-msgstr ""
-
-#: lib/page-item-ranking/form.php:143
-msgid "4"
-msgstr ""
-
-#: lib/page-item-ranking/form.php:145
-msgid "5"
-msgstr ""
-
-#: style.css
 #. Theme Name of the theme
+#: style.css
 msgid "Cocoon"
 msgstr ""
 
-#: style.css
 #. Theme URI of the theme
+#: style.css
 msgid "https://wp-cocoon.com/"
 msgstr ""
 
-#: style.css
 #. Description of the theme
+#: style.css
 msgid "SEO・高速化・モバイルファースト最適化済みの無料テーマ。"
 msgstr ""
 
-#: style.css
 #. Author of the theme
+#: style.css
 msgid "わいひら"
 msgstr ""
 
-#: style.css
 #. Author URI of the theme
+#: style.css
 msgid "https://nelog.jp/"
 msgstr ""
 
@@ -131,12 +107,10 @@ msgstr ""
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: comments.php:81
 #. translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL
+#: comments.php:81
 #, php-format
-msgid ""
-"Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a "
-"href=\"%3$s\">Log out?</a>"
+msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
 #: comments.php:86
@@ -1656,15 +1630,15 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#. translators: 1: date, 2: time
 #: lib/comments.php:57
 #: lib/comments.php:106
-#. translators: 1: date, 2: time
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: lib/comments.php:57
 #. translators: 1: date, 2: time
+#: lib/comments.php:57
 msgid "(Edit)"
 msgstr ""
 
@@ -1678,10 +1652,7 @@ msgstr ""
 
 #: lib/comments.php:104
 #, php-format
-msgid ""
-"<span class=\"comment-author-label\">名前:</span><cite class=\"fn "
-"comment-author\">%s<span class=\"admin\"></span></a></cite><span "
-"class=\"comment-author-separator\"> :</span>"
+msgid "<span class=\"comment-author-label\">名前:</span><cite class=\"fn comment-author\">%s<span class=\"admin\"></span></a></cite><span class=\"comment-author-separator\"> :</span>"
 msgstr ""
 
 #: lib/comments.php:106
@@ -1752,9 +1723,7 @@ msgstr ""
 #: lib/content-category.php:253
 #: lib/content-tag.php:229
 #: lib/custom-fields/seo-field.php:136
-msgid ""
-"検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)"
-"に挿入されます。"
+msgid "検索エンジンに表示させたいタイトルを入力してください。記事のタイトルより、こちらに入力したテキストが優先的にタイトルタグ(&lt;title&gt;)に挿入されます。"
 msgstr ""
 
 #: lib/content-category.php:257
@@ -1827,9 +1796,7 @@ msgid "このページが検索エンジンにインデックスされないよ�
 msgstr ""
 
 #: lib/content-category.php:302
-msgid ""
-"こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先さ"
-"れます。"
+msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢カテゴリーページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr ""
 
 #: lib/content-category.php:395
@@ -1861,9 +1828,7 @@ msgid "ページの説明を入力します。ここに入力したテキスト�
 msgstr ""
 
 #: lib/content-tag.php:278
-msgid ""
-"こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます"
-"。"
+msgid "こちらの設定を無効にしていても、Cocoon設定の「SEO」タブにある｢タグページをnoindexとする」設定を有効にしている場合はそちらが優先されます。"
 msgstr ""
 
 #: lib/content-tag.php:278
@@ -2209,10 +2174,7 @@ msgid "記事の説明文を入力してください。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:147
-msgid ""
-"記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマートフォンではそのうちの約50"
-"文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に"
-"入力したものがメタディスクリプションとして挿入されます。"
+msgid "記事の説明を入力してください。日本語では、およそ120文字前後の入力をおすすめします。スマートフォンではそのうちの約50文字が表示されます。こちらに入力したメタディスクリプションはブログカードのスニペット（抜粋文部分）にも利用されます。こちらに入力しない場合は、「抜粋」に入力したものがメタディスクリプションとして挿入されます。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:151
@@ -2240,9 +2202,7 @@ msgid "canonical URLの入力"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:165
-msgid ""
-"ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンからのページ評価が分散されないよう、正規のURLがどれなのかを検索エンジンに"
-"示すために用いる記述です。コンテンツが重複している場合は、正規ページのURLを入力してください。"
+msgid "ページ内容が類似もしくは重複しているURLが複数存在する場合に、検索エンジンからのページ評価が分散されないよう、正規のURLがどれなのかを検索エンジンに示すために用いる記述です。コンテンツが重複している場合は、正規ページのURLを入力してください。"
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:166
@@ -2817,8 +2777,8 @@ msgstr ""
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1425
 #. translators: %s: author's display name
+#: lib/html-forms.php:1425
 #, php-format
 msgid "Posts by %s"
 msgstr ""
@@ -3015,9 +2975,7 @@ msgid "アクセス集計を有効にする"
 msgstr ""
 
 #: lib/page-access/access-forms.php:31
-msgid ""
-"有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的なWordPress Popular "
-"Postsプラグインを実装しているようなものなのでレンタルサーバーから負荷が高いといわれたら無効にしてください。"
+msgid "有効にすることで「人気記事」ウィジェット等が利用できるようになります。簡易的なWordPress Popular Postsプラグインを実装しているようなものなのでレンタルサーバーから負荷が高いといわれたら無効にしてください。"
 msgstr ""
 
 #: lib/page-access/access-forms.php:39
@@ -3145,6 +3103,7 @@ msgstr ""
 #: lib/page-access/access-func.php:703
 #: lib/page-access/analytics/dashboard-page.php:139
 #: lib/page-access/analytics/dashboard-page.php:532
+#: lib/page-access/analytics/dashboard-page.php:560
 #: lib/page-access/analytics/render-func.php:125
 #: lib/page-access/analytics/render-func.php:190
 #: lib/page-access/analytics/settings-forms.php:77
@@ -3154,6 +3113,7 @@ msgstr ""
 #: lib/page-access/access-func.php:704
 #: lib/page-access/analytics/dashboard-page.php:140
 #: lib/page-access/analytics/dashboard-page.php:533
+#: lib/page-access/analytics/dashboard-page.php:561
 #: lib/page-access/analytics/render-func.php:126
 #: lib/page-access/analytics/settings-forms.php:78
 msgid "直近30日"
@@ -3162,6 +3122,7 @@ msgstr ""
 #: lib/page-access/access-func.php:705
 #: lib/page-access/analytics/dashboard-page.php:141
 #: lib/page-access/analytics/dashboard-page.php:534
+#: lib/page-access/analytics/dashboard-page.php:562
 #: lib/page-access/analytics/render-func.php:127
 #: lib/page-access/analytics/settings-forms.php:79
 msgid "直近90日"
@@ -3177,6 +3138,7 @@ msgstr ""
 
 #: lib/page-access/access-func.php:707
 #: lib/page-access/analytics/dashboard-page.php:535
+#: lib/page-access/analytics/dashboard-page.php:563
 msgid "直近1年"
 msgstr ""
 
@@ -3264,8 +3226,8 @@ msgstr ""
 msgid "年初来"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:154
 #. translators: 1: 開始日, 2: 終了日
+#: lib/page-access/analytics/dashboard-page.php:154
 #, php-format
 msgid "%1$s 〜 %2$s"
 msgstr ""
@@ -3492,24 +3454,6 @@ msgstr ""
 msgid "記事を選択してください"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:560
-msgid "7日"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:561
-msgid "30日"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:562
-msgid "90日"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:563
-#: lib/page-settings/single-forms.php:201
-#: blocks/src/block/popular-list/edit.js:186
-msgid "1年"
-msgstr ""
-
 #: lib/page-access/analytics/dashboard-page.php:565
 #: lib/page-access/analytics/render-func.php:132
 msgid "カスタム"
@@ -3646,6 +3590,11 @@ msgstr ""
 
 #: lib/page-access/analytics/export-func.php:68
 msgid "対象が不正です。"
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:21
+msgctxt "アクセス解析グラフ軸の短縮日付書式"
+msgid "n/j"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:87
@@ -4143,10 +4092,7 @@ msgid "Amazon APIキャッシュの削除"
 msgstr ""
 
 #: lib/page-cache/cache-forms.php:99
-msgid ""
-"Amazonの商品情報全キャッシュを削除します。全てのキャッシュを削除すると、Amazon "
-"APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経"
-"てばいずれ正常表示されます。"
+msgid "Amazonの商品情報全キャッシュを削除します。全てのキャッシュを削除すると、Amazon APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。"
 msgstr ""
 
 #: lib/page-cache/cache-forms.php:107
@@ -4158,9 +4104,7 @@ msgid "楽天APIキャッシュの削除"
 msgstr ""
 
 #: lib/page-cache/cache-forms.php:112
-msgid ""
-"楽天商品情報の全キャッシュを削除します。全てのキャッシュを削除すると、楽天APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは"
-"商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。"
+msgid "楽天商品情報の全キャッシュを削除します。全てのキャッシュを削除すると、楽天APIのレスポンスが追いつかない可能性があります。キャッシュが生成されるまでは商品リンクが正常表示しない可能性があるのでお勧めはしません。ただ、時間が経てばいずれ正常表示されます。"
 msgstr ""
 
 #: lib/page-cache/_top-page.php:24
@@ -4195,10 +4139,7 @@ msgid "WordPressカスタマイズ注意文サンプル"
 msgstr ""
 
 #: lib/page-func-text/func-text-func.php:41
-msgid ""
-"WordPressのfunctions."
-"phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください"
-"。 "
+msgid "WordPressのfunctions.phpを編集する前は、編集前に必ずバックアップを取って保存してください。もし編集後、エラーが出るようでしたら、バックアップファイルを元に復元してください。 "
 msgstr ""
 
 #: lib/page-func-text/posts-delete.php:18
@@ -4295,24 +4236,48 @@ msgstr ""
 msgid "なし"
 msgstr ""
 
+#: lib/page-item-ranking/form.php:135
+msgid "0"
+msgstr ""
+
 #: lib/page-item-ranking/form.php:136
 msgid "0.5"
+msgstr ""
+
+#: lib/page-item-ranking/form.php:137
+msgid "1"
 msgstr ""
 
 #: lib/page-item-ranking/form.php:138
 msgid "1.5"
 msgstr ""
 
+#: lib/page-item-ranking/form.php:139
+msgid "2"
+msgstr ""
+
 #: lib/page-item-ranking/form.php:140
 msgid "2.5"
+msgstr ""
+
+#: lib/page-item-ranking/form.php:141
+msgid "3"
 msgstr ""
 
 #: lib/page-item-ranking/form.php:142
 msgid "3.5"
 msgstr ""
 
+#: lib/page-item-ranking/form.php:143
+msgid "4"
+msgstr ""
+
 #: lib/page-item-ranking/form.php:144
 msgid "4.5"
+msgstr ""
+
+#: lib/page-item-ranking/form.php:145
+msgid "5"
 msgstr ""
 
 #: lib/page-item-ranking/form.php:149
@@ -4875,9 +4840,7 @@ msgid "管理画面上部のメッセージを表示するかどうか。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:63
-msgid ""
-"新型コロナウイルスに関する情報は、WHOの終息宣言が出るか、それに近い状態になるまで表示します（今回のウイルスの性質的に完全に終息できるものかもわからな"
-"いので）。"
+msgid "新型コロナウイルスに関する情報は、WHOの終息宣言が出るか、それに近い状態になるまで表示します（今回のウイルスの性質的に完全に終息できるものかもわからないので）。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:77
@@ -5054,9 +5017,7 @@ msgid "Google AMPテストを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:227
-msgid ""
-"<a href=\"https://search.google.com/test/amp\" target=\"_blank\" "
-"rel=\"noopener\">AMP テスト - Google Search Console</a>でチェックするためのリンクの表示。"
+msgid "<a href=\"https://search.google.com/test/amp\" target=\"_blank\" rel=\"noopener\">AMP テスト - Google Search Console</a>でチェックするためのリンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:229
@@ -5064,9 +5025,7 @@ msgid "The AMP Validatorを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:230
-msgid ""
-"<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" "
-"rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
+msgid "<a href=\"https://validator.ampproject.org/#\" target=\"_blank\" rel=\"noopener\">The AMP Validator</a>でチェックするためのリンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:241
@@ -5078,9 +5037,7 @@ msgid "チェックツールエリアを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:246
-msgid ""
-"ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed "
-"Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
+msgid "ページを診断するためのチェックツールを表示するエリアを表示します。PageSpeed Insights、構造化データチェック、HTML5チェック、Twitterの反応など。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:250
@@ -5088,11 +5045,7 @@ msgid "PageSpeed Insightsを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:251
-msgid ""
-"<a "
-"href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_"
-"party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed "
-"Insights</a>リンクの表示。"
+msgid "<a href=\"https://developers.google.com/speed/pagespeed/insights/?filter_third_party_resources=true\" target=\"_blank\" rel=\"noopener\">PageSpeed Insights</a>リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:253
@@ -5100,9 +5053,7 @@ msgid "GTmetrixを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:254
-msgid ""
-"<a href=\"https://gtmetrix.com/\" target=\"_blank\" "
-"rel=\"noopener\">GTmetrix</a>リンクの表示。"
+msgid "<a href=\"https://gtmetrix.com/\" target=\"_blank\" rel=\"noopener\">GTmetrix</a>リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:256
@@ -5110,9 +5061,7 @@ msgid "構造化データチェックを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:257
-msgid ""
-"<a href=\"https://search.google.com/test/rich-results?hl=ja\" "
-"target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
+msgid "<a href=\"https://search.google.com/test/rich-results?hl=ja\" target=\"_blank\" rel=\"noopener\">リッチリザルトテストツール</a>リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:259
@@ -5120,9 +5069,7 @@ msgid "HTML5チェックを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:260
-msgid ""
-"<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" "
-"rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
+msgid "<a href=\"https://validator.w3.org/nu/\" target=\"_blank\" rel=\"noopener\">Nu Html Checker</a>リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:262
@@ -5130,9 +5077,7 @@ msgid "SEOチェキを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:263
-msgid ""
-"<a href=\"https://seocheki.net/\" target=\"_blank\" "
-"rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
+msgid "<a href=\"https://seocheki.net/\" target=\"_blank\" rel=\"noopener\">SEOチェキ! 無料で使えるSEOツール</a>リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:265
@@ -5160,9 +5105,7 @@ msgid "Responsinatorチェックを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:285
-msgid ""
-"<a href=\"http://www.responsinator.com/\" target=\"_blank\" "
-"rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
+msgid "<a href=\"http://www.responsinator.com/\" target=\"_blank\" rel=\"noopener\">Responsinator</a>チェック用リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:287
@@ -5170,9 +5113,7 @@ msgid "Sizzyチェックを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:288
-msgid ""
-"<a href=\"https://sizzy.co/\" target=\"_blank\" "
-"rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
+msgid "<a href=\"https://sizzy.co/\" target=\"_blank\" rel=\"noopener\">Sizzy</a>チェック用リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:290
@@ -5180,9 +5121,7 @@ msgid "ScreenResolutionチェックを表示する"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:291
-msgid ""
-"<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" "
-"target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
+msgid "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr ""
 
 #: lib/page-settings/admin-forms.php:308
@@ -5297,9 +5236,7 @@ msgid "アドセンスのレスポンシブコードを入力"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:84
-msgid ""
-"アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォールにより、保存時に403"
-"エラーが出る場合はscriptタグを取り除いて入力してみてください。"
+msgid "アドセンスのレスポンシブ広告コードを入力してください。サーバーのファイアウォールにより、保存時に403エラーが出る場合はscriptタグを取り除いて入力してみてください。"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:92
@@ -5319,9 +5256,7 @@ msgid "AdSenseタグの「data-full-width-responsive」を「true」にします
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:106
-msgid ""
-"この機能が有効な場合、AdSenseの仕様で\"horizontal\",\"vertical\"広告をモバイルで表示した際は\"rectangle\""
-"として表示されます。"
+msgid "この機能が有効な場合、AdSenseの仕様で\"horizontal\",\"vertical\"広告をモバイルで表示した際は\"rectangle\"として表示されます。"
 msgstr ""
 
 #: lib/page-settings/ads-forms.php:106
@@ -5861,9 +5796,7 @@ msgid "文字の太さ"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:137
-msgid ""
-"font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900"
-"（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください。"
+msgid "font-weightで、フォントの太さを指定します。フォントの太さは「100（細い）～900（太い）」で指定できます。ただし、細かく太さを設定できないフォントもありますので実際の太さを確認しながら設定してください。"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:146
@@ -6003,9 +5936,7 @@ msgid "ファビコン"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:291
-msgid ""
-"ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → "
-"サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。"
+msgid "ファビコン（サイトアイコン）設定は、管理画面から「外観 → カスタマイズ → サイト基本情報」にある「サイトアイコン」設定から行ってください。設定する画像は512×512 pxのPNG画像を推奨します。"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:299
@@ -6037,10 +5968,7 @@ msgid "テーマが使用する日付のフォーマット形式を入力して�
 msgstr ""
 
 #: lib/page-settings/all-forms.php:334
-msgid ""
-"<a "
-"href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">"
-"日付と時刻の書式の解説</a>"
+msgid "<a href=\"https://ja.wordpress.org/support/article/formatting-date-and-time/\">日付と時刻の書式の解説</a>"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:11
@@ -6073,9 +6001,7 @@ msgid "AMPロゴ"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:41
-msgid ""
-"Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、高さ60"
-"px以下にしてください。構造化データのArticle > publisher > logoでも利用されます。"
+msgid "Google検索結果に表示されるAMP用のロゴ画像を設定します。ロゴのサイズは幅600px、高さ60px以下にしてください。構造化データのArticle > publisher > logoでも利用されます。"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:49
@@ -6105,9 +6031,7 @@ msgid "インラインスタイルを有効にする"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:72
-msgid ""
-"本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原"
-"因になったり、AMPのサイズ制限（75000バイト）を超えやすくなるため有効は推奨はしません。"
+msgid "本文中のインラインスタイルを有効にします（無効推奨）。有効にすると、本文内でもインラインのstyle属性でスタイリングできます。ただし、AMPエラーの原因になったり、AMPのサイズ制限（75000バイト）を超えやすくなるため有効は推奨はしません。"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:80
@@ -6119,10 +6043,7 @@ msgid "スキンのスタイルを有効にする"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:85
-msgid ""
-"凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（75000"
-"バイト）を超えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPページでスキンを適用しないことにより、CSSのサ"
-"イズを減らします。"
+msgid "凝ったスタイルのスキンを利用していると、AMPのCSSサイズ上限（75000バイト）を超えてしまう可能性があります。スキンを適用したことにより、AMPエラーが続出した場合は、AMPページでスキンを適用しないことにより、CSSのサイズを減らします。"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:87
@@ -6130,10 +6051,7 @@ msgid "子テーマのスタイルを有効にする"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:88
-msgid ""
-"子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（75000"
-"バイト）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないこ"
-"とにより、CSSのサイズを減らします。"
+msgid "子テーマのstyle.cssで凝ったカスタマイズをしていると、AMPのCSSサイズ上限（75000バイト）を超えてしまう可能性があります。子テーマのCSSカスタマイズにより、AMPエラーが続出した場合は、AMPページで「子テーマCSS」を適用しないことにより、CSSのサイズを減らします。"
 msgstr ""
 
 #: lib/page-settings/amp-forms.php:97
@@ -6204,9 +6122,7 @@ msgid "GTM-XXXXXXX"
 msgstr ""
 
 #: lib/page-settings/analytics-forms.php:59
-msgid ""
-"GoogleタグマネージャのトラッキングIDを入力してください。Google "
-"AnalyticsトラッキングIDが入っていてもこちらが優先して計測されます。"
+msgid "GoogleタグマネージャのトラッキングIDを入力してください。Google AnalyticsトラッキングIDが入っていてもこちらが優先して計測されます。"
 msgstr ""
 
 #: lib/page-settings/analytics-forms.php:72
@@ -6286,9 +6202,7 @@ msgid "head用のタグ入力"
 msgstr ""
 
 #: lib/page-settings/analytics-forms.php:179
-msgid ""
-"ヘッドタグ（&lt;head&gt;&lt;/head&gt;"
-"）内に挿入する必要のある、その他アクセス解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を受けるのが最も楽かと思います。"
+msgid "ヘッドタグ（&lt;head&gt;&lt;/head&gt;）内に挿入する必要のある、その他アクセス解析・認証タグを入力してください。アドセンス認証コードもこちらに貼り付けて、審査を受けるのが最も楽かと思います。"
 msgstr ""
 
 #: lib/page-settings/analytics-forms.php:187
@@ -6328,9 +6242,7 @@ msgid "各種APIやアフィリエイトIDの設定です。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:39
-msgid ""
-"※こちらの設定は非推奨です。2026年1月31日以降PA-"
-"APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。"
+msgid "※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:42
@@ -6406,9 +6318,7 @@ msgid "カタログ写真を表示する"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:88
-msgid ""
-"サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されま"
-"す。"
+msgid "サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:90
@@ -6447,9 +6357,7 @@ msgid "説明文を表示する"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:108
-msgid ""
-"Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示"
-"されます。"
+msgid "Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:111
@@ -6526,9 +6434,7 @@ msgid "楽天アクセスキー"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:164
-msgid ""
-"楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5"
-"月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
+msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:170
@@ -6560,9 +6466,7 @@ msgid "データー取得時点の楽天市場販売ページでの値段を表�
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:182
-msgid ""
-"楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます"
-"。"
+msgid "楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:185
@@ -6675,16 +6579,7 @@ msgid "リンクをもしもアフィリエイトを経由にする"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:309
-msgid ""
-"もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a "
-"href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0"
-"aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" "
-"target=\"_blank\" "
-"rel=\"noopener\">PA-APIの仕様変更</a>"
-"により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span "
-"class=\"red\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>"
-"。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-"
-"APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。"
+msgid "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" target=\"_blank\" rel=\"noopener\">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span class=\"red\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:311
@@ -6722,10 +6617,7 @@ msgid "楽天キャッシュの保存期間"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:338
-msgid ""
-"APIキャッシュのリフレッシュ間隔を設定します。1～3650"
-"日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことを"
-"おすすめします。"
+msgid "APIキャッシュのリフレッシュ間隔を設定します。1～3650日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことをおすすめします。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:338
@@ -6825,9 +6717,7 @@ msgid "1回あたりの処理投稿数"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:414
-msgid ""
-"1回のCron実行で処理する投稿数です。投稿数が多いサイトでは大きめの値にしてください。ただし、1"
-"投稿あたりのブロック数が多いほどAPIリクエストも増えます。"
+msgid "1回のCron実行で処理する投稿数です。投稿数が多いサイトでは大きめの値にしてください。ただし、1投稿あたりのブロック数が多いほどAPIリクエストも増えます。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:415
@@ -6851,9 +6741,7 @@ msgid "商品リンク切れ情報をメールで送信する"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:446
-msgid ""
-"APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もありま"
-"す。"
+msgid "APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もあります。"
 msgstr ""
 
 #: lib/page-settings/apis-funcs.php:126
@@ -7453,9 +7341,7 @@ msgid "ソースコード設定"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:16
-msgid ""
-"ソースコードのハイライト表示の設定です。ハイライト表示には、<a href=\"https://highlightjs.org/\" "
-"target=\"_blank\" rel=\"noopener\">highlight.js</a>を利用しています。"
+msgid "ソースコードのハイライト表示の設定です。ハイライト表示には、<a href=\"https://highlightjs.org/\" target=\"_blank\" rel=\"noopener\">highlight.js</a>を利用しています。"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:48
@@ -7499,10 +7385,7 @@ msgid "ハイライトスタイル"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:91
-msgid ""
-"ソースコードのハイライトテーマです。スタイルについては、<a "
-"href=\"https://highlightjs.org/static/demo/\" target=\"_blank\" "
-"rel=\"noopener\">highlight.js demo</a>を参照してください。"
+msgid "ソースコードのハイライトテーマです。スタイルについては、<a href=\"https://highlightjs.org/static/demo/\" target=\"_blank\" rel=\"noopener\">highlight.js demo</a>を参照してください。"
 msgstr ""
 
 #: lib/page-settings/code-forms.php:99
@@ -7776,9 +7659,7 @@ msgid "行の余白（単位：em）"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:40
-msgid ""
-"行間の余白の高さを設定します。1emは、フォントサイズ（font-size）と同等の高さになります。フォントサイズが18pxの場合は余白も18"
-"pxになります。"
+msgid "行間の余白の高さを設定します。1emは、フォントサイズ（font-size）と同等の高さになります。フォントサイズが18pxの場合は余白も18pxになります。"
 msgstr ""
 
 #: lib/page-settings/content-forms.php:58
@@ -8033,10 +7914,7 @@ msgid "寄付"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:16
-msgid ""
-"Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a "
-"href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">こちら</a>。"
+msgid "Cocoonは無料テーマのため開発支援をいただければ幸いです。寄付の詳細は<a href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>。"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:24
@@ -8044,9 +7922,7 @@ msgid "寄付特典"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:32
-msgid ""
-"取得した「<a href=\"https://wp-cocoon.com/donation-privilege/\" "
-"target=\"_blank\" rel=\"noopener noreferrer\">寄付コード</a>」を入力してください。"
+msgid "取得した「<a href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" rel=\"noopener noreferrer\">寄付コード</a>」を入力してください。"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:35
@@ -8054,9 +7930,7 @@ msgid "現在は以下の特典機能が利用できます。"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:35
-msgid ""
-"詳細は<a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" "
-"target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>をご参照ください。"
+msgid "詳細は<a href=\"https://wp-cocoon.com/cocoon-donation-privileges/\" target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>をご参照ください。"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:38
@@ -8064,9 +7938,7 @@ msgid "FAQブロック（リッチスニペット対応）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:38
-msgid ""
-"（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">詳細</a>）"
+msgid "（<a href=\"https://wp-cocoon.com/faq-block/\" target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:39
@@ -8074,9 +7946,7 @@ msgid "HTML挿入ボタン（※ショートコード）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:39
-msgid ""
-"（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" "
-"target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
+msgid "（<a href=\"https://wp-cocoon.com/html-insert-tool-button/\" target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:40
@@ -8084,9 +7954,7 @@ msgid "更新日表示ショートコード"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:40
-msgid ""
-"（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">詳細</a>）"
+msgid "（<a href=\"https://wp-cocoon.com/updated-shortcode\" target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:41
@@ -8094,16 +7962,11 @@ msgid "ウィジェットの「表示設定」の「カスタム投稿タイプ�
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:41
-msgid ""
-"（<a "
-"href=\"https://wp-cocoon.com/custom-post-type-for-widget-display-settings\" "
-"target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
+msgid "（<a href=\"https://wp-cocoon.com/custom-post-type-for-widget-display-settings\" target=\"_blank\" rel=\"noopener noreferrer\">詳細</a>）"
 msgstr ""
 
 #: lib/page-settings/donation-forms.php:44
-msgid ""
-"特典機能を入手する場合は<a href=\"https://wp-cocoon.com/donation-privilege/\" "
-"target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>。"
+msgid "特典機能を入手する場合は<a href=\"https://wp-cocoon.com/donation-privilege/\" target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>。"
 msgstr ""
 
 #: lib/page-settings/editor-forms.php:13
@@ -8510,9 +8373,7 @@ msgid "高さ（モバイル）"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:104
-msgid ""
-"モバイルでのヘッダーの高さをpx数で指定します。834px以下のタブレット以下の幅の狭い端末用です。未入力でデフォルトになります。（最小：0"
-"px、最大：600px）"
+msgid "モバイルでのヘッダーの高さをpx数で指定します。834px以下のタブレット以下の幅の狭い端末用です。未入力でデフォルトになります。（最小：0px、最大：600px）"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:111
@@ -8541,9 +8402,7 @@ msgid "高さ："
 msgstr ""
 
 #: lib/page-settings/header-forms.php:133
-msgid ""
-"ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロ"
-"ゴサイズの変更までは行われません。"
+msgid "ロゴの縦横幅を指定します。ロゴのRetina対応などに。サイズ設定が不要の場合は空欄にしてください。「ヘッダーレイアウト」が「センターロゴ」でないと、ロゴサイズの変更までは行われません。"
 msgstr ""
 
 #: lib/page-settings/header-forms.php:140
@@ -9149,9 +9008,7 @@ msgid "スマートフォンで縦型＆タイル型のエントリーカード�
 msgstr ""
 
 #: lib/page-settings/index-forms.php:162
-msgid ""
-"スマートフォン（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2"
-"カラム"
+msgid "スマートフォン（480px以下）で表示した際に、カードタイプを「縦型カード」「タイルカード」にしている場合は、1カラムで表示します。※デフォルトは2カラム"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:177
@@ -9164,9 +9021,7 @@ msgid "自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:190
-msgid ""
-"「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1"
-"、最大：500）"
+msgid "「エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
 msgstr ""
 
 #: lib/page-settings/index-forms.php:198
@@ -9408,10 +9263,7 @@ msgid "OGP設定"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:16
-msgid ""
-"OGPとは「Open Graph protocol」の略称です。 "
-"FacebookやXなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕"
-"組みです。"
+msgid "OGPとは「Open Graph protocol」の略称です。 FacebookやXなどのSNSでシェアされた際に、そのページのタイトル・URL・概要・アイキャッチ画像（サムネイル）を意図した通りに正しく表示させる仕組みです。"
 msgstr ""
 
 #: lib/page-settings/ogp-forms.php:24
@@ -9507,9 +9359,7 @@ msgid "内部URLをSSL対応する（簡易版）"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:29
-msgid ""
-"サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではあ"
-"りません）。"
+msgid "サイトの内部リンクや、非SSLの画像・URLなど、HTTPS化する必要があるURLをSSL対応させて表示させます（※全てのURLに対応しているわけではありません）。"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:37
@@ -9533,9 +9383,7 @@ msgid "Simplicityから投稿設定を引き継ぐ"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:55
-msgid ""
-"Simplicityから利用可能なPost "
-"meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
+msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
 msgstr ""
 
 #: lib/page-settings/others-forms.php:63
@@ -9615,10 +9463,7 @@ msgid "PWA設定（β版）"
 msgstr ""
 
 #: lib/page-settings/pwa-forms.php:16
-msgid ""
-"PWA（Progressive Web "
-"Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる方の利"
-"用をおすすめします。"
+msgid "PWA（Progressive Web Apps）とは、モバイル向けWebサイトをスマートフォン向けアプリのように使える仕組みです。現在β版機能となっています。不具合が起きても対処できる方の利用をおすすめします。"
 msgstr ""
 
 #: lib/page-settings/pwa-forms.php:20
@@ -9682,10 +9527,7 @@ msgid "アプリの説明文を入力してください。最大132文字まで�
 msgstr ""
 
 #: lib/page-settings/pwa-forms.php:103
-msgid ""
-"512x512px の PNG画像 をサイトアイコンに設定してださい。設定方法は<a "
-"href=\"https://wp-cocoon.com/site-icon/\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">こちら</a>。"
+msgid "512x512px の PNG画像 をサイトアイコンに設定してださい。設定方法は<a href=\"https://wp-cocoon.com/site-icon/\" target=\"_blank\" rel=\"noopener noreferrer\">こちら</a>。"
 msgstr ""
 
 #: lib/page-settings/pwa-forms.php:106
@@ -10014,9 +9856,7 @@ msgid "メタタグでのリファラーの振る舞いを設定します。"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:123
-msgid ""
-"以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-"
-"cross-originがデフォルトとなりました。"
+msgid "以前のブラウザデフォルトはno-referrer-when-downgradeでしたが、2020年以降はstrict-origin-when-cross-originがデフォルトとなりました。"
 msgstr ""
 
 #: lib/page-settings/seo-forms.php:126
@@ -10245,6 +10085,11 @@ msgstr ""
 msgid "6ヶ月"
 msgstr ""
 
+#: lib/page-settings/single-forms.php:201
+#: blocks/src/block/popular-list/edit.js:186
+msgid "1年"
+msgstr ""
+
 #: lib/page-settings/single-forms.php:202
 msgid "2年"
 msgstr ""
@@ -10254,9 +10099,7 @@ msgid "3年"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:206
-msgid ""
-"関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新して"
-"いない場合は利用しないことをおすすめします。"
+msgid "関連記事を取得する期間を選択することで新鮮な記事を表示しやすくします。ニュースサイト等で、新しい記事が並んで欲しい時に設定します。頻回にサイトを更新していない場合は利用しないことをおすすめします。"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:227
@@ -10264,9 +10107,7 @@ msgid "最大自動生成抜粋文字数"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:232
-msgid ""
-"「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1"
-"、最大：500）"
+msgid "「関連記事エントリーカード」で、「本文から自動生成される抜粋文」を表示する場合の最大文字数を設定します。※投稿編集画面の抜粋文ではありません。（最小：1、最大：500）"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:259
@@ -10374,9 +10215,7 @@ msgid "最も深く階層を持つ子カテゴリーを優先"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:466
-msgid ""
-"階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちら"
-"の設定が優先されます。"
+msgid "階層化された複数のカテゴリーにチェックが入っている場合に、起点となるカテゴリーの設定をします。なお、投稿のメインカテゴリーが指定されている場合は、そちらの設定が優先されます。"
 msgstr ""
 
 #: lib/page-settings/skin-forms.php:13
@@ -10718,9 +10557,7 @@ msgid "Cocoonらしさを薄めて、所々に青系とピンク系を基調と�
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:86
-msgid ""
-"Hirositeさんが作成されたSimple‐Darkmodeスキンを元に、ブラウザやOSの設定に関わらず常にダークモードになるよう作成されたスキンです"
-"。"
+msgid "Hirositeさんが作成されたSimple‐Darkmodeスキンを元に、ブラウザやOSの設定に関わらず常にダークモードになるよう作成されたスキンです。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:87
@@ -10728,9 +10565,7 @@ msgid "PCでもフッターモバイルボタンが使える"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:88
-msgid ""
-"functions.phpファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のfunctions."
-"phpファイルを参照してください。サンプルですので、実用性はありません。"
+msgid "functions.phpファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のfunctions.phpファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:89
@@ -10742,15 +10577,11 @@ msgid "marineがお届けするテーマ「sora」"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:91
-msgid ""
-"option.csvファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption."
-"csvファイルを参照してください。サンプルですので、実用性はありません。"
+msgid "option.csvファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption.csvファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:92
-msgid ""
-"option.jsonファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption."
-"jsonファイルを参照してください。サンプルですので、実用性はありません。"
+msgid "option.jsonファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption.jsonファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:93
@@ -11006,9 +10837,7 @@ msgid "某無料WordPressテーマっぽいスキンです。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:156
-msgid ""
-"毎日使っても飽きないデザインを目指しました。スキンカラーや背景画像を変えることでレイアウトは同じでも部屋のカーテンを変えるように雰囲気をチェンジできます"
-"。"
+msgid "毎日使っても飽きないデザインを目指しました。スキンカラーや背景画像を変えることでレイアウトは同じでも部屋のカーテンを変えるように雰囲気をチェンジできます。"
 msgstr ""
 
 #: lib/page-settings/skin-translations.php:157
@@ -11284,9 +11113,7 @@ msgid "別スキームのSNSフォロー数をキャッシュする"
 msgstr ""
 
 #: lib/page-settings/sns-follow-forms.php:256
-msgid ""
-"httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がか"
-"かるので、キャッシュが有効でないと利用できない仕様です。"
+msgid "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。相手サーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。"
 msgstr ""
 
 #: lib/page-settings/sns-follow-funcs.php:27
@@ -11522,9 +11349,7 @@ msgid "#ハッシュタグ"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms.php:64
-msgid ""
-"ポスト時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140"
-"文字を超える場合は正常動作しない可能性もあります。"
+msgid "ポスト時に含めるハッシュタグを入力してください。半角スペースで区切って複数入力も可能です。URLやタイトルを含めて140文字を超える場合は正常動作しない可能性もあります。"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms.php:81
@@ -11604,9 +11429,7 @@ msgid "別スキームのSNSシェア数をキャッシュする"
 msgstr ""
 
 #: lib/page-settings/sns-share-forms.php:204
-msgid ""
-"httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間が"
-"かかるので、キャッシュが有効でないと利用できない仕様です。"
+msgid "httpsサイトであれば、httpサイトの頃のシェア数を取得するかどうか（httpの場合はhttps）。SNSサーバーへ倍の負荷をかけるのと取得に時間がかかるので、キャッシュが有効でないと利用できない仕様です。"
 msgstr ""
 
 #: lib/page-settings/sns-share-funcs-bottom.php:22
@@ -11693,9 +11516,7 @@ msgid "キーワード1,キーワード2,キーワード3,..."
 msgstr ""
 
 #: lib/page-settings/title-forms.php:90
-msgid ""
-"フロントページで出力するメタキーワードタグの内容を,"
-"（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
+msgid "フロントページで出力するメタキーワードタグの内容を,（カンマ）区切りで入力してください。入力しない場合は、メタタグは出力されません。※SEO的にはほとんど意味のない設定だと思います。"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:104
@@ -11777,9 +11598,7 @@ msgid "短縮形のサイト名"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:320
-msgid ""
-"サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投"
-"稿・固定・カテゴリー・タグページで適用されます"
+msgid "サイト名が長すぎるので簡略化したサイト名をタイトルに含めたい場合は入力してください。入力しない場合は、通常のサイト名が表示されます。この短縮サイト名は投稿・固定・カテゴリー・タグページで適用されます"
 msgstr ""
 
 #: lib/page-settings/title-forms.php:328
@@ -12183,12 +12002,7 @@ msgid "ここに入力したテキストが表示されます。"
 msgstr ""
 
 #: lib/page-speech-balloon/demo.php:26
-msgid ""
-"このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を"
-"用意するか、「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" "
-"rel=\"noopener\">いらすとや</a>"
-"」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示さ"
-"れなくなっても保証はできませんのでご了承ください。"
+msgid "このアイコンは「いらすとや」さんの許可の下、当テーマのCDNサーバで配信中のデモです。アクセスが増えると、表示されなくなる可能性もあるので、自前で画像を用意するか、「<a href=\"https://www.irasutoya.com/\" target=\"_blank\" rel=\"noopener\">いらすとや</a>」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示されなくなっても保証はできませんのでご了承ください。"
 msgstr ""
 
 #: lib/page-speech-balloon/form.php:10
@@ -12472,9 +12286,7 @@ msgid "ブラウザキャッシュ"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:17
-msgid ""
-"ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化"
-"が図れます。"
+msgid "ブラウザキャッシュを設定します。ブラウザキャッシュを設定することで、次回からサーバーではなくローカルのリソースファイルが読み込まれることになるので高速化が図れます。"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:30
@@ -12610,9 +12422,7 @@ msgid "Googleフォントの非同期読み込みを有効にする"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:157
-msgid ""
-"サイズが大きくなりがちなGoogleフォントを非同期読み込みしてページ表示を高速化します。ただし、JavaScript（Web Font "
-"Loader）によりフォントが正常に読み込まれるまでは、多少タイムラグがあります。"
+msgid "サイズが大きくなりがちなGoogleフォントを非同期読み込みしてページ表示を高速化します。ただし、JavaScript（Web Font Loader）によりフォントが正常に読み込まれるまでは、多少タイムラグがあります。"
 msgstr ""
 
 #: lib/page-speed-up/speed-up-forms.php:174
@@ -12656,6 +12466,24 @@ msgstr ""
 msgid "Check for updates"
 msgstr ""
 
+#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:219
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:221
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr ""
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:227
 #, php-format
 msgid "Unknown update checker status \"%s\""
@@ -12674,15 +12502,11 @@ msgid "プロフィール画像のアップロード"
 msgstr ""
 
 #: lib/profile.php:49
-msgid ""
-"自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240"
-"pxの正方形の画像がお勧めです。"
+msgid "自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めです。"
 msgstr ""
 
 #: lib/profile.php:49
-msgid ""
-"ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" "
-"rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
+msgid "ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
 msgstr ""
 
 #: lib/profile.php:55
@@ -12690,9 +12514,7 @@ msgid "プロフィールページURL"
 msgstr ""
 
 #: lib/profile.php:61
-msgid ""
-"プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブ"
-"ページにリンクされます。"
+msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr ""
 
 #: lib/seo.php:503
@@ -12859,17 +12681,11 @@ msgid "webservices.amazon.co.jp"
 msgstr ""
 
 #: lib/shortcodes-amazon.php:480
-msgid ""
-"Creators "
-"APIの「認証情報ID」もしくは「シークレット」もしくは「トラッキングID」が入力されていません。「Cocoon設定」の「API」タブから入力してくださ"
-"い。"
+msgid "Creators APIの「認証情報ID」もしくは「シークレット」もしくは「トラッキングID」が入力されていません。「Cocoon設定」の「API」タブから入力してください。"
 msgstr ""
 
 #: lib/shortcodes-amazon.php:486
-msgid ""
-"Amazon "
-"APIの「アクセスキーID」もしくは「シークレットキー」もしくは「トラッキングID」が設定されていません。「Cocoon設定」の「API」タブから入力し"
-"てください。"
+msgid "Amazon APIの「アクセスキーID」もしくは「シークレットキー」もしくは「トラッキングID」が設定されていません。「Cocoon設定」の「API」タブから入力してください。"
 msgstr ""
 
 #: lib/shortcodes-amazon.php:495
@@ -12877,10 +12693,7 @@ msgid "Amazon商品リンクショートコード内にASINが入力されてい
 msgstr ""
 
 #: lib/shortcodes-amazon.php:539
-msgid ""
-"503エラー。このエラーは、PA-"
-"APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php."
-"ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。"
+msgid "503エラー。このエラーは、PA-APIのアクセス制限を超えた場合や、メンテナンス中などにより、リクエストに応答できない場合に出力されるエラーコードです。サーバーの「php.ini設定」の「allow_url_fopen」項目が「ON」になっているかを確認してください。"
 msgstr ""
 
 #: lib/shortcodes-amazon.php:563
@@ -12959,9 +12772,7 @@ msgid "ショートコードの値が正しく記入されていない可能性�
 msgstr ""
 
 #: lib/shortcodes-rakuten.php:517
-msgid ""
-"Bad "
-"Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。"
+msgid "Bad Requestが返されました。リクエスト制限を受けた可能性があります。しばらく時間を置いた後、リロードすると商品リンクが表示される可能性があります。"
 msgstr ""
 
 #: lib/shortcodes-rakuten.php:524
@@ -13236,8 +13047,8 @@ msgstr ""
 msgid "CodePenをフォロー"
 msgstr ""
 
-#: lib/sns-follow.php:294
 #. translators: %s: SNSサービス名
+#: lib/sns-follow.php:294
 #, php-format
 msgid "%s URL"
 msgstr ""
@@ -13886,9 +13697,7 @@ msgid "インデックスリストミドル"
 msgstr ""
 
 #: lib/widget-areas.php:373
-msgid ""
-"インデックスリストの3"
-"つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
+msgid "インデックスリストの3つ目下に表示されるウィジェット。「一覧リストのスタイル」が「サムネイルカード」の時のみの機能です。広告が表示されているときは広告の下に表示されます。"
 msgstr ""
 
 #: lib/widget-areas.php:387
@@ -14692,9 +14501,7 @@ msgid "スキンNAGIの設定"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:90
-msgid ""
-"設定の詳細は<a target=\"_blank\" "
-"href=\"https://go-blogs.com/cocoon/skin-nagi-zentai/\">こちら</a>"
+msgid "設定の詳細は<a target=\"_blank\" href=\"https://go-blogs.com/cocoon/skin-nagi-zentai/\">こちら</a>"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:110
@@ -14734,9 +14541,7 @@ msgid "薄グレーゾーンの色"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:159
-msgid ""
-"<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</"
-"small>"
+msgid "<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</small>"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:178
@@ -14762,8 +14567,7 @@ msgstr ""
 #: skins/nagi/nagi-customizer.php:224
 msgid ""
 "フロントページのタブ一覧のデザインを変更したり、各タブにアイコンを設定できます</br>\n"
-"        詳しくは<a target=\"_blank\" "
-"href=\"https://go-blogs.com/cocoon/skin-nagi-tab/\">こちら</a>"
+"        詳しくは<a target=\"_blank\" href=\"https://go-blogs.com/cocoon/skin-nagi-tab/\">こちら</a>"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:244
@@ -14835,9 +14639,7 @@ msgid "フッター固定CTAの色"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:447
-msgid ""
-"フッター固定CTAの背景色などを変更できます。</br>設定の詳細は<a target=\"_blank\" "
-"href=\"https://go-blogs.com/cocoon/skin-nagi-fix-cta/\">こちら</a>"
+msgid "フッター固定CTAの背景色などを変更できます。</br>設定の詳細は<a target=\"_blank\" href=\"https://go-blogs.com/cocoon/skin-nagi-fix-cta/\">こちら</a>"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:467
@@ -14873,9 +14675,7 @@ msgid "カルーセルの設定"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:576
-msgid ""
-"カルーセルの表示件数などを変更できます。詳しくは<a target=\"_blank\" "
-"href=\"https://go-blogs.com/cocoon/carousel-setting/\">こちら</a>"
+msgid "カルーセルの表示件数などを変更できます。詳しくは<a target=\"_blank\" href=\"https://go-blogs.com/cocoon/carousel-setting/\">こちら</a>"
 msgstr ""
 
 #: skins/nagi/nagi-customizer.php:600
@@ -15195,9 +14995,7 @@ msgid "設定の追加"
 msgstr ""
 
 #: skins/silk/functions.php:1247
-msgid ""
-"スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御"
-"に従います。"
+msgid "スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。"
 msgstr ""
 
 #: skins/silk/functions.php:1304
@@ -15361,9 +15159,7 @@ msgid "メインアクセント 一番明るい青色"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:453
-msgid ""
-"サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>"
-"サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
+msgid "サイトロゴテキストや各テキストリンクのホバー時の色、<br>フロントページのNewPostの色、<br>カテゴリタイトル下線、<br>サイドバー・ウィジェット見出し下線の色、<br>フッター内アクセント線の色を変更。"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:470
@@ -15811,9 +15607,7 @@ msgid "ヘッダーモバイルボタンの背景色を変更。"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1766
-msgid ""
-"※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になり"
-"ます。"
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色は無効になります。"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1783
@@ -15821,9 +15615,7 @@ msgid "ヘッダーモバイルボタン背景色の不透明度調整"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1785
-msgid ""
-"※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調"
-"整は無効になります。"
+msgid "※「フロントページのみヘッダーモバイルボタンをメニューアイコンのみON」に設定している場合は、フロントページのヘッダーモバイルボタンの背景色の不透明度調整は無効になります。"
 msgstr ""
 
 #: skins/skin-grayish-topfull/functions.php:1816
@@ -16898,9 +16690,7 @@ msgstr ""
 #: skins/skin-tegakinote-green-orange/functions.php:360
 #: skins/skin-tegakinote-pink-lemon/functions.php:360
 #: skins/skin-tegakinote-white-banana/functions.php:360
-msgid ""
-"チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます"
-"）。カード型を維持したい場合はチェックを外してください。"
+msgid "チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。"
 msgstr ""
 
 #. Template Name of the theme
@@ -17040,9 +16830,7 @@ msgid "フォントプレビュー"
 msgstr ""
 
 #: tmp/font-preview.php:23
-msgid ""
-"吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初"
-"めて人間というものを見た。"
+msgid "吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで初めて人間というものを見た。"
 msgstr ""
 
 #: tmp/font-preview.php:26
@@ -19298,29 +19086,6 @@ msgstr ""
 msgid "URL検索"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:21
-msgctxt "アクセス解析グラフ軸の短縮日付書式"
-msgid "n/j"
-msgstr ""
-
-#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:219
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:221
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
 #: blocks/src/block-universal/caption-box/block.json
 #: blocks/src/block-universal/label-box/block.json
 #: blocks/src/block-universal/tab-caption-box/block.json
@@ -19367,6 +19132,16 @@ msgctxt "block keyword"
 msgid "ad"
 msgstr ""
 
+#: blocks/src/block/amazon-product-link/block.json
+msgctxt "block title"
+msgid "Amazon商品リンク"
+msgstr ""
+
+#: blocks/src/block/amazon-product-link/block.json
+msgctxt "block description"
+msgid "Amazon商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
+msgstr ""
+
 #: blocks/src/block/balloon/block.json
 #: blocks/src/micro/micro-balloon/block.json
 msgctxt "block keyword"
@@ -19404,6 +19179,16 @@ msgstr ""
 #: blocks/src/block/button/block.json
 msgctxt "block keyword"
 msgid "btn"
+msgstr ""
+
+#: blocks/src/block/campaign/block.json
+msgctxt "block title"
+msgid "キャンペーン"
+msgstr ""
+
+#: blocks/src/block/campaign/block.json
+msgctxt "block description"
+msgid "指定した期間中のみコンテンツを表示するブロックです。開始日時と終了日時を設定できます。"
 msgstr ""
 
 #: blocks/src/block/campaign/block.json
@@ -19454,6 +19239,16 @@ msgstr ""
 #: blocks/src/block/info-list/block.json
 msgctxt "block keyword"
 msgid "info"
+msgstr ""
+
+#: blocks/src/block/login-user-only/block.json
+msgctxt "block title"
+msgid "ログインユーザー限定"
+msgstr ""
+
+#: blocks/src/block/login-user-only/block.json
+msgctxt "block description"
+msgid "ログインしているユーザーにのみコンテンツを表示します"
 msgstr ""
 
 #: blocks/src/block/login-user-only/block.json
@@ -19521,6 +19316,16 @@ msgctxt "block keyword"
 msgid "chart"
 msgstr ""
 
+#: blocks/src/block/rakuten-product-link/block.json
+msgctxt "block title"
+msgid "楽天商品リンク"
+msgstr ""
+
+#: blocks/src/block/rakuten-product-link/block.json
+msgctxt "block description"
+msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
+msgstr ""
+
 #: blocks/src/block/ranking/block.json
 msgctxt "block keyword"
 msgid "ranking"
@@ -19571,44 +19376,4 @@ msgstr ""
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
-msgstr ""
-
-#: blocks/src/block/amazon-product-link/block.json
-msgctxt "block title"
-msgid "Amazon商品リンク"
-msgstr ""
-
-#: blocks/src/block/campaign/block.json
-msgctxt "block title"
-msgid "キャンペーン"
-msgstr ""
-
-#: blocks/src/block/login-user-only/block.json
-msgctxt "block title"
-msgid "ログインユーザー限定"
-msgstr ""
-
-#: blocks/src/block/rakuten-product-link/block.json
-msgctxt "block title"
-msgid "楽天商品リンク"
-msgstr ""
-
-#: blocks/src/block/amazon-product-link/block.json
-msgctxt "block description"
-msgid "Amazon商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
-msgstr ""
-
-#: blocks/src/block/campaign/block.json
-msgctxt "block description"
-msgid "指定した期間中のみコンテンツを表示するブロックです。開始日時と終了日時を設定できます。"
-msgstr ""
-
-#: blocks/src/block/login-user-only/block.json
-msgctxt "block description"
-msgid "ログインしているユーザーにのみコンテンツを表示します"
-msgstr ""
-
-#: blocks/src/block/rakuten-product-link/block.json
-msgctxt "block description"
-msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr ""

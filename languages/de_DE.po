@@ -10399,7 +10399,6 @@ msgstr "3 Monate"
 msgid "6ヶ月"
 msgstr "6 Monate"
 
-#: lib/page-access/analytics/dashboard-page.php:563
 #: lib/page-settings/single-forms.php:201
 #: blocks/src/block/popular-list/edit.js:186
 msgid "1年"
@@ -18625,6 +18624,7 @@ msgstr "Gestern"
 #: lib/page-access/access-func.php:703
 #: lib/page-access/analytics/dashboard-page.php:139
 #: lib/page-access/analytics/dashboard-page.php:532
+#: lib/page-access/analytics/dashboard-page.php:560
 #: lib/page-access/analytics/render-func.php:125
 #: lib/page-access/analytics/render-func.php:190
 #: lib/page-access/analytics/settings-forms.php:77
@@ -18634,6 +18634,7 @@ msgstr "Letzte 7 Tage"
 #: lib/page-access/access-func.php:704
 #: lib/page-access/analytics/dashboard-page.php:140
 #: lib/page-access/analytics/dashboard-page.php:533
+#: lib/page-access/analytics/dashboard-page.php:561
 #: lib/page-access/analytics/render-func.php:126
 #: lib/page-access/analytics/settings-forms.php:78
 msgid "直近30日"
@@ -18642,6 +18643,7 @@ msgstr "Letzte 30 Tage"
 #: lib/page-access/access-func.php:705
 #: lib/page-access/analytics/dashboard-page.php:141
 #: lib/page-access/analytics/dashboard-page.php:534
+#: lib/page-access/analytics/dashboard-page.php:562
 #: lib/page-access/analytics/render-func.php:127
 #: lib/page-access/analytics/settings-forms.php:79
 msgid "直近90日"
@@ -18829,6 +18831,7 @@ msgstr "Erfassungszeitraum:"
 
 #: lib/page-access/access-func.php:707
 #: lib/page-access/analytics/dashboard-page.php:535
+#: lib/page-access/analytics/dashboard-page.php:563
 msgid "直近1年"
 msgstr "Letztes Jahr"
 
@@ -18839,18 +18842,6 @@ msgstr "Nach Beitragstitel suchen..."
 #: lib/page-access/analytics/dashboard-page.php:555
 msgid "記事を選択してください"
 msgstr "Bitte wählen Sie einen Beitrag aus"
-
-#: lib/page-access/analytics/dashboard-page.php:560
-msgid "7日"
-msgstr "7 Tage"
-
-#: lib/page-access/analytics/dashboard-page.php:561
-msgid "30日"
-msgstr "30 Tage"
-
-#: lib/page-access/analytics/dashboard-page.php:562
-msgid "90日"
-msgstr "90 Tage"
 
 #: lib/page-access/analytics/dashboard-page.php:565
 #: lib/page-access/analytics/render-func.php:132
