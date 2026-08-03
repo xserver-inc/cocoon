@@ -69,7 +69,7 @@ if ( !function_exists( 'add_theme_settings_page' ) ):
 function add_theme_settings_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -82,7 +82,7 @@ if ( !function_exists( 'add_theme_backup_page' ) ):
 function add_theme_backup_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -95,7 +95,7 @@ if ( !function_exists( 'add_theme_speech_balloon_page' ) ):
 function add_theme_speech_balloon_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -108,7 +108,7 @@ if ( !function_exists( 'add_theme_func_text_page' ) ):
 function add_theme_func_text_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -121,7 +121,7 @@ if ( !function_exists( 'add_theme_affiliate_tag_page' ) ):
 function add_theme_affiliate_tag_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -134,7 +134,7 @@ if ( !function_exists( 'add_theme_item_ranking_page' ) ):
 function add_theme_item_ranking_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -147,7 +147,7 @@ if ( !function_exists( 'add_theme_access_page' ) ):
 function add_theme_access_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -160,7 +160,7 @@ if ( !function_exists( 'add_theme_speed_up_page' ) ):
 function add_theme_speed_up_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 
@@ -173,7 +173,7 @@ if ( !function_exists( 'add_theme_cache_page' ) ):
 function add_theme_cache_page() {
   // ユーザーが必要な権限を持つか確認する必要がある
   if (!current_user_can('manage_options'))  {
-    wp_die( __('このページにアクセスする管理者権限がありません。') );
+    wp_die( __('このページにアクセスする管理者権限がありません。', THEME_NAME) );
   }
   //以下のテンプレートファイルで設定ページを作成する
 

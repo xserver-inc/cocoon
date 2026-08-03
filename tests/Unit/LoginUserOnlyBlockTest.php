@@ -58,4 +58,20 @@ class LoginUserOnlyBlockTest extends TestCase
         $this->assertStringContainsString('class="wp-block-cocoon-blocks-login-user-only login-user-only block-box alignwide custom-login-box"', $result);
         $this->assertStringContainsString('>会員限定です</div>', $result);
     }
+
+    /**
+     * 未ログイン状況でメッセージが未入力なら翻訳対象の既定文を表示することをテスト
+     */
+    public function test_render_block_cocoon_login_user_only_メッセージ未入力時は翻訳対象の既定文を表示する(): void
+    {
+        global $test_mock_is_user_logged_in;
+        $test_mock_is_user_logged_in = false;
+
+        $result = render_block_cocoon_login_user_only([], 'ログイン限定の秘密のコンテンツ');
+
+        $this->assertStringContainsString(
+            '>こちらのコンテンツはログインユーザーのみに表示されます。</div>',
+            $result
+        );
+    }
 }

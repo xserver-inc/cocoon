@@ -85,7 +85,7 @@ function font_pattern($wp_customize) {
 	$wp_customize->add_section(
 		'font_pattern_section',
 		array(
-			'title' => '【スキン】日本語フォント設定',
+			'title' => __( '【スキン】日本語フォント設定', THEME_NAME ),
 			'priority' => 1000,
 		)
 	);
@@ -98,18 +98,18 @@ function font_pattern($wp_customize) {
 	$wp_customize->add_control(
 		'font_pattern_control',
 		array(
-			'label' => 'ロゴフォント設定',
-			'description' => 'ロゴテキストや記事タイトルなどのロゴフォントを設定できます。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。',
+			'label' => __( 'ロゴフォント設定', THEME_NAME ),
+			'description' => __( 'ロゴテキストや記事タイトルなどのロゴフォントを設定できます。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。', THEME_NAME ),
 			'setting' => 'font_pattern_control', //紐づけるセッティングID
 			'section' => 'font_pattern_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
 			'choices' => array(
-				'font_klee' => 'クレー(デフォルト)',
-				'font_zen_kusenaido' => 'ZEN紅道',
-				'font_zen_kaku_gothic' => 'ZEN角ゴシック',
-				'font_zen_maru_gothic' => 'ZEN丸ゴシック',
-				'font_kiwi' => 'キウイ丸',
-				'font_none' => '設定なし',
+				'font_klee' => __( 'クレー（デフォルト）', THEME_NAME ),
+				'font_zen_kusenaido' => __( 'ZEN紅道', THEME_NAME ),
+				'font_zen_kaku_gothic' => __( 'ZEN角ゴシック', THEME_NAME ),
+				'font_zen_maru_gothic' => __( 'ZEN丸ゴシック', THEME_NAME ),
+				'font_kiwi' => __( 'キウイ丸', THEME_NAME ),
+				'font_none' => __( '設定なし', THEME_NAME ),
 			),
 		)
 	);
@@ -152,7 +152,7 @@ function bg_pattern($wp_customize) {
 	$wp_customize->add_section(
 		'bg_image_section',
 		array(
-			'title' => '【スキン】背景パターン設定',
+			'title' => __( '【スキン】背景パターン設定', THEME_NAME ),
 			'priority' => 1000,
 		)
 	);
@@ -165,17 +165,17 @@ function bg_pattern($wp_customize) {
 	$wp_customize->add_control(
 		'bg_image_control',
 		array(
-			'label' => '背景パターン設定',
-			'description' => '背景のパターンをお選びください。「設定なし」にすると背景のパターンは削除され色のみになります。',
+			'label' => __( '背景パターン設定', THEME_NAME ),
+			'description' => __( '背景のパターンをお選びください。「設定なし」にすると背景のパターンは削除され色のみになります。', THEME_NAME ),
 			'setting' => 'bg_image_control', //紐づけるセッティングID
 			'section' => 'bg_image_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
 			'choices' => array(
-				'bg_grid' => 'グリッド(デフォルト)',
-				'bg_grid_paper' => '方眼紙',
-				'bg_line' => '罫線',
-				'bg_dot' => 'ドット',
-				'bg_img_none' => '設定なし',
+				'bg_grid' => __( 'グリッド（デフォルト）', THEME_NAME ),
+				'bg_grid_paper' => __( '方眼紙', THEME_NAME ),
+				'bg_line' => __( '罫線', THEME_NAME ),
+				'bg_dot' => __( 'ドット', THEME_NAME ),
+				'bg_img_none' => __( '設定なし', THEME_NAME ),
 			),
 		)
 	);
@@ -229,7 +229,7 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_section(
 		'logo_text_dot_section',
 		array(
-			'title' => '【スキン】ロゴテキストの傍点設定',
+			'title' => __( '【スキン】ロゴテキストの傍点設定', THEME_NAME ),
 			'priority' => 1000,
 		)
 	);
@@ -242,23 +242,23 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_control(
 		'logo_text_dot_control',
 		array(
-			'label' => 'ロゴテキストの傍点デザイン',
-			'description' => 'ロゴテキストの傍点をお選びください。「設定なし」にすると傍点は削除されます。',
+			'label' => __( 'ロゴテキストの傍点デザイン', THEME_NAME ),
+			'description' => __( 'ロゴテキストの傍点をお選びください。「設定なし」にすると傍点は削除されます。', THEME_NAME ),
 			'setting' => 'logo_text_dot_control',//紐づけるセッティングID
 			'section' => 'logo_text_dot_section', //紐づけるセクション名
 			'type' => 'select', //コントロールタイプ
 			'choices' => array(
-				'dot_point' => '点(デフォルト)',
-				'dot_point_open' => '点 白抜き',
-				'dot_circle' => '丸',
-				'dot_circle_open' => '丸 白抜き',
-				'dot_double_circle' => '二重丸',
-				'dot_double_circle_open' => '二重丸 白抜き',
-				'dot_triangle' => '三角',
-				'dot_triangle_open' => '三角 白抜き',
-				'dot_sesame' => 'ゴマ',
-				'dot_sesame_open' => 'ゴマ 白抜き',
-				'dot_none' => '設定なし',
+				'dot_point' => __( '点（デフォルト）', THEME_NAME ),
+				'dot_point_open' => __( '点 白抜き', THEME_NAME ),
+				'dot_circle' => __( '丸', THEME_NAME ),
+				'dot_circle_open' => __( '丸 白抜き', THEME_NAME ),
+				'dot_double_circle' => __( '二重丸', THEME_NAME ),
+				'dot_double_circle_open' => __( '二重丸 白抜き', THEME_NAME ),
+				'dot_triangle' => __( '三角', THEME_NAME ),
+				'dot_triangle_open' => __( '三角 白抜き', THEME_NAME ),
+				'dot_sesame' => __( 'ゴマ', THEME_NAME ),
+				'dot_sesame_open' => __( 'ゴマ 白抜き', THEME_NAME ),
+				'dot_none' => __( '設定なし', THEME_NAME ),
 			),
 		)
 	);
@@ -271,14 +271,14 @@ function logo_text_dot($wp_customize) {
 	$wp_customize->add_control(
 		'logo_text_dot_potision',
 		array(
-			'label' => 'ロゴテキストの傍点位置',
-			'description' => 'ロゴテキストの傍点の位置をお選びいただけます。',
+			'label' => __( 'ロゴテキストの傍点位置', THEME_NAME ),
+			'description' => __( 'ロゴテキストの傍点の位置をお選びいただけます。', THEME_NAME ),
 			'setting' => 'logo_text_dot_potision',//紐づけるセッティングID
 			'section' => 'logo_text_dot_section', //紐づけるセクション名
 			'type' => 'radio', //コントロールタイプ
 			'choices' => array(
-				'dot_under' => '下(デフォルト)',
-				'dot_over' => '上',
+				'dot_under' => __( '下（デフォルト）', THEME_NAME ),
+				'dot_over' => __( '上', THEME_NAME ),
 			),
 		)
 	);
@@ -342,7 +342,7 @@ function skin_global_nav_settings($wp_customize) {
 	$wp_customize->add_section(
 		'skin_global_nav_section',
 		array(
-			'title' => '【スキン】グローバルナビ設定',
+			'title' => __( '【スキン】グローバルナビ設定', THEME_NAME ),
 			'priority' => 1001,
 		)
 	);
@@ -356,8 +356,8 @@ function skin_global_nav_settings($wp_customize) {
 	$wp_customize->add_control(
 		'skin_mobile_nav_uncardify',
 		array(
-			'label' => 'グローバルナビ色を設定したらカード装飾を解除',
-			'description' => 'チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。',
+			'label' => __( 'グローバルナビ色を設定したらカード装飾を解除', THEME_NAME ),
+			'description' => __( 'チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます）。カード型を維持したい場合はチェックを外してください。', THEME_NAME ),
 			'setting' => 'skin_mobile_nav_uncardify',
 			'section' => 'skin_global_nav_section',
 			'type' => 'checkbox',

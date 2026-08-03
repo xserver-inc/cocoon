@@ -23,7 +23,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         <th scope="row">
           <?php generate_label_tag(OP_PRIVILEGE_ACTIVATION_CODE, __( '寄付特典', THEME_NAME ) ); ?>
           <?php if (is_privilege_activation_code_available()): ?>
-            <span class="moshimo-badge api-badge"><?php _e('有効'); ?></span>
+            <span class="moshimo-badge api-badge"><?php _e('有効', THEME_NAME); ?></span>
           <?php endif; ?>
         </th>
         <td>

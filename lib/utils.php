@@ -1063,6 +1063,37 @@ function get_blogcard_label_css_variables(){
 endif;
 
 
+//スキンの疑似要素で使用する翻訳済み文言をCSS変数として取得
+if ( !function_exists( 'get_skin_text_css_variables' ) ):
+function get_skin_text_css_variables(){
+  //CSS変数名 => array( 日本語フォールバック, 翻訳済み文言 )
+  $labels = array(
+    'ranking'         => array( 'ランキング', __( 'ランキング', THEME_NAME ) ),
+    'rating'          => array( '評価：', __( '評価：', THEME_NAME ) ),
+    'action'          => array( 'する', __( 'する', THEME_NAME ) ),
+    'read-more'       => array( '続きを読む', __( '続きを読む', THEME_NAME ) ),
+    'helpful-question'=> array( 'この記事は参考になりましたか？', __( 'この記事は参考になりましたか？', THEME_NAME ) ),
+    'previous-article'=> array( '前の記事を読む', __( '前の記事を読む', THEME_NAME ) ),
+    'next-article'    => array( '次の記事を読む', __( '次の記事を読む', THEME_NAME ) ),
+    'useful-question' => array( 'この記事は役に立ちましたか？', __( 'この記事は役に立ちましたか？', THEME_NAME ) ),
+    'control'         => array( 'スキン制御', __( 'スキン制御', THEME_NAME ) ),
+  );
+
+  $properties = '';
+  foreach ($labels as $name => $label) {
+    list($default, $translated) = $label;
+    //日本語表示では各スキン側のフォールバック文言を使用する
+    if ($translated === $default) {
+      continue;
+    }
+    $properties .= '--cocoon-skin-'.$name.'-text:"'.escape_css_content_string($translated).'";';
+  }
+
+  return $properties ? ':root{'.$properties.'}' : '';
+}
+endif;
+
+
 //CSSのcontent用文字列をエスケープする
 if ( !function_exists( 'escape_css_content_string' ) ):
 function escape_css_content_string($text){
@@ -2701,7 +2732,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     if ($mins <= 1) {
       $mins = 1;
     }
-    $since = sprintf(_n('%s min', '%s mins', $mins), $mins);
+    $since = sprintf(_n('%s min', '%s mins', $mins, THEME_NAME), $mins);
   }
   // 条件: 86400秒 = 24時間以下かつ、3600秒 = 1時間以上なら (元のまま)
   else if (($diff <= 86400) && ($diff > 3600)) {
@@ -2709,7 +2740,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     if ($hours <= 1) {
       $hours = 1;
     }
-    $since = sprintf(_n('%s hour', '%s hours', $hours), $hours);
+    $since = sprintf(_n('%s hour', '%s hours', $hours, THEME_NAME), $hours);
   }
   // 条件: 604800秒 = 7日以下かつ、86400秒 = 24時間以上なら (条件追加)
   elseif (($diff <= 604800) && ($diff > 86400)) {
@@ -2717,7 +2748,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     if ($days <= 1) {
       $days = 1;
     }
-    $since = sprintf(_n('%s day', '%s days', $days), $days);
+    $since = sprintf(_n('%s day', '%s days', $days, THEME_NAME), $days);
   }
   // 条件: 2678400秒 = 31日以下かつ、2678400秒 = 7日以上なら (条件追加)
   elseif (($diff <= 2678400) && ($diff > 604800) ) {
@@ -2725,7 +2756,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     if ($weeks <= 1) {
       $weeks = 1;
     }
-    $since = sprintf(_n('%s週間', '%s週間', $weeks), $weeks);
+    $since = sprintf(_n('%s週間', '%s週間', $weeks, THEME_NAME), $weeks);
   }
   // 条件: 31536000秒 = 365日以下かつ、2678400秒 = 31日以上なら (条件追加)
   elseif (($diff <= 31536000) && ($diff > 2678400) ) {
@@ -2733,7 +2764,7 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     if ($months <= 1) {
       $months = 1;
     }
-    $since = sprintf(_n('%sヶ月', '%sヶ月', $months), $months);
+    $since = sprintf(_n('%sヶ月', '%sヶ月', $months, THEME_NAME), $months);
   }
   // 条件: 31536000秒 = 365日以上なら (条件追加)
   elseif ($diff >= 31536000) {
@@ -2744,9 +2775,12 @@ function get_human_time_diff_advance( $from, $to = '' ) {
     }
     //3年以上経っている場合は年だけでOK
     if (($months == 0) || ($years >= 3)) {
-      $since = sprintf(__('%s年', THEME_NAME), $years);
+      $since = sprintf(_n('%s年', '%s年', $years, THEME_NAME), $years);
     } else {
-      $since = sprintf(__('%s年%sヶ月', THEME_NAME), $years, $months);
+      //年と月を別々に複数形処理して、各言語に適した接続表現で結合する
+      $year_text = sprintf(_n('%s年', '%s年', $years, THEME_NAME), $years);
+      $month_text = sprintf(_n('%sヶ月', '%sヶ月', $months, THEME_NAME), $months);
+      $since = sprintf(__('%1$s%2$s', THEME_NAME), $year_text, $month_text);
     }
   }
   return $since;
@@ -4285,6 +4319,48 @@ function is_current_url_same($url) {
 }
 endif;
 
+//JSON・CSVスキンが持つ表示文言を翻訳する
+if ( !function_exists( 'translate_skin_option_value' ) ):
+function translate_skin_option_value($name, $value) {
+  $translatable_option_names = array(
+    'comment_information_message',
+    'appeal_area_title',
+    'appeal_area_message',
+    'appeal_area_button_message',
+  );
+
+  if (!is_string($value) || !in_array($name, $translatable_option_names, true)) {
+    return $value;
+  }
+
+  //動的な設定値をPOTへ確実に登録するため、対応する原文を静的に列挙する
+  $translations = array(
+    '<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>' => __( '<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>', THEME_NAME ),
+    'スキンから入力したタイトル' => __( 'スキンから入力したタイトル', THEME_NAME ),
+    'スキンから入力したアピールエリアメッセージです。' => __( 'スキンから入力したアピールエリアメッセージです。', THEME_NAME ),
+    'スキンボタンキャプション' => __( 'スキンボタンキャプション', THEME_NAME ),
+  );
+
+  return isset($translations[$value]) ? $translations[$value] : $value;
+}
+endif;
+
+//テーマ翻訳の読込後に、先行読込されたスキン表示文言を再翻訳する
+if ( !function_exists( 'translate_loaded_skin_options' ) ):
+function translate_loaded_skin_options() {
+  global $_THEME_OPTIONS;
+
+  if (!is_array($_THEME_OPTIONS)) {
+    return;
+  }
+
+  foreach ($_THEME_OPTIONS as $name => $value) {
+    $_THEME_OPTIONS[$name] = translate_skin_option_value($name, $value);
+  }
+}
+endif;
+add_action( 'after_setup_theme', 'translate_loaded_skin_options', 20 );
+
 // Cocoonスキンセッティング関数
 if ( !function_exists( 'cocoon_skin_settings' ) ):
 function cocoon_skin_settings() {
@@ -4327,7 +4403,7 @@ function cocoon_skin_settings() {
         if (in_array($name, $array_opsion_mames) && includes_string($value, ',')) {
           $value = explode(',', $value);
         }
-        $_THEME_OPTIONS[$name] = $value;
+        $_THEME_OPTIONS[$name] = translate_skin_option_value($name, $value);
       }
     }
   }
@@ -4338,6 +4414,9 @@ function cocoon_skin_settings() {
     $json = wp_filesystem_get_contents($json_file_path);
     if ($json) {
       $json_options = json_decode($json, true);
+      foreach ($json_options as $name => $value) {
+        $json_options[$name] = translate_skin_option_value($name, $value);
+      }
       $_THEME_OPTIONS = array_merge($_THEME_OPTIONS, $json_options);
     }
   }

@@ -15,8 +15,8 @@ if ( ! function_exists( 'render_block_cocoon_login_user_only' ) ) {
    * @return string レンダリングされたHTML
    */
   function render_block_cocoon_login_user_only( $attributes, $content ) {
-    // msgの取得（指定がなければデフォルトメッセージ）
-    $msg = isset( $attributes['msg'] ) ? $attributes['msg'] : __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME );
+    //未入力時における現在言語のデフォルトメッセージ
+    $msg = ! empty( $attributes['msg'] ) ? $attributes['msg'] : __( 'こちらのコンテンツはログインユーザーのみに表示されます。', THEME_NAME );
     
     // xss対策（ショートコードと同じサニタイズ関数を使用）
     $msg = sanitize_shortcode_value( $msg );

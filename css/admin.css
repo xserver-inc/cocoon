@@ -21174,7 +21174,7 @@ select option.fa::before {
   min-width: 60px;
 }
 .skin-control::before {
-  content: "スキン制御";
+  content: var(--cocoon-skin-control-text, "スキン制御");
   font-size: 0.7em;
   border-bottom-right-radius: 8px;
   position: absolute;

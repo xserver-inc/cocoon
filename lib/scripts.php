@@ -110,6 +110,16 @@ function wp_enqueue_scripts_custom() {
     wp_add_inline_style( THEME_NAME.'-blogcard-label-vars', $blogcard_label_css );
   }
 
+  ///////////////////////////////////////////
+  //スキン疑似要素の翻訳用CSS変数
+  ///////////////////////////////////////////
+  if ($skin_text_css = get_skin_text_css_variables()) {
+    //スキンの有無に左右されずCSS変数を出力できるダミーハンドル
+    wp_register_style( THEME_NAME.'-skin-text-vars', false, array(), false );
+    wp_enqueue_style( THEME_NAME.'-skin-text-vars' );
+    wp_add_inline_style( THEME_NAME.'-skin-text-vars', $skin_text_css );
+  }
+
 ////////////////////////////////////////////////////////////////
 //
 //子テーマスタイルの呼び出し

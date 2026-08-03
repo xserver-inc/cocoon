@@ -248,7 +248,7 @@ if ( $id && ($action == 'item_delete') && isset($_GET['del_no']) && isset($_GET[
                 'conf_no' => $i,
               )
             ), 'ranking_item_action'); ?>
-            <a href="<?php echo esc_url($delete_url); ?>" onclick="if(!confirm('本当に削除してもいいですか？'))return false"><?php _e( '削除', THEME_NAME ) ?></a>
+            <a href="<?php echo esc_url($delete_url); ?>" onclick="if(!confirm(<?php echo esc_attr( wp_json_encode( __( '本当に削除してもいいですか？', THEME_NAME ) ) ); ?>))return false"><?php _e( '削除', THEME_NAME ) ?></a>
           <?php endif ?>
         </div>
 

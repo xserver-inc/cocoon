@@ -613,7 +613,7 @@ function generate_upload_image_tag($name, $value, $id = null){
   <input type="button" name="<?php echo $name; ?>_clear" value="<?php _e( 'クリア', THEME_NAME ) ?>" />
   <div id="<?php echo $thumb_id; ?>_thumbnail" class="uploded-thumbnail">
     <?php if ($value): ?>
-      <img src="<?php echo $value; ?>" alt="選択中の画像">
+      <img src="<?php echo $value; ?>" alt="<?php echo esc_attr__( '選択中の画像', THEME_NAME ); ?>">
     <?php endif ?>
   </div>
   <?php if (0/*$value*/): ?>
@@ -979,7 +979,7 @@ function wlw_edit_post_link($link, $before = '', $after = ''){
   $query = ( is_single() ? 'postid' : 'pageid' );
   echo $before.'<a href="wlw://'.get_the_site_domain().'/?'.$query.'=';
   echo the_ID();
-  echo '">WLWで編集</a>'.$after;
+  echo '">'.esc_html__( 'WLWで編集', THEME_NAME ).'</a>'.$after;
 }
 endif;
 
@@ -1426,7 +1426,7 @@ function generate_author_box_tag($id = null, $label = null, $is_image_circle = 0
             $user->display_name
           );
         } else {
-          $name = __( 'NO USER' );
+          $name = __( 'NO USER', THEME_NAME );
         }
       }
     } else {

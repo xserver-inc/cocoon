@@ -273,7 +273,7 @@ article .ranking-item-name {
 
 article .ranking-items:before {
 	 background: lightseagreen;
-    content: "ランキング";
+    content: var(--cocoon-skin-ranking-text, "ランキング");
     position: absolute;
 	 width: calc(100% - 8px);
     top: -40px;
@@ -309,7 +309,7 @@ aside .ranking-item-rating {
 }
 
 .ranking-item-rating.rating-star:before {
-    content: "評価：";
+    content: var(--cocoon-skin-rating-text, "評価：");
     color: slategray;
     font-weight: 600;
 }
@@ -843,7 +843,7 @@ a.comment-reply-link {
 }
 
 .comment-reply-link:after {
-    content: "する";
+    content: var(--cocoon-skin-action-text, "する");
 }
 
 /*Heading*********************************************************/

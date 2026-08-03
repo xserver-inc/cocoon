@@ -79,7 +79,7 @@ endif;
 if ( !function_exists( 'generate_select_color_tip_tag' ) ):
 function generate_select_color_tip_tag(){
   ob_start();?>
-    <img src="https://im-cocoon.net/wp-content/uploads/ironodata.info_.png" alt="カラーサンプルサイト" />
+    <img src="https://im-cocoon.net/wp-content/uploads/ironodata.info_.png" alt="<?php echo esc_attr__( 'カラーサンプルサイト', THEME_NAME ); ?>" />
     <p><?php _e( '良い色を選択するにはカラーサンプルサイトの利用をおすすめします。サイトから好みの色を見つけ出し、カラーコードをカラーピッカーにコピペすると設定できます。', THEME_NAME ) ?><br>
     <a href="https://ironodata.info/" target="_blank" rel="noopener"><?php _e('配色の見本帳', THEME_NAME); ?></a><br>
     <a href="https://www.colordic.org/w/" target="_blank" rel="noopener"><?php _e('日本の伝統色', THEME_NAME); ?></a><br>
@@ -105,7 +105,7 @@ endif;
 if ( !function_exists( 'generate_sidebar_top_ad_tip_tag' ) ):
 function generate_sidebar_top_ad_tip_tag(){
   ob_start();?>
-    <img src="https://wp-cocoon.com/wp-content/uploads/2018/02/main-top-ad.png" alt="メインカラムトップの広告に注意" />
+    <img src="https://wp-cocoon.com/wp-content/uploads/2018/02/main-top-ad.png" alt="<?php echo esc_attr__( 'メインカラムトップの広告に注意', THEME_NAME ); ?>" />
     <p><?php _e( '広告にグローバルナビメニューが覆いかぶさっていませんか？', THEME_NAME ) ?><br>
     <?php _e( '広告設定の前にAdSenseポリシーをご確認ください。', THEME_NAME ) ?><br>
     <a href="https://support.google.com/adsense/answer/48182?hl=<?php _e( 'ja', THEME_NAME ) ?>" target="_blank" rel="noopener"><?php _e( 'AdSense プログラム ポリシー', THEME_NAME ) ?></a></p>
@@ -119,7 +119,7 @@ endif;
 if ( !function_exists( 'generate_main_column_top_ad_tip_tag' ) ):
 function generate_main_column_top_ad_tip_tag(){
   ob_start();?>
-    <img src="https://wp-cocoon.com/wp-content/uploads/2018/02/sidebar-ad.png" alt="サイドバートップの広告に注意" />
+    <img src="https://wp-cocoon.com/wp-content/uploads/2018/02/sidebar-ad.png" alt="<?php echo esc_attr__( 'サイドバートップの広告に注意', THEME_NAME ); ?>" />
     <p><?php _e( '広告にグローバルナビメニューが覆いかぶさっていませんか？', THEME_NAME ) ?><br>
     <?php _e( '広告設定の前にAdSenseポリシーをご確認ください。', THEME_NAME ) ?><br>
     <a href="https://support.google.com/adsense/answer/48182?hl=<?php _e( 'ja', THEME_NAME ) ?>" target="_blank" rel="noopener"><?php _e( 'AdSense プログラム ポリシー', THEME_NAME ) ?></a></p>

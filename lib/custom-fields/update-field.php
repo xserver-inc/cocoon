@@ -41,7 +41,7 @@ function update_custom_box_view() {
       $stamp = __( '更新日時:', THEME_NAME ).' <span style="font-weight:bold">' . get_the_modified_date( __( 'M j, Y @ H:i' ) ) . '</span>';
     }
     else {
-      $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">未更新</span>';
+      $stamp = __( '更新日時:', THEME_NAME ).'<span style="font-weight:bold">'.__( '未更新', THEME_NAME ).'</span>';
     }
     if (isset($post->post_modified)) {
       $date = get_the_modified_time( get_option('date_format') . ' @ ' . get_option('time_format'), $post );
@@ -102,10 +102,10 @@ function time_mod_form_view() {
   $day = '<label for="jj_mod" class="screen-reader-text">' . __( '日', THEME_NAME )  .
     '</label><input type="text" id="jj_mod" name="jj_mod" value="' .
     $jj_mod . '" size="2" maxlength="2"' . $tab_index_attribute . ' />' . __( '日', THEME_NAME );
-  $hour = '<label for="hh_mod" class="screen-reader-text">時' .
+  $hour = '<label for="hh_mod" class="screen-reader-text">' . __( '時', THEME_NAME ) .
     '</label><input type="text" id="hh_mod" name="hh_mod" value="' . $hh_mod .
     '" size="2" maxlength="2"' . $tab_index_attribute . ' />';
-  $minute = '<label for="mn_mod" class="screen-reader-text">分' .
+  $minute = '<label for="mn_mod" class="screen-reader-text">' . __( '分', THEME_NAME ) .
     '</label><input type="text" id="mn_mod" name="mn_mod" value="' . $mn_mod .
     '" size="2" maxlength="2"' . $tab_index_attribute . ' />';
 

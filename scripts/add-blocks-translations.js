@@ -57,7 +57,9 @@ for ( const locale of LOCALES ) {
     const dict = require( dictPath );
 
     // locale_data.messages が存在しない場合は初期化する
-    if ( ! jed.locale_data ) jed.locale_data = {};
+    if ( ! jed.locale_data ) {
+      jed.locale_data = {};
+    }
     if ( ! jed.locale_data.messages ) {
       jed.locale_data.messages = { '': { domain: 'messages', lang: locale } };
     }
@@ -87,7 +89,12 @@ for ( const locale of LOCALES ) {
   }
 }
 
-console.log( `\n--- 完了 ---` );
+console.log( '\n--- 完了 ---' );
 console.log(
   `成功: ${ success } / 失敗: ${ error } / 合計: ${ LOCALES.length }`
 );
+
+//1言語でも追記に失敗した場合は、compile-all全体を失敗として終了させる
+if ( error > 0 ) {
+  process.exitCode = 1;
+}

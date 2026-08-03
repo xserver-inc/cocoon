@@ -128,7 +128,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
                   <div class="description">
                     <?php
                     if (is_meta_description_to_singular()) {
-                      echo 'SEO設定のメタディスクリプション';
+                      _e( 'SEO設定のメタディスクリプション', THEME_NAME );
                     } else {
                       echo  get_content_excerpt( $rand_post->post_content, 100 );
 

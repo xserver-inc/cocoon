@@ -416,4 +416,11 @@ module.exports = {
   "Y.m.d": "d/m/Y",
   "n/j": "j/n",
   "%1$s 〜 %2$s": "%1$s – %2$s",
+  //「返信」に続く語尾のため日本語以外では空白のみ
+  "する": " ",
+  "続きを読む": "Lire la suite",
+  "この記事は参考になりましたか？": "Cet article vous a-t-il été utile ?",
+  "前の記事を読む": "Lire l’article précédent",
+  "次の記事を読む": "Lire l’article suivant",
+  "この記事は役に立ちましたか？": "Cet article a-t-il été utile ?",
 };

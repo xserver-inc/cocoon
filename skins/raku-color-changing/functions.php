@@ -14,6 +14,9 @@ class SkinRakuColorChanging {
     const ARTICLE_TITLE   = 'raku_color_changing_article_title';
     const ARTICLE_OPACITY = 'raku_color_changing_article_opacity';
     const ARTICLE_H3_OPACITY = 'raku_color_changing_article_h3_opacity';
+    // 言語を変更しても意味が変わらない固定の保存値
+    const APPLY = 'apply';
+    const DO_NOT_APPLY = 'do_not_apply';
     // 各色
     private $color = [
         'color1' => '',
@@ -28,13 +31,11 @@ class SkinRakuColorChanging {
         'article_h3' => '',
     ];
     private $duration = '';
-    private $side_title = '適用する';    // 適用する / 適用しない
-    private $article_title = '適用する'; // 適用する / 適用しない
+    private $side_title = self::APPLY;
+    private $article_title = self::APPLY;
 
     // コンストラクタ
     function __construct() {
-        $this->side_title = __('適用する', THEME_NAME);
-        $this->article_title = __('適用する', THEME_NAME);
         /*----------------------------------------------------
          色・フラグの保存
         ----------------------------------------------------*/
@@ -82,9 +83,9 @@ class SkinRakuColorChanging {
         $this->color['color4'] = get_theme_option(self::COLOR4, '#ff00ff');
         $this->opacity['bg'] = get_theme_option(self::OPACITY, '10'); // 不透明度（パーセント）
         $this->duration = get_theme_option(self::DURATION, '60');
-        $this->side_title = get_theme_option(self::SIDE_TITLE, __('適用する' , THEME_NAME));
+        $this->side_title = $this->normalize_apply_option(get_theme_option(self::SIDE_TITLE, self::APPLY));
         $this->opacity['side'] = get_theme_option(self::SIDE_OPACITY, '20'); // 不透明度（パーセント）
-        $this->article_title = get_theme_option(self::ARTICLE_TITLE, __('適用する' , THEME_NAME));
+        $this->article_title = $this->normalize_apply_option(get_theme_option(self::ARTICLE_TITLE, self::APPLY));
         $this->opacity['article'] = get_theme_option(self::ARTICLE_OPACITY, '20'); // 不透明度（パーセント）
         $this->opacity['article_h3'] = get_theme_option(self::ARTICLE_H3_OPACITY, '50'); // 不透明度（パーセント）
         /*----------------------------------------------------
@@ -120,7 +121,7 @@ class SkinRakuColorChanging {
         echo 'animation-duration: '.$this->duration.'s;';
         echo '}';
         // 記事内のタイトル
-        if($this->article_title === __('適用する' , THEME_NAME)) {
+        if($this->article_title === self::APPLY) {
             // h2
             echo '.article h2:nth-of-type(4n+1) { background: '.$this->color_code('color1', 'article').'; }';
             echo '.article h2:nth-of-type(4n+2) { background: '.$this->color_code('color2', 'article').'; }';
@@ -150,7 +151,7 @@ class SkinRakuColorChanging {
             echo '.article h4.skincolor4:nth-of-type(n), .article h5.skincolor4:nth-of-type(n), .article h6.skincolor4:nth-of-type(n) { border-color: '.$this->color_code('color4', 'article').'; }';
         }
         // サイドバーのタイトル
-        if($this->side_title === __('適用する' , THEME_NAME)) {
+        if($this->side_title === self::APPLY) {
             // sidebar
             echo '.widget-sidebar .widget-sidebar-title.skincolor1 { background: '.$this->color_code('color1', 'side').'; }';
             echo '.widget-sidebar .widget-sidebar-title.skincolor2 { background: '.$this->color_code('color2', 'side').'; }';
@@ -167,6 +168,24 @@ class SkinRakuColorChanging {
         $code_blue  = hexdec(substr($this->color[$key_color], 5, 2));
         $opacity = intval($this->opacity[$key_opacity]) / 100;
         return 'rgba('.$code_red.','.$code_green.','.$code_blue.','.$opacity.')';
+    }
+
+    // 旧版が翻訳済みラベルを保存していた場合も固定値へ読み替える
+    private function normalize_apply_option($value) {
+        $legacy_apply_values = [
+            '適用する',
+            'Apply',
+            'Anwenden',
+            'Aplicar',
+            'Appliquer',
+            '적용',
+            '应用',
+            '應用',
+        ];
+
+        return in_array($value, array_merge([self::APPLY], $legacy_apply_values), true)
+            ? self::APPLY
+            : self::DO_NOT_APPLY;
     }
     /*----------------------------------------------------
      タグ取得
@@ -253,11 +272,12 @@ class SkinRakuColorChanging {
     tr_setting += '<td><ul>';
     <?php
     $on_off_article_title = [
-        self::ARTICLE_TITLE.'1' => __('適用する' , THEME_NAME),
-        self::ARTICLE_TITLE.'2' => __('適用しない' , THEME_NAME),
+        self::ARTICLE_TITLE.'1' => [self::APPLY, __('適用する' , THEME_NAME)],
+        self::ARTICLE_TITLE.'2' => [self::DO_NOT_APPLY, __('適用しない' , THEME_NAME)],
     ];
-    foreach ($on_off_article_title as $id => $val) : ?>
-    tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php ob_start(); the_checkbox_checked($val, $this->article_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=$id?>"><?=$val?></label></li>';
+    foreach ($on_off_article_title as $id => $option) :
+        list($value, $label) = $option; ?>
+    tr_setting += '<li><input type="radio" name="<?=self::ARTICLE_TITLE?>" id="<?=esc_attr($id)?>" value="<?=esc_attr($value)?>" <?php ob_start(); the_checkbox_checked($value, $this->article_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=esc_attr($id)?>"><?=esc_html($label)?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
     tr_setting += '<p><?php _e('【不透明度（背景と線の色）】', THEME_NAME); ?></p>';
@@ -275,11 +295,12 @@ class SkinRakuColorChanging {
     tr_setting += '<td><ul>';
     <?php
     $on_off_side_title = [
-        self::SIDE_TITLE.'1' => __('適用する' , THEME_NAME),
-        self::SIDE_TITLE.'2' => __('適用しない' , THEME_NAME),
+        self::SIDE_TITLE.'1' => [self::APPLY, __('適用する' , THEME_NAME)],
+        self::SIDE_TITLE.'2' => [self::DO_NOT_APPLY, __('適用しない' , THEME_NAME)],
     ];
-    foreach ($on_off_side_title as $id => $val) : ?>
-    tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=$id?>" value="<?=$val?>" <?php ob_start(); the_checkbox_checked($val, $this->side_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=$id?>"><?=$val?></label></li>';
+    foreach ($on_off_side_title as $id => $option) :
+        list($value, $label) = $option; ?>
+    tr_setting += '<li><input type="radio" name="<?=self::SIDE_TITLE?>" id="<?=esc_attr($id)?>" value="<?=esc_attr($value)?>" <?php ob_start(); the_checkbox_checked($value, $this->side_title); echo str_replace(["\n", "\r"], "", ob_get_clean()); ?>><label for="<?=esc_attr($id)?>"><?=esc_html($label)?></label></li>';
     <?php endforeach; ?>
     tr_setting += '</ul>';
     tr_setting += '<p><?php _e('【不透明度（背景色）】', THEME_NAME); ?></p>';

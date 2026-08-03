@@ -70,7 +70,9 @@ msgstr "https://nelog.jp/"
 #: blocks/src/block/login-user-only/index.php:19
 #: lib/shortcodes.php:323
 #: lib/tinymce/shortcodes.php:237
+#: blocks/src/blocks.js:150
 #: blocks/src/toolbutton/dropdown-shortcodes.js:254
+#: skins/silk/gutenberg.js:106
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr "이 콘텐츠는 로그인한 사용자에게만 표시됩니다."
 
@@ -166,7 +168,7 @@ msgstr "아카이브"
 
 #: functions.php:557
 #: functions.php:558
-#: lib/admin.php:407
+#: lib/admin.php:419
 msgid "パターン一覧"
 msgstr "패턴 목록"
 
@@ -176,12 +178,12 @@ msgid "ふりがな"
 msgstr "후리가나"
 
 #: lib/admin-tinymce-qtag.php:25
-#: lib/admin-tinymce-qtag.php:95
+#: lib/admin-tinymce-qtag.php:101
 msgid "太字"
 msgstr "두껍게"
 
 #: lib/admin-tinymce-qtag.php:26
-#: lib/admin-tinymce-qtag.php:100
+#: lib/admin-tinymce-qtag.php:106
 msgid "赤字"
 msgstr "빨강"
 
@@ -194,7 +196,7 @@ msgid "赤アンダー"
 msgstr "밑줄 빨강"
 
 #: lib/admin-tinymce-qtag.php:29
-#: lib/admin-tinymce-qtag.php:150
+#: lib/admin-tinymce-qtag.php:156
 #: blocks/src/toolbutton/marker-yellow.js:15
 msgid "黄色マーカー"
 msgstr "노란 마커"
@@ -204,12 +206,12 @@ msgid "黄色アンダーマーカー"
 msgstr "노란 밑줄 마커"
 
 #: lib/admin-tinymce-qtag.php:31
-#: lib/admin-tinymce-qtag.php:135
+#: lib/admin-tinymce-qtag.php:141
 msgid "打ち消し線"
 msgstr "취소선"
 
 #: lib/admin-tinymce-qtag.php:32
-#: lib/admin-tinymce-qtag.php:840
+#: lib/admin-tinymce-qtag.php:846
 #: skins/skin-made-in-heaven/lib/panel-editor.php:58
 msgid "バッジ"
 msgstr "배지"
@@ -219,7 +221,7 @@ msgid "キーボード"
 msgstr "키보드"
 
 #: lib/admin-tinymce-qtag.php:34
-#: lib/admin-tinymce-qtag.php:189
+#: lib/admin-tinymce-qtag.php:195
 #: lib/block-editor-styles-group.php:18
 #: lib/block-editor-styles-paragraph.php:53
 #: blocks/src/block/icon-box/edit.js:33
@@ -227,7 +229,7 @@ msgid "情報(i)"
 msgstr "정보(i)"
 
 #: lib/admin-tinymce-qtag.php:35
-#: lib/admin-tinymce-qtag.php:194
+#: lib/admin-tinymce-qtag.php:200
 #: lib/block-editor-styles-group.php:26
 #: lib/block-editor-styles-paragraph.php:61
 #: blocks/src/block/icon-box/edit.js:37
@@ -235,7 +237,7 @@ msgid "質問(?)"
 msgstr "질문(?)"
 
 #: lib/admin-tinymce-qtag.php:36
-#: lib/admin-tinymce-qtag.php:199
+#: lib/admin-tinymce-qtag.php:205
 #: lib/block-editor-styles-group.php:34
 #: lib/block-editor-styles-paragraph.php:69
 #: blocks/src/block/icon-box/edit.js:41
@@ -258,88 +260,88 @@ msgstr "warning"
 msgid "danger"
 msgstr "danger"
 
-#: lib/admin-tinymce-qtag.php:92
+#: lib/admin-tinymce-qtag.php:98
 msgid "インライン"
 msgstr "인라인"
 
-#: lib/admin-tinymce-qtag.php:105
+#: lib/admin-tinymce-qtag.php:111
 #: blocks/src/toolbutton/bold-red.js:14
 msgid "赤太字"
 msgstr "빨강 굵게"
 
-#: lib/admin-tinymce-qtag.php:110
+#: lib/admin-tinymce-qtag.php:116
 msgid "赤アンダーライン"
 msgstr "빨간 밑줄"
 
-#: lib/admin-tinymce-qtag.php:115
+#: lib/admin-tinymce-qtag.php:121
 msgid "青"
 msgstr "파랑"
 
-#: lib/admin-tinymce-qtag.php:120
+#: lib/admin-tinymce-qtag.php:126
 #: blocks/src/toolbutton/bold-blue.js:14
 msgid "青太字"
 msgstr "파랑 굵게"
 
-#: lib/admin-tinymce-qtag.php:125
+#: lib/admin-tinymce-qtag.php:131
 msgid "緑"
 msgstr "초록"
 
-#: lib/admin-tinymce-qtag.php:130
+#: lib/admin-tinymce-qtag.php:136
 #: blocks/src/toolbutton/bold-green.js:14
 msgid "緑太字"
 msgstr "초록 굵게"
 
-#: lib/admin-tinymce-qtag.php:140
+#: lib/admin-tinymce-qtag.php:146
 #: blocks/src/toolbutton/keyboard-key.js:14
 msgid "キーボードキー"
 msgstr "키보드 키"
 
-#: lib/admin-tinymce-qtag.php:147
+#: lib/admin-tinymce-qtag.php:153
 #: skins/skin-made-in-heaven/lib/panel-editor.php:41
 #: blocks/src/toolbutton/dropdown-markers.js:22
 #: blocks/src/toolbutton/dropdown-markers.js:35
 msgid "マーカー"
 msgstr "마커"
 
-#: lib/admin-tinymce-qtag.php:155
+#: lib/admin-tinymce-qtag.php:161
 #: blocks/src/toolbutton/marker-red.js:15
 msgid "赤色マーカー"
 msgstr "빨간색 마커"
 
-#: lib/admin-tinymce-qtag.php:160
+#: lib/admin-tinymce-qtag.php:166
 #: blocks/src/toolbutton/marker-blue.js:15
 msgid "青色マーカー"
 msgstr "파란색 마커"
 
-#: lib/admin-tinymce-qtag.php:165
+#: lib/admin-tinymce-qtag.php:171
 #: blocks/src/toolbutton/marker-under-yellow.js:15
 msgid "黄色アンダーラインマーカー"
 msgstr "노란 밑줄 마커"
 
-#: lib/admin-tinymce-qtag.php:170
+#: lib/admin-tinymce-qtag.php:176
 #: blocks/src/toolbutton/marker-under-red.js:15
 msgid "赤色アンダーラインマーカー"
 msgstr "빨간 밑줄 마커"
 
-#: lib/admin-tinymce-qtag.php:175
+#: lib/admin-tinymce-qtag.php:181
 #: blocks/src/toolbutton/marker-under-blue.js:15
 msgid "青色アンダーラインマーカー"
 msgstr "파란 밑줄 마커"
 
-#: lib/admin-tinymce-qtag.php:182
+#: lib/admin-tinymce-qtag.php:188
 #: blocks/src/block/radar/edit.js:339
 #: blocks/src/toolbutton/dropdown-font-sizes.js:54
 #: blocks/src/toolbutton/dropdown-font-sizes.js:67
 msgid "フォントサイズ"
 msgstr "글자 크기"
 
-#: lib/admin-tinymce-qtag.php:186
+#: lib/admin-tinymce-qtag.php:192
 msgid "ボックス（アイコン）"
 msgstr "박스 (아이콘)"
 
-#: lib/admin-tinymce-qtag.php:204
-#: lib/admin-tinymce-qtag.php:531
-#: lib/admin.php:138
+#: lib/admin-tinymce-qtag.php:210
+#: lib/admin-tinymce-qtag.php:537
+#: lib/admin.php:150
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -355,14 +357,14 @@ msgstr "박스 (아이콘)"
 msgid "メモ"
 msgstr "메모"
 
-#: lib/admin-tinymce-qtag.php:209
-#: lib/admin-tinymce-qtag.php:351
+#: lib/admin-tinymce-qtag.php:215
+#: lib/admin-tinymce-qtag.php:357
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
 #: lib/page-settings/_top-page.php:224
 #: lib/sns-share.php:1015
 #: lib/sns-share.php:1028
-#: lib/_defins.php:413
+#: lib/_defins.php:419
 #: skins/skin-made-in-heaven/lib/panel-option.php:81
 #: tmp/mobile-comments-button.php:12
 #: blocks/src/block-extension/style-extension/style01.js:146
@@ -375,8 +377,8 @@ msgstr "메모"
 msgid "コメント"
 msgstr "댓글"
 
-#: lib/admin-tinymce-qtag.php:214
-#: lib/admin-tinymce-qtag.php:653
+#: lib/admin-tinymce-qtag.php:220
+#: lib/admin-tinymce-qtag.php:659
 #: lib/block-editor-styles-group.php:58
 #: lib/block-editor-styles-paragraph.php:93
 #: blocks/src/block-extension/style-extension/style01.js:150
@@ -390,8 +392,8 @@ msgstr "댓글"
 msgid "OK"
 msgstr "OK"
 
-#: lib/admin-tinymce-qtag.php:219
-#: lib/admin-tinymce-qtag.php:684
+#: lib/admin-tinymce-qtag.php:225
+#: lib/admin-tinymce-qtag.php:690
 #: lib/block-editor-styles-group.php:66
 #: lib/block-editor-styles-paragraph.php:101
 #: blocks/src/block-extension/style-extension/style01.js:154
@@ -403,8 +405,8 @@ msgstr "OK"
 msgid "NG"
 msgstr "NG"
 
-#: lib/admin-tinymce-qtag.php:224
-#: lib/admin-tinymce-qtag.php:715
+#: lib/admin-tinymce-qtag.php:230
+#: lib/admin-tinymce-qtag.php:721
 #: lib/block-editor-styles-group.php:74
 #: lib/block-editor-styles-paragraph.php:109
 #: blocks/src/block-extension/style-extension/style01.js:158
@@ -416,8 +418,8 @@ msgstr "NG"
 msgid "GOOD"
 msgstr "GOOD"
 
-#: lib/admin-tinymce-qtag.php:229
-#: lib/admin-tinymce-qtag.php:746
+#: lib/admin-tinymce-qtag.php:235
+#: lib/admin-tinymce-qtag.php:752
 #: lib/block-editor-styles-group.php:82
 #: lib/block-editor-styles-paragraph.php:117
 #: blocks/src/block-extension/style-extension/style01.js:162
@@ -429,8 +431,8 @@ msgstr "GOOD"
 msgid "BAD"
 msgstr "BAD"
 
-#: lib/admin-tinymce-qtag.php:234
-#: lib/admin-tinymce-qtag.php:777
+#: lib/admin-tinymce-qtag.php:240
+#: lib/admin-tinymce-qtag.php:783
 #: lib/block-editor-styles-group.php:90
 #: lib/block-editor-styles-paragraph.php:125
 #: lib/tinymce/shortcodes.php:99
@@ -445,14 +447,15 @@ msgstr "BAD"
 #: blocks/src/block/test-box/deprecated.js:122
 #: blocks/src/old/tab-box/block.js:141
 #: blocks/src/toolbutton/dropdown-shortcodes.js:142
+#: skins/silk/gutenberg.js:94
 msgid "プロフィール"
 msgstr "프로필"
 
-#: lib/admin-tinymce-qtag.php:241
+#: lib/admin-tinymce-qtag.php:247
 msgid "ボックス（案内）"
 msgstr "박스 (안내)"
 
-#: lib/admin-tinymce-qtag.php:244
+#: lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:101
 #: lib/block-editor-styles-paragraph.php:136
 #: blocks/src/block/info-box/deprecated.js:85
@@ -460,7 +463,7 @@ msgstr "박스 (안내)"
 msgid "プライマリー（濃い水色）"
 msgstr "기본 (어두운 파랑)"
 
-#: lib/admin-tinymce-qtag.php:249
+#: lib/admin-tinymce-qtag.php:255
 #: lib/block-editor-styles-group.php:109
 #: lib/block-editor-styles-paragraph.php:144
 #: blocks/src/block/info-box/deprecated.js:89
@@ -468,21 +471,21 @@ msgstr "기본 (어두운 파랑)"
 msgid "セカンダリー（濃い灰色）"
 msgstr "두번째 (어두운 회색)"
 
-#: lib/admin-tinymce-qtag.php:254
+#: lib/admin-tinymce-qtag.php:260
 #: lib/block-editor-styles-group.php:125
 #: lib/block-editor-styles-paragraph.php:160
 #: blocks/src/block/info-box/edit.js:45
 msgid "サクセス（薄い緑色）"
 msgstr "성공 (밝은 초록)"
 
-#: lib/admin-tinymce-qtag.php:259
+#: lib/admin-tinymce-qtag.php:265
 #: lib/block-editor-styles-group.php:117
 #: lib/block-editor-styles-paragraph.php:152
 #: blocks/src/block/info-box/edit.js:41
 msgid "インフォ（薄い青色）"
 msgstr "정보 (밝은 파랑)"
 
-#: lib/admin-tinymce-qtag.php:264
+#: lib/admin-tinymce-qtag.php:270
 #: lib/block-editor-styles-group.php:133
 #: lib/block-editor-styles-paragraph.php:168
 #: blocks/src/block/info-box/deprecated.js:101
@@ -490,7 +493,7 @@ msgstr "정보 (밝은 파랑)"
 msgid "ワーニング（薄い黄色）"
 msgstr "경고 (밝은 노랑)"
 
-#: lib/admin-tinymce-qtag.php:269
+#: lib/admin-tinymce-qtag.php:275
 #: lib/block-editor-styles-group.php:141
 #: lib/block-editor-styles-paragraph.php:176
 #: blocks/src/block/info-box/deprecated.js:105
@@ -498,7 +501,7 @@ msgstr "경고 (밝은 노랑)"
 msgid "デンジャー（薄い赤色）"
 msgstr "위험 (밝은 빨강)"
 
-#: lib/admin-tinymce-qtag.php:274
+#: lib/admin-tinymce-qtag.php:280
 #: lib/block-editor-styles-group.php:149
 #: lib/block-editor-styles-paragraph.php:184
 #: blocks/src/block/info-box/deprecated.js:109
@@ -506,7 +509,7 @@ msgstr "위험 (밝은 빨강)"
 msgid "ライト（白色）"
 msgstr "라이트 (흰색)"
 
-#: lib/admin-tinymce-qtag.php:279
+#: lib/admin-tinymce-qtag.php:285
 #: lib/block-editor-styles-group.php:157
 #: lib/block-editor-styles-paragraph.php:192
 #: blocks/src/block/info-box/deprecated.js:113
@@ -514,28 +517,28 @@ msgstr "라이트 (흰색)"
 msgid "ダーク（暗い灰色）"
 msgstr "다크 (어두운 회색)"
 
-#: lib/admin-tinymce-qtag.php:287
+#: lib/admin-tinymce-qtag.php:293
 msgid "ボックス（白抜き）"
 msgstr "박스 (빈 상자)"
 
-#: lib/admin-tinymce-qtag.php:290
-#: lib/admin-tinymce-qtag.php:324
-#: lib/admin-tinymce-qtag.php:354
-#: lib/admin-tinymce-qtag.php:384
-#: lib/admin-tinymce-qtag.php:414
-#: lib/admin-tinymce-qtag.php:444
-#: lib/admin-tinymce-qtag.php:474
-#: lib/admin-tinymce-qtag.php:504
-#: lib/admin-tinymce-qtag.php:534
-#: lib/admin-tinymce-qtag.php:564
-#: lib/admin-tinymce-qtag.php:594
-#: lib/admin-tinymce-qtag.php:625
-#: lib/admin-tinymce-qtag.php:656
-#: lib/admin-tinymce-qtag.php:687
-#: lib/admin-tinymce-qtag.php:718
-#: lib/admin-tinymce-qtag.php:749
-#: lib/admin-tinymce-qtag.php:780
-#: lib/admin-tinymce-qtag.php:813
+#: lib/admin-tinymce-qtag.php:296
+#: lib/admin-tinymce-qtag.php:330
+#: lib/admin-tinymce-qtag.php:360
+#: lib/admin-tinymce-qtag.php:390
+#: lib/admin-tinymce-qtag.php:420
+#: lib/admin-tinymce-qtag.php:450
+#: lib/admin-tinymce-qtag.php:480
+#: lib/admin-tinymce-qtag.php:510
+#: lib/admin-tinymce-qtag.php:540
+#: lib/admin-tinymce-qtag.php:570
+#: lib/admin-tinymce-qtag.php:600
+#: lib/admin-tinymce-qtag.php:631
+#: lib/admin-tinymce-qtag.php:662
+#: lib/admin-tinymce-qtag.php:693
+#: lib/admin-tinymce-qtag.php:724
+#: lib/admin-tinymce-qtag.php:755
+#: lib/admin-tinymce-qtag.php:786
+#: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:110
 #: lib/widgets/cta-box.php:184
 #: blocks/src/block/cta/edit.js:224
@@ -546,24 +549,24 @@ msgstr "박스 (빈 상자)"
 msgid "灰色"
 msgstr "회색"
 
-#: lib/admin-tinymce-qtag.php:295
-#: lib/admin-tinymce-qtag.php:329
-#: lib/admin-tinymce-qtag.php:359
-#: lib/admin-tinymce-qtag.php:389
-#: lib/admin-tinymce-qtag.php:419
-#: lib/admin-tinymce-qtag.php:449
-#: lib/admin-tinymce-qtag.php:479
-#: lib/admin-tinymce-qtag.php:509
-#: lib/admin-tinymce-qtag.php:539
-#: lib/admin-tinymce-qtag.php:569
-#: lib/admin-tinymce-qtag.php:599
-#: lib/admin-tinymce-qtag.php:630
-#: lib/admin-tinymce-qtag.php:661
-#: lib/admin-tinymce-qtag.php:692
-#: lib/admin-tinymce-qtag.php:723
-#: lib/admin-tinymce-qtag.php:754
-#: lib/admin-tinymce-qtag.php:785
-#: lib/admin-tinymce-qtag.php:818
+#: lib/admin-tinymce-qtag.php:301
+#: lib/admin-tinymce-qtag.php:335
+#: lib/admin-tinymce-qtag.php:365
+#: lib/admin-tinymce-qtag.php:395
+#: lib/admin-tinymce-qtag.php:425
+#: lib/admin-tinymce-qtag.php:455
+#: lib/admin-tinymce-qtag.php:485
+#: lib/admin-tinymce-qtag.php:515
+#: lib/admin-tinymce-qtag.php:545
+#: lib/admin-tinymce-qtag.php:575
+#: lib/admin-tinymce-qtag.php:605
+#: lib/admin-tinymce-qtag.php:636
+#: lib/admin-tinymce-qtag.php:667
+#: lib/admin-tinymce-qtag.php:698
+#: lib/admin-tinymce-qtag.php:729
+#: lib/admin-tinymce-qtag.php:760
+#: lib/admin-tinymce-qtag.php:791
+#: lib/admin-tinymce-qtag.php:824
 #: lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:179
 #: blocks/src/block/cta/edit.js:213
@@ -581,24 +584,24 @@ msgstr "회색"
 msgid "黄色"
 msgstr "노랑"
 
-#: lib/admin-tinymce-qtag.php:300
-#: lib/admin-tinymce-qtag.php:334
-#: lib/admin-tinymce-qtag.php:364
-#: lib/admin-tinymce-qtag.php:394
-#: lib/admin-tinymce-qtag.php:424
-#: lib/admin-tinymce-qtag.php:454
-#: lib/admin-tinymce-qtag.php:484
-#: lib/admin-tinymce-qtag.php:514
-#: lib/admin-tinymce-qtag.php:544
-#: lib/admin-tinymce-qtag.php:574
-#: lib/admin-tinymce-qtag.php:604
-#: lib/admin-tinymce-qtag.php:635
-#: lib/admin-tinymce-qtag.php:666
-#: lib/admin-tinymce-qtag.php:697
-#: lib/admin-tinymce-qtag.php:728
-#: lib/admin-tinymce-qtag.php:759
-#: lib/admin-tinymce-qtag.php:790
-#: lib/admin-tinymce-qtag.php:823
+#: lib/admin-tinymce-qtag.php:306
+#: lib/admin-tinymce-qtag.php:340
+#: lib/admin-tinymce-qtag.php:370
+#: lib/admin-tinymce-qtag.php:400
+#: lib/admin-tinymce-qtag.php:430
+#: lib/admin-tinymce-qtag.php:460
+#: lib/admin-tinymce-qtag.php:490
+#: lib/admin-tinymce-qtag.php:520
+#: lib/admin-tinymce-qtag.php:550
+#: lib/admin-tinymce-qtag.php:580
+#: lib/admin-tinymce-qtag.php:610
+#: lib/admin-tinymce-qtag.php:641
+#: lib/admin-tinymce-qtag.php:672
+#: lib/admin-tinymce-qtag.php:703
+#: lib/admin-tinymce-qtag.php:734
+#: lib/admin-tinymce-qtag.php:765
+#: lib/admin-tinymce-qtag.php:796
+#: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:167
 #: blocks/src/block/cta/edit.js:189
@@ -619,24 +622,24 @@ msgstr "노랑"
 msgid "赤色"
 msgstr "빨강"
 
-#: lib/admin-tinymce-qtag.php:305
-#: lib/admin-tinymce-qtag.php:339
-#: lib/admin-tinymce-qtag.php:369
-#: lib/admin-tinymce-qtag.php:399
-#: lib/admin-tinymce-qtag.php:429
-#: lib/admin-tinymce-qtag.php:459
-#: lib/admin-tinymce-qtag.php:489
-#: lib/admin-tinymce-qtag.php:519
-#: lib/admin-tinymce-qtag.php:549
-#: lib/admin-tinymce-qtag.php:579
-#: lib/admin-tinymce-qtag.php:609
-#: lib/admin-tinymce-qtag.php:640
-#: lib/admin-tinymce-qtag.php:671
-#: lib/admin-tinymce-qtag.php:702
-#: lib/admin-tinymce-qtag.php:733
-#: lib/admin-tinymce-qtag.php:764
-#: lib/admin-tinymce-qtag.php:795
-#: lib/admin-tinymce-qtag.php:828
+#: lib/admin-tinymce-qtag.php:311
+#: lib/admin-tinymce-qtag.php:345
+#: lib/admin-tinymce-qtag.php:375
+#: lib/admin-tinymce-qtag.php:405
+#: lib/admin-tinymce-qtag.php:435
+#: lib/admin-tinymce-qtag.php:465
+#: lib/admin-tinymce-qtag.php:495
+#: lib/admin-tinymce-qtag.php:525
+#: lib/admin-tinymce-qtag.php:555
+#: lib/admin-tinymce-qtag.php:585
+#: lib/admin-tinymce-qtag.php:615
+#: lib/admin-tinymce-qtag.php:646
+#: lib/admin-tinymce-qtag.php:677
+#: lib/admin-tinymce-qtag.php:708
+#: lib/admin-tinymce-qtag.php:739
+#: lib/admin-tinymce-qtag.php:770
+#: lib/admin-tinymce-qtag.php:801
+#: lib/admin-tinymce-qtag.php:834
 #: lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:172
 #: blocks/src/block/cta/edit.js:197
@@ -657,24 +660,24 @@ msgstr "빨강"
 msgid "青色"
 msgstr "파랑"
 
-#: lib/admin-tinymce-qtag.php:310
-#: lib/admin-tinymce-qtag.php:344
-#: lib/admin-tinymce-qtag.php:374
-#: lib/admin-tinymce-qtag.php:404
-#: lib/admin-tinymce-qtag.php:434
-#: lib/admin-tinymce-qtag.php:464
-#: lib/admin-tinymce-qtag.php:494
-#: lib/admin-tinymce-qtag.php:524
-#: lib/admin-tinymce-qtag.php:554
-#: lib/admin-tinymce-qtag.php:584
-#: lib/admin-tinymce-qtag.php:614
-#: lib/admin-tinymce-qtag.php:645
-#: lib/admin-tinymce-qtag.php:676
-#: lib/admin-tinymce-qtag.php:707
-#: lib/admin-tinymce-qtag.php:738
-#: lib/admin-tinymce-qtag.php:769
-#: lib/admin-tinymce-qtag.php:800
-#: lib/admin-tinymce-qtag.php:833
+#: lib/admin-tinymce-qtag.php:316
+#: lib/admin-tinymce-qtag.php:350
+#: lib/admin-tinymce-qtag.php:380
+#: lib/admin-tinymce-qtag.php:410
+#: lib/admin-tinymce-qtag.php:440
+#: lib/admin-tinymce-qtag.php:470
+#: lib/admin-tinymce-qtag.php:500
+#: lib/admin-tinymce-qtag.php:530
+#: lib/admin-tinymce-qtag.php:560
+#: lib/admin-tinymce-qtag.php:590
+#: lib/admin-tinymce-qtag.php:620
+#: lib/admin-tinymce-qtag.php:651
+#: lib/admin-tinymce-qtag.php:682
+#: lib/admin-tinymce-qtag.php:713
+#: lib/admin-tinymce-qtag.php:744
+#: lib/admin-tinymce-qtag.php:775
+#: lib/admin-tinymce-qtag.php:806
+#: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:65
 #: lib/widgets/cta-box.php:176
 #: blocks/src/block/cta/edit.js:207
@@ -695,12 +698,13 @@ msgstr "파랑"
 msgid "緑色"
 msgstr "초록"
 
-#: lib/admin-tinymce-qtag.php:318
+#: lib/admin-tinymce-qtag.php:324
 msgid "ボックス（タブ）"
 msgstr "박스 (탭)"
 
-#: lib/admin-tinymce-qtag.php:321
-#: lib/admin-tinymce-qtag.php:1676
+#: lib/admin-tinymce-qtag.php:327
+#: lib/admin-tinymce-qtag.php:1682
+#: lib/utils.php:1037
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:83
@@ -711,26 +715,27 @@ msgstr "박스 (탭)"
 msgid "チェック"
 msgstr "체크"
 
-#: lib/admin-tinymce-qtag.php:381
+#: lib/admin-tinymce-qtag.php:387
 #: blocks/src/block/tab-box/edit.js:79
 #: blocks/src/old/tab-box/block.js:89
 msgid "ポイント"
 msgstr "포인트"
 
-#: lib/admin-tinymce-qtag.php:411
+#: lib/admin-tinymce-qtag.php:417
 #: blocks/src/block/tab-box/edit.js:83
 #: blocks/src/old/tab-box/block.js:93
 msgid "ティップス"
 msgstr "팁"
 
-#: lib/admin-tinymce-qtag.php:441
+#: lib/admin-tinymce-qtag.php:447
 #: blocks/src/block/tab-box/edit.js:87
 #: blocks/src/old/tab-box/block.js:97
 msgid "ヒント"
 msgstr "힌트"
 
-#: lib/admin-tinymce-qtag.php:471
-#: lib/admin-tinymce-qtag.php:1682
+#: lib/admin-tinymce-qtag.php:477
+#: lib/admin-tinymce-qtag.php:1688
+#: lib/utils.php:1036
 #: blocks/src/block/blogcard/deprecated.js:87
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -739,15 +744,16 @@ msgstr "힌트"
 msgid "ピックアップ"
 msgstr "추천"
 
-#: lib/admin-tinymce-qtag.php:501
+#: lib/admin-tinymce-qtag.php:507
 #: blocks/src/block/tab-box/edit.js:95
 #: blocks/src/old/tab-box/block.js:105
 msgid "ブックマーク"
 msgstr "북마크"
 
-#: lib/admin-tinymce-qtag.php:561
-#: lib/admin-tinymce-qtag.php:1694
+#: lib/admin-tinymce-qtag.php:567
+#: lib/admin-tinymce-qtag.php:1700
 #: lib/page-access/analytics/dashboard-page.php:630
+#: lib/utils.php:1041
 #: blocks/src/block/blogcard/deprecated.js:95
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -755,13 +761,13 @@ msgstr "북마크"
 msgid "ダウンロード"
 msgstr "다운로드"
 
-#: lib/admin-tinymce-qtag.php:591
+#: lib/admin-tinymce-qtag.php:597
 #: blocks/src/block/tab-box/edit.js:107
 #: blocks/src/old/tab-box/block.js:117
 msgid "ブレイク"
 msgstr "브레이크"
 
-#: lib/admin-tinymce-qtag.php:622
+#: lib/admin-tinymce-qtag.php:628
 #: lib/page-settings/apis-forms.php:29
 #: lib/page-settings/apis-funcs.php:142
 #: blocks/src/block/tab-box/edit.js:111
@@ -769,11 +775,11 @@ msgstr "브레이크"
 msgid "Amazon"
 msgstr "Amazon"
 
-#: lib/admin-tinymce-qtag.php:810
+#: lib/admin-tinymce-qtag.php:816
 msgid "ボックス（付箋風）"
 msgstr "박스 (포스트잇)"
 
-#: lib/admin-tinymce-qtag.php:843
+#: lib/admin-tinymce-qtag.php:849
 #: lib/gutenberg.php:90
 #: lib/widgets/cta-box.php:181
 #: blocks/src/block/cta/edit.js:218
@@ -783,13 +789,13 @@ msgstr "박스 (포스트잇)"
 msgid "オレンジ"
 msgstr "주황"
 
-#: lib/admin-tinymce-qtag.php:848
+#: lib/admin-tinymce-qtag.php:854
 #: blocks/src/old/button-wrap/block.js:87
 #: blocks/src/old/button/block.js:105
 msgid "レッド"
 msgstr "빨강"
 
-#: lib/admin-tinymce-qtag.php:853
+#: lib/admin-tinymce-qtag.php:859
 #: lib/gutenberg.php:25
 #: lib/widgets/cta-box.php:168
 #: blocks/src/block/cta/edit.js:190
@@ -799,94 +805,96 @@ msgstr "빨강"
 msgid "ピンク"
 msgstr "분홍"
 
-#: lib/admin-tinymce-qtag.php:858
+#: lib/admin-tinymce-qtag.php:864
 #: blocks/src/old/button-wrap/block.js:95
 #: blocks/src/old/button/block.js:113
 msgid "パープル"
 msgstr "보라"
 
-#: lib/admin-tinymce-qtag.php:863
+#: lib/admin-tinymce-qtag.php:869
 #: blocks/src/old/button-wrap/block.js:107
 #: blocks/src/old/button/block.js:125
 msgid "ブルー"
 msgstr "파랑"
 
-#: lib/admin-tinymce-qtag.php:868
+#: lib/admin-tinymce-qtag.php:874
 #: blocks/src/old/button-wrap/block.js:123
 #: blocks/src/old/button/block.js:141
 msgid "グリーン"
 msgstr "초록"
 
-#: lib/admin-tinymce-qtag.php:873
+#: lib/admin-tinymce-qtag.php:879
 #: blocks/src/old/button-wrap/block.js:135
 #: blocks/src/old/button/block.js:153
 msgid "イエロー"
 msgstr "노랑"
 
-#: lib/admin-tinymce-qtag.php:878
+#: lib/admin-tinymce-qtag.php:884
 #: blocks/src/old/button-wrap/block.js:151
 #: blocks/src/old/button/block.js:169
 msgid "ブラウン"
 msgstr "갈색"
 
-#: lib/admin-tinymce-qtag.php:883
+#: lib/admin-tinymce-qtag.php:889
 #: blocks/src/old/button-wrap/block.js:155
 #: blocks/src/old/button/block.js:173
 msgid "グレー"
 msgstr "회색"
 
-#: lib/admin-tinymce-qtag.php:890
+#: lib/admin-tinymce-qtag.php:896
+#: skins/nagi/functions.php:84
 msgid "マイクロコピー"
 msgstr "마이크로 카피"
 
-#: lib/admin-tinymce-qtag.php:893
+#: lib/admin-tinymce-qtag.php:899
 msgid "テキスト（上）"
 msgstr "텍스트 (위)"
 
-#: lib/admin-tinymce-qtag.php:896
-#: lib/admin-tinymce-qtag.php:916
-#: lib/admin-tinymce-qtag.php:936
-#: lib/admin-tinymce-qtag.php:957
+#: lib/admin-tinymce-qtag.php:902
+#: lib/admin-tinymce-qtag.php:922
+#: lib/admin-tinymce-qtag.php:942
+#: lib/admin-tinymce-qtag.php:963
 #: lib/page-settings/blogcard-in-forms.php:91
 #: lib/page-settings/blogcard-out-forms.php:88
 #: blocks/src/block/comparison-box/items/block.js:28
 msgid "左側"
 msgstr "왼쪽"
 
-#: lib/admin-tinymce-qtag.php:901
-#: lib/admin-tinymce-qtag.php:921
-#: lib/admin-tinymce-qtag.php:941
-#: lib/admin-tinymce-qtag.php:962
+#: lib/admin-tinymce-qtag.php:907
+#: lib/admin-tinymce-qtag.php:927
+#: lib/admin-tinymce-qtag.php:947
+#: lib/admin-tinymce-qtag.php:968
 msgid "中央"
 msgstr "중앙"
 
-#: lib/admin-tinymce-qtag.php:906
-#: lib/admin-tinymce-qtag.php:926
-#: lib/admin-tinymce-qtag.php:946
-#: lib/admin-tinymce-qtag.php:967
+#: lib/admin-tinymce-qtag.php:912
+#: lib/admin-tinymce-qtag.php:932
+#: lib/admin-tinymce-qtag.php:952
+#: lib/admin-tinymce-qtag.php:973
 #: lib/page-settings/blogcard-in-forms.php:92
 #: lib/page-settings/blogcard-out-forms.php:89
 #: blocks/src/block/comparison-box/items/block.js:54
 msgid "右側"
 msgstr "오른쪽"
 
-#: lib/admin-tinymce-qtag.php:913
+#: lib/admin-tinymce-qtag.php:919
 msgid "テキスト（下）"
 msgstr "텍스트 (아래)"
 
-#: lib/admin-tinymce-qtag.php:933
+#: lib/admin-tinymce-qtag.php:939
 msgid "吹き出し（上）"
 msgstr "말풍선 (위)"
 
-#: lib/admin-tinymce-qtag.php:953
+#: lib/admin-tinymce-qtag.php:959
 msgid "吹き出し（下）"
 msgstr "말풍선 (아래)"
 
-#: lib/admin-tinymce-qtag.php:976
+#: lib/admin-tinymce-qtag.php:982
 #: lib/page-settings/editor-forms.php:139
 #: lib/page-settings/_top-page.php:242
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
+#: blocks/src/blocks.js:119
 #: blocks/src/old/button-1/block.js:43
 #: blocks/src/old/button-1/block.js:52
 #: blocks/src/old/button/block.js:24
@@ -894,305 +902,306 @@ msgstr "말풍선 (아래)"
 msgid "ボタン"
 msgstr "버튼"
 
-#: lib/admin-tinymce-qtag.php:980
-#: lib/admin-tinymce-qtag.php:1291
+#: lib/admin-tinymce-qtag.php:986
+#: lib/admin-tinymce-qtag.php:1297
 msgid "ブラック（小）"
 msgstr "블럭(소)"
 
-#: lib/admin-tinymce-qtag.php:985
-#: lib/admin-tinymce-qtag.php:1297
+#: lib/admin-tinymce-qtag.php:991
+#: lib/admin-tinymce-qtag.php:1303
 msgid "ブラック（中）"
 msgstr "블럭(중)"
 
-#: lib/admin-tinymce-qtag.php:990
-#: lib/admin-tinymce-qtag.php:1303
+#: lib/admin-tinymce-qtag.php:996
+#: lib/admin-tinymce-qtag.php:1309
 msgid "ブラック（大）"
 msgstr "블럭(대)"
 
-#: lib/admin-tinymce-qtag.php:996
-#: lib/admin-tinymce-qtag.php:1309
+#: lib/admin-tinymce-qtag.php:1002
+#: lib/admin-tinymce-qtag.php:1315
 msgid "レッド（小）"
 msgstr "빨강 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1001
-#: lib/admin-tinymce-qtag.php:1315
+#: lib/admin-tinymce-qtag.php:1007
+#: lib/admin-tinymce-qtag.php:1321
 msgid "レッド（中）"
 msgstr "빨강 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1006
-#: lib/admin-tinymce-qtag.php:1321
+#: lib/admin-tinymce-qtag.php:1012
+#: lib/admin-tinymce-qtag.php:1327
 msgid "レッド（大）"
 msgstr "빨강 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1012
-#: lib/admin-tinymce-qtag.php:1327
+#: lib/admin-tinymce-qtag.php:1018
+#: lib/admin-tinymce-qtag.php:1333
 msgid "ピンク（小）"
 msgstr "분홍 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1017
-#: lib/admin-tinymce-qtag.php:1333
+#: lib/admin-tinymce-qtag.php:1023
+#: lib/admin-tinymce-qtag.php:1339
 msgid "ピンク（中）"
 msgstr "분홍 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1022
-#: lib/admin-tinymce-qtag.php:1339
+#: lib/admin-tinymce-qtag.php:1028
+#: lib/admin-tinymce-qtag.php:1345
 msgid "ピンク（大）"
 msgstr "분홍 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1028
-#: lib/admin-tinymce-qtag.php:1345
+#: lib/admin-tinymce-qtag.php:1034
+#: lib/admin-tinymce-qtag.php:1351
 msgid "パープル（小）"
 msgstr "보라 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1033
-#: lib/admin-tinymce-qtag.php:1351
+#: lib/admin-tinymce-qtag.php:1039
+#: lib/admin-tinymce-qtag.php:1357
 msgid "パープル（中）"
 msgstr "보라 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1038
-#: lib/admin-tinymce-qtag.php:1357
+#: lib/admin-tinymce-qtag.php:1044
+#: lib/admin-tinymce-qtag.php:1363
 msgid "パープル（大）"
 msgstr "보라 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1044
-#: lib/admin-tinymce-qtag.php:1363
+#: lib/admin-tinymce-qtag.php:1050
+#: lib/admin-tinymce-qtag.php:1369
 msgid "ディープパープル（小）"
 msgstr "딥 퍼플 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1049
-#: lib/admin-tinymce-qtag.php:1369
+#: lib/admin-tinymce-qtag.php:1055
+#: lib/admin-tinymce-qtag.php:1375
 msgid "ディープパープル（中）"
 msgstr "딥 퍼플 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1054
-#: lib/admin-tinymce-qtag.php:1375
+#: lib/admin-tinymce-qtag.php:1060
+#: lib/admin-tinymce-qtag.php:1381
 msgid "ディープパープル（大）"
 msgstr "딥 퍼플 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1060
-#: lib/admin-tinymce-qtag.php:1381
+#: lib/admin-tinymce-qtag.php:1066
+#: lib/admin-tinymce-qtag.php:1387
 msgid "インディゴ[紺色]（小）"
 msgstr "인디고 (네이비 블루) (작게)"
 
-#: lib/admin-tinymce-qtag.php:1065
-#: lib/admin-tinymce-qtag.php:1387
+#: lib/admin-tinymce-qtag.php:1071
+#: lib/admin-tinymce-qtag.php:1393
 msgid "インディゴ[紺色]（中）"
 msgstr "인디고 (네이비 블루) (중간)"
 
-#: lib/admin-tinymce-qtag.php:1070
-#: lib/admin-tinymce-qtag.php:1393
+#: lib/admin-tinymce-qtag.php:1076
+#: lib/admin-tinymce-qtag.php:1399
 msgid "インディゴ[紺色]（大）"
 msgstr "인디고 (네이비 블루) (크게)"
 
-#: lib/admin-tinymce-qtag.php:1076
-#: lib/admin-tinymce-qtag.php:1399
+#: lib/admin-tinymce-qtag.php:1082
+#: lib/admin-tinymce-qtag.php:1405
 msgid "ブルー（小）"
 msgstr "파랑 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1081
-#: lib/admin-tinymce-qtag.php:1405
+#: lib/admin-tinymce-qtag.php:1087
+#: lib/admin-tinymce-qtag.php:1411
 msgid "ブルー（中）"
 msgstr "파랑 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1086
-#: lib/admin-tinymce-qtag.php:1411
+#: lib/admin-tinymce-qtag.php:1092
+#: lib/admin-tinymce-qtag.php:1417
 msgid "ブルー（大）"
 msgstr "파랑 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1092
-#: lib/admin-tinymce-qtag.php:1417
+#: lib/admin-tinymce-qtag.php:1098
+#: lib/admin-tinymce-qtag.php:1423
 msgid "ライトブルー（小）"
 msgstr "밝은 파랑 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1097
-#: lib/admin-tinymce-qtag.php:1423
+#: lib/admin-tinymce-qtag.php:1103
+#: lib/admin-tinymce-qtag.php:1429
 msgid "ライトブルー（中）"
 msgstr "밝은 파랑 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1102
-#: lib/admin-tinymce-qtag.php:1429
+#: lib/admin-tinymce-qtag.php:1108
+#: lib/admin-tinymce-qtag.php:1435
 msgid "ライトブルー（大）"
 msgstr "밝은 파랑 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1108
-#: lib/admin-tinymce-qtag.php:1435
+#: lib/admin-tinymce-qtag.php:1114
+#: lib/admin-tinymce-qtag.php:1441
 msgid "シアン（小）"
 msgstr "청록 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1113
-#: lib/admin-tinymce-qtag.php:1441
+#: lib/admin-tinymce-qtag.php:1119
+#: lib/admin-tinymce-qtag.php:1447
 msgid "シアン（中）"
 msgstr "청록 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1118
-#: lib/admin-tinymce-qtag.php:1447
+#: lib/admin-tinymce-qtag.php:1124
+#: lib/admin-tinymce-qtag.php:1453
 msgid "シアン（大）"
 msgstr "청록 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1124
-#: lib/admin-tinymce-qtag.php:1453
+#: lib/admin-tinymce-qtag.php:1130
+#: lib/admin-tinymce-qtag.php:1459
 msgid "ティール[緑色がかった青]（小）"
 msgstr "틸 (중간 청록) (작게)"
 
-#: lib/admin-tinymce-qtag.php:1129
-#: lib/admin-tinymce-qtag.php:1459
+#: lib/admin-tinymce-qtag.php:1135
+#: lib/admin-tinymce-qtag.php:1465
 msgid "ティール[緑色がかった青]（中）"
 msgstr "틸 (중간 청록) (중간)"
 
-#: lib/admin-tinymce-qtag.php:1134
-#: lib/admin-tinymce-qtag.php:1465
+#: lib/admin-tinymce-qtag.php:1140
+#: lib/admin-tinymce-qtag.php:1471
 msgid "ティール[緑色がかった青]（大）"
 msgstr "틸 (중간 청록) (크게)"
 
-#: lib/admin-tinymce-qtag.php:1140
-#: lib/admin-tinymce-qtag.php:1471
+#: lib/admin-tinymce-qtag.php:1146
+#: lib/admin-tinymce-qtag.php:1477
 msgid "グリーン（小）"
 msgstr "초록 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1145
-#: lib/admin-tinymce-qtag.php:1477
+#: lib/admin-tinymce-qtag.php:1151
+#: lib/admin-tinymce-qtag.php:1483
 msgid "グリーン（中）"
 msgstr "초록 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1150
-#: lib/admin-tinymce-qtag.php:1483
+#: lib/admin-tinymce-qtag.php:1156
+#: lib/admin-tinymce-qtag.php:1489
 msgid "グリーン（大）"
 msgstr "초록 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1156
-#: lib/admin-tinymce-qtag.php:1489
+#: lib/admin-tinymce-qtag.php:1162
+#: lib/admin-tinymce-qtag.php:1495
 msgid "ライトグリーン（小）"
 msgstr "연두 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1161
-#: lib/admin-tinymce-qtag.php:1495
+#: lib/admin-tinymce-qtag.php:1167
+#: lib/admin-tinymce-qtag.php:1501
 msgid "ライトグリーン（中）"
 msgstr "연두 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1166
-#: lib/admin-tinymce-qtag.php:1501
+#: lib/admin-tinymce-qtag.php:1172
+#: lib/admin-tinymce-qtag.php:1507
 msgid "ライトグリーン（大）"
 msgstr "연두 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1172
-#: lib/admin-tinymce-qtag.php:1507
+#: lib/admin-tinymce-qtag.php:1178
+#: lib/admin-tinymce-qtag.php:1513
 msgid "ライム（小）"
 msgstr "라임 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1177
-#: lib/admin-tinymce-qtag.php:1513
+#: lib/admin-tinymce-qtag.php:1183
+#: lib/admin-tinymce-qtag.php:1519
 msgid "ライム（中）"
 msgstr "라임 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1182
-#: lib/admin-tinymce-qtag.php:1519
+#: lib/admin-tinymce-qtag.php:1188
+#: lib/admin-tinymce-qtag.php:1525
 msgid "ライム（大）"
 msgstr "라임 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1188
-#: lib/admin-tinymce-qtag.php:1525
+#: lib/admin-tinymce-qtag.php:1194
+#: lib/admin-tinymce-qtag.php:1531
 msgid "イエロー（小）"
 msgstr "노랑 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1193
-#: lib/admin-tinymce-qtag.php:1531
+#: lib/admin-tinymce-qtag.php:1199
+#: lib/admin-tinymce-qtag.php:1537
 msgid "イエロー（中）"
 msgstr "노랑 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1198
-#: lib/admin-tinymce-qtag.php:1537
+#: lib/admin-tinymce-qtag.php:1204
+#: lib/admin-tinymce-qtag.php:1543
 msgid "イエロー（大）"
 msgstr "노랑 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1204
-#: lib/admin-tinymce-qtag.php:1543
+#: lib/admin-tinymce-qtag.php:1210
+#: lib/admin-tinymce-qtag.php:1549
 msgid "アンバー[琥珀色]（小）"
 msgstr "앰버 [호박색] (작게)"
 
-#: lib/admin-tinymce-qtag.php:1209
-#: lib/admin-tinymce-qtag.php:1549
+#: lib/admin-tinymce-qtag.php:1215
+#: lib/admin-tinymce-qtag.php:1555
 msgid "アンバー[琥珀色]（中）"
 msgstr "앰버 [호박색] (중간)"
 
-#: lib/admin-tinymce-qtag.php:1214
-#: lib/admin-tinymce-qtag.php:1555
+#: lib/admin-tinymce-qtag.php:1220
+#: lib/admin-tinymce-qtag.php:1561
 msgid "アンバー[琥珀色]（大）"
 msgstr "앰버 [호박색] (크게)"
 
-#: lib/admin-tinymce-qtag.php:1220
-#: lib/admin-tinymce-qtag.php:1561
+#: lib/admin-tinymce-qtag.php:1226
+#: lib/admin-tinymce-qtag.php:1567
 msgid "オレンジ（小）"
 msgstr "주황 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1225
-#: lib/admin-tinymce-qtag.php:1567
+#: lib/admin-tinymce-qtag.php:1231
+#: lib/admin-tinymce-qtag.php:1573
 msgid "オレンジ（中）"
 msgstr "주황 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1230
-#: lib/admin-tinymce-qtag.php:1573
+#: lib/admin-tinymce-qtag.php:1236
+#: lib/admin-tinymce-qtag.php:1579
 msgid "オレンジ（大）"
 msgstr "주황 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1236
-#: lib/admin-tinymce-qtag.php:1579
+#: lib/admin-tinymce-qtag.php:1242
+#: lib/admin-tinymce-qtag.php:1585
 msgid "ディープオレンジ（小）"
 msgstr "딥 오렌지 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1241
-#: lib/admin-tinymce-qtag.php:1585
+#: lib/admin-tinymce-qtag.php:1247
+#: lib/admin-tinymce-qtag.php:1591
 msgid "ディープオレンジ（中）"
 msgstr "딥 오렌지 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1246
-#: lib/admin-tinymce-qtag.php:1591
+#: lib/admin-tinymce-qtag.php:1252
+#: lib/admin-tinymce-qtag.php:1597
 msgid "ディープオレンジ（大）"
 msgstr "딥 오렌지 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1252
-#: lib/admin-tinymce-qtag.php:1597
+#: lib/admin-tinymce-qtag.php:1258
+#: lib/admin-tinymce-qtag.php:1603
 msgid "ブラウン（小）"
 msgstr "갈색 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1257
-#: lib/admin-tinymce-qtag.php:1603
+#: lib/admin-tinymce-qtag.php:1263
+#: lib/admin-tinymce-qtag.php:1609
 msgid "ブラウン（中）"
 msgstr "갈색 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1262
-#: lib/admin-tinymce-qtag.php:1609
+#: lib/admin-tinymce-qtag.php:1268
+#: lib/admin-tinymce-qtag.php:1615
 msgid "ブラウン（大）"
 msgstr "갈색 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1268
-#: lib/admin-tinymce-qtag.php:1615
+#: lib/admin-tinymce-qtag.php:1274
+#: lib/admin-tinymce-qtag.php:1621
 msgid "グレー（小）"
 msgstr "회색 (작게)"
 
-#: lib/admin-tinymce-qtag.php:1273
-#: lib/admin-tinymce-qtag.php:1621
+#: lib/admin-tinymce-qtag.php:1279
+#: lib/admin-tinymce-qtag.php:1627
 msgid "グレー（中）"
 msgstr "회색 (중간)"
 
-#: lib/admin-tinymce-qtag.php:1278
-#: lib/admin-tinymce-qtag.php:1627
+#: lib/admin-tinymce-qtag.php:1284
+#: lib/admin-tinymce-qtag.php:1633
 msgid "グレー（大）"
 msgstr "회색 (크게)"
 
-#: lib/admin-tinymce-qtag.php:1287
+#: lib/admin-tinymce-qtag.php:1293
 #: blocks/src/block/button-wrap/index.js:22
 #: blocks/src/old/button-wrap-1/block.js:50
 #: blocks/src/old/button-wrap/block.js:26
 msgid "囲みボタン"
 msgstr "포장 버튼"
 
-#: lib/admin-tinymce-qtag.php:1636
+#: lib/admin-tinymce-qtag.php:1642
 msgid "囲みブログカードラベル"
 msgstr "블로그 카드 레이블 포장"
 
-#: lib/admin-tinymce-qtag.php:1640
+#: lib/admin-tinymce-qtag.php:1646
 #: lib/page-settings/image-forms.php:214
 #: lib/page-settings/single-funcs.php:76
+#: lib/utils.php:1032
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
@@ -1202,22 +1211,25 @@ msgstr "블로그 카드 레이블 포장"
 msgid "関連記事"
 msgstr "관련 글"
 
-#: lib/admin-tinymce-qtag.php:1646
+#: lib/admin-tinymce-qtag.php:1652
+#: lib/utils.php:1033
 #: blocks/src/block/blogcard/deprecated.js:63
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
 msgid "参考記事"
 msgstr "참고 글"
 
-#: lib/admin-tinymce-qtag.php:1652
+#: lib/admin-tinymce-qtag.php:1658
+#: lib/utils.php:1034
 #: blocks/src/block/blogcard/deprecated.js:67
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
 msgstr "연관 링크"
 
-#: lib/admin-tinymce-qtag.php:1658
+#: lib/admin-tinymce-qtag.php:1664
 #: lib/page-settings/carousel-forms.php:64
 #: lib/page-settings/image-forms.php:213
+#: lib/utils.php:1035
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
@@ -1229,15 +1241,17 @@ msgstr "연관 링크"
 msgid "人気記事"
 msgstr "인기 글"
 
-#: lib/admin-tinymce-qtag.php:1664
+#: lib/admin-tinymce-qtag.php:1670
+#: lib/utils.php:1038
 #: blocks/src/block/blogcard/deprecated.js:75
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
 msgid "あわせて読みたい"
 msgstr "같이 보기"
 
-#: lib/admin-tinymce-qtag.php:1670
+#: lib/admin-tinymce-qtag.php:1676
 #: lib/shortcodes.php:1201
+#: lib/utils.php:1039
 #: lib/widgets/cta-box.php:34
 #: blocks/src/block/blogcard/deprecated.js:79
 #: blocks/src/block/blogcard/edit.js:60
@@ -1245,19 +1259,22 @@ msgstr "같이 보기"
 msgid "詳細はこちら"
 msgstr "자세히"
 
-#: lib/admin-tinymce-qtag.php:1688
+#: lib/admin-tinymce-qtag.php:1694
+#: lib/utils.php:1040
 #: blocks/src/block/blogcard/deprecated.js:91
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
 msgid "公式サイト"
 msgstr "공식 사이트"
 
-#: lib/admin-tinymce-qtag.php:1700
+#: lib/admin-tinymce-qtag.php:1706
+#: lib/utils.php:1042
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr "이전 글"
 
-#: lib/admin-tinymce-qtag.php:1706
+#: lib/admin-tinymce-qtag.php:1712
+#: lib/utils.php:1043
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr "다음 글"
@@ -1266,11 +1283,11 @@ msgstr "다음 글"
 msgid "商品リンクの追加"
 msgstr "상품 링크 추가"
 
-#: lib/admin.php:134
+#: lib/admin.php:146
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:135
+#: lib/admin.php:147
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1279,87 +1296,87 @@ msgstr "ID"
 msgid "文字数"
 msgstr "글자 수"
 
-#: lib/admin.php:136
+#: lib/admin.php:148
 #: lib/page-access/analytics/enqueue-func.php:107
 msgid "PV"
 msgstr "PV"
 
-#: lib/admin.php:137
+#: lib/admin.php:149
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr "아이캐치"
 
-#: lib/admin.php:172
+#: lib/admin.php:184
 msgid "　題："
 msgstr "　제목:"
 
-#: lib/admin.php:180
+#: lib/admin.php:192
 msgid "本文："
 msgstr "본문: "
 
-#: lib/admin.php:195
+#: lib/admin.php:207
 msgid "日："
 msgstr "일: "
 
-#: lib/admin.php:203
+#: lib/admin.php:215
 msgid "週："
 msgstr "주: "
 
-#: lib/admin.php:211
+#: lib/admin.php:223
 msgid "月："
 msgstr "월: "
 
-#: lib/admin.php:219
+#: lib/admin.php:231
 msgid "全："
 msgstr "전체: "
 
-#: lib/admin.php:304
+#: lib/admin.php:316
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr "숏코드"
 
-#: lib/admin.php:392
+#: lib/admin.php:404
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr "관리 메뉴"
 
-#: lib/admin.php:398
+#: lib/admin.php:410
 #: lib/page-access/analytics/render-func.php:97
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "대시보드"
 
-#: lib/admin.php:399
+#: lib/admin.php:411
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr "글 목록"
 
-#: lib/admin.php:400
+#: lib/admin.php:412
 msgid "固定ページ一覧"
 msgstr "페이지 목록"
 
-#: lib/admin.php:401
+#: lib/admin.php:413
 msgid "メディア一覧"
 msgstr "미디어 목록"
 
-#: lib/admin.php:402
+#: lib/admin.php:414
 msgid "テーマ"
 msgstr "테마"
 
-#: lib/admin.php:412
+#: lib/admin.php:424
 msgid "カスタマイズ"
 msgstr "커스터마이즈"
 
-#: lib/admin.php:413
+#: lib/admin.php:425
 #: lib/page-settings/_top-page.php:264
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr "위젯"
 
-#: lib/admin.php:414
+#: lib/admin.php:426
 #: skins/skin-made-in-heaven/lib/hook-wp.php:665
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
@@ -1367,21 +1384,21 @@ msgstr "위젯"
 msgid "メニュー"
 msgstr "메뉴"
 
-#: lib/admin.php:415
+#: lib/admin.php:427
 msgid "テーマの編集"
 msgstr "테마 편집"
 
-#: lib/admin.php:416
+#: lib/admin.php:428
 msgid "プラグイン一覧"
 msgstr "플러그인"
 
-#: lib/admin.php:516
+#: lib/admin.php:528
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr "카테고리 검색"
 
-#: lib/admin.php:576
-#: lib/admin.php:590
+#: lib/admin.php:588
+#: lib/admin.php:602
 msgid "Excerpt"
 msgstr "Excerpt"
 
@@ -1502,7 +1519,7 @@ msgstr "포스트잇 (회색)"
 #: lib/block-editor-styles-group.php:235
 #: lib/block-editor-styles-paragraph.php:270
 msgid "付箋風（黄色）"
-msgstr "灰色 (노랑)"
+msgstr "포스트잇 스타일(노랑)"
 
 #: lib/block-editor-styles-group.php:243
 #: lib/block-editor-styles-paragraph.php:278
@@ -1897,6 +1914,7 @@ msgstr "Creators API 응답을 파싱할 수 없었습니다."
 #: blocks/src/block/ad/edit.js:25
 #: blocks/src/block/ad/index.js:21
 #: blocks/src/toolbutton/dropdown-shortcodes.js:112
+#: skins/silk/gutenberg.js:90
 msgid "広告"
 msgstr "광고"
 
@@ -1995,7 +2013,7 @@ msgstr "페이지 설정"
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:319
 #: lib/page-speech-balloon/form.php:90
-#: lib/settings.php:656
+#: lib/settings.php:670
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
@@ -2328,6 +2346,8 @@ msgstr "제목에서 대표 이미지를 생성하기"
 
 #: lib/gutenberg.php:15
 #: lib/page-settings/all-forms.php:31
+#: skins/nagi/functions.php:94
+#: skins/silk/functions.php:233
 msgid "キーカラー"
 msgstr "메인 색상"
 
@@ -2900,6 +2920,7 @@ msgstr "말풍선"
 #: blocks/src/block/template/index.js:21
 #: blocks/src/toolbutton/dropdown-templates.js:57
 #: blocks/src/toolbutton/dropdown-templates.js:70
+#: skins/silk/gutenberg.js:126
 msgid "テンプレート"
 msgstr "템플릿"
 
@@ -2909,6 +2930,8 @@ msgstr "템플릿"
 #: blocks/src/shortcode/affi/block.js:18
 #: blocks/src/shortcode/affi/block.js:21
 #: blocks/src/toolbutton/dropdown-affiliates.js:70
+#: skins/silk/gutenberg.js:129
+#: skins/silk/gutenberg.js:173
 msgid "アフィリエイトタグ"
 msgstr "제휴 태그"
 
@@ -2916,12 +2939,14 @@ msgstr "제휴 태그"
 #: lib/page-access/analytics/render-func.php:98
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
+#: lib/utils.php:1071
 #: lib/widgets/item-ranking.php:19
 #: lib/widgets/item-ranking.php:72
 #: blocks/src/block/ranking/edit.js:110
 #: blocks/src/block/ranking/index.js:21
 #: blocks/src/toolbutton/dropdown-rankings.js:58
 #: blocks/src/toolbutton/dropdown-rankings.js:71
+#: skins/silk/gutenberg.js:132
 msgid "ランキング"
 msgstr "랭킹"
 
@@ -3158,6 +3183,7 @@ msgstr "제거하지 않고 목록으로 돌아가기"
 #: blocks/src/block/timeline-item/deprecated.js:50
 #: blocks/src/block/timeline-item/edit.js:28
 #: blocks/src/block/timeline/edit.js:188
+#: blocks/src/blocks.js:129
 msgid "タイトル"
 msgstr "제목"
 
@@ -3184,6 +3210,7 @@ msgstr "표시 라벨의 제목을 입력하세요. 이 제목은 목록에 표�
 #: lib/page-affiliate-tag/form.php:34
 #: lib/page-func-text/form.php:34
 #: blocks/src/toolbutton/dropdown-shortcodes.js:259
+#: skins/silk/gutenberg.js:106
 msgid "内容"
 msgstr "내용"
 
@@ -3328,6 +3355,7 @@ msgstr "목록 페이지로"
 #: lib/page-func-text/_top-page.php:42
 #: lib/page-item-ranking/_top-page.php:42
 #: lib/page-speech-balloon/_top-page.php:42
+#: skins/silk/functions.php:1074
 msgid "新規追加"
 msgstr "새로 추가"
 
@@ -3580,6 +3608,7 @@ msgid "項目の名前です。タグ・ショートコード入力も可能で�
 msgstr "항목의 이름입니다. 태그, 숏코드 입력도 가능합니다."
 
 #: lib/page-item-ranking/form.php:131
+#: lib/utils.php:1072
 msgid "評価："
 msgstr "평가:"
 
@@ -3692,7 +3721,7 @@ msgstr "항목을 위로 이동"
 
 #: lib/page-item-ranking/form.php:235
 msgid "アイテムを下に移動"
-msgstr ""
+msgstr "항목을 아래로 이동"
 
 #: lib/page-item-ranking/item-ranking-func.php:361
 #: lib/shortcodes-amazon.php:428
@@ -3780,7 +3809,7 @@ msgstr "404 페이지 제목"
 #: lib/page-settings/404-forms.php:55
 #: lib/page-settings/404-forms.php:69
 msgid "例："
-msgstr ""
+msgstr "예:"
 
 #: lib/page-settings/404-forms.php:56
 msgid "404ページに表示するタイトルを入力します。"
@@ -4504,7 +4533,8 @@ msgid ""
 "target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a>チェック用リンクの表示。"
 msgstr ""
 "<a href=\"http://whatismyscreenresolution.net/multi-screen-test\" "
-"target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a> 체크용 링크 표시."
+"target=\"_blank\" rel=\"noopener\">WhatIsMyScreenResolution</a> 확인용 링크를 "
+"표시합니다."
 
 #: lib/page-settings/admin-forms.php:308
 msgid "インデックス設定"
@@ -5100,6 +5130,7 @@ msgid "（繁體中文WEBフォント）"
 msgstr "（번체 중국어 웹폰트）"
 
 #: lib/page-settings/all-forms.php:81
+#: skins/nagi/nagi-customizer.php:440
 msgid "指定なし"
 msgstr "지정안함"
 
@@ -6534,12 +6565,12 @@ msgid "日付表示"
 msgstr "날짜 표시"
 
 #: lib/page-settings/blogcard-in-forms.php:109
-#: skins/silk/functions.php:917
+#: skins/silk/functions.php:932
 msgid "投稿日"
 msgstr "게시일"
 
 #: lib/page-settings/blogcard-in-forms.php:110
-#: skins/silk/functions.php:913
+#: skins/silk/functions.php:928
 #: skins/skin-made-in-heaven/lib/hook-wp.php:77
 msgid "更新日"
 msgstr "수정일"
@@ -6751,6 +6782,7 @@ msgstr "인기 기사를 선택하면 인기 기사만 우선적으로 표시됩
 #: lib/page-settings/sns-share-forms-top.php:94
 #: lib/shortcodes.php:534
 #: lib/widgets/display-widgets.php:156
+#: lib/widgets/related-entries.php:194
 msgid "カテゴリー"
 msgstr "카테고리"
 
@@ -8230,7 +8262,7 @@ msgstr "2:3, 1:1.5 (SLR 비율)"
 
 #: lib/page-settings/image-forms.php:174
 msgid "日本の木造建築に古くから使われている比率。大和比とも呼ばれています。"
-msgstr "일본의 목조건축에 오래전부터 사용되고 있는 비율. 야마토비(大和比)라고도합니다."
+msgstr "일본 목조 건축에서 오래전부터 사용된 비율로, 야마토 비율이라고도 합니다."
 
 #: lib/page-settings/image-forms.php:175
 msgid "約5:7, 1:1.414..（白銀比）"
@@ -8291,6 +8323,7 @@ msgstr "새 글 위젯의 썸네일."
 #: lib/page-settings/image-forms.php:212
 #: lib/widgets/new-entries.php:19
 #: lib/widgets/new-entries.php:130
+#: lib/widgets/new-entries.php:143
 #: skins/skin-made-in-heaven/lib/panel-option.php:70
 #: skins/skin-made-in-heaven/tmp/list-category-columns.php:23
 #: skins/skin-made-in-heaven/tmp/list-category-columns.php:29
@@ -8659,12 +8692,12 @@ msgid "ボタンを表示しない"
 msgstr "버튼 숨기기"
 
 #: lib/page-settings/mobile-buttons-forms.php:45
-#: lib/settings.php:406
+#: lib/settings.php:420
 msgid "ヘッダーモバイルボタン"
 msgstr "헤더 모바일 버튼"
 
 #: lib/page-settings/mobile-buttons-forms.php:46
-#: lib/settings.php:408
+#: lib/settings.php:422
 msgid "フッターモバイルボタン"
 msgstr "푸터 모바일 버튼"
 
@@ -8813,6 +8846,7 @@ msgid "通知の種類を選択してください。背景色も変わり、重�
 msgstr "알림의 종류를 선택해 주세요. 배경색과 중요도가 바뀝니다."
 
 #: lib/page-settings/notice-forms.php:106
+#: skins/skin-neumorphism/functions.php:113
 msgid "色"
 msgstr "색"
 
@@ -9609,6 +9643,9 @@ msgstr "관련 글 제목"
 #: blocks/src/block-universal/tab-caption-box/deprecated.js:25
 #: blocks/src/block-universal/tab-caption-box/edit.js:20
 #: blocks/src/block/cta/edit.js:85
+#: blocks/src/blocks.js:135
+#: blocks/src/blocks.js:138
+#: blocks/src/blocks.js:141
 #: blocks/src/old/caption-box/block.js:23
 #: blocks/src/old/label-box/block.js:22
 #: blocks/src/old/tab-caption-box/block.js:23
@@ -10140,6 +10177,7 @@ msgstr "RSS 구독 버튼을 표시합니다."
 msgid "ボタンカラー"
 msgstr "버튼 색"
 
+#: lib/page-settings/skin-translations.php:80
 #: lib/page-settings/sns-follow-forms.php:148
 #: lib/page-settings/sns-share-forms-bottom.php:126
 #: lib/page-settings/sns-share-forms-top.php:113
@@ -11053,6 +11091,7 @@ msgid "アクセス解析・認証"
 msgstr "접속 통계 및 인증"
 
 #: lib/page-settings/_top-page.php:191
+#: skins/silk/functions.php:236
 msgid "カラム"
 msgstr "칼럼"
 
@@ -11101,6 +11140,7 @@ msgid "フッター"
 msgstr "푸터"
 
 #: lib/page-settings/_top-page.php:245
+#: skins/silk/functions.php:229
 msgid "モバイル"
 msgstr "모바일"
 
@@ -11145,10 +11185,10 @@ msgid ""
 "」さんの豊富なイラストの中から好みのアイコンを探すなどして、自サーバーにアップして利用することをおすすめします。アクセス集中によりCDN上の画像が表示さ"
 "れなくなっても保証はできませんのでご了承ください。"
 msgstr ""
-"이 아이콘은 いらすとや(이라스토야) 씨의 허가에 따라 본 테마의 CDN 서버에서 전송중아 데모입니다. 접속량이 증가하면 표시되지 않을 "
-"수도 있으므로 자신이 직접 사진을 제공하거나 <a href=\"https://www.irasutoya.com/\" "
-"target=\"_blank\" rel=\"noopener\">いらすとや</a> 씨의 많은 일러스트중에서 원하는 아이콘을 찾아 자신의 "
-"서버에 올려 사용하는 것을 추천합니다. 접속량 증가에 의해 CDN의 이미지가 표시되지 않아도 보증 할 수 없기 때문에 양해 바랍니다."
+"이 아이콘은 “Irasutoya”의 허가를 받아 테마 CDN 서버에서 배포하는 데모입니다. 접속이 증가하면 표시되지 않을 수 있으므로 "
+"직접 이미지를 준비하거나 “<a href=\"https://www.irasutoya.com/\" target=\"_blank\" "
+"rel=\"noopener\">Irasutoya</a>”의 다양한 일러스트에서 원하는 아이콘을 찾아 자신의 서버에 업로드해 사용하는 "
+"것을 권장합니다. 접속 집중으로 CDN 이미지가 표시되지 않더라도 보장할 수 없으니 양해해 주세요."
 
 #: lib/page-speech-balloon/form.php:10
 msgid "吹き出し用の設定です。"
@@ -11676,148 +11716,150 @@ msgstr "검색 결과 페이지입니다."
 
 #: lib/settings-preview.php:181
 msgid "ページが見つかりませんでした"
-msgstr ""
+msgstr "페이지를 찾을 수 없습니다"
 
 #: lib/settings-preview.php:206
 msgid "サンプル記事タイトル"
-msgstr ""
+msgstr "샘플 글 제목"
 
 #: lib/settings-preview.php:208
 msgid "これはテーマ設定の見え方を確認するためのサンプル本文です。文字サイズ・行間・配色などの設定がどのように反映されるかをプレビューできます。"
 msgstr ""
+"테마 설정의 표시 상태를 확인하기 위한 샘플 본문입니다. 글자 크기, 줄 간격, 색상 등의 설정이 어떻게 적용되는지 미리 볼 수 "
+"있습니다."
 
 #: lib/settings-preview.php:210
 msgid "見出し2のサンプル"
-msgstr ""
+msgstr "샘플 제목 2"
 
 #: lib/settings-preview.php:211
 msgid "見出し2の装飾（背景色・ボーダー・キーカラー）がここに反映されます。本文の段落スタイルもあわせて確認できます。"
-msgstr ""
+msgstr "제목 2의 장식(배경색, 테두리, 주요 색상)이 여기에 적용됩니다. 본문 단락 스타일도 함께 확인할 수 있습니다."
 
 #: lib/settings-preview.php:213
 msgid "見出し3のサンプル"
-msgstr ""
+msgstr "샘플 제목 3"
 
 #: lib/settings-preview.php:214
 msgid "見出し3の装飾を確認するためのサンプルテキストです。"
-msgstr ""
+msgstr "제목 3의 장식을 확인하기 위한 샘플 텍스트입니다."
 
 #: lib/settings-preview.php:217
 msgid "これは引用ブロックのサンプルです。引用の装飾を確認できます。"
-msgstr ""
+msgstr "인용 블록의 샘플입니다. 인용 장식을 확인할 수 있습니다."
 
 #: lib/settings-preview.php:221
 msgid "リスト項目のサンプル1"
-msgstr ""
+msgstr "샘플 목록 항목 1"
 
 #: lib/settings-preview.php:222
 msgid "リスト項目のサンプル2"
-msgstr ""
+msgstr "샘플 목록 항목 2"
 
 #: lib/settings-preview.php:223
 msgid "リスト項目のサンプル3"
-msgstr ""
+msgstr "샘플 목록 항목 3"
 
 #: lib/settings-preview.php:226
 msgid "リンクの色を確認するための"
-msgstr ""
+msgstr "링크 색상을 확인하기 위한 "
 
 #: lib/settings-preview.php:226
 msgid "サンプルリンク"
-msgstr ""
+msgstr "샘플 링크"
 
 #: lib/settings-preview.php:226
 msgid "です。"
-msgstr ""
+msgstr "입니다."
 
-#: lib/settings.php:404
+#: lib/settings.php:418
 #: tmp/navi.php:9
 msgid "ヘッダーメニュー"
 msgstr "헤더 메뉴"
 
-#: lib/settings.php:405
+#: lib/settings.php:419
 msgid "ヘッダーモバイルメニュー"
 msgstr "헤더 모바일 메뉴"
 
-#: lib/settings.php:407
+#: lib/settings.php:421
 #: tmp/navi-footer.php:9
 msgid "フッターメニュー"
 msgstr "푸터 메뉴"
 
-#: lib/settings.php:409
+#: lib/settings.php:423
 msgid "モバイルスライドインメニュー"
 msgstr "모바일 슬라이더 메뉴"
 
-#: lib/settings.php:655
+#: lib/settings.php:669
 msgid "通常のカード表示"
 msgstr "일반 카드 표시"
 
-#: lib/settings.php:658
+#: lib/settings.php:672
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr "카드의 위아래에 구분선이 표시됩니다."
 
-#: lib/settings.php:659
+#: lib/settings.php:673
 #: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
 msgid "カードの上下に区切り線を入れる"
 msgstr "카드의 위아래에 구분선 넣기"
 
-#: lib/settings.php:659
+#: lib/settings.php:673
 #: blocks/src/block/navicard/edit.js:111
 #: blocks/src/block/new-list/edit.js:156
 #: blocks/src/block/popular-list/edit.js:236
 msgid "（縦並び表示のみ）"
 msgstr "(세로형 표시에만)"
 
-#: lib/settings.php:661
+#: lib/settings.php:675
 msgid "カード自体を罫線で囲みます。"
 msgstr "테두리로 카드 감싸기"
 
-#: lib/settings.php:662
+#: lib/settings.php:676
 #: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:160
 #: blocks/src/block/popular-list/edit.js:240
 msgid "カードに枠線を表示する"
 msgstr "카드에 테두리 표시하기"
 
-#: lib/settings.php:664
+#: lib/settings.php:678
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr "큰 썸네일 사진 아래에 제목을 표시합니다."
 
-#: lib/settings.php:665
+#: lib/settings.php:679
 #: blocks/src/block/navicard/edit.js:119
 #: blocks/src/block/new-list/edit.js:164
 #: blocks/src/block/popular-list/edit.js:244
 msgid "大きなサムネイル表示にする"
 msgstr "큰 썸네일 표시"
 
-#: lib/settings.php:667
+#: lib/settings.php:681
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr "큰 썸네일 사진 하단에 제목을 겹칩니다."
 
-#: lib/settings.php:668
+#: lib/settings.php:682
 #: blocks/src/block/navicard/edit.js:123
 #: blocks/src/block/new-list/edit.js:168
 #: blocks/src/block/popular-list/edit.js:248
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr "큰 썸네일에 제목을 겹쳐서 표시합니다"
 
-#: lib/settings.php:677
+#: lib/settings.php:691
 #: blocks/src/block/amazon-product-link/components/SettingsPanel.js:64
 #: blocks/src/block/rakuten-product-link/components/SettingsPanel.js:62
 msgid "画像のみ"
 msgstr "사진만"
 
-#: lib/settings.php:678
+#: lib/settings.php:692
 msgid "画像中央に白文字タイトル"
 msgstr "사진 중앙에 흰색 제목"
 
-#: lib/settings.php:679
+#: lib/settings.php:693
 msgid "画像中央にラベルでタイトル"
 msgstr "사진 중앙에 라벨 제목"
 
-#: lib/settings.php:680
+#: lib/settings.php:694
 msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr "이미지 하단을 검은 배경으로 해서 제목 겹치기"
 
@@ -11861,6 +11903,7 @@ msgstr ""
 "서버의 「php.ini 설정」에서 「allow_url_fopen」 항목이 「ON」인지 확인해 주세요."
 
 #: lib/shortcodes-amazon.php:563
+#: lib/shortcodes-amazon.php:573
 msgid "アイテムを取得できませんでした。"
 msgstr "아이템을 가져오지 못했습니다."
 
@@ -12017,12 +12060,19 @@ msgstr "오른쪽에 입력할 내용"
 #: lib/tinymce/shortcodes.php:106
 #: blocks/src/block/search-box/deprecated.js:16
 #: blocks/src/block/search-box/edit.js:7
+#: blocks/src/blocks.js:122
 #: blocks/src/toolbutton/dropdown-shortcodes.js:150
 #: blocks/src/toolbutton/dropdown-shortcodes.js:160
 #: blocks/src/toolbutton/dropdown-shortcodes.js:169
 #: blocks/src/toolbutton/dropdown-shortcodes.js:177
 #: blocks/src/toolbutton/dropdown-shortcodes.js:187
 #: blocks/src/toolbutton/dropdown-shortcodes.js:196
+#: skins/silk/gutenberg.js:95
+#: skins/silk/gutenberg.js:96
+#: skins/silk/gutenberg.js:97
+#: skins/silk/gutenberg.js:98
+#: skins/silk/gutenberg.js:99
+#: skins/silk/gutenberg.js:100
 msgid "キーワード"
 msgstr "키워드"
 
@@ -12096,6 +12146,7 @@ msgstr "후리가나"
 #: blocks/src/toolbutton/html.js:27
 #: blocks/src/toolbutton/html.js:98
 #: blocks/src/toolbutton/html.js:107
+#: js/gutenberg-toolbar.js:19
 msgid "HTML挿入"
 msgstr "HTML 삽입"
 
@@ -12109,11 +12160,13 @@ msgstr "광고 [ad]"
 
 #: lib/tinymce/shortcodes.php:67
 #: blocks/src/toolbutton/dropdown-shortcodes.js:119
+#: skins/silk/gutenberg.js:91
 msgid "新着記事一覧"
 msgstr "새 글 목록"
 
 #: lib/tinymce/shortcodes.php:77
 #: blocks/src/toolbutton/dropdown-shortcodes.js:126
+#: skins/silk/gutenberg.js:92
 msgid "人気記事一覧"
 msgstr "인기 글 목록"
 
@@ -12122,16 +12175,19 @@ msgstr "인기 글 목록"
 #: lib/widgets/navi-entries.php:108
 #: lib/widgets/recommended-cards.php:94
 #: blocks/src/toolbutton/dropdown-shortcodes.js:135
+#: skins/silk/gutenberg.js:93
 msgid "メニュー名"
 msgstr "메뉴명"
 
 #: lib/tinymce/shortcodes.php:88
 #: blocks/src/toolbutton/dropdown-shortcodes.js:133
+#: skins/silk/gutenberg.js:93
 msgid "ナビカード一覧"
 msgstr "네비 카드 목록"
 
 #: lib/tinymce/shortcodes.php:94
 #: blocks/src/toolbutton/dropdown-shortcodes.js:143
+#: skins/silk/gutenberg.js:94
 msgid "この記事を書いた人"
 msgstr "작성자"
 
@@ -12187,6 +12243,7 @@ msgstr "타임라인 요소"
 
 #: lib/tinymce/shortcodes.php:191
 #: blocks/src/toolbutton/dropdown-shortcodes.js:203
+#: skins/silk/gutenberg.js:101
 msgid "過去日時"
 msgstr "과거 일시"
 
@@ -12212,6 +12269,7 @@ msgstr "카운트다운 (날짜 입력)"
 
 #: lib/tinymce/shortcodes.php:231
 #: blocks/src/toolbutton/dropdown-shortcodes.js:245
+#: skins/silk/gutenberg.js:105
 msgid "評価スター"
 msgstr "별점"
 
@@ -12243,59 +12301,57 @@ msgstr "공개"
 msgid "記事を公開してもよろしいですか？"
 msgstr "이 글을 공개하시겠습니까?"
 
-#: lib/utils.php:2523
+#: lib/utils.php:2608
 msgid "Cocoon："
-msgstr ""
+msgstr "Cocoon:"
 
-#: lib/utils.php:2524
+#: lib/utils.php:2609
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 "홈페이지 표시가 정적 페이지로 설정되어 있지만 표시할 페이지가 선택되지 않았습니다. 이 상태에서는 설정이 올바르게 반영되지 않을 수 "
 "있습니다."
 
-#: lib/utils.php:2526
+#: lib/utils.php:2611
 msgid "表示設定を開く"
 msgstr "읽기 설정 열기"
 
-#: lib/utils.php:2650
+#: lib/utils.php:2735
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
-msgstr "%s min"
+msgstr "%s분"
 
-#: lib/utils.php:2658
+#: lib/utils.php:2743
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
-msgstr "%s hour"
+msgstr "%s시간"
 
-#: lib/utils.php:2666
+#: lib/utils.php:2751
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
-msgstr "%s day"
+msgstr "%s일"
 
-#: lib/utils.php:2674
+#: lib/utils.php:2759
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
-msgstr "%s週間"
+msgstr "%s주"
 
-#: lib/utils.php:2682
+#: lib/utils.php:2767
+#: lib/utils.php:2782
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr "%s개월"
 
-#: lib/utils.php:2693
+#: lib/utils.php:2778
+#: lib/utils.php:2781
 #, php-format
 msgid "%s年"
+msgid_plural "%s年"
 msgstr "%s년"
-
-#: lib/utils.php:2695
-#, php-format
-msgid "%s年%sヶ月"
-msgstr "%s년 %s월"
 
 #: lib/widget-areas.php:18
 #: tmp/mobile-sidebar-button.php:21
@@ -12582,6 +12638,7 @@ msgstr "글을 쓴 작성자의 프로필 정보를 보여주는 위젯입니다
 #: blocks/src/block/timeline-item/deprecated.js:22
 #: blocks/src/block/timeline-item/deprecated.js:42
 #: blocks/src/block/timeline-item/edit.js:20
+#: blocks/src/blocks.js:128
 #: blocks/src/old/blogcard-class/block.js:61
 msgid "ラベル"
 msgstr "레이블"
@@ -12896,6 +12953,7 @@ msgstr "모바일에서만 보여지는 텍스트 위젯입니다. 834px 이하�
 
 #: lib/widgets/mobile-text.php:80
 #: lib/widgets/pc-text.php:79
+#: skins/silk/functions.php:237
 #: skins/skin-made-in-heaven/lib/hook-wp.php:354
 #: skins/skin-made-in-heaven/lib/panel-option.php:62
 msgid "テキスト"
@@ -13109,116 +13167,117 @@ msgid "例：Cocoon設定で「h2見出しまで」と設定されている場�
 msgstr "예: Cocoon 설정에서 \"H2 까지\"로 설정된 경우 이 위젯에는 H3 이상은 표시되지 않습니다."
 
 #: lib/page-access/analytics/render-func.php:104
-#: lib/_defins.php:342
+#: lib/_defins.php:348
 #: blocks/src/block/faq/edit.js:127
 #: blocks/src/block/login-user-only/edit.js:34
 #: blocks/src/components/WidthPanel.js:36
 msgid "設定"
 msgstr "설정"
 
-#: lib/_defins.php:345
+#: lib/_defins.php:351
 msgid "PR"
 msgstr "PR"
 
-#: lib/_defins.php:346
+#: lib/_defins.php:352
 msgid "記事内に広告が含まれています。"
 msgstr "글 내에 광고가 포함되어있습니다."
 
-#: lib/_defins.php:351
-#: lib/_defins.php:366
-#: lib/_defins.php:376
-#: lib/_defins.php:389
+#: lib/_defins.php:357
+#: lib/_defins.php:372
+#: lib/_defins.php:382
+#: lib/_defins.php:395
 msgid "オート（AdSenseにおまかせ）"
 msgstr "자동 (AdSense)"
 
-#: lib/_defins.php:352
-#: lib/_defins.php:367
-#: lib/_defins.php:377
-#: lib/_defins.php:390
+#: lib/_defins.php:358
+#: lib/_defins.php:373
+#: lib/_defins.php:383
+#: lib/_defins.php:396
 msgid "バナー"
 msgstr "배너"
 
-#: lib/_defins.php:353
-#: lib/_defins.php:378
-#: lib/_defins.php:391
+#: lib/_defins.php:359
+#: lib/_defins.php:384
+#: lib/_defins.php:397
 msgid "レスポンシブレクタングル"
 msgstr "반응형 사각형"
 
-#: lib/_defins.php:354
-#: lib/_defins.php:379
-#: lib/_defins.php:392
+#: lib/_defins.php:360
+#: lib/_defins.php:385
+#: lib/_defins.php:398
 msgid "シングルレクタングル"
 msgstr "단일 사각형"
 
-#: lib/_defins.php:355
-#: lib/_defins.php:380
+#: lib/_defins.php:361
+#: lib/_defins.php:386
 msgid "ダブルレクタングル"
 msgstr "더블 사각형"
 
-#: lib/_defins.php:356
-#: lib/_defins.php:382
+#: lib/_defins.php:362
+#: lib/_defins.php:388
 msgid "記事内広告"
 msgstr "본문내 광고"
 
-#: lib/_defins.php:368
+#: lib/_defins.php:374
 msgid "レクタングル"
 msgstr "사각형"
 
-#: lib/_defins.php:369
-#: lib/_defins.php:381
+#: lib/_defins.php:375
+#: lib/_defins.php:387
 msgid "ラージスカイスクレイパー"
 msgstr "대형 스카이스크래퍼"
 
-#: lib/_defins.php:375
-#: lib/_defins.php:388
+#: lib/_defins.php:381
+#: lib/_defins.php:394
 msgid "広告コードをそのまま表示"
 msgstr "광고 코드를 그대로 표시"
 
-#: lib/_defins.php:396
+#: lib/_defins.php:402
 msgid "www.amazon.co.jp"
 msgstr "www.amazon.com"
 
-#: lib/_defins.php:398
+#: lib/page-item-ranking/form.php:251
+#: lib/_defins.php:404
 msgid "本当に削除してもいいですか？"
 msgstr "정말 삭제하시겠습니까?"
 
-#: lib/_defins.php:400
+#: lib/_defins.php:406
 msgid "無限ループを避けるため[toc]ショートコードはパターンでは使用できません。"
 msgstr "무한 루프를 피하기 위해 [toc] 숏코드는 패턴에서 사용할 수 없습니다."
 
-#: lib/_defins.php:400
+#: lib/_defins.php:406
 msgid "ショートコードを削除してください。"
 msgstr "숏코드를 삭제해 주세요."
 
-#: lib/_defins.php:400
+#: lib/_defins.php:406
 msgid "ショートコードが使用されている場合でも表示時に取り消されます。"
 msgstr "숏코드가 사용되었더라도 표시할 때는 취소됩니다."
 
-#: lib/_defins.php:402
+#: lib/_defins.php:408
 msgid "商品を取得できませんでした。存在しないASINを指定している可能性があります。"
 msgstr "상품을 가져오지 못했습니다. 존재하지 않는 ASIN을 지정했을 수 있습니다."
 
-#: lib/_defins.php:405
+#: lib/_defins.php:411
 msgid "日付未入力"
 msgstr "날짜 미입력"
 
-#: lib/_defins.php:407
+#: lib/_defins.php:413
 msgid "404 NOT FOUND"
 msgstr "404 NOT FOUND"
 
-#: lib/_defins.php:408
+#: lib/_defins.php:414
 msgid "お探しのページは見つかりませんでした。"
 msgstr "찾으려는 페이지를 찾을 수 없습니다."
 
-#: lib/_defins.php:414
+#: lib/_defins.php:420
 msgid "コメントをどうぞ"
 msgstr "댓글 남기기"
 
-#: lib/_defins.php:415
+#: lib/_defins.php:421
 msgid "コメントを送信"
 msgstr "댓글 등록"
 
-#: lib/_defins.php:418
+#: lib/_defins.php:424
 msgid "匿名"
 msgstr "익명"
 
@@ -13228,7 +13287,7 @@ msgstr "사이트 내에서 검색"
 
 #: skins/nagi/nagi-customizer.php:84
 msgid "スキンNAGIの設定"
-msgstr "スキンNAGIの設定"
+msgstr "스킨 NAGI 설정"
 
 #: skins/nagi/nagi-customizer.php:223
 msgid "フロントページのタブ一覧の設定"
@@ -13331,88 +13390,82 @@ msgstr "여기서 선택한 스킨이 표시됩니다."
 msgid "※現在選択中の【%s】は動作を追加するものです"
 msgstr "※현재 선택 중인 【%s】은 동작을 추가하는 것입니다."
 
-#: skins/raku-color-changing/functions.php:36
-#: skins/raku-color-changing/functions.php:37
-#: skins/raku-color-changing/functions.php:85
-#: skins/raku-color-changing/functions.php:87
-#: skins/raku-color-changing/functions.php:123
-#: skins/raku-color-changing/functions.php:153
-#: skins/raku-color-changing/functions.php:256
-#: skins/raku-color-changing/functions.php:278
+#: skins/raku-color-changing/functions.php:275
+#: skins/raku-color-changing/functions.php:298
 msgid "適用する"
 msgstr "적용"
 
-#: skins/raku-color-changing/functions.php:224
+#: skins/raku-color-changing/functions.php:243
 msgid "スキンカラー"
 msgstr "스킨 색상"
 
-#: skins/raku-color-changing/functions.php:231
+#: skins/raku-color-changing/functions.php:250
 msgid "4色 選択してください。"
 msgstr "4가지 색상을 선택하세요."
 
-#: skins/raku-color-changing/functions.php:237
+#: skins/raku-color-changing/functions.php:256
 msgid "背景アニメーション<br><small>（選択した4色がゆっくり入れ替わる）</small>"
 msgstr "배경 애니메이션<br><small>(선택한 4개의 색상이 서서히 바뀜)</small>"
 
-#: skins/raku-color-changing/functions.php:239
+#: skins/raku-color-changing/functions.php:258
 msgid "【一通り変化するまでの時間】"
 msgstr "【일련의 변화가 완료될 때까지의 시간】"
 
-#: skins/raku-color-changing/functions.php:240
+#: skins/raku-color-changing/functions.php:259
 msgid "秒（1～120秒）"
 msgstr "초(1~120초)"
 
-#: skins/raku-color-changing/functions.php:241
+#: skins/raku-color-changing/functions.php:260
 msgid "時間を短くする程「早く」、長くする程「ゆっくり」変化します。"
 msgstr "시간을 짧게 설정할수록 \"빠르게\", 길게 설정할수록 \"천천히\" 변화합니다."
 
-#: skins/raku-color-changing/functions.php:242
+#: skins/raku-color-changing/functions.php:261
 msgid "【不透明度】"
 msgstr "【불투명도】"
 
-#: skins/raku-color-changing/functions.php:244
+#: skins/raku-color-changing/functions.php:263
 msgid "数字を小さくする程、透明になります。"
 msgstr "숫자를 작게 설정할수록 투명해집니다."
 
-#: skins/raku-color-changing/functions.php:245
+#: skins/raku-color-changing/functions.php:264
 msgid "透明にする程、【Cocoon設定 > 全体】の「サイト背景色」や「サイト背景画像」がより透けて見えます。"
 msgstr "투명하게 할수록 【Cocoon 설정 > 전체】의 \"사이트 배경색\"이나 \"사이트 배경 이미지\"가 더 투명하게 보입니다."
 
-#: skins/raku-color-changing/functions.php:246
+#: skins/raku-color-changing/functions.php:265
 msgid "設定していない場合は単純に色が薄くなります。"
 msgstr "설정하지 않은 경우 단순히 색상이 옅어집니다."
 
-#: skins/raku-color-changing/functions.php:252
+#: skins/raku-color-changing/functions.php:271
 msgid "記事内のタイトル<br><small>（選択した4色を順に適用する）</small>"
 msgstr "글 내의 제목<br><small>(선택한 4개의 색상을 순서대로 적용함)</small>"
 
-#: skins/raku-color-changing/functions.php:257
-#: skins/raku-color-changing/functions.php:279
+#: skins/raku-color-changing/functions.php:276
+#: skins/raku-color-changing/functions.php:299
 msgid "適用しない"
 msgstr "적용하지 않음"
 
-#: skins/raku-color-changing/functions.php:263
+#: skins/raku-color-changing/functions.php:283
 msgid "【不透明度（背景と線の色）】"
 msgstr "【불투명도(배경과 선의 색상)】"
 
-#: skins/raku-color-changing/functions.php:265
-#: skins/raku-color-changing/functions.php:287
+#: skins/raku-color-changing/functions.php:285
+#: skins/raku-color-changing/functions.php:308
 msgid "数字を小さくする程、色が薄くなります。"
 msgstr "숫자를 작게 설정할수록 색상이 옅어집니다."
 
-#: skins/raku-color-changing/functions.php:266
+#: skins/raku-color-changing/functions.php:286
 msgid "【不透明度（H3タイトルの左側の線の色）】"
 msgstr "【불투명도(H3 제목 왼쪽의 선 색상)】"
 
-#: skins/raku-color-changing/functions.php:268
+#: skins/raku-color-changing/functions.php:288
 msgid " H3タイトルの左側の線だけ色が濃い方が綺麗なため、個別に設定できます。"
 msgstr "H3 제목 왼쪽의 선만 색상이 진한 것이 더 예쁘기 때문에 개별적으로 설정할 수 있습니다."
 
-#: skins/raku-color-changing/functions.php:274
+#: skins/raku-color-changing/functions.php:294
 msgid "サイドバー内のタイトル<br><small>（選択した4色を順に適用する）</small>"
 msgstr "사이드바 내의 제모<br><small>(선택한 4개의 색상을 순서대로 적용함)</small>"
 
-#: skins/raku-color-changing/functions.php:285
+#: skins/raku-color-changing/functions.php:306
 msgid "【不透明度（背景色）】"
 msgstr "【PC】글로벌 내비게이션의 높이"
 
@@ -13446,6 +13499,21 @@ msgid "（細タイプなし）"
 msgstr "(세부 유형 없음)"
 
 #: skins/skin-grayish-topfull/functions.php:252
+#: skins/skin-tegakinote-blue-coral/functions.php:114
+#: skins/skin-tegakinote-blue-coral/functions.php:197
+#: skins/skin-tegakinote-blue-coral/functions.php:298
+#: skins/skin-tegakinote-dark-sky/functions.php:112
+#: skins/skin-tegakinote-dark-sky/functions.php:178
+#: skins/skin-tegakinote-dark-sky/functions.php:261
+#: skins/skin-tegakinote-green-orange/functions.php:112
+#: skins/skin-tegakinote-green-orange/functions.php:178
+#: skins/skin-tegakinote-green-orange/functions.php:261
+#: skins/skin-tegakinote-pink-lemon/functions.php:112
+#: skins/skin-tegakinote-pink-lemon/functions.php:178
+#: skins/skin-tegakinote-pink-lemon/functions.php:261
+#: skins/skin-tegakinote-white-banana/functions.php:112
+#: skins/skin-tegakinote-white-banana/functions.php:178
+#: skins/skin-tegakinote-white-banana/functions.php:261
 msgid "設定なし"
 msgstr "설정 없음"
 
@@ -13680,11 +13748,11 @@ msgstr "Facebook 팔로우 버튼을 표시"
 
 #: skins/skin-grayish-topfull/functions.php:855
 msgid "Threads フォローボタンを表示"
-msgstr ""
+msgstr "Threads 팔로우 버튼 표시"
 
 #: skins/skin-grayish-topfull/functions.php:859
 msgid "Reddit フォローボタンを表示"
-msgstr ""
+msgstr "Reddit 팔로우 버튼 표시"
 
 #: skins/skin-grayish-topfull/functions.php:863
 msgid "はてブ フォローボタンを表示"
@@ -14245,7 +14313,7 @@ msgstr "Threads 팔로우"
 #: lib/sns-follow.php:178
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:135
 msgid "Redditをフォロー"
-msgstr ""
+msgstr "Reddit 팔로우"
 
 #: lib/sns-follow.php:184
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-sns-follow-buttons.php:147
@@ -14395,6 +14463,8 @@ msgid "ボックス"
 msgstr "박스"
 
 #: skins/skin-made-in-heaven/lib/hook-wp.php:345
+#: skins/silk/gutenberg.js:32
+#: skins/silk/gutenberg.js:44
 msgid "下線"
 msgstr "밑줄"
 
@@ -14528,6 +14598,11 @@ msgid "リスト丸数字"
 msgstr "리스트 동그라미 숫자"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:106
+#: skins/skin-tegakinote-blue-coral/functions.php:290
+#: skins/skin-tegakinote-dark-sky/functions.php:253
+#: skins/skin-tegakinote-green-orange/functions.php:253
+#: skins/skin-tegakinote-pink-lemon/functions.php:253
+#: skins/skin-tegakinote-white-banana/functions.php:253
 #: blocks/src/block-extension/style-extension/style02.js:70
 msgid "丸"
 msgstr "동그라미"
@@ -14681,6 +14756,7 @@ msgstr "프로필 버튼 표시"
 msgid "SNSフォロー表示"
 msgstr "SNS 팔로우 표시"
 
+#: skins/silk/functions.php:1238
 #: skins/skin-made-in-heaven/lib/panel-option.php:16
 #: skins/skin-made-in-heaven/lib/panel-option.php:26
 msgid "オプション"
@@ -14892,6 +14968,7 @@ msgstr "bbPress - Create Topic"
 msgid "bbPress - Forums (Index)"
 msgstr "bbPress - Forums (Index)"
 
+#: lib/html-forms.php:982
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
 msgstr "WLW로 편집"
@@ -14986,7 +15063,7 @@ msgstr "※이 메시지는 로그인 사용자에게만 표시됩니다."
 
 #: tmp/body-top.php:19
 msgid "コンテンツへスキップ"
-msgstr ""
+msgstr "콘텐츠로 건너뛰기"
 
 #: tmp/button-go-to-top.php:11
 msgid "トップへ戻る"
@@ -14994,7 +15071,7 @@ msgstr "상단으로"
 
 #: tmp/carousel.php:43
 msgid "おすすめ記事カルーセル"
-msgstr ""
+msgstr "추천 글 캐러셀"
 
 #: tmp/content.php:96
 #, php-format
@@ -15123,7 +15200,7 @@ msgstr "Threads에서 공유"
 
 #: lib/sns-share.php:921
 msgid "Redditでシェア"
-msgstr ""
+msgstr "Reddit에 공유"
 
 #: lib/sns-share.php:936
 msgid "はてブでブックマーク"
@@ -15167,19 +15244,19 @@ msgstr "댓글 남기기"
 
 #: blocks/src/block-extension/group-link.js:76
 msgid "リンク編集"
-msgstr ""
+msgstr "링크 편집"
 
 #: blocks/src/block-extension/group-link.js:76
 msgid "リンク追加"
-msgstr ""
+msgstr "링크 추가"
 
 #: blocks/src/block-extension/group-link.js:93
 msgid "リンクURL"
-msgstr ""
+msgstr "링크 URL"
 
 #: blocks/src/block-extension/group-link.js:97
 msgid "設定するとグループブロック全体がリンク化されます。"
-msgstr ""
+msgstr "설정하면 그룹 블록 전체가 링크로 바뀝니다."
 
 #: lib/page-access/analytics/dashboard-page.php:442
 #: blocks/src/block-extension/group-link.js:134
@@ -15188,7 +15265,7 @@ msgstr "적용"
 
 #: blocks/src/block-extension/group-link.js:148
 msgid "リンク解除"
-msgstr ""
+msgstr "링크 해제"
 
 #: blocks/src/block-extension/style-extension/border01.js:46
 msgid "実線"
@@ -15329,12 +15406,17 @@ msgstr "여백 제거"
 
 #: blocks/src/block-extension/style-extension/margin.js:109
 msgid "※WordPress標準のマージンボトム設定よりこちらが優先されます。"
-msgstr ""
+msgstr "※이 설정은 WordPress 기본 아래쪽 여백 설정보다 우선합니다."
 
 #: blocks/src/block-extension/style-extension/style01.js:46
 msgid "薄背景"
 msgstr "연한 배경"
 
+#: skins/skin-tegakinote-blue-coral/functions.php:194
+#: skins/skin-tegakinote-dark-sky/functions.php:175
+#: skins/skin-tegakinote-green-orange/functions.php:175
+#: skins/skin-tegakinote-pink-lemon/functions.php:175
+#: skins/skin-tegakinote-white-banana/functions.php:175
 #: blocks/src/block-extension/style-extension/style01.js:54
 msgid "方眼紙"
 msgstr "모눈종이"
@@ -15488,6 +15570,11 @@ msgstr "체크됨"
 msgid "チェック無効"
 msgstr "체크안됨"
 
+#: skins/skin-tegakinote-blue-coral/functions.php:294
+#: skins/skin-tegakinote-dark-sky/functions.php:257
+#: skins/skin-tegakinote-green-orange/functions.php:257
+#: skins/skin-tegakinote-pink-lemon/functions.php:257
+#: skins/skin-tegakinote-white-banana/functions.php:257
 #: blocks/src/block-extension/style-extension/style02.js:74
 msgid "三角"
 msgstr "삼각"
@@ -15648,7 +15735,7 @@ msgstr "광고를 표시합니다."
 #: blocks/src/block/amazon-product-link/components/ProductPreview.js:23
 #: blocks/src/block/rakuten-product-link/components/ProductPreview.js:23
 msgid "プレビューを生成中…"
-msgstr ""
+msgstr "미리보기 생성 중…"
 
 #: blocks/src/block/amazon-product-link/components/ProductPreview.js:41
 #: blocks/src/block/rakuten-product-link/components/ProductPreview.js:41
@@ -15677,7 +15764,7 @@ msgstr "검색 결과가 없습니다."
 #: blocks/src/block/amazon-product-link/components/SearchModal.js:177
 #: blocks/src/block/rakuten-product-link/components/SearchModal.js:187
 msgid "※ 検索結果の価格は参考値です。実際の価格は販売ページでご確認ください。"
-msgstr ""
+msgstr "※ 검색 결과의 가격은 참고용입니다. 실제 가격은 판매 페이지에서 확인하세요."
 
 #: blocks/src/block/amazon-product-link/components/SearchResults.js:28
 #: blocks/src/block/rakuten-product-link/components/SearchResults.js:28
@@ -16025,28 +16112,28 @@ msgstr "일반 링크 버튼을 만듭니다."
 
 #: blocks/src/block/campaign/edit.js:56
 msgid "期間設定"
-msgstr ""
+msgstr "표시 기간 설정"
 
 #: blocks/src/block/campaign/edit.js:59
 msgid "開始日時 (from)"
-msgstr ""
+msgstr "시작 날짜 및 시간 (from)"
 
 #: blocks/src/block/campaign/edit.js:72
 #: blocks/src/block/campaign/edit.js:109
 msgid "日時を選択"
-msgstr ""
+msgstr "날짜 및 시간 선택"
 
 #: blocks/src/block/campaign/edit.js:96
 msgid "終了日時 (to)"
-msgstr ""
+msgstr "종료 날짜 및 시간 (to)"
 
 #: blocks/src/block/campaign/edit.js:148
 msgid "現在は表示期間内です"
-msgstr ""
+msgstr "현재 표시 기간 내입니다"
 
 #: blocks/src/block/campaign/edit.js:149
 msgid "現在は表示期間外です"
-msgstr ""
+msgstr "현재 표시 기간 밖입니다"
 
 #: blocks/src/block/campaign/index.js:22
 msgid "キャンペーン"
@@ -16054,7 +16141,7 @@ msgstr "캠페인"
 
 #: blocks/src/block/campaign/index.js:24
 msgid "指定した期間中のみコンテンツを表示するブロックです。開始日時と終了日時を設定できます。"
-msgstr ""
+msgstr "지정한 기간에만 콘텐츠를 표시하는 블록입니다. 시작 및 종료 날짜와 시간을 설정할 수 있습니다."
 
 #: blocks/src/block/comparison-box/index.js:21
 msgid "比較ボックス"
@@ -16237,13 +16324,14 @@ msgstr "새 글 목록을 표시합니다."
 
 #: blocks/src/block/login-user-only/edit.js:36
 msgid "未ログインユーザーに表示するメッセージ"
-msgstr ""
+msgstr "로그아웃 사용자에게 표시할 메시지"
 
 #: blocks/src/block/login-user-only/edit.js:39
 msgid "ログインしていないユーザーに対して、ここのメッセージが表示されます。"
-msgstr ""
+msgstr "로그인하지 않은 사용자에게 이 메시지가 표시됩니다."
 
 #: blocks/src/block/login-user-only/edit.js:62
+#: blocks/src/block/login-user-only/index.js:20
 msgid "ログインユーザー限定"
 msgstr "로그인 사용자 전용"
 
@@ -17096,6 +17184,7 @@ msgstr "오른쪽 열"
 msgid "カラム右側に表示される内容内容を入力。"
 msgstr "열의 오른쪽에 표시할 내용을 입력하세요."
 
+#: blocks/src/blocks.js:144
 #: blocks/src/micro/micro-balloon/deprecated.js:18
 #: blocks/src/old/micro-balloon-1/block.js:19
 #: blocks/src/old/micro-balloon/block.js:19
@@ -17128,6 +17217,7 @@ msgstr "마이크로 벌룬"
 msgid "コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。"
 msgstr "컨버전 링크(버튼)의 바로 위 또는 바로 아래에 텍스트 풍선을 표시하여 전환율 향상을 위한 마이크로 카피입니다."
 
+#: blocks/src/blocks.js:147
 #: blocks/src/micro/micro-text/deprecated.js:17
 msgid "マイクロコピーテキスト"
 msgstr "마이크로 카피 텍스트"
@@ -17246,39 +17336,49 @@ msgid "インラインタグ"
 msgstr "인라인 태그"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:149
+#: skins/silk/gutenberg.js:95
 msgid "Amazonリンク"
 msgstr "Amazon 링크"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:156
+#: skins/silk/gutenberg.js:96
 msgid "Amazonリンク（商品名変更）"
 msgstr "Amazon 링크 (상품명 변경)"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:158
 #: blocks/src/toolbutton/dropdown-shortcodes.js:185
+#: skins/silk/gutenberg.js:96
+#: skins/silk/gutenberg.js:99
 msgid "商品名"
 msgstr "상품명"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:167
+#: skins/silk/gutenberg.js:97
 msgid "Amazonリンク（ボタン非表示）"
 msgstr "Amazon 링크 (버튼 비표시)"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:176
+#: skins/silk/gutenberg.js:98
 msgid "楽天リンク"
 msgstr "라쿠텐 링크"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:183
+#: skins/silk/gutenberg.js:99
 msgid "楽天リンク（商品名変更）"
 msgstr "라쿠텐 링크 (상품명 변경)"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:194
+#: skins/silk/gutenberg.js:100
 msgid "楽天リンク（ボタン非表示）"
 msgstr "라쿠텐 링크 (버튼 비표시)"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:210
+#: skins/silk/gutenberg.js:102
 msgid "過去日時（年）"
 msgstr "과거 일시 (년)"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:217
+#: skins/silk/gutenberg.js:103
 msgid "年齢"
 msgstr "나이"
 
@@ -17287,14 +17387,17 @@ msgid "ページ読み込み時の日付"
 msgstr "페이지 읽기의 날짜"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:231
+#: js/gutenberg-toolbar.js:23
 msgid "ページの更新日"
 msgstr "페이지 수정ㅇ"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:238
+#: skins/silk/gutenberg.js:104
 msgid "カウントダウン"
 msgstr "카운트다운"
 
 #: blocks/src/toolbutton/dropdown-shortcodes.js:252
+#: skins/silk/gutenberg.js:106
 msgid "ログインコンテンツ"
 msgstr "로그인 콘텐츠"
 
@@ -17308,12 +17411,12 @@ msgstr "HTML을 입력해 주세요."
 
 #: blocks/src/toolbutton/html.js:122
 msgid "挿入するHTMLコードを入力します。[html]...[/html] ショートコードとして埋め込まれます。"
-msgstr ""
+msgstr "삽입할 HTML 코드를 입력합니다. [html]...[/html] 쇼트코드로 삽입됩니다."
 
 #: blocks/src/toolbutton/html.js:129
 #: blocks/src/toolbutton/ruby.js:232
 msgid "キャンセル"
-msgstr ""
+msgstr "취소"
 
 #: blocks/src/toolbutton/ruby.js:33
 msgid "ふりがな（ルビ）キャラクター"
@@ -17325,7 +17428,7 @@ msgstr "후리가나(루비)를 입력해 주세요."
 
 #: blocks/src/toolbutton/ruby.js:225
 msgid "選択した文字の上に表示する読み仮名を入力します。空欄の場合は選択文字がそのまま使われます。"
-msgstr ""
+msgstr "선택한 문자 위에 표시할 읽는 법을 입력합니다. 비워 두면 선택한 문자가 그대로 사용됩니다."
 
 #: blocks/src/toolbutton/strike.js:15
 msgid "打ち消し線（訂正）"
@@ -17819,13 +17922,6 @@ msgstr "최근 %1$d일 %2$s PV / 이전 %1$d일 %3$s PV"
 msgid "新登場"
 msgstr "신규"
 
-#: lib/page-access/analytics/render-func.php:444
-#, php-format
-msgid ""
-"\\u76f4\\u8fd1%1$d\\u65e5\\u306ePV\\u3068\\u305d\\u306e\\u524d%1$d\\u65e5\\"
-"u306ePV\\u306e\\u6bd4\\u8f03"
-msgstr ""
-
 #: lib/page-access/analytics/render-func.php:554
 msgid "少ない"
 msgstr "낮음"
@@ -17906,17 +18002,1571 @@ msgstr "%s URL"
 
 #: js/blogcard-editor.js:37
 msgid "ブログカード（埋め込み）"
-msgstr ""
+msgstr "블로그 카드(삽입)"
 
 #: js/blogcard-editor.js:86
 msgid "URLが設定されていません"
-msgstr ""
+msgstr "URL이 설정되지 않았습니다"
 
 #: lib/page-access/analytics/dashboard-page.php:154
 #. translators: 1: 開始日, 2: 終了日
 #, php-format
 msgid "%1$s 〜 %2$s"
 msgstr "%1$s ~ %2$s"
+
+#: lib/utils.php:1031
+msgid "ラベルなし"
+msgstr "라벨 없음"
+
+#: lib/admin.php:472
+msgid "すべてのユーザー"
+msgstr "모든 사용자"
+
+#: lib/custom-fields/update-field.php:44
+msgid "未更新"
+msgstr "업데이트되지 않음"
+
+#: lib/custom-fields/update-field.php:105
+msgid "時"
+msgstr "시"
+
+#: lib/custom-fields/update-field.php:108
+msgid "分"
+msgstr "분"
+
+#: lib/dashboard-message.php:157
+msgid "通知を表示しない"
+msgstr "알림 표시 안 함"
+
+#: lib/html-forms.php:616
+msgid "選択中の画像"
+msgstr "선택한 이미지"
+
+#: lib/html-tooltips.php:82
+msgid "カラーサンプルサイト"
+msgstr "색상 샘플 사이트"
+
+#: lib/html-tooltips.php:108
+msgid "メインカラムトップの広告に注意"
+msgstr "메인 열 상단 광고 주의"
+
+#: lib/html-tooltips.php:122
+msgid "サイドバートップの広告に注意"
+msgstr "사이드바 상단 광고 주의"
+
+#: lib/page-access/analytics/enqueue-func.php:123
+msgid "該当する記事が見つかりませんでした。"
+msgstr "해당하는 글을 찾을 수 없습니다."
+
+#: lib/page-access/analytics/enqueue-func.php:124
+msgid "読み込み中..."
+msgstr "불러오는 중..."
+
+#: lib/page-access/analytics/enqueue-func.php:125
+msgid "エラーが発生しました"
+msgstr "오류가 발생했습니다"
+
+#: lib/page-access/analytics/enqueue-func.php:126
+msgid "通信エラーが発生しました"
+msgstr "통신 오류가 발생했습니다"
+
+#: lib/page-access/analytics/enqueue-func.php:127
+msgid "一致する項目がありません"
+msgstr "일치하는 항목이 없습니다"
+
+#: lib/page-access/analytics/render-func.php:444
+#, php-format
+msgid "直近%1$d日のPVとその前%1$d日のPVの比較"
+msgstr "최근 %1$d일의 페이지 조회수와 그 이전 %1$d일의 페이지 조회수 비교"
+
+#: lib/page-item-ranking/posts.php:57
+#, php-format
+msgid "%d位のアイテムは、「名前」や「説明文」が入力されていないため追加保存は行っていません。"
+msgstr "%d위 항목은 이름 또는 설명이 입력되지 않아 추가로 저장하지 않았습니다."
+
+#: lib/page-settings/code-forms.php:135
+#, php-format
+msgid "利用する場合は、投稿本文のどこでも良いのでに%sと入力してください。投稿・固定ページのみで利用できます。"
+msgstr "사용하려면 글 본문의 아무 곳에나 %s을(를) 입력하세요. 글과 페이지만 사용할 수 있습니다."
+
+#: lib/page-settings/image-forms.php:36
+#: lib/page-settings/image-forms.php:39
+msgid "デモ画像"
+msgstr "데모 이미지"
+
+#: lib/page-settings/title-forms.php:131
+msgid "SEO設定のメタディスクリプション"
+msgstr "SEO 설정의 메타 설명"
+
+#: lib/settings.php:706
+msgid "ニュース"
+msgstr "뉴스"
+
+#: lib/widgets/related-entries.php:195
+msgid "タグ（無い場合はカテゴリー表示）"
+msgstr "태그(없으면 카테고리 표시)"
+
+#: lib/_defins.php:341
+msgid "本メールアドレスは送信専用のため、返信できません。"
+msgstr "이 이메일 주소는 발신 전용이므로 회신할 수 없습니다."
+
+#: skins/nagi/functions.php:49
+msgid "フッター固定CTA"
+msgstr "푸터 고정 CTA"
+
+#: skins/nagi/functions.php:75
+msgid "※この機能についての"
+msgstr "※이 기능에 대한 "
+
+#: skins/nagi/functions.php:75
+msgid "詳しい説明はこちら"
+msgstr "자세한 설명 보기"
+
+#: skins/nagi/functions.php:76
+msgid "アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）"
+msgstr "제휴 태그 쇼트코드(입력하지 않으면 푸터 고정 CTA가 표시되지 않습니다)"
+
+#: skins/nagi/functions.php:78
+msgid "必ずアフィリエイトショートコードを入力してください。"
+msgstr "제휴 쇼트코드를 반드시 입력하세요."
+
+#: skins/nagi/functions.php:78
+msgid "アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。それ以外はボタンになりません。"
+msgstr "제휴 태그는 &lt;a&gt; 태그로 둘러싸인 것만 사용할 수 있습니다. 그 외의 내용은 버튼이 되지 않습니다."
+
+#: skins/nagi/functions.php:82
+msgid "アフィリエイトタグのショートコードをここへ入力してください"
+msgstr "여기에 제휴 태그 쇼트코드를 입력하세요"
+
+#: skins/nagi/functions.php:85
+msgid "マイクロコピーをここへ入力してください"
+msgstr "여기에 마이크로카피를 입력하세요"
+
+#: skins/nagi/functions.php:87
+msgid "CTAボタンの色"
+msgstr "CTA 버튼 색상"
+
+#: skins/nagi/functions.php:88
+msgid "赤系"
+msgstr "빨간색 계열"
+
+#: skins/nagi/functions.php:90
+msgid "青系"
+msgstr "파란색 계열"
+
+#: skins/nagi/functions.php:92
+msgid "緑系"
+msgstr "녹색 계열"
+
+#: skins/nagi/functions.php:97
+msgid "マイクロコピーとボタンのレイアウト"
+msgstr "마이크로카피와 버튼 배치"
+
+#: skins/nagi/functions.php:98
+msgid "縦並び"
+msgstr "세로 배치"
+
+#: skins/nagi/functions.php:100
+msgid "横並び"
+msgstr "가로 배치"
+
+#: skins/nagi/nagi-customizer.php:90
+msgid ""
+"設定の詳細は<a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-zentai/\">こちら</a>"
+msgstr ""
+"설정에 대한 자세한 내용은 <a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-zentai/\">여기</a>를 참조하세요"
+
+#: skins/nagi/nagi-customizer.php:110
+msgid "影をつけるか"
+msgstr "그림자 적용"
+
+#: skins/nagi/nagi-customizer.php:113
+msgid "影をつけない"
+msgstr "그림자 없음"
+
+#: skins/nagi/nagi-customizer.php:114
+msgid "ちょっぴり影をつける"
+msgstr "약한 그림자"
+
+#: skins/nagi/nagi-customizer.php:115
+msgid "くっきり影をつける（背景が暗い場合はこれがおすすめ）"
+msgstr "선명한 그림자(배경이 어두울 때 권장)"
+
+#: skins/nagi/nagi-customizer.php:134
+msgid "丸みをつけるか"
+msgstr "모서리 둥글게"
+
+#: skins/nagi/nagi-customizer.php:137
+msgid "丸みをつけない"
+msgstr "둥근 모서리 없음"
+
+#: skins/nagi/nagi-customizer.php:138
+msgid "ちょっぴり丸みをつける"
+msgstr "모서리를 약간 둥글게"
+
+#: skins/nagi/nagi-customizer.php:139
+msgid "くっきり丸みをつける"
+msgstr "모서리를 많이 둥글게"
+
+#: skins/nagi/nagi-customizer.php:158
+msgid "薄グレーゾーンの色"
+msgstr "연한 회색 영역 색상"
+
+#: skins/nagi/nagi-customizer.php:159
+msgid ""
+"<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</"
+"small>"
+msgstr ""
+"<small>목차, 공유 버튼, 팔로우 버튼 등의 배경색입니다. 연한 회색 영역이라고 되어 있지만 어떤 색이든 사용할 수 "
+"있습니다.<br>※투명도는 35%입니다.</small>"
+
+#: skins/nagi/nagi-customizer.php:178
+msgid "サイドバーにもこの背景色をつける"
+msgstr "사이드바에도 이 배경색 적용"
+
+#: skins/nagi/nagi-customizer.php:197
+msgid "SNSトップシェアボタンを画面左に固定する"
+msgstr "상단 SNS 공유 버튼을 화면 왼쪽에 고정"
+
+#: skins/nagi/nagi-customizer.php:198
+msgid "<small>PC表示でのみ固定。Cocoon設定で「メインカラムトップシェアボタンを表示する」にチェックを入れる必要があります。</small>"
+msgstr "<small>PC에서만 고정됩니다. Cocoon 설정에서 “메인 열 상단 공유 버튼 표시”를 선택해야 합니다.</small>"
+
+#: skins/nagi/nagi-customizer.php:216
+msgid "カテゴリーウィジェットの子カテゴリーをアコーディオン形式で開閉する"
+msgstr "카테고리 위젯의 하위 카테고리를 아코디언 형식으로 열고 닫기"
+
+#: skins/nagi/nagi-customizer.php:224
+msgid ""
+"フロントページのタブ一覧のデザインを変更したり、各タブにアイコンを設定できます</br>\n"
+"        詳しくは<a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-tab/\">こちら</a>"
+msgstr ""
+"첫 페이지 탭 목록의 디자인을 변경하고 각 탭에 아이콘을 설정할 수 있습니다.</br>\n"
+"        자세한 내용은 <a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-tab/\">여기</a>를 참조하세요"
+
+#: skins/nagi/nagi-customizer.php:244
+msgid "フロントページのタブ一覧のデザインをオリジナルのものにする"
+msgstr "첫 페이지 탭 목록에 독자적인 디자인 사용"
+
+#: skins/nagi/nagi-customizer.php:245
+msgid "<small>アイコンの設定が必須です。</small>"
+msgstr "<small>아이콘 설정이 필요합니다.</small>"
+
+#: skins/nagi/nagi-customizer.php:264
+msgid "1つ目のタブのアイコン"
+msgstr "첫 번째 탭 아이콘"
+
+#: skins/nagi/nagi-customizer.php:265
+msgid "<small>FontAwesomeのUnicodeを入力します。</br>（例　f15c　）</small>"
+msgstr "<small>Font Awesome Unicode를 입력하세요.</br>(예: f15c)</small>"
+
+#: skins/nagi/nagi-customizer.php:286
+msgid "2つ目のタブのアイコン"
+msgstr "두 번째 탭 아이콘"
+
+#: skins/nagi/nagi-customizer.php:287
+#: skins/nagi/nagi-customizer.php:307
+#: skins/nagi/nagi-customizer.php:328
+msgid "<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>"
+msgstr "<small>Font Awesome Unicode를 입력하세요.</br>(예: f164)</small>"
+
+#: skins/nagi/nagi-customizer.php:306
+msgid "3つ目のタブのアイコン"
+msgstr "세 번째 탭 아이콘"
+
+#: skins/nagi/nagi-customizer.php:327
+msgid "4つ目のタブのアイコン"
+msgstr "네 번째 탭 아이콘"
+
+#: skins/nagi/nagi-customizer.php:347
+msgid "タブの背景色"
+msgstr "탭 배경색"
+
+#: skins/nagi/nagi-customizer.php:366
+msgid "タブの文字色"
+msgstr "탭 글자색"
+
+#: skins/nagi/nagi-customizer.php:385
+msgid "アクティブなタブの背景色①"
+msgstr "활성 탭 배경색 1"
+
+#: skins/nagi/nagi-customizer.php:386
+#: skins/nagi/nagi-customizer.php:406
+msgid "<small>①と②を違う色にすることでグラデーションになります</small>"
+msgstr "<small>1과 2를 서로 다른 색으로 설정하면 그라데이션이 됩니다.</small>"
+
+#: skins/nagi/nagi-customizer.php:405
+msgid "アクティブなタブの背景色②"
+msgstr "활성 탭 배경색 2"
+
+#: skins/nagi/nagi-customizer.php:431
+msgid "グーグルフォントを選択する"
+msgstr "Google 글꼴 선택"
+
+#: skins/nagi/nagi-customizer.php:434
+#: skins/nagi/nagi-customizer.php:436
+msgid "font-weight: 400 のみ"
+msgstr "font-weight: 400만"
+
+#: skins/nagi/nagi-customizer.php:447
+msgid ""
+"フッター固定CTAの背景色などを変更できます。</br>設定の詳細は<a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-fix-cta/\">こちら</a>"
+msgstr ""
+"푸터 고정 CTA의 배경색 등을 변경할 수 있습니다.</br>설정에 대한 자세한 내용은 <a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/skin-nagi-fix-cta/\">여기</a>를 참조하세요"
+
+#: skins/nagi/nagi-customizer.php:467
+msgid "フッター固定CTAの背景色"
+msgstr "푸터 고정 CTA 배경색"
+
+#: skins/nagi/nagi-customizer.php:485
+msgid "0から1まで0.01単位で設定できます<br>0に近くなるほど透明になります"
+msgstr "0부터 1까지 0.01 단위로 설정할 수 있습니다.<br>0에 가까울수록 투명해집니다."
+
+#: skins/nagi/nagi-customizer.php:486
+msgid "フッター固定CTAの背景色の透明度"
+msgstr "푸터 고정 CTA 배경 투명도"
+
+#: skins/nagi/nagi-customizer.php:511
+msgid "フッター固定CTAのマイクロコピーの色"
+msgstr "푸터 고정 CTA 마이크로카피 색상"
+
+#: skins/nagi/nagi-customizer.php:530
+msgid "赤系ボタン"
+msgstr "빨간색 버튼"
+
+#: skins/nagi/nagi-customizer.php:549
+msgid "青系ボタン"
+msgstr "파란색 버튼"
+
+#: skins/nagi/nagi-customizer.php:568
+msgid "緑系ボタン"
+msgstr "녹색 버튼"
+
+#: skins/nagi/nagi-customizer.php:576
+msgid ""
+"カルーセルの表示件数などを変更できます。詳しくは<a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/carousel-setting/\">こちら</a>"
+msgstr ""
+"캐러셀 표시 개수 등의 설정을 변경할 수 있습니다. 자세한 내용은 <a target=\"_blank\" "
+"href=\"https://go-blogs.com/cocoon/carousel-setting/\">여기</a>를 참조하세요."
+
+#: skins/nagi/nagi-customizer.php:600
+#: skins/nagi/nagi-customizer.php:648
+#: skins/nagi/nagi-customizer.php:696
+msgid "2～6枚で設定可"
+msgstr "2~6개 설정 가능"
+
+#: skins/nagi/nagi-customizer.php:601
+msgid "画面幅 1241px以上での表示枚数"
+msgstr "화면 너비 1241px 이상일 때 표시 개수"
+
+#: skins/nagi/nagi-customizer.php:625
+#: skins/nagi/nagi-customizer.php:673
+#: skins/nagi/nagi-customizer.php:721
+#: skins/nagi/nagi-customizer.php:770
+#: skins/nagi/nagi-customizer.php:818
+msgid "チェックなしの場合は表示枚数と同じ枚数スライドします"
+msgstr "선택하지 않으면 표시 개수만큼 이동합니다"
+
+#: skins/nagi/nagi-customizer.php:626
+#: skins/nagi/nagi-customizer.php:674
+#: skins/nagi/nagi-customizer.php:722
+#: skins/nagi/nagi-customizer.php:771
+#: skins/nagi/nagi-customizer.php:819
+msgid "1枚ずつスライドさせる"
+msgstr "한 번에 한 개씩 이동"
+
+#: skins/nagi/nagi-customizer.php:649
+msgid "画面幅 1024px～1240pxでの表示枚数"
+msgstr "화면 너비 1024px~1240px일 때 표시 개수"
+
+#: skins/nagi/nagi-customizer.php:697
+msgid "画面幅 835px～1023pxでの表示枚数"
+msgstr "화면 너비 835px~1023px일 때 표시 개수"
+
+#: skins/nagi/nagi-customizer.php:744
+msgid "2～4枚で設定可"
+msgstr "2~4개 설정 가능"
+
+#: skins/nagi/nagi-customizer.php:745
+msgid "画面幅 481px～834pxでの表示枚数"
+msgstr "화면 너비 481px~834px일 때 표시 개수"
+
+#: skins/nagi/nagi-customizer.php:793
+msgid "1～2枚で設定可"
+msgstr "1~2개 설정 가능"
+
+#: skins/nagi/nagi-customizer.php:794
+msgid "画面幅 480px以下での表示枚数"
+msgstr "화면 너비 480px 이하일 때 표시 개수"
+
+#: skins/one/functions.php:114
+msgid "各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。"
+msgstr "각 항목을 변경하고 공개 버튼을 누르면 디자인이 적용됩니다."
+
+#: skins/one/functions.php:251
+msgid "左固定サイドバー"
+msgstr "왼쪽 고정 사이드바"
+
+#: skins/one/functions.php:252
+msgid "PCでの閲覧時左端に固定で表示されるサイドバーです。"
+msgstr "PC에서 볼 때 왼쪽 가장자리에 고정되는 사이드바입니다."
+
+#: skins/silk/functions.php:225
+msgid "影"
+msgstr "그림자"
+
+#: skins/silk/functions.php:226
+msgid "パネル"
+msgstr "패널"
+
+#: skins/silk/functions.php:227
+msgid "比較表（アイコンリスト）"
+msgstr "비교표(아이콘 목록)"
+
+#: skins/silk/functions.php:228
+msgid "アコーディオン（トグルボックス）"
+msgstr "아코디언(토글 상자)"
+
+#: skins/silk/functions.php:230
+msgid "切り取り線"
+msgstr "절취선"
+
+#: skins/silk/functions.php:231
+msgid "中央寄せ"
+msgstr "가운데 정렬"
+
+#: skins/silk/functions.php:232
+msgid "水平"
+msgstr "가로"
+
+#: skins/silk/functions.php:234
+msgid "リンク"
+msgstr "링크"
+
+#: skins/silk/functions.php:235
+msgid "横長"
+msgstr "가로로 긴 형태"
+
+#: skins/silk/functions.php:238
+msgid "よくある質問"
+msgstr "자주 묻는 질문"
+
+#: skins/silk/functions.php:239
+msgid "アイコンなし"
+msgstr "아이콘 없음"
+
+#: skins/silk/functions.php:1072
+msgid "再利用ブロック"
+msgstr "재사용 가능 블록"
+
+#: skins/silk/functions.php:1073
+msgid "再利用ブロック一覧"
+msgstr "재사용 가능 블록 목록"
+
+#: skins/silk/functions.php:1097
+msgid "Cocoonスキン「SILK」"
+msgstr "Cocoon 스킨 “SILK”"
+
+#: skins/silk/functions.php:1222
+msgid "設定を追加しました。"
+msgstr "설정을 추가했습니다."
+
+#: skins/silk/functions.php:1224
+msgid "JSONファイルを選択してください。"
+msgstr "JSON 파일을 선택하세요."
+
+#: skins/silk/functions.php:1231
+msgid "オプション設定"
+msgstr "옵션 설정"
+
+#: skins/silk/functions.php:1233
+msgid "スキンのオプション設定を追加します。Cocoon設定が変更されるので、事前にバックアップファイルを取得してください。"
+msgstr "스킨의 옵션 설정을 추가합니다. Cocoon 설정이 변경되므로 먼저 백업 파일을 만드세요."
+
+#: skins/silk/functions.php:1243
+msgid "JSONファイルをアップロード:"
+msgstr "JSON 파일 업로드:"
+
+#: skins/silk/functions.php:1245
+msgid "設定の追加"
+msgstr "설정 추가"
+
+#: skins/silk/functions.php:1247
+msgid ""
+"スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御"
+"に従います。"
+msgstr ""
+"스킨 옵션 설정이 담긴 JSON 파일을 선택한 후 설정 추가 버튼을 누르세요. 파일 이름을 제외한 JSON 파일 작성 방법은 스킨 "
+"제어를 따릅니다."
+
+#: skins/silk/functions.php:1304
+#: skins/silk/functions.php:1323
+msgid "コードをコピーしました"
+msgstr "코드를 복사했습니다"
+
+#: skins/silk/patterns/comparison-table.php:8
+msgid "リスト"
+msgstr "목록"
+
+#: skins/silk/patterns/comparison-table.php:13
+msgid "比較表"
+msgstr "비교표"
+
+#: skins/silk/patterns/comparison-table.php:15
+msgid "グループブロックとアイコンリストブロックを組み合わせた比較表が作成できます。"
+msgstr "그룹 블록과 아이콘 목록 블록을 조합하여 비교표를 만들 수 있습니다."
+
+#: skins/silk/patterns/fullwide-columns.php:12
+msgid "全幅内カラム"
+msgstr "전체 너비 안의 열"
+
+#: skins/silk/patterns/fullwide-columns.php:14
+msgid "全幅設定のグループブロック内にカラムブロックを入れたパターンです。"
+msgstr "전체 너비로 설정한 그룹 블록 안에 열 블록을 넣은 패턴입니다."
+
+#: skins/silk/patterns/linklist-box.php:6
+msgid "関連リンク"
+msgstr "관련 링크"
+
+#: skins/silk/patterns/linklist-box.php:7
+msgid "テキストリンク"
+msgstr "텍스트 링크"
+
+#: skins/silk/patterns/linklist-box.php:12
+msgid "リンクリストボックス"
+msgstr "링크 목록 상자"
+
+#: skins/silk/patterns/linklist-box.php:14
+msgid "タブ見出しボックスブロック内にリンクリストを入れたパターンです。"
+msgstr "탭 제목 상자 블록 안에 링크 목록을 넣은 패턴입니다."
+
+#: lib/utils.php:4339
+#: skins/skin-demo-php/functions.php:45
+msgid "スキンから入力したタイトル"
+msgstr "스킨에서 입력한 제목"
+
+#: lib/utils.php:4340
+#: skins/skin-demo-php/functions.php:46
+msgid "スキンから入力したアピールエリアメッセージです。"
+msgstr "스킨에서 입력한 어필 영역 메시지입니다."
+
+#: lib/utils.php:4341
+#: skins/skin-demo-php/functions.php:47
+msgid "スキンボタンキャプション"
+msgstr "스킨 버튼 캡션"
+
+#: skins/skin-neumorphism/functions.php:87
+msgid "角の丸さ調節"
+msgstr "모서리 둥글기 조절"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:88
+#: skins/skin-tegakinote-dark-sky/functions.php:88
+#: skins/skin-tegakinote-green-orange/functions.php:88
+#: skins/skin-tegakinote-pink-lemon/functions.php:88
+#: skins/skin-tegakinote-white-banana/functions.php:88
+msgid "【スキン】日本語フォント設定"
+msgstr "[스킨] 일본어 글꼴 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:102
+#: skins/skin-tegakinote-dark-sky/functions.php:101
+#: skins/skin-tegakinote-green-orange/functions.php:101
+#: skins/skin-tegakinote-pink-lemon/functions.php:101
+#: skins/skin-tegakinote-white-banana/functions.php:101
+msgid "ロゴフォント設定"
+msgstr "로고 글꼴 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:103
+#: skins/skin-tegakinote-dark-sky/functions.php:102
+#: skins/skin-tegakinote-green-orange/functions.php:102
+#: skins/skin-tegakinote-pink-lemon/functions.php:102
+#: skins/skin-tegakinote-white-banana/functions.php:102
+msgid "ロゴテキストや記事タイトルなどのロゴフォントを設定できます。「設定なし」にするとCocoon設定 > 全体設定 > サイトフォント の設定を継承します。"
+msgstr ""
+"로고 텍스트와 글 제목 등에 사용할 로고 글꼴을 설정합니다. 없음을 선택하면 Cocoon 설정 > 전체 설정 > 사이트 글꼴 설정을 "
+"상속합니다."
+
+#: skins/skin-tegakinote-blue-coral/functions.php:108
+#: skins/skin-tegakinote-dark-sky/functions.php:107
+#: skins/skin-tegakinote-green-orange/functions.php:107
+#: skins/skin-tegakinote-pink-lemon/functions.php:107
+#: skins/skin-tegakinote-white-banana/functions.php:107
+msgid "クレー（デフォルト）"
+msgstr "Klee(기본값)"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:109
+#: skins/skin-tegakinote-dark-sky/functions.php:108
+#: skins/skin-tegakinote-green-orange/functions.php:108
+#: skins/skin-tegakinote-pink-lemon/functions.php:108
+#: skins/skin-tegakinote-white-banana/functions.php:108
+msgid "ZEN紅道"
+msgstr "Zen Kurenaido"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:110
+#: skins/skin-tegakinote-dark-sky/functions.php:109
+#: skins/skin-tegakinote-green-orange/functions.php:109
+#: skins/skin-tegakinote-pink-lemon/functions.php:109
+#: skins/skin-tegakinote-white-banana/functions.php:109
+msgid "ZEN角ゴシック"
+msgstr "Zen Kaku Gothic"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:111
+#: skins/skin-tegakinote-dark-sky/functions.php:110
+#: skins/skin-tegakinote-green-orange/functions.php:110
+#: skins/skin-tegakinote-pink-lemon/functions.php:110
+#: skins/skin-tegakinote-white-banana/functions.php:110
+msgid "ZEN丸ゴシック"
+msgstr "Zen Maru Gothic"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:112
+#: skins/skin-tegakinote-dark-sky/functions.php:111
+#: skins/skin-tegakinote-green-orange/functions.php:111
+#: skins/skin-tegakinote-pink-lemon/functions.php:111
+#: skins/skin-tegakinote-white-banana/functions.php:111
+msgid "キウイ丸"
+msgstr "Kiwi Maru"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:113
+msgid "解星デコール"
+msgstr "Kaisei Decol"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:173
+#: skins/skin-tegakinote-dark-sky/functions.php:155
+#: skins/skin-tegakinote-green-orange/functions.php:155
+#: skins/skin-tegakinote-pink-lemon/functions.php:155
+#: skins/skin-tegakinote-white-banana/functions.php:155
+msgid "【スキン】背景パターン設定"
+msgstr "[스킨] 배경 패턴 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:187
+#: skins/skin-tegakinote-dark-sky/functions.php:168
+#: skins/skin-tegakinote-green-orange/functions.php:168
+#: skins/skin-tegakinote-pink-lemon/functions.php:168
+#: skins/skin-tegakinote-white-banana/functions.php:168
+msgid "背景パターン設定"
+msgstr "배경 패턴 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:188
+#: skins/skin-tegakinote-dark-sky/functions.php:169
+#: skins/skin-tegakinote-green-orange/functions.php:169
+#: skins/skin-tegakinote-pink-lemon/functions.php:169
+#: skins/skin-tegakinote-white-banana/functions.php:169
+msgid "背景のパターンをお選びください。「設定なし」にすると背景のパターンは削除され色のみになります。"
+msgstr "배경 패턴을 선택하세요. 없음을 선택하면 패턴이 제거되고 배경색만 사용됩니다."
+
+#: skins/skin-tegakinote-blue-coral/functions.php:193
+#: skins/skin-tegakinote-dark-sky/functions.php:174
+#: skins/skin-tegakinote-green-orange/functions.php:174
+#: skins/skin-tegakinote-pink-lemon/functions.php:174
+#: skins/skin-tegakinote-white-banana/functions.php:174
+msgid "グリッド（デフォルト）"
+msgstr "격자(기본값)"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:195
+#: skins/skin-tegakinote-dark-sky/functions.php:176
+#: skins/skin-tegakinote-green-orange/functions.php:176
+#: skins/skin-tegakinote-pink-lemon/functions.php:176
+#: skins/skin-tegakinote-white-banana/functions.php:176
+msgid "罫線"
+msgstr "괘선"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:196
+#: skins/skin-tegakinote-dark-sky/functions.php:177
+#: skins/skin-tegakinote-green-orange/functions.php:177
+#: skins/skin-tegakinote-pink-lemon/functions.php:177
+#: skins/skin-tegakinote-white-banana/functions.php:177
+msgid "ドット"
+msgstr "점"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:268
+#: skins/skin-tegakinote-dark-sky/functions.php:232
+#: skins/skin-tegakinote-green-orange/functions.php:232
+#: skins/skin-tegakinote-pink-lemon/functions.php:232
+#: skins/skin-tegakinote-white-banana/functions.php:232
+msgid "【スキン】ロゴテキストの傍点設定"
+msgstr "[스킨] 로고 텍스트 강조점 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:282
+#: skins/skin-tegakinote-dark-sky/functions.php:245
+#: skins/skin-tegakinote-green-orange/functions.php:245
+#: skins/skin-tegakinote-pink-lemon/functions.php:245
+#: skins/skin-tegakinote-white-banana/functions.php:245
+msgid "ロゴテキストの傍点デザイン"
+msgstr "로고 텍스트 강조점 디자인"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:283
+#: skins/skin-tegakinote-dark-sky/functions.php:246
+#: skins/skin-tegakinote-green-orange/functions.php:246
+#: skins/skin-tegakinote-pink-lemon/functions.php:246
+#: skins/skin-tegakinote-white-banana/functions.php:246
+msgid "ロゴテキストの傍点をお選びください。「設定なし」にすると傍点は削除されます。"
+msgstr "로고 텍스트의 강조점을 선택하세요. 없음을 선택하면 강조점이 제거됩니다."
+
+#: skins/skin-tegakinote-blue-coral/functions.php:288
+#: skins/skin-tegakinote-dark-sky/functions.php:251
+#: skins/skin-tegakinote-green-orange/functions.php:251
+#: skins/skin-tegakinote-pink-lemon/functions.php:251
+#: skins/skin-tegakinote-white-banana/functions.php:251
+msgid "点（デフォルト）"
+msgstr "점(기본값)"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:289
+#: skins/skin-tegakinote-dark-sky/functions.php:252
+#: skins/skin-tegakinote-green-orange/functions.php:252
+#: skins/skin-tegakinote-pink-lemon/functions.php:252
+#: skins/skin-tegakinote-white-banana/functions.php:252
+msgid "点 白抜き"
+msgstr "빈 점"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:291
+#: skins/skin-tegakinote-dark-sky/functions.php:254
+#: skins/skin-tegakinote-green-orange/functions.php:254
+#: skins/skin-tegakinote-pink-lemon/functions.php:254
+#: skins/skin-tegakinote-white-banana/functions.php:254
+msgid "丸 白抜き"
+msgstr "빈 원"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:292
+#: skins/skin-tegakinote-dark-sky/functions.php:255
+#: skins/skin-tegakinote-green-orange/functions.php:255
+#: skins/skin-tegakinote-pink-lemon/functions.php:255
+#: skins/skin-tegakinote-white-banana/functions.php:255
+msgid "二重丸"
+msgstr "이중 원"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:293
+#: skins/skin-tegakinote-dark-sky/functions.php:256
+#: skins/skin-tegakinote-green-orange/functions.php:256
+#: skins/skin-tegakinote-pink-lemon/functions.php:256
+#: skins/skin-tegakinote-white-banana/functions.php:256
+msgid "二重丸 白抜き"
+msgstr "빈 이중 원"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:295
+#: skins/skin-tegakinote-dark-sky/functions.php:258
+#: skins/skin-tegakinote-green-orange/functions.php:258
+#: skins/skin-tegakinote-pink-lemon/functions.php:258
+#: skins/skin-tegakinote-white-banana/functions.php:258
+msgid "三角 白抜き"
+msgstr "빈 삼각형"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:296
+#: skins/skin-tegakinote-dark-sky/functions.php:259
+#: skins/skin-tegakinote-green-orange/functions.php:259
+#: skins/skin-tegakinote-pink-lemon/functions.php:259
+#: skins/skin-tegakinote-white-banana/functions.php:259
+msgid "ゴマ"
+msgstr "깨점"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:297
+#: skins/skin-tegakinote-dark-sky/functions.php:260
+#: skins/skin-tegakinote-green-orange/functions.php:260
+#: skins/skin-tegakinote-pink-lemon/functions.php:260
+#: skins/skin-tegakinote-white-banana/functions.php:260
+msgid "ゴマ 白抜き"
+msgstr "빈 깨점"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:312
+#: skins/skin-tegakinote-dark-sky/functions.php:274
+#: skins/skin-tegakinote-green-orange/functions.php:274
+#: skins/skin-tegakinote-pink-lemon/functions.php:274
+#: skins/skin-tegakinote-white-banana/functions.php:274
+msgid "ロゴテキストの傍点位置"
+msgstr "로고 텍스트 강조점 위치"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:313
+#: skins/skin-tegakinote-dark-sky/functions.php:275
+#: skins/skin-tegakinote-green-orange/functions.php:275
+#: skins/skin-tegakinote-pink-lemon/functions.php:275
+#: skins/skin-tegakinote-white-banana/functions.php:275
+msgid "ロゴテキストの傍点の位置をお選びいただけます。"
+msgstr "로고 텍스트 강조점의 위치를 선택할 수 있습니다."
+
+#: skins/skin-tegakinote-blue-coral/functions.php:318
+#: skins/skin-tegakinote-dark-sky/functions.php:280
+#: skins/skin-tegakinote-green-orange/functions.php:280
+#: skins/skin-tegakinote-pink-lemon/functions.php:280
+#: skins/skin-tegakinote-white-banana/functions.php:280
+msgid "下（デフォルト）"
+msgstr "아래(기본값)"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:319
+#: skins/skin-tegakinote-dark-sky/functions.php:281
+#: skins/skin-tegakinote-green-orange/functions.php:281
+#: skins/skin-tegakinote-pink-lemon/functions.php:281
+#: skins/skin-tegakinote-white-banana/functions.php:281
+msgid "上"
+msgstr "위"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:419
+#: skins/skin-tegakinote-dark-sky/functions.php:345
+#: skins/skin-tegakinote-green-orange/functions.php:345
+#: skins/skin-tegakinote-pink-lemon/functions.php:345
+#: skins/skin-tegakinote-white-banana/functions.php:345
+msgid "【スキン】グローバルナビ設定"
+msgstr "[스킨] 전역 탐색 설정"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:433
+#: skins/skin-tegakinote-dark-sky/functions.php:359
+#: skins/skin-tegakinote-green-orange/functions.php:359
+#: skins/skin-tegakinote-pink-lemon/functions.php:359
+#: skins/skin-tegakinote-white-banana/functions.php:359
+msgid "グローバルナビ色を設定したらカード装飾を解除"
+msgstr "전역 탐색 색상을 설정하면 카드 장식 해제"
+
+#: skins/skin-tegakinote-blue-coral/functions.php:434
+#: skins/skin-tegakinote-dark-sky/functions.php:360
+#: skins/skin-tegakinote-green-orange/functions.php:360
+#: skins/skin-tegakinote-pink-lemon/functions.php:360
+#: skins/skin-tegakinote-white-banana/functions.php:360
+msgid ""
+"チェックを入れると、グローバルナビの色（背景色・文字色）を設定した際に、スマホのカード型メニューを通常表示に切り替えます（文字が見えなくなるのを防ぎます"
+"）。カード型を維持したい場合はチェックを外してください。"
+msgstr ""
+"선택하면 전역 탐색 색상(배경색 및 글자색)을 설정할 때 모바일 카드형 메뉴가 일반 표시로 전환되어 글자가 보이지 않는 문제를 "
+"방지합니다. 카드형을 유지하려면 선택을 해제하세요."
+
+#: blocks/src/block/login-user-only/index.js:21
+msgid "ログインしているユーザーにのみコンテンツを表示します"
+msgstr "로그인한 사용자에게만 콘텐츠를 표시합니다"
+
+#: blocks/src/blocks.js:125
+msgid "タイムラインのタイトル"
+msgstr "타임라인 제목"
+
+#: blocks/src/blocks.js:132
+msgid "アコーディオン見出し"
+msgstr "아코디언 제목"
+
+#: blocks/src/blocks.js:189
+msgid "キャンペーン期間中のみ表示されるコンテンツです。"
+msgstr "캠페인 기간에만 표시되는 콘텐츠입니다."
+
+#: skins/silk/gutenberg.js:62
+#: skins/silk/gutenberg.js:89
+msgid "選択する"
+msgstr "선택"
+
+#: skins/silk/gutenberg.js:115
+msgid "汎用"
+msgstr "일반"
+
+#: skins/silk/gutenberg.js:139
+#: skins/silk/gutenberg.js:171
+msgid "ショートコード設定"
+msgstr "쇼트코드 설정"
+
+#: skins/silk/gutenberg.js:220
+msgid "検索ワードを入力する"
+msgstr "검색어 입력"
+
+#: skins/silk/gutenberg.js:249
+#: skins/silk/gutenberg.js:284
+msgid "URL検索"
+msgstr "URL 검색"
+
+#: lib/page-settings/skin-translations.php:17
+msgid "Bizarre-food（グリーンソバ）"
+msgstr "Bizarre-food (Green Soba)"
+
+#: lib/page-settings/skin-translations.php:18
+msgid "Bizarre-food（ピンクワイン）"
+msgstr "Bizarre-food (Pink Wine)"
+
+#: lib/page-settings/skin-translations.php:19
+msgid "Bizarre-food（ブラックバーガー）"
+msgstr "Bizarre-food (Black Burger)"
+
+#: lib/page-settings/skin-translations.php:20
+msgid "Bizarre-food（ブルーカレー）"
+msgstr "Bizarre-food (Blue Curry)"
+
+#: lib/page-settings/skin-translations.php:21
+msgid "Bizarre-food（ホワイトラーメン）"
+msgstr "Bizarre-food (White Ramen)"
+
+#: lib/page-settings/skin-translations.php:22
+msgid "COLORS（イエロー）"
+msgstr "COLORS (Yellow)"
+
+#: lib/page-settings/skin-translations.php:23
+msgid "COLORS（グリーン）"
+msgstr "COLORS (Green)"
+
+#: lib/page-settings/skin-translations.php:24
+msgid "COLORS（ピンク）"
+msgstr "COLORS (Pink)"
+
+#: lib/page-settings/skin-translations.php:25
+msgid "COLORS（ブラック）"
+msgstr "COLORS (Black)"
+
+#: lib/page-settings/skin-translations.php:26
+msgid "COLORS（ブルー）"
+msgstr "COLORS (Blue)"
+
+#: lib/page-settings/skin-translations.php:27
+msgid "COLORS（レッド）"
+msgstr "COLORS (Red)"
+
+#: lib/page-settings/skin-translations.php:28
+msgid "Fuwari -御召茶(おめしちゃ)-"
+msgstr "Fuwari -Omeshi-cha-"
+
+#: lib/page-settings/skin-translations.php:29
+msgid "Fuwari -海松茶(みるちゃ)-"
+msgstr "Fuwari -Miru-cha-"
+
+#: lib/page-settings/skin-translations.php:30
+msgid "Fuwari -海老茶(えびちゃ)-"
+msgstr "Fuwari -Ebi-cha-"
+
+#: lib/page-settings/skin-translations.php:31
+msgid "Fuwari -褐色(かちいろ)-"
+msgstr "Fuwari -Kachi-iro-"
+
+#: lib/page-settings/skin-translations.php:32
+msgid "Momoon（アクア）"
+msgstr "Momoon (Aqua)"
+
+#: lib/page-settings/skin-translations.php:33
+msgid "Momoon（オレンジ）"
+msgstr "Momoon (Orange)"
+
+#: lib/page-settings/skin-translations.php:34
+msgid "Momoon（グリーン）"
+msgstr "Momoon (Green)"
+
+#: lib/page-settings/skin-translations.php:35
+msgid "Momoon（パープル）"
+msgstr "Momoon (Purple)"
+
+#: lib/page-settings/skin-translations.php:36
+msgid "Momoon（ピンク）"
+msgstr "Momoon (Pink)"
+
+#: lib/page-settings/skin-translations.php:37
+msgid "Natural（グリーン）"
+msgstr "Natural (Green)"
+
+#: lib/page-settings/skin-translations.php:38
+msgid "Natural（ブルー）"
+msgstr "Natural (Blue)"
+
+#: lib/page-settings/skin-translations.php:39
+msgid "SILK（シルク）"
+msgstr "SILK"
+
+#: lib/page-settings/skin-translations.php:40
+msgid "Simple‐Darkmode Always（常時ダークモード）"
+msgstr "Simple-Darkmode Always (Always Dark Mode)"
+
+#: lib/page-settings/skin-translations.php:41
+msgid "いつものコーヒー"
+msgstr "Everyday Coffee"
+
+#: lib/page-settings/skin-translations.php:42
+msgid "いつものローズ"
+msgstr "Everyday Rose"
+
+#: lib/page-settings/skin-translations.php:43
+msgid "いつもの深海"
+msgstr "Everyday Deep Sea"
+
+#: lib/page-settings/skin-translations.php:44
+msgid "おでかけピンク"
+msgstr "Outing Pink"
+
+#: lib/page-settings/skin-translations.php:45
+msgid "おでかけブルー"
+msgstr "Outing Blue"
+
+#: lib/page-settings/skin-translations.php:46
+msgid "おでかけレモン"
+msgstr "Outing Lemon"
+
+#: lib/page-settings/skin-translations.php:47
+msgid "てがきノート(グリーンオレンジ)"
+msgstr "Handwritten Note (Green Orange)"
+
+#: lib/page-settings/skin-translations.php:48
+msgid "てがきノート(ダークスカイ)"
+msgstr "Handwritten Note (Dark Sky)"
+
+#: lib/page-settings/skin-translations.php:49
+msgid "てがきノート(ピンクレモン)"
+msgstr "Handwritten Note (Pink Lemon)"
+
+#: lib/page-settings/skin-translations.php:50
+msgid "てがきノート(ブルーコーラル)"
+msgstr "Handwritten Note (Blue Coral)"
+
+#: lib/page-settings/skin-translations.php:51
+msgid "てがきノート(ホワイトバナナ)"
+msgstr "Handwritten Note (White Banana)"
+
+#: lib/page-settings/skin-translations.php:52
+msgid "ふわっと追加"
+msgstr "Soft Fade-In Add-on"
+
+#: lib/page-settings/skin-translations.php:53
+msgid "ほんわかライトニング"
+msgstr "Gentle Lightning"
+
+#: lib/page-settings/skin-translations.php:54
+msgid "みるらいと"
+msgstr "Miru Light"
+
+#: lib/page-settings/skin-translations.php:55
+msgid "ゆっくり色が変化"
+msgstr "Slowly Changing Colors"
+
+#: lib/page-settings/skin-translations.php:56
+msgid "アリス（チェシャ猫）"
+msgstr "Alice (Cheshire Cat)"
+
+#: lib/page-settings/skin-translations.php:57
+msgid "アリス（ビタミン）"
+msgstr "Alice (Vitamin)"
+
+#: lib/page-settings/skin-translations.php:58
+msgid "アリス（ユニコーン）"
+msgstr "Alice (Unicorn)"
+
+#: lib/page-settings/skin-translations.php:59
+msgid "アリス（ローズ）"
+msgstr "Alice (Rose)"
+
+#: lib/page-settings/skin-translations.php:60
+msgid "アリス（無印）"
+msgstr "Alice (Original)"
+
+#: lib/page-settings/skin-translations.php:61
+msgid "アリス（白ウサギ）"
+msgstr "Alice (White Rabbit)"
+
+#: lib/page-settings/skin-translations.php:62
+msgid "イノセンス"
+msgstr "Innocence"
+
+#: lib/page-settings/skin-translations.php:63
+msgid "カラフルライン"
+msgstr "Colorful Line"
+
+#: lib/page-settings/skin-translations.php:64
+msgid "サムライブルー（勝色）"
+msgstr "Samurai Blue (Kachi-iro)"
+
+#: lib/page-settings/skin-translations.php:65
+msgid "サムライブルー（無印）"
+msgstr "Samurai Blue (Original)"
+
+#: lib/page-settings/skin-translations.php:66
+msgid "スキンからオプション変更サンプル（CSV）"
+msgstr "Skin Option Change Sample (CSV)"
+
+#: lib/page-settings/skin-translations.php:67
+msgid "スキンからオプション変更サンプル（JSON）"
+msgstr "Skin Option Change Sample (JSON)"
+
+#: lib/page-settings/skin-translations.php:68
+msgid "スキンからオプション変更サンプル（PHP）"
+msgstr "Skin Option Change Sample (PHP)"
+
+#: lib/page-settings/skin-translations.php:69
+msgid "スキンテンプレート"
+msgstr "Skin Template"
+
+#: lib/page-settings/skin-translations.php:70
+msgid "ダークエンジ"
+msgstr "Dark Enji"
+
+#: lib/page-settings/skin-translations.php:71
+msgid "ダークカモノハ"
+msgstr "Dark Kamonoha"
+
+#: lib/page-settings/skin-translations.php:72
+msgid "ダークルリ"
+msgstr "Dark Ruri"
+
+#: lib/page-settings/skin-translations.php:73
+msgid "テスト中"
+msgstr "Under Testing"
+
+#: lib/page-settings/skin-translations.php:74
+msgid "ドット・レイニーブルー"
+msgstr "Dot Rainy Blue"
+
+#: lib/page-settings/skin-translations.php:75
+msgid "ドット・ワインレッド"
+msgstr "Dot Wine Red"
+
+#: lib/page-settings/skin-translations.php:76
+msgid "ミックスグリーン"
+msgstr "Mix Green"
+
+#: lib/page-settings/skin-translations.php:77
+msgid "ミックスブルー"
+msgstr "Mix Blue"
+
+#: lib/page-settings/skin-translations.php:78
+msgid "ミックスレッド"
+msgstr "Mix Red"
+
+#: lib/page-settings/skin-translations.php:79
+msgid "モダンブラック"
+msgstr "Modern Black"
+
+#: lib/page-settings/skin-translations.php:81
+msgid "凸凹"
+msgstr "Embossed"
+
+#: lib/page-settings/skin-translations.php:82
+msgid "旅カメラ"
+msgstr "Travel Camera"
+
+#: lib/page-settings/skin-translations.php:83
+msgid "#73c3fbをベースにした優しい色合いで使いやすいスキン"
+msgstr "#73c3fb을 바탕으로 부드러운 색조를 사용한 편리한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:84
+msgid "#86cfcfをベースにした優しい色合いで使いやすいスキン"
+msgstr "#86cfcf을 바탕으로 부드러운 색조를 사용한 편리한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:85
+msgid "Cocoonらしさを薄めて、所々に青系とピンク系を基調としたグラデーションを取り入れたスキン。"
+msgstr "Cocoon 특유의 느낌을 줄이고 곳곳에 파란색과 분홍색 계열의 그라데이션을 적용한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:86
+msgid ""
+"Hirositeさんが作成されたSimple‐Darkmodeスキンを元に、ブラウザやOSの設定に関わらず常にダークモードになるよう作成されたスキンです"
+"。"
+msgstr ""
+"Hirosite가 만든 Simple-Darkmode 스킨을 바탕으로 브라우저나 OS 설정과 관계없이 항상 다크 모드로 표시되는 "
+"스킨입니다."
+
+#: lib/page-settings/skin-translations.php:87
+msgid "PCでもフッターモバイルボタンが使える"
+msgstr "PC에서도 푸터 모바일 버튼을 사용할 수 있습니다."
+
+#: lib/page-settings/skin-translations.php:88
+msgid ""
+"functions.phpファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のfunctions."
+"phpファイルを参照してください。サンプルですので、実用性はありません。"
+msgstr ""
+"functions.php를 변경해 테마 디자인을 바꾸는 데모입니다. 자세한 내용은 스킨 폴더의 functions.php를 확인하세요. "
+"샘플이므로 실용 목적은 아닙니다."
+
+#: lib/page-settings/skin-translations.php:89
+msgid "marine がお届けする Cocoon のスキン m-tomato です。"
+msgstr "marine이 제공하는 Cocoon 스킨 m-tomato입니다."
+
+#: lib/page-settings/skin-translations.php:90
+msgid "marineがお届けするテーマ「sora」"
+msgstr "marine이 제공하는 테마 “sora”입니다."
+
+#: lib/page-settings/skin-translations.php:91
+msgid ""
+"option.csvファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption."
+"csvファイルを参照してください。サンプルですので、実用性はありません。"
+msgstr ""
+"option.csv를 변경해 테마 디자인을 바꾸는 데모입니다. 자세한 내용은 스킨 폴더의 option.csv를 확인하세요. 샘플이므로 "
+"실용 목적은 아닙니다."
+
+#: lib/page-settings/skin-translations.php:92
+msgid ""
+"option.jsonファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption."
+"jsonファイルを参照してください。サンプルですので、実用性はありません。"
+msgstr ""
+"option.json을 변경해 테마 디자인을 바꾸는 데모입니다. 자세한 내용은 스킨 폴더의 option.json을 확인하세요. "
+"샘플이므로 실용 목적은 아닙니다."
+
+#: lib/page-settings/skin-translations.php:93
+msgid "「勝手にライトニング！」で使用しているオリジナルスキン"
+msgstr "“Katteni Lightning!”에서 사용하는 오리지널 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:94
+msgid "「大人可愛さ」と「知的さ」を兼ね備えた居心地の良いスキン。"
+msgstr "성숙한 귀여움과 지적인 분위기를 함께 갖춘 편안한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:95
+msgid "ふわっとした居心地のよいシンプルなデザイン。「みるめも」というサイトのデザインを「らいと」に表現したスキンです。"
+msgstr "부드럽고 편안한 심플 디자인으로 Mirumemo 사이트의 디자인을 가볍게 표현한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:96
+msgid "アナログな手書き風をイメージした少し抜けのあるスキンです。"
+msgstr "아날로그 손글씨 느낌을 살린 여유로운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:97
+msgid "アリスの色違い。ピンクを基調とした、パステルカラーの可愛らしいスキンです。"
+msgstr "Alice 색상 변형으로, 분홍색을 바탕으로 한 귀여운 파스텔 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:98
+msgid "アリスの色違い。ユニコーンカラーを基調とした、パステルカラーの可愛らしいスキンです。"
+msgstr "Alice 색상 변형으로, 유니콘 색상을 바탕으로 한 귀여운 파스텔 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:99
+msgid "アリスの色違い。白×ブルーを基調とした、パステルカラーの可愛らしいスキンです。"
+msgstr "Alice 색상 변형으로, 흰색과 파란색을 바탕으로 한 귀여운 파스텔 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:100
+msgid "オレンジを基調とした「cocoon」用のデザインスキン"
+msgstr "주황색을 바탕으로 한 Cocoon 디자인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:101
+msgid "キーカラー設定やダークスキン対応のブロックエディター向けCocoonスキン。"
+msgstr "키 컬러 설정과 다크 스킨을 지원하는 블록 편집기용 Cocoon 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:102
+msgid "グリーンを基調とした「cocoon」用のデザインスキン"
+msgstr "초록색을 바탕으로 한 Cocoon 디자인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:103
+msgid "グレイベースのシンプルデザイン フロントページにメインビジュアルを画面高さいっぱいに表示するスキンです"
+msgstr "회색 기반의 심플한 디자인으로 첫 페이지의 메인 비주얼을 화면 높이 가득 표시합니다."
+
+#: lib/page-settings/skin-translations.php:104
+msgid "サムライブルーを基調としたサッカー向けのコンセプトスキン"
+msgstr "Samurai Blue를 바탕으로 한 축구 콘셉트 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:105
+msgid "サムライブルー（勝色モデル）を基調としたスキン"
+msgstr "전통색 Kachi-iro 모델의 Samurai Blue를 바탕으로 한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:106
+msgid "シンプルな1カラムスキン。文章メインのサイトなどに。1カラムスキンなのでサイドバーなどは利用できません。"
+msgstr "글 중심 사이트에 적합한 심플한 1열 스킨입니다. 사이드바 등은 사용할 수 없습니다."
+
+#: lib/page-settings/skin-translations.php:107
+msgid "シンプルなブログスキン（オレンジ色）"
+msgstr "심플한 블로그 스킨(주황색)입니다."
+
+#: lib/page-settings/skin-translations.php:108
+msgid "シンプルなブログスキン（シアン）"
+msgstr "심플한 블로그 스킨(청록색)입니다."
+
+#: lib/page-settings/skin-translations.php:109
+msgid "シンプルなブログスキン（ピンク）"
+msgstr "심플한 블로그 스킨(분홍색)입니다."
+
+#: lib/page-settings/skin-translations.php:110
+msgid "シンプルなブログスキン（ライム）"
+msgstr "심플한 블로그 스킨(라임색)입니다."
+
+#: lib/page-settings/skin-translations.php:111
+msgid "シンプルなブログスキン（明るい緑色）"
+msgstr "심플한 블로그 스킨(밝은 초록색)입니다."
+
+#: lib/page-settings/skin-translations.php:112
+msgid "シンプルなブログスキン（濃いオレンジ色）"
+msgstr "심플한 블로그 스킨(진한 주황색)입니다."
+
+#: lib/page-settings/skin-translations.php:113
+msgid "シンプルなブログスキン（濃紫色）"
+msgstr "심플한 블로그 스킨(진한 보라색)입니다."
+
+#: lib/page-settings/skin-translations.php:114
+msgid "シンプルなブログスキン（琥珀色）"
+msgstr "심플한 블로그 스킨(호박색)입니다."
+
+#: lib/page-settings/skin-translations.php:115
+msgid "シンプルなブログスキン（紫色）"
+msgstr "심플한 블로그 스킨(보라색)입니다."
+
+#: lib/page-settings/skin-translations.php:116
+msgid "シンプルなブログスキン（緑色）"
+msgstr "심플한 블로그 스킨(초록색)입니다."
+
+#: lib/page-settings/skin-translations.php:117
+msgid "シンプルなブログスキン（群青色）"
+msgstr "심플한 블로그 스킨(군청색)입니다."
+
+#: lib/page-settings/skin-translations.php:118
+msgid "シンプルなブログスキン（茶色）"
+msgstr "심플한 블로그 스킨(갈색)입니다."
+
+#: lib/page-settings/skin-translations.php:119
+msgid "シンプルなブログスキン（赤色）"
+msgstr "심플한 블로그 스킨(빨간색)입니다."
+
+#: lib/page-settings/skin-translations.php:120
+msgid "シンプルなブログスキン（青色）"
+msgstr "심플한 블로그 스킨(파란색)입니다."
+
+#: lib/page-settings/skin-translations.php:121
+msgid "シンプルなブログスキン（鴨の羽色）"
+msgstr "심플한 블로그 스킨(Kamonoha 청록색)입니다."
+
+#: lib/page-settings/skin-translations.php:122
+msgid "シンプルなブログスキン（黄色）"
+msgstr "심플한 블로그 스킨(노란색)입니다."
+
+#: lib/page-settings/skin-translations.php:123
+msgid "ジューシーな白桃をイメージしたスキンです。"
+msgstr "과즙이 풍부한 백도에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:124
+msgid "スキン自作の際にひな型となるスキンです。スタイルは何も入っていません。"
+msgstr "스킨을 직접 만들 때 사용하는 빈 템플릿 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:125
+msgid "テスト中のスキン。"
+msgstr "현재 테스트 중인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:126
+msgid "パステルカラーの可愛らしいスキンです。"
+msgstr "파스텔 색상의 귀여운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:127
+msgid "パステルカラー調のカラフルなスキン"
+msgstr "파스텔 색조의 컬러풀한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:128
+msgid "パープルを基調とした「cocoon」用のデザインスキン"
+msgstr "보라색을 바탕으로 한 Cocoon 디자인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:129
+msgid "ピンクをベースにしたシンプルで使いやすいスキン"
+msgstr "분홍색을 바탕으로 한 심플하고 사용하기 쉬운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:130
+msgid "ピンクを基調とした「cocoon」用のデザインスキン"
+msgstr "분홍색을 바탕으로 한 Cocoon 디자인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:131
+msgid "ブドウをイメージしたスキンです。"
+msgstr "포도에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:132
+msgid "マンゴーをイメージしたスキンです。"
+msgstr "망고에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:133
+msgid "モノクロを基調としています。"
+msgstr "모노크롬을 기반으로 한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:134
+msgid "ライムをイメージしたスキンです。"
+msgstr "라임에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:135
+msgid "一番の特徴といえばアフィリエイトボタンをフッターに固定表示できるところですかね。。"
+msgstr "제휴 버튼을 푸터에 고정 표시할 수 있는 것이 가장 큰 특징입니다."
+
+#: lib/page-settings/skin-translations.php:136
+msgid "和色「御召茶(おめしちゃ)」をベースにしたふわりと色づいたスキン"
+msgstr "일본 전통색 “오메시차”을 바탕으로 은은하게 물든 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:137
+msgid "和色「海松茶(みるちゃ)」をベースにしたふわりと色づいたスキン"
+msgstr "일본 전통색 “미루차”을 바탕으로 은은하게 물든 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:138
+msgid "和色「海老茶(えびちゃ)」をベースにしたふわりと色づいたスキン"
+msgstr "일본 전통색 “에비차”을 바탕으로 은은하게 물든 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:139
+msgid "和色「褐色(かちいろ)」をベースにしたふわりと色づいたスキン"
+msgstr "일본 전통색 “카치이로”을 바탕으로 은은하게 물든 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:140
+msgid "土壌をイメージしたスキンです。"
+msgstr "흙에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:141
+msgid "夕焼けをイメージしたスキンです。"
+msgstr "노을에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:142
+msgid "女性が春色のスプリングコートを羽織っておでかけするイメージで作りました。ファッション・女性向けコンテンツにいかがでしょうか。"
+msgstr "봄빛 코트를 입고 외출하는 여성을 이미지로 만들었습니다. 패션 및 여성 대상 콘텐츠에 잘 어울립니다."
+
+#: lib/page-settings/skin-translations.php:143
+msgid "好きなスキンにふわっと動き（フェイドイン）を追加します。"
+msgstr "원하는 스킨에 부드러운 페이드인 동작을 추가합니다."
+
+#: lib/page-settings/skin-translations.php:144
+msgid "旅ブログ専用スキンです。旅行写真が美しく見えるように工夫しています。"
+msgstr "여행 사진이 아름답게 보이도록 만든 여행 블로그 전용 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:145
+msgid "日本の伝統色・山吹色（#f8b500）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 야마부키색(#f8b500)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:146
+msgid "日本の伝統色・常磐色（#007b43）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 도키와색(#007b43)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:147
+msgid "日本の伝統色・緋色（#d3381c）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 히이로(#d3381c)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:148
+msgid "日本の伝統色・藍鉄（#393f4c）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 아이테쓰색(#393f4c)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:149
+msgid "日本の伝統色・躑躅色（#e95295）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 진달래색(#e95295)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:150
+msgid "日本の伝統色・青色（#0095d9）をベースとしたシンプルスキン。"
+msgstr "일본 전통색 청색(#0095d9)을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:151
+msgid "春夏秋冬のような季節をモチーフにして優しさを感じられるデザインを目指して作成されたスキン。"
+msgstr "사계절을 모티프로 부드러운 느낌을 목표로 만든 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:152
+msgid "暗めの赤をベースにドット柄を背景にしたスキン"
+msgstr "어두운 빨간색 바탕에 도트 무늬 배경을 적용한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:153
+msgid "暗めの青をベースにドット柄を背景にしたスキン"
+msgstr "어두운 파란색 바탕에 도트 무늬 배경을 적용한 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:154
+msgid "月の表面をイメージしたスキンです。"
+msgstr "달 표면에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:155
+msgid "某無料WordPressテーマっぽいスキンです。"
+msgstr "특정 무료 WordPress 테마와 비슷한 분위기의 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:156
+msgid ""
+"毎日使っても飽きないデザインを目指しました。スキンカラーや背景画像を変えることでレイアウトは同じでも部屋のカーテンを変えるように雰囲気をチェンジできます"
+"。"
+msgstr "매일 사용해도 질리지 않는 디자인입니다. 스킨 색상이나 배경 이미지를 바꾸면 방의 커튼을 바꾸듯 분위기를 바꿀 수 있습니다."
+
+#: lib/page-settings/skin-translations.php:157
+msgid "水色を基調とした「cocoon」用のデザインスキン"
+msgstr "하늘색을 바탕으로 한 Cocoon 디자인 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:158
+msgid "瑠璃色（るりいろ）のダークスキン。濃い紫みの鮮やかな青色をキーカラーにした暗色のスキン。"
+msgstr "보랏빛이 도는 선명한 Ruri 청색을 핵심 색상으로 한 다크 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:159
+msgid "空・海・葉をイメージしたスキンです。"
+msgstr "하늘·바다·나뭇잎에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:160
+msgid "立体感のあるニューモフィズムデザインにするためのスキンです。※全体の色と角の丸みは外観⇒カスタマイズ⇒Neumorphismで変更できます。"
+msgstr ""
+"입체적인 뉴모피즘 디자인의 스킨입니다. 전체 색상과 모서리 둥글기는 외모 → 사용자 정의 → Neumorphism에서 변경할 수 "
+"있습니다."
+
+#: lib/page-settings/skin-translations.php:161
+msgid "紺をベースにしたシンプルで使いやすいスキン"
+msgstr "남색을 바탕으로 한 심플하고 사용하기 쉬운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:162
+msgid "緑をベースにしたシンプルで使いやすいスキン"
+msgstr "초록색을 바탕으로 한 심플하고 사용하기 쉬운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:163
+msgid "緑を基調としたシンプルなスキン"
+msgstr "초록색을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:164
+msgid "背景の色がゆっくり変化していきます（4つの色を選べます）。"
+msgstr "배경색이 천천히 바뀌며 네 가지 색상을 선택할 수 있습니다."
+
+#: lib/page-settings/skin-translations.php:165
+msgid "臙脂色（えんじいろ）のダークスキン。黒みをおびた深く艶やかな紅色をキーカラーにした暗色のスキン。"
+msgstr "검은 기가 도는 깊고 윤기 있는 Enji 진홍색을 핵심 색상으로 한 다크 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:166
+msgid "装飾は控えめかつダークモードに対応したシンプルスキン。OSやブラウザーがダークモード設定の場合はダークモードで表示されます。"
+msgstr "장식을 절제하고 다크 모드를 지원하는 심플 스킨입니다. OS 또는 브라우저 설정에 따라 다크 모드로 표시됩니다."
+
+#: lib/page-settings/skin-translations.php:167
+msgid "赤をベースにしたシンプルで使いやすいスキン"
+msgstr "빨간색을 바탕으로 한 심플하고 사용하기 쉬운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:168
+msgid "赤を基調としたシンプルなスキン"
+msgstr "빨간색을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:169
+msgid "青をベースにしたシンプルで使いやすいスキン"
+msgstr "파란색을 바탕으로 한 심플하고 사용하기 쉬운 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:170
+msgid "青を基調としたシンプルなスキン"
+msgstr "파란색을 바탕으로 한 심플 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:171
+msgid "青空をイメージしたスキンです。"
+msgstr "푸른 하늘에서 영감을 받은 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:172
+msgid "鴨の羽色（かものはいろ）のダークスキン。真鴨 の頭の羽色に由来する少し暗い青緑色をキーカラーにした暗色のスキン。"
+msgstr "청둥오리 머리 깃털에서 유래한 어두운 청록색 Kamonoha를 핵심 색상으로 한 다크 스킨입니다."
+
+#: lib/page-settings/skin-translations.php:173
+msgid "黒をベースにしたシンプルなスキン"
+msgstr "검은색을 바탕으로 한 심플 스킨입니다."
+
+#: lib/utils.php:4338
+msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
+msgstr "<div class=\"blank-box bb-red\">비방 및 욕설은 예고 없이 삭제됩니다.</div>"
+
+#: lib/utils.php:1073
+msgid "する"
+msgstr " "
+
+#: lib/utils.php:1074
+msgid "続きを読む"
+msgstr "계속 읽기"
+
+#: lib/utils.php:1075
+msgid "この記事は参考になりましたか？"
+msgstr "이 글이 참고가 되었나요?"
+
+#: lib/utils.php:1076
+msgid "前の記事を読む"
+msgstr "이전 글 읽기"
+
+#: lib/utils.php:1077
+msgid "次の記事を読む"
+msgstr "다음 글 읽기"
+
+#: lib/utils.php:1078
+msgid "この記事は役に立ちましたか？"
+msgstr "이 글이 도움이 되었나요?"
+
+#: skins/silk/patterns/comparison-table.php:6
+msgid "比較１"
+msgstr "비교 1"
+
+#: skins/silk/patterns/comparison-table.php:7
+msgid "比較２"
+msgstr "비교 2"
+
+#: skins/silk/patterns/fullwide-columns.php:6
+msgid "カラム１"
+msgstr "열 1"
+
+#: skins/silk/patterns/fullwide-columns.php:7
+msgid "カラム２"
+msgstr "열 2"
+
+#: lib/utils.php:1079
+msgid "スキン制御"
+msgstr "스킨 제어"
+
+#: lib/utils.php:2783
+#, php-format
+msgid "%1$s%2$s"
+msgstr "%1$s %2$s"
 
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
@@ -18024,7 +19674,7 @@ msgstr "btn"
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
 msgid "campaign"
-msgstr ""
+msgstr "캠페인"
 
 #: blocks/src/block/campaign/block.json
 msgctxt "block keyword"
@@ -18074,22 +19724,22 @@ msgstr "info"
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "login"
-msgstr ""
+msgstr "로그인"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "user"
-msgstr ""
+msgstr "사용자"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "only"
-msgstr ""
+msgstr "전용"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
 msgid "member"
-msgstr ""
+msgstr "회원"
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block keyword"
@@ -18216,7 +19866,7 @@ msgstr "에디터에서 Amazon 상품을 검색·선택하고 정적 상품 링�
 #: blocks/src/block/campaign/block.json
 msgctxt "block description"
 msgid "指定した期間中のみコンテンツを表示するブロックです。開始日時と終了日時を設定できます。"
-msgstr ""
+msgstr "지정한 기간에만 콘텐츠를 표시하는 블록입니다. 시작 및 종료 날짜와 시간을 설정할 수 있습니다."
 
 #: blocks/src/block/login-user-only/block.json
 msgctxt "block description"
@@ -18232,7 +19882,3 @@ msgstr "에디터에서 라쿠텐 상품을 검색・선택하여 정적 상품 
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n.j"
-
-#: lib/utils.php
-msgid "ラベルなし"
-msgstr "라벨 없음"

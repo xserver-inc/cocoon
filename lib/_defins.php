@@ -333,8 +333,14 @@ WordPress Theme Cocoon
 https://wp-cocoon.com/
 Support forum
 https://wp-cocoon.com/community/
---------------------------------
-※本メールアドレスは送信専用のため、返信できません。");
+--------------------------------");
+
+//メール送信時点の言語を反映したクレジット文
+if ( !function_exists( 'get_theme_mail_credit' ) ):
+function get_theme_mail_credit() {
+  return THEME_MAIL_CREDIT.PHP_EOL.__( '本メールアドレスは送信専用のため、返信できません。', THEME_NAME );
+}
+endif;
 
 add_action('after_setup_theme', function() {
 
@@ -417,4 +423,3 @@ add_action('after_setup_theme', function() {
   //デフォルトの名前
   define('SB_DEFAULT_NAME', __( '匿名', THEME_NAME ));
 });
-

@@ -110,8 +110,8 @@ add_filter('get_editor_key_color', function($color) {
 function one_customize_register( $wp_customize ) {
 
     $wp_customize->add_section( 'theme_setting', array(
-        'title'    => __( 'スキンoneの設定', 'theme_slug' ),
-        'description' => '各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。',
+        'title'    => __( 'スキンoneの設定', THEME_NAME ),
+        'description' => __( '各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。', THEME_NAME ),
         'priority' => 1,
     ));
     $wp_customize->add_setting( 'checkbox_one', array(
@@ -119,8 +119,8 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one', array(
-        'label'       => __( '本文見出し(H2)にカウントを付ける', 'theme' ),
-        'description' => __( '本文の見出しにカウントをつけたくない場合はチェックを外してください', 'theme' ),
+        'label'       => __( '本文見出し(H2)にカウントを付ける', THEME_NAME ),
+        'description' => __( '本文の見出しにカウントをつけたくない場合はチェックを外してください', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 1,
         'type'        => 'checkbox',
@@ -131,8 +131,8 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one2', array(
-        'label'       => __( 'PCでもスマートフォン用の固定フッターメニューを表示する', 'theme' ),
-        'description' => __( '従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください', 'theme' ),
+        'label'       => __( 'PCでもスマートフォン用の固定フッターメニューを表示する', THEME_NAME ),
+        'description' => __( '従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 4,
         'type'        => 'checkbox',
@@ -142,7 +142,7 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one3', array(
-        'label'       => __( '全体的に影を付ける', 'theme' ),
+        'label'       => __( '全体的に影を付ける', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 5,
         'type'        => 'checkbox',
@@ -152,8 +152,8 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one4', array(
-        'label'       => __( 'ダークスキン対応にする', 'theme' ),
-        'description' => __( '背景をダークにしたときはチェックを入れてください', 'theme' ),
+        'label'       => __( 'ダークスキン対応にする', THEME_NAME ),
+        'description' => __( '背景をダークにしたときはチェックを入れてください', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 6,
         'type'        => 'checkbox',
@@ -163,8 +163,8 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one5', array(
-        'label'       => __( '丸みをなくす', 'theme' ),
-        'description' => __( 'ボタンなどの角の丸みをなくしたいときはチェックを入れてください', 'theme' ),
+        'label'       => __( '丸みをなくす', THEME_NAME ),
+        'description' => __( 'ボタンなどの角の丸みをなくしたいときはチェックを入れてください', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 7,
         'type'        => 'checkbox',
@@ -174,7 +174,7 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one6', array(
-        'label'       => __( '本文の見出しを明朝体にする', 'theme' ),
+        'label'       => __( '本文の見出しを明朝体にする', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 2,
         'type'        => 'checkbox',
@@ -184,7 +184,7 @@ function one_customize_register( $wp_customize ) {
         'sanitize_callback' => 'one_sanitize_checkbox',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one7', array(
-        'label'       => __( 'サイドバーの見出しを明朝体にする', 'theme' ),
+        'label'       => __( 'サイドバーの見出しを明朝体にする', THEME_NAME ),
         'section'     => 'theme_setting',
         'priority'    => 3,
         'type'        => 'checkbox',
@@ -248,8 +248,8 @@ function my_class_names2( $classes ) {
   // ウィジェットを登録
   register_sidebar( array(
     'id' => 'sidebar-one',
-    'name' => '左固定サイドバー',
-    'description' => 'PCでの閲覧時左端に固定で表示されるサイドバーです。',
+    'name' => __( '左固定サイドバー', THEME_NAME ),
+    'description' => __( 'PCでの閲覧時左端に固定で表示されるサイドバーです。', THEME_NAME ),
     'before_widget' => '<div class="one-fixed-sidebar">',
     'after_widget' => '</div>',
     'before_title' => '<p class="one-fixed-title">',

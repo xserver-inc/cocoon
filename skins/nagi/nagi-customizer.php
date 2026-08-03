@@ -81,13 +81,13 @@ if (!function_exists('nagi_sanitize_number_range')):
 function nagi_customize_register( $wp_customize ) {
 
     $wp_customize->add_panel( 'nagi_customizer_panel', array(
-        'title'    => __( 'スキンNAGIの設定', 'theme_slug' ),
+        'title'    => __( 'スキンNAGIの設定', THEME_NAME ),
         'priority' => 1
 
     ));
     $wp_customize->add_section( 'nagi_customizer_sct', array(
-      'title'    => __( '全体設定', 'theme_slug' ),
-      'description' => '設定の詳細は<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-zentai/">こちら</a>',
+      'title'    => __( '全体設定', THEME_NAME ),
+      'description' => __( '設定の詳細は<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-zentai/">こちら</a>', THEME_NAME ),
       'priority' => 1,
       'panel'=>'nagi_customizer_panel'
     ));
@@ -107,12 +107,12 @@ function nagi_customize_register( $wp_customize ) {
     array(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'shadow_radio',
-      'label'       => '影をつけるか',
+      'label'       => __( '影をつけるか', THEME_NAME ),
       'type'        => 'radio',
       'choices'     => array(
-        'shadow0' => '影をつけない',
-        'shadow1' => 'ちょっぴり影をつける',
-        'shadow2' => 'くっきり影をつける（背景が暗い場合はこれがおすすめ）',
+        'shadow0' => __( '影をつけない', THEME_NAME ),
+        'shadow1' => __( 'ちょっぴり影をつける', THEME_NAME ),
+        'shadow2' => __( 'くっきり影をつける（背景が暗い場合はこれがおすすめ）', THEME_NAME ),
       ),
     ) )
   );
@@ -131,12 +131,12 @@ function nagi_customize_register( $wp_customize ) {
     array(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'radius_radio',
-      'label'       => '丸みをつけるか',
+      'label'       => __( '丸みをつけるか', THEME_NAME ),
       'type'        => 'radio',
       'choices'     => array(
-        'radius0' => '丸みをつけない',
-        'radius1' => 'ちょっぴり丸みをつける',
-        'radius2' => 'くっきり丸みをつける',
+        'radius0' => __( '丸みをつけない', THEME_NAME ),
+        'radius1' => __( 'ちょっぴり丸みをつける', THEME_NAME ),
+        'radius2' => __( 'くっきり丸みをつける', THEME_NAME ),
       ),
     ) )
   );
@@ -155,8 +155,8 @@ $wp_customize->add_control(
       array(
         'section'     => 'nagi_customizer_sct',
         'settings'    => 'gray_zone',
-        'label'       => '薄グレーゾーンの色',
-        'description' => '<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</small>'
+        'label'       => __( '薄グレーゾーンの色', THEME_NAME ),
+        'description' => __( '<small>目次やシェアボタン、フォローボタン等の背景色です。薄グレーゾーンといってますが、何色でもいいです。<br>※35%の透過となります。</small>', THEME_NAME )
       )
     )
   );
@@ -175,7 +175,7 @@ $wp_customize->add_control(
     array(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'sidebar_use_gray',
-      'label'       => 'サイドバーにもこの背景色をつける',
+      'label'       => __( 'サイドバーにもこの背景色をつける', THEME_NAME ),
       'type'        => 'checkbox'
     )
   );
@@ -194,8 +194,8 @@ $wp_customize->add_control(
     array(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'sns_fix',
-      'label'       => 'SNSトップシェアボタンを画面左に固定する',
-      'description' => '<small>PC表示でのみ固定。Cocoon設定で「メインカラムトップシェアボタンを表示する」にチェックを入れる必要があります。</small>',
+      'label'       => __( 'SNSトップシェアボタンを画面左に固定する', THEME_NAME ),
+      'description' => __( '<small>PC表示でのみ固定。Cocoon設定で「メインカラムトップシェアボタンを表示する」にチェックを入れる必要があります。</small>', THEME_NAME ),
       'type'        => 'checkbox'
     )
   );
@@ -213,16 +213,16 @@ $wp_customize->add_control(
     array(
       'section'     => 'nagi_customizer_sct',
       'settings'    => 'cat_accordion',
-      'label'       => 'カテゴリーウィジェットの子カテゴリーをアコーディオン形式で開閉する',
+      'label'       => __( 'カテゴリーウィジェットの子カテゴリーをアコーディオン形式で開閉する', THEME_NAME ),
       'type'        => 'checkbox'
     )
   );
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーインデックスタブの設定
 $wp_customize->add_section( 'tab_customizer', array(
-        'title'    => __( 'フロントページのタブ一覧の設定', 'theme_slug' ),
-        'description' => 'フロントページのタブ一覧のデザインを変更したり、各タブにアイコンを設定できます</br>
-        詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-tab/">こちら</a>',
+        'title'    => __( 'フロントページのタブ一覧の設定', THEME_NAME ),
+        'description' => __( 'フロントページのタブ一覧のデザインを変更したり、各タブにアイコンを設定できます</br>
+        詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-tab/">こちら</a>', THEME_NAME ),
         'priority' => 1,
         'panel'=>'nagi_customizer_panel'
 
@@ -241,8 +241,8 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',
         'settings'    => 'tab_icon_ori',
-        'label'       => 'フロントページのタブ一覧のデザインをオリジナルのものにする',
-        'description' => '<small>アイコンの設定が必須です。</small>',
+        'label'       => __( 'フロントページのタブ一覧のデザインをオリジナルのものにする', THEME_NAME ),
+        'description' => __( '<small>アイコンの設定が必須です。</small>', THEME_NAME ),
         'type'        => 'checkbox'
       )
     );
@@ -261,8 +261,8 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',  // 紐づけるセクションIDを指定
         'settings'    => 'tab1_icon',  // 紐づける設定IDを指定
-        'label'       => '1つ目のタブのアイコン',
-        'description' => '<small>FontAwesomeのUnicodeを入力します。</br>（例　f15c　）</small>',
+        'label'       => __( '1つ目のタブのアイコン', THEME_NAME ),
+        'description' => __( '<small>FontAwesomeのUnicodeを入力します。</br>（例　f15c　）</small>', THEME_NAME ),
         'type'        => 'text'
       )
     );
@@ -283,8 +283,8 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',  // 紐づけるセクションIDを指定
         'settings'    => 'tab2_icon',  // 紐づける設定IDを指定
-        'label'       => '2つ目のタブのアイコン',
-        'description' => '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>',
+        'label'       => __( '2つ目のタブのアイコン', THEME_NAME ),
+        'description' => __( '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>', THEME_NAME ),
         'type'        => 'text'
       )
     );
@@ -303,8 +303,8 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',  // 紐づけるセクションIDを指定
         'settings'    => 'tab3_icon',  // 紐づける設定IDを指定
-        'label'       => '3つ目のタブのアイコン',
-        'description' => '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>',
+        'label'       => __( '3つ目のタブのアイコン', THEME_NAME ),
+        'description' => __( '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>', THEME_NAME ),
         'type'        => 'text'
       )
     );
@@ -324,8 +324,8 @@ $wp_customize->add_section( 'tab_customizer', array(
       array(
         'section'     => 'tab_customizer',  // 紐づけるセクションIDを指定
         'settings'    => 'tab4_icon',  // 紐づける設定IDを指定
-        'label'       => '4つ目のタブのアイコン',
-        'description' => '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>',
+        'label'       => __( '4つ目のタブのアイコン', THEME_NAME ),
+        'description' => __( '<small>FontAwesomeのUnicodeを入力します。</br>（例　f164　）</small>', THEME_NAME ),
         'type'        => 'text'
       )
     );
@@ -344,7 +344,7 @@ $wp_customize->add_control(
         array(
           'section'     => 'tab_customizer',
           'settings'    => 'top_tab_bg',
-          'label'       => 'タブの背景色',
+          'label'       => __( 'タブの背景色', THEME_NAME ),
         )
       )
     );
@@ -363,7 +363,7 @@ $wp_customize->add_control(
         array(
           'section'     => 'tab_customizer',
           'settings'    => 'top_tab_color',
-          'label'       => 'タブの文字色',
+          'label'       => __( 'タブの文字色', THEME_NAME ),
         )
       )
     );
@@ -382,8 +382,8 @@ $wp_customize->add_control(
           array(
             'section'     => 'tab_customizer',
             'settings'    => 'tab_bg_1',
-            'label'       => 'アクティブなタブの背景色①',
-            'description' => '<small>①と②を違う色にすることでグラデーションになります</small>'
+            'label'       => __( 'アクティブなタブの背景色①', THEME_NAME ),
+            'description' => __( '<small>①と②を違う色にすることでグラデーションになります</small>', THEME_NAME )
           )
         )
       );
@@ -402,14 +402,14 @@ $wp_customize->add_control(
           array(
             'section'     => 'tab_customizer',
             'settings'    => 'tab_bg_2',
-            'label'       => 'アクティブなタブの背景色②',
-            'description' => '<small>①と②を違う色にすることでグラデーションになります</small>'
+            'label'       => __( 'アクティブなタブの背景色②', THEME_NAME ),
+            'description' => __( '<small>①と②を違う色にすることでグラデーションになります</small>', THEME_NAME )
           )
         )
       );
 // ---------------------------------------------------------------------------------------------フォントの設定
 $wp_customize->add_section( 'font_sct', array(
-        'title'    => __( 'フォント', 'theme_slug' ),
+        'title'    => __( 'フォント', THEME_NAME ),
         'priority' => 1,
         'panel'=>'nagi_customizer_panel'
 ));
@@ -428,23 +428,23 @@ $wp_customize->add_setting(
     array(
       'section'     => 'font_sct',
       'settings'    => 'font_radio',
-      'label'       => 'グーグルフォントを選択する',
+      'label'       => __( 'グーグルフォントを選択する', THEME_NAME ),
       'type'        => 'radio',
       'choices'     => array(
-        'Fugaz One' => 'Fugaz One(font-weight: 400 のみ)',
+        'Fugaz One' => sprintf( 'Fugaz One (%s)', __( 'font-weight: 400 のみ', THEME_NAME ) ),
         'Saira' => 'Saira',
-        'Alice' => 'Alice(font-weight: 400 のみ)',
+        'Alice' => sprintf( 'Alice (%s)', __( 'font-weight: 400 のみ', THEME_NAME ) ),
         'Comfortaa' => 'Comfortaa',
         'Quicksand' => 'Quicksand',
         'Roboto' => 'Roboto',
-        'none'=> '指定なし',
+        'none'=> __( '指定なし', THEME_NAME ),
       ),
     ) )
   );
 // --------------------------------------------------------------------------フッター固定CTA
   $wp_customize->add_section( 'cta_customizer', array(
-    'title'    => __( 'フッター固定CTAの色', 'theme_slug' ),
-    'description' => 'フッター固定CTAの背景色などを変更できます。</br>設定の詳細は<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">こちら</a>',
+    'title'    => __( 'フッター固定CTAの色', THEME_NAME ),
+    'description' => __( 'フッター固定CTAの背景色などを変更できます。</br>設定の詳細は<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">こちら</a>', THEME_NAME ),
     'priority' => 1,
     'panel'=>'nagi_customizer_panel'
 
@@ -464,7 +464,7 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_bg',
-      'label'       => 'フッター固定CTAの背景色',
+      'label'       => __( 'フッター固定CTAの背景色', THEME_NAME ),
     )
   )
 );
@@ -482,8 +482,8 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_bg_opa',
-      'description' =>'0から1まで0.01単位で設定できます<br>0に近くなるほど透明になります',
-      'label'       => 'フッター固定CTAの背景色の透明度',
+      'description' => __( '0から1まで0.01単位で設定できます<br>0に近くなるほど透明になります', THEME_NAME ),
+      'label'       => __( 'フッター固定CTAの背景色の透明度', THEME_NAME ),
       'type'     => 'number',
       'input_attrs' => array(
           'min' => 0,
@@ -508,7 +508,7 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_color',
-      'label'       => 'フッター固定CTAのマイクロコピーの色',
+      'label'       => __( 'フッター固定CTAのマイクロコピーの色', THEME_NAME ),
     )
   )
 );
@@ -527,7 +527,7 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_red',
-      'label'       => '赤系ボタン',
+      'label'       => __( '赤系ボタン', THEME_NAME ),
     )
   )
 );
@@ -546,7 +546,7 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_blue',
-      'label'       => '青系ボタン',
+      'label'       => __( '青系ボタン', THEME_NAME ),
     )
   )
 );
@@ -565,15 +565,15 @@ $wp_customize->add_control(
     array(
       'section'     => 'cta_customizer',
       'settings'    => 'cta_green',
-      'label'       => '緑系ボタン',
+      'label'       => __( '緑系ボタン', THEME_NAME ),
     )
   )
 );
 
 // -----------------------カルーセル
 $wp_customize->add_section( 'carousel_customizer', array(
-  'title'    => __( 'カルーセルの設定', 'theme_slug' ),
-  'description' => 'カルーセルの表示件数などを変更できます。詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/carousel-setting/">こちら</a>',
+  'title'    => __( 'カルーセルの設定', THEME_NAME ),
+  'description' => __( 'カルーセルの表示件数などを変更できます。詳しくは<a target="_blank" href="https://go-blogs.com/cocoon/carousel-setting/">こちら</a>', THEME_NAME ),
   'priority' => 1,
   'panel'=>'nagi_customizer_panel'
 
@@ -597,8 +597,8 @@ $wp_customize->add_setting(
     array(
       'section'     => 'carousel_customizer',
       'settings'    => 'carousel_1241over',
-      'description' =>'2~6枚で設定可',
-      'label'       => '画面幅 1241px以上での表示枚数',
+      'description' => __( '2～6枚で設定可', THEME_NAME ),
+      'label'       => __( '画面幅 1241px以上での表示枚数', THEME_NAME ),
       'type'     => 'number',
       'input_attrs' => array(
           'min' => 2,
@@ -622,8 +622,8 @@ $wp_customize->add_setting(
       array(
         'section'     => 'carousel_customizer',
         'settings'    => 'slide_1241over',
-        'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
-        'label'       => '1枚ずつスライドさせる',
+        'description' => __( 'チェックなしの場合は表示枚数と同じ枚数スライドします', THEME_NAME ),
+        'label'       => __( '1枚ずつスライドさせる', THEME_NAME ),
         'type'     => 'checkbox',
       )
     );
@@ -645,8 +645,8 @@ $wp_customize->add_control(
   array(
     'section'     => 'carousel_customizer',
     'settings'    => 'carousel_1024_1240',
-    'description' =>'2~6枚で設定可',
-    'label'       => '画面幅 1024px〜1240pxでの表示枚数',
+    'description' => __( '2～6枚で設定可', THEME_NAME ),
+    'label'       => __( '画面幅 1024px～1240pxでの表示枚数', THEME_NAME ),
     'type'     => 'number',
     'input_attrs' => array(
         'min' => 2,
@@ -670,8 +670,8 @@ $wp_customize->add_setting(
     array(
       'section'     => 'carousel_customizer',
       'settings'    => 'slide_1024_1240',
-      'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
-        'label'       => '1枚ずつスライドさせる',
+      'description' => __( 'チェックなしの場合は表示枚数と同じ枚数スライドします', THEME_NAME ),
+        'label'       => __( '1枚ずつスライドさせる', THEME_NAME ),
         'type'     => 'checkbox',
       )
     );
@@ -693,8 +693,8 @@ $wp_customize->add_setting(
     array(
       'section'     => 'carousel_customizer',
       'settings'    => 'carousel_835_1023',
-      'description' =>'2~6枚で設定可',
-      'label'       => '画面幅 835px〜1023pxでの表示枚数',
+      'description' => __( '2～6枚で設定可', THEME_NAME ),
+      'label'       => __( '画面幅 835px～1023pxでの表示枚数', THEME_NAME ),
       'type'     => 'number',
       'input_attrs' => array(
           'min' => 2,
@@ -718,8 +718,8 @@ $wp_customize->add_setting(
       array(
         'section'     => 'carousel_customizer',
         'settings'    => 'slide_835_1023',
-        'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
-        'label'       => '1枚ずつスライドさせる',
+        'description' => __( 'チェックなしの場合は表示枚数と同じ枚数スライドします', THEME_NAME ),
+        'label'       => __( '1枚ずつスライドさせる', THEME_NAME ),
         'type'     => 'checkbox',
       )
     );
@@ -741,8 +741,8 @@ $wp_customize->add_setting(
       array(
         'section'     => 'carousel_customizer',
         'settings'    => 'carousel_481_834',
-        'description' =>'2~4枚で設定可',
-        'label'       => '画面幅 481px〜834pxでの表示枚数',
+      'description' => __( '2～4枚で設定可', THEME_NAME ),
+      'label'       => __( '画面幅 481px～834pxでの表示枚数', THEME_NAME ),
         'type'     => 'number',
         'input_attrs' => array(
             'min' => 2,
@@ -767,8 +767,8 @@ $wp_customize->add_setting(
         array(
           'section'     => 'carousel_customizer',
           'settings'    => 'slide_481_834',
-          'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
-        'label'       => '1枚ずつスライドさせる',
+        'description' => __( 'チェックなしの場合は表示枚数と同じ枚数スライドします', THEME_NAME ),
+        'label'       => __( '1枚ずつスライドさせる', THEME_NAME ),
         'type'     => 'checkbox',
       )
     );
@@ -790,8 +790,8 @@ $wp_customize->add_setting(
         array(
           'section'     => 'carousel_customizer',
           'settings'    => 'carousel_under480',
-          'description' =>'1~2枚で設定可',
-          'label'       => '画面幅 480px以下での表示枚数',
+      'description' => __( '1～2枚で設定可', THEME_NAME ),
+      'label'       => __( '画面幅 480px以下での表示枚数', THEME_NAME ),
           'type'     => 'number',
           'input_attrs' => array(
               'min' => 1,
@@ -815,8 +815,8 @@ $wp_customize->add_setting(
          array(
            'section'     => 'carousel_customizer',
            'settings'    => 'slide_under480',
-           'description' =>'チェックなしの場合は表示枚数と同じ枚数スライドします',
-        'label'       => '1枚ずつスライドさせる',
+        'description' => __( 'チェックなしの場合は表示枚数と同じ枚数スライドします', THEME_NAME ),
+        'label'       => __( '1枚ずつスライドさせる', THEME_NAME ),
         'type'     => 'checkbox',
       )
     );

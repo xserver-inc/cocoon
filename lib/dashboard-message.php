@@ -154,7 +154,7 @@ class Xwrite_Notice_Manager {
     // JSONから表示内容を取得（個別設定がなければデフォルトを採用）
     $text          = $target_phase['content']['text'] ?? '';
     $notice_type   = $target_phase['content']['type'] ?? $defaults['type'] ?? 'info';
-    $dismiss_label = $target_phase['content']['dismiss_label'] ?? $defaults['dismiss_label'] ?? '通知を表示しない';
+    $dismiss_label = $target_phase['content']['dismiss_label'] ?? $defaults['dismiss_label'] ?? __( '通知を表示しない', THEME_NAME );
 
     // JSONのデフォルト設定からラベルを取得
     $action_labels = $defaults['action_labels'] ?? array();

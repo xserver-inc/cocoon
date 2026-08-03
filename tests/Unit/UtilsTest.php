@@ -1027,4 +1027,28 @@ class UtilsTest extends TestCase
         $this->assertNull(get_update_time('Y/m/d'));
     }
 
+    public function test_get_human_time_diff_advance_年と月を別々に複数形処理する(): void
+    {
+        $to = strtotime('2026-01-01 00:00:00');
+        $from = $to - (31536000 * 2) - (2678400 * 2);
+
+        $this->assertSame('2年2ヶ月', get_human_time_diff_advance($from, $to));
+    }
+
+    public function test_get_human_time_diff_advance_1年1ヶ月を単数として処理する(): void
+    {
+        $to = strtotime('2026-01-01 00:00:00');
+        $from = $to - 31536000 - 2678400;
+
+        $this->assertSame('1年1ヶ月', get_human_time_diff_advance($from, $to));
+    }
+
+    public function test_get_human_time_diff_advance_3年以上は月を省略する(): void
+    {
+        $to = strtotime('2026-01-01 00:00:00');
+        $from = $to - (31536000 * 3) - 2678400;
+
+        $this->assertSame('3年', get_human_time_diff_advance($from, $to));
+    }
+
 }

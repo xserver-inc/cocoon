@@ -558,7 +558,7 @@ if ( !function_exists( 'error_log_to_rakuten_product' ) ):
         // THEME_MAIL_RAKUTEN_PR.PHP_EOL.
         // $rakuten_url.PHP_EOL.
         THEME_MAIL_AMAZON_PR.
-        THEME_MAIL_CREDIT;
+        get_theme_mail_credit();
       wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
     }
   }

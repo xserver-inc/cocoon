@@ -34,6 +34,7 @@ scripts/
 ├── update-po.js                        # cocoon.pot → 全言語 .po にマージ
 ├── apply-translations.js               # 翻訳辞書 → .po ファイルに適用
 ├── apply-additions.js                  # 追加漏れ翻訳の補完適用
+├── sync-i18n-audit-catalog.js          # 複数形・コンテキスト付き補正をPOT・POへ同期
 ├── compile-po.js                       # .po → .mo コンパイル
 ├── compile-blocks-json.js              # .po → -cocoon-blocks-js.json 生成
 ├── add-blocks-translations.js          # 翻訳辞書 → -cocoon-blocks-js.json に追記（ブロックUI用）
@@ -46,7 +47,8 @@ scripts/
     ├── ko_KR.js                        # 韓国語 翻訳辞書
     ├── pt_PT.js                        # ポルトガル語 翻訳辞書
     ├── zh_CN.js                        # 簡体字中国語 翻訳辞書
-    └── zh_TW.js                        # 繁体字中国語 翻訳辞書
+    ├── zh_TW.js                        # 繁体字中国語 翻訳辞書
+    └── translation-corrections.js      # 複数形・block keyword等の補正辞書
 ```
 
 ---
@@ -56,6 +58,7 @@ scripts/
 ```bash
 npm run make-pot                 # POTファイルを最新ソースから更新
 npm run update-po                # POTの新規文字列を全言語 .po にマージ
+npm run sync-i18n-corrections    # 複数形・コンテキスト付き補正をPOT・POへ適用
 npm run compile-mo               # .po → .mo にコンパイル
 npm run compile-l10n-php         # .po → .l10n.php にコンパイル
 npm run compile-blocks-json      # .po → -cocoon-blocks-js.json に生成
@@ -69,7 +72,7 @@ npm run compile-all              # .mo + .l10n.php + .json（ブロックUI含�
 
 ### STEP 1: POTファイルの更新
 
-ソースコード（PHP）から翻訳文字列を抽出して `languages/cocoon.pot` を更新します。
+ソースコード（PHP・JavaScript）から翻訳文字列を抽出して `languages/cocoon.pot` を更新します。
 
 ```bash
 npm run make-pot
@@ -78,8 +81,8 @@ npm run make-pot
 **内部動作:**
 - `scripts/setup-wpcli.js` が `vendor/bin/wp-cli.phar` の存在を確認
 - 未存在なら GitHub から WP-CLI Phar を自動ダウンロード
-- `wp i18n make-pot . languages/cocoon.pot --slug=cocoon --domain=cocoon --ignore-domain --exclude="node_modules,vendor,tests,scripts,tmp/css-custom.php,plugins,fonts,icomoon" --skip-js` を実行
-- `--skip-js` は PHP 8.5 と WP-CLI 同梱の `mck89/peast` ライブラリの互換性問題のため必須
+- `wp i18n make-pot . languages/cocoon.pot --slug=cocoon --domain=cocoon --ignore-domain --exclude="node_modules,vendor,tests,scripts,tmp/css-custom.php,plugins,fonts,icomoon,webfonts,blocks/dist"` を実行
+- JavaScriptは`blocks/src`などのソースを抽出し、生成済みの`blocks/dist`は重複防止のため除外
 
 ---
 
@@ -170,11 +173,21 @@ node scripts/apply-ctx-translations.js
 
 `scripts/apply-ctx-translations.js` には各言語の block title/description/keyword の翻訳が格納されています。新しいブロックを追加した場合はこのファイルに追加してください。
 
+#### 4-4. 複数形・監査補正の適用
+
+複数形、英語原文、`block keyword`など、通常の単一文字列辞書では安全に扱えない翻訳は`scripts/translations/translation-corrections.js`で管理します。
+
+```bash
+npm run sync-i18n-corrections
+```
+
+複数形はロケールの`nplurals`と同じ数の訳文を配列で登録し、空の形式を残さないでください。
+
 ---
 
 ### STEP 5: 翻訳結果の確認
 
-適用後の残り未翻訳数を確認します。
+適用後の残り未翻訳数を確認します。最終確認では先頭の訳文だけでなく、すべての複数形とコンテキストを検査する`npm run test:i18n`も実行してください。
 
 ```bash
 node -e "
@@ -197,9 +210,8 @@ fs.readdirSync(langDir).filter(f=>f.endsWith('.po')).forEach(f=>{
 
 > **⚠️ ブロックUI文字列（JSブロックの全コンポーネント）について**
 >
-> `make-pot` は `--skip-js` オプションのため、JSファイル内の翻訳文字列（`__('...', 'cocoon')`）を収集しません。
-> そのため、Amazon/楽天ブロック内の以下のコンポーネントで使われる文字列は `.po` ファイルに存在せず、
-> `compile-blocks-json` だけでは JSON に翻訳が含まれません。
+> `make-pot`はJavaScriptソースも抽出します。ただし、動的に組み立てる文字列や補助辞書だけに存在する文字列は抽出できません。
+> Amazon/楽天ブロックなどの補助辞書で管理する文字列は、`compile-blocks-json`だけではJSONへ追加されない場合があります。
 >
 > | 対象ファイル | 翻訳文字列の例 |
 > |---|---|
@@ -321,7 +333,7 @@ PHP 8.5 と WP-CLI 2.12 内の `mck89/peast` ライブラリの互換性問題�
 
 ### make-pot が失敗する
 
-`--skip-js` オプションが有効になっているか `scripts/setup-wpcli.js` を確認してください。
+生成済みの`blocks/dist`が除外され、抽出対象が`blocks/src`になっているか`scripts/setup-wpcli.js`を確認してください。
 
 ### .mo コンパイル後に WordPress が翻訳を読み込まない
 

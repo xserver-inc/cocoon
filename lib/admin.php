@@ -39,6 +39,11 @@ function admin_print_styles_custom() {
     wp_add_inline_style( $blogcard_label_style_handle, $blogcard_label_css );
   }
 
+  //スキン制御ラベルなど、管理画面の疑似要素で使用する翻訳用CSS変数
+  if ($skin_text_css = get_skin_text_css_variables()) {
+    wp_add_inline_style( $blogcard_label_style_handle, $skin_text_css );
+  }
+
   //Font Awesome
   wp_enqueue_style_font_awesome();
 
@@ -464,7 +469,7 @@ function custmuize_restrict_manage_posts(){
 
       wp_dropdown_users(
       array(
-        'show_option_all' => 'すべてのユーザー',
+        'show_option_all' => __( 'すべてのユーザー', THEME_NAME ),
         'name' => 'author',
         'capability'      => 'edit_posts'
       )

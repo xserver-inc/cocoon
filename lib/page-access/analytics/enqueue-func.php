@@ -120,6 +120,11 @@ function cocoon_analytics_print_data(){
       'list_period_total'  => __('リスト期間の合計', THEME_NAME),
       'all_total'          => __('累計', THEME_NAME),
       'zoom_notice'        => __('グラフはリストと異なる期間を表示中', THEME_NAME),
+      'no_posts_found'     => __('該当する記事が見つかりませんでした。', THEME_NAME),
+      'loading'            => __('読み込み中...', THEME_NAME),
+      'error_occurred'     => __('エラーが発生しました', THEME_NAME),
+      'connection_error'   => __('通信エラーが発生しました', THEME_NAME),
+      'no_matching_items'  => __('一致する項目がありません', THEME_NAME),
     ),
   );
 

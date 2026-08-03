@@ -51,7 +51,12 @@ for ( const locale of locales ) {
   }
 }
 
-console.log( `\n--- 完了 ---` );
+console.log( '\n--- 完了 ---' );
 console.log(
   `成功: ${ success } / 失敗: ${ error } / 合計: ${ locales.length }`
 );
+
+//1言語でも生成に失敗した場合は、compile-all全体を失敗として終了させる
+if ( error > 0 ) {
+  process.exitCode = 1;
+}

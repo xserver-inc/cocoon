@@ -23,9 +23,9 @@ array(
   'appeal_area_image_url' => 'https://im-cocoon.net/wp-content/uploads/pine-tree.jpeg',
   'appeal_area_background_attachment_fixed' => 1,
   'appeal_area_background_color' => '#839b5c',
-  'appeal_area_title' => 'スキンから入力したタイトル',
-  'appeal_area_message' => 'スキンから入力したアピールエリアメッセージです。',
-  'appeal_area_button_message' => 'スキンボタンキャプション',
+  'appeal_area_title' => '',
+  'appeal_area_message' => '',
+  'appeal_area_button_message' => '',
   'appeal_area_button_url' => 'https => //wp-cocoon.com/',
   'appeal_area_button_background_color' => '#839b5c',
   'entry_card_type' => 'vertical_card_2',
@@ -37,6 +37,15 @@ array(
   'single_breadcrumbs_position' => 'main_before',
   'page_breadcrumbs_position' => 'main_before'
 );
+
+//テーマ翻訳読込後のデモ用アピールエリア文言
+add_action( 'after_setup_theme', function() {
+  global $_THEME_OPTIONS;
+
+  $_THEME_OPTIONS['appeal_area_title'] = __( 'スキンから入力したタイトル', THEME_NAME );
+  $_THEME_OPTIONS['appeal_area_message'] = __( 'スキンから入力したアピールエリアメッセージです。', THEME_NAME );
+  $_THEME_OPTIONS['appeal_area_button_message'] = __( 'スキンボタンキャプション', THEME_NAME );
+}, 20 );
 
 /*
 ///////////////////////////////////////////

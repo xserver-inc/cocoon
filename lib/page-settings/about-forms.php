@@ -244,7 +244,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
     $plugins = get_plugins();
     if (!empty($plugins)) {
-      $all .= __('利用中のプラグイン：').PHP_EOL;
+      $all .= __('利用中のプラグイン：', THEME_NAME).PHP_EOL;
       foreach ($plugins as $path => $plugin) {
         if (is_plugin_active( $path )) {
           $all .= $plugin['Name'];
@@ -263,7 +263,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
         }
       }
       if ( ! empty( $inactive_plugins ) ) {
-        $all .= __( '停止中のプラグイン：' ).PHP_EOL;
+        $all .= __( '停止中のプラグイン：', THEME_NAME ).PHP_EOL;
         foreach ( $inactive_plugins as $inactive_plugin ) {
           $all .= $inactive_plugin . PHP_EOL;
         }

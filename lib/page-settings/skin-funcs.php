@@ -7,6 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+require_once dirname(__FILE__).'/skin-translations.php';
+
 //スキンIDの取得
 define('OP_SKIN_URL', 'skin_url');
 if ( !function_exists( 'get_skin_url' ) ):
@@ -150,7 +152,7 @@ function get_skin_infos(){
       if ( $css ) {
         //Skin Name:の記述があるとき
         if (preg_match('/(Skin )?Name: *(.+)/i', $css, $matches)) {
-          $skin_name = trim(strip_tags($matches[2]));
+          $skin_name = translate_skin_metadata(trim(strip_tags($matches[2])));
           //優先度（順番）が設定されている場合は順番取得
           if (preg_match('/Priority: *(.+)/i', $css, $m)) {
             $priority = floatval(trim($m[1]));
@@ -160,7 +162,7 @@ function get_skin_infos(){
           //説明文が設定されている場合
           $description = null;
           if (preg_match('/Description: *(.+)/i', $css, $m)) {
-            $description = trim($m[1]);
+            $description = translate_skin_metadata(trim($m[1]));
           }
           //スキンURLが設定されている場合
           $skin_page_uri = null;

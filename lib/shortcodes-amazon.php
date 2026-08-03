@@ -570,7 +570,7 @@ function amazon_product_link_shortcode($atts){
       //キャッシュがないときのみログ・メールする
       if (!$json_cache) {
         //メールの送信
-        $msg = 'アイテムを取得できませんでした。'.PHP_EOL.
+        $msg = __( 'アイテムを取得できませんでした。', THEME_NAME ).PHP_EOL.
           $json_error_code.PHP_EOL.
           $json_error_message.PHP_EOL;
         error_log_to_amazon_product($asin, $msg);
@@ -1073,7 +1073,7 @@ function error_log_to_amazon_product($asin, $message = ''){
       'ASIN:'.$asin.PHP_EOL.
       'URL:'.get_the_permalink().PHP_EOL.
       'Message:'.$message.PHP_EOL.
-      THEME_MAIL_AMAZON_PR.THEME_MAIL_CREDIT;
+      THEME_MAIL_AMAZON_PR.get_theme_mail_credit();
     wp_mail( get_wordpress_admin_email(), $subject, $mail_msg );
   }
 }

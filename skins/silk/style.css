@@ -2585,7 +2585,7 @@ a.swatchimages:hover .swatch-image-thumb > img {
 }
 
 .review-rating .rating-number::before {
-  content: "評価：";
+  content: var(--cocoon-skin-rating-text, "評価：");
 }
 
 .eye-catch .cat-label {

@@ -18,106 +18,91 @@ class Skin_Silk_Functions {
     [
       'name'       => 'core/image',
       'properties' => [
-        'name'  => 'shadow',
-        'label' => '影'
+        'name'  => 'shadow'
       ]
     ],
     [
       'name'       => 'core/group',
       'properties' => [
-        'name'  => 'panel',
-        'label' => 'パネル'
+        'name'  => 'panel'
       ]
     ],
     [
       'name'       => 'core/group',
       'properties' => [
-        'name'  => 'compare',
-        'label' => '比較表（アイコンリスト）'
+        'name'  => 'compare'
       ]
     ],
     [
       'name'       => 'core/group',
       'properties' => [
-        'name'  => 'toggle-accordion',
-        'label' => 'アコーディオン（トグルボックス）'
+        'name'  => 'toggle-accordion'
       ]
     ],
     [
       'name'       => 'core/columns',
       'properties' => [
-        'name'  => 'mobile-columns',
-        'label' => 'モバイル'
+        'name'  => 'mobile-columns'
       ]
     ],
     [
       'name'       => 'core/separator',
       'properties' => [
-        'name'  => 'cut-line',
-        'label' => '切り取り線'
+        'name'  => 'cut-line'
       ]
     ],
     [
       'name'       => 'core/table',
       'properties' => [
-        'name'  => 'center-cell',
-        'label' => '中央寄せ'
+        'name'  => 'center-cell'
       ]
     ],
     [
       'name'       => 'core/table',
       'properties' => [
-        'name'  => 'horizon',
-        'label' => '水平'
+        'name'  => 'horizon'
       ]
     ],
     [
       'name'       => 'core/table',
       'properties' => [
-        'name'  => 'color-head',
-        'label' => 'キーカラー'
+        'name'  => 'color-head'
       ]
     ],
     [
       'name'       => 'core/list',
       'properties' => [
-        'name'  => 'link',
-        'label' => 'リンク'
+        'name'  => 'link'
       ]
     ],
     [
       'name'       => 'cocoon-blocks/blogcard',
       'properties' => [
-        'name'  => 'normal-card',
-        'label' => '横長'
+        'name'  => 'normal-card'
       ]
     ],
     [
       'name'       => 'cocoon-blocks/blogcard',
       'properties' => [
-        'name'  => 'columns-card',
-        'label' => 'カラム'
+        'name'  => 'columns-card'
       ]
     ],
     [
       'name'       => 'cocoon-blocks/blogcard',
       'properties' => [
-        'name'  => 'text',
-        'label' => 'テキスト'
+        'name'  => 'text'
       ]
     ],
     [
       'name'       => 'cocoon-blocks/toggle-box-1',
       'properties' => [
-        'name'  => 'faq',
-        'label' => 'よくある質問'
+        'name'  => 'faq'
       ]
     ],
     [
       'name'       => 'cocoon-blocks/iconlist-box',
       'properties' => [
-        'name'  => 'no-icon',
-        'label' => 'アイコンなし'
+        'name'  => 'no-icon'
       ]
     ]
   ];
@@ -230,6 +215,31 @@ class Skin_Silk_Functions {
     return self::$instance;
   }
 
+  /**
+   * ブロックスタイル名に対応する翻訳済みラベルを返します。
+   *
+   * @return array ブロックスタイルのラベル一覧
+   */
+  private function block_style_labels() {
+    return [
+      'shadow'           => __( '影', THEME_NAME ),
+      'panel'            => __( 'パネル', THEME_NAME ),
+      'compare'          => __( '比較表（アイコンリスト）', THEME_NAME ),
+      'toggle-accordion' => __( 'アコーディオン（トグルボックス）', THEME_NAME ),
+      'mobile-columns'   => __( 'モバイル', THEME_NAME ),
+      'cut-line'         => __( '切り取り線', THEME_NAME ),
+      'center-cell'      => __( '中央寄せ', THEME_NAME ),
+      'horizon'          => __( '水平', THEME_NAME ),
+      'color-head'       => __( 'キーカラー', THEME_NAME ),
+      'link'             => __( 'リンク', THEME_NAME ),
+      'normal-card'      => __( '横長', THEME_NAME ),
+      'columns-card'     => __( 'カラム', THEME_NAME ),
+      'text'             => __( 'テキスト', THEME_NAME ),
+      'faq'              => __( 'よくある質問', THEME_NAME ),
+      'no-icon'          => __( 'アイコンなし', THEME_NAME ),
+    ];
+  }
+
   //テーマ読み込み後
   public function setup_skin() {
     //サイトアイコンフォント設定
@@ -238,7 +248,12 @@ class Skin_Silk_Functions {
     if (is_gutenberg_editor_enable()) {
       //ブロックスタイル
       $blockstyles = apply_filters('silk_block_styles', self::BLOCK_STYLES);
+      $labels = $this->block_style_labels();
       foreach ($blockstyles as $blockstyle) {
+        $style_name = $blockstyle['properties']['name'];
+        if (isset($labels[$style_name])) {
+          $blockstyle['properties']['label'] = $labels[$style_name];
+        }
         register_block_style($blockstyle['name'], $blockstyle['properties']);
       }
 
@@ -1035,6 +1050,8 @@ class Skin_Silk_Functions {
           'wp-hooks',
           'wp-data',
           'wp-primitives',
+          'wp-i18n',
+          'cocoon-blocks-js',
         ]
       );
 
@@ -1052,9 +1069,9 @@ class Skin_Silk_Functions {
 
   //再利用ブロックメニュー
   public function reusable_menu() {
-    add_menu_page('再利用ブロック', '再利用ブロック', 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-controls-repeat', 22);
-    add_submenu_page('edit.php?post_type=wp_block', '再利用ブロック一覧', '再利用ブロック一覧', 'manage_options', 'edit.php?post_type=wp_block');
-    add_submenu_page('edit.php?post_type=wp_block', '新規追加', '新規追加', 'manage_options', 'post-new.php?post_type=wp_block');
+    add_menu_page(__( '再利用ブロック', THEME_NAME ), __( '再利用ブロック', THEME_NAME ), 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-controls-repeat', 22);
+    add_submenu_page('edit.php?post_type=wp_block', __( '再利用ブロック一覧', THEME_NAME ), __( '再利用ブロック一覧', THEME_NAME ), 'manage_options', 'edit.php?post_type=wp_block');
+    add_submenu_page('edit.php?post_type=wp_block', __( '新規追加', THEME_NAME ), __( '新規追加', THEME_NAME ), 'manage_options', 'post-new.php?post_type=wp_block');
   }
 
   //画像サイズ追加
@@ -1077,7 +1094,7 @@ class Skin_Silk_Functions {
     }
 
     if (function_exists('register_block_pattern_category')) {
-      register_block_pattern_category('silk', ['label' => 'Cocoonスキン「SILK」']);
+      register_block_pattern_category('silk', ['label' => __( 'Cocoonスキン「SILK」', THEME_NAME )]);
     }
   }
 
@@ -1202,32 +1219,32 @@ class Skin_Silk_Functions {
     if (isset($_POST[self::HIDDEN]) && wp_verify_nonce($_POST[self::HIDDEN], 'skin-option') && $_FILES['options']['name'] != '') {
       if ($_FILES['options']['type'] === 'application/json') {
         $this->update_option($_FILES);
-        echo '<div class="notice notice-success is-dismissible"><p><strong>設定を追加しました。</strong></p></div>';
+        echo '<div class="notice notice-success is-dismissible"><p><strong>'.esc_html__( '設定を追加しました。', THEME_NAME ).'</strong></p></div>';
       } else {
-        echo '<div class="notice notice-error is-dismissible"><p><strong>JSONファイルを選択してください。</strong></p></div>';
+        echo '<div class="notice notice-error is-dismissible"><p><strong>'.esc_html__( 'JSONファイルを選択してください。', THEME_NAME ).'</strong></p></div>';
       }
     } ?>
 
     <div class="wrap admin-settings">
       <div class="metabox-holder">
         <div id="skin-option" class="postbox">
-          <h2 class="hndle">オプション設定</h2>
+          <h2 class="hndle"><?php _e( 'オプション設定', THEME_NAME ); ?></h2>
           <div class="inside">
-            <p>スキンのオプション設定を追加します。Cocoon設定が変更されるので、事前にバックアップファイルを取得してください。</p>
+            <p><?php _e( 'スキンのオプション設定を追加します。Cocoon設定が変更されるので、事前にバックアップファイルを取得してください。', THEME_NAME ); ?></p>
             <table class="form-table">
               <tbody>
                 <tr>
                   <th scope="row">
-                    <?php generate_label_tag('', 'オプション'); ?>
+                    <?php generate_label_tag('', __( 'オプション', THEME_NAME )); ?>
                   </th>
                   <td>
                     <form enctype="multipart/form-data" action="" method="POST">
                       <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-                      JSONファイルをアップロード:
+                      <?php _e( 'JSONファイルをアップロード:', THEME_NAME ); ?>
                       <input name="options" type="file" accept="application/json" /><br>
-                      <input type="submit" class="button" value="設定の追加" />
+                      <input type="submit" class="button" value="<?php echo esc_attr__( '設定の追加', THEME_NAME ); ?>" />
                       <input type="hidden" name="<?php echo self::HIDDEN; ?>" value="<?php echo wp_create_nonce('skin-option'); ?>">
-                      <?php generate_tips_tag('スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。'.get_help_page_tag('https://wp-cocoon.com/option-json/')); ?>
+                      <?php generate_tips_tag(__( 'スキンのオプション設定が書かれたJSONファイルを選択し、「設定の追加」ボタンを押してください。JSONファイルの作成方法はファイル名を除き、スキン制御に従います。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/option-json/')); ?>
                     </form>
                   </td>
                 </tr>
@@ -1284,7 +1301,7 @@ class Skin_Silk_Functions {
               navigator.clipboard.writeText($(this).parent().text()).then(
                 () => {
                   const info = $(".copy-info").text();
-                  $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
+                  $(".copy-info").text(<?php echo wp_json_encode( __( 'コードをコピーしました', THEME_NAME ) ); ?>).fadeIn(500).delay(1000).fadeOut(500, function() {
                     $(".copy-info").text(info);
                   });
                 });
@@ -1303,7 +1320,7 @@ class Skin_Silk_Functions {
 				  });
 				  clip.on("success", function(event) {
             const info = $(".copy-info").text();
-					  $(".copy-info").text("コードをコピーしました").fadeIn(500).delay(1000).fadeOut(500, function() {
+					  $(".copy-info").text(<?php echo wp_json_encode( __( 'コードをコピーしました', THEME_NAME ) ); ?>).fadeIn(500).delay(1000).fadeOut(500, function() {
               $(".copy-info").text(info);
             });
 					  event.clearSelection();

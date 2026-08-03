@@ -441,7 +441,7 @@ function cocoon_analytics_render_trending_list($rows, $days = 7){
       $growth_label = number_format_i18n($growth, 1) . '%';
       $growth_cls   = 'cocoon-analytics-growth-down';
     }
-    $growth_tip = sprintf(__('\u76f4\u8fd1%1$d\u65e5\u306ePV\u3068\u305d\u306e\u524d%1$d\u65e5\u306ePV\u306e\u6bd4\u8f03', THEME_NAME), $days);
+    $growth_tip = sprintf(__( '直近%1$d日のPVとその前%1$d日のPVの比較', THEME_NAME), $days);
     echo '<div class="cocoon-analytics-ranking-pv-share ' . esc_attr($growth_cls) . '" title="' . esc_attr($growth_tip) . '">'
        . esc_html($growth_label) . '</div>';
     echo '</div>';

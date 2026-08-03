@@ -75,3 +75,8 @@ console.log( '\n--- 完了 ---' );
 console.log(
   `成功: ${ successCount } / 失敗: ${ errorCount } / 合計: ${ poFiles.length }`
 );
+
+//1言語でも生成に失敗した場合は、呼び出し元へ失敗を返す
+if ( errorCount > 0 ) {
+  process.exitCode = 1;
+}

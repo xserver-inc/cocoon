@@ -1380,7 +1380,7 @@ a.blogcard-wrap:hover img.blogcard-thumb-image{
 }
 
 .internal-blogcard-footer::after{
-	content: '続きを読む \f138';
+	content: var(--cocoon-skin-read-more-text, '続きを読む') ' \f138';
   font-family: 'FontAwesome';
   position: relative;
   font-size: 16px;
@@ -1981,7 +1981,7 @@ border: none;
 }
 /* HACK: wpulike */
 .entry-content > .wpulike::before{
-  content: 'この記事は参考になりましたか？'
+  content: var(--cocoon-skin-helpful-question-text, 'この記事は参考になりましたか？')
 }
 .entry-content > .wpulike {
     padding: 10px 0;
@@ -2107,11 +2107,11 @@ color: white!important;
   font-weight: normal;
 }
 .pager-post-navi a.prev-post::before{
-  content: '前の記事を読む';
+  content: var(--cocoon-skin-previous-article-text, '前の記事を読む');
   top: 1em
 }
 .pager-post-navi a.next-post::before{
-  content: '次の記事を読む';
+  content: var(--cocoon-skin-next-article-text, '次の記事を読む');
   bottom: 1em;
 }
 .pager-post-navi a.prev-post::before, .pager-post-navi a.next-post::before{
@@ -2155,7 +2155,7 @@ color: white!important;
     border-color: #5ed886;
 }
 .likebtn_container::before{
-  content: 'この記事は役に立ちましたか？';
+  content: var(--cocoon-skin-useful-question-text, 'この記事は役に立ちましたか？');
   display: block;
   font-size: 21px;
   color: #389858;

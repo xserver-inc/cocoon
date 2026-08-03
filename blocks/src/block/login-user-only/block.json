@@ -10,7 +10,7 @@
   "attributes": {
     "msg": {
       "type": "string",
-      "default": "こちらのコンテンツはログインユーザーのみに表示されます。"
+      "default": ""
     }
   },
   "supports": {

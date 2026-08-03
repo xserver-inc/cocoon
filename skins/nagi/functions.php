@@ -46,7 +46,7 @@ function create_custom_fields()
 {
   add_meta_box(
     'custom_field_1',
-    'フッター固定CTA',
+    __( 'フッター固定CTA', THEME_NAME ),
     'insert_custom_fields',
     'post',
     'normal',
@@ -72,32 +72,32 @@ function insert_custom_fields($post)
     $cta_layout = 'cta_v';
   }
 ?>
-<p>※この機能についての<a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/">詳しい説明はこちら</a></p>
-  <label for="fix_link">アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）
+<p><?php _e( '※この機能についての', THEME_NAME ); ?><a target="_blank" href="https://go-blogs.com/cocoon/skin-nagi-fix-cta/"><?php _e( '詳しい説明はこちら', THEME_NAME ); ?></a></p>
+  <label for="fix_link"><?php _e( 'アフィリエイトタグのショートコード（こちらが入力されていないとフッター固定CTAは表示されません）', THEME_NAME ); ?>
 
-<p class="hogehoge">必ずアフィリエイトショートコードを入力してください。<span>アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。それ以外はボタンになりません。</span></p>
+<p class="hogehoge"><?php _e( '必ずアフィリエイトショートコードを入力してください。', THEME_NAME ); ?><span><?php _e( 'アフィリエイトのタグは＜a＞タグで囲まれたものに限られます。それ以外はボタンになりません。', THEME_NAME ); ?></span></p>
 
 
   </label>
-  <input id="fix_link" type="text" name="fix_link" value="<?php echo esc_attr($fix_link); ?>"placeholder="アフィリエイトタグのショートコードをここへ入力してください">
+  <input id="fix_link" type="text" name="fix_link" value="<?php echo esc_attr($fix_link); ?>" placeholder="<?php echo esc_attr__( 'アフィリエイトタグのショートコードをここへ入力してください', THEME_NAME ); ?>">
   <br>
-  <label for="fix_microcopy">マイクロコピー</label>
-  <input id="fix_microcopy" type="text" name="fix_microcopy" value="<?php echo esc_attr($fix_microcopy); ?>"placeholder="マイクロコピーをここへ入力してください">
+  <label for="fix_microcopy"><?php _e( 'マイクロコピー', THEME_NAME ); ?></label>
+  <input id="fix_microcopy" type="text" name="fix_microcopy" value="<?php echo esc_attr($fix_microcopy); ?>" placeholder="<?php echo esc_attr__( 'マイクロコピーをここへ入力してください', THEME_NAME ); ?>">
   <br><br>
-  <p>CTAボタンの色</p>
-  <label for="cta_color1">赤系</label>
+  <p><?php _e( 'CTAボタンの色', THEME_NAME ); ?></p>
+  <label for="cta_color1"><?php _e( '赤系', THEME_NAME ); ?></label>
   <input id="cta_color1" type="radio" name="cta_color" value="cta_red" <?php if ($cta_color == "cta_red") echo 'checked'; ?>>
-  <label for="cta_color2">青系</label>
+  <label for="cta_color2"><?php _e( '青系', THEME_NAME ); ?></label>
   <input id="cta_color2" type="radio" name="cta_color" value="cta_blue" <?php if ($cta_color == "cta_blue") echo 'checked'; ?>>
-  <label for="cta_color3">緑系</label>
+  <label for="cta_color3"><?php _e( '緑系', THEME_NAME ); ?></label>
   <input id="cta_color3" type="radio" name="cta_color" value="cta_green" <?php if ($cta_color == "cta_green") echo 'checked'; ?>>
-  <label for="cta_color4">キーカラー</label>
+  <label for="cta_color4"><?php _e( 'キーカラー', THEME_NAME ); ?></label>
   <input id="cta_color4" type="radio" name="cta_color" value="cta_key" <?php if ($cta_color == "cta_key") echo 'checked'; ?>>
   <br><br>
-  <p>マイクロコピーとボタンのレイアウト</p>
-  <label for="cta_layout_v">縦並び</label>
+  <p><?php _e( 'マイクロコピーとボタンのレイアウト', THEME_NAME ); ?></p>
+  <label for="cta_layout_v"><?php _e( '縦並び', THEME_NAME ); ?></label>
   <input id="cta_layout_v" type="radio" name="cta_layout" value="cta_v" <?php if ($cta_layout == "cta_v") echo 'checked'; ?>>
-  <label for="cta_layout_s">横並び</label>
+  <label for="cta_layout_s"><?php _e( '横並び', THEME_NAME ); ?></label>
   <input id="cta_layout_s" type="radio" name="cta_layout" value="cta_s" <?php if ($cta_layout == "cta_s") echo 'checked'; ?>>
 <?php
 }

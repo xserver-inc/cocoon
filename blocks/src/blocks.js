@@ -4,11 +4,14 @@
  * @link: https://wp-cocoon.com/
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
+/* global gbSettings */
 import {
   registerBlockType,
   unstable__bootstrapServerSideBlockDefinitions, // eslint-disable-line camelcase
 } from '@wordpress/blocks';
 import { compareVersions } from 'compare-versions';
+import { __ } from '@wordpress/i18n';
+import { THEME_NAME } from './helpers';
 const cocoonBlocksPro = [];
 import { subscribe } from '@wordpress/data';
 
@@ -110,12 +113,105 @@ const cocoonBlocks = [
 
 export const __getCocoonBlocks = () => cocoonBlocks.concat( cocoonBlocksPro );
 
+//ブロック挿入時に使う翻訳済み属性初期値
+const localizedAttributeDefaults = {
+  'cocoon-blocks/button-1': {
+    content: __( 'ボタン', THEME_NAME ),
+  },
+  'cocoon-blocks/search-box': {
+    content: __( 'キーワード', THEME_NAME ),
+  },
+  'cocoon-blocks/timeline': {
+    title: __( 'タイムラインのタイトル', THEME_NAME ),
+  },
+  'cocoon-blocks/timeline-item': {
+    label: __( 'ラベル', THEME_NAME ),
+    title: __( 'タイトル', THEME_NAME ),
+  },
+  'cocoon-blocks/toggle-box-1': {
+    content: __( 'アコーディオン見出し', THEME_NAME ),
+  },
+  'cocoon-blocks/caption-box-1': {
+    content: __( '見出し', THEME_NAME ),
+  },
+  'cocoon-blocks/label-box-1': {
+    content: __( '見出し', THEME_NAME ),
+  },
+  'cocoon-blocks/tab-caption-box-1': {
+    content: __( '見出し', THEME_NAME ),
+  },
+  'cocoon-blocks/micro-balloon-2': {
+    content: __( 'マイクロコピーバルーン', THEME_NAME ),
+  },
+  'cocoon-blocks/micro-text': {
+    content: __( 'マイクロコピーテキスト', THEME_NAME ),
+  },
+  'cocoon-blocks/login-user-only': {
+    msg: __(
+      'こちらのコンテンツはログインユーザーのみに表示されます。',
+      THEME_NAME
+    ),
+  },
+};
+
+/**
+ * ブロック属性の日本語初期値を現在の管理画面言語へ置換します。
+ *
+ * @param {string} name     ブロック名
+ * @param {Object} metadata ブロックメタデータ
+ * @return {Object} 翻訳済みメタデータ
+ */
+export const localizeBlockMetadata = ( name, metadata ) => {
+  const defaults = localizedAttributeDefaults[ name ];
+  let localizedMetadata = metadata;
+
+  if ( defaults ) {
+    const attributes = { ...metadata.attributes };
+    Object.entries( defaults ).forEach( ( [ attributeName, defaultValue ] ) => {
+      attributes[ attributeName ] = {
+        ...attributes[ attributeName ],
+        default: defaultValue,
+      };
+    } );
+    localizedMetadata = { ...localizedMetadata, attributes };
+  }
+
+  if ( name === 'cocoon-blocks/campaign' ) {
+    localizedMetadata = {
+      ...localizedMetadata,
+      example: {
+        ...localizedMetadata.example,
+        innerBlocks: [
+          {
+            ...localizedMetadata.example.innerBlocks[ 0 ],
+            attributes: {
+              ...localizedMetadata.example.innerBlocks[ 0 ].attributes,
+              content: __(
+                'キャンペーン期間中のみ表示されるコンテンツです。',
+                THEME_NAME
+              ),
+            },
+          },
+        ],
+      },
+    };
+  }
+
+  return localizedMetadata;
+};
+
 const registerBlock = ( block ) => {
   if ( ! block ) {
     return;
   }
 
   let { metadata, settings, name } = block;
+  metadata = localizeBlockMetadata( name, metadata );
+  settings = {
+    ...settings,
+    attributes: metadata.attributes,
+    example: metadata.example,
+  };
 
   // WP5.5未満の場合
   let wpVersion = 0;

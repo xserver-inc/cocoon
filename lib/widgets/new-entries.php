@@ -140,7 +140,7 @@ class NewEntryWidgetItem extends WP_Widget {
       );
     }
     $widget_mode = WM_DEFAULT;
-    $title   = '新着記事';
+    $title   = __( '新着記事', THEME_NAME );
     $entry_count = EC_DEFAULT;
     $entry_type  = ET_DEFAULT;
     $is_sticky_visible  = 1;
@@ -166,8 +166,8 @@ class NewEntryWidgetItem extends WP_Widget {
       generate_label_tag($this->get_field_id('widget_mode'), __('表示モード', THEME_NAME) );
       echo '<br>';
       $options = array(
-        'all' => __( '全ての新着記事（全ページで表示）'),
-        'category' => __( 'カテゴリー別新着記事（投稿・カテゴリーで表示）'),
+        'all' => __( '全ての新着記事（全ページで表示）', THEME_NAME),
+        'category' => __( 'カテゴリー別新着記事（投稿・カテゴリーで表示）', THEME_NAME),
       );
       generate_radiobox_tag($this->get_field_name('widget_mode'), $options, $widget_mode);
       ?>

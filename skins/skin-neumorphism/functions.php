@@ -84,7 +84,7 @@ $wp_customize->add_control(
     $wp_customize,
     'ctrl_customizable_range',
     array(
-      'label'   => '角の丸さ調節',
+      'label'   => __( '角の丸さ調節', THEME_NAME ),
       'min' => 0,
       'max' => 30,
       'step' => 1,
@@ -110,7 +110,7 @@ $wp_customize->add_control(
 			array(
 				'section'  => 'section_neumorphism',
 				'settings' => 'color_bg',
-				'label'    => '色',
+				'label'    => __( '色', THEME_NAME ),
 			)
 		)
 	);

@@ -321,10 +321,15 @@ function cocoon_enqueue_toolbar_script() {
     wp_enqueue_script(
       THEME_NAME . '-gutenberg-toolbar',
       get_cocoon_template_directory_uri() . $toolbar_js,
-      array(),  // jQuery 不要
+      array( 'wp-i18n', 'cocoon-blocks-js' ),
       // ファイルが存在しない場合は false（WP バージョン）にフォールバックして Warning を防ぐ
       file_exists( $toolbar_js_path ) ? filemtime( $toolbar_js_path ) : false,
       true
+    );
+    wp_set_script_translations(
+      THEME_NAME . '-gutenberg-toolbar',
+      THEME_NAME,
+      get_cocoon_template_directory() . '/languages'
     );
   }
 }
@@ -383,6 +388,10 @@ function gutenberg_editor_settings( $editor_settings, $post ) {
     // ブログカードラベルの翻訳用CSS変数（キャッシュを経由せず毎回生成する）
     if ( $blogcard_label_css = get_blogcard_label_css_variables() ) {
       $styles[] = array( 'css' => $blogcard_label_css );
+    }
+    //スキン疑似要素の翻訳用CSS変数もブロックエディターへ渡す
+    if ( $skin_text_css = get_skin_text_css_variables() ) {
+      $styles[] = array( 'css' => $skin_text_css );
     }
 
     // 他のプラグインが設定した既存スタイルを保持しつつ、Cocoon のスタイルを追加する
@@ -694,7 +703,7 @@ if (DEBUG_MODE) {
     register_post_type( 'news',
       array( // 投稿タイプ名の定義
           'labels' => [
-              'name'          => 'ニュース', // 管理画面上で表示する投稿タイプ名
+              'name'          => __( 'ニュース', THEME_NAME ), // 管理画面上で表示する投稿タイプ名
               'singular_name' => 'news',    // カスタム投稿の識別名
           ],
           'public'        => true,  // 投稿タイプをpublicにするか

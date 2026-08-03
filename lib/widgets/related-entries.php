@@ -191,8 +191,8 @@ class RelatedEntryWidgetItem extends WP_Widget {
       generate_label_tag($this->get_field_id('taxonomy'), __('関連付け', THEME_NAME) );
       echo '<br>';
       $options = array(
-        'category' => 'カテゴリー',
-        'post_tag' => 'タグ（無い場合はカテゴリー表示）',
+        'category' => __( 'カテゴリー', THEME_NAME ),
+        'post_tag' => __( 'タグ（無い場合はカテゴリー表示）', THEME_NAME ),
       );
       generate_radiobox_tag($this->get_field_name('taxonomy'), $options, $taxonomy);
       ?>

@@ -763,6 +763,11 @@ function generate_style_amp_custom_tag(){?>
   $css_all .= get_blogcard_label_css_variables();
 
   ///////////////////////////////////////////
+  //スキン疑似要素の翻訳用CSS変数
+  ///////////////////////////////////////////
+  $css_all .= get_skin_text_css_variables();
+
+  ///////////////////////////////////////////
   //カスタマイザーのスタイル
   ///////////////////////////////////////////
   ob_start();//バッファリング
@@ -1099,4 +1104,3 @@ function disable_post_content_iframe_lazy_loading_for_amp( $default, $tag_name, 
   return $default;
 }
 endif;
-

@@ -54,7 +54,7 @@ if (!empty($title) &&
         $tmp_item = $_POST['item_ranking'][$count];
         unset($tmp_item);
         $_POST['count'] = intval($_POST['count']) - 1;
-        generate_notice_message_tag(__( sprintf('%d位のアイテムは、「名前」や「説明文」が入力されていないため追加保存は行っていません。', $count), THEME_NAME ));
+        generate_notice_message_tag(sprintf(__( '%d位のアイテムは、「名前」や「説明文」が入力されていないため追加保存は行っていません。', THEME_NAME ), $count));
         echo '<br>';
         if (isset($tmp_item)) {
           $_POST['item_ranking'][$count] = $tmp_item;

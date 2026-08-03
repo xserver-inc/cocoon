@@ -11,14 +11,16 @@
 ( function () {
   'use strict';
 
+  var __ = wp.i18n.__;
+
   // ボタンテキストとクラスの対応表
   var buttonClassMap = [
     {
-      text: 'HTML挿入',
+      text: __( 'HTML挿入', 'cocoon' ),
       classes: [ 'html-insert-button', 'cocoon-donation-privilege' ],
     },
     {
-      text: 'ページの更新日',
+      text: __( 'ページの更新日', 'cocoon' ),
       classes: [ 'shortcode-updated-button', 'cocoon-donation-privilege' ],
     },
   ];
