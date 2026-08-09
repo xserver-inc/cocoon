@@ -893,6 +893,12 @@ function cocoon_analytics_dashboard_widget_renderer() {
               legend: { display: false },
               tooltip: {
                 callbacks: {
+                  // 軸ラベルは月日のみのため、見出しは年を含む日付で表示します
+                  title: function (items) {
+                    if (!items || !items.length) { return ''; }
+                    var row = list[items[0].dataIndex];
+                    return row ? (row.tooltip_label || row.label || row.date) : '';
+                  },
                   afterLabel: function (ctx) {
                     var row = list[ctx.dataIndex];
                     if (type === 'weekly') {
@@ -910,6 +916,32 @@ function cocoon_analytics_dashboard_widget_renderer() {
               }
             },
             scales: {
+              x: {
+                ticks: {
+                  // 軸の目盛りは月日のみのため、年が切り替わる位置と左端だけ年を2行目に併記します
+                  // 表示は7件固定で目盛りの間引きが起きないため、隣同士の比較で判定できます
+                  callback: function (value, index, ticks) {
+                    var fallback = this && typeof this.getLabelForValue === 'function' ? this.getLabelForValue(value) : value;
+                    if (type !== 'daily' && type !== 'weekly') { return fallback; }
+                    var first = list[0];
+                    var last = list[list.length - 1];
+                    var firstYear = first && first.date ? String(first.date).slice(0, 4) : '';
+                    var lastYear = last && last.date ? String(last.date).slice(0, 4) : '';
+                    // 単年に収まる範囲では年が自明なため、月日のみのままにします
+                    if (!firstYear || firstYear === lastYear) { return fallback; }
+                    var tick = ticks && ticks[index];
+                    var dataIndex = tick && typeof tick.value === 'number' ? tick.value : index;
+                    var row = list[dataIndex];
+                    if (!row || !row.date) { return fallback; }
+                    var label = row.label || row.date;
+                    var year = String(row.date).slice(0, 4);
+                    var prevTick = index > 0 ? ticks[index - 1] : null;
+                    var prevRow = prevTick ? list[prevTick.value] : null;
+                    var prevYear = prevRow && prevRow.date ? String(prevRow.date).slice(0, 4) : '';
+                    return year === prevYear ? label : [label, year];
+                  }
+                }
+              },
               y: {
                 beginAtZero: true,
                 ticks: { precision: 0 }
@@ -992,7 +1024,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
 
             var pvSpan = document.createElement('span');
             pvSpan.style.cssText = 'color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;';
-            pvSpan.textContent = item.pv + ' PV';
+            pvSpan.textContent = item.pv + ' ' + '<?php echo esc_js(__('PV', THEME_NAME)); ?>';
 
             li.appendChild(leftDiv);
             li.appendChild(pvSpan);

@@ -55,7 +55,7 @@ endif;
 
 /**
  * チャートデータをフッタでインライン出力する。
- * 初心者向け: admin_enqueue_scripts はページ描画より先に走るため、
+ * admin_enqueue_scripts はページ描画より先に走るため、
  * ページ内で $GLOBALS にセットされたデータをフッタで注入する。
  */
 if ( !function_exists( 'cocoon_analytics_print_data' ) ):
@@ -119,6 +119,8 @@ function cocoon_analytics_print_data(){
       'shown_period_total' => __('表示期間の合計', THEME_NAME),
       'list_period_total'  => __('リスト期間の合計', THEME_NAME),
       'all_total'          => __('累計', THEME_NAME),
+      /* translators: 1: 開始日, 2: 終了日 */
+      'date_range_format'  => __('%1$s 〜 %2$s', THEME_NAME),
       'zoom_notice'        => __('グラフはリストと異なる期間を表示中', THEME_NAME),
       'no_posts_found'     => __('該当する記事が見つかりませんでした。', THEME_NAME),
       'loading'            => __('読み込み中...', THEME_NAME),

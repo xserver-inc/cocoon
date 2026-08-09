@@ -66,7 +66,7 @@ function cocoon_analytics_revision(){
     $rev = '0';
     return $rev;
   }
-  // 初心者向け: MAX(id) と MAX(date) の組み合わせで「最新の記録状態」を表す
+  // MAX(id) と MAX(date) の組み合わせによる「最新の記録状態」の表現
   $row = $wpdb->get_row("SELECT MAX(id) AS mid, MAX(date) AS mdate FROM `{$table}`");
   $rev = md5(($row->mid ?? '0') . '|' . ($row->mdate ?? ''));
   return $rev;
@@ -110,7 +110,7 @@ function cocoon_analytics_min_date(){
     return $min;
   }
   $table = ACCESSES_TABLE_NAME;
-  // 初心者向け: アクセステーブルで最も古い日付を取得し「全期間」の開始日に使う
+  // 「全期間」の開始日となる、アクセステーブル上で最も古い日付
   $val = $wpdb->get_var("SELECT MIN(date) FROM `{$table}` WHERE date IS NOT NULL AND date <> ''");
   $min = ($val && preg_match('/^\d{4}-\d{2}-\d{2}$/', $val)) ? $val : '';
   return $min;
@@ -270,7 +270,7 @@ function cocoon_analytics_daily_pv($from, $to, $post_types = null){
     $map = array();
     foreach ($rows as $r) { $map[$r['date']] = (int) $r['pv']; }
 
-    // 初心者向け: from〜to までループして欠損日を0で埋める
+    // from〜to のループによる欠損日の0埋め
     $result = array();
     $cur = strtotime($from);
     $end = strtotime($to);
@@ -297,7 +297,7 @@ function cocoon_analytics_weekly_pv($from, $to, $post_types = null){
     foreach ($daily as $d) {
       $ts = strtotime($d['date']);
       if ($ts === false) continue;
-      // 初心者向け: ISO週の月曜日を週の開始日とする
+      // 週の開始日としてのISO週の月曜日
       $dow = (int) date('N', $ts); // 1=Mon ... 7=Sun
       $week_start = date('Y-m-d', strtotime($d['date'] . ' -' . ($dow - 1) . ' days'));
       if (!isset($buckets[$week_start])) $buckets[$week_start] = array('pv' => 0, 'days' => 0);
@@ -331,7 +331,7 @@ function cocoon_analytics_monthly_pv($from, $to, $post_types = null){
       $buckets[$ym]['days'] += 1;
     }
     ksort($buckets);
-    // 初心者向け: 月数が36を超えたら直近36ヶ月に限定しラベルを読みやすくする
+    // ラベルの可読性を保つための、36ヶ月超過時の直近36ヶ月への限定
     if (count($buckets) > 36) {
       $buckets = array_slice($buckets, -36, null, true);
     }
@@ -364,7 +364,7 @@ function cocoon_analytics_trending($days = 7, $limit = 10, $min_pv = 3){
     $types = cocoon_analytics_allowed_post_types();
     $in = cocoon_analytics_in_placeholder($types);
 
-    // 初心者向け: 同じ post_id に対して「直近」と「直前」のPVを条件付き合計し、増加率で並べる
+    // 同一 post_id に対する「直近」と「直前」のPVの条件付き合計と、増加率での並べ替え
     // 注: MariaDBでは ORDER BY の式中で集約エイリアスを参照できない場合があるため、SUM()式を直接書く
     $sql = "SELECT p.ID AS post_id, p.post_type,
               SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) AS cur_pv,
@@ -434,7 +434,7 @@ function cocoon_analytics_pv_by_post_type($from, $to){
   return cocoon_analytics_cached(array('pv_by_post_type', $from, $to), function() use ($from, $to){
     global $wpdb;
     $table = ACCESSES_TABLE_NAME;
-    // 初心者向け: 有効な投稿タイプだけに絞る（不正データや attachment 等の混入を防ぐ）
+    // 不正データや attachment 等の混入を防ぐための、有効な投稿タイプへの限定
     $types = cocoon_analytics_allowed_post_types();
     $in = cocoon_analytics_in_placeholder($types);
     $sql = "SELECT post_type, COALESCE(SUM(count),0) AS pv FROM `{$table}`
@@ -505,7 +505,7 @@ function cocoon_analytics_posts_table($from, $to, $args = array()){
     $page = max(1, (int) $args['page']);
     $offset = ($page - 1) * $per_page;
 
-    // 初心者向け: WHERE / JOIN を動的組み立て。author / category は整数キャストでエスケープ。
+    // WHERE / JOIN の動的組み立て。author / category は整数キャストによるエスケープ
     $where_parts = array("p.post_status = 'publish'", "p.post_type IN ({$in['sql']})");
     $p2 = $in['args'];
     if ((int) $args['author'] > 0) {
@@ -649,8 +649,8 @@ if ( !function_exists( 'cocoon_analytics_lifecycle' ) ):
 function cocoon_analytics_lifecycle($post_id){
   $post_id = (int) $post_id;
   if ($post_id <= 0) return array();
-  // キャッシュキーを変更し、経過日数ではなく実際の日付データ（lifecycle_date）としてキャッシュします
-  return cocoon_analytics_cached(array('lifecycle_date', $post_id), function() use ($post_id){
+  // 0埋め後の配列をキャッシュするとtransientが肥大化するため、保存対象は日付→PVの対応表のみ
+  $map = cocoon_analytics_cached(array('lifecycle_map', $post_id), function() use ($post_id){
     global $wpdb;
     $table = ACCESSES_TABLE_NAME;
     // 経過日数ではなく、公開日以降の実際の日付（a.date）ごとのPV数を集計するSQL文です
@@ -661,9 +661,28 @@ function cocoon_analytics_lifecycle($post_id){
             GROUP BY a.date
             ORDER BY a.date ASC";
     $rows = $wpdb->get_results($wpdb->prepare($sql, $post_id), ARRAY_A);
-    // PV数のデータを数値型（整数）に正しく変換します
-    foreach ($rows as &$r) { $r['pv'] = (int) $r['pv']; }
-    return $rows ?: array();
+
+    $map = array();
+    foreach ($rows as $r) { $map[$r['date']] = (int) $r['pv']; }
+    return $map;
   });
+
+  // アクセスが無い日を飛ばすとグラフの日付間隔が歪むため、他のグラフと同じく0埋め
+  $post_date = get_post_field('post_date', $post_id);
+  $start = $post_date ? strtotime(substr($post_date, 0, 10)) : false;
+  $end = strtotime(current_time('Y-m-d'));
+  if ($start === false || $end === false) return array();
+  // 10年を超える記事は先頭ではなく古い側を切り、直近のPV推移を必ず含める
+  $oldest = strtotime('-3699 days', $end);
+  if ($oldest !== false && $start < $oldest) $start = $oldest;
+
+  $result = array();
+  $cur = $start;
+  while ($cur !== false && $cur <= $end) {
+    $d = gmdate('Y-m-d', $cur);
+    $result[] = array('date' => $d, 'pv' => isset($map[$d]) ? $map[$d] : 0);
+    $cur = strtotime('+1 day', $cur);
+  }
+  return $result;
 }
 endif;

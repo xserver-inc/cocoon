@@ -23,6 +23,39 @@ function cocoon_analytics_short_date_format(){
 endif;
 
 /**
+ * 年を必ず含む日付書式を返す
+ *
+ * サイトの日付書式は設定で年を外せるため、そのまま使うと何年のデータか判別できなくなります。
+ * 年の指定子が含まれないときだけ WordPress本体の既定書式へ切り替えます。
+ */
+if ( !function_exists( 'cocoon_analytics_full_date_format' ) ):
+function cocoon_analytics_full_date_format(){
+  $format = get_option('date_format');
+  // バックスラッシュでエスケープされた文字を除いた上での年指定子の有無の判定
+  if (!preg_match('/[Yyo]/', preg_replace('/\\\\./', '', $format))) {
+    $format = translate('F j, Y', 'default');
+  }
+  return $format;
+}
+endif;
+
+/**
+ * 日付書式が翻訳を必要としない（数字だけで表せる）かを返す
+ *
+ * date_i18n() は1呼び出しごとに日時オブジェクトを生成するため、
+ * 数千行のグラフデータを整形すると大きなオーバーヘッドになります。
+ * 曜日名・月名・午前午後など言語に依存する指定子を含まない書式なら、
+ * 軽量な gmdate() で同じ結果を得られるため、その判定に使います。
+ */
+if ( !function_exists( 'cocoon_analytics_is_numeric_date_format' ) ):
+function cocoon_analytics_is_numeric_date_format($format){
+  if ($format === '') return false;
+  // バックスラッシュでエスケープされた文字を除いた上での判定
+  return !preg_match('/[DlMFaAT]/', preg_replace('/\\\\./', '', $format));
+}
+endif;
+
+/**
  * PV推移グラフの軸ラベルを、サイトの言語・書式で整形する
  *
  * 各行に label キーを付与して返します。JS側での日本語固定の整形を避けるため、
@@ -33,30 +66,61 @@ function cocoon_analytics_chart_labels($rows, $type){
   if (empty($rows) || !is_array($rows)) return $rows;
   // 最大3700行のループになるため、書式取得はループ外で1回のみ
   $day_format = ($type === 'daily' || $type === 'weekly') ? cocoon_analytics_short_date_format() : '';
+  // 軸ラベルは月日のみのため、ツールチップは年を含む書式で何年のデータかを示す
+  $full_format = ($day_format !== '') ? cocoon_analytics_full_date_format() : '';
+  // 週次は1本の棒が複数日を表すため、単日と誤読されないよう範囲表記に使う書式
+  /* translators: 1: 開始日, 2: 終了日 */
+  $range_format = ($type === 'weekly') ? __('%1$s 〜 %2$s', THEME_NAME) : '';
   // WordPress本体（defaultドメイン）のアーカイブ書式を流用したサイト言語追従
   // cocoon.pot への無意味な抽出を避けるため、_x() ではなく下位関数を直接使用
   $month_format = ($type === 'monthly') ? translate_with_gettext_context('F Y', 'monthly archives date format', 'default') : '';
   $year_format  = ($type === 'yearly') ? translate_with_gettext_context('Y', 'yearly archives date format', 'default') : '';
+
+  // date_i18n() は渡されたタイムスタンプをUTCとして解釈し直すため、数字だけの書式なら gmdate() で同じ結果
+  $numeric = array(
+    $day_format   => cocoon_analytics_is_numeric_date_format($day_format),
+    $full_format  => cocoon_analytics_is_numeric_date_format($full_format),
+    $month_format => cocoon_analytics_is_numeric_date_format($month_format),
+    $year_format  => cocoon_analytics_is_numeric_date_format($year_format),
+  );
+  $format_date = function($format, $timestamp) use ($numeric) {
+    return $numeric[$format] ? gmdate($format, $timestamp) : date_i18n($format, $timestamp);
+  };
+
   foreach ($rows as $i => $row) {
     $date = isset($row['date']) ? $row['date'] : '';
     $label = $date;
+    $timestamp = false;
     if ($day_format !== '') {
-      $ts = strtotime($date);
-      if ($ts !== false) {
-        $label = date_i18n($day_format, $ts);
+      $timestamp = strtotime($date);
+      if ($timestamp !== false) {
+        $label = $format_date($day_format, $timestamp);
       }
     } elseif ($month_format !== '') {
-      $ts = strtotime($date . '-01');
-      if ($ts !== false) {
-        $label = date_i18n($month_format, $ts);
+      $timestamp = strtotime($date . '-01');
+      if ($timestamp !== false) {
+        $label = $format_date($month_format, $timestamp);
       }
     } elseif ($year_format !== '') {
-      $ts = strtotime($date . '-01-01');
-      if ($ts !== false) {
-        $label = date_i18n($year_format, $ts);
+      $timestamp = strtotime($date . '-01-01');
+      if ($timestamp !== false) {
+        $label = $format_date($year_format, $timestamp);
       }
     }
     $rows[$i]['label'] = $label;
+
+    // 月次・年次のラベルは既に年を含むため、重複データを送らずJS側のフォールバックに任せる
+    if ($full_format === '' || $timestamp === false) continue;
+    $tooltip_label = $format_date($full_format, $timestamp);
+    $days = isset($row['days']) ? (int) $row['days'] : 0;
+    if ($range_format !== '' && $days > 1) {
+      // 集計対象が連続日で0埋め済みのため、開始日＋（日数-1）がその棒の最終日
+      $end_timestamp = strtotime('+' . ($days - 1) . ' days', $timestamp);
+      if ($end_timestamp !== false) {
+        $tooltip_label = sprintf($range_format, $tooltip_label, $format_date($full_format, $end_timestamp));
+      }
+    }
+    $rows[$i]['tooltip_label'] = $tooltip_label;
   }
   return $rows;
 }
@@ -153,7 +217,19 @@ function cocoon_analytics_render_period_form($current_preset, $from, $to, $view,
       <input type="date" name="to" value="<?php echo esc_attr($to); ?>">
     </label>
     <?php submit_button(__('表示', THEME_NAME), 'secondary', '', false); ?>
-    <span class="cocoon-analytics-range-label"><?php echo esc_html(sprintf('%s 〜 %s', $from, $to)); ?></span>
+    <?php
+    // 入力欄の値は ISO 形式のため、表示用ラベルだけサイトの日付書式へ揃える
+    $label_format = cocoon_analytics_full_date_format();
+    $from_ts = strtotime($from);
+    $to_ts = strtotime($to);
+    $range_label = ($from_ts !== false && $to_ts !== false) ? sprintf(
+      /* translators: 1: 開始日, 2: 終了日 */
+      __('%1$s 〜 %2$s', THEME_NAME),
+      date_i18n($label_format, $from_ts),
+      date_i18n($label_format, $to_ts)
+    ) : '';
+    ?>
+    <span class="cocoon-analytics-range-label"><?php echo esc_html($range_label); ?></span>
   </form>
   <?php
 }
@@ -233,7 +309,7 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
     echo '<p>' . esc_html__('データがありません。', THEME_NAME) . '</p>';
     return;
   }
-  // 初心者向け: シェア率は「期間全体のPV」を分母にする（指定が無ければ表示中行の合計を使う）
+  // シェア率の分母となる期間全体のPV（指定が無い場合は表示中行の合計）
   if ($total_pv_override !== null) {
     $total_pv = max(0, (int) $total_pv_override);
   } else {
@@ -303,7 +379,7 @@ function cocoon_analytics_render_ranking_table($rows, $show_rank = true, $total_
 
     echo '<div class="cocoon-analytics-ranking-pv">';
     echo '<div class="cocoon-analytics-ranking-pv-num">' . esc_html(number_format_i18n($pv)) . '</div>';
-    echo '<div class="cocoon-analytics-ranking-pv-label">PV</div>';
+    echo '<div class="cocoon-analytics-ranking-pv-label">' . esc_html__('PV', THEME_NAME) . '</div>';
     $share_tip = __('期間全体の総PVに占めるこの記事の割合', THEME_NAME);
     echo '<div class="cocoon-analytics-ranking-pv-share" title="' . esc_attr($share_tip) . '">'
        . esc_html__('シェア', THEME_NAME) . ' ' . esc_html($share) . '%</div>';
@@ -457,7 +533,7 @@ endif;
  */
 if ( !function_exists( 'cocoon_analytics_render_heatmap' ) ):
 function cocoon_analytics_render_heatmap(){
-  // 初心者向け: 直近52週間 + 今週 = 371日ぶんを日曜始まりで描画する
+  // 直近52週間 + 今週 = 371日ぶんの日曜始まりでの描画
   $today = current_time('Y-m-d');
   $today_ts = strtotime($today);
   // 今日を含む週の土曜日まで表示するため、今日の曜日番号(0=日)を使って週末へ
@@ -478,7 +554,7 @@ function cocoon_analytics_render_heatmap(){
   }
 
   //ツールチップは371セル分生成するため、書式取得はループ外で1回のみ
-  $tip_format = get_option('date_format');
+  $tip_format = cocoon_analytics_full_date_format();
 
   // 週単位で配列化
   $weeks = array();
@@ -540,7 +616,7 @@ function cocoon_analytics_render_heatmap(){
       }
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
-      $tip = esc_attr(date_i18n($tip_format, strtotime($c['date'])) . ' : ' . number_format_i18n($pv) . ' PV');
+      $tip = esc_attr(date_i18n($tip_format, strtotime($c['date'])) . ' : ' . number_format_i18n($pv) . ' ' . __('PV', THEME_NAME));
       // ブラウザ標準の遅いツールチップの代わりに、モダンなカスタムツールチップ用の属性を付与します
       echo '<div class="' . esc_attr($cls) . '" data-tooltip="' . $tip . '"></div>';
     }

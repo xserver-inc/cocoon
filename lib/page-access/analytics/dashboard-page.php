@@ -147,13 +147,16 @@ switch ($view) {
       // 表示用の期間ラベルを作成します（カスタム期間の場合は日付範囲を表示します）
       $period_label = isset($presets[$preset]) ? $presets[$preset] : '';
       if ($preset === 'custom') {
-        // タイル見出しに収める必要があるため短縮書式を使う
-        $short_format = cocoon_analytics_short_date_format();
+        $from_ts = strtotime($from);
+        $to_ts = strtotime($to);
+        // タイル見出しに収める必要があるため短縮書式を使うが、年をまたぐ期間は月日だけでは判別できない
+        $same_year = ($from_ts !== false && $to_ts !== false && gmdate('Y', $from_ts) === gmdate('Y', $to_ts));
+        $label_format = $same_year ? cocoon_analytics_short_date_format() : cocoon_analytics_full_date_format();
         $period_label = sprintf(
           /* translators: 1: 開始日, 2: 終了日 */
           __('%1$s 〜 %2$s', THEME_NAME),
-          date_i18n($short_format, strtotime($from)),
-          date_i18n($short_format, strtotime($to))
+          date_i18n($label_format, $from_ts),
+          date_i18n($label_format, $to_ts)
         );
       }
       $suffix = $period_label ? ' （' . $period_label . '）' : '';
@@ -567,7 +570,7 @@ switch ($view) {
           <!-- カスタム期間の日付カレンダー選択フォーム（初期は非表示にします） -->
           <div id="lifecycle-custom-range" class="lifecycle-custom-range" style="display:none;">
             <input type="date" id="lifecycle-custom-from" class="lifecycle-date-picker">
-            <span>〜</span>
+            <span><?php echo esc_html__('〜', THEME_NAME); ?></span>
             <input type="date" id="lifecycle-custom-to" class="lifecycle-date-picker">
           </div>
         </div>

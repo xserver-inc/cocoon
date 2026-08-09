@@ -26,7 +26,7 @@ define('COCOON_ANALYTICS_LAYOUT_META_KEY', 'cocoon_analytics_dashboard_layout');
  */
 if ( !function_exists( 'cocoon_analytics_default_tile_ids' ) ):
 function cocoon_analytics_default_tile_ids($visibility = array()){
-  // 初心者向け: 新しいタイルを追加するときはここに id を追加するだけでOK
+  // タイル追加時の唯一の登録先となる id 一覧
   $all = array('trend', 'category', 'tag', 'type', 'top', 'trending', 'dow');
   $result = array();
   foreach ($all as $id) {
@@ -45,7 +45,7 @@ if ( !function_exists( 'cocoon_analytics_default_layout' ) ):
 function cocoon_analytics_default_layout($tile_ids, $col_count = 2){
   $col_count = max(1, min(4, (int) $col_count));
   $columns = array_fill(0, $col_count, array());
-  // 初心者向け: ラウンドロビンで均等配置（後でユーザーがドラッグ&ドロップで調整可能）
+  // ドラッグ&ドロップでの調整を前提とした、ラウンドロビンによる均等配置
   foreach (array_values($tile_ids) as $i => $id) {
     $columns[$i % $col_count][] = $id;
   }
