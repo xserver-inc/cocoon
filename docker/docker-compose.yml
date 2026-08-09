@@ -36,7 +36,7 @@ services:
     restart: unless-stopped
     user: "33:33" # www-data
     ports:
-      - "${WEB_PORT:-8085}:80"
+      - "${BIND_HOST:-127.0.0.1}:${WEB_PORT:-8085}:80"
     environment:
       <<: *wp-db-env
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-1}
@@ -69,30 +69,23 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
     volumes:
       - mysql_data:/var/lib/mysql
-      # 本番用 DB に加えて統合テスト用 DB (wordpress_test) を初期化時に作成する
+      # 開発用 DB に加えて統合テスト用 DB (wordpress_test) を初期化時に作成する
       - ./mysql/init:/docker-entrypoint-initdb.d
     ports:
-      - "${DB_PORT:-3085}:3306"
+      - "${BIND_HOST:-127.0.0.1}:${DB_PORT:-3085}:3306"
     healthcheck:
-      test:
-        [
-          "CMD",
-          "mysqladmin",
-          "ping",
-          "-h",
-          "localhost",
-          "-u",
-          "root",
-          "--password=${MYSQL_ROOT_PASSWORD:-rootpassword}",
-        ]
+      # @@portによる初期化用サーバーと最終サーバーの識別
+      test: ["CMD-SHELL", "test \"$$(MYSQL_PWD=\"$$MYSQL_ROOT_PASSWORD\" mysql --protocol=socket -u root --batch --skip-column-names --execute='SELECT @@port' 2>/dev/null)\" = 3306"]
       timeout: 20s
       retries: 10
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     restart: unless-stopped
+    profiles:
+      - admin
     ports:
-      - "${PMA_PORT:-8185}:80"
+      - "${BIND_HOST:-127.0.0.1}:${PMA_PORT:-8185}:80"
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
@@ -114,6 +107,12 @@ services:
       # uid 33 では既定の HOME/キャッシュが書けないため tmp に逃がす
       HOME: /tmp
       WP_CLI_CACHE_DIR: /tmp/wp-cli-cache
+      WEB_PORT: ${WEB_PORT:-8085}
+      WORDPRESS_SITE_TITLE: ${WORDPRESS_SITE_TITLE:-Cocoon Dev}
+      WORDPRESS_ADMIN_USER: ${WORDPRESS_ADMIN_USER:-admin}
+      WORDPRESS_ADMIN_PASSWORD: ${WORDPRESS_ADMIN_PASSWORD:-admin123}
+      WORDPRESS_ADMIN_EMAIL: ${WORDPRESS_ADMIN_EMAIL:-admin@example.com}
+      WORDPRESS_CHILD_THEME_NAME: ${WORDPRESS_CHILD_THEME_NAME:-Cocoon Child}
     volumes:
       - wordpress_data:/var/www/html
       - ..:/var/www/html/wp-content/themes/cocoon
@@ -125,22 +124,46 @@ services:
         condition: service_healthy
     entrypoint: /bin/sh
     command:
+      - -eu
       - -c
-      - >
-        wp core is-installed 2>/dev/null ||
-        wp core install
-        --url="http://localhost:${WEB_PORT:-8085}"
-        --title="${WORDPRESS_SITE_TITLE:-Cocoon Dev}"
-        --admin_user="${WORDPRESS_ADMIN_USER:-admin}"
-        --admin_password="${WORDPRESS_ADMIN_PASSWORD:-admin123}"
-        --admin_email="${WORDPRESS_ADMIN_EMAIL:-admin@example.com}"
-        --skip-email;
-        wp theme is-installed cocoon-child ||
-        wp scaffold child-theme cocoon-child --parent_theme=cocoon --theme_name="${WORDPRESS_CHILD_THEME_NAME:-Cocoon Child}";
-        wp theme is-active cocoon-child ||
-        wp theme activate cocoon-child
+      - |
+        if ! wp core is-installed 2>/dev/null; then
+          wp core install --url="http://localhost:$${WEB_PORT}" --title="$${WORDPRESS_SITE_TITLE}" --admin_user="$${WORDPRESS_ADMIN_USER}" --admin_password="$${WORDPRESS_ADMIN_PASSWORD}" --admin_email="$${WORDPRESS_ADMIN_EMAIL}" --skip-email
+        fi
+        if ! wp theme is-installed cocoon-child; then
+          wp scaffold child-theme cocoon-child --parent_theme=cocoon --theme_name="$${WORDPRESS_CHILD_THEME_NAME}"
+        fi
+        if ! wp theme is-active cocoon-child; then
+          wp theme activate cocoon-child
+        fi
+
+  # テーマのユニットテスト専用コンテナ
+  phpunit:
+    build:
+      context: ./phpunit
+      args:
+        PHP_VERSION: ${PHP_TEST_VERSION:-8.3}
+    profiles:
+      - tools
+    init: true
+    working_dir: /workspace
+    cpus: 2.0
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: "1"
+      COMPOSER_CACHE_DIR: /tmp/composer-cache
+      COMPOSER_PROCESS_TIMEOUT: "600"
+    volumes:
+      - ..:/workspace
+      - composer_vendor:/workspace/vendor
+      - composer_cache:/tmp/composer-cache
+    command:
+      - /bin/sh
+      - -lc
+      - composer install --prefer-dist --no-interaction --no-progress && composer test:unit
 
 volumes:
   wordpress_data:
   mysql_data:
   uploads:
+  composer_vendor:
+  composer_cache:

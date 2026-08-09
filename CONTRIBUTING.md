@@ -433,6 +433,39 @@ npm run build
 npm run start  # 開発サーバーでの確認
 ```
 
+## テスト・検証方法
+
+### Dockerローカル実機テスト
+
+管理画面やフロントエンドの表示・挙動は、原則として `docker/README.md` に記載された
+Dockerローカル実機テスト環境で確認してください。既定環境はWordPress 6.8系、PHP 8.3系、
+MySQL 8.0で、Cocoon親テーマと子テーマを有効にした状態です。
+
+プロジェクトルートからPowerShell 7で次の順に実行します。
+
+```powershell
+# コンテナ状態の確認
+pwsh -NoProfile -File docker/dev.ps1 status
+
+# 未起動時の環境起動
+pwsh -NoProfile -File docker/dev.ps1 up
+
+# DB確認が必要な場合だけphpMyAdminを起動
+pwsh -NoProfile -File docker/dev.ps1 pma
+
+# Compose構文、PHPUnit、Cocoon構文の一括確認
+pwsh -NoProfile -File docker/dev.ps1 check
+```
+
+一括確認が成功した後、http://localhost:8085 でフロントエンド、
+http://localhost:8085/wp-admin/ で管理画面の対象表示と操作を確認してください。
+接続先、ローカル専用認証情報、任意起動のphpMyAdmin、検証済みバージョン、反復テストの詳細は
+`docker/README.md` の「ローカル実機テスト環境」を参照してください。
+
+リモートテストサーバーは、ローカル環境で再現できない挙動の確認や、リモート確認を明示的に
+求められた場合に使用します。データベースとアップロードを削除する `docker compose down -v` は、
+環境を初期化する必要がある場合を除いて実行しないでください。
+
 ## 問題報告（Issue）ガイドライン
 
 ### バグ報告
