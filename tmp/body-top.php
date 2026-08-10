@@ -65,8 +65,8 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
     <div id="content-in" class="content-in wrap">
 
-        <?php //スキップリンクからキーボードのフォーカスを直接受け取れるようにtabindex="-1"を設定する ?>
-        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" tabindex="-1" itemscope itemtype="https://schema.org/Blog">
+        <?php //tabindexはスキップリンク押下時にJS側で一時付与（常時付与はタブ移動順序の乱れの原因） ?>
+        <main id="main" class="main<?php echo get_additional_main_classes(); ?>" itemscope itemtype="https://schema.org/Blog">
 
         <?php
         //PRラベル（小）の表示

@@ -357,3 +357,91 @@
   window.addEventListener( 'scroll', updateHeaderOffset );
 } )();
 
+// スキップリンクの移動先へのフォーカス付与
+( function () {
+  /**
+   * スキップリンクの移動先要素にフォーカスを移す。
+   *
+   * <main>などの本来フォーカスできない要素にtabindex="-1"を常時付けておくと、
+   * Blink・WebKit系ではその内部をクリック・範囲選択しただけで祖先要素へ
+   * フォーカスが移り、Tabキーの移動起点がコンテナ先頭に戻ってしまう。
+   * そのため、スキップリンクが押されたときだけ一時的に付与して、
+   * フォーカスが外れた時点で取り除く。
+   *
+   * @param {HTMLElement} target 移動先の要素
+   */
+  function focusSkipLinkTarget( target ) {
+    //既存のtabindexがある場合は元の指定を尊重
+    var isTemporary = ! target.hasAttribute( 'tabindex' );
+
+    if ( isTemporary ) {
+      target.setAttribute( 'tabindex', '-1' );
+    }
+
+    target.focus();
+
+    if ( ! isTemporary ) {
+      return;
+    }
+
+    //非表示要素などでフォーカスできなかった場合は、blurが発生せず属性が残り続けるため即時除去
+    if ( document.activeElement !== target ) {
+      target.removeAttribute( 'tabindex' );
+      return;
+    }
+
+    target.addEventListener( 'blur', function removeTemporaryTabindex() {
+      target.removeAttribute( 'tabindex' );
+      target.removeEventListener( 'blur', removeTemporaryTabindex );
+    } );
+  }
+
+  /**
+   * ハッシュから移動先要素のIDを取り出す。
+   *
+   * 日本語などのIDはパーセントエンコードされるためデコードするが、
+   * 不正なエンコードでもクリック処理全体が例外で止まらないようにする。
+   *
+   * @param  {string} hash 先頭に#を含むハッシュ
+   * @return {string} 移動先要素のID
+   */
+  function getSkipLinkTargetId( hash ) {
+    var id = hash.slice( 1 );
+
+    try {
+      return decodeURIComponent( id );
+    } catch ( e ) {
+      return id;
+    }
+  }
+
+  //スキップリンクは描画直後に押される可能性があるため、documentへの委譲で受け取る
+  document.addEventListener( 'click', function ( event ) {
+    //別タブ・別ウィンドウで開く操作のときは、現在のページのフォーカスと表示位置を動かさない
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    var element = event.target;
+    if ( ! element || typeof element.closest !== 'function' ) {
+      return;
+    }
+
+    var link = element.closest( '.skip-link' );
+    if ( ! link || ! link.hash ) {
+      return;
+    }
+
+    var target = document.getElementById( getSkipLinkTargetId( link.hash ) );
+    if ( target ) {
+      focusSkipLinkTarget( target );
+    }
+  } );
+} )();
+
