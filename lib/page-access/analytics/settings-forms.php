@@ -7,28 +7,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-// 設定保存処理
-if ( isset($_POST[HIDDEN_FIELD_NAME]) &&
-     wp_verify_nonce($_POST[HIDDEN_FIELD_NAME], 'access') ) {
-  // 既存の3項目 + 新設4項目 を保存
-  require dirname(__FILE__) . '/../access-posts.php';
-  update_theme_option(OP_ACCESS_ANALYTICS_ENABLE);
-  update_theme_option(OP_ACCESS_ANALYTICS_CACHE_TTL);
-  update_theme_option(OP_ACCESS_ANALYTICS_DEFAULT_PERIOD);
-  update_theme_option(OP_ACCESS_ANALYTICS_EXPORT_ENABLE);
-
-  // キャッシュクリアボタン
-  if (isset($_POST['cocoon_analytics_flush'])) {
-    cocoon_analytics_flush_cache();
-    echo '<div class="notice notice-success is-dismissible"><p>';
-    echo esc_html__('アクセス解析のキャッシュをクリアしました。', THEME_NAME);
-    echo '</p></div>';
-  }
-
-  echo '<div class="notice notice-success is-dismissible"><p><strong>';
-  echo esc_html__('設定を変更しました。', THEME_NAME);
-  echo '</strong></p></div>';
-}
+// 設定の保存と通知の出力は dashboard-page.php 側で見出し直後に行う
 ?>
 
 <form name="form1" method="post" action="" class="admin-settings">
@@ -93,7 +72,8 @@ if ( isset($_POST[HIDDEN_FIELD_NAME]) &&
           <tr>
             <th scope="row"><?php _e('キャッシュのクリア', THEME_NAME); ?></th>
             <td>
-              <button type="submit" name="cocoon_analytics_flush" value="1" class="button">
+              <?php //form属性で別フォームへ送信し、Enterキーでの誤発火と設定の巻き添え保存を防止 ?>
+              <button type="submit" form="cocoon-analytics-flush-form" name="cocoon_analytics_flush" value="1" class="button">
                 <?php _e('ダッシュボードのキャッシュをクリア', THEME_NAME); ?>
               </button>
               <?php generate_tips_tag(__('集計結果の transient キャッシュを一括削除します。', THEME_NAME)); ?>
@@ -107,4 +87,9 @@ if ( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('access'); ?>">
   <?php submit_button(__('変更を保存', THEME_NAME)); ?>
+</form>
+
+<?php //キャッシュクリアボタン専用の送信先 ?>
+<form id="cocoon-analytics-flush-form" method="post" action="">
+  <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('access'); ?>">
 </form>

@@ -287,7 +287,11 @@ endif;
     //できるだけ早くタブを選択するためにDOMの読み込みを待つのをコメントアウト
     // document.addEventListener("DOMContentLoaded", function() {
       //前回選択していたタブを選択
-      document.getElementById('<?php echo esc_html($_POST['tab-input']); ?>').checked = true;
+      //ブラウザー拡張機能などで値が壊れた場合に以降の処理が止まらないようにする防御
+      var cocoonSelectedTab = document.getElementById('<?php echo esc_js($_POST['tab-input']); ?>');
+      if (cocoonSelectedTab) {
+        cocoonSelectedTab.checked = true;
+      }
     // });
   </script>
   <?php endif; ?>

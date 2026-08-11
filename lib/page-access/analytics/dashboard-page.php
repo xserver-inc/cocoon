@@ -30,26 +30,37 @@ $to = $period['to'];
 $post_type_filter = isset($_GET['pt']) ? sanitize_key($_GET['pt']) : 'all';
 $pt_arg = $post_type_filter === 'all' ? null : $post_type_filter;
 
+// 保存後の設定値をページ描画へ反映させるため、タブ出力より前に保存処理を実行
+$page_notice = '';
+if ($view === 'settings') {
+  require_once dirname(__FILE__) . '/settings-posts.php';
+  $page_notice = cocoon_analytics_save_settings();
+}
+
+// 通知を見出し直後へ出力するため、描画を打ち切る条件もタブ出力より前に判定
+$is_abort = false;
+if (!is_access_analytics_enable() && $view !== 'settings') {
+  // ダッシュボード機能が無効な場合は設定のみ表示
+  $page_notice = '<div class="notice notice-warning"><p>' .
+                 esc_html__('アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。', THEME_NAME) .
+                 '</p></div>';
+  $is_abort = true;
+} elseif ($view !== 'settings' && !is_accesses_table_exist()) {
+  // テーブル存在チェック
+  $page_notice = '<div class="notice notice-error"><p>' .
+                 esc_html__('アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。', THEME_NAME) .
+                 '</p></div>';
+  $is_abort = true;
+}
+
 ?>
 <div class="wrap admin-settings cocoon-analytics-wrap">
   <h1><?php _e('アクセス集計', THEME_NAME); ?></h1>
+  <?php echo $page_notice; // phpcs:ignore WordPress.Security.EscapeOutput ?>
   <?php cocoon_analytics_render_tabs($view); ?>
 
 <?php
-// ダッシュボード機能が無効な場合は設定のみ表示
-if (!is_access_analytics_enable() && $view !== 'settings') {
-  echo '<div class="notice notice-warning"><p>';
-  echo esc_html__('アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。', THEME_NAME);
-  echo '</p></div>';
-  echo '</div>';
-  return;
-}
-
-// テーブル存在チェック
-if ($view !== 'settings' && !is_accesses_table_exist()) {
-  echo '<div class="notice notice-error"><p>';
-  echo esc_html__('アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。', THEME_NAME);
-  echo '</p></div>';
+if ($is_abort) {
   echo '</div>';
   return;
 }
