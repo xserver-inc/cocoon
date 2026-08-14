@@ -74,6 +74,10 @@ if (!function_exists('do_action')) {
 
 if (!function_exists('__')) {
     function __($text, $domain = 'default') {
+        if (isset($GLOBALS['test_mock_translations'][$text])) {
+            return $GLOBALS['test_mock_translations'][$text];
+        }
+
         return $text;
     }
 }

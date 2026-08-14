@@ -29,7 +29,7 @@ function render_block_cocoon_block_info_list($attributes, $content)
 	];
 
 	ob_start();
-	echo '<div class="' . $classes . '">';
+	echo '<div class="' . esc_attr( $classes ) . '">';
 	generate_info_list_tag($atts);
 	echo '</div>';
 	$html = ob_get_clean();

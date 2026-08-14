@@ -707,6 +707,7 @@ if (!$entry_content_margin_hight) {
 .body .article,
 .body .column-wrap,
 .body .new-entry-cards,
+.body .info-list,
 .body .popular-entry-cards,
 .body .navi-entry-cards,
 .body .box-menus,

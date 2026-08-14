@@ -1809,10 +1809,14 @@ function generate_info_list_tag($atts){
 
   $args = apply_filters( 'get_info_list_args', $args );
   $query = new WP_Query( $args );
-  $frame_class = ($frame ? ' is-style-frame-border' : '');
-  $divider_class = ($divider ? ' is-style-divider-line' : '');
-  if( $query->have_posts() ): ?>
-    <div class="info-list<?php echo $frame_class; ?><?php echo $divider_class; ?>">
+  $has_entries = $query->have_posts();
+  // 一覧の有無にかかわらずラッパーを出力し、空の場合は枠線・区切り線を外して識別用クラスのみ付与
+  $frame_class = ( $has_entries && $frame ? ' is-style-frame-border' : '' );
+  $divider_class = ( $has_entries && $divider ? ' is-style-divider-line' : '' );
+  $empty_class = ( $has_entries ? '' : ' is-empty' );
+  ?>
+  <div class="<?php echo esc_attr( 'info-list' . $frame_class . $divider_class . $empty_class ); ?>">
+  <?php if ( $has_entries ) : ?>
       <?php if ($caption): ?>
         <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
       <?php endif; ?>
@@ -1835,10 +1839,11 @@ function generate_info_list_tag($atts){
           </div>
         </div>
       <?php endwhile; ?>
-    </div>
   <?php else :
-    echo '<p>'.__( '記事は見つかりませんでした。', THEME_NAME ).'</p>';
-  endif;
+    echo '<p class="info-list-empty-message">' . esc_html( __( '記事は見つかりませんでした。', THEME_NAME ) ) . '</p>';
+  endif; ?>
+  </div>
+  <?php
   wp_reset_postdata();
 }
 endif;

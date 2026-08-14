@@ -2,6 +2,11 @@
 .info-list{
   padding: 20px;
 
+  // 記事がない場合のメッセージ周囲における一覧用余白の除外
+  &.is-empty{
+    padding: 0;
+  }
+
   &.is-style-frame-border{
     border: 1px solid;
     border-color: var(--cocoon-three-d-border-colors);
@@ -13,6 +18,11 @@
       position: relative;
     }
   }
+}
+
+// 新着情報ウィジェット内の二重余白の除外
+.widget_info_list > .info-list:last-child{
+  margin-bottom: 0;
 }
 
 .info-list-caption{
