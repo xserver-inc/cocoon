@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.4.2\n"
+"Project-Id-Version: Cocoon 2.9.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2776,7 +2776,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
 #: lib/html-forms.php:1301
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1843
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
