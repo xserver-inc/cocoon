@@ -5227,7 +5227,7 @@ body:has(#spotlight.show) .header {
   /* admin bar (Front& not Font共通) 1023pxからnavi非表示となり、モバイルヘッダーで調整 */
   /*-------------- Front --------------*/
   .skin-grayish.admin-bar:where(.mblt-header-mobile-buttons, .mblt-header-and-footer-mobile-buttons) .mobile-header-menu-buttons.mobile-menu-buttons {
-    margin: var(--wp-admin--admin-bar--height) 0 0 0;
+    margin: 0;
   }
 
   /* モバイルヘッダーボタン メニューに2個以上設定されていたら元のspace-aroundに戻す jsで処理 */
