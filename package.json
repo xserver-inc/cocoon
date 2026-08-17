@@ -23,6 +23,7 @@
     "minimatch@9": "^9.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@prettier/plugin-php": "^0.19.1",
     "@wordpress/eslint-plugin": "^16.0.0",
     "eslint": "^8.57.0",
@@ -31,6 +32,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "lighthouse": "^13.4.1",
     "po2json": "^0.4.5",
     "postcss-scss": "^4.0.9",
     "prettier": "npm:wp-prettier@^2.6.2",
@@ -60,6 +62,9 @@
     "test": "composer test",
     "test:unit": "composer test:unit",
     "test:i18n": "node scripts/test-i18n.js",
+    "test:click-js": "node tests/js/click-analytics.test.js",
+    "test:click-browser": "playwright test tests/e2e/click-analytics.spec.js tests/e2e/click-analytics-performance.spec.js",
+    "test:click-lighthouse": "node tests/performance/click-analytics-lighthouse.mjs",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:php",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",

@@ -95,6 +95,7 @@ class UtilsFunctionsTest extends IntegrationTestCase
     {
         $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ']);
         $key = get_the_category_meta_key($cat_id);
+        $this->assertSame('category_meta_' . $cat_id, $key);
     }
 
     // ========================================================================

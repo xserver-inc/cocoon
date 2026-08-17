@@ -48,8 +48,8 @@ if (!$_tests_dir) {
     exit(1);
 }
 
-// Composer オートローダー
-require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
+// テーマ読み込み前のフック登録に必要なWordPressテスト関数を先に読み込みます。
+require_once $_tests_dir . '/includes/functions.php';
 
 // テーマ読み込み関数を WordPress のテストブートストラップ前に登録
 $_theme_dir = dirname(__DIR__, 2);
@@ -60,6 +60,11 @@ tests_add_filter('setup_theme', function() use ($_theme_dir) {
 
 // WordPress テストスイートを読み込み
 require $_tests_dir . '/includes/bootstrap.php';
+
+// 実運用のテーマ更新と同じく、各テストのDBトランザクション開始前に専用テーブルを準備します。
+if (function_exists('create_click_analytics_tables')) {
+    create_click_analytics_tables();
+}
 
 // 統合テスト用基底クラス
 require_once __DIR__ . '/IntegrationTestCase.php';

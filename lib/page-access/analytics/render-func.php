@@ -159,6 +159,7 @@ if ( !function_exists( 'cocoon_analytics_render_tabs' ) ):
 function cocoon_analytics_render_tabs($current){
   $tabs = array(
     'dashboard' => __('ダッシュボード', THEME_NAME),
+    'clicks'    => __('クリック解析', THEME_NAME),
     'ranking'   => __('ランキング', THEME_NAME),
     'posts'     => __('記事別', THEME_NAME),
     'terms'     => __('カテゴリー/タグ', THEME_NAME),

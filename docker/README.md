@@ -237,6 +237,12 @@ pwsh -NoProfile -File docker/dev.ps1 pma
 # Docker内でPHPUnitを実行
 pwsh -NoProfile -File docker/dev.ps1 test
 
+# WordPressとMySQLを使う統合テストを実行
+pwsh -NoProfile -File docker/dev.ps1 integration
+
+# 100万日次集計・10万リンクのDB性能試験を明示実行
+pwsh -NoProfile -File docker/dev.ps1 benchmark
+
 # Compose構文、PHPUnit、起動済みWordPressの一括確認
 pwsh -NoProfile -File docker/dev.ps1 check
 

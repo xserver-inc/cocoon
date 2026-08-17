@@ -16,7 +16,7 @@
     "scripts": {
         "test": "phpunit",
         "test:unit": "phpunit --testsuite unit",
-        "test:integration": "phpunit --testsuite integration",
+        "test:integration": "phpunit -c phpunit.integration.xml --testsuite integration",
         "test:coverage": "phpunit --testsuite unit --coverage-html tests/coverage --coverage-text",
         "test:coverage-clover": "phpunit --testsuite unit --coverage-clover tests/coverage/clover.xml --coverage-text"
     },

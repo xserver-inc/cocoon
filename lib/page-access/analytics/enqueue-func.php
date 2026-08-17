@@ -65,6 +65,7 @@ function cocoon_analytics_print_data(){
   if (!$screen || strpos($screen->id, 'theme-access') === false) return;
 
   $chart_data = isset($GLOBALS['cocoon_analytics_chart_data']) ? $GLOBALS['cocoon_analytics_chart_data'] : array();
+  $click_map = isset($GLOBALS['cocoon_click_map_data']) ? $GLOBALS['cocoon_click_map_data'] : array();
 
   $weekdays = array(
     __('日', THEME_NAME),
@@ -92,6 +93,7 @@ function cocoon_analytics_print_data(){
 
   $payload = array(
     'data'     => $chart_data,
+    'clickMap' => $click_map,
     'weekdays' => $weekdays,
     'suggest'  => array(
       'authors'    => $authors,
@@ -105,6 +107,8 @@ function cocoon_analytics_print_data(){
     ),
     'i18n'     => array(
       'pv'           => __('PV', THEME_NAME),
+      'clicks'       => __('クリック', THEME_NAME),
+      'ctr'          => __('推定CTR', THEME_NAME),
       'date'         => __('日付', THEME_NAME),
       'dayAfter'     => __('公開後日数', THEME_NAME),
       'days'         => __('日', THEME_NAME),

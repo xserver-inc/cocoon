@@ -161,9 +161,43 @@ services:
       - -lc
       - composer install --prefer-dist --no-interaction --no-progress && composer test:unit
 
+  # WordPress本体とMySQLを使うクリック解析などの統合テスト専用コンテナ
+  phpunit-integration:
+    build:
+      context: ./phpunit
+      args:
+        PHP_VERSION: ${PHP_TEST_VERSION:-8.3}
+    profiles:
+      - tools
+    init: true
+    working_dir: /workspace
+    cpus: 2.0
+    environment:
+      <<: *wp-db-env
+      COMPOSER_ALLOW_SUPERUSER: "1"
+      COMPOSER_CACHE_DIR: /tmp/composer-cache
+      COMPOSER_PROCESS_TIMEOUT: "600"
+      WP_TESTS_DIR: /tmp/wordpress-develop/tests/phpunit
+    volumes:
+      - ..:/workspace
+      - ..:/tmp/wordpress/wp-content/themes/cocoon-master
+      - wordpress_data:/tmp/wordpress
+      - wordpress_tests_lib:/tmp/wordpress-develop
+      - composer_vendor:/workspace/vendor
+      - composer_cache:/tmp/composer-cache
+    depends_on:
+      wordpress:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    command:
+      - /bin/sh
+      - /workspace/docker/phpunit/run-integration.sh
+
 volumes:
   wordpress_data:
   mysql_data:
   uploads:
   composer_vendor:
   composer_cache:
+  wordpress_tests_lib:

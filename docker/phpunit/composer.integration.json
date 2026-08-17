@@ -1,0 +1,9 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "yoast/phpunit-polyfills": "^3.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
