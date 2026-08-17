@@ -1258,6 +1258,14 @@ function generate_widget_entries_tag($atts){
   }
   $args = apply_filters('widget_entries_args', $args);
 
+  if (empty($args['ignore_sticky_posts']) && !empty($args['category__not_in'])) {
+    //最終フィルター適用後も固定表示投稿より除外カテゴリーを優先する
+    $args['post__not_in'] = merge_category_excluded_sticky_post_ids(
+      isset($args['post__not_in']) ? $args['post__not_in'] : array(),
+      $args['category__not_in']
+    );
+  }
+
   //クエリの作成
   $query = new WP_Query( $args );
   $atts = array(

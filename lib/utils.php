@@ -3017,6 +3017,76 @@ function get_sticky_post_ids(){
 }
 endif;
 
+//指定カテゴリーに属する固定表示投稿IDを取得する
+if ( !function_exists( 'get_sticky_post_ids_in_categories' ) ):
+function get_sticky_post_ids_in_categories($category_ids, $sticky_post_ids = null){
+  //クエリに安全に渡せる正の整数IDへ揃える
+  $category_ids = array_values(array_unique(array_filter(array_map('intval', (array)$category_ids))));
+  if (is_null($sticky_post_ids)) {
+    $sticky_post_ids = get_sticky_post_ids();
+  }
+  $sticky_post_ids = array_values(array_unique(array_filter(array_map('intval', (array)$sticky_post_ids))));
+
+  if (!$category_ids || !$sticky_post_ids) {
+    return array();
+  }
+
+  //IDの並び順が異なっても同じ組み合わせとして扱う
+  sort($category_ids, SORT_NUMERIC);
+  sort($sticky_post_ids, SORT_NUMERIC);
+
+  //同一リクエスト内で同じ組み合わせを繰り返し検索しない
+  static $post_ids_cache = array();
+  $cache_key = implode(',', $category_ids).'|'.implode(',', $sticky_post_ids);
+  if (isset($post_ids_cache[$cache_key])) {
+    return $post_ids_cache[$cache_key];
+  }
+
+  //除外対象カテゴリーと固定表示投稿の両方に該当する投稿だけを取得する
+  $post_ids = get_posts(array(
+    'post__in' => $sticky_post_ids,
+    'category__in' => $category_ids,
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'ignore_sticky_posts' => true,
+    'fields' => 'ids',
+  ));
+
+  $post_ids_cache[$cache_key] = array_values(array_unique(array_filter(array_map('intval', (array)$post_ids))));
+  return $post_ids_cache[$cache_key];
+}
+endif;
+
+//除外カテゴリー内の固定表示投稿IDを除外投稿IDへ統合する
+if ( !function_exists( 'merge_category_excluded_sticky_post_ids' ) ):
+function merge_category_excluded_sticky_post_ids($exclude_post_ids, $exclude_category_ids, $sticky_post_ids = null){
+  //固定表示より明示的な除外設定を優先させる
+  $exclude_post_ids = array_merge(
+    (array)$exclude_post_ids,
+    get_sticky_post_ids_in_categories($exclude_category_ids, $sticky_post_ids)
+  );
+
+  return array_values(array_unique(array_filter(array_map('intval', $exclude_post_ids))));
+}
+endif;
+
+//ホームのメインクエリで除外カテゴリー内の固定表示投稿IDを統合する
+if ( !function_exists( 'merge_home_category_excluded_sticky_post_ids' ) ):
+function merge_home_category_excluded_sticky_post_ids($query, $exclude_post_ids, $exclude_category_ids, $sticky_post_ids = null){
+  //WordPressが固定表示投稿を再挿入するホーム1ページ目だけを対象にする
+  if (!$query->is_home() || $query->is_paged() || $query->get('ignore_sticky_posts')) {
+    return (array)$exclude_post_ids;
+  }
+
+  return merge_category_excluded_sticky_post_ids(
+    $exclude_post_ids,
+    $exclude_category_ids,
+    $sticky_post_ids
+  );
+}
+endif;
+
 //"を\"にエスケープする
 if ( !function_exists( 'get_double_quotation_escape' ) ):
 function get_double_quotation_escape($str){

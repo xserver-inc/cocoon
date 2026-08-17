@@ -13987,8 +13987,8 @@ msgid "新着記事のタイトル"
 msgstr "Título de nuevos artículos"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
-msgstr "Mostrar artículo \"Fijado\""
+msgid "「固定表示」記事を先頭に表示する"
+msgstr "Mostrar las entradas fijadas al principio"
 
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244

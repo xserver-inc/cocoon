@@ -14185,7 +14185,7 @@ msgid "新着記事のタイトル"
 msgstr ""
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
+msgid "「固定表示」記事を先頭に表示する"
 msgstr ""
 
 #: lib/widgets/new-entries.php:232

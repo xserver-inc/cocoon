@@ -283,7 +283,12 @@ function custom_main_query_pre_get_posts( $query ) {
     }
 
     //除外投稿
-    $exclude_post_ids = get_archive_exclude_post_ids();
+    //WordPressによる固定表示投稿の再挿入より除外カテゴリーを優先する
+    $exclude_post_ids = merge_home_category_excluded_sticky_post_ids(
+      $query,
+      get_archive_exclude_post_ids(),
+      $exclude_category_ids
+    );
     if (!is_singular() && $exclude_post_ids && is_array($exclude_post_ids)) {
       $query->set( 'post__not_in', $exclude_post_ids );
     }

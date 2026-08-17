@@ -164,4 +164,4 @@ jobs:
       - name: Run integration tests
         env:
           WP_TESTS_DIR: /tmp/wordpress-tests-lib
-        run: vendor/bin/phpunit --testsuite integration --colors=always
+        run: vendor/bin/phpunit --bootstrap tests/Integration/bootstrap.php --testsuite integration --colors=always

@@ -14001,8 +14001,8 @@ msgid "新着記事のタイトル"
 msgstr "Titre des nouveaux articles"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
-msgstr "Afficher les articles en \"Affichage fixe\""
+msgid "「固定表示」記事を先頭に表示する"
+msgstr "Afficher les articles épinglés en premier"
 
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244

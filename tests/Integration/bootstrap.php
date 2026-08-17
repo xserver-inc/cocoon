@@ -51,6 +51,9 @@ if (!$_tests_dir) {
 // Composer オートローダー
 require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 
+//テーマ読み込みフィルターを登録するためWordPressテスト関数を先に読み込む
+require_once $_tests_dir . '/includes/functions.php';
+
 // テーマ読み込み関数を WordPress のテストブートストラップ前に登録
 $_theme_dir = dirname(__DIR__, 2);
 tests_add_filter('setup_theme', function() use ($_theme_dir) {

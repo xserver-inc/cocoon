@@ -70,7 +70,7 @@ class ThemeSetupTest extends IntegrationTestCase
      */
     public function test_投稿の作成とカテゴリ設定(): void
     {
-        $post_id = $this->factory->post->create([
+        $post_id = $this->createPost([
             'post_title'   => 'テスト投稿',
             'post_content' => '<h2>見出し1</h2><p>テスト本文</p><h2>見出し2</h2><p>本文2</p>',
             'post_status'  => 'publish',
@@ -83,7 +83,7 @@ class ThemeSetupTest extends IntegrationTestCase
         $this->assertSame('テスト投稿', $post->post_title);
 
         // カテゴリ設定
-        $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ']);
+        $cat_id = $this->createCategory(['name' => 'テストカテゴリ']);
         wp_set_post_categories($post_id, [$cat_id]);
 
         $categories = get_the_category($post_id);

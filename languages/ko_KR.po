@@ -13021,8 +13021,8 @@ msgid "新着記事のタイトル"
 msgstr "새 글 목록 제목"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
-msgstr "고정 표시 글을 표시"
+msgid "「固定表示」記事を先頭に表示する"
+msgstr "고정 글을 맨 앞에 표시"
 
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244

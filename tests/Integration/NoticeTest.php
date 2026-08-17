@@ -7,13 +7,25 @@ namespace Cocoon\Tests\Integration;
 
 class NoticeTest extends IntegrationTestCase
 {
+    /** @var array<string, array{exists: bool, value: mixed}> テスト開始時の通知設定 */
+    private array $originalThemeMods = [];
+
     /**
      * テーマセットアップを実行
      */
     protected function setUp(): void
     {
         parent::setUp();
-        
+
+        //テスト後に通知設定を元へ戻せるよう値と存在状態を退避する
+        $themeMods = get_theme_mods();
+        foreach (['notice_area_visible', 'notice_area_message', 'notice_area_url', 'notice_type'] as $name) {
+            $this->originalThemeMods[$name] = [
+                'exists' => is_array($themeMods) && array_key_exists($name, $themeMods),
+                'value' => is_array($themeMods) && array_key_exists($name, $themeMods) ? $themeMods[$name] : null,
+            ];
+        }
+
         // オプションを初期化
         remove_theme_mod('notice_area_visible');
         remove_theme_mod('notice_area_message');
@@ -21,14 +33,36 @@ class NoticeTest extends IntegrationTestCase
         remove_theme_mod('notice_type');
     }
 
+    protected function tearDown(): void
+    {
+        //テスト中に登録したフィルターを次のテストへ持ち越さない
+        remove_filter('notice_area_visible', '__return_true');
+
+        //通知設定をテスト開始時の状態へ戻す
+        foreach ($this->originalThemeMods as $name => $original) {
+            if ($original['exists']) {
+                set_theme_mod($name, $original['value']);
+            } else {
+                remove_theme_mod($name);
+            }
+        }
+
+        parent::tearDown();
+    }
+
     /**
      * tmp/notice.php の出力を取得するヘルパー関数
      */
-    private function render_notice()
+    private function render_notice(): string
     {
         ob_start();
-        require get_template_directory() . '/tmp/notice.php';
-        return ob_get_clean();
+        try {
+            require get_template_directory() . '/tmp/notice.php';
+            return (string) ob_get_contents();
+        } finally {
+            //例外時にも出力バッファーを残さない
+            ob_end_clean();
+        }
     }
 
     /**

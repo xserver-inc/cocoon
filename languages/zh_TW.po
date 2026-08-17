@@ -12894,8 +12894,8 @@ msgid "新着記事のタイトル"
 msgstr "新文章標題"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
-msgstr "顯示“固定顯示”文章"
+msgid "「固定表示」記事を先頭に表示する"
+msgstr "將「置頂」文章顯示在最前面"
 
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244

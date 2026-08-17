@@ -93,8 +93,9 @@ class UtilsFunctionsTest extends IntegrationTestCase
      */
     public function test_カテゴリメタキー生成_統合テスト(): void
     {
-        $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ']);
+        $cat_id = $this->createCategory(['name' => 'テストカテゴリ']);
         $key = get_the_category_meta_key($cat_id);
+        $this->assertSame('category_meta_' . $cat_id, $key);
     }
 
     // ========================================================================
@@ -104,10 +105,10 @@ class UtilsFunctionsTest extends IntegrationTestCase
     public function test_url_to_category_object_URLからカテゴリオブジェクトを取得できる(): void
     {
         // 事前準備: カテゴリ作成
-        $cat_id = $this->factory->category->create(['name' => 'テストカテゴリ', 'slug' => 'test-cat']);
-        
+        $cat_id = $this->createCategory(['name' => 'テストカテゴリ', 'slug' => 'test-cat']);
+
         // パーマリンク環境の設定 (パスベースで動かすため)
-        $this->set_permalink_structure('/%postname%/');
+        $this->setPermalinkStructure('/%postname%/');
 
         // URLの組み立て
         $cat_url = get_category_link($cat_id);
@@ -125,10 +126,10 @@ class UtilsFunctionsTest extends IntegrationTestCase
     public function test_url_to_tag_object_URLからタグオブジェクトを取得できる(): void
     {
         // 事前準備: タグ作成
-        $tag_id = $this->factory->tag->create(['name' => 'テストタグ', 'slug' => 'test-tag']);
-        
+        $tag_id = $this->createTag(['name' => 'テストタグ', 'slug' => 'test-tag']);
+
         // パーマリンク環境の設定
-        $this->set_permalink_structure('/%postname%/');
+        $this->setPermalinkStructure('/%postname%/');
 
         // URLの組み立て
         $tag_url = get_tag_link($tag_id);
