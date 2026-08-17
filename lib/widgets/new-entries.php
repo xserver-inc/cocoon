@@ -214,10 +214,11 @@ class NewEntryWidgetItem extends WP_Widget {
         generate_checkbox_tag($this->get_field_name('is_arrow_visible') , $is_arrow_visible, __( 'カードに矢印を表示する', THEME_NAME ));
       ?>
     </p>
-    <?php //固定表示記事を表示する ?>
+    <?php //固定表示記事を先頭に表示する ?>
     <p>
       <?php
-        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を表示する', THEME_NAME ));
+        generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を先頭に表示する', THEME_NAME ));
+        generate_tips_tag(__( 'オフの場合も、通常の並び順では表示されることがあります。', THEME_NAME ));
       ?>
     </p>
     <?php //更新日順に並べ替える ?>

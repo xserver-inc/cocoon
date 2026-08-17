@@ -153,6 +153,8 @@ final class InfoListHtmlFormsTest extends TestCase
             unset($GLOBALS['post']);
         }
         unset($GLOBALS['test_mock_translations']);
+        unset($GLOBALS['test_mock_options']);
+        unset($GLOBALS['test_mock_apply_filters_callbacks']);
 
         parent::tearDown();
     }
@@ -283,6 +285,47 @@ final class InfoListHtmlFormsTest extends TestCase
             ],
             InfoListWpQueryStub::$last_query_args
         );
+    }
+
+    public function test_generate_widget_entries_tag_最終フィルター後も固定表示投稿より除外を優先する(): void
+    {
+        if (!defined('ET_DEFAULT')) {
+            define('ET_DEFAULT', 'default');
+        }
+        if (!defined('WIDGET_NEW_ENTRY_CARD_PREFIX')) {
+            define('WIDGET_NEW_ENTRY_CARD_PREFIX', 'new');
+        }
+        if (!defined('WIDGET_RELATED_ENTRY_CARD_PREFIX')) {
+            define('WIDGET_RELATED_ENTRY_CARD_PREFIX', 'widget-related');
+        }
+
+        $GLOBALS['test_mock_options']['sticky_posts'] = [101, 202];
+        $GLOBALS['test_mock_apply_filters_callbacks']['widget_new_entries_args'] = static function (array $args): array {
+            unset($args['ignore_sticky_posts']);
+            $args['category__not_in'] = [9];
+            return $args;
+        };
+        $GLOBALS['test_mock_apply_filters_callbacks']['widget_entries_args'] = static function (array $args): array {
+            $args['post__not_in'] = [7];
+            return $args;
+        };
+
+        Functions\when('is_index_sort_orderby_modified')->justReturn(false);
+        Functions\when('get_widget_entries_thumbnail_size')->justReturn('thumb-120');
+        Functions\when('get_additional_widget_entry_cards_classes')->justReturn('');
+        Functions\expect('get_posts')->once()->andReturn([202]);
+        Functions\expect('wp_reset_postdata')->once()->andReturn(null);
+
+        ob_start();
+        generate_widget_entries_tag([
+            'entry_count' => 5,
+            'sticky' => 0,
+        ]);
+        ob_end_clean();
+
+        $this->assertArrayNotHasKey('ignore_sticky_posts', InfoListWpQueryStub::$last_query_args);
+        $this->assertSame([9], InfoListWpQueryStub::$last_query_args['category__not_in']);
+        $this->assertSame([7, 202], InfoListWpQueryStub::$last_query_args['post__not_in']);
     }
 
     public function test_generate_info_list_tag_記事がない場合は空状態を識別できる(): void

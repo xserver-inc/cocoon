@@ -37,6 +37,10 @@ if (!function_exists('wp_parse_url')) {
 
 if (!function_exists('get_option')) {
     function get_option($option, $default = false) {
+        global $test_mock_options;
+        if (is_array($test_mock_options) && array_key_exists($option, $test_mock_options)) {
+            return $test_mock_options[$option];
+        }
         return $default;
     }
 }

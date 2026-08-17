@@ -13643,8 +13643,12 @@ msgid "新着記事のタイトル"
 msgstr "New posts title"
 
 #: lib/widgets/new-entries.php:220
-msgid "「固定表示」記事を表示する"
-msgstr "Display \"Fixed display\" posts"
+msgid "「固定表示」記事を先頭に表示する"
+msgstr "Display sticky posts at the top"
+
+#: lib/widgets/new-entries.php:221
+msgid "オフの場合も、通常の並び順では表示されることがあります。"
+msgstr "Even when disabled, they may still appear in their normal order."
 
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244

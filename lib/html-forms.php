@@ -1217,9 +1217,9 @@ function generate_widget_entries_tag($atts){
 
   //除外記事ショートコードオプション
   if ($ex_posts) {
-    $args += array(
-      'post__not_in' => $ex_posts,
-    );
+    //既存の除外投稿を上書きせずウィジェット固有の除外投稿を統合する
+    $prev = isset($args['post__not_in']) ? (array)$args['post__not_in'] : array();
+    $args['post__not_in'] = array_values(array_unique(array_map('intval', array_merge($prev, (array)$ex_posts))));
   }
   //除外カテゴリーショートコードオプション
   if ($ex_cats) {
@@ -1257,6 +1257,14 @@ function generate_widget_entries_tag($atts){
     $thumb_size = apply_filters('get_new_entries_thumbnail_size', $thumb_size, $type);
   }
   $args = apply_filters('widget_entries_args', $args);
+
+  if (empty($args['ignore_sticky_posts']) && !empty($args['category__not_in'])) {
+    //最終フィルター適用後も固定表示投稿より除外カテゴリーを優先する
+    $args['post__not_in'] = merge_category_excluded_sticky_post_ids(
+      isset($args['post__not_in']) ? $args['post__not_in'] : array(),
+      $args['category__not_in']
+    );
+  }
 
   //クエリの作成
   $query = new WP_Query( $args );
