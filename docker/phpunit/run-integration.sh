@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+# POSIXシェルが解釈できるLF改行のまま実行します。
 set -eu
 
 # WordPress 6.8の公式テスト基盤に合わせ、統合テスト用PHPUnitを通常テストから分離します。

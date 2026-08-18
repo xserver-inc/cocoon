@@ -44,9 +44,17 @@ function cocoon_analytics_admin_enqueue($hook){
   );
 
   wp_enqueue_script(
+    'cocoon-analytics-suggest',
+    $base . '/suggest.js',
+    array(),
+    file_exists($path . '/suggest.js') ? filemtime($path . '/suggest.js') : false,
+    true
+  );
+
+  wp_enqueue_script(
     'cocoon-analytics-js',
     $base . '/analytics.js',
-    array('cocoon-analytics-chartjs', 'cocoon-analytics-sortablejs'),
+    array('cocoon-analytics-chartjs', 'cocoon-analytics-sortablejs', 'cocoon-analytics-suggest'),
     file_exists($path . '/analytics.js') ? filemtime($path . '/analytics.js') : false,
     true
   );
@@ -104,6 +112,8 @@ function cocoon_analytics_print_data(){
       'nonce' => wp_create_nonce('cocoon_analytics_layout'),
       // ライフサイクルデータの非同期取得で使うセキュリティトークン（nonce）を発行します
       'lifecycle_nonce' => wp_create_nonce('cocoon_analytics_lifecycle'),
+      // 記事検索候補だけに使うセキュリティトークンを発行します
+      'post_picker_nonce' => wp_create_nonce('cocoon_analytics_post_picker'),
     ),
     'i18n'     => array(
       'pv'           => __('PV', THEME_NAME),
@@ -131,6 +141,8 @@ function cocoon_analytics_print_data(){
       'error_occurred'     => __('エラーが発生しました', THEME_NAME),
       'connection_error'   => __('通信エラーが発生しました', THEME_NAME),
       'no_matching_items'  => __('一致する項目がありません', THEME_NAME),
+      'select_post_result' => __('候補から記事を選択してください。', THEME_NAME),
+      'search_posts'       => __('記事を検索中...', THEME_NAME),
     ),
   );
 

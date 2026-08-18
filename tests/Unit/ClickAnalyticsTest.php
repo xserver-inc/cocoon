@@ -12,9 +12,31 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/statistics-
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/normalize-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/rest-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/export-func.php';
+require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testPostPickerShowsTitleAndSubmitsHiddenPostId(): void
+    {
+        \Brain\Monkey\Functions\when('wp_parse_args')->alias(static function ($args, $defaults) {
+            return array_merge($defaults, $args);
+        });
+        $GLOBALS['test_mock_get_post'] = (object) array('ID' => 42);
+
+        ob_start();
+        cocoon_analytics_render_post_picker('source_post_id', 42, array('label' => 'クリック元記事:'));
+        $html = (string) ob_get_clean();
+        unset($GLOBALS['test_mock_get_post']);
+
+        $this->assertStringContainsString('クリック元記事:', $html);
+        $this->assertStringContainsString('role="combobox"', $html);
+        $this->assertStringContainsString('value="Test Title"', $html);
+        $this->assertStringContainsString('type="hidden" name="source_post_id"', $html);
+        $this->assertStringContainsString('value="42"', $html);
+        $this->assertStringContainsString('IDで検索', $html);
+        $this->assertStringNotContainsString('type="number"', $html);
+    }
+
     public function testSamplingRateFollowsTrafficThresholds(): void
     {
         $this->assertSame(10, cocoon_click_sampling_rate_for_daily_pv(100, false));

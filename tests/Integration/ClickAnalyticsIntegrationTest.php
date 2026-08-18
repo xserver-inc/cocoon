@@ -75,6 +75,40 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         $this->assertSame(array('stat_date', 'source_post_id', 'link_id', 'device', 'layout_revision'), array_column($indexes, 'Column_name'));
     }
 
+    public function testPostPickerSearchReturnsOnlyPublishedPostsAndPages(): void
+    {
+        $postId = self::factory()->post->create(array(
+            'post_status' => 'publish',
+            'post_type' => 'post',
+            'post_title' => '初心者向けクリック解析ガイド',
+        ));
+        $pageId = self::factory()->post->create(array(
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_title' => 'クリック解析の設定方法',
+        ));
+        $draftId = self::factory()->post->create(array(
+            'post_status' => 'draft',
+            'post_type' => 'post',
+            'post_title' => 'クリック解析の未公開メモ',
+        ));
+
+        $items = cocoon_analytics_search_posts('クリック解析');
+        $ids = array_map('intval', array_column($items, 'id'));
+
+        $this->assertContains($postId, $ids);
+        $this->assertContains($pageId, $ids);
+        $this->assertNotContains($draftId, $ids);
+        $this->assertLessThanOrEqual(20, count($items));
+
+        $idItems = cocoon_analytics_search_posts((string) $pageId);
+        $this->assertCount(1, $idItems);
+        $this->assertSame($pageId, (int) $idItems[0]['id']);
+
+        $draftItems = cocoon_analytics_search_posts((string) $draftId);
+        $this->assertSame(array(), $draftItems);
+    }
+
     public function testAtomicUpsertSeparatesLayoutRevisions(): void
     {
         global $wpdb;

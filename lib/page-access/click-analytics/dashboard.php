@@ -84,7 +84,12 @@ function cocoon_click_render_filters($click_view, $preset, $from, $to, $filters)
         <?php endforeach; ?>
       </select>
     </label>
-      <label><?php _e('クリック元記事ID:', THEME_NAME); ?> <input type="number" min="1" name="source_post_id" value="<?php echo $filters['source_post_id'] ? (int) $filters['source_post_id'] : ''; ?>"></label>
+    <?php
+    cocoon_analytics_render_post_picker('source_post_id', $filters['source_post_id'], array(
+      'label'       => __('クリック元記事:', THEME_NAME),
+      'placeholder' => __('記事タイトル・キーワード・IDで検索...', THEME_NAME),
+    ));
+    ?>
     <?php if ($click_view !== 'map'): ?>
       <label><?php _e('掲載位置:', THEME_NAME); ?>
         <select name="area">
@@ -127,7 +132,7 @@ function cocoon_click_render_kpis($metrics, $previous = array()){
       $change = (((float) $metrics[$item[2]] / (float) $previous[$item[2]]) - 1) * 100;
       $comparison = sprintf(__('前期間比 %s%%', THEME_NAME), ($change >= 0 ? '+' : '') . number_format_i18n($change, 1));
     }
-    printf('<div class="cocoon-analytics-kpi-card"><span class="cocoon-analytics-kpi-label">%s</span><strong class="cocoon-analytics-kpi-value">%s</strong><small>%s</small></div>', esc_html($item[0]), esc_html($item[1]), esc_html($comparison));
+    printf('<div class="cocoon-analytics-kpi-card"><span class="cocoon-analytics-kpi-label">%s</span><strong class="cocoon-analytics-kpi-value">%s</strong><small class="cocoon-analytics-kpi-compare">%s</small></div>', esc_html($item[0]), esc_html($item[1]), esc_html($comparison));
   }
   echo '</div>';
   if ($metrics['ctr_lower'] !== null && $metrics['ctr_upper'] !== null) {
@@ -267,7 +272,7 @@ if ($click_view === 'overview') {
 } else {
   $source_post_id = $filters['source_post_id'];
   if (!$source_post_id) {
-    echo '<div class="notice notice-info inline"><p>' . esc_html__('クリックマップを表示する記事IDを入力してください。', THEME_NAME) . '</p></div>';
+    echo '<div class="notice notice-info inline"><p>' . esc_html__('クリックマップを表示する記事を検索して選択してください。', THEME_NAME) . '</p></div>';
   } else {
     $post = get_post($source_post_id);
     if (!$post || $post->post_status !== 'publish') {

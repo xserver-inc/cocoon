@@ -62,7 +62,7 @@
     "test": "composer test",
     "test:unit": "composer test:unit",
     "test:i18n": "node scripts/test-i18n.js",
-    "test:click-js": "node tests/js/click-analytics.test.js",
+    "test:click-js": "node tests/js/click-analytics.test.js && node tests/js/analytics-suggest.test.js",
     "test:click-browser": "playwright test tests/e2e/click-analytics.spec.js tests/e2e/click-analytics-performance.spec.js",
     "test:click-lighthouse": "node tests/performance/click-analytics-lighthouse.mjs",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:php",

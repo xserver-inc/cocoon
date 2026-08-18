@@ -339,6 +339,7 @@ if (!function_exists('get_bloginfo')) {
         switch ($show) {
             case 'name': return 'Test Site';
             case 'url': return 'http://example.com';
+            case 'charset': return 'UTF-8';
             // テスト環境では WP 6.7 相当として振る舞う（バージョンガード系関数の動作を保証）
             case 'version': return '6.7';
             default: return '';

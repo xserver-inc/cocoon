@@ -142,6 +142,45 @@ function cocoon_analytics_plain_title($post){
 endif;
 
 /**
+ * 記事タイトルを検索して選択する共通入力欄を出力する
+ *
+ * 画面からはタイトルを検索し、送信時だけ従来互換の投稿IDをhiddenで渡します。
+ */
+if ( !function_exists( 'cocoon_analytics_render_post_picker' ) ):
+function cocoon_analytics_render_post_picker($name, $selected_post_id = 0, $args = array()){
+  static $instance = 0;
+  $instance++;
+  $args = wp_parse_args($args, array(
+    'label'       => __('記事:', THEME_NAME),
+    'placeholder' => __('タイトル・キーワード・IDで検索...', THEME_NAME),
+    'description' => '',
+  ));
+  $selected_post_id = max(0, (int) $selected_post_id);
+  $selected_post = $selected_post_id ? get_post($selected_post_id) : null;
+  $selected_name = $selected_post ? cocoon_analytics_plain_title($selected_post) : '';
+  if ($selected_post_id && $selected_name === '') {
+    $selected_name = sprintf(__('記事 #%s', THEME_NAME), number_format_i18n($selected_post_id));
+  }
+  $input_id = 'cocoon-analytics-post-picker-' . $instance;
+  $list_id = $input_id . '-listbox';
+  ?>
+  <div class="cocoon-analytics-post-picker-field">
+    <label for="<?php echo esc_attr($input_id); ?>"><?php echo esc_html($args['label']); ?></label>
+    <span class="cocoon-analytics-suggest-container cocoon-analytics-post-picker">
+      <input type="text" id="<?php echo esc_attr($input_id); ?>" class="cocoon-analytics-suggest-input cocoon-analytics-post-picker-input" data-type="post" data-min-chars="1" data-require-selection="true" data-selected-name="<?php echo esc_attr($selected_name); ?>" value="<?php echo esc_attr($selected_name); ?>" placeholder="<?php echo esc_attr($args['placeholder']); ?>" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="<?php echo esc_attr($list_id); ?>" autocomplete="off">
+      <input type="hidden" name="<?php echo esc_attr($name); ?>" class="cocoon-analytics-suggest-hidden" value="<?php echo esc_attr($selected_post_id); ?>">
+      <button type="button" class="cocoon-analytics-suggest-clear" aria-label="<?php echo esc_attr(__('記事の選択を解除', THEME_NAME)); ?>" <?php echo $selected_name === '' ? 'hidden' : ''; ?>>×</button>
+      <span id="<?php echo esc_attr($list_id); ?>" class="cocoon-analytics-suggest-dropdown" role="listbox"></span>
+    </span>
+    <?php if ($args['description'] !== ''): ?>
+      <span class="description"><?php echo esc_html($args['description']); ?></span>
+    <?php endif; ?>
+  </div>
+  <?php
+}
+endif;
+
+/**
  * NO IMAGEサムネイルのimgタグを取得する
  *
  * アイキャッチ未設定の記事でも、テーマ標準のNO IMAGE画像（16:9）を表示します。
