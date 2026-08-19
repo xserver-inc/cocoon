@@ -1,5 +1,10 @@
 // en_US（英語）翻訳辞書
 module.exports = {
+  "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。": "Requests to Amazon are being throttled. Please try again in about %d minute(s).",
+  "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。": "Creators API authentication failed. Please check the Credential ID and Secret in the \"API\" tab of \"Cocoon Settings\".",
+  "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。": "The \"Version\" issued by Amazon along with your credentials does not need to be entered, as it is detected automatically from the Credential ID.",
+  "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。": "Requests to Amazon are currently being throttled. Please wait a while and try again.",
+  "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。": "The Amazon Associates Tracking ID has not been entered. Please enter it from the \"API\" tab in \"Cocoon Settings\".",
   'ラベルなし': 'No label',
   'Auto Draft': 'Auto Draft',
   公式ページURL: 'Official Page URL',
@@ -80,8 +85,8 @@ module.exports = {
   '※エディター上の色は変更されません。':
     '* Colors in the editor will not change.',
   'PA-API': 'PA-API',
-  '※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。':
-    '* This setting is deprecated. Due to PA-API specification changes after January 31, 2026, some product information (e.g. price) will no longer be available. Please configure the Creators API to use all features.',
+  '※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。':
+    '* This setting is deprecated. Due to PA-API specification changes, some product information (e.g. price) is no longer available. Please configure the Creators API to use all features.',
   'Creators API': 'Creators API',
   認証情報ID: 'Credential ID',
   'Creators APIの認証情報IDを入力してください。':

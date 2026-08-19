@@ -1349,7 +1349,24 @@ if ( !function_exists( 'get_theme_logs_path' ) ):
 function get_theme_logs_path(){
   $dir = get_theme_resources_path().'logs/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
+  protect_theme_directory($dir);
   return $dir;
+}
+endif;
+
+//ディレクトリへの外部アクセスを遮断するファイルを設置
+if ( !function_exists( 'protect_theme_directory' ) ):
+function protect_theme_directory($dir){
+  $htaccess = $dir.'.htaccess';
+  if (!file_exists($htaccess)) {
+    //Apache2.2と2.4のどちらでも拒否されるように両方の書式を記述
+    @file_put_contents($htaccess, '<IfModule mod_authz_core.c>'.PHP_EOL.'  Require all denied'.PHP_EOL.'</IfModule>'.PHP_EOL.'<IfModule !mod_authz_core.c>'.PHP_EOL.'  Order allow,deny'.PHP_EOL.'  Deny from all'.PHP_EOL.'</IfModule>'.PHP_EOL);
+  }
+  //.htaccessが効かない環境での一覧表示対策
+  $index = $dir.'index.php';
+  if (!file_exists($index)) {
+    @file_put_contents($index, '<?php // Silence is golden.'.PHP_EOL);
+  }
 }
 endif;
 

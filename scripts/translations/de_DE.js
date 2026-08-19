@@ -1,5 +1,10 @@
 // de_DE（ドイツ語）翻訳辞書
 module.exports = {
+  "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。": "Die Anfragen an Amazon sind eingeschränkt. Bitte versuchen Sie es in etwa %d Minute(n) erneut.",
+  "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。": "Die Authentifizierung der Creators API ist fehlgeschlagen. Bitte überprüfen Sie die Anmeldeinformationen-ID und den Geheimschlüssel im „API\"-Tab unter „Cocoon-Einstellungen\".",
+  "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。": "Die von Amazon zusammen mit den Anmeldeinformationen ausgegebene „Version\" muss nicht eingegeben werden, da sie automatisch anhand der Anmeldeinformationen-ID ermittelt wird.",
+  "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。": "Die Anfragen an Amazon sind derzeit eingeschränkt. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+  "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。": "Die Tracking-ID des Amazon-Partnerprogramms wurde nicht eingegeben. Bitte geben Sie diese im „API\"-Tab unter „Cocoon-Einstellungen\" ein.",
   'ラベルなし': 'Kein Label',
   'Auto Draft': 'Automatischer Entwurf',
   公式ページURL: 'Offizielle Seiten-URL',
@@ -84,8 +89,8 @@ module.exports = {
   '※エディター上の色は変更されません。':
     '* Die Farben im Editor werden nicht geändert.',
   'PA-API': 'PA-API',
-  '※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。':
-    '* Diese Einstellung ist veraltet. Aufgrund von PA-API-Spezifikationsänderungen nach dem 31. Januar 2026 können einige Produktinformationen (z. B. Preise) nicht mehr abgerufen werden. Bitte konfigurieren Sie die Creators API, um alle Funktionen zu nutzen.',
+  '※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。':
+    '* Diese Einstellung ist veraltet. Aufgrund von PA-API-Spezifikationsänderungen können einige Produktinformationen (z. B. Preise) nicht mehr abgerufen werden. Bitte konfigurieren Sie die Creators API, um alle Funktionen zu nutzen.',
   'Creators API': 'Creators API',
   認証情報ID: 'Anmeldeinformationen-ID',
   'Creators APIの認証情報IDを入力してください。':

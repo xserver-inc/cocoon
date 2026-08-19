@@ -1,5 +1,10 @@
 // fr_FR（フランス語）翻訳辞書
 module.exports = {
+  "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。": "Les requêtes vers Amazon sont limitées. Veuillez réessayer dans environ %d minute(s).",
+  "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。": "L'authentification de l'API Creators a échoué. Veuillez vérifier l'ID d'accréditation et le Secret dans l'onglet «API» des «Paramètres Cocoon».",
+  "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。": "Il n'est pas nécessaire de saisir la «Version» délivrée par Amazon avec vos accréditations, car elle est déterminée automatiquement à partir de l'ID d'accréditation.",
+  "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。": "Les requêtes vers Amazon sont actuellement limitées. Veuillez patienter un moment puis réessayer.",
+  "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。": "L'ID de suivi Amazon Partenaires n'a pas été saisi. Veuillez le saisir dans l'onglet «API» des «Paramètres Cocoon».",
   'ラベルなし': 'Aucune étiquette',
   'Auto Draft': 'Brouillon automatique',
   公式ページURL: 'URL de la page officielle',
@@ -84,8 +89,8 @@ module.exports = {
   '※エディター上の色は変更されません。':
     "* Les couleurs dans l'éditeur ne seront pas modifiées.",
   'PA-API': 'PA-API',
-  '※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。':
-    "* Ce paramètre est déprécié. En raison des modifications des spécifications de PA-API après le 31 janvier 2026, certaines informations produit (ex. prix) ne seront plus disponibles. Veuillez configurer l'API Creators pour utiliser toutes les fonctionnalités.",
+  '※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。':
+    "* Ce paramètre est déprécié. En raison des modifications des spécifications de PA-API, certaines informations produit (ex. prix) ne sont plus disponibles. Veuillez configurer l'API Creators pour utiliser toutes les fonctionnalités.",
   'Creators API': 'Creators API',
   認証情報ID: "ID d'accréditation",
   'Creators APIの認証情報IDを入力してください。':

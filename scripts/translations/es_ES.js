@@ -1,5 +1,10 @@
 // es_ES（スペイン語）翻訳辞書
 module.exports = {
+  "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。": "Las solicitudes a Amazon están limitadas. Inténtelo de nuevo dentro de unos %d minutos.",
+  "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。": "La autenticación de la Creators API ha fallado. Compruebe el ID de credenciales y el Secreto en la pestaña «API» de «Ajustes de Cocoon».",
+  "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。": "No es necesario introducir la «Versión» que Amazon emite junto con las credenciales, ya que se determina automáticamente a partir del ID de credenciales.",
+  "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。": "Las solicitudes a Amazon están limitadas en este momento. Espere un poco e inténtelo de nuevo.",
+  "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。": "El ID de seguimiento de Amazon Afiliados no ha sido introducido. Introdúzcalo en la pestaña «API» de «Ajustes de Cocoon».",
   'ラベルなし': 'Sin etiqueta',
   'Auto Draft': 'Borrador automático',
   公式ページURL: 'URL de la página oficial',
@@ -82,8 +87,8 @@ module.exports = {
   '※エディター上の色は変更されません。':
     '* Los colores en el editor no cambiarán.',
   'PA-API': 'PA-API',
-  '※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。':
-    '* Esta configuración está obsoleta. Debido a cambios en las especificaciones de PA-API a partir del 31 de enero de 2026, parte de la información del producto (ej. precios) ya no estará disponible. Configure la Creators API para utilizar todas las funciones.',
+  '※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。':
+    '* Esta configuración está obsoleta. Debido a cambios en las especificaciones de PA-API, parte de la información del producto (ej. precios) ya no está disponible. Configure la Creators API para utilizar todas las funciones.',
   'Creators API': 'Creators API',
   認証情報ID: 'ID de credenciales',
   'Creators APIの認証情報IDを入力してください。':

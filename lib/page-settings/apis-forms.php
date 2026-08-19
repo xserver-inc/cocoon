@@ -36,7 +36,7 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '</strong>';
 
             echo '<strong style="display: block; margin-bottom: 6px;">';
-            _e( '※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。', THEME_NAME );
+            _e( '※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。', THEME_NAME );
             echo '</strong>';
 
             generate_label_tag(OP_AMAZON_API_ACCESS_KEY_ID, __( 'アクセスキーID', THEME_NAME ));
@@ -71,6 +71,7 @@ $help_text = __( '取得方法', THEME_NAME );
             echo '<br>';
             generate_textbox_tag(OP_AMAZON_CREATORS_API_SECRET, get_amazon_creators_api_secret(), '');
             generate_tips_tag(__( 'Creators APIのシークレットを入力してください。', THEME_NAME ).get_help_page_tag('https://wp-cocoon.com/creators-api', $help_text));
+            generate_tips_tag(__( 'Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。', THEME_NAME ));
             generate_tips_tag(__( 'Creators APIとPA-APIの両方が設定されている場合、Creators APIが優先されます。', THEME_NAME ));
 
             echo '<hr class="cocoon-section-divider">';

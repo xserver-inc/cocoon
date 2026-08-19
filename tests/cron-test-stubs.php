@@ -103,6 +103,9 @@ if (!function_exists('wp_mkdir_p')) {
 if (!function_exists('get_theme_resources_path')) {
     function get_theme_resources_path() { return sys_get_temp_dir() . '/'; }
 }
+if (!function_exists('get_theme_logs_path')) {
+    function get_theme_logs_path() { return sys_get_temp_dir() . '/'; }
+}
 
 // ============================================================
 // Creators API のItemLookup スタブ（グローバル変数で戻り値を制御）
