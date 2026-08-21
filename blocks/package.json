@@ -13,7 +13,8 @@
     "lint:php:fix": "phpcbf -d memory_limit=512M --standard=WordPress --ignore=*/node_modules/* --extensions=php .",
     "format": "wp-scripts format",
     "format:check": "wp-scripts format --check",
-    "start": "wp-scripts start"
+    "start": "wp-scripts start",
+    "test:unit": "wp-scripts test-unit-js"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

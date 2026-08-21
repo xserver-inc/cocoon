@@ -10,14 +10,14 @@ import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
 
 export default function edit( { attributes, setAttributes, className } ) {
-  const { content, style } = attributes;
+  const { content, cardStyle } = attributes;
   // console.log(content);
 
   function onChangeContent( newContent ) {
     setAttributes( { content: newContent } );
   }
 
-  const classes = classnames( style, className );
+  const classes = classnames( cardStyle, className );
   const blockProps = useBlockProps( {
     className: classes,
   } );
@@ -28,8 +28,8 @@ export default function edit( { attributes, setAttributes, className } ) {
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
           <SelectControl
             label={ __( 'ラベル', THEME_NAME ) }
-            value={ style }
-            onChange={ ( value ) => setAttributes( { style: value } ) }
+            value={ cardStyle }
+            onChange={ ( value ) => setAttributes( { cardStyle: value } ) }
             options={ [
               {
                 value: 'blogcard-type bct-none',
@@ -85,7 +85,7 @@ export default function edit( { attributes, setAttributes, className } ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
         </PanelBody>
       </InspectorControls>

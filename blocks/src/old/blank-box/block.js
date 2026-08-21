@@ -6,6 +6,7 @@
  */
 
 import { THEME_NAME, BLOCK_CLASS } from '../../helpers';
+import { createLegacyStyleDeprecation } from '../../style-attribute-compat';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -23,6 +24,63 @@ const DEFAULT_MSG = __(
   'こちらをクリックして設定変更。この入力は公開ページで反映されません。',
   THEME_NAME
 );
+const DEFAULT_STYLE = 'blank-box';
+
+const BLOCK_ATTRIBUTES = {
+  content: {
+    type: 'string',
+    selector: 'div',
+    default: DEFAULT_MSG,
+  },
+  boxStyle: {
+    type: 'string',
+    default: DEFAULT_STYLE,
+  },
+  style: {
+    type: 'object',
+  },
+};
+
+const BLOCK_SUPPORTS = { html: false, inserter: false };
+
+// deprecatedの履歴スキーマを現行定義から独立させ、将来の変更波及を防ぎます。
+const LEGACY_API_VERSION = 3;
+const LEGACY_DEFAULT_STYLE = 'blank-box';
+const LEGACY_BLOCK_ATTRIBUTES = {
+  content: {
+    type: 'string',
+    selector: 'div',
+    default: DEFAULT_MSG,
+  },
+  style: {
+    type: 'string',
+    default: LEGACY_DEFAULT_STYLE,
+  },
+};
+const LEGACY_BLOCK_SUPPORTS = { html: false, inserter: false };
+
+function save( { attributes } ) {
+  const blockProps = useBlockProps.save( {
+    className: attributes.boxStyle + BLOCK_CLASS,
+  } );
+  return (
+    <div { ...blockProps }>
+      <InnerBlocks.Content />
+    </div>
+  );
+}
+
+// 旧style属性を使って、保存済みの歴史的HTMLだけを再現します。
+function legacySave( { attributes } ) {
+  const blockProps = useBlockProps.save( {
+    className: attributes.style + BLOCK_CLASS,
+  } );
+  return (
+    <div { ...blockProps }>
+      <InnerBlocks.Content />
+    </div>
+  );
+}
 
 registerBlockType( 'cocoon-blocks/blank-box', {
   apiVersion: 3,
@@ -34,26 +92,25 @@ registerBlockType( 'cocoon-blocks/blank-box', {
     THEME_NAME
   ),
 
-  attributes: {
-    content: {
-      type: 'string',
-      selector: 'div',
-      default: DEFAULT_MSG,
-    },
-    style: {
-      type: 'string',
-      default: 'blank-box',
-    },
-  },
-  supports: { html: false,
-    inserter: false,
-  },
+  attributes: BLOCK_ATTRIBUTES,
+  supports: BLOCK_SUPPORTS,
+
+  deprecated: [
+    createLegacyStyleDeprecation( {
+      apiVersion: LEGACY_API_VERSION,
+      attributes: LEGACY_BLOCK_ATTRIBUTES,
+      supports: LEGACY_BLOCK_SUPPORTS,
+      legacySave,
+      attributeName: 'boxStyle',
+      defaultValue: LEGACY_DEFAULT_STYLE,
+    } ),
+  ],
 
   edit( { attributes, setAttributes } ) {
-    const { content, style, alignment } = attributes;
+    const { content, boxStyle, alignment } = attributes;
 
     function onChange( event ) {
-      setAttributes( { style: event.target.value } );
+      setAttributes( { boxStyle: event.target.value } );
     }
 
     function onChangeContent( newContent ) {
@@ -66,8 +123,8 @@ registerBlockType( 'cocoon-blocks/blank-box', {
           <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
             <SelectControl
               label={ __( 'タイプ', THEME_NAME ) }
-              value={ style }
-              onChange={ ( value ) => setAttributes( { style: value } ) }
+              value={ boxStyle }
+              onChange={ ( value ) => setAttributes( { boxStyle: value } ) }
               options={ [
                 {
                   value: 'blank-box',
@@ -96,7 +153,7 @@ registerBlockType( 'cocoon-blocks/blank-box', {
           </PanelBody>
         </InspectorControls>
 
-        <div className={ attributes.style + BLOCK_CLASS }>
+        <div className={ attributes.boxStyle + BLOCK_CLASS }>
           <span className={ 'box-block-msg' }>
             <RichText value={ content } placeholder={ DEFAULT_MSG } />
           </span>
@@ -106,16 +163,5 @@ registerBlockType( 'cocoon-blocks/blank-box', {
     );
   },
 
-  save( { attributes } ) {
-    const { content } = attributes;
-    const blockProps = useBlockProps.save( {
-      className: attributes.style + BLOCK_CLASS,
-    } );
-    return (
-      <div { ...blockProps }>
-        <InnerBlocks.Content />
-      </div>
-    );
-  },
+  save,
 } );
-

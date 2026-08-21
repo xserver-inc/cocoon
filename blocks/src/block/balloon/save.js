@@ -13,7 +13,7 @@ export default function save( { attributes } ) {
     name,
     id,
     icon,
-    style,
+    balloonStyle,
     position,
     iconstyle,
     backgroundColor,
@@ -38,7 +38,7 @@ export default function save( { attributes } ) {
   const fontSizeClass = getFontSizeClass( fontSize );
 
   const classes = classnames(
-    getBalloonClasses( id, style, position, iconstyle ),
+    getBalloonClasses( id, balloonStyle, position, iconstyle ),
     {
       'not-nested-style': notNestedStyle,
       'cocoon-block-balloon': true,

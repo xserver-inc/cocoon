@@ -14,9 +14,12 @@
       "selector": "div",
       "default": ""
     },
-    "style": {
+    "cardStyle": {
       "type": "string",
       "default": "blogcard-type bct-none"
+    },
+    "style": {
+      "type": "object"
     }
   },
   "example": {

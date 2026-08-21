@@ -6,16 +6,86 @@
  */
 
 import { THEME_NAME } from '../../helpers';
+import {
+  isLegacyStyle,
+  migrateLegacyStyleAttribute,
+} from '../../style-attribute-compat';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 // RichText が未 import だと、後方互換（deprecated）版の save 評価時に
 // 「RichText is not defined」エラーになるため、明示的に読み込む。
-import { RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+  RichText,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl } = wp.components;
 import { Fragment } from '@wordpress/element';
 
+const DEFAULT_CARD_STYLE = 'blogcard-type bct-none';
+
+// WordPress 7.0で破損が起きる直前の属性定義を、現行block.jsonから独立して保持します。
+const LEGACY_STYLE_ATTRIBUTES = {
+  content: {
+    type: 'string',
+    source: 'html',
+    selector: 'div',
+    default: '',
+  },
+  style: {
+    type: [ 'string', 'object' ],
+    default: DEFAULT_CARD_STYLE,
+  },
+};
+
+// deprecatedの検証条件が将来のsupports変更に追随しないよう、当時の値を固定します。
+const LEGACY_SUPPORTS = {
+  anchor: true,
+  html: false,
+};
+
+// 現行直前のHTMLを再現し、正常な旧記事とWordPress 7.0で壊れた記事の両方を検出します。
+function saveLegacyStyle( { attributes } ) {
+  const { content, style } = attributes;
+  const blockProps = useBlockProps.save( {
+    className: style,
+  } );
+
+  return (
+    <div { ...blockProps }>
+      <RichText.Content
+        value={ content
+          .replace( /<\/p><p>/g, '</p>\n<p>' )
+          .replace( /^<p>/g, '\n<p>' )
+          .replace( /<\/p>$/g, '</p>\n' )
+          .replace( /\s+<p>/g, '\n<p>' )
+          .replace( /<\p>\s+/g, '<p>\n' )
+          .replace( /<br>/g, '\n<br>\n' )
+          .replace( /^/g, '\n' )
+          .replace( /$/g, '\n' )
+          .replace( /\n /g, '\n' )
+          .replace( /\n\n/g, '\n' ) }
+      />
+    </div>
+  );
+}
+
+// どの旧形式からでも、deprecatedを経由せず現行属性へ直接移行します。
+const migrateStyle = ( attributes ) =>
+  migrateLegacyStyleAttribute( attributes, 'cardStyle', DEFAULT_CARD_STYLE );
+
+const legacyStyle = {
+  apiVersion: 3,
+  supports: LEGACY_SUPPORTS,
+  attributes: LEGACY_STYLE_ATTRIBUTES,
+  isEligible: isLegacyStyle,
+  migrate: migrateStyle,
+  save: saveLegacyStyle,
+};
+
 export default [
+  legacyStyle,
   {
     attributes: {
       content: {
@@ -29,13 +99,10 @@ export default [
         default: 'blogcard-type bct-none',
       },
     },
+    migrate: migrateStyle,
 
     edit( { attributes, setAttributes, className } ) {
       const { content, style } = attributes;
-
-      function onChange( event ) {
-        setAttributes( { style: event.target.value } );
-      }
 
       function onChangeContent( newContent ) {
         setAttributes( { content: newContent } );
@@ -96,7 +163,7 @@ export default [
                   },
                 ] }
                 __nextHasNoMarginBottom={ true }
-                __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+                __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
               />
             </PanelBody>
           </InspectorControls>
@@ -113,7 +180,7 @@ export default [
     },
 
     save( { attributes } ) {
-      let { content } = attributes;
+      const { content } = attributes;
       // content = '\n' + content + '\n';
       //console.log(content);
       return (

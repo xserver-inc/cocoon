@@ -6,6 +6,7 @@
  */
 
 import { THEME_NAME, BLOCK_CLASS, isBalloonExist } from '../../helpers';
+import { createLegacyStyleDeprecation } from '../../style-attribute-compat';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -56,6 +57,151 @@ function getClasses( index, style, position, iconstyle ) {
   return classes;
 }
 
+const DEFAULT_STYLE = 'stn';
+
+const BLOCK_ATTRIBUTES = {
+  name: {
+    type: 'string',
+    default: '',
+  },
+  index: {
+    type: 'string',
+    default: '0',
+  },
+  balloonStyle: {
+    type: 'string',
+    default: DEFAULT_STYLE,
+  },
+  style: {
+    type: 'object',
+  },
+  position: {
+    type: 'string',
+    default: 'l',
+  },
+  iconstyle: {
+    type: 'string',
+    default: 'cb',
+  },
+  icon: {
+    type: 'string',
+    default: '',
+  },
+  iconid: {
+    type: 'number',
+    default: 0,
+  },
+};
+
+const BLOCK_SUPPORTS = { html: false, inserter: false };
+
+// deprecatedの履歴スキーマを現行定義から独立させ、将来の変更波及を防ぎます。
+const LEGACY_API_VERSION = 3;
+const LEGACY_DEFAULT_STYLE = 'stn';
+const LEGACY_BLOCK_ATTRIBUTES = {
+  name: {
+    type: 'string',
+    default: '',
+  },
+  index: {
+    type: 'string',
+    default: '0',
+  },
+  style: {
+    type: 'string',
+    default: LEGACY_DEFAULT_STYLE,
+  },
+  position: {
+    type: 'string',
+    default: 'l',
+  },
+  iconstyle: {
+    type: 'string',
+    default: 'cb',
+  },
+  icon: {
+    type: 'string',
+    default: '',
+  },
+  iconid: {
+    type: 'number',
+    default: 0,
+  },
+};
+const LEGACY_BLOCK_SUPPORTS = { html: false, inserter: false };
+
+function save( { attributes } ) {
+  let { index } = attributes;
+  const { name, balloonStyle, position, iconstyle, icon } = attributes;
+  if ( ! speechBalloons[ index ] ) {
+    index = 0;
+  }
+  const blockProps = useBlockProps.save( {
+    className: getClasses( index, balloonStyle, position, iconstyle ),
+  } );
+  return (
+    <div { ...blockProps }>
+      <div className="speech-person">
+        <figure className="speech-icon">
+          <img
+            src={ icon ? icon : speechBalloons[ index ].icon }
+            alt={ icon ? '' : speechBalloons[ index ].name }
+            className="speech-icon-image"
+          />
+        </figure>
+        <div className="speech-name">
+          <RichText.Content
+            value={ name ? name : speechBalloons[ index ].name }
+          />
+        </div>
+      </div>
+      <div className="speech-balloon">
+        <InnerBlocks.Content />
+      </div>
+    </div>
+  );
+}
+
+// 旧style属性と当時の設定参照を使い、歴史的HTMLを現行saveから独立して再現します。
+function legacySave( { attributes } ) {
+  let { index } = attributes;
+  const { name, style, position, iconstyle, icon } = attributes;
+  if ( ! speechBalloons[ index ] ) {
+    index = 0;
+  }
+  const legacyClasses = classnames( {
+    'speech-wrap': true,
+    [ `sb-id-${ speechBalloons[ index ].id }` ]: !! speechBalloons[ index ].id,
+    [ `sbs-${ style }` ]: !! style,
+    [ `sbp-${ position }` ]: !! position,
+    [ `sbis-${ iconstyle }` ]: !! iconstyle,
+    cf: true,
+    'block-box': true,
+  } );
+  const blockProps = useBlockProps.save( { className: legacyClasses } );
+  return (
+    <div { ...blockProps }>
+      <div className="speech-person">
+        <figure className="speech-icon">
+          <img
+            src={ icon ? icon : speechBalloons[ index ].icon }
+            alt={ icon ? '' : speechBalloons[ index ].name }
+            className="speech-icon-image"
+          />
+        </figure>
+        <div className="speech-name">
+          <RichText.Content
+            value={ name ? name : speechBalloons[ index ].name }
+          />
+        </div>
+      </div>
+      <div className="speech-balloon">
+        <InnerBlocks.Content />
+      </div>
+    </div>
+  );
+}
+
 registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   apiVersion: 3,
   title: __( '吹き出しEX', THEME_NAME ),
@@ -67,42 +213,23 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
   ),
   keywords: [ 'balloon', 'box' ],
 
-  attributes: {
-    name: {
-      type: 'string',
-      default: '',
-    },
-    index: {
-      type: 'string',
-      default: '0',
-    },
-    style: {
-      type: 'string',
-      default: 'stn',
-    },
-    position: {
-      type: 'string',
-      default: 'l',
-    },
-    iconstyle: {
-      type: 'string',
-      default: 'cb',
-    },
-    icon: {
-      type: 'string',
-      default: '',
-    },
-    iconid: {
-      type: 'number',
-      default: 0,
-    },
-  },
-  supports: { html: false,
-    inserter: false,
-  },
+  attributes: BLOCK_ATTRIBUTES,
+  supports: BLOCK_SUPPORTS,
+
+  deprecated: [
+    createLegacyStyleDeprecation( {
+      apiVersion: LEGACY_API_VERSION,
+      attributes: LEGACY_BLOCK_ATTRIBUTES,
+      supports: LEGACY_BLOCK_SUPPORTS,
+      legacySave,
+      attributeName: 'balloonStyle',
+      defaultValue: LEGACY_DEFAULT_STYLE,
+    } ),
+  ],
 
   edit( { attributes, setAttributes } ) {
-    let { name, index, style, position, iconstyle, icon, iconid } = attributes;
+    let { name, index, balloonStyle, position, iconstyle, icon, iconid } =
+      attributes;
     if ( ! speechBalloons[ index ] ) {
       index = 0;
     }
@@ -156,8 +283,8 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
 
             <SelectControl
               label={ __( '吹き出しスタイル', THEME_NAME ) }
-              value={ style }
-              onChange={ ( value ) => setAttributes( { style: value } ) }
+              value={ balloonStyle }
+              onChange={ ( value ) => setAttributes( { balloonStyle: value } ) }
               options={ [
                 {
                   value: 'stn',
@@ -226,7 +353,9 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
           </PanelBody>
         </InspectorControls>
 
-        <div className={ getClasses( index, style, position, iconstyle ) }>
+        <div
+          className={ getClasses( index, balloonStyle, position, iconstyle ) }
+        >
           <div className="speech-person">
             <figure className="speech-icon">
               <MediaUpload
@@ -258,35 +387,5 @@ registerBlockType( 'cocoon-blocks/balloon-ex-box', {
     );
   },
 
-  save( { attributes } ) {
-    let { name, index, style, position, iconstyle, icon } = attributes;
-    if ( ! speechBalloons[ index ] ) {
-      index = 0;
-    }
-    const blockProps = useBlockProps.save( {
-      className: getClasses( index, style, position, iconstyle ),
-    } );
-    return (
-      <div { ...blockProps }>
-        <div className="speech-person">
-          <figure className="speech-icon">
-            <img
-              src={ icon ? icon : speechBalloons[ index ].icon }
-              alt={ icon ? '' : speechBalloons[ index ].name }
-              className="speech-icon-image"
-            />
-          </figure>
-          <div className="speech-name">
-            <RichText.Content
-              value={ name ? name : speechBalloons[ index ].name }
-            />
-          </div>
-        </div>
-        <div className="speech-balloon">
-          <InnerBlocks.Content />
-        </div>
-      </div>
-    );
-  },
+  save,
 } );
-

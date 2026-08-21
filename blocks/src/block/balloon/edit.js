@@ -63,7 +63,7 @@ export function BalloonEdit( props ) {
     index,
     id,
     icon,
-    style,
+    balloonStyle,
     position,
     iconstyle,
     iconid,
@@ -83,7 +83,7 @@ export function BalloonEdit( props ) {
       if ( balloon.visible == '1' ) {
         id = balloon.id;
         icon = balloon.icon;
-        style = balloon.style;
+        balloonStyle = balloon.style;
         position = balloon.position;
         iconstyle = balloon.iconstyle;
         if ( ! name ) {
@@ -94,7 +94,7 @@ export function BalloonEdit( props ) {
           index,
           id,
           icon,
-          style,
+          balloonStyle,
           position,
           iconstyle,
         } );
@@ -105,10 +105,10 @@ export function BalloonEdit( props ) {
 
   //新規作成以外
   if ( speechBalloons[ index ] ) {
-    if ( isSameBalloon( index, id, icon, style, position, iconstyle ) ) {
+    if ( isSameBalloon( index, id, icon, balloonStyle, position, iconstyle ) ) {
       id = speechBalloons[ index ].id;
       icon = speechBalloons[ index ].icon;
-      style = speechBalloons[ index ].style;
+      balloonStyle = speechBalloons[ index ].style;
       position = speechBalloons[ index ].position;
       iconstyle = speechBalloons[ index ].iconstyle;
       if ( ! name ) {
@@ -174,7 +174,7 @@ export function BalloonEdit( props ) {
   }, [ backgroundColor, textColor, borderColor ] );
 
   const classes = classnames(
-    getBalloonClasses( id, style, position, iconstyle ),
+    getBalloonClasses( id, balloonStyle, position, iconstyle ),
     {
       'not-nested-style': notNestedStyle,
       'cocoon-block-balloon': true,
@@ -211,20 +211,20 @@ export function BalloonEdit( props ) {
                 name: speechBalloons[ value ].name,
                 id: speechBalloons[ value ].id,
                 icon: speechBalloons[ value ].icon,
-                style: speechBalloons[ value ].style,
+                balloonStyle: speechBalloons[ value ].style,
                 position: speechBalloons[ value ].position,
                 iconstyle: speechBalloons[ value ].iconstyle,
               } )
             }
             options={ balloons }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
             label={ __( '吹き出しスタイル', THEME_NAME ) }
-            value={ style }
-            onChange={ ( value ) => setAttributes( { style: value } ) }
+            value={ balloonStyle }
+            onChange={ ( value ) => setAttributes( { balloonStyle: value } ) }
             options={ [
               {
                 value: 'stn',
@@ -244,7 +244,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -262,7 +262,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
 
           <SelectControl
@@ -288,7 +288,7 @@ export function BalloonEdit( props ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
         </PanelBody>
 
