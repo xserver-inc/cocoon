@@ -16,6 +16,9 @@ define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
 //期間集計（WHERE date BETWEEN …）用。date先頭でレンジスキャンが効き、countまで含むためテーブル本体を読まずに完結するカバリングインデックス
 define('INDEX_ACCESSES_DATE_PTYPE_PID_COUNT', 'index_date_ptype_pid_count');
 
+//長時間かかるテーブル更新の多重起動を防ぐためのロックキー
+define('TRANSIENT_ACCESSES_TABLE_UPDATING', THEME_NAME.'_accesses_table_updating');
+
 
 //アクセス数を取得するか
 define('OP_ACCESS_COUNT_ENABLE', 'access_count_enable');
@@ -163,7 +166,15 @@ function update_accesses_table() {
   //_v($installed_ver);
   $now_ver = ACCESSES_TABLE_VERSION;
   if (is_update_db_table($installed_ver, $now_ver)) {
+    //管理画面表示のたびに呼ばれるため、長時間かかるインデックス追加が同時多発してロック待ちになるのを防止
+    if (!DEBUG_MODE) {
+      if (get_transient(TRANSIENT_ACCESSES_TABLE_UPDATING)) {
+        return;
+      }
+      set_transient(TRANSIENT_ACCESSES_TABLE_UPDATING, 1, 15 * MINUTE_IN_SECONDS);
+    }
     create_accesses_table();
+    delete_transient(TRANSIENT_ACCESSES_TABLE_UPDATING);
   }
 
 }
@@ -486,7 +497,8 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
     $exclude_cat_ids = is_array($exclude_cat_ids) ? $exclude_cat_ids : array();
     $excats = implode(',', $exclude_cat_ids);
     $type = get_accesses_post_type();
-    $transient_id = TRANSIENT_POPULAR_PREFIX.'?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&author='.$author.'&post_type='.$post_type;
+    //option_nameは191文字までのため、除外指定が多いとキーが切り詰められて別設定と衝突する
+    $transient_id = TRANSIENT_POPULAR_PREFIX.'_'.md5('?days='.$days.'&limit='.$limit.'&type='.$type.'&cats='.$cats.'&children='.$children.'&expids='.$expids.'&excats='.$excats.'&author='.$author.'&post_type='.$post_type);
 
     $cache = get_transient( $transient_id );
     if ($cache) {
@@ -527,49 +539,38 @@ function get_access_ranking_records($days = 'all', $limit = 5, $type = ET_DEFAUL
   if (is_ids_exist($cat_ids) || is_ids_exist($exclude_cat_ids)) {
     $term_relationships = $wpdb->term_relationships;
     $term_taxonomy = $wpdb->term_taxonomy;
-    $joined_table = 'terms_accesses';
+
+    $term_where = " WHERE `{$term_taxonomy}`.taxonomy = 'category' ".PHP_EOL;
     //カテゴリー指定
     if (is_ids_exist($cat_ids)) {
       $cat_ids_safe = implode(',', array_map('intval', $cat_ids));
-      $where .= " AND `{$term_taxonomy}`.term_id IN ({$cat_ids_safe}) ".PHP_EOL;
+      $term_where .= " AND `{$term_taxonomy}`.term_id IN ({$cat_ids_safe}) ".PHP_EOL;
     }
     //除外カテゴリー指定
     if (is_ids_exist($exclude_cat_ids)) {
       $ex_cat_ids = implode(',', array_map('intval', $exclude_cat_ids));
-      $where .= " AND `{$term_relationships}`.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
+      $term_where .= " AND `{$term_relationships}`.term_taxonomy_id NOT IN ({$ex_cat_ids}) ".PHP_EOL;
     }
 
-    $where .= " AND `{$term_taxonomy}`.taxonomy = 'category' ".PHP_EOL;
-    $query = "
-      SELECT `{$joined_table}`.post_id, SUM(`{$joined_table}`.count) AS sum_count, `{$joined_table}`.term_taxonomy_id, `{$joined_table}`.taxonomy
-        FROM (
-
-          #カテゴリーとアクセステーブルを内部結合してグルーピングし並び替えた結果
-          SELECT `{$access_table}`.post_id, `{$access_table}`.count, `{$term_relationships}`.term_taxonomy_id, `{$term_taxonomy}`.taxonomy
+    //アクセステーブルとカテゴリーを直接結合すると記事数×日数の一時テーブルが実体化するため、
+    //カテゴリー側は対象記事IDの絞り込みだけを担当させ、集計はアクセステーブル単体で完結させる
+    $where .= " AND `{$access_table}`.post_id IN (
+          SELECT `{$term_relationships}`.object_id
             FROM `{$term_relationships}`
-            INNER JOIN `{$access_table}` ON `{$term_relationships}`.object_id = `{$access_table}`.post_id
             INNER JOIN `{$term_taxonomy}` ON `{$term_relationships}`.term_taxonomy_id = `{$term_taxonomy}`.term_taxonomy_id
-            $where #WHERE句
-            GROUP BY `{$access_table}`.id
-
-        ) AS `{$joined_table}` #カテゴリーとアクセステーブルを内部結合した仮の名前
-
-        GROUP BY `{$joined_table}`.post_id
-        ORDER BY sum_count DESC, post_id
-    ";
-
-    //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
-  } else {
-    $query = "
-      SELECT `{$access_table}`.post_id, SUM(`{$access_table}`.count) AS sum_count
-        FROM `{$access_table}` $where
-        GROUP BY `{$access_table}`.post_id
-        ORDER BY sum_count DESC, post_id
-    ";
-    //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
-    $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
+            {$term_where}
+        ) ".PHP_EOL;
   }
+
+  $query = "
+    SELECT `{$access_table}`.post_id, SUM(`{$access_table}`.count) AS sum_count
+      FROM `{$access_table}` $where
+      GROUP BY `{$access_table}`.post_id
+      ORDER BY sum_count DESC, post_id
+  ";
+  //1回のクエリで投稿データを取り出せるようにテーブル結合クエリを追加
+  $query = wrap_joined_wp_posts_query($query, $limit, $author, $post_type, $snippet);
+
   $records = $wpdb->get_results( $query );
 
   if (is_access_count_cache_enable() && $records) {
@@ -755,7 +756,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
       'empty'       => __('集計データがまだありません。', THEME_NAME),
       'error'       => __('データの取得に失敗しました。', THEME_NAME),
     ),
-  ));
+  ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); //インラインscript内への直接出力のため、タグを閉じられないようエスケープ
   ?>
   <!-- ダッシュボード専用の切り替えボタンスタイルを定義します -->
   <style>
@@ -973,7 +974,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
       };
 
       // 人気記事ランキングのリストを組み立てます
-      var renderRanking = function (items) {
+      var renderRanking = function (items, emptyMessage) {
         if (!rankingListContainer) return;
         rankingListContainer.innerHTML = '';
 
@@ -981,7 +982,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
           var empty = document.createElement('p');
           empty.className = 'cocoon-analytics-dashboard-ranking-empty';
           empty.style.cssText = 'font-size: 12px; color: #999; margin: 10px 0; text-align: center;';
-          empty.textContent = config.i18n.empty;
+          empty.textContent = emptyMessage || config.i18n.empty;
           rankingListContainer.appendChild(empty);
           return;
         }
@@ -1047,7 +1048,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
           var seq = ++rankingSeq;
           request('cocoon_analytics_get_dashboard_ranking', { period: rankingPeriodSelect.value })
             .then(function (data) { if (seq === rankingSeq) renderRanking(data.ranking); })
-            .catch(function () { if (seq === rankingSeq) renderRanking([]); });
+            .catch(function () { if (seq === rankingSeq) renderRanking([], config.i18n.error); });
         });
       }
 
@@ -1068,7 +1069,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
           }
           renderRanking(data.ranking);
         }).catch(function () {
-          if (seq === rankingSeq) renderRanking([]);
+          if (seq === rankingSeq) renderRanking([], config.i18n.error);
         });
 
         Promise.all([dataPromise, ensureChartJs()]).then(function () {

@@ -81,8 +81,9 @@ function cocoon_analytics_ajax_get_dashboard_widget(){
     $weekly = array_slice($weekly, -7);
   }
 
-  // 3. 月別: 直近7ヶ月分（当月を含む）
-  $monthly = cocoon_analytics_monthly_pv(date('Y-m-01', strtotime($to . ' -6 months')), $to);
+  // 3. 月別: 直近7ヶ月分（当月を含む）。月末日に-6ヶ月すると翌月へ繰り上がるため、先に月初へ丸める
+  $monthly_from = date('Y-m-01', strtotime(date('Y-m-01', strtotime($to)) . ' -6 months'));
+  $monthly = cocoon_analytics_monthly_pv($monthly_from, $to);
   if (count($monthly) > 7) {
     $monthly = array_slice($monthly, -7);
   }
