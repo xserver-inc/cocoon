@@ -200,6 +200,17 @@ function customize_admin_add_column($column_name, $post_id) {
 
   //PV表示
   if ( is_admin_list_pv_visible() && ('pv' === $column_name) ) {
+    //1記事4クエリを避けるため、一覧に表示中の全記事分のPVを最初の1回でまとめて先読み
+    static $pv_cache_primed = false;
+    if ( !$pv_cache_primed ) {
+      $pv_cache_primed = true;
+      if ( function_exists('prime_several_access_count_cache') && get_admin_panel_pv_type() !== 'jetpack' ) {
+        global $wp_query;
+        if ( !empty($wp_query->posts) ) {
+          prime_several_access_count_cache(wp_list_pluck($wp_query->posts, 'ID'), get_accesses_post_type());
+        }
+      }
+    }
     $thum =
     '<div class="pv-wrap">'.
       '<div class="pv-title">'.

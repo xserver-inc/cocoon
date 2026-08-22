@@ -9,10 +9,12 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 //関数テキストテーブルのバージョン
 global $wpdb;
-define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.3');//rand(0, 99)
+define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.4');//rand(0, 99)
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
 define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
+//期間集計（WHERE date BETWEEN …）用。date先頭でレンジスキャンが効き、countまで含むためテーブル本体を読まずに完結するカバリングインデックス
+define('INDEX_ACCESSES_DATE_PTYPE_PID_COUNT', 'index_date_ptype_pid_count');
 
 
 //アクセス数を取得するか
@@ -135,8 +137,13 @@ function create_accesses_table() {
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
       PRIMARY KEY (id),
-      INDEX `".INDEX_ACCESSES_PID_PTYPE_DATE."` (post_id,post_type,date)
+      INDEX `".INDEX_ACCESSES_PID_PTYPE_DATE."` (post_id,post_type,date),
+      INDEX `".INDEX_ACCESSES_DATE_PTYPE_PID_COUNT."` (date,post_type,post_id,count)
     )";
+  //行数の多いテーブルではインデックス追加に時間がかかり、PHPのタイムアウトで永久に完了しなくなるおそれ
+  if (function_exists('set_time_limit')) {
+    @set_time_limit(600);
+  }
   $res = create_db_table($sql);
 
   set_theme_mod( OP_ACCESSES_TABLE_VERSION, ACCESSES_TABLE_VERSION );
@@ -266,6 +273,80 @@ function get_todays_access_count($post_id = null){
 }
 endif;
 
+//投稿一覧のPV列は1記事あたり4クエリ発行するため、一覧に表示中の全記事分を1クエリで先読みする
+if ( !function_exists( 'prime_several_access_count_cache' ) ):
+function prime_several_access_count_cache($post_ids, $post_type, $days_list = array(1, 7, 30, 'all')){
+  global $wpdb;
+  if (!is_access_count_enable()) {
+    return;
+  }
+  $post_ids = array_values(array_unique(array_filter(array_map('intval', (array) $post_ids))));
+  if (empty($post_ids) || !$post_type) {
+    return;
+  }
+
+  if (!isset($GLOBALS['cocoon_access_count_cache'])) {
+    $GLOBALS['cocoon_access_count_cache'] = array();
+  }
+  $cache =& $GLOBALS['cocoon_access_count_cache'];
+
+  $days_list = array_values((array) $days_list);
+  if (empty($days_list)) {
+    return;
+  }
+
+  //既に先読み済みの記事を除外
+  $targets = array();
+  foreach ($post_ids as $pid) {
+    if (!isset($cache[$pid.'|'.$post_type.'|'.$days_list[0]])) {
+      $targets[] = $pid;
+    }
+  }
+  if (empty($targets)) {
+    return;
+  }
+
+  $date = get_current_db_date();
+  $selects = array();
+  $args = array();
+  $aliases = array();
+  foreach ($days_list as $i => $days) {
+    $alias = 'pv'.$i;
+    $aliases[$alias] = $days;
+    if ($days === 'all') {
+      $selects[] = "COALESCE(SUM(count),0) AS {$alias}";
+    } elseif ((int) $days === 1) {
+      $selects[] = "COALESCE(SUM(CASE WHEN date = %s THEN count END),0) AS {$alias}";
+      $args[] = $date;
+    } else {
+      $selects[] = "COALESCE(SUM(CASE WHEN date BETWEEN %s AND %s THEN count END),0) AS {$alias}";
+      $args[] = get_current_db_date_before($days);
+      $args[] = $date;
+    }
+  }
+
+  $table_name = ACCESSES_TABLE_NAME;
+  $ids = implode(',', $targets); //intval済みの整数のみのため直接埋め込み
+  $args[] = $post_type;
+  $sql = "SELECT post_id, ".implode(', ', $selects)."
+          FROM `{$table_name}`
+          WHERE post_id IN ({$ids}) AND post_type = %s
+          GROUP BY post_id";
+  $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
+
+  $found = array();
+  foreach ((array) $rows as $row) {
+    $found[(int) $row['post_id']] = $row;
+  }
+  //アクセス記録が無い記事も0で埋め、キャッシュミスによる再クエリを防ぐ
+  foreach ($targets as $pid) {
+    foreach ($aliases as $alias => $days) {
+      $cache[$pid.'|'.$post_type.'|'.$days] = isset($found[$pid]) ? (int) $found[$pid][$alias] : 0;
+    }
+  }
+}
+endif;
+
 //アクセス取得関数（$daysに取得する日数を入力、もしくはallで全取得）
 if ( !function_exists( 'get_several_access_count' ) ):
 function get_several_access_count($post_id = null, $days = 'all'){
@@ -282,6 +363,12 @@ function get_several_access_count($post_id = null, $days = 'all'){
     $date_before = get_current_db_date_before($days);
     $table_name = ACCESSES_TABLE_NAME;
     $post_type = get_accesses_post_type();
+
+    //一覧表示用に先読み済みの値があれば再クエリしない
+    $cache_key = $post_id.'|'.$post_type.'|'.$days;
+    if (isset($GLOBALS['cocoon_access_count_cache'][$cache_key])) {
+      return $GLOBALS['cocoon_access_count_cache'][$cache_key];
+    }
 
     $add_where = '';
     switch ($days) {
@@ -621,8 +708,10 @@ if ( !function_exists( 'cocoon_analytics_add_dashboard_widget' ) ):
 function cocoon_analytics_add_dashboard_widget() {
   // 管理権限がないユーザーにはウィジェットを追加しないように制限します
   if (!current_user_can('manage_options')) return;
-  // アクセス解析機能が無効の場合は処理を中断します
+  // アクセス集計機能が無効の場合は処理を中断します
   if (!is_access_count_enable()) return;
+  // アクセス解析ダッシュボード機能が無効の場合は処理を中断します
+  if (!is_access_analytics_enable()) return;
 
   wp_add_dashboard_widget(
     'cocoon_analytics_dashboard_widget', // ウィジェットを一意に識別するIDです
@@ -634,128 +723,39 @@ endif;
 
 /**
  * ダッシュボードウィジェットの表示HTMLとJSをレンダリングします
+ *
+ * 集計クエリはこの時点では一切実行せず、ウィジェットが実際に画面へ表示された
+ * ときだけ非同期（AJAX）で取得します。「表示オプション」で非表示にした場合や
+ * 折りたたんだ状態では、重い集計クエリが走りません。
  */
 if ( !function_exists( 'cocoon_analytics_dashboard_widget_renderer' ) ):
 function cocoon_analytics_dashboard_widget_renderer() {
-  $to = current_time('Y-m-d');
-
-  // 1. 日別 (daily): 直近7日間（本日を含む）
-  $from_daily = date('Y-m-d', strtotime($to . ' -6 days'));
-  $daily = cocoon_analytics_daily_pv($from_daily, $to);
-
-  // 2. 週別 (weekly): 直近7週分（今週を含む）
-  $from_weekly = date('Y-m-d', strtotime($to . ' -48 days')); // 約7週間前
-  $weekly = cocoon_analytics_weekly_pv($from_weekly, $to);
-  if (count($weekly) > 7) {
-    $weekly = array_slice($weekly, -7);
-  }
-
-  // 3. 月別 (monthly): 直近7ヶ月分（当月を含む）
-  $from_monthly = date('Y-m-01', strtotime($to . ' -6 months'));
-  $monthly = cocoon_analytics_monthly_pv($from_monthly, $to);
-  if (count($monthly) > 7) {
-    $monthly = array_slice($monthly, -7);
-  }
-
-  // 4. 年別 (yearly): 直近7年分（今年を含む）
-  $current_year = (int) date('Y');
-  $from_year = $current_year - 6;
-  $from_yearly = $from_year . '-01-01';
-  $daily_all = cocoon_analytics_daily_pv($from_yearly, $to);
-  $yearly_buckets = array();
-  for ($y = $from_year; $y <= $current_year; $y++) {
-    $yearly_buckets[$y] = 0;
-  }
-  foreach ($daily_all as $d) {
-    $y = (int) substr($d['date'], 0, 4);
-    if (isset($yearly_buckets[$y])) {
-      $yearly_buckets[$y] += (int) $d['pv'];
-    }
-  }
-  $yearly = array();
-  foreach ($yearly_buckets as $y => $pv) {
-    $yearly[] = array('date' => (string) $y, 'pv' => $pv);
-  }
-
-  // グラフ軸ラベルのサイト日付書式・言語への整形
-  $daily   = cocoon_analytics_chart_labels($daily, 'daily');
-  $weekly  = cocoon_analytics_chart_labels($weekly, 'weekly');
-  $monthly = cocoon_analytics_chart_labels($monthly, 'monthly');
-  $yearly  = cocoon_analytics_chart_labels($yearly, 'yearly');
-
-  // 5. 人気記事の期間別データ取得（アクセス集計ページの「既定の集計期間」と揃えた選択肢）
-  $periods = array(
-    'today'     => cocoon_analytics_resolve_period('today'),
-    '7days'     => cocoon_analytics_resolve_period('7days'),
-    '30days'    => cocoon_analytics_resolve_period('30days'),
-    '90days'    => cocoon_analytics_resolve_period('90days'),
-    'thismonth' => cocoon_analytics_resolve_period('thismonth'),
-    '1year'     => array(
-      'from' => date('Y-m-d', strtotime($to . ' -1 year +1 day')),
-      'to'   => $to
-    ),
-    'all'       => array('from' => '1000-01-01', 'to' => $to),
-  );
-
   // アクセス集計ページの期間セレクトボックスと統一した表記
-  $period_labels = array(
-    'today'     => __('今日', THEME_NAME),
-    '7days'     => __('直近7日', THEME_NAME),
-    '30days'    => __('直近30日', THEME_NAME),
-    '90days'    => __('直近90日', THEME_NAME),
-    'thismonth' => __('今月', THEME_NAME),
-    '1year'     => __('直近1年', THEME_NAME),
-    'all'       => __('全期間', THEME_NAME),
-  );
+  $period_labels = cocoon_analytics_widget_period_labels();
 
   // アクセス集計ページの「既定の集計期間」設定に合わせた初期表示期間
-  $default_ranking_period = get_access_analytics_default_period();
-  if (!isset($periods[$default_ranking_period])) {
-    $default_ranking_period = '30days';
-  }
-
-  $ranking_data = array();
-  foreach ($periods as $key => $p) {
-    $rows = cocoon_analytics_ranking($p['from'], $p['to'], null, 5);
-    $formatted = array();
-    $rank = 1;
-    foreach ($rows as $item) {
-      $post_id = $item['post_id'];
-      $title = get_the_title($post_id);
-      if (empty($title)) {
-        $title = __('(タイトルなし)', THEME_NAME);
-      }
-      $formatted[] = array(
-        'rank'  => $rank,
-        'title' => esc_html($title),
-        'url'   => esc_url(get_permalink($post_id)),
-        'pv'    => number_format_i18n($item['pv']),
-      );
-      $rank++;
-    }
-    $ranking_data[$key] = $formatted;
-  }
-
-  // JS側へデータを渡すJSON形式にエンコードします
-  $json_data = wp_json_encode(array(
-    'daily'   => $daily,
-    'weekly'  => $weekly,
-    'monthly' => $monthly,
-    'yearly'  => $yearly,
-    'ranking' => $ranking_data,
-  ));
+  $default_ranking_period = cocoon_analytics_widget_period_range(get_access_analytics_default_period());
+  $default_ranking_period = $default_ranking_period['key'];
 
   // WordPressの管理画面「アクセス集計」ページのリンクURLを取得します
   $analytics_page_url = admin_url('admin.php?page=theme-access');
 
-  // グラフ描画に必要なChart.jsスクリプトを読み込みリストに登録します
-  wp_enqueue_script(
-    'cocoon-analytics-chartjs',
-    'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
-    array(),
-    '4.4.1',
-    true
-  );
+  // JS側の設定値（AJAXエンドポイント・Chart.jsのURL・表示文言）
+  $widget_config = wp_json_encode(array(
+    'ajaxUrl'  => admin_url('admin-ajax.php'),
+    'nonce'    => wp_create_nonce('cocoon_analytics_dashboard_widget'),
+    'chartJs'  => 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js',
+    'period'   => $default_ranking_period,
+    'i18n'     => array(
+      'pvLabel'     => __('PV数', THEME_NAME),
+      'pv'          => __('PV', THEME_NAME),
+      'day'         => __('日', THEME_NAME),
+      'daysCount'   => __('日数', THEME_NAME),
+      'partialWeek' => __('部分週', THEME_NAME),
+      'empty'       => __('集計データがまだありません。', THEME_NAME),
+      'error'       => __('データの取得に失敗しました。', THEME_NAME),
+    ),
+  ));
   ?>
   <!-- ダッシュボード専用の切り替えボタンスタイルを定義します -->
   <style>
@@ -782,6 +782,9 @@ function cocoon_analytics_dashboard_widget_renderer() {
     <!-- グラフを描画するためのキャンバス領域です -->
     <div style="height: 180px; position: relative; margin-bottom: 20px;">
       <canvas id="cocoon-analytics-dashboard-chart"></canvas>
+      <p class="cocoon-analytics-dashboard-chart-message" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; margin: 0; font-size: 12px; color: #999;">
+        <?php _e('読み込み中...', THEME_NAME); ?>
+      </p>
     </div>
 
     <!-- グラフとランキングの間に区切り線を引きます -->
@@ -803,33 +806,7 @@ function cocoon_analytics_dashboard_widget_renderer() {
       </h4>
 
       <ul id="cocoon-analytics-dashboard-ranking-list" style="margin: 0; padding: 0; list-style: none;">
-        <!-- 初期表示時は既定の集計期間のデータをPHP側から出力 -->
-        <?php if (!empty($ranking_data[$default_ranking_period])): ?>
-          <?php foreach ($ranking_data[$default_ranking_period] as $item):
-            $badge_bg = '#888';
-            if ($item['rank'] === 1) $badge_bg = '#dfb100'; // 金
-            if ($item['rank'] === 2) $badge_bg = '#a8a8a8'; // 銀
-            if ($item['rank'] === 3) $badge_bg = '#b06f00'; // 銅
-            ?>
-            <li style="display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #f0f0f0; font-size: 12px; gap: 10px;">
-              <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;">
-                <span style="display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; background-color: <?php echo $badge_bg; ?>; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; flex-shrink: 0;">
-                  <?php echo $item['rank']; ?>
-                </span>
-                <a href="<?php echo $item['url']; ?>" target="_blank" style="text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
-                  <?php echo $item['title']; ?>
-                </a>
-              </div>
-              <span style="color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;">
-                <?php echo $item['pv']; ?> PV
-              </span>
-            </li>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <p class="cocoon-analytics-dashboard-ranking-empty" style="font-size: 12px; color: #999; margin: 10px 0; text-align: center;">
-            <?php _e('集計データがまだありません。', THEME_NAME); ?>
-          </p>
-        <?php endif; ?>
+        <!-- 中身は表示された時点でAJAX取得します -->
       </ul>
     </div>
 
@@ -842,22 +819,58 @@ function cocoon_analytics_dashboard_widget_renderer() {
     </div>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // サーバーから渡されたPVおよび人気記事データです
-      var chartData = <?php echo $json_data; ?>;
+    (function () {
+      var config = <?php echo $widget_config; ?>;
+      var widget = document.getElementById('cocoon_analytics_dashboard_widget');
+      var container = (widget || document).querySelector('.cocoon-analytics-dashboard-widget-container');
       var canvas = document.getElementById('cocoon-analytics-dashboard-chart');
-      if (!canvas || !chartData) return;
+      if (!container || !canvas) return;
 
+      var chartData = null;
       var chartInstance = null;
-      var buttons = document.querySelectorAll('.cocoon-analytics-dashboard-btn');
+      var currentType = 'daily';
+      var buttons = container.querySelectorAll('.cocoon-analytics-dashboard-btn');
+      var message = container.querySelector('.cocoon-analytics-dashboard-chart-message');
+      var rankingPeriodSelect = container.querySelector('.cocoon-analytics-dashboard-ranking-period');
+      var rankingListContainer = document.getElementById('cocoon-analytics-dashboard-ranking-list');
+
+      var setMessage = function (text) {
+        if (!message) return;
+        message.textContent = text || '';
+        message.style.display = text ? 'flex' : 'none';
+      };
+
+      // Chart.js はウィジェットが実際に表示されたときだけ読み込みます
+      var chartJsPromise = null;
+      var ensureChartJs = function () {
+        if (window.Chart) return Promise.resolve();
+        if (chartJsPromise) return chartJsPromise;
+        chartJsPromise = new Promise(function (resolve, reject) {
+          var script = document.createElement('script');
+          script.src = config.chartJs;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+        return chartJsPromise;
+      };
+
+      var request = function (action, params) {
+        var query = new URLSearchParams(params || {});
+        query.set('action', action);
+        query.set('nonce', config.nonce);
+        return fetch(config.ajaxUrl + '?' + query.toString(), { credentials: 'same-origin' })
+          .then(function (res) { return res.json(); })
+          .then(function (json) {
+            if (!json || !json.success) throw new Error('request_failed');
+            return json.data;
+          });
+      };
 
       // グラフの描画およびアップデートを実行する関数です
-      var renderChart = function(type) {
-        if (typeof Chart === 'undefined') {
-          // スクリプトのロードが終わっていない場合は100ミリ秒後に再試行します
-          setTimeout(function() { renderChart(type); }, 100);
-          return;
-        }
+      var renderChart = function (type) {
+        currentType = type;
+        if (!chartData) return;
 
         var list = chartData[type];
         if (!list || !list.length) {
@@ -865,19 +878,21 @@ function cocoon_analytics_dashboard_widget_renderer() {
             chartInstance.destroy();
             chartInstance = null;
           }
+          setMessage(config.i18n.empty);
           return;
         }
+        setMessage('');
 
         // ラベルはPHP側でサイトの日付書式・言語に合わせて整形済み
-        var labels = list.map(function(d) { return d.label || d.date; });
-        var pvData = list.map(function(d) { return d.pv; });
+        var labels = list.map(function (d) { return d.label || d.date; });
+        var pvData = list.map(function (d) { return d.pv; });
 
-        var config = {
+        var config_chart = {
           type: 'bar', // すべての期間でJetpack Statsに合わせ「棒グラフ」に統一します
           data: {
             labels: labels,
             datasets: [{
-              label: '<?php echo esc_js(__('PV数', THEME_NAME)); ?>',
+              label: config.i18n.pvLabel,
               data: pvData,
               backgroundColor: 'rgba(0, 138, 32, 0.85)', // Jetpack風の鮮やかな緑色に統一します
               borderColor: '#008a20',
@@ -903,11 +918,11 @@ function cocoon_analytics_dashboard_widget_renderer() {
                     var row = list[ctx.dataIndex];
                     if (type === 'weekly') {
                       if (row && row.days && row.days < 7) {
-                        return '<?php echo esc_js(__('部分週', THEME_NAME)); ?>' + ': ' + row.days + '/7 ' + '<?php echo esc_js(__('日', THEME_NAME)); ?>';
+                        return config.i18n.partialWeek + ': ' + row.days + '/7 ' + config.i18n.day;
                       }
                     } else if (type === 'monthly') {
                       if (row && row.days) {
-                        return '<?php echo esc_js(__('日数', THEME_NAME)); ?>' + ': ' + row.days + ' ' + '<?php echo esc_js(__('日', THEME_NAME)); ?>';
+                        return config.i18n.daysCount + ': ' + row.days + ' ' + config.i18n.day;
                       }
                     }
                     return '';
@@ -954,7 +969,59 @@ function cocoon_analytics_dashboard_widget_renderer() {
         if (chartInstance) {
           chartInstance.destroy();
         }
-        chartInstance = new Chart(canvas, config);
+        chartInstance = new Chart(canvas, config_chart);
+      };
+
+      // 人気記事ランキングのリストを組み立てます
+      var renderRanking = function (items) {
+        if (!rankingListContainer) return;
+        rankingListContainer.innerHTML = '';
+
+        if (!items || !items.length) {
+          var empty = document.createElement('p');
+          empty.className = 'cocoon-analytics-dashboard-ranking-empty';
+          empty.style.cssText = 'font-size: 12px; color: #999; margin: 10px 0; text-align: center;';
+          empty.textContent = config.i18n.empty;
+          rankingListContainer.appendChild(empty);
+          return;
+        }
+
+        items.forEach(function (item) {
+          var badgeBg = '#888';
+          if (item.rank === 1) badgeBg = '#dfb100';
+          else if (item.rank === 2) badgeBg = '#a8a8a8';
+          else if (item.rank === 3) badgeBg = '#b06f00';
+
+          var li = document.createElement('li');
+          li.style.cssText = 'display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #f0f0f0; font-size: 12px; gap: 10px;';
+
+          var leftDiv = document.createElement('div');
+          leftDiv.style.cssText = 'display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;';
+
+          var badge = document.createElement('span');
+          badge.style.cssText = 'display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; background-color: ' + badgeBg + '; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; flex-shrink: 0;';
+          badge.textContent = item.rank;
+
+          var link = document.createElement('a');
+          link.href = item.url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.style.cssText = 'text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;';
+          link.textContent = item.title;
+          link.addEventListener('mouseover', function () { link.style.textDecoration = 'underline'; });
+          link.addEventListener('mouseout', function () { link.style.textDecoration = 'none'; });
+
+          leftDiv.appendChild(badge);
+          leftDiv.appendChild(link);
+
+          var pvSpan = document.createElement('span');
+          pvSpan.style.cssText = 'color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;';
+          pvSpan.textContent = item.pv + ' ' + config.i18n.pv;
+
+          li.appendChild(leftDiv);
+          li.appendChild(pvSpan);
+          rankingListContainer.appendChild(li);
+        });
       };
 
       // 切り替えトグルボタンのイベントハンドラーを設定します
@@ -966,74 +1033,66 @@ function cocoon_analytics_dashboard_widget_renderer() {
         });
       });
 
-      // 初期選択状態として「日」を設定して描画します
-      var defaultBtn = document.querySelector('.cocoon-analytics-dashboard-btn[data-type="daily"]');
+      var defaultBtn = container.querySelector('.cocoon-analytics-dashboard-btn[data-type="daily"]');
       if (defaultBtn) {
         defaultBtn.classList.add('is-active');
       }
-      renderChart('daily');
 
-      // 人気記事の期間切り替えセレクトボックスのイベントハンドラーを設定します
-      var rankingPeriodSelect = document.querySelector('.cocoon-analytics-dashboard-ranking-period');
-      var rankingListContainer = document.getElementById('cocoon-analytics-dashboard-ranking-list');
+      // 初期取得と期間切り替えが前後してもランキングが巻き戻らないよう、最新リクエストだけを採用します
+      var rankingSeq = 0;
 
-      if (rankingPeriodSelect && rankingListContainer && chartData.ranking) {
-        rankingPeriodSelect.addEventListener('change', function() {
-          var period = rankingPeriodSelect.value;
-          var items = chartData.ranking[period] || [];
-
-          rankingListContainer.innerHTML = '';
-
-          if (items.length === 0) {
-            var empty = document.createElement('p');
-            empty.className = 'cocoon-analytics-dashboard-ranking-empty';
-            empty.style.cssText = 'font-size: 12px; color: #999; margin: 10px 0; text-align: center;';
-            empty.textContent = '<?php echo esc_js(__('集計データがまだありません。', THEME_NAME)); ?>';
-            rankingListContainer.appendChild(empty);
-            return;
-          }
-
-          // 新しい期間の人気記事データを動的にリスト生成して描画します
-          items.forEach(function(item) {
-            var badgeBg = '#888';
-            if (item.rank === 1) badgeBg = '#dfb100';
-            else if (item.rank === 2) badgeBg = '#a8a8a8';
-            else if (item.rank === 3) badgeBg = '#b06f00';
-
-            var li = document.createElement('li');
-            li.style.cssText = 'display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #f0f0f0; font-size: 12px; gap: 10px;';
-
-            var leftDiv = document.createElement('div');
-            leftDiv.style.cssText = 'display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;';
-
-            var badge = document.createElement('span');
-            badge.style.cssText = 'display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; background-color: ' + badgeBg + '; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; flex-shrink: 0;';
-            badge.textContent = item.rank;
-
-            var link = document.createElement('a');
-            link.href = item.url;
-            link.target = '_blank';
-            link.style.cssText = 'text-decoration: none; color: #0073aa; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;';
-            link.textContent = item.title;
-
-            link.addEventListener('mouseover', function() { link.style.textDecoration = 'underline'; });
-            link.addEventListener('mouseout', function() { link.style.textDecoration = 'none'; });
-
-            leftDiv.appendChild(badge);
-            leftDiv.appendChild(link);
-
-            var pvSpan = document.createElement('span');
-            pvSpan.style.cssText = 'color: #666; font-size: 11px; font-weight: 500; flex-shrink: 0; min-width: 45px; text-align: right;';
-            pvSpan.textContent = item.pv + ' ' + '<?php echo esc_js(__('PV', THEME_NAME)); ?>';
-
-            li.appendChild(leftDiv);
-            li.appendChild(pvSpan);
-
-            rankingListContainer.appendChild(li);
-          });
+      // 人気記事の期間切り替えは選択された期間だけを追加取得します
+      if (rankingPeriodSelect) {
+        rankingPeriodSelect.addEventListener('change', function () {
+          var seq = ++rankingSeq;
+          request('cocoon_analytics_get_dashboard_ranking', { period: rankingPeriodSelect.value })
+            .then(function (data) { if (seq === rankingSeq) renderRanking(data.ranking); })
+            .catch(function () { if (seq === rankingSeq) renderRanking([]); });
         });
       }
-    });
+
+      // ウィジェットが表示された最初の1回だけデータを取得します
+      var loaded = false;
+      var load = function () {
+        if (loaded) return;
+        loaded = true;
+        var seq = ++rankingSeq;
+        var dataPromise = request('cocoon_analytics_get_dashboard_widget', {});
+
+        // Chart.js の取得に失敗してもランキングだけは表示できるよう、描画を独立させます
+        dataPromise.then(function (data) {
+          chartData = data;
+          if (seq !== rankingSeq) return;
+          if (rankingPeriodSelect && data.period) {
+            rankingPeriodSelect.value = data.period;
+          }
+          renderRanking(data.ranking);
+        }).catch(function () {
+          if (seq === rankingSeq) renderRanking([]);
+        });
+
+        Promise.all([dataPromise, ensureChartJs()]).then(function () {
+          renderChart(currentType);
+        }).catch(function () {
+          setMessage(config.i18n.error);
+        });
+      };
+
+      // 「表示オプション」で非表示・折りたたみ中はクエリを走らせないための可視判定
+      if (typeof IntersectionObserver === 'function') {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              observer.disconnect();
+              load();
+            }
+          });
+        });
+        observer.observe(container);
+      } else {
+        load();
+      }
+    })();
   </script>
   <?php
 }

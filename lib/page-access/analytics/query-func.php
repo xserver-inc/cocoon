@@ -53,22 +53,17 @@ endif;
 define('COCOON_ANALYTICS_TRANSIENT_PREFIX', 'cocoon_analytics_');
 
 /**
- * データリビジョンを取得（MAX(id) と MAX(date) を組み合わせたハッシュ）
- * 新規アクセス記録があると値が変わるため、キャッシュが自動失効する。
+ * データリビジョンを取得（日付単位で切り替わるハッシュ）
+ *
+ * 以前は MAX(id) を含めていたが、アクセスが1件記録されるだけで値が変わるため
+ * 稼働中サイトではキャッシュがほぼ毎回失効していた。
+ * 鮮度はキャッシュTTLに委ね、リビジョンは日付単位の固定値とする。
  */
 if ( !function_exists( 'cocoon_analytics_revision' ) ):
 function cocoon_analytics_revision(){
-  global $wpdb;
   static $rev = null;
   if ($rev !== null) return $rev;
-  $table = ACCESSES_TABLE_NAME;
-  if (!is_accesses_table_exist()) {
-    $rev = '0';
-    return $rev;
-  }
-  // MAX(id) と MAX(date) の組み合わせによる「最新の記録状態」の表現
-  $row = $wpdb->get_row("SELECT MAX(id) AS mid, MAX(date) AS mdate FROM `{$table}`");
-  $rev = md5(($row->mid ?? '0') . '|' . ($row->mdate ?? ''));
+  $rev = md5(ACCESSES_TABLE_NAME . '|' . current_time('Y-m-d'));
   return $rev;
 }
 endif;
@@ -181,6 +176,44 @@ function cocoon_analytics_sanitize_date($s, $fallback){
   $t = strtotime($s);
   if ($t === false) return $fallback;
   return date('Y-m-d', $t);
+}
+endif;
+
+/**
+ * ダッシュボードウィジェットの人気記事ランキングで使う期間キーとラベル。
+ * アクセス集計ページの「既定の集計期間」と選択肢を揃えている。
+ */
+if ( !function_exists( 'cocoon_analytics_widget_period_labels' ) ):
+function cocoon_analytics_widget_period_labels(){
+  return array(
+    'today'     => __('今日', THEME_NAME),
+    '7days'     => __('直近7日', THEME_NAME),
+    '30days'    => __('直近30日', THEME_NAME),
+    '90days'    => __('直近90日', THEME_NAME),
+    'thismonth' => __('今月', THEME_NAME),
+    '1year'     => __('直近1年', THEME_NAME),
+    'all'       => __('全期間', THEME_NAME),
+  );
+}
+endif;
+
+/**
+ * ウィジェット用の期間キーを [from, to] に解決する（不正キーは既定値へフォールバック）。
+ */
+if ( !function_exists( 'cocoon_analytics_widget_period_range' ) ):
+function cocoon_analytics_widget_period_range($key){
+  $labels = cocoon_analytics_widget_period_labels();
+  if (!isset($labels[$key])) {
+    $key = get_access_analytics_default_period();
+    if (!isset($labels[$key])) $key = '30days';
+  }
+  if ($key === '1year') {
+    // resolve_period に「1年」プリセットが無いため、今日を含む直近365日を直接計算
+    $to = current_time('Y-m-d');
+    return array('key' => $key, 'from' => date('Y-m-d', strtotime($to . ' -1 year +1 day')), 'to' => $to);
+  }
+  $period = cocoon_analytics_resolve_period($key);
+  return array('key' => $key, 'from' => $period['from'], 'to' => $period['to']);
 }
 endif;
 
@@ -345,6 +378,39 @@ function cocoon_analytics_monthly_pv($from, $to, $post_types = null){
 endif;
 
 /**
+ * 年次PV推移（DB側で年単位に集約）
+ * 日次を取得してPHPで畳むと数年分で数千行を転送するため、GROUP BY で年に集約する。
+ */
+if ( !function_exists( 'cocoon_analytics_yearly_pv' ) ):
+function cocoon_analytics_yearly_pv($from, $to, $post_types = null){
+  return cocoon_analytics_cached(array('yearly_pv', $from, $to, $post_types), function() use ($from, $to, $post_types){
+    global $wpdb;
+    $table = ACCESSES_TABLE_NAME;
+    $types = cocoon_analytics_allowed_post_types($post_types);
+    $in = cocoon_analytics_in_placeholder($types);
+    $sql = "SELECT SUBSTRING(date,1,4) AS y, COALESCE(SUM(count),0) AS pv FROM `{$table}`
+            WHERE date BETWEEN %s AND %s AND post_id > 0 AND post_type IN ({$in['sql']})
+            GROUP BY y ORDER BY y ASC";
+    $args = array_merge(array($from, $to), $in['args']);
+    $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
+
+    $map = array();
+    foreach ($rows as $r) { $map[$r['y']] = (int) $r['pv']; }
+
+    // from〜to の年をまたぐ欠損年の0埋め
+    $result = array();
+    $start = (int) substr($from, 0, 4);
+    $end = (int) substr($to, 0, 4);
+    for ($y = $start; $y <= $end; $y++) {
+      $key = (string) $y;
+      $result[] = array('date' => $key, 'pv' => isset($map[$key]) ? $map[$key] : 0);
+    }
+    return $result;
+  });
+}
+endif;
+
+/**
  * 急上昇記事ランキング
  * 直近 $days 日 vs その前 $days 日 のPV比率で並べる。
  */
@@ -365,27 +431,24 @@ function cocoon_analytics_trending($days = 7, $limit = 10, $min_pv = 3){
     $in = cocoon_analytics_in_placeholder($types);
 
     // 同一 post_id に対する「直近」と「直前」のPVの条件付き合計と、増加率での並べ替え
-    // 注: MariaDBでは ORDER BY の式中で集約エイリアスを参照できない場合があるため、SUM()式を直接書く
-    $sql = "SELECT p.ID AS post_id, p.post_type,
-              SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) AS cur_pv,
-              SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) AS prev_pv
-            FROM `{$table}` a
-            INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND p.post_type IN ({$in['sql']})
-            GROUP BY p.ID
-            HAVING SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) >= %d
-            ORDER BY (SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) /
-                      (SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) + 1)) DESC,
-                     SUM(CASE WHEN a.date BETWEEN %s AND %s THEN a.count ELSE 0 END) DESC,
-                     p.post_date DESC, p.ID DESC
+    // 内側で先に post_id 単位へ集約し、アクセステーブル側はカバリングインデックスだけで完結させる
+    $sql = "SELECT p.ID AS post_id, p.post_type, t.cur_pv, t.prev_pv
+            FROM (
+              SELECT post_id,
+                SUM(CASE WHEN date BETWEEN %s AND %s THEN count ELSE 0 END) AS cur_pv,
+                SUM(CASE WHEN date BETWEEN %s AND %s THEN count ELSE 0 END) AS prev_pv
+              FROM `{$table}`
+              WHERE date BETWEEN %s AND %s AND post_id > 0
+              GROUP BY post_id
+            ) t
+            INNER JOIN {$wpdb->posts} p ON p.ID = t.post_id AND p.post_status = 'publish'
+            WHERE p.post_type IN ({$in['sql']}) AND t.cur_pv >= %d
+            ORDER BY (t.cur_pv / (t.prev_pv + 1)) DESC, t.cur_pv DESC, p.post_date DESC, p.ID DESC
             LIMIT %d";
     $args = array_merge(
       array($cur_from, $cur_to, $prev_from, $prev_to, $prev_from, $cur_to),
       $in['args'],
-      array($cur_from, $cur_to, $min_pv,
-            $cur_from, $cur_to, $prev_from, $prev_to,
-            $cur_from, $cur_to,
-            $limit)
+      array($min_pv, $limit)
     );
     $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
     foreach ($rows as &$r) {
@@ -462,13 +525,19 @@ function cocoon_analytics_ranking($from, $to, $post_types = null, $limit = 10, $
     $in = cocoon_analytics_in_placeholder($types);
     // 投稿タイプの判定は記事別タブと同じく現在の投稿タイプ（p.post_type）基準
     // アクセス記録側（a.post_type）での判定・グループ化は投稿タイプ変更時のPV分割の原因
+    // 内側で先に post_id 単位へ集約することで、アクセステーブル側は
+    // (date,post_type,post_id,count) のカバリングインデックスだけで完結する
     // 同PV時の並び固定のため、公開日・投稿IDを第2・第3ソートキーに指定
-    $sql = "SELECT p.ID AS post_id, p.post_type, SUM(a.count) AS pv
-            FROM `{$table}` a
-            INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0 AND p.post_type IN ({$in['sql']})
-            GROUP BY p.ID
-            ORDER BY pv DESC, p.post_date DESC, p.ID DESC
+    $sql = "SELECT p.ID AS post_id, p.post_type, t.pv
+            FROM (
+              SELECT post_id, SUM(count) AS pv
+              FROM `{$table}`
+              WHERE date BETWEEN %s AND %s AND post_id > 0
+              GROUP BY post_id
+            ) t
+            INNER JOIN {$wpdb->posts} p ON p.ID = t.post_id AND p.post_status = 'publish'
+            WHERE p.post_type IN ({$in['sql']})
+            ORDER BY t.pv DESC, p.post_date DESC, p.ID DESC
             LIMIT %d OFFSET %d";
     $args = array_merge(array($from, $to), $in['args'], array($limit, $offset));
     $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
@@ -522,33 +591,35 @@ function cocoon_analytics_posts_table($from, $to, $args = array()){
                   AND tt.taxonomy = 'category' AND tt.term_id = " . (int) $args['category'];
     }
 
-    $having = '';
     $having_parts = array();
-    if ((int) $args['min_pv'] >= 0) $having_parts[] = $wpdb->prepare('pv >= %d', (int) $args['min_pv']);
-    if ((int) $args['max_pv'] >= 0) $having_parts[] = $wpdb->prepare('pv <= %d', (int) $args['max_pv']);
-    if (!empty($having_parts)) $having = 'HAVING ' . implode(' AND ', $having_parts);
+    if ((int) $args['min_pv'] >= 0) $having_parts[] = $wpdb->prepare('COALESCE(t.pv,0) >= %d', (int) $args['min_pv']);
+    if ((int) $args['max_pv'] >= 0) $having_parts[] = $wpdb->prepare('COALESCE(t.pv,0) <= %d', (int) $args['max_pv']);
+    if (!empty($having_parts)) $where_parts = array_merge($where_parts, $having_parts);
+
+    // 先に post_id 単位へ集約してから wp_posts に結合することで、
+    // 記事数分の GROUP BY を無くし、アクセステーブル側をカバリングインデックスで完結させる
+    $pv_subquery = "LEFT JOIN (
+        SELECT post_id, SUM(count) AS pv
+        FROM `{$table}`
+        WHERE date BETWEEN %s AND %s AND post_id > 0
+        GROUP BY post_id
+      ) t ON t.post_id = p.ID";
 
     // 件数取得
-    $total_sql = "SELECT COUNT(*) FROM (
-      SELECT p.ID, COALESCE(SUM(a.count),0) AS pv
+    $total_sql = "SELECT COUNT(*)
       FROM {$wpdb->posts} p
       {$join2}
-      LEFT JOIN `{$table}` a ON a.post_id = p.ID AND a.date BETWEEN %s AND %s
-      WHERE " . implode(' AND ', $where_parts) . "
-      GROUP BY p.ID
-      {$having}
-    ) x";
+      {$pv_subquery}
+      WHERE " . implode(' AND ', $where_parts);
     $total_params = array_merge(array($from, $to), $p2);
     $total = (int) $wpdb->get_var($wpdb->prepare($total_sql, $total_params));
 
     // 本体
-    $main_sql = "SELECT p.ID AS post_id, p.post_title, p.post_type, p.post_date, p.post_author, COALESCE(SUM(a.count),0) AS pv
+    $main_sql = "SELECT p.ID AS post_id, p.post_title, p.post_type, p.post_date, p.post_author, COALESCE(t.pv,0) AS pv
       FROM {$wpdb->posts} p
       {$join2}
-      LEFT JOIN `{$table}` a ON a.post_id = p.ID AND a.date BETWEEN %s AND %s
+      {$pv_subquery}
       WHERE " . implode(' AND ', $where_parts) . "
-      GROUP BY p.ID
-      {$having}
       ORDER BY pv {$order}, p.post_date DESC, p.ID DESC
       LIMIT %d OFFSET %d";
     $main_params = array_merge(array($from, $to), $p2, array($per_page, $offset));
@@ -573,17 +644,21 @@ function cocoon_analytics_pv_by_taxonomy($from, $to, $taxonomy = 'category', $li
   return cocoon_analytics_cached(array('pv_by_tax', $from, $to, $taxonomy, $limit), function() use ($from, $to, $taxonomy, $limit){
     global $wpdb;
     $table = ACCESSES_TABLE_NAME;
-    $sql = "SELECT t.term_id, t.name, t.slug, SUM(a.count) AS pv
-            FROM `{$table}` a
-            INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            INNER JOIN {$wpdb->term_relationships} tr ON tr.object_id = a.post_id
+    $sql = "SELECT t.term_id, t.name, t.slug, SUM(agg.pv) AS pv
+            FROM (
+              SELECT post_id, SUM(count) AS pv
+              FROM `{$table}`
+              WHERE date BETWEEN %s AND %s AND post_id > 0
+              GROUP BY post_id
+            ) agg
+            INNER JOIN {$wpdb->posts} p ON p.ID = agg.post_id AND p.post_status = 'publish'
+            INNER JOIN {$wpdb->term_relationships} tr ON tr.object_id = agg.post_id
             INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id AND tt.taxonomy = %s
             INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0
             GROUP BY t.term_id
             ORDER BY pv DESC, t.term_id ASC
             LIMIT %d";
-    $rows = $wpdb->get_results($wpdb->prepare($sql, $taxonomy, $from, $to, $limit), ARRAY_A);
+    $rows = $wpdb->get_results($wpdb->prepare($sql, $from, $to, $taxonomy, $limit), ARRAY_A);
     foreach ($rows as &$r) { $r['term_id'] = (int) $r['term_id']; $r['pv'] = (int) $r['pv']; }
     return $rows ?: array();
   });
@@ -599,10 +674,14 @@ function cocoon_analytics_pv_by_author($from, $to, $limit = 100){
   return cocoon_analytics_cached(array('pv_by_author', $from, $to, $limit), function() use ($from, $to, $limit){
     global $wpdb;
     $table = ACCESSES_TABLE_NAME;
-    $sql = "SELECT p.post_author, SUM(a.count) AS pv, COUNT(DISTINCT a.post_id) AS posts_with_pv
-            FROM `{$table}` a
-            INNER JOIN {$wpdb->posts} p ON p.ID = a.post_id AND p.post_status = 'publish'
-            WHERE a.date BETWEEN %s AND %s AND a.post_id > 0
+    $sql = "SELECT p.post_author, SUM(t.pv) AS pv, COUNT(t.post_id) AS posts_with_pv
+            FROM (
+              SELECT post_id, SUM(count) AS pv
+              FROM `{$table}`
+              WHERE date BETWEEN %s AND %s AND post_id > 0
+              GROUP BY post_id
+            ) t
+            INNER JOIN {$wpdb->posts} p ON p.ID = t.post_id AND p.post_status = 'publish'
             GROUP BY p.post_author
             ORDER BY pv DESC, p.post_author ASC
             LIMIT %d";
