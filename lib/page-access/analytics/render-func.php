@@ -167,6 +167,10 @@ function cocoon_analytics_render_tabs($current){
     'export'    => __('エクスポート', THEME_NAME),
     'settings'  => __('設定', THEME_NAME),
   );
+  //ダッシュボード機能が無効なときは、開いても内容が表示されない集計系タブを出さない
+  if (!is_access_analytics_enable()) {
+    $tabs = array('settings' => $tabs['settings']);
+  }
   echo '<h2 class="nav-tab-wrapper cocoon-analytics-tabs">';
   foreach ($tabs as $slug => $label) {
     $url = admin_url('admin.php?page=theme-access&view=' . $slug);
