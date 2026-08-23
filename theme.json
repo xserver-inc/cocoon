@@ -2,6 +2,10 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
+		"viewport": {
+			"mobile": "480px",
+			"tablet": "834px"
+		},
 		"spacing": {
 			"blockGap": true,
 			"margin": true,
