@@ -1,0 +1,535 @@
+/**
+ * Cocoon設定画面専用のモダンUI
+ *
+ * 保存フォームのDOMと入力属性は変更せず、表示層だけを調整する。
+ */
+.toplevel_page_theme-settings .wrap.admin-settings {
+  --cocoon-settings-surface: #fff;
+  --cocoon-settings-surface-subtle: #f6f7f7;
+  --cocoon-settings-border-subtle: #dcdcde;
+  --cocoon-settings-border-control: #8c8f94;
+  --cocoon-settings-text: #1d2327;
+  --cocoon-settings-text-muted: #646970;
+  --cocoon-settings-accent: var(--wp-admin-theme-color, #2271b1);
+  --cocoon-settings-accent-hover: var(--wp-admin-theme-color-darker-10, #135e96);
+  --cocoon-settings-warning-bg: #fcf9e8;
+  --cocoon-settings-warning-border: #dba617;
+  --cocoon-settings-danger-bg: #fcf0f1;
+  --cocoon-settings-danger-border: #d63638;
+  --cocoon-settings-radius-control: 4px;
+  --cocoon-settings-radius-card: 6px;
+  --cocoon-settings-radius-emphasis: 8px;
+  --cocoon-settings-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --cocoon-settings-content-max: 1280px;
+
+  box-sizing: border-box;
+  max-inline-size: var(--cocoon-settings-content-max);
+  color: var(--cocoon-settings-text);
+
+  > :where(h1) {
+    margin-block: 18px 8px;
+    color: var(--cocoon-settings-text);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  > :where(p:not(.submit)) {
+    max-inline-size: 86ch;
+    margin-block: 0 20px;
+    color: var(--cocoon-settings-text-muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  > :where(p:not(.submit)) :where(a) {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  > :where(.notice) {
+    max-inline-size: 960px;
+  }
+
+  :where(form.admin-settings) {
+    margin-block-start: 22px;
+  }
+
+  :where(form.admin-settings > .submit) {
+    display: flex;
+    align-items: center;
+    min-block-size: 48px;
+    margin-block: 0 18px;
+    padding: 0;
+  }
+
+  :where(form.admin-settings > .submit .button-primary) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 40px;
+    margin: 0;
+    padding-inline: 18px;
+    border-radius: var(--cocoon-settings-radius-control);
+    font-weight: 600;
+  }
+
+  // 既存のIDセレクターと!importantを安全に上書きするため、設定画面内だけに限定する。
+  :where(#tabs > .tab-input) {
+    display: block !important;
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // 既存の#tabs＋!importantより後勝ちさせるため、タブ部分だけID詳細度を許可する。
+  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important指定との局所的な競合解消に必要。 */
+  #tabs > .tab-label {
+    display: inline-flex !important;
+    align-items: center;
+    box-sizing: border-box;
+    min-block-size: 38px;
+    margin: 0 6px 8px 0 !important;
+    padding: 7px 12px !important;
+    border: 1px solid var(--cocoon-settings-border-subtle) !important;
+    border-radius: var(--cocoon-settings-radius-control) !important;
+    background: var(--cocoon-settings-surface-subtle) !important;
+    color: var(--cocoon-settings-text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-decoration: none;
+    vertical-align: middle;
+    box-shadow: none;
+    transition:
+      background-color 120ms ease,
+      border-color 120ms ease,
+      color 120ms ease,
+      box-shadow 120ms ease;
+  }
+
+  #tabs > .tab-label:hover {
+    border-color: var(--cocoon-settings-border-control) !important;
+    background: var(--cocoon-settings-surface) !important;
+    color: var(--cocoon-settings-text);
+  }
+
+  #tabs > .tab-input:checked + .tab-label {
+    border-color: var(--cocoon-settings-accent) !important;
+    background: var(--cocoon-settings-surface) !important;
+    color: var(--cocoon-settings-text);
+    font-weight: 600;
+    box-shadow: inset 0 -3px 0 var(--cocoon-settings-accent);
+  }
+
+  #tabs > .tab-input:checked + .tab-label:hover {
+    border-color: var(--cocoon-settings-accent-hover) !important;
+    color: var(--cocoon-settings-accent-hover);
+  }
+
+  #tabs > .tab-input:focus-visible + .tab-label {
+    outline: 2px solid var(--cocoon-settings-accent);
+    outline-offset: 2px;
+  }
+  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+  :where(#tabs > .metabox-holder) {
+    min-inline-size: 0;
+    margin-block-start: 4px;
+  }
+
+  // フォーム側にはpostbox直下型とmetabox-holder入れ子型の両方がある。
+  /* stylelint-disable selector-max-compound-selectors -- 2種類の既存DOM構造だけを厳密に対象化する。 */
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) {
+    min-inline-size: 0;
+    margin-block: 0 16px;
+    padding: 0;
+    overflow: visible;
+    border: 1px solid var(--cocoon-settings-border-subtle);
+    border-radius: var(--cocoon-settings-radius-card);
+    background: var(--cocoon-settings-surface);
+    box-shadow: var(--cocoon-settings-shadow-card);
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
+    margin: 0;
+    padding: 16px 20px;
+    border-block-end: 1px solid var(--cocoon-settings-border-subtle);
+    color: var(--cocoon-settings-text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
+    margin: 0;
+    padding: 4px 20px 20px;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) {
+    margin: 0;
+    border-collapse: collapse;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) {
+    border-block-start: 1px solid #f0f0f1;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr:first-child) {
+    border-block-start: 0;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(th) {
+    inline-size: 230px;
+    padding: 18px 24px 18px 0;
+    color: var(--cocoon-settings-text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(td) {
+    min-inline-size: 0;
+    padding: 14px 0;
+    color: var(--cocoon-settings-text);
+    line-height: 1.65;
+    vertical-align: top;
+  }
+  /* stylelint-enable selector-max-compound-selectors */
+
+  :where(.postbox > .inside)
+    :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    border-radius: var(--cocoon-settings-radius-control);
+  }
+
+  // 既存の#tabs入力境界色より優先しつつ、invalid時の赤い警告境界は維持する。
+  :where(.postbox > .inside)
+    :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *, :invalid)) {
+    border-color: var(--cocoon-settings-border-control) !important;
+  }
+
+  :where(.postbox > .inside)
+    :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    min-block-size: 36px;
+  }
+
+  :where(.postbox > .inside)
+    :where(.regular-text):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    inline-size: min(100%, 520px);
+  }
+
+  :where(.postbox > .inside)
+    :where(.large-text, textarea):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    inline-size: min(100%, 760px);
+  }
+
+  :where(.postbox > .inside)
+    :where(input[type='range']):not(:where(.demo *, .wp-picker-container *, .iris-picker *)) {
+    max-inline-size: 100%;
+  }
+
+  :where(.postbox > .inside)
+    :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    min-block-size: 36px;
+    border-radius: var(--cocoon-settings-radius-control);
+  }
+
+  :where(.description, .howto):not(:where(.demo *)) {
+    color: var(--cocoon-settings-text-muted);
+    line-height: 1.65;
+  }
+
+  :where(#tabs > .metabox-holder) :where(.tips):not(:where(.demo *)) {
+    box-sizing: border-box;
+    max-inline-size: 78ch;
+    margin-block: 8px 12px !important;
+    padding: 10px 12px;
+    border: 1px solid var(--cocoon-settings-border-subtle);
+    border-inline-start: 3px solid var(--cocoon-settings-accent);
+    border-radius: var(--cocoon-settings-radius-control);
+    background: var(--cocoon-settings-surface-subtle);
+    color: var(--cocoon-settings-text-muted);
+    line-height: 1.65;
+  }
+
+  :where(#tabs > .metabox-holder) :where(.detail-area):not(:where(.demo *)) {
+    margin-block: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--cocoon-settings-border-subtle);
+    border-radius: var(--cocoon-settings-radius-control);
+    background: var(--cocoon-settings-surface-subtle);
+  }
+
+  :where(#tabs > .metabox-holder) :where(.col-2):not(:where(.demo *)) {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-inline-size: 0;
+  }
+
+  :where(#tabs > .metabox-holder) :where(.col-2 > div):not(:where(.demo *)) {
+    box-sizing: border-box;
+    flex: 1 1 320px;
+    inline-size: auto;
+    min-inline-size: 0;
+    padding: 8px;
+  }
+
+  // 設定プレビューだけを可変幅にし、TinyMCEなどの機能iframeは対象外にする。
+  :where(#tabs > .metabox-holder) :where(.uploded-thumbnail img, .iframe-demo, .mobile-demo):not(:where(.wp-editor-wrap *)) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+  }
+
+  // 直書きプレビューの100%幅へpaddingが加算されないよう、プレビュー本体だけをborder-box化する。
+  :where(#tabs > .metabox-holder) :where(.demo):not(:where(.wp-editor-wrap *)) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+  }
+
+  :where(#tabs > .metabox-holder) :where(.iframe-demo):not(:where(.wp-editor-wrap *)) {
+    border-color: var(--cocoon-settings-border-subtle);
+    border-radius: var(--cocoon-settings-radius-control);
+    background: var(--cocoon-settings-surface-subtle);
+  }
+
+  :where(#tabs > .metabox-holder) :where(.tooltip .tip-content):not(:where(.demo *, .wp-editor-wrap *)) {
+    box-sizing: border-box;
+    inline-size: min(680px, calc(100vw - 48px));
+    max-inline-size: calc(100vw - 48px);
+    padding: 12px 14px;
+    border-color: var(--cocoon-settings-warning-border);
+    border-radius: var(--cocoon-settings-radius-control);
+    background: var(--cocoon-settings-warning-bg);
+    color: var(--cocoon-settings-text);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  :where(#tab-reset-content > .postbox, #tab-reset-content > .metabox-holder > .postbox) {
+    border-color: var(--cocoon-settings-danger-border);
+    background: var(--cocoon-settings-danger-bg);
+  }
+
+  :where(#tab-reset-content > .postbox, #tab-reset-content > .metabox-holder > .postbox) > :where(.hndle) {
+    border-block-end-color: var(--cocoon-settings-danger-border);
+    color: #8a2424;
+  }
+}
+
+@media screen and (width <= 960px) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    /* stylelint-disable-next-line selector-max-compound-selectors -- 既存2種類のカードDOM内に限定する。 */
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(th) {
+      inline-size: 200px;
+      padding-inline-end: 18px;
+    }
+
+    :where(#tabs > .metabox-holder) :where(.col-2):not(:where(.demo *)) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (width <= 782px) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    max-inline-size: none;
+    margin-inline: 10px;
+
+    > :where(h1) {
+      margin-block-start: 14px;
+      font-size: 24px;
+    }
+
+    :where(form.admin-settings) {
+      padding-block-end: calc(76px + env(safe-area-inset-bottom));
+    }
+
+    // 内容の最小幅に引っ張られる自動表レイアウトを止め、カード幅内へ確実に収める。
+    :where(#tabs > .metabox-holder) :where(.form-table) {
+      inline-size: 100%;
+      max-inline-size: 100%;
+      table-layout: fixed;
+    }
+
+    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消に必要。 */
+    #tabs > .tab-label {
+      min-block-size: 44px;
+      margin: 0 4px 6px 0 !important;
+      padding: 9px 11px !important;
+      font-size: 13px;
+    }
+
+    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内に限定する。 */
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
+      padding: 14px 16px;
+    }
+
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
+      padding: 4px 16px 16px;
+    }
+
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(th) {
+      inline-size: auto;
+      padding: 16px 0 4px;
+    }
+
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(td) {
+      inline-size: auto;
+      padding: 4px 0 16px;
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+
+    :where(.postbox > .inside)
+      :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+      min-block-size: 44px;
+    }
+
+    :where(.postbox > .inside)
+      :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+      min-block-size: 44px;
+    }
+
+    // DOM末尾の既存保存ボタンを使い、フォーム値やsubmit処理は変更しない。
+    :where(form.admin-settings > .submit:last-of-type) {
+      position: fixed;
+
+      // WordPressのレスポンシブ管理メニュー（z-index: 100）を妨げない。
+      z-index: 90;
+      inset-inline: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      justify-content: center;
+      min-block-size: 64px;
+      margin: 0;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      border-block-start: 1px solid var(--cocoon-settings-border-subtle);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    :where(form.admin-settings > .submit:last-of-type .button-primary) {
+      inline-size: min(100%, 420px);
+      min-block-size: 44px;
+    }
+
+    // 既存inline最小幅をモバイルだけで解除し、横溢れを防ぐ。
+    :where(#tabs > .metabox-holder .col-2 > div) {
+      min-inline-size: 0 !important;
+    }
+
+    :where(#tabs > .metabox-holder) :where(.tooltip .tip-content):not(:where(.demo *, .wp-editor-wrap *)) {
+      position: fixed;
+      z-index: 99;
+      inset-inline: 12px;
+      bottom: calc(72px + env(safe-area-inset-bottom));
+
+      // PHPが出力するinline widthを画面内へ限定するため、この画面幅だけ例外指定する。
+      width: auto !important;
+      inline-size: auto !important;
+      max-width: calc(100vw - 24px) !important;
+      max-inline-size: calc(100vw - 24px) !important;
+      max-block-size: 50vh;
+      overflow: auto;
+      transform: none;
+    }
+
+    :where(#tabs > .metabox-holder) :where(.tooltip .tip-content):not(:where(.demo *, .wp-editor-wrap *))::before,
+    :where(#tabs > .metabox-holder) :where(.tooltip .tip-content):not(:where(.demo *, .wp-editor-wrap *))::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width <= 600px) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    :where(#tabs > .metabox-holder) :where(.col-2):not(:where(.demo *)) {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    :where(#tabs > .metabox-holder) :where(.col-2 > div):not(:where(.demo *)) {
+      flex-basis: auto;
+
+      // PHPのinline width:autoより優先し、縦積みした列を親幅へ確実に収める。
+      inline-size: 100% !important;
+      max-inline-size: 100%;
+    }
+  }
+}
+
+@media screen and (width <= 480px) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    margin-inline: 8px;
+
+    > :where(h1) {
+      font-size: 22px;
+    }
+
+    > :where(p:not(.submit)) {
+      font-size: 13px;
+    }
+
+    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消に必要。 */
+    #tabs > .tab-label {
+      padding-inline: 9px !important;
+    }
+
+    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内に限定する。 */
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
+      padding-inline: 14px;
+    }
+
+    :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
+      padding-inline: 14px;
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+
+    :where(.postbox > .inside)
+      :where(.regular-text, .large-text, textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+      inline-size: 100%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    /* stylelint-disable-next-line selector-max-specificity -- 通常時のタブ詳細度と揃える。 */
+    #tabs > .tab-label {
+      transition: none;
+    }
+
+    :where(#tabs input:invalid) {
+      animation: none;
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 通常時のタブ詳細度と揃える。 */
+    #tabs > .tab-input:checked + .tab-label {
+      border: 2px solid CanvasText !important;
+      box-shadow: none;
+    }
+
+    #tabs > .tab-input:focus-visible + .tab-label {
+      outline: 2px solid Highlight;
+    }
+    /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+    :where(form.admin-settings > .submit:last-of-type) {
+      border-block-start: 1px solid CanvasText;
+    }
+  }
+}
