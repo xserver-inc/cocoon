@@ -162,7 +162,33 @@ endif;
 <?php submit_button(__( '変更をまとめて保存', THEME_NAME )); ?>
 
 <!-- タブ機能の実装 -->
-<div id="tabs" class="tabs">
+<?php
+// 保存済みの表示モードを、初期描画のちらつき防止にだけ利用する。
+$cocoon_settings_initial_navigation_mode = function_exists( 'cocoon_get_settings_navigation_mode' )
+  ? cocoon_get_settings_navigation_mode()
+  : 'tabs';
+?>
+<div id="tabs" class="tabs" data-navigation-initial-mode="<?php echo esc_attr( $cocoon_settings_initial_navigation_mode ); ?>">
+  <?php if ( 'responsive' === $cocoon_settings_initial_navigation_mode ): ?>
+  <script>
+    // JavaScriptが有効な場合だけ初期タブを隠し、初期化不能時は必ず従来表示へ戻す。
+    ( function() {
+      var tabs = document.currentScript.parentElement;
+
+      if ( ! tabs ) {
+        return;
+      }
+
+      var revealFallbackTabs = function() {
+        tabs.classList.remove( 'is-navigation-booting' );
+      };
+
+      tabs.classList.add( 'is-navigation-booting' );
+      document.addEventListener( 'DOMContentLoaded', revealFallbackTabs, { once: true } );
+      window.setTimeout( revealFallbackTabs, 10000 );
+    }() );
+  </script>
+  <?php endif; ?>
   <input id="tab-skin-input" value="tab-skin-input" class="tab-input" type="radio" name="tab-input" checked="checked">
   <label for="tab-skin-input" id="tab-skin-label" class="tab-skin-label tab-label"><?php _e( 'スキン', THEME_NAME ) ?></label>
 

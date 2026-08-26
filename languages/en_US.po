@@ -166,9 +166,9 @@ msgstr "No keyword specified"
 msgid "Archives"
 msgstr "Archives"
 
-#: functions.php:557
-#: functions.php:558
-#: lib/admin.php:419
+#: functions.php:562
+#: functions.php:563
+#: lib/admin.php:616
 msgid "パターン一覧"
 msgstr "List of patterns."
 
@@ -341,7 +341,7 @@ msgstr "Box (icon)"
 
 #: lib/admin-tinymce-qtag.php:210
 #: lib/admin-tinymce-qtag.php:537
-#: lib/admin.php:150
+#: lib/admin.php:336
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -349,11 +349,11 @@ msgstr "Box (icon)"
 #: lib/custom-fields/memo-field.php:20
 #: skins/skin-made-in-heaven/lib/hook-wp.php:155
 #: blocks/src/block-extension/style-extension/style01.js:142
-#: blocks/src/block/icon-box/deprecated.js:98
+#: blocks/src/block/icon-box/deprecated.js:154
 #: blocks/src/block/icon-box/edit.js:45
 #: blocks/src/block/tab-box/edit.js:99
 #: blocks/src/block/test-box/deprecated.js:98
-#: blocks/src/old/tab-box/block.js:109
+#: blocks/src/old/tab-box/block.js:171
 msgid "メモ"
 msgstr "Note"
 
@@ -361,7 +361,7 @@ msgstr "Note"
 #: lib/admin-tinymce-qtag.php:357
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/_top-page.php:224
+#: lib/page-settings/_top-page.php:250
 #: lib/sns-share.php:1015
 #: lib/sns-share.php:1028
 #: lib/_defins.php:419
@@ -369,11 +369,11 @@ msgstr "Note"
 #: tmp/mobile-comments-button.php:12
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
-#: blocks/src/block/icon-box/deprecated.js:102
+#: blocks/src/block/icon-box/deprecated.js:158
 #: blocks/src/block/icon-box/edit.js:49
 #: blocks/src/block/tab-box/edit.js:75
 #: blocks/src/block/test-box/deprecated.js:102
-#: blocks/src/old/tab-box/block.js:85
+#: blocks/src/old/tab-box/block.js:147
 msgid "コメント"
 msgstr "Comments"
 
@@ -382,11 +382,11 @@ msgstr "Comments"
 #: lib/block-editor-styles-group.php:58
 #: lib/block-editor-styles-paragraph.php:93
 #: blocks/src/block-extension/style-extension/style01.js:150
-#: blocks/src/block/icon-box/deprecated.js:106
+#: blocks/src/block/icon-box/deprecated.js:162
 #: blocks/src/block/icon-box/edit.js:53
 #: blocks/src/block/tab-box/edit.js:115
 #: blocks/src/block/test-box/deprecated.js:106
-#: blocks/src/old/tab-box/block.js:125
+#: blocks/src/old/tab-box/block.js:187
 #: blocks/src/toolbutton/html.js:132
 #: blocks/src/toolbutton/ruby.js:235
 msgid "OK"
@@ -397,11 +397,11 @@ msgstr "OK"
 #: lib/block-editor-styles-group.php:66
 #: lib/block-editor-styles-paragraph.php:101
 #: blocks/src/block-extension/style-extension/style01.js:154
-#: blocks/src/block/icon-box/deprecated.js:110
+#: blocks/src/block/icon-box/deprecated.js:166
 #: blocks/src/block/icon-box/edit.js:57
 #: blocks/src/block/tab-box/edit.js:119
 #: blocks/src/block/test-box/deprecated.js:110
-#: blocks/src/old/tab-box/block.js:129
+#: blocks/src/old/tab-box/block.js:191
 msgid "NG"
 msgstr "Not good"
 
@@ -410,11 +410,11 @@ msgstr "Not good"
 #: lib/block-editor-styles-group.php:74
 #: lib/block-editor-styles-paragraph.php:109
 #: blocks/src/block-extension/style-extension/style01.js:158
-#: blocks/src/block/icon-box/deprecated.js:114
+#: blocks/src/block/icon-box/deprecated.js:170
 #: blocks/src/block/icon-box/edit.js:61
 #: blocks/src/block/tab-box/edit.js:123
 #: blocks/src/block/test-box/deprecated.js:114
-#: blocks/src/old/tab-box/block.js:133
+#: blocks/src/old/tab-box/block.js:195
 msgid "GOOD"
 msgstr "Good"
 
@@ -423,11 +423,11 @@ msgstr "Good"
 #: lib/block-editor-styles-group.php:82
 #: lib/block-editor-styles-paragraph.php:117
 #: blocks/src/block-extension/style-extension/style01.js:162
-#: blocks/src/block/icon-box/deprecated.js:118
+#: blocks/src/block/icon-box/deprecated.js:174
 #: blocks/src/block/icon-box/edit.js:65
 #: blocks/src/block/tab-box/edit.js:127
 #: blocks/src/block/test-box/deprecated.js:118
-#: blocks/src/old/tab-box/block.js:137
+#: blocks/src/old/tab-box/block.js:199
 msgid "BAD"
 msgstr "Bad"
 
@@ -440,12 +440,12 @@ msgstr "Bad"
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:122
 #: skins/skin-made-in-heaven/lib/panel-main.php:95
 #: blocks/src/block-extension/style-extension/style01.js:166
-#: blocks/src/block/icon-box/deprecated.js:122
+#: blocks/src/block/icon-box/deprecated.js:178
 #: blocks/src/block/icon-box/edit.js:69
 #: blocks/src/block/profile/index.js:21
 #: blocks/src/block/tab-box/edit.js:131
 #: blocks/src/block/test-box/deprecated.js:122
-#: blocks/src/old/tab-box/block.js:141
+#: blocks/src/old/tab-box/block.js:203
 #: blocks/src/toolbutton/dropdown-shortcodes.js:142
 #: skins/silk/gutenberg.js:94
 msgid "プロフィール"
@@ -458,7 +458,7 @@ msgstr "Box (guide)"
 #: lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:101
 #: lib/block-editor-styles-paragraph.php:136
-#: blocks/src/block/info-box/deprecated.js:85
+#: blocks/src/block/info-box/deprecated.js:141
 #: blocks/src/block/info-box/edit.js:33
 msgid "プライマリー（濃い水色）"
 msgstr "Primary (dark blue)"
@@ -466,7 +466,7 @@ msgstr "Primary (dark blue)"
 #: lib/admin-tinymce-qtag.php:255
 #: lib/block-editor-styles-group.php:109
 #: lib/block-editor-styles-paragraph.php:144
-#: blocks/src/block/info-box/deprecated.js:89
+#: blocks/src/block/info-box/deprecated.js:145
 #: blocks/src/block/info-box/edit.js:37
 msgid "セカンダリー（濃い灰色）"
 msgstr "Secondary (dark gray)"
@@ -488,7 +488,7 @@ msgstr "Info (light blue)"
 #: lib/admin-tinymce-qtag.php:270
 #: lib/block-editor-styles-group.php:133
 #: lib/block-editor-styles-paragraph.php:168
-#: blocks/src/block/info-box/deprecated.js:101
+#: blocks/src/block/info-box/deprecated.js:157
 #: blocks/src/block/info-box/edit.js:49
 msgid "ワーニング（薄い黄色）"
 msgstr "Warning (light yellow)"
@@ -496,7 +496,7 @@ msgstr "Warning (light yellow)"
 #: lib/admin-tinymce-qtag.php:275
 #: lib/block-editor-styles-group.php:141
 #: lib/block-editor-styles-paragraph.php:176
-#: blocks/src/block/info-box/deprecated.js:105
+#: blocks/src/block/info-box/deprecated.js:161
 #: blocks/src/block/info-box/edit.js:53
 msgid "デンジャー（薄い赤色）"
 msgstr "Danger (light red)"
@@ -504,7 +504,7 @@ msgstr "Danger (light red)"
 #: lib/admin-tinymce-qtag.php:280
 #: lib/block-editor-styles-group.php:149
 #: lib/block-editor-styles-paragraph.php:184
-#: blocks/src/block/info-box/deprecated.js:109
+#: blocks/src/block/info-box/deprecated.js:165
 #: blocks/src/block/info-box/edit.js:57
 msgid "ライト（白色）"
 msgstr "Light (white)"
@@ -512,7 +512,7 @@ msgstr "Light (white)"
 #: lib/admin-tinymce-qtag.php:285
 #: lib/block-editor-styles-group.php:157
 #: lib/block-editor-styles-paragraph.php:192
-#: blocks/src/block/info-box/deprecated.js:113
+#: blocks/src/block/info-box/deprecated.js:169
 #: blocks/src/block/info-box/edit.js:61
 msgid "ダーク（暗い灰色）"
 msgstr "Dark (dark gray)"
@@ -542,9 +542,9 @@ msgstr "Box (outline)"
 #: lib/gutenberg.php:110
 #: lib/widgets/cta-box.php:184
 #: blocks/src/block/cta/edit.js:224
-#: blocks/src/block/sticky-box/deprecated.js:87
+#: blocks/src/block/sticky-box/deprecated.js:221
 #: blocks/src/block/sticky-box/edit.js:33
-#: blocks/src/old/tab-box/block.js:155
+#: blocks/src/old/tab-box/block.js:217
 #: blocks/src/toolbutton/badge-grey.js:14
 msgid "灰色"
 msgstr "Gray"
@@ -570,14 +570,14 @@ msgstr "Gray"
 #: lib/gutenberg.php:80
 #: lib/widgets/cta-box.php:179
 #: blocks/src/block/cta/edit.js:213
-#: blocks/src/block/sticky-box/deprecated.js:91
+#: blocks/src/block/sticky-box/deprecated.js:225
 #: blocks/src/block/sticky-box/edit.js:37
-#: blocks/src/old/blank-box/block.js:78
+#: blocks/src/old/blank-box/block.js:135
 #: blocks/src/old/caption-box/block.js:72
 #: blocks/src/old/label-box/block.js:71
-#: blocks/src/old/micro-balloon-1/block.js:98
-#: blocks/src/old/micro-balloon/block.js:97
-#: blocks/src/old/tab-box/block.js:159
+#: blocks/src/old/micro-balloon-1/block.js:185
+#: blocks/src/old/micro-balloon/block.js:182
+#: blocks/src/old/tab-box/block.js:221
 #: blocks/src/old/tab-caption-box/block.js:72
 #: blocks/src/old/toggle-box/block.js:75
 #: blocks/src/toolbutton/badge-yellow.js:14
@@ -605,14 +605,14 @@ msgstr "Yellow"
 #: lib/gutenberg.php:20
 #: lib/widgets/cta-box.php:167
 #: blocks/src/block/cta/edit.js:189
-#: blocks/src/block/sticky-box/deprecated.js:95
+#: blocks/src/block/sticky-box/deprecated.js:229
 #: blocks/src/block/sticky-box/edit.js:41
-#: blocks/src/old/blank-box/block.js:82
+#: blocks/src/old/blank-box/block.js:139
 #: blocks/src/old/caption-box/block.js:76
 #: blocks/src/old/label-box/block.js:75
-#: blocks/src/old/micro-balloon-1/block.js:102
-#: blocks/src/old/micro-balloon/block.js:101
-#: blocks/src/old/tab-box/block.js:163
+#: blocks/src/old/micro-balloon-1/block.js:189
+#: blocks/src/old/micro-balloon/block.js:186
+#: blocks/src/old/tab-box/block.js:225
 #: blocks/src/old/tab-caption-box/block.js:76
 #: blocks/src/old/toggle-box/block.js:79
 #: blocks/src/toolbutton/badge-red.js:14
@@ -643,14 +643,14 @@ msgstr "Red"
 #: lib/gutenberg.php:45
 #: lib/widgets/cta-box.php:172
 #: blocks/src/block/cta/edit.js:197
-#: blocks/src/block/sticky-box/deprecated.js:99
+#: blocks/src/block/sticky-box/deprecated.js:233
 #: blocks/src/block/sticky-box/edit.js:45
-#: blocks/src/old/blank-box/block.js:86
+#: blocks/src/old/blank-box/block.js:143
 #: blocks/src/old/caption-box/block.js:80
 #: blocks/src/old/label-box/block.js:79
-#: blocks/src/old/micro-balloon-1/block.js:106
-#: blocks/src/old/micro-balloon/block.js:105
-#: blocks/src/old/tab-box/block.js:167
+#: blocks/src/old/micro-balloon-1/block.js:193
+#: blocks/src/old/micro-balloon/block.js:190
+#: blocks/src/old/tab-box/block.js:229
 #: blocks/src/old/tab-caption-box/block.js:80
 #: blocks/src/old/toggle-box/block.js:83
 #: blocks/src/toolbutton/badge-blue.js:14
@@ -681,14 +681,14 @@ msgstr "Blue"
 #: lib/gutenberg.php:65
 #: lib/widgets/cta-box.php:176
 #: blocks/src/block/cta/edit.js:207
-#: blocks/src/block/sticky-box/deprecated.js:103
+#: blocks/src/block/sticky-box/deprecated.js:237
 #: blocks/src/block/sticky-box/edit.js:49
-#: blocks/src/old/blank-box/block.js:90
+#: blocks/src/old/blank-box/block.js:147
 #: blocks/src/old/caption-box/block.js:84
 #: blocks/src/old/label-box/block.js:83
-#: blocks/src/old/micro-balloon-1/block.js:110
-#: blocks/src/old/micro-balloon/block.js:109
-#: blocks/src/old/tab-box/block.js:171
+#: blocks/src/old/micro-balloon-1/block.js:197
+#: blocks/src/old/micro-balloon/block.js:194
+#: blocks/src/old/tab-box/block.js:233
 #: blocks/src/old/tab-caption-box/block.js:84
 #: blocks/src/old/toggle-box/block.js:87
 #: blocks/src/toolbutton/badge-green.js:14
@@ -707,63 +707,63 @@ msgstr "Box (tab)"
 #: lib/utils.php:1037
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
-#: blocks/src/block/blogcard/deprecated.js:83
+#: blocks/src/block/blogcard/deprecated.js:150
 #: blocks/src/block/blogcard/edit.js:64
 #: blocks/src/block/tab-box/edit.js:71
 #: blocks/src/old/blogcard-class/block.js:91
-#: blocks/src/old/tab-box/block.js:81
+#: blocks/src/old/tab-box/block.js:143
 msgid "チェック"
 msgstr "Check"
 
 #: lib/admin-tinymce-qtag.php:387
 #: blocks/src/block/tab-box/edit.js:79
-#: blocks/src/old/tab-box/block.js:89
+#: blocks/src/old/tab-box/block.js:151
 msgid "ポイント"
 msgstr "Point"
 
 #: lib/admin-tinymce-qtag.php:417
 #: blocks/src/block/tab-box/edit.js:83
-#: blocks/src/old/tab-box/block.js:93
+#: blocks/src/old/tab-box/block.js:155
 msgid "ティップス"
 msgstr "Tips"
 
 #: lib/admin-tinymce-qtag.php:447
 #: blocks/src/block/tab-box/edit.js:87
-#: blocks/src/old/tab-box/block.js:97
+#: blocks/src/old/tab-box/block.js:159
 msgid "ヒント"
 msgstr "Hint"
 
 #: lib/admin-tinymce-qtag.php:477
 #: lib/admin-tinymce-qtag.php:1688
 #: lib/utils.php:1036
-#: blocks/src/block/blogcard/deprecated.js:87
+#: blocks/src/block/blogcard/deprecated.js:154
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
 #: blocks/src/old/blogcard-class/block.js:95
-#: blocks/src/old/tab-box/block.js:101
+#: blocks/src/old/tab-box/block.js:163
 msgid "ピックアップ"
 msgstr "Recommended"
 
 #: lib/admin-tinymce-qtag.php:507
 #: blocks/src/block/tab-box/edit.js:95
-#: blocks/src/old/tab-box/block.js:105
+#: blocks/src/old/tab-box/block.js:167
 msgid "ブックマーク"
 msgstr "Bookmark"
 
 #: lib/admin-tinymce-qtag.php:567
 #: lib/admin-tinymce-qtag.php:1700
-#: lib/page-access/analytics/dashboard-page.php:630
+#: lib/page-access/analytics/dashboard-page.php:644
 #: lib/utils.php:1041
-#: blocks/src/block/blogcard/deprecated.js:95
+#: blocks/src/block/blogcard/deprecated.js:162
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
-#: blocks/src/old/tab-box/block.js:113
+#: blocks/src/old/tab-box/block.js:175
 msgid "ダウンロード"
 msgstr "Download"
 
 #: lib/admin-tinymce-qtag.php:597
 #: blocks/src/block/tab-box/edit.js:107
-#: blocks/src/old/tab-box/block.js:117
+#: blocks/src/old/tab-box/block.js:179
 msgid "ブレイク"
 msgstr "Break"
 
@@ -771,7 +771,7 @@ msgstr "Break"
 #: lib/page-settings/apis-forms.php:29
 #: lib/page-settings/apis-funcs.php:142
 #: blocks/src/block/tab-box/edit.js:111
-#: blocks/src/old/tab-box/block.js:121
+#: blocks/src/old/tab-box/block.js:183
 msgid "Amazon"
 msgstr "Amazon"
 
@@ -891,7 +891,7 @@ msgstr "Speech balloon (below)"
 
 #: lib/admin-tinymce-qtag.php:982
 #: lib/page-settings/editor-forms.php:139
-#: lib/page-settings/_top-page.php:242
+#: lib/page-settings/_top-page.php:268
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
 #: blocks/src/blocks.js:119
@@ -1205,7 +1205,7 @@ msgstr "Surround blog card label"
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
-#: blocks/src/block/blogcard/deprecated.js:59
+#: blocks/src/block/blogcard/deprecated.js:126
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:71
 msgid "関連記事"
@@ -1213,7 +1213,7 @@ msgstr "Related posts"
 
 #: lib/admin-tinymce-qtag.php:1652
 #: lib/utils.php:1033
-#: blocks/src/block/blogcard/deprecated.js:63
+#: blocks/src/block/blogcard/deprecated.js:130
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
 msgid "参考記事"
@@ -1221,7 +1221,7 @@ msgstr "Reference posts"
 
 #: lib/admin-tinymce-qtag.php:1658
 #: lib/utils.php:1034
-#: blocks/src/block/blogcard/deprecated.js:67
+#: blocks/src/block/blogcard/deprecated.js:134
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
 msgstr "Reference link"
@@ -1234,7 +1234,7 @@ msgstr "Reference link"
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
 #: skins/skin-made-in-heaven/lib/panel-option.php:72
-#: blocks/src/block/blogcard/deprecated.js:71
+#: blocks/src/block/blogcard/deprecated.js:138
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
 #: blocks/src/old/blogcard-class/block.js:79
@@ -1243,7 +1243,7 @@ msgstr "Popular posts"
 
 #: lib/admin-tinymce-qtag.php:1670
 #: lib/utils.php:1038
-#: blocks/src/block/blogcard/deprecated.js:75
+#: blocks/src/block/blogcard/deprecated.js:142
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
 msgid "あわせて読みたい"
@@ -1253,7 +1253,7 @@ msgstr "Read together"
 #: lib/shortcodes.php:1201
 #: lib/utils.php:1039
 #: lib/widgets/cta-box.php:34
-#: blocks/src/block/blogcard/deprecated.js:79
+#: blocks/src/block/blogcard/deprecated.js:146
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:87
 msgid "詳細はこちら"
@@ -1261,7 +1261,7 @@ msgstr "Details"
 
 #: lib/admin-tinymce-qtag.php:1694
 #: lib/utils.php:1040
-#: blocks/src/block/blogcard/deprecated.js:91
+#: blocks/src/block/blogcard/deprecated.js:158
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
 msgid "公式サイト"
@@ -1283,11 +1283,11 @@ msgstr "Next post"
 msgid "商品リンクの追加"
 msgstr "Add product link"
 
-#: lib/admin.php:146
+#: lib/admin.php:332
 msgid "ID"
 msgstr "ID"
 
-#: lib/admin.php:147
+#: lib/admin.php:333
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1296,87 +1296,90 @@ msgstr "ID"
 msgid "文字数"
 msgstr "Character count"
 
-#: lib/admin.php:148
+#: lib/admin.php:334
+#: lib/page-access/access-func.php:752
 #: lib/page-access/analytics/enqueue-func.php:107
+#: lib/page-access/analytics/render-func.php:386
+#: lib/page-access/analytics/render-func.php:623
 msgid "PV"
 msgstr "PV"
 
-#: lib/admin.php:149
+#: lib/admin.php:335
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr "Featured image"
 
-#: lib/admin.php:184
+#: lib/admin.php:370
 msgid "　題："
 msgstr "　Title:"
 
-#: lib/admin.php:192
+#: lib/admin.php:378
 msgid "本文："
 msgstr "Body:"
 
-#: lib/admin.php:207
+#: lib/admin.php:404
 msgid "日："
 msgstr "Day:"
 
-#: lib/admin.php:215
+#: lib/admin.php:412
 msgid "週："
 msgstr "Week :"
 
-#: lib/admin.php:223
+#: lib/admin.php:420
 msgid "月："
 msgstr "Month :"
 
-#: lib/admin.php:231
+#: lib/admin.php:428
 msgid "全："
 msgstr "All :"
 
-#: lib/admin.php:316
+#: lib/admin.php:513
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr "Short code"
 
-#: lib/admin.php:404
+#: lib/admin.php:601
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr "Admin menu"
 
-#: lib/admin.php:410
-#: lib/page-access/analytics/render-func.php:97
+#: lib/admin.php:607
+#: lib/page-access/analytics/render-func.php:161
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr "Dashboard"
 
-#: lib/admin.php:411
+#: lib/admin.php:608
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr "Posts"
 
-#: lib/admin.php:412
+#: lib/admin.php:609
 msgid "固定ページ一覧"
 msgstr "Pages"
 
-#: lib/admin.php:413
+#: lib/admin.php:610
 msgid "メディア一覧"
 msgstr "Media"
 
-#: lib/admin.php:414
+#: lib/admin.php:611
 msgid "テーマ"
 msgstr "Themes"
 
-#: lib/admin.php:424
+#: lib/admin.php:621
 msgid "カスタマイズ"
 msgstr "Customize"
 
-#: lib/admin.php:425
-#: lib/page-settings/_top-page.php:264
+#: lib/admin.php:622
+#: lib/page-settings/_top-page.php:290
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr "Widgets"
 
-#: lib/admin.php:426
+#: lib/admin.php:623
 #: skins/skin-made-in-heaven/lib/hook-wp.php:665
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
@@ -1384,26 +1387,26 @@ msgstr "Widgets"
 msgid "メニュー"
 msgstr "Menus"
 
-#: lib/admin.php:427
+#: lib/admin.php:624
 msgid "テーマの編集"
 msgstr "Theme editor"
 
-#: lib/admin.php:428
+#: lib/admin.php:625
 msgid "プラグイン一覧"
 msgstr "Plugins"
 
-#: lib/admin.php:528
+#: lib/admin.php:725
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr "Category search"
 
-#: lib/admin.php:588
-#: lib/admin.php:602
+#: lib/admin.php:785
+#: lib/admin.php:799
 msgid "Excerpt"
 msgstr "Excerpt"
 
 #: lib/block-amazon-product-link-cron.php:19
-#: lib/page-settings/apis-forms.php:385
+#: lib/page-settings/apis-forms.php:386
 msgid "2日ごと"
 msgstr "Every 2 days"
 
@@ -1412,12 +1415,12 @@ msgid "3日ごと"
 msgstr "Every 3 days"
 
 #: lib/block-amazon-product-link-cron.php:29
-#: lib/page-settings/apis-forms.php:387
+#: lib/page-settings/apis-forms.php:388
 msgid "5日ごと"
 msgstr "Every 5 days"
 
 #: lib/block-amazon-product-link-cron.php:34
-#: lib/page-settings/apis-forms.php:389
+#: lib/page-settings/apis-forms.php:390
 msgid "2週間ごと"
 msgstr "Every two weeks"
 
@@ -1773,7 +1776,7 @@ msgstr ""
 
 #: lib/content-category.php:257
 #: lib/content-tag.php:233
-#: lib/page-settings/_top-page.php:203
+#: lib/page-settings/_top-page.php:229
 msgid "本文"
 msgstr "Body"
 
@@ -1903,33 +1906,32 @@ msgstr ""
 "*Even if it is a custom post category, the public page will be recognized "
 "as a tag."
 
-#: lib/creators-api.php:95
+#: lib/creators-api.php:228
 msgid "Creators APIの認証バージョンが正しくありません。"
 msgstr "The Creators API authentication version is incorrect."
 
-#: lib/creators-api.php:146
+#: lib/creators-api.php:171
 msgid "Creators APIのトークン取得に失敗しました。"
 msgstr "Failed to obtain Creators API token."
 
-#: lib/creators-api.php:153
+#: lib/creators-api.php:178
 msgid "Creators APIのトークンレスポンスを解析できませんでした。"
 msgstr "Could not parse the Creators API token response."
 
-#: lib/creators-api.php:168
-#: lib/creators-api.php:564
-#: lib/creators-api.php:798
+#: lib/creators-api.php:202
+#: lib/creators-api.php:534
 msgid "Creators APIのアクセストークンが取得できませんでした。"
 msgstr "Could not obtain the Creators API access token."
 
-#: lib/creators-api.php:650
-#: lib/creators-api.php:891
+#: lib/creators-api.php:985
+#: lib/creators-api.php:1193
 msgid "Creators APIのレスポンスを解析できませんでした。"
 msgstr "Could not parse the Creators API response."
 
 #: lib/custom-fields/ad-field.php:17
 #: lib/custom-fields/ad-field.php:18
 #: lib/custom-fields/ad-field.php:20
-#: lib/page-settings/_top-page.php:176
+#: lib/page-settings/_top-page.php:202
 #: lib/widgets/ad.php:19
 #: blocks/src/block/ad/edit.js:25
 #: blocks/src/block/ad/index.js:21
@@ -1962,7 +1964,7 @@ msgstr ""
 #: lib/custom-fields/amp-field.php:20
 #: lib/custom-fields/amp-field.php:22
 #: lib/page-cache/cache-forms.php:79
-#: lib/page-settings/_top-page.php:252
+#: lib/page-settings/_top-page.php:278
 msgid "AMP"
 msgstr "AMP"
 
@@ -2002,12 +2004,13 @@ msgstr ""
 msgid "この投稿に記録しておきたいメモがある場合は記入してください。"
 msgstr "Enter a note if you want to record one for this post."
 
+#: lib/admin.php:181
 #: lib/custom-fields/other-field.php:17
 #: lib/custom-fields/other-field.php:19
-#: lib/page-access/analytics/dashboard-page.php:85
-#: lib/page-access/analytics/dashboard-page.php:98
-#: lib/page-access/analytics/dashboard-page.php:110
-#: lib/page-settings/_top-page.php:276
+#: lib/page-access/analytics/dashboard-page.php:96
+#: lib/page-access/analytics/dashboard-page.php:109
+#: lib/page-access/analytics/dashboard-page.php:121
+#: lib/page-settings/_top-page.php:302
 msgid "その他"
 msgstr "Other"
 
@@ -2053,12 +2056,12 @@ msgstr "Page settings"
 #: blocks/src/block/popular-list/edit.js:230
 #: blocks/src/old/balloon-ex-fix1/block.js:174
 #: blocks/src/old/balloon-ex-v2/block.js:94
-#: blocks/src/old/balloon-ex/block.js:164
-#: blocks/src/old/blank-box/block.js:74
+#: blocks/src/old/balloon-ex/block.js:291
+#: blocks/src/old/blank-box/block.js:131
 #: blocks/src/old/caption-box/block.js:68
 #: blocks/src/old/label-box/block.js:67
-#: blocks/src/old/micro-balloon-1/block.js:94
-#: blocks/src/old/micro-balloon/block.js:93
+#: blocks/src/old/micro-balloon-1/block.js:181
+#: blocks/src/old/micro-balloon/block.js:178
 #: blocks/src/old/tab-caption-box/block.js:68
 #: blocks/src/old/toggle-box/block.js:71
 msgid "デフォルト"
@@ -2237,7 +2240,7 @@ msgstr "Enter a rating between 0 and 5."
 #: lib/custom-fields/seo-field.php:17
 #: lib/custom-fields/seo-field.php:18
 #: lib/custom-fields/seo-field.php:20
-#: lib/page-settings/_top-page.php:182
+#: lib/page-settings/_top-page.php:208
 msgid "SEO"
 msgstr "SEO"
 
@@ -2350,26 +2353,25 @@ msgstr "M j, Y @ H:i"
 
 #: lib/custom-fields/update-field.php:88
 #: lib/custom-fields/update-field.php:90
-#: lib/page-access/access-func.php:779
+#: lib/page-access/access-func.php:780
 msgid "年"
 msgstr "Year"
 
 #: lib/custom-fields/update-field.php:92
-#: lib/page-access/access-func.php:778
-#: lib/page-access/analytics/dashboard-page.php:171
+#: lib/page-access/access-func.php:779
+#: lib/page-access/analytics/dashboard-page.php:185
 #: lib/page-access/analytics/enqueue-func.php:71
 msgid "月"
 msgstr "Month"
 
 #: lib/custom-fields/update-field.php:102
 #: lib/custom-fields/update-field.php:104
-#: lib/page-access/access-func.php:776
-#: lib/page-access/access-func.php:900
-#: lib/page-access/access-func.php:904
-#: lib/page-access/analytics/dashboard-page.php:169
+#: lib/page-access/access-func.php:753
+#: lib/page-access/access-func.php:777
+#: lib/page-access/analytics/dashboard-page.php:183
 #: lib/page-access/analytics/enqueue-func.php:70
 #: lib/page-access/analytics/enqueue-func.php:110
-#: lib/page-settings/apis-forms.php:337
+#: lib/page-settings/apis-forms.php:338
 msgid "日"
 msgstr "Day"
 
@@ -2701,10 +2703,10 @@ msgstr "Entered"
 #: lib/html-forms.php:573
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:22
-#: blocks/src/old/balloon-2/block.js:28
+#: blocks/src/old/balloon-2/block.js:29
 #: blocks/src/old/balloon-ex-fix1/block.js:24
 #: blocks/src/old/balloon-ex-v2/block.js:22
-#: blocks/src/old/balloon-ex/block.js:23
+#: blocks/src/old/balloon-ex/block.js:24
 #: blocks/src/old/balloon/block.js:20
 msgid "未入力"
 msgstr "Not entered"
@@ -2742,7 +2744,7 @@ msgstr "Front page only"
 #: lib/page-settings/sns-follow-forms.php:97
 #: lib/page-settings/sns-share-forms-bottom.php:101
 #: lib/page-settings/sns-share-forms-top.php:88
-#: lib/page-settings/_top-page.php:197
+#: lib/page-settings/_top-page.php:223
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
 msgstr "Post"
@@ -2753,7 +2755,7 @@ msgstr "Post"
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/toc-forms.php:78
-#: lib/page-settings/_top-page.php:200
+#: lib/page-settings/_top-page.php:226
 #: lib/shortcodes.php:517
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
@@ -2780,7 +2782,7 @@ msgid "検索結果一覧"
 msgstr "Search results list"
 
 #: lib/html-forms.php:810
-#: lib/page-settings/_top-page.php:248
+#: lib/page-settings/_top-page.php:274
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr "404 pages"
@@ -2839,50 +2841,50 @@ msgstr "Enter tag IDs, separated by commas."
 msgid "現在、「カスタム投稿タイプ」は存在しません。"
 msgstr "No custom post types currently exist."
 
-#: lib/html-forms.php:1061
+#: lib/html-forms.php:1066
 msgid "人気記事は見つかりませんでした。"
 msgstr "Popular posts were not found."
 
-#: lib/html-forms.php:1301
-#: lib/html-forms.php:1840
+#: lib/html-forms.php:1314
+#: lib/html-forms.php:1856
 msgid "記事は見つかりませんでした。"
 msgstr "No posts found."
 
-#: lib/html-forms.php:1425
+#: lib/html-forms.php:1438
 #. translators: %s: author's display name
 #, php-format
 msgid "Posts by %s"
 msgstr "Posts by %s"
 
-#: lib/html-forms.php:1429
+#: lib/html-forms.php:1442
 msgid "NO USER"
 msgstr "NO USER"
 
-#: lib/html-forms.php:1468
+#: lib/html-forms.php:1481
 msgid "管理者用エラーメッセージ"
 msgstr "Error messages for the administrator"
 
-#: lib/html-forms.php:1701
+#: lib/html-forms.php:1714
 msgid "おすすめ"
 msgstr "Recommended"
 
-#: lib/html-forms.php:1704
+#: lib/html-forms.php:1717
 msgid "新着"
 msgstr "New posts"
 
-#: lib/html-forms.php:1707
+#: lib/html-forms.php:1720
 msgid "注目"
 msgstr "Featured"
 
-#: lib/html-forms.php:1710
+#: lib/html-forms.php:1723
 msgid "必見"
 msgstr "Must-see"
 
-#: lib/html-forms.php:1713
+#: lib/html-forms.php:1726
 msgid "お得"
 msgstr "Great deals"
 
-#: lib/html-forms.php:1756
+#: lib/html-forms.php:1769
 #: lib/shortcodes.php:1071
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -2947,7 +2949,7 @@ msgstr "Cocoon Settings"
 #: skins/skin-made-in-heaven/lib/hook-wp.php:338
 #: blocks/src/block/balloon/index.js:21
 #: blocks/src/old/balloon-1/block.js:63
-#: blocks/src/old/balloon-2/block.js:52
+#: blocks/src/old/balloon-2/block.js:178
 #: blocks/src/old/balloon/block.js:45
 msgid "吹き出し"
 msgstr "Speech balloon"
@@ -2975,7 +2977,7 @@ msgid "アフィリエイトタグ"
 msgstr "Affiliate tag"
 
 #: lib/original-menu.php:18
-#: lib/page-access/analytics/render-func.php:98
+#: lib/page-access/analytics/render-func.php:162
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
 #: lib/utils.php:1071
@@ -2992,7 +2994,7 @@ msgstr "Ranking"
 #: lib/original-menu.php:19
 #: lib/page-access/access-forms.php:14
 #: lib/page-access/access-forms.php:26
-#: lib/page-access/analytics/dashboard-page.php:35
+#: lib/page-access/analytics/dashboard-page.php:58
 msgid "アクセス集計"
 msgstr "Access summary"
 
@@ -3081,7 +3083,7 @@ msgid "20分"
 msgstr "20 minutes"
 
 #: lib/page-access/access-forms.php:59
-#: lib/page-access/analytics/settings-forms.php:60
+#: lib/page-access/analytics/settings-forms.php:39
 msgid "30分"
 msgstr "30 minutes"
 
@@ -3090,7 +3092,7 @@ msgid "45分"
 msgstr "45 minutes"
 
 #: lib/page-access/access-forms.php:61
-#: lib/page-access/analytics/settings-forms.php:61
+#: lib/page-access/analytics/settings-forms.php:40
 #: lib/page-settings/sns-share-forms.php:172
 msgid "1時間"
 msgstr "1 hour"
@@ -3105,13 +3107,13 @@ msgid "2時間"
 msgstr "2 hours"
 
 #: lib/page-access/access-forms.php:64
-#: lib/page-access/analytics/settings-forms.php:62
+#: lib/page-access/analytics/settings-forms.php:41
 #: lib/page-settings/sns-share-forms.php:174
 msgid "3時間"
 msgstr "3 hours"
 
 #: lib/page-access/access-forms.php:65
-#: lib/page-access/analytics/settings-forms.php:63
+#: lib/page-access/analytics/settings-forms.php:42
 #: lib/page-settings/sns-follow-forms.php:233
 #: lib/page-settings/sns-share-forms.php:177
 msgid "6時間"
@@ -3133,7 +3135,7 @@ msgid "18時間"
 msgstr "18 hours"
 
 #: lib/page-access/access-forms.php:69
-#: lib/page-access/analytics/settings-forms.php:64
+#: lib/page-access/analytics/settings-forms.php:43
 #: lib/page-settings/sns-follow-forms.php:236
 #: lib/page-settings/sns-share-forms.php:183
 msgid "24時間"
@@ -3158,12 +3160,12 @@ msgstr "1 week"
 msgid "設定間隔ごとに新しいキャッシュを生成します"
 msgstr "Generate new cache at set intervals"
 
-#: lib/page-access/analytics/settings-forms.php:29
+#: lib/page-access/analytics/settings-posts.php:39
 #: lib/page-speed-up/_top-page.php:27
 msgid "設定を変更しました。"
 msgstr "Changed the settings."
 
-#: lib/page-access/analytics/settings-forms.php:109
+#: lib/page-access/analytics/settings-forms.php:89
 #: lib/page-item-ranking/form.php:111
 #: lib/page-speed-up/_top-page.php:51
 msgid "変更を保存"
@@ -3198,12 +3200,12 @@ msgstr "Remove"
 msgid "削除しないで一覧に戻る"
 msgstr "Do not remove and go back to the list"
 
-#: lib/page-access/analytics/dashboard-page.php:359
+#: lib/page-access/analytics/dashboard-page.php:373
 #: lib/page-affiliate-tag/form.php:30
 #: lib/page-func-text/form.php:30
 #: lib/page-item-ranking/form.php:80
 #: lib/page-settings/appeal-forms.php:112
-#: lib/page-settings/_top-page.php:179
+#: lib/page-settings/_top-page.php:205
 #: lib/page-speech-balloon/form.php:49
 #: lib/widgets/author-box.php:68
 #: lib/widgets/box-menus.php:73
@@ -3327,8 +3329,8 @@ msgstr "Short code:"
 msgid "非表示"
 msgstr "Hide"
 
-#: lib/page-access/analytics/render-func.php:299
-#: lib/page-access/analytics/render-func.php:426
+#: lib/page-access/analytics/render-func.php:379
+#: lib/page-access/analytics/render-func.php:506
 #: lib/page-affiliate-tag/list.php:87
 #: lib/page-func-text/list.php:87
 #: lib/page-item-ranking/list.php:101
@@ -3454,7 +3456,7 @@ msgstr "The settings were restored."
 msgid "テーマで利用されている各種キャッシュを削除します。"
 msgstr "Delete the various caches that are used by the theme."
 
-#: lib/page-access/analytics/render-func.php:337
+#: lib/page-access/analytics/render-func.php:417
 #: lib/page-cache/cache-forms.php:25
 msgid "すべて"
 msgstr "All"
@@ -3493,7 +3495,7 @@ msgstr "Delete the ranking result cache of the popular posts widget."
 
 #: lib/page-cache/cache-forms.php:64
 #: lib/page-settings/image-forms.php:217
-#: lib/page-settings/_top-page.php:218
+#: lib/page-settings/_top-page.php:244
 #: blocks/src/block/blogcard/index.js:54
 #: blocks/src/old/blogcard-class/block.js:34
 msgid "ブログカード"
@@ -3686,7 +3688,7 @@ msgstr "Rating:"
 #: skins/skin-made-in-heaven/lib/panel-visual.php:40
 #: skins/skin-made-in-heaven/lib/panel-visual.php:91
 #: skins/skin-made-in-heaven/lib/panel-visual.php:106
-#: blocks/src/block/blogcard/deprecated.js:55
+#: blocks/src/block/blogcard/deprecated.js:122
 #: blocks/src/block/blogcard/edit.js:36
 #: blocks/src/old/blogcard-class/block.js:67
 msgid "なし"
@@ -5870,15 +5872,6 @@ msgstr "API settings"
 msgid "各種APIやアフィリエイトIDの設定です。"
 msgstr "Various API and affiliate ID settings."
 
-#: lib/page-settings/apis-forms.php:39
-msgid ""
-"※こちらの設定は非推奨です。2026年1月31日以降PA-"
-"APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。"
-msgstr ""
-"* This setting is deprecated. Due to PA-API specification changes after "
-"January 31, 2026, some product information (e.g. price) will no longer be "
-"available. Please configure the Creators API to use all features."
-
 #: lib/page-settings/apis-forms.php:42
 msgid "アクセスキーID"
 msgstr "Access key ID"
@@ -5887,7 +5880,7 @@ msgstr "Access key ID"
 #: lib/page-settings/apis-forms.php:50
 #: lib/page-settings/apis-forms.php:62
 #: lib/page-settings/apis-forms.php:69
-#: lib/page-settings/apis-forms.php:79
+#: lib/page-settings/apis-forms.php:80
 msgid "Amazon必須"
 msgstr "Amazon required"
 
@@ -5895,11 +5888,11 @@ msgstr "Amazon required"
 #: lib/page-settings/apis-forms.php:51
 #: lib/page-settings/apis-forms.php:63
 #: lib/page-settings/apis-forms.php:70
-#: lib/page-settings/apis-forms.php:80
-#: lib/page-settings/apis-forms.php:146
-#: lib/page-settings/apis-forms.php:154
-#: lib/page-settings/apis-forms.php:161
-#: lib/page-settings/apis-forms.php:308
+#: lib/page-settings/apis-forms.php:81
+#: lib/page-settings/apis-forms.php:147
+#: lib/page-settings/apis-forms.php:155
+#: lib/page-settings/apis-forms.php:162
+#: lib/page-settings/apis-forms.php:309
 msgid "もしも必須"
 msgstr "Moshimo required"
 
@@ -5931,27 +5924,27 @@ msgstr "Secret"
 msgid "Creators APIのシークレットを入力してください。"
 msgstr "Please enter your Creators API Secret."
 
-#: lib/page-settings/apis-forms.php:74
+#: lib/page-settings/apis-forms.php:75
 msgid "Creators APIとPA-APIの両方が設定されている場合、Creators APIが優先されます。"
 msgstr "If both Creators API and PA-API are configured, Creators API takes priority."
 
-#: lib/page-settings/apis-forms.php:78
+#: lib/page-settings/apis-forms.php:79
 msgid "トラッキングID"
 msgstr "Tracking ID"
 
-#: lib/page-settings/apis-forms.php:82
+#: lib/page-settings/apis-forms.php:83
 msgid "yourid-22"
 msgstr "yourid-22"
 
-#: lib/page-settings/apis-forms.php:83
+#: lib/page-settings/apis-forms.php:84
 msgid "AmazonアソシエイトのトラッキングIDを入力してください。"
 msgstr "Enter an Amazon associate tracking ID."
 
-#: lib/page-settings/apis-forms.php:87
+#: lib/page-settings/apis-forms.php:88
 msgid "カタログ写真を表示する"
 msgstr "Display catalog photos"
 
-#: lib/page-settings/apis-forms.php:88
+#: lib/page-settings/apis-forms.php:89
 msgid ""
 "サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されま"
 "す。"
@@ -5960,47 +5953,47 @@ msgstr ""
 "displayed separately from the thumbnails in a button-like form. Hover your "
 "mouse over it to see a larger picture."
 
-#: lib/page-settings/apis-forms.php:90
-#: lib/page-settings/apis-forms.php:178
+#: lib/page-settings/apis-forms.php:91
+#: lib/page-settings/apis-forms.php:179
 msgid "価格を表示する"
 msgstr "Display price"
 
-#: lib/page-settings/apis-forms.php:94
+#: lib/page-settings/apis-forms.php:95
 msgid "標準価格"
 msgstr "Standard price"
 
-#: lib/page-settings/apis-forms.php:95
+#: lib/page-settings/apis-forms.php:96
 msgid "在庫価格（デフォルト）"
 msgstr "Inventory price (default)"
 
-#: lib/page-settings/apis-forms.php:96
+#: lib/page-settings/apis-forms.php:97
 msgid "最安値"
 msgstr "Lowest price"
 
-#: lib/page-settings/apis-forms.php:97
+#: lib/page-settings/apis-forms.php:98
 msgid "最高値"
 msgstr "Highest price"
 
-#: lib/page-settings/apis-forms.php:103
+#: lib/page-settings/apis-forms.php:104
 msgid "データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。"
 msgstr ""
 "Displays the prices on the Amazon sales page current to the time of "
 "acquiring the data. If a price option is set using a short code, that will "
 "take precedence."
 
-#: lib/page-settings/apis-forms.php:104
+#: lib/page-settings/apis-forms.php:105
 msgid "仕様変更によりPA-APIが利用されている場合は、価格は取得できません。価格を表示する場合は、Creators APIを利用してください。"
 msgstr ""
 "If PA-API is being used due to specification changes, price information "
 "cannot be retrieved. Please use the Creators API to display prices."
 
-#: lib/page-settings/apis-forms.php:107
-#: lib/page-settings/apis-forms.php:181
+#: lib/page-settings/apis-forms.php:108
+#: lib/page-settings/apis-forms.php:182
 #: blocks/src/block/new-list/edit.js:246
 msgid "説明文を表示する"
 msgstr "Display description"
 
-#: lib/page-settings/apis-forms.php:108
+#: lib/page-settings/apis-forms.php:109
 msgid ""
 "Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示"
 "されます。"
@@ -6009,82 +6002,82 @@ msgstr ""
 "information has been entered). If the desc option has been set, the option "
 "values are prioritized for display."
 
-#: lib/page-settings/apis-forms.php:111
+#: lib/page-settings/apis-forms.php:112
 msgid "レビューを表示する"
 msgstr "Display reviews"
 
-#: lib/page-settings/apis-forms.php:113
+#: lib/page-settings/apis-forms.php:114
 msgid "レビューページへのリンクテキストを入力"
 msgstr "Enter link text for the review page"
 
-#: lib/page-settings/apis-forms.php:114
+#: lib/page-settings/apis-forms.php:115
 msgid "レビューページへのリンクを表示します。"
 msgstr "Displays the link to the review page."
 
-#: lib/page-settings/apis-forms.php:116
-#: lib/page-settings/apis-forms.php:184
+#: lib/page-settings/apis-forms.php:117
+#: lib/page-settings/apis-forms.php:185
 msgid "ロゴを表示する"
 msgstr "Display logo"
 
-#: lib/page-settings/apis-forms.php:117
+#: lib/page-settings/apis-forms.php:118
 msgid "Amazon商品リンクのロゴの表示切り替え。"
 msgstr "Toggle display of Amazon product link logos."
 
-#: lib/page-settings/apis-forms.php:119
+#: lib/page-settings/apis-forms.php:120
 msgid "Amazon検索ボタンを表示する"
 msgstr "Display Amazon search button"
 
-#: lib/page-settings/apis-forms.php:120
+#: lib/page-settings/apis-forms.php:121
 msgid "Amazonのキーワード検索ボタンを表示するか。"
 msgstr "Do you want to display the Amazon keyword search button?"
 
-#: lib/page-settings/apis-forms.php:123
+#: lib/page-settings/apis-forms.php:124
 msgid "Amazonの検索ボタンに表示するテキストを入力してください。"
 msgstr "Enter the text to be displayed on the Amazon search button."
 
-#: lib/page-settings/apis-forms.php:125
-#: lib/page-settings/apis-forms.php:193
+#: lib/page-settings/apis-forms.php:126
+#: lib/page-settings/apis-forms.php:194
 msgid "検索ボタンのリンク先を詳細ページにする"
 msgstr "Make the details page the link destination of the search button"
 
-#: lib/page-settings/apis-forms.php:126
+#: lib/page-settings/apis-forms.php:127
 msgid "Amazon検索ボタンのリンクURLを商品詳細ページにするか。"
 msgstr ""
 "Do you want the link URL of the Amazon search button to be the product "
 "details page?"
 
-#: lib/page-settings/apis-forms.php:138
+#: lib/page-settings/apis-forms.php:139
 #: lib/page-settings/apis-funcs.php:223
 msgid "楽天"
 msgstr "Rakuten"
 
-#: lib/page-settings/apis-forms.php:144
+#: lib/page-settings/apis-forms.php:145
 msgid "楽天アプリケーションID"
 msgstr "Rakuten application ID"
 
-#: lib/page-settings/apis-forms.php:145
-#: lib/page-settings/apis-forms.php:153
-#: lib/page-settings/apis-forms.php:160
+#: lib/page-settings/apis-forms.php:146
+#: lib/page-settings/apis-forms.php:154
+#: lib/page-settings/apis-forms.php:161
 msgid "楽天必須"
 msgstr "Rakuten required"
 
-#: lib/page-settings/apis-forms.php:149
+#: lib/page-settings/apis-forms.php:150
 msgid "楽天APIを利用するためのアプリケーションIDを入力してください。"
 msgstr "Enter an application ID for using Rakuten APIs."
 
-#: lib/page-settings/apis-forms.php:152
+#: lib/page-settings/apis-forms.php:153
 msgid "楽天アフィリエイトID"
 msgstr "Rakuten affiliate ID"
 
-#: lib/page-settings/apis-forms.php:157
+#: lib/page-settings/apis-forms.php:158
 msgid "楽天アフィリエイト用のIDを入力してください。"
 msgstr "Enter your ID for Rakuten affiliate."
 
-#: lib/page-settings/apis-forms.php:159
+#: lib/page-settings/apis-forms.php:160
 msgid "楽天アクセスキー"
 msgstr "Rakuten Access Key"
 
-#: lib/page-settings/apis-forms.php:164
+#: lib/page-settings/apis-forms.php:165
 msgid ""
 "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5"
 "月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
@@ -6094,40 +6087,40 @@ msgstr ""
 "2026. If left blank, the old API will be used until deprecation, but please "
 "set the access key as soon as possible."
 
-#: lib/page-settings/apis-forms.php:170
+#: lib/page-settings/apis-forms.php:171
 msgid "楽天標準ソート順"
 msgstr "Rakuten standard sort order"
 
-#: lib/page-settings/apis-forms.php:171
+#: lib/page-settings/apis-forms.php:172
 msgid "アフィリエイト料率順（高い順）"
 msgstr "Affiliate rate order (highest to lowest)"
 
-#: lib/page-settings/apis-forms.php:172
+#: lib/page-settings/apis-forms.php:173
 msgid "価格順（安い順）"
 msgstr "Price (lowest to highest)"
 
-#: lib/page-settings/apis-forms.php:173
+#: lib/page-settings/apis-forms.php:174
 msgid "価格順（高い順）"
 msgstr "Price (highest to lowest)"
 
-#: lib/page-settings/apis-forms.php:175
+#: lib/page-settings/apis-forms.php:176
 msgid "商品並び替え優先度"
 msgstr "Product sort priority"
 
-#: lib/page-settings/apis-forms.php:176
+#: lib/page-settings/apis-forms.php:177
 msgid "同一商品番号の商品が複数あった場合の表示優先度です。"
 msgstr ""
 "This is the display priority when there are multiple products with the same "
 "product number."
 
-#: lib/page-settings/apis-forms.php:179
+#: lib/page-settings/apis-forms.php:180
 msgid "データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。"
 msgstr ""
 "Displays the prices on the Rakuten sales page current to the time of "
 "acquiring the data. If a price option is set using a short code, that will "
 "take precedence."
 
-#: lib/page-settings/apis-forms.php:182
+#: lib/page-settings/apis-forms.php:183
 msgid ""
 "楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます"
 "。"
@@ -6136,118 +6129,118 @@ msgstr ""
 "available, it will not be displayed). If the desc option is set, the option "
 "value will be displayed with priority."
 
-#: lib/page-settings/apis-forms.php:185
+#: lib/page-settings/apis-forms.php:186
 msgid "楽天商品リンクのロゴの表示切り替え。"
 msgstr "Toggle display of Rakuten product link logos."
 
-#: lib/page-settings/apis-forms.php:187
+#: lib/page-settings/apis-forms.php:188
 msgid "楽天検索ボタンを表示する"
 msgstr "Display Rakuten search button"
 
-#: lib/page-settings/apis-forms.php:188
+#: lib/page-settings/apis-forms.php:189
 msgid "楽天のキーワード検索ボタンを表示するか。"
 msgstr "Do you want to display the Rakuten keyword search button?"
 
-#: lib/page-settings/apis-forms.php:191
+#: lib/page-settings/apis-forms.php:192
 msgid "楽天の検索ボタンに表示するテキストを入力してください。"
 msgstr "Enter the text to be displayed on the Rakuten search button."
 
-#: lib/page-settings/apis-forms.php:194
+#: lib/page-settings/apis-forms.php:195
 msgid "楽天検索ボタンのリンク先URLを商品詳細ページにするか。"
 msgstr ""
 "Do you want the link URL of the Rakuten search button to be the product "
 "details page?"
 
-#: lib/page-settings/apis-forms.php:205
+#: lib/page-settings/apis-forms.php:206
 #: lib/page-settings/apis-funcs.php:263
 msgid "Yahoo!ショッピング"
 msgstr "Yahoo! Shopping"
 
-#: lib/page-settings/apis-forms.php:210
+#: lib/page-settings/apis-forms.php:211
 msgid "バリューコマースsid"
 msgstr "Value Commerce SID"
 
-#: lib/page-settings/apis-forms.php:215
+#: lib/page-settings/apis-forms.php:216
 msgid "バリューコマースpid"
 msgstr "Value Commerce PID"
 
-#: lib/page-settings/apis-forms.php:219
+#: lib/page-settings/apis-forms.php:220
 msgid "バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。"
 msgstr "Register for Yahoo! Shopping from Value Commerce and get the SID and PID."
 
-#: lib/page-settings/apis-forms.php:224
+#: lib/page-settings/apis-forms.php:225
 msgid "Yahoo!検索ボタンを表示する"
 msgstr "Display Yahoo! search button"
 
-#: lib/page-settings/apis-forms.php:225
+#: lib/page-settings/apis-forms.php:226
 msgid "Yahoo!のキーワード検索ボタンを表示するか。"
 msgstr "Do you want to display the Yahoo! keyword search button?"
 
-#: lib/page-settings/apis-forms.php:228
+#: lib/page-settings/apis-forms.php:229
 msgid "Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。"
 msgstr "Enter the text to be displayed on the Yahoo! Shopping search button."
 
-#: lib/page-settings/apis-forms.php:240
+#: lib/page-settings/apis-forms.php:241
 #: lib/page-settings/apis-funcs.php:287
 msgid "メルカリ"
 msgstr "mercari"
 
-#: lib/page-settings/apis-forms.php:245
+#: lib/page-settings/apis-forms.php:246
 msgid "メルカリアンバサダーID"
 msgstr "Mercari Ambassador ID"
 
-#: lib/page-settings/apis-forms.php:250
+#: lib/page-settings/apis-forms.php:251
 msgid "メルカリの「アンバサダーID」を取得してください。"
 msgstr "Please obtain \"Ambassador ID\" from Mercari."
 
-#: lib/page-settings/apis-forms.php:255
+#: lib/page-settings/apis-forms.php:256
 msgid "メルカリ検索ボタンを表示する"
 msgstr "Display Mercari search button"
 
-#: lib/page-settings/apis-forms.php:256
+#: lib/page-settings/apis-forms.php:257
 msgid "メルカリのキーワード検索ボタンを表示するか。"
 msgstr "Do you want to display the Mercari keyword search button?"
 
-#: lib/page-settings/apis-forms.php:259
+#: lib/page-settings/apis-forms.php:260
 msgid "メルカリの検索ボタンに表示するテキストを入力してください。"
 msgstr "Enter the text you want to appear on the Mercari search button."
 
-#: lib/page-settings/apis-forms.php:272
+#: lib/page-settings/apis-forms.php:273
 #: lib/page-settings/apis-funcs.php:313
 msgid "DMM"
 msgstr "DMM"
 
-#: lib/page-settings/apis-forms.php:277
+#: lib/page-settings/apis-forms.php:278
 msgid "DMMアフィリエイトID"
 msgstr "DMM Affiliate ID"
 
-#: lib/page-settings/apis-forms.php:282
+#: lib/page-settings/apis-forms.php:283
 msgid "DMMアフィリエイトの「アフィリエイトID」をを取得してください。"
 msgstr "Please obtain the \"Affiliate ID\" of the DMM affiliate."
 
-#: lib/page-settings/apis-forms.php:287
+#: lib/page-settings/apis-forms.php:288
 msgid "DMM検索ボタンを表示する"
 msgstr "Show DMM search button"
 
-#: lib/page-settings/apis-forms.php:288
+#: lib/page-settings/apis-forms.php:289
 msgid "DMMのキーワード検索ボタンを表示するか。"
 msgstr "Do you want to display the DMM keyword search button?"
 
-#: lib/page-settings/apis-forms.php:291
+#: lib/page-settings/apis-forms.php:292
 msgid "DMMの検索ボタンに表示するテキストを入力してください。"
 msgstr "Enter the text you want to appear on the DMM search button."
 
-#: lib/page-settings/apis-forms.php:303
+#: lib/page-settings/apis-forms.php:304
 #: blocks/src/block/amazon-product-link/components/SettingsPanel.js:181
 #: blocks/src/block/rakuten-product-link/components/SettingsPanel.js:186
 msgid "もしもアフィリエイト"
 msgstr "Moshimo affiliate"
 
-#: lib/page-settings/apis-forms.php:307
+#: lib/page-settings/apis-forms.php:308
 msgid "リンクをもしもアフィリエイトを経由にする"
 msgstr "Link via Moshimo affiliate"
 
-#: lib/page-settings/apis-forms.php:309
+#: lib/page-settings/apis-forms.php:310
 msgid ""
 "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a "
 "href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0"
@@ -6271,41 +6264,41 @@ msgstr ""
 "Amazon API, disabling this feature is recommended. If you cannot clear the "
 "PA-API limit, use the Rakuten product link."
 
-#: lib/page-settings/apis-forms.php:311
+#: lib/page-settings/apis-forms.php:312
 msgid "Amazon a_id"
 msgstr "Amazon a_id"
 
-#: lib/page-settings/apis-forms.php:314
+#: lib/page-settings/apis-forms.php:315
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
 msgstr "Enter your Amazon ID for the Moshimo affiliate."
 
-#: lib/page-settings/apis-forms.php:314
-#: lib/page-settings/apis-forms.php:319
-#: lib/page-settings/apis-forms.php:324
+#: lib/page-settings/apis-forms.php:315
+#: lib/page-settings/apis-forms.php:320
+#: lib/page-settings/apis-forms.php:325
 msgid "未入力の場合はデフォルトのリンクが出力されます。"
 msgstr "If left blank, the default link will be output."
 
-#: lib/page-settings/apis-forms.php:316
+#: lib/page-settings/apis-forms.php:317
 msgid "楽天 a_id"
 msgstr "Rakuten a_id"
 
-#: lib/page-settings/apis-forms.php:319
+#: lib/page-settings/apis-forms.php:320
 msgid "もしもアフィリエイトの楽天IDを入力してください。"
 msgstr "Enter your Rakuten ID for the Moshimo affiliate."
 
-#: lib/page-settings/apis-forms.php:321
+#: lib/page-settings/apis-forms.php:322
 msgid "Yahoo!ショッピング a_id"
 msgstr "Yahoo! Shopping a_id"
 
-#: lib/page-settings/apis-forms.php:324
+#: lib/page-settings/apis-forms.php:325
 msgid "もしもアフィリエイトのYahoo!ショッピングIDを入力してください。"
 msgstr "Enter your Yahoo! Shopping ID for the Moshimo affiliate."
 
-#: lib/page-settings/apis-forms.php:332
+#: lib/page-settings/apis-forms.php:333
 msgid "楽天キャッシュの保存期間"
 msgstr "Rakuten cache retention period"
 
-#: lib/page-settings/apis-forms.php:338
+#: lib/page-settings/apis-forms.php:339
 msgid ""
 "APIキャッシュのリフレッシュ間隔を設定します。1～3650"
 "日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことを"
@@ -6316,111 +6309,111 @@ msgstr ""
 "be subject to API request restrictions. We recommend that you set a long "
 "site for sites that are accessed frequently."
 
-#: lib/page-settings/apis-forms.php:338
+#: lib/page-settings/apis-forms.php:339
 msgid "Amazon APIのキャッシュは利用規約により24時間で更新されます。"
 msgstr ""
 "The Amazon API cache is updated every 24 hours according to the terms of "
 "service."
 
-#: lib/page-settings/apis-forms.php:347
+#: lib/page-settings/apis-forms.php:348
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 msgstr "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 
-#: lib/page-settings/apis-forms.php:347
+#: lib/page-settings/apis-forms.php:348
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
 msgstr "Amazon.co.jp Product Advertising API license agreement"
 
-#: lib/page-settings/apis-forms.php:348
+#: lib/page-settings/apis-forms.php:349
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
 msgstr "https://affiliate.amazon.co.jp/help/topic/t32/"
 
-#: lib/page-settings/apis-forms.php:348
+#: lib/page-settings/apis-forms.php:349
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
 msgstr "Guidelines for using the Product Advertising API (PA-API)"
 
-#: lib/page-settings/apis-forms.php:349
+#: lib/page-settings/apis-forms.php:350
 msgid "https://webservice.rakuten.co.jp/guide/rule"
 msgstr "https://webservice.rakuten.co.jp/guide/rule"
 
-#: lib/page-settings/apis-forms.php:349
+#: lib/page-settings/apis-forms.php:350
 msgid "楽天ウェブサービス規約"
 msgstr "Rakuten web service terms and conditions"
 
-#: lib/page-settings/apis-forms.php:358
+#: lib/page-settings/apis-forms.php:359
 msgid "商品リンクブロックの自動更新"
 msgstr "Auto-update Product Link Blocks"
 
-#: lib/page-settings/apis-forms.php:361
+#: lib/page-settings/apis-forms.php:362
 msgid "Amazon・楽天商品リンクブロックの商品情報をWP-Cronで定期的に自動更新する設定です。"
 msgstr ""
 "This setting automatically updates product information in Amazon and "
 "Rakuten product link blocks via WP-Cron."
 
-#: lib/page-settings/apis-forms.php:368
+#: lib/page-settings/apis-forms.php:369
 msgid "自動更新"
 msgstr "Auto Update"
 
-#: lib/page-settings/apis-forms.php:375
+#: lib/page-settings/apis-forms.php:376
 msgid "商品リンクブロックの情報を自動的に定期更新する"
 msgstr "Automatically and periodically update product link block information"
 
-#: lib/page-settings/apis-forms.php:377
+#: lib/page-settings/apis-forms.php:378
 msgid "ONにすると、下記の更新間隔で全投稿・固定ページのAmazon・楽天商品リンクブロックを自動更新します。OFFにするとスケジュールが解除されます。"
 msgstr ""
 "When ON, all posts and pages with Amazon/Rakuten product link blocks will "
 "be auto-updated at the interval below. When OFF, the schedule is cancelled."
 
-#: lib/page-settings/apis-forms.php:384
+#: lib/page-settings/apis-forms.php:385
 msgid "1日ごと"
 msgstr "Every day"
 
-#: lib/page-settings/apis-forms.php:386
+#: lib/page-settings/apis-forms.php:387
 msgid "3日ごと（推奨）"
 msgstr "Every 3 days (recommended)"
 
-#: lib/page-settings/apis-forms.php:388
+#: lib/page-settings/apis-forms.php:389
 msgid "1週間ごと"
 msgstr "Every week"
 
-#: lib/page-settings/apis-forms.php:395
+#: lib/page-settings/apis-forms.php:396
 msgid "更新間隔"
 msgstr "Update Interval"
 
-#: lib/page-settings/apis-forms.php:397
+#: lib/page-settings/apis-forms.php:398
 msgid "更新間隔が短いほどAPIのリクエスト数が増えます。Amazon・楽天それぞれのAPIリクエスト制限にご注意ください。"
 msgstr ""
 "A shorter update interval increases the number of API requests. Please be "
 "mindful of the Amazon and Rakuten API request limits."
 
-#: lib/page-settings/apis-forms.php:401
+#: lib/page-settings/apis-forms.php:402
 msgid "5投稿"
 msgstr "5 posts"
 
-#: lib/page-settings/apis-forms.php:402
+#: lib/page-settings/apis-forms.php:403
 msgid "10投稿"
 msgstr "10 posts"
 
-#: lib/page-settings/apis-forms.php:403
+#: lib/page-settings/apis-forms.php:404
 msgid "20投稿"
 msgstr "20 posts"
 
-#: lib/page-settings/apis-forms.php:404
+#: lib/page-settings/apis-forms.php:405
 msgid "30投稿"
 msgstr "30 posts"
 
-#: lib/page-settings/apis-forms.php:405
+#: lib/page-settings/apis-forms.php:406
 msgid "50投稿"
 msgstr "50 posts"
 
-#: lib/page-settings/apis-forms.php:406
+#: lib/page-settings/apis-forms.php:407
 msgid "100投稿"
 msgstr "100 posts"
 
-#: lib/page-settings/apis-forms.php:412
+#: lib/page-settings/apis-forms.php:413
 msgid "1回あたりの処理投稿数"
 msgstr "Posts processed per run"
 
-#: lib/page-settings/apis-forms.php:414
+#: lib/page-settings/apis-forms.php:415
 msgid ""
 "1回のCron実行で処理する投稿数です。投稿数が多いサイトでは大きめの値にしてください。ただし、1"
 "投稿あたりのブロック数が多いほどAPIリクエストも増えます。"
@@ -6429,30 +6422,30 @@ msgstr ""
 "posts, set a higher value. Note that more blocks per post means more API "
 "requests."
 
-#: lib/page-settings/apis-forms.php:415
+#: lib/page-settings/apis-forms.php:416
 msgid "※共有ホスティングをご利用の場合は30以下を推奨します。50以上に設定するとサーバー側のタイムアウト制限により処理が中断される場合があります。"
 msgstr ""
 "* If you are using shared hosting, we recommend a value of 30 or less. "
 "Setting it to 50 or more may cause processing to be interrupted due to "
 "server-side timeout limits."
 
-#: lib/page-settings/apis-forms.php:429
+#: lib/page-settings/apis-forms.php:430
 msgid "エラー設定"
 msgstr "Error settings"
 
-#: lib/page-settings/apis-forms.php:432
+#: lib/page-settings/apis-forms.php:433
 msgid "APIに関するエラー通知の設定です。"
 msgstr "Settings for API-related error notifications."
 
-#: lib/page-settings/apis-forms.php:440
+#: lib/page-settings/apis-forms.php:441
 msgid "メール通知"
 msgstr "Email notifications"
 
-#: lib/page-settings/apis-forms.php:445
+#: lib/page-settings/apis-forms.php:446
 msgid "商品リンク切れ情報をメールで送信する"
 msgstr "Send out broken product link information by email"
 
-#: lib/page-settings/apis-forms.php:446
+#: lib/page-settings/apis-forms.php:447
 msgid ""
 "APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もありま"
 "す。"
@@ -6971,12 +6964,12 @@ msgstr "30 days"
 msgid "1年間"
 msgstr "1 year"
 
-#: lib/page-access/access-func.php:708
-#: lib/page-access/analytics/dashboard-page.php:145
-#: lib/page-access/analytics/dashboard-page.php:536
-#: lib/page-access/analytics/dashboard-page.php:564
-#: lib/page-access/analytics/render-func.php:131
-#: lib/page-access/analytics/settings-forms.php:81
+#: lib/page-access/analytics/dashboard-page.php:156
+#: lib/page-access/analytics/dashboard-page.php:550
+#: lib/page-access/analytics/dashboard-page.php:578
+#: lib/page-access/analytics/query-func.php:195
+#: lib/page-access/analytics/render-func.php:199
+#: lib/page-access/analytics/settings-forms.php:60
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
@@ -8664,7 +8657,7 @@ msgid "カルーセルカードのサムネイル。"
 msgstr "The thumbnail of the carousel card."
 
 #: lib/page-settings/image-forms.php:215
-#: lib/page-settings/_top-page.php:236
+#: lib/page-settings/_top-page.php:262
 msgid "カルーセル"
 msgstr "Carousel"
 
@@ -9412,9 +9405,9 @@ msgstr ""
 msgid "固定ページのコメント表示設定です。"
 msgstr "Comment display settings of pages."
 
-#: lib/page-access/analytics/render-func.php:155
-#: lib/page-access/analytics/render-func.php:298
-#: lib/page-access/analytics/render-func.php:425
+#: lib/page-access/analytics/render-func.php:223
+#: lib/page-access/analytics/render-func.php:378
+#: lib/page-access/analytics/render-func.php:505
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
 #: lib/page-settings/single-forms.php:301
@@ -9734,7 +9727,7 @@ msgstr ""
 "the settings if necessary."
 
 #: lib/page-settings/reset-forms.php:25
-#: lib/page-settings/_top-page.php:279
+#: lib/page-settings/_top-page.php:305
 msgid "リセット"
 msgstr "Reset"
 
@@ -11350,7 +11343,7 @@ msgstr "Table of contents title"
 
 #: lib/page-settings/toc-forms.php:96
 #: lib/page-settings/toc-funcs.php:62
-#: lib/page-settings/_top-page.php:206
+#: lib/page-settings/_top-page.php:232
 #: lib/toc.php:98
 #: lib/widgets/toc.php:19
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:359
@@ -11570,49 +11563,49 @@ msgid "テーマ利用マニュアル"
 msgstr "Theme usage manual"
 
 #: lib/page-settings/_top-page.php:162
-#: lib/page-settings/_top-page.php:502
+#: lib/page-settings/_top-page.php:532
 msgid "変更をまとめて保存"
 msgstr "Save all changes"
 
-#: lib/page-settings/_top-page.php:167
+#: lib/page-settings/_top-page.php:193
 msgid "スキン"
 msgstr "Skin"
 
-#: lib/page-settings/_top-page.php:170
+#: lib/page-settings/_top-page.php:196
 #: skins/skin-made-in-heaven/lib/panel-main.php:34
 msgid "全体"
 msgstr "All"
 
-#: lib/page-settings/_top-page.php:173
+#: lib/page-settings/_top-page.php:199
 msgid "ヘッダー"
 msgstr "Header"
 
-#: lib/page-settings/_top-page.php:185
+#: lib/page-settings/_top-page.php:211
 msgid "OGP"
 msgstr "OGP"
 
-#: lib/page-settings/_top-page.php:188
+#: lib/page-settings/_top-page.php:214
 msgid "アクセス解析・認証"
 msgstr "Access analysis and authentication"
 
-#: lib/page-settings/_top-page.php:191
+#: lib/page-settings/_top-page.php:217
 #: skins/silk/functions.php:236
 msgid "カラム"
 msgstr "Column"
 
-#: lib/page-settings/_top-page.php:194
+#: lib/page-settings/_top-page.php:220
 msgid "インデックス"
 msgstr "Index"
 
-#: lib/page-settings/_top-page.php:209
+#: lib/page-settings/_top-page.php:235
 msgid "SNSシェア"
 msgstr "Share on social media"
 
-#: lib/page-settings/_top-page.php:212
+#: lib/page-settings/_top-page.php:238
 msgid "SNSフォロー"
 msgstr "Follow on social media"
 
-#: lib/page-settings/_top-page.php:215
+#: lib/page-settings/_top-page.php:241
 #: skins/skin-made-in-heaven/lib/panel-option.php:87
 #: skins/skin-made-in-heaven/lib/panel-option.php:89
 #: skins/skin-made-in-heaven/lib/panel-visual.php:28
@@ -11623,54 +11616,54 @@ msgstr "Follow on social media"
 msgid "画像"
 msgstr "Image"
 
-#: lib/page-settings/_top-page.php:221
+#: lib/page-settings/_top-page.php:247
 msgid "コード"
 msgstr "Code"
 
-#: lib/page-settings/_top-page.php:227
+#: lib/page-settings/_top-page.php:253
 msgid "通知"
 msgstr "Notification"
 
-#: lib/page-settings/_top-page.php:230
+#: lib/page-settings/_top-page.php:256
 msgid "アピールエリア"
 msgstr "Announcement area"
 
-#: lib/page-settings/_top-page.php:233
+#: lib/page-settings/_top-page.php:259
 #: lib/widgets/recommended-cards.php:19
 msgid "おすすめカード"
 msgstr "Featured cards"
 
-#: lib/page-settings/_top-page.php:239
+#: lib/page-settings/_top-page.php:265
 msgid "フッター"
 msgstr "Footer"
 
-#: lib/page-settings/_top-page.php:245
+#: lib/page-settings/_top-page.php:271
 #: skins/silk/functions.php:229
 msgid "モバイル"
 msgstr "Mobile"
 
-#: lib/page-settings/_top-page.php:257
+#: lib/page-settings/_top-page.php:283
 msgid "PWA"
 msgstr "PWA"
 
-#: lib/page-settings/_top-page.php:261
+#: lib/page-settings/_top-page.php:287
 msgid "管理者画面"
 msgstr "Admin screen"
 
-#: lib/page-settings/_top-page.php:267
+#: lib/page-settings/_top-page.php:293
 msgid "ウィジェットエリア"
 msgstr "Widget area"
 
-#: lib/page-settings/_top-page.php:270
+#: lib/page-settings/_top-page.php:296
 #: skins/skin-made-in-heaven/lib/panel-editor.php:16
 msgid "エディター"
 msgstr "Editor"
 
-#: lib/page-settings/_top-page.php:273
+#: lib/page-settings/_top-page.php:299
 msgid "API"
 msgstr "API"
 
-#: lib/page-settings/_top-page.php:282
+#: lib/page-settings/_top-page.php:308
 msgid "テーマ情報"
 msgstr "Theme info"
 
@@ -11735,7 +11728,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:225
 #: blocks/src/old/balloon-ex-fix1/block.js:168
 #: blocks/src/old/balloon-ex-v2/block.js:88
-#: blocks/src/old/balloon-ex/block.js:158
+#: blocks/src/old/balloon-ex/block.js:285
 msgid "吹き出しスタイル"
 msgstr "Speech balloon style"
 
@@ -11743,7 +11736,7 @@ msgstr "Speech balloon style"
 #: blocks/src/block/balloon/edit.js:235
 #: blocks/src/old/balloon-ex-fix1/block.js:178
 #: blocks/src/old/balloon-ex-v2/block.js:98
-#: blocks/src/old/balloon-ex/block.js:168
+#: blocks/src/old/balloon-ex/block.js:295
 msgid "フラット"
 msgstr "Flat"
 
@@ -11751,7 +11744,7 @@ msgstr "Flat"
 #: blocks/src/block/balloon/edit.js:239
 #: blocks/src/old/balloon-ex-fix1/block.js:182
 #: blocks/src/old/balloon-ex-v2/block.js:102
-#: blocks/src/old/balloon-ex/block.js:172
+#: blocks/src/old/balloon-ex/block.js:299
 msgid "LINE風"
 msgstr "LINE style"
 
@@ -11759,7 +11752,7 @@ msgstr "LINE style"
 #: blocks/src/block/balloon/edit.js:243
 #: blocks/src/old/balloon-ex-fix1/block.js:186
 #: blocks/src/old/balloon-ex-v2/block.js:106
-#: blocks/src/old/balloon-ex/block.js:176
+#: blocks/src/old/balloon-ex/block.js:303
 msgid "考え事"
 msgstr "Thinking"
 
@@ -11771,7 +11764,7 @@ msgstr "Sets the style of a speech balloon."
 #: blocks/src/block/balloon/edit.js:251
 #: blocks/src/old/balloon-ex-fix1/block.js:194
 #: blocks/src/old/balloon-ex-v2/block.js:114
-#: blocks/src/old/balloon-ex/block.js:184
+#: blocks/src/old/balloon-ex/block.js:311
 msgid "人物位置"
 msgstr "Avatar position"
 
@@ -11779,7 +11772,7 @@ msgstr "Avatar position"
 #: blocks/src/block/balloon/edit.js:257
 #: blocks/src/old/balloon-ex-fix1/block.js:200
 #: blocks/src/old/balloon-ex-v2/block.js:120
-#: blocks/src/old/balloon-ex/block.js:190
+#: blocks/src/old/balloon-ex/block.js:317
 msgid "左"
 msgstr "Left"
 
@@ -11787,7 +11780,7 @@ msgstr "Left"
 #: blocks/src/block/balloon/edit.js:261
 #: blocks/src/old/balloon-ex-fix1/block.js:204
 #: blocks/src/old/balloon-ex-v2/block.js:124
-#: blocks/src/old/balloon-ex/block.js:194
+#: blocks/src/old/balloon-ex/block.js:321
 msgid "右"
 msgstr "Right"
 
@@ -11799,7 +11792,7 @@ msgstr "Sets the position to display the icon."
 #: blocks/src/block/balloon/edit.js:269
 #: blocks/src/old/balloon-ex-fix1/block.js:212
 #: blocks/src/old/balloon-ex-v2/block.js:132
-#: blocks/src/old/balloon-ex/block.js:202
+#: blocks/src/old/balloon-ex/block.js:329
 msgid "アイコンスタイル"
 msgstr "Icon style"
 
@@ -11807,7 +11800,7 @@ msgstr "Icon style"
 #: blocks/src/block/balloon/edit.js:275
 #: blocks/src/old/balloon-ex-fix1/block.js:218
 #: blocks/src/old/balloon-ex-v2/block.js:140
-#: blocks/src/old/balloon-ex/block.js:208
+#: blocks/src/old/balloon-ex/block.js:335
 msgid "四角（枠線なし）"
 msgstr "Square (no border)"
 
@@ -11815,7 +11808,7 @@ msgstr "Square (no border)"
 #: blocks/src/block/balloon/edit.js:279
 #: blocks/src/old/balloon-ex-fix1/block.js:222
 #: blocks/src/old/balloon-ex-v2/block.js:144
-#: blocks/src/old/balloon-ex/block.js:212
+#: blocks/src/old/balloon-ex/block.js:339
 msgid "四角（枠線あり）"
 msgstr "Square (with border)"
 
@@ -11823,7 +11816,7 @@ msgstr "Square (with border)"
 #: blocks/src/block/balloon/edit.js:283
 #: blocks/src/old/balloon-ex-fix1/block.js:226
 #: blocks/src/old/balloon-ex-v2/block.js:148
-#: blocks/src/old/balloon-ex/block.js:216
+#: blocks/src/old/balloon-ex/block.js:343
 msgid "丸（枠線なし）"
 msgstr "Circle (no border)"
 
@@ -11831,7 +11824,7 @@ msgstr "Circle (no border)"
 #: blocks/src/block/balloon/edit.js:287
 #: blocks/src/old/balloon-ex-fix1/block.js:230
 #: blocks/src/old/balloon-ex-v2/block.js:152
-#: blocks/src/old/balloon-ex/block.js:220
+#: blocks/src/old/balloon-ex/block.js:347
 msgid "丸（枠線あり）"
 msgstr "Circle (with border)"
 
@@ -12235,15 +12228,15 @@ msgstr "Unknown update checker status \"%s\""
 msgid "There is no changelog available."
 msgstr "There is no changelog available."
 
-#: lib/profile.php:39
+#: lib/profile.php:46
 msgid "プロフィール画像"
 msgstr "Profile picture"
 
-#: lib/profile.php:43
+#: lib/profile.php:50
 msgid "プロフィール画像のアップロード"
 msgstr "Upload profile picture"
 
-#: lib/profile.php:49
+#: lib/profile.php:56
 msgid ""
 "自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240"
 "pxの正方形の画像がお勧めです。"
@@ -12252,7 +12245,7 @@ msgstr ""
 "picture here takes priority over Gravatar. A 240 x 240 px square image is "
 "recommended."
 
-#: lib/profile.php:49
+#: lib/profile.php:56
 msgid ""
 "ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" "
 "rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
@@ -12261,11 +12254,11 @@ msgstr ""
 "target=\"_blank\" rel=\"noopener\">TinyPNG</a> or similar tool to compress "
 "your image before registration so that the page size is reduced."
 
-#: lib/profile.php:55
+#: lib/profile.php:62
 msgid "プロフィールページURL"
 msgstr "Profile page URL"
 
-#: lib/profile.php:61
+#: lib/profile.php:68
 msgid ""
 "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブ"
 "ページにリンクされます。"
@@ -12478,50 +12471,50 @@ msgstr "Failed to retrieve item."
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr "This error message is displayed in \"Site administrators only\"."
 
-#: lib/shortcodes-amazon.php:1069
+#: lib/shortcodes-amazon.php:1066
 msgid "Amazon商品取得エラー"
 msgstr "Amazon product retrieval error"
 
-#: lib/shortcodes-amazon.php:1071
+#: lib/shortcodes-amazon.php:1068
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr "Failed to retrieve the Amazon product link."
 
-#: lib/shortcodes-amazon.php:1087
+#: lib/shortcodes-amazon.php:1084
 msgid "Amazonで商品の詳細を見る"
 msgstr "View product details on Amazon"
 
-#: lib/shortcodes-amazon.php:1091
+#: lib/shortcodes-amazon.php:1088
 #, php-format
 msgid "Amazonで「%s」に関する詳細を見る"
 msgstr "View details about \"%s\" on Amazon"
 
-#: lib/shortcodes-amazon.php:1125
+#: lib/shortcodes-amazon.php:1122
 msgid "商品を取得できませんでした。Creators APIは正常に応答しましたが、商品情報が含まれていません。"
 msgstr ""
 "Could not retrieve product. The Creators API responded successfully, but no "
 "product information was included."
 
-#: lib/shortcodes-amazon.php:1126
+#: lib/shortcodes-amazon.php:1123
 msgid "考えられる原因："
 msgstr "Possible causes:"
 
-#: lib/shortcodes-amazon.php:1128
+#: lib/shortcodes-amazon.php:1125
 msgid "存在しないASINを指定している"
 msgstr "An invalid ASIN has been specified"
 
-#: lib/shortcodes-amazon.php:1129
+#: lib/shortcodes-amazon.php:1126
 msgid "ASINが正しくない（半角英数字10文字）"
 msgstr "The ASIN is incorrect (10 alphanumeric characters)"
 
-#: lib/shortcodes-amazon.php:1130
+#: lib/shortcodes-amazon.php:1127
 msgid "商品が販売終了・取り下げされている"
 msgstr "The product has been discontinued or removed"
 
-#: lib/shortcodes-amazon.php:1131
+#: lib/shortcodes-amazon.php:1128
 msgid "トラッキングIDが正しくない"
 msgstr "The tracking ID is incorrect"
 
-#: lib/shortcodes-amazon.php:1132
+#: lib/shortcodes-amazon.php:1129
 msgid "Creators APIの認証情報が正しくない"
 msgstr "The Creators API credentials are incorrect"
 
@@ -12872,58 +12865,58 @@ msgstr "Publish"
 msgid "記事を公開してもよろしいですか？"
 msgstr "Are you sure you want to publish the page?"
 
-#: lib/utils.php:2608
+#: lib/utils.php:2625
 msgid "Cocoon："
 msgstr "Cocoon:"
 
-#: lib/utils.php:2609
+#: lib/utils.php:2626
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 "The homepage display is set to a static page, but no page has been "
 "selected. Settings may not be applied correctly as-is."
 
-#: lib/utils.php:2611
+#: lib/utils.php:2628
 msgid "表示設定を開く"
 msgstr "Open Reading Settings"
 
-#: lib/utils.php:2735
+#: lib/utils.php:2752
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] "%s min"
 msgstr[1] "%s mins"
 
-#: lib/utils.php:2743
+#: lib/utils.php:2760
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s hour"
 msgstr[1] "%s hours"
 
-#: lib/utils.php:2751
+#: lib/utils.php:2768
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s day"
 msgstr[1] "%s days"
 
-#: lib/utils.php:2759
+#: lib/utils.php:2776
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] "%s week"
 msgstr[1] "%s weeks"
 
-#: lib/utils.php:2767
-#: lib/utils.php:2782
+#: lib/utils.php:2784
+#: lib/utils.php:2799
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] "%s month"
 msgstr[1] "%s months"
 
-#: lib/utils.php:2778
-#: lib/utils.php:2781
+#: lib/utils.php:2795
+#: lib/utils.php:2798
 #, php-format
 msgid "%s年"
 msgid_plural "%s年"
@@ -13240,7 +13233,7 @@ msgid "記事を書いた著者のプロフィール情報を表示するウィ�
 msgstr "This is a widget to display the profile of the author of the post."
 
 #: lib/widgets/author-box.php:75
-#: blocks/src/block/blogcard/deprecated.js:49
+#: blocks/src/block/blogcard/deprecated.js:116
 #: blocks/src/block/blogcard/edit.js:30
 #: blocks/src/block/profile/edit.js:87
 #: blocks/src/block/tab-box/edit.js:65
@@ -13799,7 +13792,7 @@ msgstr ""
 "Example: If \"up to h2 heading\" is set in Cocoon Settings, this widget "
 "cannot display \"h3 heading\" and beyond."
 
-#: lib/page-access/analytics/render-func.php:104
+#: lib/page-access/analytics/render-func.php:168
 #: lib/_defins.php:348
 #: blocks/src/block/faq/edit.js:127
 #: blocks/src/block/login-user-only/edit.js:34
@@ -15258,8 +15251,8 @@ msgstr "Inline button"
 #: blocks/src/micro/micro-balloon/edit.js:98
 #: blocks/src/old/button-1/block.js:141
 #: blocks/src/old/button-wrap-1/block.js:129
-#: blocks/src/old/micro-balloon-1/block.js:119
-#: blocks/src/old/micro-balloon/block.js:118
+#: blocks/src/old/micro-balloon-1/block.js:206
+#: blocks/src/old/micro-balloon/block.js:203
 msgid "円形にする"
 msgstr "Rounded"
 
@@ -15321,7 +15314,7 @@ msgstr "Sticky note"
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:131
 #: blocks/src/block/tab-box/index.js:22
-#: blocks/src/old/tab-box/block.js:27
+#: blocks/src/old/tab-box/block.js:95
 msgid "タブボックス"
 msgstr "Tab box"
 
@@ -15828,7 +15821,7 @@ msgstr "Posts could not be found."
 msgid "NOT FOUND"
 msgstr "NOT FOUND"
 
-#: lib/page-access/analytics/render-func.php:309
+#: lib/page-access/analytics/render-func.php:389
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
 msgstr "Share"
@@ -15945,7 +15938,7 @@ msgstr "Link URL"
 msgid "設定するとグループブロック全体がリンク化されます。"
 msgstr "When set, the entire group block becomes a link."
 
-#: lib/page-access/analytics/dashboard-page.php:442
+#: lib/page-access/analytics/dashboard-page.php:456
 #: blocks/src/block-extension/group-link.js:134
 msgid "適用"
 msgstr "Apply"
@@ -16314,14 +16307,14 @@ msgstr "Ban"
 #: blocks/src/block-universal/label-box/edit.js:111
 #: blocks/src/block-universal/tab-caption-box/edit.js:111
 #: blocks/src/block/balloon/edit.js:204
-#: blocks/src/block/blogcard/deprecated.js:47
+#: blocks/src/block/blogcard/deprecated.js:114
 #: blocks/src/block/blogcard/edit.js:28
-#: blocks/src/block/icon-box/deprecated.js:78
+#: blocks/src/block/icon-box/deprecated.js:134
 #: blocks/src/block/icon-box/edit.js:25
 #: blocks/src/block/icon-list/edit.js:89
-#: blocks/src/block/info-box/deprecated.js:77
+#: blocks/src/block/info-box/deprecated.js:133
 #: blocks/src/block/info-box/edit.js:25
-#: blocks/src/block/sticky-box/deprecated.js:79
+#: blocks/src/block/sticky-box/deprecated.js:213
 #: blocks/src/block/sticky-box/edit.js:25
 #: blocks/src/block/tab-box/edit.js:63
 #: blocks/src/block/test-box/deprecated.js:78
@@ -16330,18 +16323,18 @@ msgstr "Ban"
 #: blocks/src/micro/micro-balloon/edit.js:77
 #: blocks/src/micro/micro-text/edit.js:51
 #: blocks/src/old/balloon-1/block.js:105
-#: blocks/src/old/balloon-2/block.js:155
+#: blocks/src/old/balloon-2/block.js:264
 #: blocks/src/old/balloon-ex-fix1/block.js:152
 #: blocks/src/old/balloon-ex-v2/block.js:77
-#: blocks/src/old/balloon-ex/block.js:145
+#: blocks/src/old/balloon-ex/block.js:272
 #: blocks/src/old/balloon/block.js:86
-#: blocks/src/old/blank-box/block.js:66
+#: blocks/src/old/blank-box/block.js:123
 #: blocks/src/old/blogcard-class/block.js:59
 #: blocks/src/old/caption-box/block.js:60
 #: blocks/src/old/label-box/block.js:59
-#: blocks/src/old/micro-balloon-1/block.js:68
-#: blocks/src/old/micro-balloon/block.js:67
-#: blocks/src/old/tab-box/block.js:73
+#: blocks/src/old/micro-balloon-1/block.js:155
+#: blocks/src/old/micro-balloon/block.js:152
+#: blocks/src/old/tab-box/block.js:135
 #: blocks/src/old/tab-caption-box/block.js:60
 #: blocks/src/old/toggle-box/block.js:63
 msgid "スタイル設定"
@@ -16369,9 +16362,9 @@ msgstr "Style settings"
 #: blocks/src/old/button/block.js:99
 #: blocks/src/old/caption-box/block.js:62
 #: blocks/src/old/label-box/block.js:61
-#: blocks/src/old/micro-balloon-1/block.js:88
-#: blocks/src/old/micro-balloon/block.js:87
-#: blocks/src/old/tab-box/block.js:149
+#: blocks/src/old/micro-balloon-1/block.js:175
+#: blocks/src/old/micro-balloon/block.js:172
+#: blocks/src/old/tab-box/block.js:211
 #: blocks/src/old/tab-caption-box/block.js:62
 #: blocks/src/old/toggle-box/block.js:65
 msgid "色設定"
@@ -16661,10 +16654,10 @@ msgstr ""
 
 #: blocks/src/block/balloon/edit.js:206
 #: blocks/src/old/balloon-1/block.js:107
-#: blocks/src/old/balloon-2/block.js:157
+#: blocks/src/old/balloon-2/block.js:266
 #: blocks/src/old/balloon-ex-fix1/block.js:154
 #: blocks/src/old/balloon-ex-v2/block.js:79
-#: blocks/src/old/balloon-ex/block.js:147
+#: blocks/src/old/balloon-ex/block.js:274
 #: blocks/src/old/balloon/block.js:88
 msgid "人物"
 msgstr "Person"
@@ -16676,17 +16669,17 @@ msgstr "Speech balloon color setting"
 #: blocks/src/block/balloon/index.js:38
 #: blocks/src/old/balloon-ex-fix1/block.js:67
 #: blocks/src/old/balloon-ex-v2/block.js:29
-#: blocks/src/old/balloon-ex/block.js:64
+#: blocks/src/old/balloon-ex/block.js:210
 msgid "登録されている吹き出しのオプションを変更できます。"
 msgstr "You can change the option of a registered speech balloon."
 
 #: blocks/src/block/blank-box/index.js:23
-#: blocks/src/old/blank-box/block.js:29
+#: blocks/src/old/blank-box/block.js:87
 msgid "白抜きボックス"
 msgstr "Outline box"
 
 #: blocks/src/block/blank-box/index.js:25
-#: blocks/src/old/blank-box/block.js:32
+#: blocks/src/old/blank-box/block.js:90
 msgid "コンテンツを囲むだけのブランクボックスを表示します。"
 msgstr "Displays a blank box that is only for enclosing the content."
 
@@ -16929,34 +16922,34 @@ msgstr "Enter your question…"
 msgid "よくある質問と回答。"
 msgstr "FAQ."
 
-#: lib/page-access/analytics/dashboard-page.php:359
-#: blocks/src/block/icon-box/deprecated.js:80
+#: lib/page-access/analytics/dashboard-page.php:373
+#: blocks/src/block/icon-box/deprecated.js:136
 #: blocks/src/block/icon-box/edit.js:27
-#: blocks/src/block/info-box/deprecated.js:79
+#: blocks/src/block/info-box/deprecated.js:135
 #: blocks/src/block/info-box/edit.js:27
-#: blocks/src/block/sticky-box/deprecated.js:81
+#: blocks/src/block/sticky-box/deprecated.js:215
 #: blocks/src/block/sticky-box/edit.js:27
 #: blocks/src/block/test-box/deprecated.js:80
 #: blocks/src/micro/micro-balloon/edit.js:79
 #: blocks/src/micro/micro-text/edit.js:53
-#: blocks/src/old/blank-box/block.js:68
-#: blocks/src/old/micro-balloon-1/block.js:70
-#: blocks/src/old/micro-balloon/block.js:69
-#: blocks/src/old/tab-box/block.js:75
+#: blocks/src/old/blank-box/block.js:125
+#: blocks/src/old/micro-balloon-1/block.js:157
+#: blocks/src/old/micro-balloon/block.js:154
+#: blocks/src/old/tab-box/block.js:137
 msgid "タイプ"
 msgstr "Type"
 
-#: blocks/src/block/icon-box/deprecated.js:86
+#: blocks/src/block/icon-box/deprecated.js:142
 #: blocks/src/block/test-box/deprecated.js:86
 msgid "補足情報(i)"
 msgstr "Info (i)"
 
-#: blocks/src/block/icon-box/deprecated.js:90
+#: blocks/src/block/icon-box/deprecated.js:146
 #: blocks/src/block/test-box/deprecated.js:90
 msgid "補足情報(?)"
 msgstr "Info (?)"
 
-#: blocks/src/block/icon-box/deprecated.js:94
+#: blocks/src/block/icon-box/deprecated.js:150
 #: blocks/src/block/test-box/deprecated.js:94
 msgid "補足情報(!)"
 msgstr "Info (!)"
@@ -16981,11 +16974,11 @@ msgstr "Icon list"
 msgid "リストポイントにアイコンを適用した非順序リストです。"
 msgstr "Unordered list with an icon applied to list points."
 
-#: blocks/src/block/info-box/deprecated.js:93
+#: blocks/src/block/info-box/deprecated.js:149
 msgid "インフォ（薄い青）"
 msgstr "Info (light blue)"
 
-#: blocks/src/block/info-box/deprecated.js:97
+#: blocks/src/block/info-box/deprecated.js:153
 msgid "サクセス（薄い緑）"
 msgstr "Success (light green)"
 
@@ -17364,7 +17357,7 @@ msgid "目立つ濃いめの色で付箋風にメッセージを伝えるため�
 msgstr "It is a box to convey a message like a sticky note with dark colors."
 
 #: blocks/src/block/tab-box/index.js:24
-#: blocks/src/old/tab-box/block.js:30
+#: blocks/src/old/tab-box/block.js:98
 msgid "タブにメッセージ内容を伝えるための文字が書かれているボックスです。"
 msgstr "A box with a label on the tab to convey the contents of the message."
 
@@ -17479,8 +17472,8 @@ msgid "言語選択"
 msgstr "Language Selection"
 
 #: blocks/src/helpers.js:31
-#: blocks/src/old/blank-box/block.js:22
-#: blocks/src/old/tab-box/block.js:20
+#: blocks/src/old/blank-box/block.js:23
+#: blocks/src/old/tab-box/block.js:21
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
 "Click here to change the setting. This entry will not be displayed on the "
@@ -17901,34 +17894,34 @@ msgstr "Enter the contents to be displayed on the right side of the column."
 
 #: blocks/src/blocks.js:144
 #: blocks/src/micro/micro-balloon/deprecated.js:18
-#: blocks/src/old/micro-balloon-1/block.js:19
-#: blocks/src/old/micro-balloon/block.js:19
+#: blocks/src/old/micro-balloon-1/block.js:20
+#: blocks/src/old/micro-balloon/block.js:20
 msgid "マイクロコピーバルーン"
 msgstr "Microcopy balloon"
 
 #: blocks/src/micro/micro-balloon/edit.js:85
 #: blocks/src/micro/micro-text/edit.js:59
-#: blocks/src/old/micro-balloon-1/block.js:76
-#: blocks/src/old/micro-balloon/block.js:75
+#: blocks/src/old/micro-balloon-1/block.js:163
+#: blocks/src/old/micro-balloon/block.js:160
 msgid "下寄り"
 msgstr "Text below"
 
 #: blocks/src/micro/micro-balloon/edit.js:89
 #: blocks/src/micro/micro-text/edit.js:63
-#: blocks/src/old/micro-balloon-1/block.js:80
-#: blocks/src/old/micro-balloon/block.js:79
+#: blocks/src/old/micro-balloon-1/block.js:167
+#: blocks/src/old/micro-balloon/block.js:164
 msgid "上寄り"
 msgstr "Text above"
 
 #: blocks/src/micro/micro-balloon/index.js:22
-#: blocks/src/old/micro-balloon-1/block.js:29
-#: blocks/src/old/micro-balloon/block.js:28
+#: blocks/src/old/micro-balloon-1/block.js:127
+#: blocks/src/old/micro-balloon/block.js:124
 msgid "マイクロバルーン"
 msgstr "Micro balloon"
 
 #: blocks/src/micro/micro-balloon/index.js:24
-#: blocks/src/old/micro-balloon-1/block.js:32
-#: blocks/src/old/micro-balloon/block.js:31
+#: blocks/src/old/micro-balloon-1/block.js:130
+#: blocks/src/old/micro-balloon/block.js:127
 msgid "コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。"
 msgstr ""
 "It is a microcopy to increase the conversion rate by displaying a text "
@@ -17950,14 +17943,14 @@ msgstr ""
 "directly above or below the conversion link (button)."
 
 #: blocks/src/old/balloon-1/block.js:66
-#: blocks/src/old/balloon-2/block.js:55
+#: blocks/src/old/balloon-2/block.js:181
 #: blocks/src/old/balloon/block.js:48
 msgid "登録されている吹き出しを挿入できます。"
 msgstr "You can insert a registered speech balloon."
 
 #: blocks/src/old/balloon-ex-fix1/block.js:64
 #: blocks/src/old/balloon-ex-v2/block.js:26
-#: blocks/src/old/balloon-ex/block.js:61
+#: blocks/src/old/balloon-ex/block.js:207
 msgid "吹き出しEX"
 msgstr "Speech balloon EX"
 
@@ -18157,62 +18150,61 @@ msgstr ""
 msgid "打ち消し線（訂正）"
 msgstr "Strikethrough (correction)"
 
-#: lib/page-access/access-func.php:629
+#: lib/page-access/access-func.php:719
 msgid "アクセス推移 (Cocoon)"
 msgstr "Access Trend (Cocoon)"
 
-#: lib/page-access/access-func.php:726
+#: lib/page-access/analytics/ajax-func.php:33
 msgid "(タイトルなし)"
 msgstr "(No Title)"
 
-#: lib/page-access/access-func.php:777
-#: lib/page-access/analytics/dashboard-page.php:170
+#: lib/page-access/access-func.php:778
+#: lib/page-access/analytics/dashboard-page.php:184
 msgid "週"
 msgstr "Week"
 
-#: lib/page-access/access-func.php:795
+#: lib/page-access/access-func.php:799
 msgid "人気記事 TOP5"
 msgstr "Top 5 Popular Posts"
 
-#: lib/page-access/access-func.php:702
-#: lib/page-access/analytics/dashboard-page.php:137
-#: lib/page-access/analytics/render-func.php:123
-#: lib/page-access/analytics/render-func.php:188
-#: lib/page-access/analytics/settings-forms.php:76
+#: lib/page-access/analytics/dashboard-page.php:148
+#: lib/page-access/analytics/query-func.php:189
+#: lib/page-access/analytics/render-func.php:191
+#: lib/page-access/analytics/render-func.php:268
+#: lib/page-access/analytics/settings-forms.php:55
 msgid "今日"
 msgstr "Today"
 
-#: lib/page-access/access-func.php:830
-#: lib/page-access/access-func.php:959
+#: lib/page-access/access-func.php:756
 msgid "集計データがまだありません。"
 msgstr "No data has been aggregated yet."
 
-#: lib/page-access/access-func.php:839
+#: lib/page-access/access-func.php:817
 msgid "アクセス集計の詳細を見る"
 msgstr "View access analytics details"
 
-#: lib/page-access/access-func.php:880
+#: lib/page-access/access-func.php:751
 msgid "PV数"
 msgstr "PV Count"
 
-#: lib/page-access/access-func.php:900
+#: lib/page-access/access-func.php:755
 #: lib/page-access/analytics/enqueue-func.php:112
 msgid "部分週"
 msgstr "Partial week"
 
-#: lib/page-access/access-func.php:904
+#: lib/page-access/access-func.php:754
 #: lib/page-access/analytics/enqueue-func.php:111
 msgid "日数"
 msgstr "Days"
 
-#: lib/page-access/analytics/ajax-func.php:63
-#: lib/page-access/analytics/ajax-func.php:103
-#: lib/page-access/analytics/dashboard-page.php:496
-#: lib/page-access/analytics/dashboard-page.php:516
+#: lib/page-access/analytics/ajax-func.php:174
+#: lib/page-access/analytics/ajax-func.php:214
+#: lib/page-access/analytics/dashboard-page.php:510
+#: lib/page-access/analytics/dashboard-page.php:530
 msgid "不明"
 msgstr "Unknown"
 
-#: lib/page-access/analytics/dashboard-page.php:42
+#: lib/page-access/analytics/dashboard-page.php:45
 msgid "アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。"
 msgstr ""
 "The access analytics dashboard feature is currently disabled. Please enable "
@@ -18224,285 +18216,286 @@ msgstr ""
 "The access aggregation table does not exist. Please open \"Aggregation "
 "Settings\" first to create the table."
 
-#: lib/page-access/analytics/dashboard-page.php:70
+#: lib/page-access/analytics/dashboard-page.php:81
 msgid "アクセスカレンダー（直近52週）"
 msgstr "Access Calendar (Last 52 Weeks)"
 
-#: lib/page-access/analytics/dashboard-page.php:138
-#: lib/page-access/analytics/render-func.php:124
-#: lib/page-access/analytics/render-func.php:189
+#: lib/page-access/analytics/dashboard-page.php:149
+#: lib/page-access/analytics/render-func.php:192
+#: lib/page-access/analytics/render-func.php:269
 msgid "昨日"
 msgstr "Yesterday"
 
-#: lib/page-access/access-func.php:703
-#: lib/page-access/analytics/dashboard-page.php:139
-#: lib/page-access/analytics/dashboard-page.php:532
-#: lib/page-access/analytics/dashboard-page.php:560
-#: lib/page-access/analytics/render-func.php:125
-#: lib/page-access/analytics/render-func.php:190
-#: lib/page-access/analytics/settings-forms.php:77
+#: lib/page-access/analytics/dashboard-page.php:150
+#: lib/page-access/analytics/dashboard-page.php:546
+#: lib/page-access/analytics/dashboard-page.php:574
+#: lib/page-access/analytics/query-func.php:190
+#: lib/page-access/analytics/render-func.php:193
+#: lib/page-access/analytics/render-func.php:270
+#: lib/page-access/analytics/settings-forms.php:56
 msgid "直近7日"
 msgstr "Last 7 Days"
 
-#: lib/page-access/access-func.php:704
-#: lib/page-access/analytics/dashboard-page.php:140
-#: lib/page-access/analytics/dashboard-page.php:533
-#: lib/page-access/analytics/dashboard-page.php:561
-#: lib/page-access/analytics/render-func.php:126
-#: lib/page-access/analytics/settings-forms.php:78
+#: lib/page-access/analytics/dashboard-page.php:151
+#: lib/page-access/analytics/dashboard-page.php:547
+#: lib/page-access/analytics/dashboard-page.php:575
+#: lib/page-access/analytics/query-func.php:191
+#: lib/page-access/analytics/render-func.php:194
+#: lib/page-access/analytics/settings-forms.php:57
 msgid "直近30日"
 msgstr "Last 30 Days"
 
-#: lib/page-access/access-func.php:705
-#: lib/page-access/analytics/dashboard-page.php:141
-#: lib/page-access/analytics/dashboard-page.php:534
-#: lib/page-access/analytics/dashboard-page.php:562
-#: lib/page-access/analytics/render-func.php:127
-#: lib/page-access/analytics/settings-forms.php:79
+#: lib/page-access/analytics/dashboard-page.php:152
+#: lib/page-access/analytics/dashboard-page.php:548
+#: lib/page-access/analytics/dashboard-page.php:576
+#: lib/page-access/analytics/query-func.php:192
+#: lib/page-access/analytics/render-func.php:195
+#: lib/page-access/analytics/settings-forms.php:58
 msgid "直近90日"
 msgstr "Last 90 Days"
 
-#: lib/page-access/access-func.php:706
-#: lib/page-access/analytics/dashboard-page.php:142
-#: lib/page-access/analytics/render-func.php:128
-#: lib/page-access/analytics/render-func.php:191
-#: lib/page-access/analytics/settings-forms.php:80
+#: lib/page-access/analytics/dashboard-page.php:153
+#: lib/page-access/analytics/query-func.php:193
+#: lib/page-access/analytics/render-func.php:196
+#: lib/page-access/analytics/render-func.php:271
+#: lib/page-access/analytics/settings-forms.php:59
 msgid "今月"
 msgstr "This Month"
 
-#: lib/page-access/analytics/dashboard-page.php:143
-#: lib/page-access/analytics/render-func.php:129
+#: lib/page-access/analytics/dashboard-page.php:154
+#: lib/page-access/analytics/render-func.php:197
 msgid "先月"
 msgstr "Last Month"
 
-#: lib/page-access/analytics/dashboard-page.php:144
-#: lib/page-access/analytics/render-func.php:130
+#: lib/page-access/analytics/dashboard-page.php:155
+#: lib/page-access/analytics/render-func.php:198
 msgid "年初来"
 msgstr "Year to Date"
 
-#: lib/page-access/analytics/dashboard-page.php:166
+#: lib/page-access/analytics/dashboard-page.php:180
 msgid "PV推移"
 msgstr "PV Trend"
 
-#: lib/page-access/analytics/dashboard-page.php:174
+#: lib/page-access/analytics/dashboard-page.php:188
 msgid "PV推移グラフ"
 msgstr "PV Trend Graph"
 
-#: lib/page-access/analytics/dashboard-page.php:179
+#: lib/page-access/analytics/dashboard-page.php:193
 msgid "カテゴリー別PV"
 msgstr "PV by Category"
 
-#: lib/page-access/analytics/dashboard-page.php:180
+#: lib/page-access/analytics/dashboard-page.php:194
 msgid "カテゴリー別PV構成"
 msgstr "PV Breakdown by Category"
 
-#: lib/page-access/analytics/dashboard-page.php:183
+#: lib/page-access/analytics/dashboard-page.php:197
 msgid "タグ別PV"
 msgstr "PV by Tag"
 
-#: lib/page-access/analytics/dashboard-page.php:184
+#: lib/page-access/analytics/dashboard-page.php:198
 msgid "タグ別PV構成"
 msgstr "PV Breakdown by Tag"
 
-#: lib/page-access/analytics/dashboard-page.php:187
+#: lib/page-access/analytics/dashboard-page.php:201
 msgid "投稿タイプ別PV"
 msgstr "PV by Post Type"
 
-#: lib/page-access/analytics/dashboard-page.php:188
+#: lib/page-access/analytics/dashboard-page.php:202
 msgid "投稿タイプ別PV構成"
 msgstr "PV Breakdown by Post Type"
 
-#: lib/page-access/analytics/dashboard-page.php:191
+#: lib/page-access/analytics/dashboard-page.php:205
 msgid "人気記事 TOP10"
 msgstr "Top 10 Popular Posts"
 
-#: lib/page-access/analytics/dashboard-page.php:195
+#: lib/page-access/analytics/dashboard-page.php:209
 msgid "急上昇記事 TOP10（直近7日）"
 msgstr "Top 10 Trending Posts (Last 7 Days)"
 
-#: lib/page-access/analytics/dashboard-page.php:199
-#: lib/page-access/analytics/dashboard-page.php:200
+#: lib/page-access/analytics/dashboard-page.php:213
+#: lib/page-access/analytics/dashboard-page.php:214
 msgid "曜日別PV"
 msgstr "PV by Day of Week"
 
-#: lib/page-access/analytics/dashboard-page.php:208
+#: lib/page-access/analytics/dashboard-page.php:222
 msgid "タイトルバーをドラッグしてタイルを並び替えできます。配置はユーザーごとに保存されます。"
 msgstr "Drag the title bars to reorder tiles. The layout is saved per user."
 
-#: lib/page-access/analytics/dashboard-page.php:209
+#: lib/page-access/analytics/dashboard-page.php:223
 msgid "タイル配置を既定に戻す"
 msgstr "Reset Tile Layout to Default"
 
-#: lib/page-access/analytics/dashboard-page.php:252
-#: lib/page-access/analytics/dashboard-page.php:299
+#: lib/page-access/analytics/dashboard-page.php:266
+#: lib/page-access/analytics/dashboard-page.php:313
 msgid "投稿タイプ:"
 msgstr "Post Type:"
 
-#: lib/page-access/analytics/dashboard-page.php:255
-#: lib/page-access/analytics/dashboard-page.php:326
+#: lib/page-access/analytics/dashboard-page.php:269
+#: lib/page-access/analytics/dashboard-page.php:340
 msgid "絞り込み"
 msgstr "Filter"
 
-#: lib/page-access/analytics/dashboard-page.php:303
+#: lib/page-access/analytics/dashboard-page.php:317
 msgid "著者:"
 msgstr "Author:"
 
-#: lib/page-access/analytics/dashboard-page.php:304
+#: lib/page-access/analytics/dashboard-page.php:318
 msgid "名前で検索..."
 msgstr "Search by name..."
 
-#: lib/page-access/analytics/dashboard-page.php:309
+#: lib/page-access/analytics/dashboard-page.php:323
 msgid "カテゴリー:"
 msgstr "Category:"
 
-#: lib/page-access/analytics/dashboard-page.php:310
+#: lib/page-access/analytics/dashboard-page.php:324
 msgid "カテゴリー名で検索..."
 msgstr "Search by category name..."
 
-#: lib/page-access/analytics/dashboard-page.php:314
+#: lib/page-access/analytics/dashboard-page.php:328
 msgid "最小PV:"
 msgstr "Min PV:"
 
-#: lib/page-access/analytics/dashboard-page.php:317
+#: lib/page-access/analytics/dashboard-page.php:331
 msgid "最大PV:"
 msgstr "Max PV:"
 
-#: lib/page-access/analytics/dashboard-page.php:320
+#: lib/page-access/analytics/dashboard-page.php:334
 msgid "並び:"
 msgstr "Sort:"
 
-#: lib/page-access/analytics/dashboard-page.php:322
+#: lib/page-access/analytics/dashboard-page.php:336
 msgid "PV降順"
 msgstr "PV Descending"
 
-#: lib/page-access/analytics/dashboard-page.php:323
+#: lib/page-access/analytics/dashboard-page.php:337
 msgid "PV昇順（低PV）"
 msgstr "PV Ascending (Low PV)"
 
-#: lib/page-access/analytics/dashboard-page.php:355
+#: lib/page-access/analytics/dashboard-page.php:369
 #, php-format
 msgid "全 %s 件"
 msgstr "%s items total"
 
-#: lib/page-access/analytics/dashboard-page.php:359
-#: lib/page-access/analytics/dashboard-page.php:490
-#: lib/page-access/analytics/render-func.php:101
+#: lib/page-access/analytics/dashboard-page.php:373
+#: lib/page-access/analytics/dashboard-page.php:504
+#: lib/page-access/analytics/render-func.php:165
 msgid "著者"
 msgstr "Author"
 
-#: lib/page-access/analytics/dashboard-page.php:359
+#: lib/page-access/analytics/dashboard-page.php:373
 msgid "公開日"
 msgstr "Published Date"
 
-#: lib/page-access/analytics/dashboard-page.php:362
+#: lib/page-access/analytics/dashboard-page.php:376
 msgid "無題"
 msgstr "Untitled"
 
-#: lib/page-access/analytics/dashboard-page.php:435
+#: lib/page-access/analytics/dashboard-page.php:449
 msgid "タクソノミー:"
 msgstr "Taxonomy:"
 
-#: lib/page-access/analytics/dashboard-page.php:456
+#: lib/page-access/analytics/dashboard-page.php:470
 #, php-format
 msgid "%s 別PV ランキング"
 msgstr "PV Ranking by %s"
 
-#: lib/page-access/analytics/dashboard-page.php:460
+#: lib/page-access/analytics/dashboard-page.php:474
 msgid "名称"
 msgstr "Name"
 
-#: lib/page-access/analytics/dashboard-page.php:472
+#: lib/page-access/analytics/dashboard-page.php:486
 msgid "上位10分布"
 msgstr "Top 10 Distribution"
 
-#: lib/page-access/analytics/dashboard-page.php:486
+#: lib/page-access/analytics/dashboard-page.php:500
 msgid "著者別集計"
 msgstr "Aggregation by Author"
 
-#: lib/page-access/analytics/dashboard-page.php:490
+#: lib/page-access/analytics/dashboard-page.php:504
 msgid "記事数"
 msgstr "Number of Posts"
 
-#: lib/page-access/analytics/dashboard-page.php:490
-#: lib/page-access/analytics/render-func.php:192
+#: lib/page-access/analytics/dashboard-page.php:504
+#: lib/page-access/analytics/render-func.php:272
 msgid "総PV"
 msgstr "Total PV"
 
-#: lib/page-access/analytics/dashboard-page.php:490
+#: lib/page-access/analytics/dashboard-page.php:504
 msgid "平均PV/記事"
 msgstr "Average PV/Post"
 
-#: lib/page-access/analytics/dashboard-page.php:501
+#: lib/page-access/analytics/dashboard-page.php:515
 msgid "著者別PV（上位10）"
 msgstr "PV by Author (Top 10)"
 
-#: lib/page-access/analytics/dashboard-page.php:530
+#: lib/page-access/analytics/dashboard-page.php:544
 msgid "集計期間:"
 msgstr "Aggregation Period:"
 
-#: lib/page-access/access-func.php:707
-#: lib/page-access/analytics/dashboard-page.php:535
-#: lib/page-access/analytics/dashboard-page.php:563
+#: lib/page-access/analytics/dashboard-page.php:549
+#: lib/page-access/analytics/dashboard-page.php:577
+#: lib/page-access/analytics/query-func.php:194
 msgid "直近1年"
 msgstr "Last Year"
 
-#: lib/page-access/analytics/dashboard-page.php:540
+#: lib/page-access/analytics/dashboard-page.php:554
 msgid "記事タイトルで検索..."
 msgstr "Search by post title..."
 
-#: lib/page-access/analytics/dashboard-page.php:555
+#: lib/page-access/analytics/dashboard-page.php:569
 msgid "記事を選択してください"
 msgstr "Please select a post"
 
-#: lib/page-access/analytics/dashboard-page.php:565
-#: lib/page-access/analytics/render-func.php:132
+#: lib/page-access/analytics/dashboard-page.php:579
+#: lib/page-access/analytics/render-func.php:200
 msgid "カスタム"
 msgstr "Custom"
 
-#: lib/page-access/analytics/dashboard-page.php:578
+#: lib/page-access/analytics/dashboard-page.php:592
 msgid "リスト期間に合わせる"
 msgstr "Match List Period"
 
-#: lib/page-access/analytics/dashboard-page.php:588
+#: lib/page-access/analytics/dashboard-page.php:602
 msgid "左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。"
 msgstr ""
 "Select a post from the list on the left to display its post-publication "
 "access trend graph."
 
-#: lib/page-access/analytics/dashboard-page.php:602
+#: lib/page-access/analytics/dashboard-page.php:616
 msgid "エクスポート機能は無効化されています。"
 msgstr "The export feature is disabled."
 
-#: lib/page-access/analytics/dashboard-page.php:610
+#: lib/page-access/analytics/dashboard-page.php:624
 msgid "対象"
 msgstr "Target"
 
-#: lib/page-access/analytics/dashboard-page.php:612
+#: lib/page-access/analytics/dashboard-page.php:626
 msgid "日次PV推移"
 msgstr "Daily PV Trend"
 
-#: lib/page-access/analytics/dashboard-page.php:613
+#: lib/page-access/analytics/dashboard-page.php:627
 msgid "人気記事ランキング"
 msgstr "Popular Post Ranking"
 
-#: lib/page-access/analytics/dashboard-page.php:614
+#: lib/page-access/analytics/dashboard-page.php:628
 msgid "記事別全量"
 msgstr "All Posts"
 
-#: lib/page-access/analytics/dashboard-page.php:615
+#: lib/page-access/analytics/dashboard-page.php:629
 msgid "著者別"
 msgstr "By Author"
 
-#: lib/page-access/analytics/dashboard-page.php:618
+#: lib/page-access/analytics/dashboard-page.php:632
 msgid "形式"
 msgstr "Format"
 
-#: lib/page-access/analytics/dashboard-page.php:624
+#: lib/page-access/analytics/dashboard-page.php:638
 msgid "期間"
 msgstr "period"
 
-#: lib/page-access/analytics/dashboard-page.php:626
-#: lib/page-access/analytics/render-func.php:152
+#: lib/page-access/analytics/dashboard-page.php:584
+#: lib/page-access/analytics/dashboard-page.php:640
+#: lib/page-access/analytics/render-func.php:220
 msgid "〜"
 msgstr "to"
 
@@ -18562,7 +18555,7 @@ msgstr "Total for List Period"
 msgid "累計"
 msgstr "Cumulative Total"
 
-#: lib/page-access/analytics/enqueue-func.php:122
+#: lib/page-access/analytics/enqueue-func.php:124
 msgid "グラフはリストと異なる期間を表示中"
 msgstr "The graph is showing a different period than the list"
 
@@ -18574,150 +18567,150 @@ msgstr "The export feature is disabled."
 msgid "対象が不正です。"
 msgstr "The target is invalid."
 
-#: lib/page-access/analytics/render-func.php:87
+#: lib/page-access/analytics/render-func.php:151
 msgid "NO IMAGE"
 msgstr "NO IMAGE"
 
-#: lib/page-access/analytics/render-func.php:99
+#: lib/page-access/analytics/render-func.php:163
 msgid "記事別"
 msgstr "By Post"
 
-#: lib/page-access/analytics/render-func.php:100
+#: lib/page-access/analytics/render-func.php:164
 msgid "カテゴリー/タグ"
 msgstr "Category/Tag"
 
-#: lib/page-access/analytics/render-func.php:102
-#: lib/page-access/analytics/render-func.php:300
-#: lib/page-access/analytics/render-func.php:427
+#: lib/page-access/analytics/render-func.php:166
+#: lib/page-access/analytics/render-func.php:380
+#: lib/page-access/analytics/render-func.php:507
 msgid "ライフサイクル"
 msgstr "Lifecycle"
 
-#: lib/page-access/analytics/render-func.php:103
-#: lib/page-access/analytics/settings-forms.php:88
+#: lib/page-access/analytics/render-func.php:167
+#: lib/page-access/analytics/settings-forms.php:67
 msgid "エクスポート"
 msgstr "Export"
 
-#: lib/page-access/analytics/render-func.php:143
+#: lib/page-access/analytics/render-func.php:211
 msgid "期間:"
 msgstr "Period:"
 
-#: lib/page-access/analytics/render-func.php:188
+#: lib/page-access/analytics/render-func.php:268
 msgid "昨日比"
 msgstr "vs Yesterday"
 
-#: lib/page-access/analytics/render-func.php:190
+#: lib/page-access/analytics/render-func.php:270
 msgid "前週比"
 msgstr "vs Previous Week"
 
-#: lib/page-access/analytics/render-func.php:191
+#: lib/page-access/analytics/render-func.php:271
 msgid "前月比"
 msgstr "vs Previous Month"
 
-#: lib/page-access/analytics/render-func.php:233
+#: lib/page-access/analytics/render-func.php:313
 msgid "データがありません。"
 msgstr "No data available."
 
-#: lib/page-access/analytics/render-func.php:254
-#: lib/page-access/analytics/render-func.php:379
+#: lib/page-access/analytics/render-func.php:334
+#: lib/page-access/analytics/render-func.php:459
 msgid "削除済み"
 msgstr "Deleted"
 
-#: lib/page-access/analytics/render-func.php:307
+#: lib/page-access/analytics/render-func.php:387
 msgid "期間全体の総PVに占めるこの記事の割合"
 msgstr "This post's share of total PV for the entire period"
 
-#: lib/page-access/analytics/render-func.php:352
+#: lib/page-access/analytics/render-func.php:432
 msgid "指定した期間のアクセスデータがありません。"
 msgstr "There is no access data for the specified period."
 
-#: lib/page-access/analytics/render-func.php:363
+#: lib/page-access/analytics/render-func.php:443
 msgid "急上昇中の記事はありません。"
 msgstr "There are no trending posts."
 
-#: lib/page-access/analytics/render-func.php:414
+#: lib/page-access/analytics/render-func.php:494
 #, php-format
 msgid "直近%1$d日 %2$s PV / 前%1$d日 %3$s PV"
 msgstr "Last %1$d days: %2$s PV / Previous %1$d days: %3$s PV"
 
-#: lib/page-access/analytics/render-func.php:435
+#: lib/page-access/analytics/render-func.php:515
 msgid "新登場"
 msgstr "New"
 
-#: lib/page-access/analytics/render-func.php:554
+#: lib/page-access/analytics/render-func.php:634
 msgid "少ない"
 msgstr "Low"
 
-#: lib/page-access/analytics/render-func.php:558
+#: lib/page-access/analytics/render-func.php:638
 msgid "多い"
 msgstr "High"
 
-#: lib/page-access/analytics/settings-forms.php:24
+#: lib/page-access/analytics/settings-posts.php:28
 msgid "アクセス解析のキャッシュをクリアしました。"
 msgstr "Access analytics cache cleared."
 
-#: lib/page-access/analytics/settings-forms.php:35
+#: lib/page-access/analytics/settings-forms.php:14
 msgid "テーマ内で独自にアクセス集計を行います。集計結果は「人気記事」ウィジェットや本ダッシュボードで使用されます。"
 msgstr ""
 "The theme performs its own access aggregation. The aggregated results are "
 "used by the \"Popular Posts\" widget and this dashboard."
 
-#: lib/page-access/analytics/settings-forms.php:42
+#: lib/page-access/analytics/settings-forms.php:21
 msgid "アクセス解析ダッシュボード"
 msgstr "Access Analytics Dashboard"
 
-#: lib/page-access/analytics/settings-forms.php:44
+#: lib/page-access/analytics/settings-forms.php:23
 msgid "集計済みデータを可視化するダッシュボードの設定です。"
 msgstr "Settings for the dashboard that visualizes the aggregated data."
 
-#: lib/page-access/analytics/settings-forms.php:47
+#: lib/page-access/analytics/settings-forms.php:26
 msgid "ダッシュボード機能"
 msgstr "Dashboard Feature"
 
-#: lib/page-access/analytics/settings-forms.php:49
+#: lib/page-access/analytics/settings-forms.php:28
 msgid "アクセス解析ダッシュボードを有効にする"
 msgstr "Enable the access analytics dashboard"
 
-#: lib/page-access/analytics/settings-forms.php:50
+#: lib/page-access/analytics/settings-forms.php:29
 msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
 msgstr ""
 "When disabled, the dashboard tabs are hidden and only the \"Settings\" tab "
 "is shown."
 
-#: lib/page-access/analytics/settings-forms.php:54
+#: lib/page-access/analytics/settings-forms.php:33
 msgid "キャッシュTTL（分）"
 msgstr "Cache TTL (Minutes)"
 
-#: lib/page-access/analytics/settings-forms.php:58
+#: lib/page-access/analytics/settings-forms.php:37
 msgid "5分"
 msgstr "5 Minutes"
 
-#: lib/page-access/analytics/settings-forms.php:59
+#: lib/page-access/analytics/settings-forms.php:38
 msgid "15分"
 msgstr "15 Minutes"
 
-#: lib/page-access/analytics/settings-forms.php:67
+#: lib/page-access/analytics/settings-forms.php:46
 msgid "ダッシュボード集計結果のキャッシュ時間。新規アクセス記録時は自動的に無効化されます。"
 msgstr ""
 "Cache duration for dashboard aggregation results. Automatically invalidated "
 "when new access is recorded."
 
-#: lib/page-access/analytics/settings-forms.php:72
+#: lib/page-access/analytics/settings-forms.php:51
 msgid "既定の集計期間"
 msgstr "Default Aggregation Period"
 
-#: lib/page-access/analytics/settings-forms.php:90
+#: lib/page-access/analytics/settings-forms.php:69
 msgid "CSV/JSONエクスポートを有効にする"
 msgstr "Enable CSV/JSON export"
 
-#: lib/page-access/analytics/settings-forms.php:94
+#: lib/page-access/analytics/settings-forms.php:73
 msgid "キャッシュのクリア"
 msgstr "Clear Cache"
 
-#: lib/page-access/analytics/settings-forms.php:97
+#: lib/page-access/analytics/settings-forms.php:77
 msgid "ダッシュボードのキャッシュをクリア"
 msgstr "Clear Dashboard Cache"
 
-#: lib/page-access/analytics/settings-forms.php:99
+#: lib/page-access/analytics/settings-forms.php:79
 msgid "集計結果の transient キャッシュを一括削除します。"
 msgstr "Bulk delete the transient cache of aggregation results."
 
@@ -18735,7 +18728,10 @@ msgstr "Blog card (embed)"
 msgid "URLが設定されていません"
 msgstr "No URL has been set"
 
-#: lib/page-access/analytics/dashboard-page.php:154
+#: lib/page-access/analytics/dashboard-page.php:168
+#: lib/page-access/analytics/enqueue-func.php:123
+#: lib/page-access/analytics/render-func.php:73
+#: lib/page-access/analytics/render-func.php:231
 #. translators: 1: 開始日, 2: 終了日
 #, php-format
 msgid "%1$s 〜 %2$s"
@@ -18745,7 +18741,7 @@ msgstr "%1$s – %2$s"
 msgid "ラベルなし"
 msgstr "No label"
 
-#: lib/admin.php:472
+#: lib/admin.php:669
 msgid "すべてのユーザー"
 msgstr "All users"
 
@@ -18781,27 +18777,28 @@ msgstr "Notice about the ad at the top of the main column"
 msgid "サイドバートップの広告に注意"
 msgstr "Notice about the ad at the top of the sidebar"
 
-#: lib/page-access/analytics/enqueue-func.php:123
+#: lib/page-access/analytics/enqueue-func.php:125
 msgid "該当する記事が見つかりませんでした。"
 msgstr "No matching posts were found."
 
-#: lib/page-access/analytics/enqueue-func.php:124
+#: lib/page-access/access-func.php:787
+#: lib/page-access/analytics/enqueue-func.php:126
 msgid "読み込み中..."
 msgstr "Loading..."
 
-#: lib/page-access/analytics/enqueue-func.php:125
+#: lib/page-access/analytics/enqueue-func.php:127
 msgid "エラーが発生しました"
 msgstr "An error occurred"
 
-#: lib/page-access/analytics/enqueue-func.php:126
+#: lib/page-access/analytics/enqueue-func.php:128
 msgid "通信エラーが発生しました"
 msgstr "A connection error occurred"
 
-#: lib/page-access/analytics/enqueue-func.php:127
+#: lib/page-access/analytics/enqueue-func.php:129
 msgid "一致する項目がありません"
 msgstr "No matching items"
 
-#: lib/page-access/analytics/render-func.php:444
+#: lib/page-access/analytics/render-func.php:524
 #, php-format
 msgid "直近%1$d日のPVとその前%1$d日のPVの比較"
 msgstr "Comparison of page views in the last %1$d days with the preceding %1$d days"
@@ -19299,17 +19296,17 @@ msgstr "Link list box"
 msgid "タブ見出しボックスブロック内にリンクリストを入れたパターンです。"
 msgstr "A pattern with a link list inside a Tab Caption Box block."
 
-#: lib/utils.php:4339
+#: lib/utils.php:4426
 #: skins/skin-demo-php/functions.php:45
 msgid "スキンから入力したタイトル"
 msgstr "Title entered from the skin"
 
-#: lib/utils.php:4340
+#: lib/utils.php:4427
 #: skins/skin-demo-php/functions.php:46
 msgid "スキンから入力したアピールエリアメッセージです。"
 msgstr "This is an appeal area message entered from the skin."
 
-#: lib/utils.php:4341
+#: lib/utils.php:4428
 #: skins/skin-demo-php/functions.php:47
 msgid "スキンボタンキャプション"
 msgstr "Skin button caption"
@@ -20303,7 +20300,7 @@ msgstr ""
 msgid "黒をベースにしたシンプルなスキン"
 msgstr "A simple skin based on black."
 
-#: lib/utils.php:4338
+#: lib/utils.php:4425
 msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
 msgstr ""
 "<div class=\"blank-box bb-red\">Abusive comments will be removed without "
@@ -20353,10 +20350,146 @@ msgstr "Column 2"
 msgid "スキン制御"
 msgstr "Skin control"
 
-#: lib/utils.php:2783
+#: lib/utils.php:2800
 #, php-format
 msgid "%1$s%2$s"
 msgstr "%1$s and %2$s"
+
+#: lib/admin.php:165
+msgid "設定メニューの表示"
+msgstr "Settings menu display"
+
+#: lib/admin.php:171
+msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
+msgstr "The display mode could not be saved. Check your connection and try again."
+
+#: lib/admin.php:172
+msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
+msgstr "The display mode save session has expired. Reload the page."
+
+#: lib/admin.php:173
+msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
+msgstr "Saving the display mode timed out. Check your connection and try again."
+
+#: lib/admin.php:174
+msgid "Cocoon設定項目"
+msgstr "Cocoon settings sections"
+
+#: lib/admin.php:175
+msgid "設定メニュー"
+msgstr "Settings menu"
+
+#: lib/admin.php:176
+msgid "設定項目"
+msgstr "Settings section"
+
+#: lib/admin.php:177
+#: lib/admin.php:178
+msgid "設定項目を検索"
+msgstr "Search settings"
+
+#: lib/admin.php:179
+msgid "該当する設定項目がありません。"
+msgstr "No matching settings were found."
+
+#: lib/admin.php:180
+#, php-format
+msgid "%d件の設定項目が見つかりました。"
+msgstr "%d settings sections found."
+
+#: lib/admin.php:184
+msgid "外観・レイアウト"
+msgstr "Appearance and Layout"
+
+#: lib/admin.php:195
+msgid "コンテンツ"
+msgstr "Content"
+
+#: lib/admin.php:210
+msgid "集客・計測"
+msgstr "Marketing and Analytics"
+
+#: lib/admin.php:234
+msgid "管理・拡張"
+msgstr "Administration and Extensions"
+
+#: lib/admin.php:245
+msgid "システム・情報"
+msgstr "System and Information"
+
+#: lib/creators-api.php:503
+msgid "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。"
+msgstr ""
+"Creators API authentication failed. Please check the Credential ID and "
+"Secret in the \"API\" tab of \"Cocoon Settings\"."
+
+#: lib/creators-api.php:510
+#, php-format
+msgid "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。"
+msgstr ""
+"Requests to Amazon are being throttled. Please try again in about %d "
+"minute(s)."
+
+#: lib/creators-api.php:515
+msgid "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。"
+msgstr ""
+"Requests to Amazon are currently being throttled. Please wait a while and "
+"try again."
+
+#: lib/creators-api.php:883
+#: lib/creators-api.php:1114
+msgid "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。"
+msgstr ""
+"The Amazon Associates Tracking ID has not been entered. Please enter it "
+"from the \"API\" tab in \"Cocoon Settings\"."
+
+#: lib/page-access/access-func.php:757
+msgid "データの取得に失敗しました。"
+msgstr "Failed to retrieve data."
+
+#: lib/page-settings/apis-forms.php:39
+msgid ""
+"※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators "
+"APIの設定を行ってください。"
+msgstr ""
+"* This setting is deprecated. Due to PA-API specification changes, some "
+"product information (e.g. price) is no longer available. Please configure "
+"the Creators API to use all features."
+
+#: lib/page-settings/apis-forms.php:74
+msgid "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。"
+msgstr ""
+"The \"Version\" issued by Amazon along with your credentials does not need "
+"to be entered, as it is detected automatically from the Credential ID."
+
+#: lib/admin.php:166
+msgid "おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。"
+msgstr ""
+"With Recommended Display, the settings menu automatically adapts for "
+"readability based on the available screen width. This does not affect your "
+"settings."
+
+#: lib/admin.php:167
+msgid "おすすめ表示"
+msgstr "Recommended display"
+
+#: lib/admin.php:168
+msgid "画面の広さに応じて設定メニューを自動で見やすく切り替えます。"
+msgstr ""
+"The settings menu automatically adapts for readability based on the "
+"available screen width."
+
+#: lib/admin.php:169
+msgid "従来の表示"
+msgstr "Classic display"
+
+#: lib/admin.php:170
+msgid "これまでと同じ順番でタブを表示します。"
+msgstr "Displays tabs in the same order as before."
+
+#: lib/admin.php:221
+msgid "パーツ・導線"
+msgstr "Components & navigation"
 
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format

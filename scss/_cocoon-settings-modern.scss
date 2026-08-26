@@ -43,6 +43,20 @@
     line-height: 1.7;
   }
 
+  // 子要素側のvisibility指定も上書きし、寸法を保ったまま初期タブ全体を確実に隠す。
+  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 初期描画中だけ既存プレビューの高詳細度指定を確実に遮断する。 */
+  #tabs.is-navigation-booting,
+  #tabs.is-navigation-booting *,
+  #tabs.is-navigation-booting *::before,
+  #tabs.is-navigation-booting *::after {
+    visibility: hidden !important;
+  }
+
+  #tabs.is-navigation-booting {
+    opacity: 0;
+  }
+  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
   > :where(p:not(.submit)) :where(a) {
     font-weight: 500;
     white-space: nowrap;
@@ -75,6 +89,114 @@
     font-weight: 600;
   }
 
+  :where(.cocoon-settings-view-mode) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px 14px;
+    margin: -2px 0 16px;
+    color: var(--cocoon-settings-text-muted);
+  }
+
+  :where(.cocoon-settings-view-mode-copy) {
+    display: flex;
+    flex: 1 1 320px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 3px 10px;
+  }
+
+  :where(.cocoon-settings-view-mode-label) {
+    color: var(--cocoon-settings-text);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  :where(.cocoon-settings-view-mode-description) {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  :where(.cocoon-settings-view-mode-control) {
+    display: inline-grid;
+    flex: 0 0 auto;
+    gap: 0;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, max-content);
+    padding: 3px;
+    border: 1px solid var(--cocoon-settings-border-subtle);
+    border-radius: var(--cocoon-settings-radius-card);
+    background: var(--cocoon-settings-surface-subtle);
+  }
+
+  :where(.cocoon-settings-view-mode-button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-block-size: 36px;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    margin: 0;
+    padding: 6px 10px;
+    overflow-wrap: anywhere;
+    border: 1px solid transparent;
+    border-radius: var(--cocoon-settings-radius-control);
+    background: transparent;
+    box-shadow: none;
+    color: var(--cocoon-settings-text);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+    cursor: pointer;
+    transition:
+      background-color 120ms ease,
+      border-color 120ms ease,
+      box-shadow 120ms ease,
+      color 120ms ease;
+  }
+
+  :where(.cocoon-settings-view-mode-button:hover:not([aria-disabled='true'], [aria-checked='true'])) {
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--cocoon-settings-accent-hover);
+  }
+
+  // 選択中の面だけを前へ浮かせ、1つの枠内にある2択だと直感的に伝える。
+  :where(.cocoon-settings-view-mode-button[aria-checked='true']) {
+    border-color: var(--cocoon-settings-accent);
+    background: var(--cocoon-settings-surface);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: var(--cocoon-settings-accent);
+    font-weight: 600;
+  }
+
+  :where(.cocoon-settings-view-mode-button:focus-visible) {
+    outline: 2px solid var(--cocoon-settings-accent);
+    outline-offset: 2px;
+  }
+
+  :where(.cocoon-settings-view-mode-button[aria-disabled='true']) {
+    cursor: progress;
+    opacity: 0.65;
+  }
+
+  :where(.cocoon-settings-view-mode-status) {
+    flex-basis: 100%;
+    margin-block-start: -4px;
+    color: #b32d2e;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: end;
+  }
+
+  :where(.cocoon-settings-view-mode-status[hidden]) {
+    display: none;
+  }
+
   // 既存のIDセレクターと!importantを安全に上書きするため、設定画面内だけに限定する。
   :where(#tabs > .tab-input) {
     display: block !important;
@@ -88,6 +210,11 @@
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
+  }
+
+  // スキンが元から隠していた項目は、radioの値を保ったまま拡張UIでも表示しない。
+  :where(#tabs.is-navigation-enhanced > .tab-input.is-navigation-excluded) {
+    display: none !important;
   }
 
   // 既存の#tabs＋!importantより後勝ちさせるため、タブ部分だけID詳細度を許可する。
@@ -112,8 +239,7 @@
     transition:
       background-color 120ms ease,
       border-color 120ms ease,
-      color 120ms ease,
-      box-shadow 120ms ease;
+      color 120ms ease;
   }
 
   #tabs > .tab-label:hover {
@@ -125,9 +251,9 @@
   #tabs > .tab-input:checked + .tab-label {
     border-color: var(--cocoon-settings-accent) !important;
     background: var(--cocoon-settings-surface) !important;
-    color: var(--cocoon-settings-text);
+    color: var(--cocoon-settings-accent);
     font-weight: 600;
-    box-shadow: inset 0 -3px 0 var(--cocoon-settings-accent);
+    box-shadow: none;
   }
 
   #tabs > .tab-input:checked + .tab-label:hover {
@@ -139,11 +265,203 @@
     outline: 2px solid var(--cocoon-settings-accent);
     outline-offset: 2px;
   }
+
+  // 従来表示は新しい色・選択表現を保ち、旧UIに近い寸法と並びへ戻す。
+  #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
+    min-block-size: 0;
+    margin: 0 3px 4px 0 !important;
+    padding: 4px 9px 3px !important;
+    font-weight: 500;
+    line-height: 1.35;
+  }
   /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+  :where(#tabs > .cocoon-settings-navigation) {
+    display: none;
+    min-inline-size: 0;
+  }
+
+  :where(.cocoon-settings-sidebar) {
+    box-sizing: border-box;
+    border: 1px solid var(--cocoon-settings-border-subtle);
+    border-radius: var(--cocoon-settings-radius-emphasis);
+    background: var(--cocoon-settings-surface);
+    box-shadow: var(--cocoon-settings-shadow-card);
+  }
+
+  :where(.cocoon-settings-sidebar-header) {
+    padding: 16px;
+    border-block-end: 1px solid var(--cocoon-settings-border-subtle);
+  }
+
+  :where(.cocoon-settings-sidebar-title) {
+    margin-block-end: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  :where(.cocoon-settings-navigation-search) {
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-block-size: 36px;
+    margin: 0;
+    border-color: var(--cocoon-settings-border-control);
+    border-radius: var(--cocoon-settings-radius-control);
+    background: var(--cocoon-settings-surface);
+  }
+
+  :where(.cocoon-settings-navigation-status) {
+    margin: 8px 0 0;
+    color: var(--cocoon-settings-text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  :where(.cocoon-settings-navigation-status[hidden]) {
+    display: none;
+  }
+
+  :where(.cocoon-settings-navigation-group) {
+    margin: 0;
+    border-block-end: 1px solid var(--cocoon-settings-border-subtle);
+  }
+
+  :where(.cocoon-settings-navigation-group:last-child) {
+    border-block-end: 0;
+  }
+
+  :where(.cocoon-settings-navigation-summary) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    box-sizing: border-box;
+    min-block-size: 44px;
+    padding: 10px 14px;
+    color: var(--cocoon-settings-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  :where(.cocoon-settings-navigation-summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  :where(.cocoon-settings-navigation-summary)::after {
+    flex: 0 0 7px;
+    inline-size: 7px;
+    block-size: 7px;
+    margin-inline-start: auto;
+    border-inline-end: 2px solid currentcolor;
+    border-block-end: 2px solid currentcolor;
+    content: '';
+    transform: rotate(45deg) translateY(-2px);
+    transform-origin: center;
+  }
+
+  :where(.cocoon-settings-navigation-group[open] > .cocoon-settings-navigation-summary)::after {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
+  :where(.cocoon-settings-navigation-summary:hover) {
+    background: var(--cocoon-settings-surface-subtle);
+    color: var(--cocoon-settings-text);
+  }
+
+  :where(.cocoon-settings-navigation-summary:focus-visible) {
+    outline: 2px solid var(--cocoon-settings-accent);
+    outline-offset: -3px;
+  }
+
+  :where(.cocoon-settings-navigation-group.is-active-group > .cocoon-settings-navigation-summary) {
+    color: var(--cocoon-settings-text);
+  }
+
+  :where(.cocoon-settings-navigation-count) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 24px;
+    min-block-size: 20px;
+    padding-inline: 6px;
+    border-radius: 999px;
+    background: var(--cocoon-settings-surface-subtle);
+    color: var(--cocoon-settings-text-muted);
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  :where(.cocoon-settings-navigation-items) {
+    display: grid;
+    gap: 2px;
+    padding: 0 8px 10px;
+  }
+
+  :where(.cocoon-settings-navigation-item) {
+    position: relative;
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-block-size: 40px;
+    padding: 9px 10px 9px 14px;
+    overflow-wrap: anywhere;
+    border: 0;
+    border-radius: var(--cocoon-settings-radius-control);
+    background: transparent;
+    color: var(--cocoon-settings-text-muted);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  :where(.cocoon-settings-navigation-item:hover) {
+    background: var(--cocoon-settings-surface-subtle);
+    color: var(--cocoon-settings-text);
+  }
+
+  :where(.cocoon-settings-navigation-item:focus-visible) {
+    outline: 2px solid var(--cocoon-settings-accent);
+    outline-offset: 1px;
+  }
+
+  :where(.cocoon-settings-navigation-item.is-active) {
+    background: #f0f6fc;
+    color: var(--cocoon-settings-accent);
+    font-weight: 600;
+  }
+
+  :where(.cocoon-settings-navigation-item.is-active)::before {
+    position: absolute;
+    inset-block: 7px;
+    inset-inline-start: 0;
+    inline-size: 3px;
+    border-radius: 999px;
+    background: var(--cocoon-settings-accent);
+    content: '';
+  }
+
+  :where(.cocoon-settings-navigation-item.is-danger) {
+    color: #8a2424;
+  }
+
+  :where(.cocoon-settings-navigation-item.is-danger:hover) {
+    background: var(--cocoon-settings-danger-bg);
+  }
+
+  :where(.cocoon-settings-mobile-picker) {
+    display: none;
+  }
 
   :where(#tabs > .metabox-holder) {
     min-inline-size: 0;
     margin-block-start: 4px;
+    scroll-margin-block-start: 64px;
   }
 
   // フォーム側にはpostbox直下型とmetabox-holder入れ子型の両方がある。
@@ -256,7 +574,6 @@
     margin-block: 8px 12px !important;
     padding: 10px 12px;
     border: 1px solid var(--cocoon-settings-border-subtle);
-    border-inline-start: 3px solid var(--cocoon-settings-accent);
     border-radius: var(--cocoon-settings-radius-control);
     background: var(--cocoon-settings-surface-subtle);
     color: var(--cocoon-settings-text-muted);
@@ -325,6 +642,37 @@
     border-block-end-color: var(--cocoon-settings-danger-border);
     color: #8a2424;
   }
+
+  // JavaScriptが実測した利用可能幅が十分な場合だけ、本文幅を保ったまま2カラム化する。
+  :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide) {
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important表示をPCナビゲーション時だけ無効化する。 */
+  #tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide > .tab-label {
+    display: none !important;
+  }
+  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+  :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide > .cocoon-settings-navigation) {
+    position: sticky;
+    top: 48px;
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    max-block-size: calc(100vh - 64px);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide > .metabox-holder) {
+    grid-column: 2;
+    grid-row: 1;
+    margin-block-start: 0;
+  }
 }
 
 @media screen and (width <= 960px) {
@@ -368,6 +716,90 @@
       margin: 0 4px 6px 0 !important;
       padding: 9px 11px !important;
       font-size: 13px;
+    }
+
+    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法より優先し、モバイル操作領域を確保する。 */
+    #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
+      min-block-size: 44px;
+      margin: 0 4px 6px 0 !important;
+      padding: 9px 11px !important;
+    }
+
+    /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important表示をモバイル選択UI時だけ無効化する。 */
+    #tabs.is-navigation-enhanced.is-navigation-mode-responsive > .tab-label {
+      display: none !important;
+    }
+    /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+    :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .cocoon-settings-navigation) {
+      position: sticky;
+      z-index: 20;
+      top: 46px;
+      display: block;
+      margin-block-end: 12px;
+    }
+
+    // 管理バーと固定表示のモバイル選択UIに隠れない位置へ、対象パネルのスクロール停止位置をずらす。
+    :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .metabox-holder) {
+      scroll-margin-block-start: 152px;
+    }
+
+    :where(.cocoon-settings-sidebar) {
+      display: none;
+    }
+
+    :where(.cocoon-settings-mobile-picker) {
+      display: block;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid var(--cocoon-settings-border-subtle);
+      border-radius: var(--cocoon-settings-radius-card);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--cocoon-settings-shadow-card);
+    }
+
+    :where(.cocoon-settings-mobile-label) {
+      display: block;
+      margin-block-end: 6px;
+      color: var(--cocoon-settings-text);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    :where(.cocoon-settings-mobile-select) {
+      box-sizing: border-box;
+      inline-size: 100%;
+      min-block-size: 44px;
+      margin: 0;
+      border-color: var(--cocoon-settings-border-control);
+      border-radius: var(--cocoon-settings-radius-control);
+      background-color: var(--cocoon-settings-surface);
+    }
+
+    :where(.cocoon-settings-view-mode) {
+      align-items: stretch;
+      gap: 8px;
+      margin-block-end: 12px;
+    }
+
+    :where(.cocoon-settings-view-mode-copy) {
+      flex-basis: 100%;
+    }
+
+    :where(.cocoon-settings-view-mode-control) {
+      display: grid;
+      flex-basis: 100%;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    :where(.cocoon-settings-view-mode-button) {
+      min-block-size: 44px;
+      padding-inline: 8px;
+    }
+
+    :where(.cocoon-settings-view-mode-status) {
+      text-align: start;
     }
 
     /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内に限定する。 */
@@ -485,6 +917,11 @@
       padding-inline: 9px !important;
     }
 
+    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- 従来タブのモバイル余白を同じ値へ揃える。 */
+    #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
+      padding-inline: 9px !important;
+    }
+
     /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内に限定する。 */
     :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
       padding-inline: 14px;
@@ -502,10 +939,37 @@
   }
 }
 
+// タッチ操作が中心の端末では、画面幅にかかわらず主要操作領域を44px以上にする。
+@media (pointer: coarse) {
+  .toplevel_page_theme-settings .wrap.admin-settings {
+    /* stylelint-disable-next-line selector-max-specificity -- 既存タブのID詳細度をタッチ端末時だけ上書きする。 */
+    #tabs > .tab-label {
+      min-block-size: 44px;
+    }
+
+    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法より優先し、タッチ操作領域を確保する。 */
+    #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
+      min-block-size: 44px;
+    }
+
+    :where(.cocoon-settings-navigation-item, .cocoon-settings-navigation-search, .cocoon-settings-view-mode-button) {
+      min-block-size: 44px;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .toplevel_page_theme-settings .wrap.admin-settings {
     /* stylelint-disable-next-line selector-max-specificity -- 通常時のタブ詳細度と揃える。 */
     #tabs > .tab-label {
+      transition: none;
+    }
+
+    :where(.cocoon-settings-view-mode-button) {
+      transition: none;
+    }
+
+    :where(.cocoon-settings-navigation-summary)::after {
       transition: none;
     }
 
@@ -527,6 +991,45 @@
       outline: 2px solid Highlight;
     }
     /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+
+    :where(.cocoon-settings-navigation-item.is-active) {
+      border: 2px solid Highlight;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    :where(.cocoon-settings-navigation-item:focus-visible, .cocoon-settings-navigation-summary:focus-visible) {
+      outline: 2px solid Highlight;
+    }
+
+    :where(.cocoon-settings-view-mode-control) {
+      border-color: ButtonText;
+      background: ButtonFace;
+    }
+
+    :where(.cocoon-settings-view-mode-button) {
+      border-color: transparent;
+      background: ButtonFace;
+      box-shadow: none;
+      color: ButtonText;
+    }
+
+    :where(.cocoon-settings-view-mode-button[aria-checked='true']) {
+      border: 2px solid Highlight;
+      background: ButtonFace;
+      box-shadow: none;
+      color: ButtonText;
+    }
+
+    :where(.cocoon-settings-view-mode-button:focus-visible) {
+      outline: 2px solid Highlight;
+    }
+
+    :where(.cocoon-settings-view-mode-button[aria-disabled='true']) {
+      border-color: GrayText;
+      color: GrayText;
+      opacity: 1;
+    }
 
     :where(form.admin-settings > .submit:last-of-type) {
       border-block-start: 1px solid CanvasText;

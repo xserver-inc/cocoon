@@ -5,40 +5,62 @@
 - 対象ブランチ: `feature/cocoon-settings-design`
 - 対象画面: WordPress管理画面 `admin.php?page=theme-settings`
 - 対象テーマ: Cocoon親テーマ
-- 計画の主目的: アクセス解析画面と共通する洗練された視覚言語を、既存の保存・読込仕様を一切変更せずCocoon設定画面へ導入する
-- 実装方針: 表示層を段階的に変更し、各段階でフォーム契約・保存回帰・レスポンシブ表示を検証する
+- 計画の主目的: アクセス解析画面と共通する洗練された視覚言語を、Cocoon本体の設定保存・読込仕様を変更せずCocoon設定画面へ導入する
+- 実装方針: 表示層を段階的に変更し、表示モードだけを独立したユーザー表示設定として扱い、各段階でフォーム契約・保存回帰・レスポンシブ表示を検証する
 - データ移行: なし
 - データベーススキーマ変更: なし
+- 追加する表示設定: サイト別・管理者別の`cocoon_settings_navigation_mode` 1項目だけ
 
 ## 決定事項
 
 未確定だったデザイン判断は、初回実装では次の推奨値を採用する。
 
-- 初回はSCSS/CSSだけを変更し、PHPのフォーム構造とJavaScriptは変更しない
+- 既存フォーム構造は変更せず、JavaScriptは表示専用ナビゲーションと表示モード保存だけに限定する
 - 配色はアクセス解析画面と同系統の白、薄いグレー、WordPress管理画面アクセント色を使用する
 - モバイルでは既存の下部保存ボタンをfixedアクションバーとして追従表示する
-- 設定項目の大分類、検索、モバイル用選択UIは初回の視覚検証後に別段階で判断する
+- 設定項目の大分類、検索、モバイル用選択UIは既存radioを状態源とする段階的強化として実装する
 - チェックボックスやradioは初回に独自スイッチへ置き換えず、WordPress標準の操作感を維持する
 - Dockerは静的検証だけでは判断できないレスポンシブ表示、操作、保存回帰の確認に使用する
 - 各ファイル変更とCSS生成の直前に`git branch --show-current`を実行し、完全一致しなければ即時停止する
+- 初期値は後方互換を優先した「従来の表示」とし、利用者が明示的に「おすすめ表示」を選んだ場合だけ、画面幅に応じたナビゲーションへ切り替える
+- 表示モードはWordPress標準の`get_user_option()`と`update_user_option()`でサイト別・管理者別に保存する
+- 表示モード用のAJAX、nonce、ユーザー設定はCocoon本体の設定フォーム、theme_mod、バックアップ、リセットから完全に分離する
+
+## 表示モードの段階導入仕様
+
+設定インターフェースの大幅な変更では、既存利用者の操作記憶を保ちながら新UIへ任意移行できる方式を採用する。
+
+- `従来の表示`: 元のDOM順を維持した横型タブ。新しい配色、カード、選択表現は維持し、PCでは旧UIに近い文字サイズと余白へ圧縮する
+- `おすすめ表示`: 広い設定領域では分類サイドナビ、中程度では折り返しタブ、狭い領域では分類付き選択欄を表示する推奨モード
+- 表示モードの選択UIは、隣接した2択セグメントとして上部保存ボタンと設定ナビゲーションの間へ置き、どちらの表示でも見失わないようにする
+- セグメント全体を`role="radiogroup"`、各選択肢を`type="button"`かつ`role="radio"`で構成し、選択状態は`aria-checked`で表す。各選択肢に`name`を付けず、既存フォームの成功コントロールへ加えない
+- 表示モード切替ではCSSクラスと表示専用UIだけを変更し、既存タブradio、未保存入力、選択中の設定項目、URL、履歴を変更しない
+- Tabキーで選択中の表示モードへ入り、矢印キー、Home、End、Space、Enter、クリックで1つだけを選択できるようにする
+- 保存可能値は`responsive`と`tabs`の2値だけとし、不正値と未保存値は`tabs`へ戻す
+- 専用AJAXは`manage_options`、専用nonce、文字列確認、`sanitize_key()`、厳密なホワイトリスト、現在ユーザーIDを順に検証する
+- 保存後に同じユーザー設定を再読込し、要求値との厳密比較に失敗した場合はUIを直前の保存済みモードへ戻す
+- JavaScriptが利用できない場合は従来タブをそのまま利用できる段階的強化とする
+- 既存サイトと新規サイトを推測で分類するDBマーカーは追加せず、未選択者へ同じ安全な初期値を適用する
 
 ## 成果物
 
 初回実装で作成・更新する成果物は次に限定する。
 
 - 本実装計画書
+- Cocoon設定データ互換性監査報告書と再現用トークン解析スクリプト
 - Cocoon設定画面専用のSCSS partial
-- `scss/admin.scss`から専用partialを読み込むimport
-- 現行Sassで生成し、既存生成ドリフトを混ぜずに新規ブロックだけを反映した`css/admin.css`
+- 専用partialを読み込む`scss/cocoon-settings.scss`
+- Cocoon設定画面でだけ読み込む生成物`css/cocoon-settings.css`
+- 表示専用ナビゲーション、実行動作テスト、多言語カタログ
 - `tests/Unit/CocoonSettingsDesignContractTest.php`によるフォーム契約と画面限定スコープのユニットテスト
 - Dockerローカル環境で取得する検証結果
 
-初回実装では、次の成果物を作らない。
+実装では、次の成果物を作らない。
 
-- 新しい設定値
+- Cocoon本体の新しい設定値（独立した表示モード用ユーザー設定だけを例外とする）
 - 新しいDBテーブル、option、theme_mod、usermeta
 - 自動保存処理
-- AJAX保存処理
+- Cocoon本体設定を扱う新しいAJAX保存処理
 - タブ状態を保存するlocalStorage処理
 - Chart.js、SortableJSなどの新しい依存関係
 - アクセス解析画面のJavaScript流用
@@ -122,7 +144,7 @@ Cocoon設定はWordPress Settings APIではなく、同じ管理画面へ直接P
 
 ## スタイル実装方式
 
-新しいSCSS partialを`scss/`配下へ追加し、`scss/admin.scss`の末尾から読み込む。
+新しいSCSS partialを`scss/`配下へ追加し、専用エントリ`scss/cocoon-settings.scss`からだけ読み込む。生成した`css/cocoon-settings.css`はCocoon設定画面でだけenqueueし、共通`admin.css`へ設定専用規則を含めない。
 
 すべてのルールは次のページ限定ルートを起点とする。
 
@@ -132,11 +154,11 @@ Cocoon設定はWordPress Settings APIではなく、同じ管理画面へ直接P
 }
 ```
 
-この方式により、初回はPHPとJavaScriptの差分をゼロにしたまま表示を変更できる。`admin.css`自体は管理画面全体で読み込まれるが、ルートを厳格に限定することでアクセス解析、投稿一覧、ウィジェットなどへ影響させない。
+この方式により、設定専用CSS約36KBをアクセス解析、投稿一覧、ウィジェットなどで読み込まない。さらにルートも厳格に限定し、誤enqueue時にも他画面へ規則が漏れない二重の境界を設ける。
 
 既存DOMにはinlineの`min-width`や固定幅があるため、`!important`を完全禁止とはしない。ページ、部品、breakpointを限定し、inline最小幅を解除する`min-width: 0 !important`など、必要性をコメントで説明できる例外だけを許可する。汎用的な`!important`は使用しない。
 
-将来、設定画面専用CSSが大きくなった場合は、別タスクとして画面限定enqueueへ分離する。その際もenqueue以外のPHP処理は変更しない。
+最上位ラッパーへ`container-type`、`contain`、`transform`など固定配置の基準を変える指定は置かない。広い設定領域の判定は既存JavaScriptの`ResizeObserver`でクラスを切り替え、モバイル保存バー、ツールチップ、TinyMCE全画面表示をviewport基準のまま保つ。
 
 ## デザイントークン
 
@@ -285,9 +307,11 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 
 ## アクセシビリティ仕様
 
-- 既存radio groupのネイティブセマンティクスを維持する
+- タブレット表示では既存radio groupのネイティブセマンティクスを維持し、Tabキーと矢印キーで選択できるようにする
+- PC表示では各項目を`type="button"`と`aria-pressed`で表し、Tabキー、Enterキー、Spaceキーで操作できるようにする
+- モバイル表示では分類付きのネイティブselectを使用する
+- 画面幅変更で操作中のナビゲーションが消える場合は、同じ選択項目の表示中UIへフォーカスを引き継ぐ
 - 安易に`role="tablist"`や`aria-selected`を追加しない
-- Tabキーと矢印キーでタブ選択へ到達できるようにする
 - `:focus-visible`で2px以上の明瞭なフォーカスリングを表示する
 - 選択状態を色だけで表現しない
 - 通常文字と背景のコントラスト比を4.5:1以上にする
@@ -305,7 +329,7 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 ### 基準化
 
 - ブランチと作業ツリーを確認する
-- 現行`scss/admin.scss`を同じSass版で一時ファイルへコンパイルし、既存`css/admin.css`との生成再現性を確認する
+- `scss/cocoon-settings.scss`を固定Sass版で一時ファイルへコンパイルし、`css/cocoon-settings.css`との完全一致を確認する
 - 現行Sass 1.69.5では、変更前から既存margin shorthand 2行、コメント空白2行、末尾改行に生成ドリフトがあるため、新規ブロックの文字単位一致を正とし、既存部分は書き換えない
 - 保護対象ファイルの差分がゼロであることを記録する
 - 現行フォーム契約をテストへ固定する
@@ -320,7 +344,7 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 - デザイントークンを定義する
 - ページヘッダー、タブ、カード、フォーム、保存領域を実装する
 - 960、782、600、480pxのresponsive rulesを追加する
-- 管理画面CSSを正規手順でビルドする
+- 設定画面専用CSSを正規手順でビルドする
 - stylelintと生成差分を確認する。既存設定に残る現行Stylelint廃止済み2ルールは既知の基盤問題として分離する
 
 ### 静的契約テスト
@@ -330,7 +354,7 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 - 新SCSS partialのトップレベルが単一の設定画面ルートであることを検証する
 - ソース上の38組のタブradio、value、隣接label、content対応と、nonce、select_index、上下submit名を検証する
 - タブ操作領域にanchor、button、href、formaction、onclickがなく、全contentがchecked radioのCSSで切り替わることを検証する
-- partialと生成`css/admin.css`の全トップレベル規則がページスコープから始まることを検証する
+- partialと生成`css/cocoon-settings.css`の全トップレベル規則がページスコープから始まることを検証する
 - 直下型と入れ子型のカードDOM、リセットカード、inline幅付きツールチップのモバイル保護を検証する
 - `git diff --check`を実行する
 - 対象ユニットテストと全ユニットテストを実行する
@@ -346,7 +370,7 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 - 各viewportでページ全体の横溢れ、カード、入力、タブ、fixed保存を確認する
 - ブラウザーコンソールの新規エラーがゼロであることを確認する
 - Cocoon設定以外のアクセス解析、投稿一覧、ウィジェットを比較し、視覚差分がないことを確認する
-- 各反復でブラウザーを強制再読込するかキャッシュを無効化し、`admin.css`の古いキャッシュを避ける
+- 各反復でブラウザーを強制再読込するかキャッシュを無効化し、`cocoon-settings.css`の古いキャッシュを避ける
 - 色ピッカー開閉、画像選択とクリア、range、詳細トグル、カテゴリ・タグリスト、TinyMCE、スキン制御、ツールチップ端部、モバイルプレビューを確認する
 - タブ切替後に表示中contentが常に1つで、非表示タブの入力も従来どおりFormDataへ含まれることを確認する
 - 代表タブのクリック前後でURLと親windowの識別値が不変で、親documentのGET、POST、再読込が発生しないことを確認する
@@ -374,7 +398,7 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 次の短いループを受入条件を満たすまで繰り返す。
 
 - SCSS変更
-- 管理画面CSSビルド
+- 設定画面専用CSSビルド
 - stylelintとユニットテスト
 - ローカル管理画面再読込
 - デスクトップ、タブレット、モバイルの比較
@@ -403,18 +427,23 @@ breakpointは1281px以上、961pxから1280px、783pxから960px、601pxから78
 ホスト側の静的検証では、リポジトリの既存Node、Composer依存関係を利用する。
 
 ```powershell
-.\node_modules\.bin\sass.cmd scss/admin.scss css/admin.css --style=expanded --no-source-map
-.\node_modules\.bin\stylelint.cmd scss/_cocoon-settings-modern.scss
-composer test:unit
+.\node_modules\.bin\sass.cmd scss/cocoon-settings.scss css/cocoon-settings.css --style=expanded --no-source-map
+npm run lint:settings
+npm run test:settings-navigation
+npm run test:settings-css
 npm run test:i18n
+php scripts/audit-cocoon-settings-data-contract.php --check
+.\vendor\bin\phpunit --do-not-cache-result tests\Unit\CocoonSettingsDesignContractTest.php tests\Unit\CocoonSettingsNavigationModeTest.php
+.\vendor\bin\phpunit --do-not-cache-result --testsuite unit --exclude-group distribution
+.\vendor\bin\phpunit --do-not-cache-result --group distribution
 git diff --check
 git status --short
 git diff --name-only
 ```
 
-現行`.stylelintrc.js`にはStylelint 16で利用できない`order/properties-order`と`string-quotes`が残っているため、上記の標準Stylelintコマンドはこの既存2エラーで終了する。今回のSCSS品質判定では、既存設定を一時的に継承したうえでこの2キーだけを削除し、対象partialがエラー・警告ゼロになることを確認する。一時設定は成果物へ含めず、Stylelint設定自体の更新は別変更とする。
+`npm run lint:settings`は設定画面専用JavaScriptとその実行型テストへESLintを、専用SCSS partialへStylelintを実行する。全リポジトリ向けlintとは分け、今回の変更範囲を同じ条件で再現できるようにする。
 
-管理画面CSSの全体コンパイルでは、変更前から存在するmargin shorthand 2行、コメント空白2行、末尾改行の生成ドリフトが現れる。今回の成果物では既存行をHEADと同一に保ち、専用partialの生成結果と`admin.css`末尾のモダンUIブロックが文字単位で一致することを確認する。
+設定専用CSSは専用entryから単独生成し、同じコマンドによる再生成で`css/cocoon-settings.css`が文字単位で一致することを確認する。共通`admin.css`にはモダンUIのセレクターやトークンが含まれないことも検証する。
 
 最終の全体ビルド互換確認では次を実行する。`npm run prod`はフロントCSS、エディターCSS、全スキンも再生成するため、実行前後の差分を比較し、許可ファイル以外の生成差分は採用しない。
 
@@ -476,8 +505,9 @@ pwsh -NoProfile -File docker/dev.ps1 test env/wp7.0-php8.4.env
 
 ### 機能
 
-- 保存・読込関連PHPとJavaScriptに差分がない
-- DBスキーマ、option、theme_mod、usermetaの新設がない
+- Cocoon本体の設定フォーム、nonce、POST、theme_mod、バックアップ、リセット処理に差分がない
+- DBスキーマとtheme_modの新設がなく、DB差分は表示モード専用のユーザー設定1項目だけである
+- 表示モード保存が専用AJAX、専用nonce、現在ユーザーの`user_option`だけに限定される
 - 全既存入力のフォーム契約が維持されている
 - 上部と下部の保存が従来どおり動く
 - 保存後のタブ復元が従来どおり動く
@@ -526,7 +556,7 @@ pwsh -NoProfile -File docker/dev.ps1 test env/wp7.0-php8.4.env
 
 ### 既存SCSS詳細度との競合
 
-既存ルールを削除せず、専用partialを`admin.scss`末尾で読み込む。`!important`へ依存せず、ページルートの詳細度で上書きする。
+既存ルールを削除せず、専用partialを`cocoon-settings.scss`から読み込む。`!important`へ依存せず、ページルートの詳細度で上書きする。
 
 ### タブ操作不能
 
@@ -546,15 +576,16 @@ radio、label、contentのDOMとIDを変更しない。radioはvisually-hidden�
 
 ### 生成CSSの不要差分
 
-対象ビルドと全体ビルドの両方を確認し、SCSS変更に由来しない既存生成ドリフトは採用しない。専用partialの生成結果と`admin.css`末尾の追加ブロックが文字単位で一致することを必須とする。
+対象ビルドと全体ビルドの両方を確認し、SCSS変更に由来しない既存生成ドリフトは採用しない。専用entryの生成結果と`css/cocoon-settings.css`が文字単位で一致し、共通`admin.css`に設定専用規則が混入しないことを必須とする。
 
 ## ロールバック
 
-DB変更とデータ移行がないため、ロールバックは表示層の差分を戻すだけで完了する。
+DBスキーマ変更とデータ移行はないため、ロールバックは表示層と専用表示モード処理の差分を戻すだけで完了する。保存済みのユーザー表示設定はCocoon本体設定から独立しているため、コードを戻した後も動作へ影響しない。
 
 - 専用SCSS partialを戻す
-- `admin.scss`のimportを戻す
-- 専用partialを外して`admin.css`末尾の対応ブロックを戻す
+- 専用SCSS entryと`cocoon-settings.css`を戻す
+- 設定画面限定のCSS enqueueを戻す
+- 表示モード用JavaScript、AJAX、ローカライズを戻す
 - 表示契約テストを戻す
 
 Dockerのデータボリュームは保持し、ロールバックのために`down -v`を使用しない。
@@ -566,6 +597,7 @@ Dockerのデータボリュームは保持し、ロールバックのために`d
 - `docs: Cocoon設定画面の刷新計画を追加`
 - `test: Cocoon設定フォームの表示契約を追加`
 - `feat: Cocoon設定画面のデザインを刷新`
+- `feat: Cocoon設定ナビゲーションの表示モード切替を追加`
 
 ナビゲーション改善と意味論改善は、初回CSS刷新とは別コミットにする。
 
@@ -583,7 +615,7 @@ Dockerのデータボリュームは保持し、ロールバックのために`d
 
 ## 実装・検証記録
 
-2026年8月25日時点の初回CSS実装と確認結果を記録する。
+この節は実装過程の履歴である。2026年8月25日の初回CSS実装から順に記録し、途中のテスト件数は当時のスナップショットとして残す。現行作業ツリーの再現コマンドと最新記録値は末尾の「現行作業ツリーの再検証記録」を正とする。
 
 ### 実装済み
 
@@ -606,14 +638,103 @@ Dockerのデータボリュームは保持し、ロールバックのために`d
 
 ### 静的検証
 
-- 専用partialから生成したモダンUI CSSと`css/admin.css`末尾の追加ブロックが文字単位で一致した
+- 専用entryから生成したモダンUI CSSと`css/cocoon-settings.css`が文字単位で一致した
+- 共通`css/admin.css`にCocoon設定専用セレクターが含まれないことを確認した
 - 既存設定の非互換2ルールだけを除外したStylelintでエラー・警告ゼロを確認した
-- ホストPHP 8.5の対象テストは6件、869アサーションで成功した
-- Docker PHP 8.3の対象テストは6件、869アサーションで成功した
-- ホストPHP 8.5の全Unitテストは1295件、10737アサーションで成功した
-- 保存・読込関連PHP、JavaScript、DB処理の保護対象ファイルに差分がないことを確認した
+- 実行型DOMテストでスキン非表示、フォーム境界、幅変更、IME、キーボード、focus時点のARIA、スクロール正負経路、通信停止、nonce失効を確認した
+- 現在の作業内容全体から実際のGit配布tarを生成し、専用JS・CSSと8言語のPO・MO・l10n.phpが含まれ、テスト・内部計画書・開発用packageが除外されることを確認した
+- 専用SCSSの再コンパイル結果と配布CSS全体をCIで文字単位に比較し、翻訳22文言は8言語すべてでPO・MO・l10n.phpの一致を検証する
+- 重い配布tar検査を`distribution`グループへ分け、通常Unit行列とcoverageから除外してCIで1回だけ実行する
+- 初回CSS実装時点では、ホストPHP 8.5とDocker PHP 8.3の対象テストが各6件・869アサーション、ホストPHP 8.5の全Unitテストが1295件・10737アサーションで成功した
+- Cocoon本体theme_modの保存・読込PHP、既存管理JavaScript、バックアップ処理の保護対象ファイルに差分がないことを確認した。表示モード専用user_optionだけは許可した例外として分離した
 
 ### 未実施と既知事項
 
-- 現在のローカルDBを書き換えないため、上下保存ボタンの実クリックを伴う保存回帰は実行していない。必要な場合は使い捨てDB環境で別途実施する
+- 2026年8月26日に上部保存ボタンで変更なし保存を実行し、保存成功通知と再読込後フォーム状態の一致を確認した。下部ボタンは同一formを送信する既存契約を静的テストで確認している
+- raw DBシリアライズ文字列とリセット操作は、機密保護と現在DBの破壊防止のため取得・実行していない。代わりに全保存・読込ソースの完全比較と実画面の再読込結果を組み合わせた
 - Cocoon子テーマの`javascript.js`がHTMLへリダイレクトされる既存エラーがプレビューiframe内にある。親テーマの今回差分とは無関係で、別課題として扱う
+
+### ナビゲーション改善
+
+2026年8月25日、設定数の多さと各画面幅での操作性を両立するため、既存タブを状態源として使う表示専用ナビゲーションを追加した。
+
+- 広い設定領域では、38項目を6分類へ整理した縦型サイドバー、設定名検索、現在位置の強調表示を採用した
+- 中程度の設定領域では、一覧性を保ちやすい既存の折り返し横型タブを維持した
+- 狭い設定領域では、画面上部へ追従するネイティブの分類付き選択欄へ切り替えた
+- 設定領域の実幅は`ResizeObserver`で監視し、1040px以上の場合だけ`is-navigation-wide`クラスを付与する。固定配置を壊し得るCSS containmentは使用しない
+- スキンCSSで元ラベルが非表示の設定は、強化前の可視性を記録して新しいナビゲーションと選択欄から除外し、値とcheckedを保持したままradioも視覚・focus・読み上げ対象に戻さない
+- 分類メニューはroving tabindexと上下矢印、Home、Endに対応し、本文へのTab移動を38回要求しない
+- 通信停止には15秒タイムアウトを設け、nonce期限切れでは再読込を案内し、成功・失敗の全経路で操作不能状態を解除する
+- 検索や幅変更で選択項目が非表示になる場合は、ARIAを先に復元してから可視要素へフォーカスを戻し、切替先が画面外の場合だけパネル先頭へスクロールする
+- 検索欄ではIME変換確定中のEnterを妨げず、通常Enterによる設定フォームの誤送信だけを防ぐ
+- 新規UI文言はPOTと8言語のPO、MO、l10n.phpへ反映し、実行型DOMテストと翻訳整合性テストで保護する
+- 表示用ボタンはすべて`type="button"`かつ`name`なしとし、クリック時は対応する既存radioの`.click()`だけを呼び出す
+- radioの`change`を監視し、サイドバー、モバイル選択欄、表示中パネルを同じ状態へ同期する
+- JavaScriptを利用できない場合や初期化に失敗した場合は、既存タブがそのまま利用できる構成にした
+- submit、FormData、URL、history、Web Storageは操作せず、通信は後述する表示モード専用AJAXだけに限定した
+- ナビゲーション用スクリプトはCocoon設定画面だけで読み込み、既存の保存・読込・DB関連ファイルは変更していない
+
+PC 1440px、タブレット1024px、モバイル390pxを中心に確認し、タブ切替でURLが変化せず、常に1つの設定パネルだけが表示されること、画面全体に横スクロールが発生しないことを確認した。保存対象の名前付きコントロールは切替前後で同一であり、追加ナビゲーション自身は保存対象の値を持たない。
+
+2026年8月26日のナビゲーション改善時点では、ローカル環境で有効な36項目すべてをPC用ナビゲーションから切り替え、選択radio、`aria-pressed`、表示パネルが全件一致することを確認した。AMP・PWAを含む全38項目の対応は契約テストで固定している。PC、タブレット、モバイル間で操作中ナビゲーションのフォーカスが同じ項目へ引き継がれ、本文入力中はフォーカスが移動しないことも確認した。この段階の履歴値は、配布検査を含む全PHPUnit 1338件・11791アサーションであり、実行型DOM、SCSS/CSS完全同期、8言語のi18n整合性も合格していた。
+
+### 表示モード切替
+
+2026年8月26日、既存利用者の操作記憶を保ちながら「おすすめ表示」へ任意移行できる表示モード選択を追加した。
+
+- 未保存時は元の順番を維持した「従来の表示」を選択し、画面幅に応じて最適化する選択肢を「おすすめ表示」とした
+- 「従来の表示」は新しい色、カード、細い選択境界を維持しながら、PCでは旧UIに近い`4px 9px 3px`の内側余白へ戻した
+- 782px以下と粗いポインターでは、「従来の表示」でも44px以上の操作領域を維持した
+- 切替UIは単一の2択セグメントとして、コンテナに`role="radiogroup"`、2個の`type="button"`に`role="radio"`と`aria-checked`を付与し、選択中の項目だけをTab停止にした
+- 独立した「おすすめ」バッジと丸印をなくし、短いラベル、共有外枠、選択中の面だけの境界・背景・太字で横幅を削減しながら排他選択を明示した
+- 切替時はCSSクラスと表示ナビゲーションだけを変更し、既存radioの`.click()`、フォーム送信、ページ遷移を発生させない
+- 表示モードだけを専用AJAXで現在管理者のサイト別`user_option`へ保存し、失敗時は保存済みモードへ戻して通知する
+- 権限、nonce、許可値、配列入力、現在ユーザー、保存後再読込を専用Unitテストで検証した
+- 元の38タブ順を配列完全一致で契約テストへ固定した
+- 実行型DOMテストでは「おすすめ表示」と「従来の表示」の排他選択、矢印キー操作、フォームデータ不変を確認し、CSS契約では782px以下でも横並び2択と44px以上の操作領域を固定した。実ブラウザーでの最終目視は、最新ファイル反映後の再読み込み時に行う
+- 874個の名前付きフォームコントロール、未保存入力値、選択radio、表示パネル、URLがモード往復前後で一致することを確認した
+- 保存中は`aria-disabled`で多重操作だけを防ぎ、保存の前後で選択ボタンのキーボードフォーカスが維持されることを実ブラウザーで確認した
+- 表示モード切替実装時点のテスト結果は直前のナビゲーション改善記録と同じであり、現行結果ではない。現行値は後述の再検証表へ集約する
+
+### データ互換性全件監査
+
+2026年8月26日、改修前の基準コミット`5ac3b6b1e4c01a842774d89ed9ff7fa722e1d0f9`と現在の作業ツリーを、コメントを除外するPHPトークン解析で比較した。詳細と全542件の結果は[データ互換性監査報告書](./COCOON-SETTINGS-DATA-COMPATIBILITY-REPORT.md)に記録する。
+
+- `_top-page.php`から保存時の`require_once`を再帰追跡し、SNSシェアのtop・bottom子ファイルを含む41ファイルを監査した
+- 実行可能な`update_theme_option()`518箇所と、SNS動的定義を展開した542保存単位が改修前後で一致した
+- 542個の保存定数を542個の一意theme_modキーへ全件解決し、未解決と重複はいずれも0件だった
+- 設定フォーム43ファイル、保存42ファイル、読込43ファイルはパスと内容が完全一致した
+- `get_theme_option()`535呼出は引数と既定値を含めて一致し、既存の直接`set_theme_mod()`1件とリセット呼出1件も一致した
+- ローカル実画面ではnonceと`select_index`を除く872個の名前付き要素、374件のPOST成功コントロールが、変更なし保存と再読込の前後で順序・型・値・状態まで一致した
+- 新ナビゲーション内の名前付き要素とsubmit要素は0件であり、既存POSTへ値を追加しないことを確認した
+- 例外は利用者が許可した`cocoon_settings_navigation_mode`だけで、現在管理者のサイト別user_optionとしてCocoon本体theme_modから分離されている
+- 全件監査の初回追加時点では対象PHPUnit 435テスト・10729アサーション、実配布tar検査1テスト・41アサーションで成功した。この件数は履歴値であり、現行値ではない
+- ナビゲーション実行型DOMテストとSCSS/CSS完全同期テストも、この時点で成功した
+
+### 翻訳生成物の正規化記録
+
+2026年8月26日、8言語のPOと辞書JavaScriptに大きな行単位差分が生じたが、正規生成・整形コマンドによる一回限りの正規化である。整形前後をロケールごとの翻訳キーと値の対応で比較し、今回追加するCocoon設定UI文言を除く既存翻訳値の変更は0件だった。生成物を手作業で旧整形へ戻さず、次のコマンドで再現する。
+
+```powershell
+npm run update-po
+.\node_modules\.bin\prettier.cmd --write "scripts/translations/{de_DE,en_US,es_ES,fr_FR,ko_KR,pt_PT,zh_CN,zh_TW}.js"
+npm run compile-all
+npm run test:i18n
+```
+
+`npm run test:i18n`はPOT、8言語のPO・MO・l10n.phpと辞書ソースの対応を検証する。大きな整形差分のレビューでは行数ではなく、翻訳キーと値の意味的差分、新規UI文言、生成形式の一致を確認する。
+
+### 現行作業ツリーの再検証記録
+
+以下は2026年8月26日の記録値であり、自動生成されない。コードまたはテストを変更した場合は同じコマンドを再実行し、件数と結果を更新する。
+
+| 範囲 | 再現コマンド | 2026年8月26日の記録結果 |
+| --- | --- | --- |
+| 全Unitテスト（distribution除外） | `.\vendor\bin\phpunit --do-not-cache-result --testsuite unit --exclude-group distribution` | 合格。1316テスト、12198アサーション |
+| 設定UI対象PHPUnit | `.\vendor\bin\phpunit --do-not-cache-result tests\Unit\CocoonSettingsDesignContractTest.php tests\Unit\CocoonSettingsNavigationModeTest.php` | 合格。24テスト、1094アサーション |
+| 実配布tar検査 | `.\vendor\bin\phpunit --do-not-cache-result --group distribution` | 合格。1テスト、41アサーション |
+| データ契約と報告書鮮度 | `php scripts/audit-cocoon-settings-data-contract.php --check` | 合格。542設定、未解決0、重複0、差分0 |
+| ナビゲーション実行型DOM | `npm run test:settings-navigation` | 合格 |
+| SCSS/CSS完全同期 | `npm run test:settings-css` | 合格 |
+| 8言語i18n整合 | `npm run test:i18n` | 合格 |
+| 設定UI lint | `npm run lint:settings` | 合格 |

@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.4.5\n"
+"Project-Id-Version: Cocoon 2.9.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: functions.php:562
 #: functions.php:563
-#: lib/admin.php:430
+#: lib/admin.php:616
 msgid "パターン一覧"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:210
 #: lib/admin-tinymce-qtag.php:537
-#: lib/admin.php:150
+#: lib/admin.php:336
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -327,7 +327,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:357
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/_top-page.php:224
+#: lib/page-settings/_top-page.php:250
 #: lib/sns-share.php:1015
 #: lib/sns-share.php:1028
 #: lib/_defins.php:419
@@ -857,7 +857,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:982
 #: lib/page-settings/editor-forms.php:139
-#: lib/page-settings/_top-page.php:242
+#: lib/page-settings/_top-page.php:268
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
 #: blocks/src/blocks.js:119
@@ -1249,11 +1249,107 @@ msgstr ""
 msgid "商品リンクの追加"
 msgstr ""
 
-#: lib/admin.php:146
+#: lib/admin.php:165
+msgid "設定メニューの表示"
+msgstr ""
+
+#: lib/admin.php:166
+msgid "おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。"
+msgstr ""
+
+#: lib/admin.php:167
+msgid "おすすめ表示"
+msgstr ""
+
+#: lib/admin.php:168
+msgid "画面の広さに応じて設定メニューを自動で見やすく切り替えます。"
+msgstr ""
+
+#: lib/admin.php:169
+msgid "従来の表示"
+msgstr ""
+
+#: lib/admin.php:170
+msgid "これまでと同じ順番でタブを表示します。"
+msgstr ""
+
+#: lib/admin.php:171
+msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
+msgstr ""
+
+#: lib/admin.php:172
+msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
+msgstr ""
+
+#: lib/admin.php:173
+msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
+msgstr ""
+
+#: lib/admin.php:174
+msgid "Cocoon設定項目"
+msgstr ""
+
+#: lib/admin.php:175
+msgid "設定メニュー"
+msgstr ""
+
+#: lib/admin.php:176
+msgid "設定項目"
+msgstr ""
+
+#: lib/admin.php:177
+#: lib/admin.php:178
+msgid "設定項目を検索"
+msgstr ""
+
+#: lib/admin.php:179
+msgid "該当する設定項目がありません。"
+msgstr ""
+
+#: lib/admin.php:180
+#, php-format
+msgid "%d件の設定項目が見つかりました。"
+msgstr ""
+
+#: lib/admin.php:181
+#: lib/custom-fields/other-field.php:17
+#: lib/custom-fields/other-field.php:19
+#: lib/page-access/analytics/dashboard-page.php:96
+#: lib/page-access/analytics/dashboard-page.php:109
+#: lib/page-access/analytics/dashboard-page.php:121
+#: lib/page-settings/_top-page.php:302
+msgid "その他"
+msgstr ""
+
+#: lib/admin.php:184
+msgid "外観・レイアウト"
+msgstr ""
+
+#: lib/admin.php:195
+msgid "コンテンツ"
+msgstr ""
+
+#: lib/admin.php:210
+msgid "集客・計測"
+msgstr ""
+
+#: lib/admin.php:221
+msgid "パーツ・導線"
+msgstr ""
+
+#: lib/admin.php:234
+msgid "管理・拡張"
+msgstr ""
+
+#: lib/admin.php:245
+msgid "システム・情報"
+msgstr ""
+
+#: lib/admin.php:332
 msgid "ID"
 msgstr ""
 
-#: lib/admin.php:147
+#: lib/admin.php:333
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1262,7 +1358,7 @@ msgstr ""
 msgid "文字数"
 msgstr ""
 
-#: lib/admin.php:148
+#: lib/admin.php:334
 #: lib/page-access/access-func.php:752
 #: lib/page-access/analytics/enqueue-func.php:107
 #: lib/page-access/analytics/render-func.php:386
@@ -1270,82 +1366,82 @@ msgstr ""
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:149
+#: lib/admin.php:335
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr ""
 
-#: lib/admin.php:184
+#: lib/admin.php:370
 msgid "　題："
 msgstr ""
 
-#: lib/admin.php:192
+#: lib/admin.php:378
 msgid "本文："
 msgstr ""
 
-#: lib/admin.php:218
+#: lib/admin.php:404
 msgid "日："
 msgstr ""
 
-#: lib/admin.php:226
+#: lib/admin.php:412
 msgid "週："
 msgstr ""
 
-#: lib/admin.php:234
+#: lib/admin.php:420
 msgid "月："
 msgstr ""
 
-#: lib/admin.php:242
+#: lib/admin.php:428
 msgid "全："
 msgstr ""
 
-#: lib/admin.php:327
+#: lib/admin.php:513
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr ""
 
-#: lib/admin.php:415
+#: lib/admin.php:601
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr ""
 
-#: lib/admin.php:421
+#: lib/admin.php:607
 #: lib/page-access/analytics/render-func.php:161
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
-#: lib/admin.php:422
+#: lib/admin.php:608
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr ""
 
-#: lib/admin.php:423
+#: lib/admin.php:609
 msgid "固定ページ一覧"
 msgstr ""
 
-#: lib/admin.php:424
+#: lib/admin.php:610
 msgid "メディア一覧"
 msgstr ""
 
-#: lib/admin.php:425
+#: lib/admin.php:611
 msgid "テーマ"
 msgstr ""
 
-#: lib/admin.php:435
+#: lib/admin.php:621
 msgid "カスタマイズ"
 msgstr ""
 
-#: lib/admin.php:436
-#: lib/page-settings/_top-page.php:264
+#: lib/admin.php:622
+#: lib/page-settings/_top-page.php:290
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr ""
 
-#: lib/admin.php:437
+#: lib/admin.php:623
 #: skins/skin-made-in-heaven/lib/hook-wp.php:665
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
@@ -1353,25 +1449,25 @@ msgstr ""
 msgid "メニュー"
 msgstr ""
 
-#: lib/admin.php:438
+#: lib/admin.php:624
 msgid "テーマの編集"
 msgstr ""
 
-#: lib/admin.php:439
+#: lib/admin.php:625
 msgid "プラグイン一覧"
 msgstr ""
 
-#: lib/admin.php:483
+#: lib/admin.php:669
 msgid "すべてのユーザー"
 msgstr ""
 
-#: lib/admin.php:539
+#: lib/admin.php:725
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:599
-#: lib/admin.php:613
+#: lib/admin.php:785
+#: lib/admin.php:799
 msgid "Excerpt"
 msgstr ""
 
@@ -1731,7 +1827,7 @@ msgstr ""
 
 #: lib/content-category.php:257
 #: lib/content-tag.php:233
-#: lib/page-settings/_top-page.php:203
+#: lib/page-settings/_top-page.php:229
 msgid "本文"
 msgstr ""
 
@@ -1881,7 +1977,7 @@ msgstr ""
 #: lib/custom-fields/ad-field.php:17
 #: lib/custom-fields/ad-field.php:18
 #: lib/custom-fields/ad-field.php:20
-#: lib/page-settings/_top-page.php:176
+#: lib/page-settings/_top-page.php:202
 #: lib/widgets/ad.php:19
 #: blocks/src/block/ad/edit.js:25
 #: blocks/src/block/ad/index.js:21
@@ -1910,7 +2006,7 @@ msgstr ""
 #: lib/custom-fields/amp-field.php:20
 #: lib/custom-fields/amp-field.php:22
 #: lib/page-cache/cache-forms.php:79
-#: lib/page-settings/_top-page.php:252
+#: lib/page-settings/_top-page.php:278
 msgid "AMP"
 msgstr ""
 
@@ -1944,15 +2040,6 @@ msgstr ""
 
 #: lib/custom-fields/memo-field.php:34
 msgid "この投稿に記録しておきたいメモがある場合は記入してください。"
-msgstr ""
-
-#: lib/custom-fields/other-field.php:17
-#: lib/custom-fields/other-field.php:19
-#: lib/page-access/analytics/dashboard-page.php:96
-#: lib/page-access/analytics/dashboard-page.php:109
-#: lib/page-access/analytics/dashboard-page.php:121
-#: lib/page-settings/_top-page.php:276
-msgid "その他"
 msgstr ""
 
 #: lib/custom-fields/other-field.php:32
@@ -2177,7 +2264,7 @@ msgstr ""
 #: lib/custom-fields/seo-field.php:17
 #: lib/custom-fields/seo-field.php:18
 #: lib/custom-fields/seo-field.php:20
-#: lib/page-settings/_top-page.php:182
+#: lib/page-settings/_top-page.php:208
 msgid "SEO"
 msgstr ""
 
@@ -2685,7 +2772,7 @@ msgstr ""
 #: lib/page-settings/sns-follow-forms.php:97
 #: lib/page-settings/sns-share-forms-bottom.php:101
 #: lib/page-settings/sns-share-forms-top.php:88
-#: lib/page-settings/_top-page.php:197
+#: lib/page-settings/_top-page.php:223
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
 msgstr ""
@@ -2696,7 +2783,7 @@ msgstr ""
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/toc-forms.php:78
-#: lib/page-settings/_top-page.php:200
+#: lib/page-settings/_top-page.php:226
 #: lib/shortcodes.php:517
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
@@ -2723,7 +2810,7 @@ msgid "検索結果一覧"
 msgstr ""
 
 #: lib/html-forms.php:810
-#: lib/page-settings/_top-page.php:248
+#: lib/page-settings/_top-page.php:274
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr ""
@@ -3365,7 +3452,7 @@ msgstr ""
 #: lib/page-func-text/form.php:30
 #: lib/page-item-ranking/form.php:80
 #: lib/page-settings/appeal-forms.php:112
-#: lib/page-settings/_top-page.php:179
+#: lib/page-settings/_top-page.php:205
 #: lib/page-speech-balloon/form.php:49
 #: lib/widgets/author-box.php:68
 #: lib/widgets/box-menus.php:73
@@ -4088,7 +4175,7 @@ msgstr ""
 
 #: lib/page-cache/cache-forms.php:64
 #: lib/page-settings/image-forms.php:217
-#: lib/page-settings/_top-page.php:218
+#: lib/page-settings/_top-page.php:244
 #: blocks/src/block/blogcard/index.js:54
 #: blocks/src/old/blogcard-class/block.js:34
 msgid "ブログカード"
@@ -8775,7 +8862,7 @@ msgid "カルーセルカードのサムネイル。"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:215
-#: lib/page-settings/_top-page.php:236
+#: lib/page-settings/_top-page.php:262
 msgid "カルーセル"
 msgstr ""
 
@@ -9709,7 +9796,7 @@ msgid "全テーマ設定の内容をリセットします。リセットを行�
 msgstr ""
 
 #: lib/page-settings/reset-forms.php:25
-#: lib/page-settings/_top-page.php:279
+#: lib/page-settings/_top-page.php:305
 msgid "リセット"
 msgstr ""
 
@@ -11710,7 +11797,7 @@ msgstr ""
 
 #: lib/page-settings/toc-forms.php:96
 #: lib/page-settings/toc-funcs.php:62
-#: lib/page-settings/_top-page.php:206
+#: lib/page-settings/_top-page.php:232
 #: lib/toc.php:98
 #: lib/widgets/toc.php:19
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:359
@@ -11920,49 +12007,49 @@ msgid "テーマ利用マニュアル"
 msgstr ""
 
 #: lib/page-settings/_top-page.php:162
-#: lib/page-settings/_top-page.php:506
+#: lib/page-settings/_top-page.php:532
 msgid "変更をまとめて保存"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:167
+#: lib/page-settings/_top-page.php:193
 msgid "スキン"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:170
+#: lib/page-settings/_top-page.php:196
 #: skins/skin-made-in-heaven/lib/panel-main.php:34
 msgid "全体"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:173
+#: lib/page-settings/_top-page.php:199
 msgid "ヘッダー"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:185
+#: lib/page-settings/_top-page.php:211
 msgid "OGP"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:188
+#: lib/page-settings/_top-page.php:214
 msgid "アクセス解析・認証"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:191
+#: lib/page-settings/_top-page.php:217
 #: skins/silk/functions.php:236
 msgid "カラム"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:194
+#: lib/page-settings/_top-page.php:220
 msgid "インデックス"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:209
+#: lib/page-settings/_top-page.php:235
 msgid "SNSシェア"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:212
+#: lib/page-settings/_top-page.php:238
 msgid "SNSフォロー"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:215
+#: lib/page-settings/_top-page.php:241
 #: skins/skin-made-in-heaven/lib/panel-option.php:87
 #: skins/skin-made-in-heaven/lib/panel-option.php:89
 #: skins/skin-made-in-heaven/lib/panel-visual.php:28
@@ -11973,54 +12060,54 @@ msgstr ""
 msgid "画像"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:221
+#: lib/page-settings/_top-page.php:247
 msgid "コード"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:227
+#: lib/page-settings/_top-page.php:253
 msgid "通知"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:230
+#: lib/page-settings/_top-page.php:256
 msgid "アピールエリア"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:233
+#: lib/page-settings/_top-page.php:259
 #: lib/widgets/recommended-cards.php:19
 msgid "おすすめカード"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:239
+#: lib/page-settings/_top-page.php:265
 msgid "フッター"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:245
+#: lib/page-settings/_top-page.php:271
 #: skins/silk/functions.php:229
 msgid "モバイル"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:257
+#: lib/page-settings/_top-page.php:283
 msgid "PWA"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:261
+#: lib/page-settings/_top-page.php:287
 msgid "管理者画面"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:267
+#: lib/page-settings/_top-page.php:293
 msgid "ウィジェットエリア"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:270
+#: lib/page-settings/_top-page.php:296
 #: skins/skin-made-in-heaven/lib/panel-editor.php:16
 msgid "エディター"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:273
+#: lib/page-settings/_top-page.php:299
 msgid "API"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:282
+#: lib/page-settings/_top-page.php:308
 msgid "テーマ情報"
 msgstr ""
 

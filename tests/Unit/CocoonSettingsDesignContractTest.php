@@ -69,6 +69,50 @@ REGEX;
         $this->assertCount(38, $matches[1]);
         $this->assertSame(38, count(array_unique($matches[1])));
         $this->assertCount(38, $matches[2]);
+        $this->assertSame(
+            [
+                'tab-skin-input',
+                'tab-all-input',
+                'tab-theme-header-input',
+                'tab-ads-input',
+                'tab-title-input',
+                'tab-seo-input',
+                'tab-ogp-input',
+                'tab-analytics-input',
+                'tab-column-input',
+                'tab-index-page-input',
+                'tab-single-page-input',
+                'tab-page-page-input',
+                'tab-content-page-input',
+                'tab-toc-page-input',
+                'tab-sns-share-input',
+                'tab-sns-follow-input',
+                'tab-image-input',
+                'tab-blog-card-input',
+                'tab-code-highlight-input',
+                'tab-comment-input',
+                'tab-notice-area-input',
+                'tab-appeal-area-input',
+                'tab-recommended-input',
+                'tab-carousel-input',
+                'tab-footer-input',
+                'tab-buttons-input',
+                'tab-mobile-buttons-input',
+                'tab-page-404-input',
+                'tab-amp-input',
+                'tab-pwa-input',
+                'tab-admin-input',
+                'tab-widget-input',
+                'tab-widget-area-input',
+                'tab-editor-input',
+                'tab-apis-input',
+                'tab-others-input',
+                'tab-reset-input',
+                'tab-about-input',
+            ],
+            $matches[1],
+            '従来タブの順番を変更してはいけません。'
+        );
 
         // 各radioの基底IDから対応するlabelとcontentを導き、位置関係も固定する。
         foreach ($matches[1] as $index => $inputId) {
@@ -104,7 +148,7 @@ REGEX;
     {
         $source = $this->readThemeFile('lib/page-settings/_top-page.php');
         $adminScss = $this->readThemeFile('scss/admin.scss');
-        $tabsStart = strpos($source, '<div id="tabs" class="tabs">');
+        $tabsStart = strpos($source, '<div id="tabs" class="tabs" data-navigation-initial-mode=');
         $firstContentStart = strpos($source, '<div id="tab-skin-content"', $tabsStart);
 
         $this->assertIsInt($tabsStart);
@@ -131,7 +175,10 @@ REGEX;
         );
 
         $this->assertCount(38, $inputMatches[1]);
-        $this->assertMatchesRegularExpression('/#tabs\s*>\s*div\s*\{\s*display:\s*none;/s', $adminScss);
+        $this->assertMatchesRegularExpression(
+            '/#tabs\s*>\s*\.metabox-holder\s*\{\s*display:\s*none;/s',
+            $adminScss
+        );
 
         foreach ($inputMatches[1] as $inputId) {
             $contentId = substr($inputId, 0, -strlen('-input')) . '-content';
@@ -143,29 +190,307 @@ REGEX;
     }
 
     /**
+     * 初期描画では誤った横型タブを隠し、失敗時に従来UIへ戻れることを検証する。
+     */
+    public function test_レスポンシブナビゲーションの初期描画ちらつきを防止する(): void
+    {
+        $topPage = $this->readThemeFile('lib/page-settings/_top-page.php');
+        $navigationScript = $this->readThemeFile('js/cocoon-settings-navigation.js');
+        $partial = $this->readThemeFile('scss/_cocoon-settings-modern.scss');
+
+        // 許可済み表示モードだけを受動的なdata属性へ出し、フォーム値を追加しない。
+        $this->assertStringContainsString('cocoon_get_settings_navigation_mode()', $topPage);
+        $this->assertStringContainsString(
+            'data-navigation-initial-mode="<?php echo esc_attr( $cocoon_settings_initial_navigation_mode ); ?>"',
+            $topPage
+        );
+        $this->assertStringContainsString("if ( 'responsive' === \$cocoon_settings_initial_navigation_mode )", $topPage);
+        $this->assertStringContainsString("tabs.classList.add( 'is-navigation-booting' );", $topPage);
+        $this->assertStringContainsString(
+            "document.addEventListener( 'DOMContentLoaded', revealFallbackTabs, { once: true } );",
+            $topPage
+        );
+        $this->assertStringContainsString('window.setTimeout( revealFallbackTabs, 10000 );', $topPage);
+
+        // visibilityで幅を保ち、可視性判定より前に同期解除してスキン制御を維持する。
+        $this->assertStringContainsString('#tabs.is-navigation-booting *::before,', $partial);
+        $this->assertStringContainsString('#tabs.is-navigation-booting *::after {', $partial);
+        $this->assertMatchesRegularExpression(
+            '/#tabs\.is-navigation-booting[^}]*visibility:\s*hidden !important;/s',
+            $partial
+        );
+        $this->assertMatchesRegularExpression(
+            '/#tabs\.is-navigation-booting\s*\{\s*opacity:\s*0;\s*\}/s',
+            $partial
+        );
+        $this->assertLessThan(
+            strpos($navigationScript, 'if ( ! cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) )'),
+            strpos($navigationScript, "tabs.classList.remove( 'is-navigation-booting' );")
+        );
+        $this->assertStringContainsString(
+            '! cocoonInitializeSettingsNavigation()',
+            $navigationScript
+        );
+        $this->assertStringContainsString(
+            "tabs.setAttribute( stateAttribute, 'ready' );",
+            $navigationScript
+        );
+        $this->assertStringContainsString(
+            'cocoonRestoreSettingsNavigation( tabs, snapshot );',
+            $navigationScript
+        );
+    }
+
+    /**
+     * 表示ナビゲーションと専用モード保存がCocoon本体の設定保存から分離されることを検証する。
+     */
+    public function test_レスポンシブナビゲーションが保存処理から分離されている(): void
+    {
+        $topPage = $this->readThemeFile('lib/page-settings/_top-page.php');
+        $adminSource = $this->readThemeFile('lib/admin.php');
+        $navigationScript = $this->readThemeFile('js/cocoon-settings-navigation.js');
+
+        preg_match_all(
+            '/<input id="(tab-[^"]+-input)"[^>]*\btype="radio"[^>]*\bname="tab-input"[^>]*>/',
+            $topPage,
+            $radioMatches
+        );
+        preg_match_all("/'(tab-[^']+-input)'/", $adminSource, $navigationMatches);
+
+        $radioIds = array_values(array_unique($radioMatches[1]));
+        $navigationIds = array_values(array_unique($navigationMatches[1]));
+        sort($radioIds);
+        sort($navigationIds);
+
+        // PHP分類が、条件付きAMP・PWAを含む既存38タブと過不足なく対応することを固定する。
+        $this->assertCount(38, $radioIds);
+        $this->assertSame($radioIds, $navigationIds);
+        $this->assertStringContainsString("if (is_admin_php_page())", $adminSource);
+        $this->assertStringContainsString("'/js/cocoon-settings-navigation.js'", $adminSource);
+        $this->assertStringContainsString("'cocoonSettingsNavigationData'", $adminSource);
+        $this->assertStringContainsString('filemtime( $settings_navigation_js_path )', $adminSource);
+        $this->assertStringContainsString("'wp_ajax_cocoon_settings_save_navigation_mode'", $adminSource);
+        $this->assertStringContainsString("check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce' )", $adminSource);
+        $this->assertStringContainsString("current_user_can( 'manage_options' )", $adminSource);
+        $this->assertStringContainsString('update_user_option( $user_id, COCOON_SETTINGS_NAVIGATION_MODE_OPTION, $mode, false )', $adminSource);
+        $this->assertStringContainsString(
+            'おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。',
+            $adminSource
+        );
+        $this->assertStringContainsString("'responsiveModeLabel' => __( 'おすすめ表示'", $adminSource);
+        $this->assertStringContainsString("'tabsModeLabel' => __( '従来の表示'", $adminSource);
+        $this->assertStringNotContainsString("'recommendedLabel'", $adminSource);
+        $this->assertStringNotContainsString('set_theme_mod(', substr($adminSource, 0, strpos($adminSource, '//管理画面に読み込むリソースの設定')));
+
+        // 新UIの操作要素がフォーム送信コントロールにならないことを確認する。
+        $this->assertStringContainsString("navigationItem.type = 'button';", $navigationScript);
+        $this->assertStringContainsString("button.type = 'button';", $navigationScript);
+        $this->assertStringContainsString("mobileSelect.setAttribute( 'aria-label'", $navigationScript);
+        $this->assertStringContainsString("navigationItem.setAttribute( 'aria-pressed', String( isActive ) );", $navigationScript);
+        $this->assertStringContainsString("viewModeControl.setAttribute( 'role', 'radiogroup' );", $navigationScript);
+        $this->assertStringContainsString("button.setAttribute( 'role', 'radio' );", $navigationScript);
+        $this->assertStringContainsString("button.setAttribute( 'aria-checked', 'false' );", $navigationScript);
+        $this->assertStringContainsString('button.tabIndex = isSelected ? 0 : -1;', $navigationScript);
+        $this->assertStringContainsString("[ 'ArrowRight', 'ArrowDown' ]", $navigationScript);
+        $this->assertStringContainsString("[ 'ArrowLeft', 'ArrowUp' ]", $navigationScript);
+        $this->assertStringNotContainsString('recommendedBadge', $navigationScript);
+        $this->assertStringNotContainsString('cocoon-settings-view-mode-recommended', $navigationScript);
+        $this->assertStringNotContainsString("aria-current', 'page'", $navigationScript);
+        $this->assertStringNotContainsString('navigationItem.name', $navigationScript);
+        $this->assertStringNotContainsString('mobileSelect.name', $navigationScript);
+        $this->assertStringNotContainsString('search.name', $navigationScript);
+        $this->assertStringNotContainsString('.checked =', $navigationScript);
+        $this->assertStringContainsString('item.input.click();', $navigationScript);
+        $this->assertStringContainsString('selectedInput.click();', $navigationScript);
+        $this->assertStringContainsString("input.addEventListener( 'change', synchronizeNavigation )", $navigationScript);
+        $this->assertStringContainsString('const activeElement = document.activeElement;', $navigationScript);
+        $this->assertStringContainsString('focusTarget.focus();', $navigationScript);
+        $this->assertStringContainsString('const navigationInputs = inputs.filter(', $navigationScript);
+        $this->assertStringContainsString('isElementVisible( labelElementsByInputId.get( input.id ) )', $navigationScript);
+        $this->assertLessThan(
+            strpos($navigationScript, "tabs.classList.add( 'is-navigation-enhanced' )"),
+            strpos($navigationScript, 'const navigationInputs = inputs.filter(')
+        );
+        $this->assertStringContainsString("'is-navigation-mode-responsive'", $navigationScript);
+        $this->assertStringContainsString("'is-navigation-mode-tabs'", $navigationScript);
+        $this->assertStringContainsString("'is-navigation-wide', tabs.clientWidth >= 1040", $navigationScript);
+        $this->assertStringContainsString("[ 'ArrowUp', 'ArrowDown', 'Home', 'End' ]", $navigationScript);
+        $this->assertStringContainsString("panel.scrollIntoView( { block: 'start' } );", $navigationScript);
+        $this->assertStringContainsString('let isSavingNavigationMode = false;', $navigationScript);
+        $this->assertStringContainsString("button.setAttribute( 'aria-disabled', 'true' );", $navigationScript);
+        $this->assertStringContainsString("button.removeAttribute( 'aria-disabled' );", $navigationScript);
+        $this->assertStringNotContainsString('button.disabled', $navigationScript);
+        $this->assertStringNotContainsString('tabs.append( input', $navigationScript);
+        $this->assertStringNotContainsString('tabs.prepend( input', $navigationScript);
+
+        // 通信は表示モード専用AJAXの1回だけ許可し、フォーム・URL・Storage操作を禁止する。
+        $this->assertSame(1, substr_count($navigationScript, 'fetch( settings.ajaxUrl'));
+        $this->assertStringContainsString("action: 'cocoon_settings_save_navigation_mode'", $navigationScript);
+        $this->assertStringContainsString("credentials: 'same-origin'", $navigationScript);
+        $this->assertStringContainsString('const abortController = new AbortController();', $navigationScript);
+        $this->assertStringContainsString('signal: abortController.signal,', $navigationScript);
+        $this->assertStringContainsString('}, 15000 );', $navigationScript);
+        $this->assertStringContainsString('settings.modeNonceError || settings.modeSaveError', $navigationScript);
+        $this->assertStringContainsString('settings.modeTimeoutError || settings.modeSaveError', $navigationScript);
+        $this->assertLessThan(
+            strpos($navigationScript, 'const requestBody = new URLSearchParams('),
+            strpos($navigationScript, 'try {')
+        );
+        $this->assertDoesNotMatchRegularExpression(
+            '/\b(?:XMLHttpRequest|sendBeacon|FormData|localStorage|sessionStorage|requestSubmit)\b'
+                . '|(?:window\.)?location\b|\bhistory\s*\.|\.submit\s*\(/',
+            $navigationScript
+        );
+    }
+
+    /**
+     * 広い、中程度、狭い設定領域の3種類が表示幅に応じて切り替わることを検証する。
+     */
+    public function test_ナビゲーションが3種類のレスポンシブ表示を持つ(): void
+    {
+        $partial = $this->readThemeFile('scss/_cocoon-settings-modern.scss');
+
+        // 広い領域はResizeObserverが付けるクラスで縦型2カラムへ切り替え、fixed UIの基準を変えない。
+        $this->assertStringNotContainsString('container-name:', $partial);
+        $this->assertStringNotContainsString('container-type:', $partial);
+        $this->assertStringNotContainsString('@container', $partial);
+        $this->assertStringContainsString(
+            '#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide',
+            $partial
+        );
+        $this->assertStringContainsString(
+            'grid-template-columns: 232px minmax(0, 1fr);',
+            $partial
+        );
+        $this->assertStringContainsString('max-block-size: calc(100vh - 64px);', $partial);
+        $this->assertStringContainsString('scroll-margin-block-start: 64px;', $partial);
+        $this->assertStringContainsString('scroll-margin-block-start: 152px;', $partial);
+
+        // タブレットでは既存ラベルが既定表示となり、追加ナビゲーションは初期状態で非表示になる。
+        $this->assertMatchesRegularExpression(
+            '/:where\(#tabs > \.cocoon-settings-navigation\)\s*\{\s*display:\s*none;/',
+            str_replace(["\r\n", "\r"], "\n", $partial)
+        );
+        $this->assertStringContainsString('#tabs > .tab-label {', $partial);
+
+        // モバイルは既存ラベルを隠し、44px以上のネイティブselectだけを表示する。
+        $this->assertMatchesRegularExpression(
+            '/@media screen and \(width <= 782px\).*?'
+                . '#tabs\.is-navigation-enhanced\.is-navigation-mode-responsive > \.tab-label\s*\{'
+                . '[^}]*display:\s*none !important;.*?'
+                . '\.cocoon-settings-mobile-select\).*?\{'
+                . '[^}]*min-block-size:\s*44px;/s',
+            $partial
+        );
+        $this->assertMatchesRegularExpression(
+            '/#tabs\.is-navigation-enhanced\.is-navigation-mode-tabs > \.tab-label\s*\{'
+                . '[^}]*min-block-size:\s*0;'
+                . '[^}]*margin:\s*0 3px 4px 0 !important;'
+                . '[^}]*padding:\s*4px 9px 3px !important;/s',
+            $partial
+        );
+        $this->assertMatchesRegularExpression(
+            '/@media screen and \(width <= 782px\).*?'
+                . '#tabs\.is-navigation-enhanced\.is-navigation-mode-tabs > \.tab-label\s*\{'
+                . '[^}]*min-block-size:\s*44px;'
+                . '[^}]*margin:\s*0 4px 6px 0 !important;'
+                . '[^}]*padding:\s*9px 11px !important;/s',
+            $partial
+        );
+        $this->assertStringNotContainsString('grid-template-columns: minmax(0, 1fr);', $partial);
+        $this->assertMatchesRegularExpression(
+            '/@media \(pointer: coarse\).*?'
+                . '#tabs\.is-navigation-enhanced\.is-navigation-mode-tabs > \.tab-label\s*\{'
+                . '[^}]*min-block-size:\s*44px;/s',
+            $partial
+        );
+        $this->assertStringContainsString(
+            ':where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .cocoon-settings-navigation)',
+            $partial
+        );
+        $this->assertStringContainsString('top: 46px;', $partial);
+        $this->assertStringContainsString('z-index: 20;', $partial);
+    }
+
+    /**
      * 新SCSSがCocoon設定画面だけを起点にし、生成CSSへ反映されることを検証する。
      */
     public function test_モダンUIスタイルが設定画面だけにスコープされている(): void
     {
         $partial = $this->readThemeFile('scss/_cocoon-settings-modern.scss');
+        $settingsScss = $this->readThemeFile('scss/cocoon-settings.scss');
         $adminScss = $this->readThemeFile('scss/admin.scss');
+        $settingsCss = str_replace(["\r\n", "\r"], "\n", $this->readThemeFile('css/cocoon-settings.css'));
         $adminCss = str_replace(["\r\n", "\r"], "\n", $this->readThemeFile('css/admin.css'));
+        $adminSource = $this->readThemeFile('lib/admin.php');
         $scope = '.toplevel_page_theme-settings .wrap.admin-settings';
 
         $cssMarker = "/**\n * Cocoon設定画面専用のモダンUI";
-        $cssPosition = strpos($adminCss, $cssMarker);
+        $cssPosition = strpos($settingsCss, $cssMarker);
 
         $this->assertIsInt($cssPosition);
-        $modernCss = substr($adminCss, $cssPosition);
+        $modernCss = substr($settingsCss, $cssPosition);
 
         // partialと生成CSSの全トップレベル規則が、同じ設定画面スコープから始まることを確認する。
         $this->assertAllModernStyleBlocksAreScoped($partial, $scope, true);
         $this->assertAllModernStyleBlocksAreScoped($modernCss, $scope, false);
         $this->assertStringNotContainsString('@at-root', $partial);
-        $this->assertStringContainsString("@import 'cocoon-settings-modern';", $adminScss);
-        $this->assertStringContainsString($scope, $adminCss);
-        $this->assertStringContainsString('--cocoon-settings-surface', $adminCss);
-        $this->assertStringContainsString('form.admin-settings > .submit:last-of-type', $adminCss);
+        $this->assertStringContainsString("@import 'cocoon-settings-modern';", $settingsScss);
+        $this->assertStringNotContainsString("@import 'cocoon-settings-modern';", $adminScss);
+        $this->assertStringNotContainsString($scope, $adminCss);
+        $this->assertStringNotContainsString('--cocoon-settings-surface', $adminCss);
+        $this->assertStringContainsString($scope, $settingsCss);
+        $this->assertStringContainsString('--cocoon-settings-surface', $settingsCss);
+        $this->assertStringContainsString('form.admin-settings > .submit:last-of-type', $settingsCss);
+        $this->assertStringContainsString("'/css/cocoon-settings.css'", $adminSource);
+        $this->assertStringContainsString("'cocoon-settings',", $adminSource);
+        $this->assertStringContainsString('filemtime( $settings_navigation_css_path )', $adminSource);
+        $this->assertStringNotContainsString('container-type:', $settingsCss);
+        $this->assertStringNotContainsString('@container', $settingsCss);
+
+        // 選択タブは細い境界線と文字色で示し、強い下線を再導入しない。
+        $this->assertMatchesRegularExpression(
+            '/#tabs > \.tab-input:checked \+ \.tab-label\s*\{[^}]*box-shadow:\s*none;/s',
+            $partial
+        );
+        $this->assertStringNotContainsString(
+            'box-shadow: inset 0 -3px 0 var(--cocoon-settings-accent);',
+            $partial
+        );
+        $this->assertStringNotContainsString(
+            'border-inline-start: 3px solid var(--cocoon-settings-accent);',
+            $partial
+        );
+
+        // 表示方式を単一の2択セグメントとして示し、選択中の面だけを境界・背景・太字で判別できることを固定する。
+        $this->assertMatchesRegularExpression(
+            '/:where\(\.cocoon-settings-view-mode-control\)\s*\{'
+                . '[^}]*gap:\s*0;'
+                . '[^}]*grid-template-columns:\s*repeat\(2, max-content\);/s',
+            $partial
+        );
+        $this->assertMatchesRegularExpression(
+            '/:where\(\.cocoon-settings-view-mode-button\)\s*\{'
+                . '[^}]*border:\s*1px solid transparent;'
+                . '[^}]*background:\s*transparent;'
+                . '[^}]*box-shadow:\s*none;/s',
+            $partial
+        );
+        $this->assertMatchesRegularExpression(
+            "/:where\\(\\.cocoon-settings-view-mode-button\\[aria-checked='true'\\]\\)\\s*\\{"
+                . '[^}]*border-color:\s*var\(--cocoon-settings-accent\);'
+                . '[^}]*background:\s*var\(--cocoon-settings-surface\);'
+                . '[^}]*font-weight:\s*600;/s',
+            $partial
+        );
+        $this->assertStringNotContainsString(':where(.cocoon-settings-view-mode-button)::before {', $partial);
+        $this->assertStringNotContainsString('.cocoon-settings-view-mode-recommended', $partial);
+        $this->assertMatchesRegularExpression(
+            "/@media \\(forced-colors: active\\).*?"
+                . "\.cocoon-settings-view-mode-button\\[aria-checked='true'\\]\\).*?\\{"
+                . '[^}]*border:\s*2px solid Highlight;/s',
+            $partial
+        );
 
         // 重要ルールの再生成漏れを検出するため、主要なSCSS契約が生成CSSにも存在することを確認する。
         $this->assertStringContainsString(
@@ -215,7 +540,7 @@ REGEX;
         $resetForms = $this->readThemeFile('lib/page-settings/reset-forms.php');
         $topPage = $this->readThemeFile('lib/page-settings/_top-page.php');
         $partial = $this->readThemeFile('scss/_cocoon-settings-modern.scss');
-        $adminCss = $this->readThemeFile('css/admin.css');
+        $settingsCss = $this->readThemeFile('css/cocoon-settings.css');
 
         // 各フォーム断片の最初の出力要素を固定し、別ラッパーの混入も検出する。
         $this->assertMatchesRegularExpression(
@@ -262,15 +587,15 @@ REGEX;
         $this->assertStringContainsString(':where(.demo):not(:where(.wp-editor-wrap *))', $partial);
         $this->assertStringContainsString(
             '.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox)',
-            $adminCss
+            $settingsCss
         );
         $this->assertStringContainsString(
             '.toplevel_page_theme-settings .wrap.admin-settings :where(#tab-reset-content > .postbox, #tab-reset-content > .metabox-holder > .postbox)',
-            $adminCss
+            $settingsCss
         );
         $this->assertStringContainsString(
             '.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.demo):not(:where(.wp-editor-wrap *))',
-            $adminCss
+            $settingsCss
         );
         $this->assertMatchesRegularExpression(
             '/@media screen and \(width <= 782px\).*?'
@@ -279,7 +604,7 @@ REGEX;
                     '/'
                 )
                 . '\s*\{[^}]*table-layout: fixed;/s',
-            $adminCss
+            $settingsCss
         );
     }
 
@@ -297,7 +622,10 @@ REGEX;
         $this->assertNotEmpty($blocks);
 
         foreach ($blocks as $block) {
-            if (str_starts_with($block['header'], '@media')) {
+            if (
+                str_starts_with($block['header'], '@media')
+                || str_starts_with($block['header'], '@container')
+            ) {
                 $mediaBlocks = $this->extractImmediateStyleBlocks($block['body']);
                 $this->assertNotEmpty($mediaBlocks);
 

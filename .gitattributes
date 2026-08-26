@@ -21,6 +21,10 @@
 # 翻訳ワークフロー用開発スクリプト
 /scripts/              export-ignore
 
+# 実装検討用の内部資料
+/docs/COCOON-SETTINGS-DESIGN-IMPLEMENTATION-PLAN.md export-ignore
+/docs/COCOON-SETTINGS-DATA-COMPATIBILITY-REPORT.md export-ignore
+
 # 本番テーマに不要なリソース（ZIPサイズ削減用）
 /webfonts/fontawesome5/js/       export-ignore
 /webfonts/fontawesome5/metadata/ export-ignore
