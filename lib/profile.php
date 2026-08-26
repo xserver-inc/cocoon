@@ -83,19 +83,41 @@ add_action('personal_options_update', 'update_avatar_to_user_profile');
 add_action('edit_user_profile_update', 'update_avatar_to_user_profile');
 if ( !function_exists( 'update_avatar_to_user_profile' ) ):
 function update_avatar_to_user_profile($user_id) {
-  if ( current_user_can('edit_user',$user_id) || is_user_administrator() ){
-    // URL値をサニタイズしてからDB保存
-    $upladed_avatar = isset($_POST['upladed_avatar']) ? esc_url_raw($_POST['upladed_avatar']) : '';
-    update_user_meta($user_id, 'upladed_avatar', $upladed_avatar);
-    $profile_page_url = isset($_POST['profile_page_url']) ? esc_url_raw($_POST['profile_page_url']) : '';
-    update_user_meta($user_id, 'profile_page_url', $profile_page_url);
+  $user_id = (int)$user_id;
+  if ( !$user_id || !current_user_can('edit_user', $user_id) ) {
+    return;
+  }
 
-    //LINE@ URLの%40が消えるので@に変換する処理
-    if (isset($_POST['line_at_url'])) {
-      // %40を@に変換してからURLをサニタイズ
-      $_POST['line_at_url'] = esc_url_raw(str_replace('%40', '@', $_POST['line_at_url']));
+  // WordPress標準プロフィールフォームで発行されるnonceの検証
+  if ( !isset($_POST['_wpnonce']) || !is_scalar($_POST['_wpnonce']) ) {
+    return;
+  }
+  $nonce = sanitize_text_field(wp_unslash((string)$_POST['_wpnonce']));
+  if ( !wp_verify_nonce($nonce, 'update-user_'.$user_id) ) {
+    return;
+  }
+
+  // POSTに存在するCocoon独自メタだけを対象にした部分更新
+  $url_meta_keys = array('upladed_avatar', 'profile_page_url');
+  foreach ($url_meta_keys as $meta_key) {
+    if ( !array_key_exists($meta_key, $_POST) || !is_scalar($_POST[$meta_key]) ) {
+      continue;
     }
-    //_v($_POST['line_at_url']);
+
+    $value = esc_url_raw(wp_unslash((string)$_POST[$meta_key]));
+    update_user_meta($user_id, $meta_key, $value);
+  }
+
+  if ( array_key_exists('line_at_url', $_POST) ) {
+    // 配列入力をWordPress標準保存へ渡さないための未送信扱い
+    if ( !is_scalar($_POST['line_at_url']) ) {
+      unset($_POST['line_at_url']);
+      return;
+    }
+
+    // LINE@ URLの%40を維持するための@への変換
+    $line_at_url = wp_unslash((string)$_POST['line_at_url']);
+    $_POST['line_at_url'] = esc_url_raw(str_replace('%40', '@', $line_at_url));
   }
 }
 endif;
