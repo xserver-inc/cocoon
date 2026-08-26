@@ -384,11 +384,17 @@ function get_product_block_auto_update_interval(){
 endif;
 
 // 商品リンクブロック自動更新のバッチサイズ（1回のCronで処理する投稿数）のデフォルト値
-define('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT', 30);
+if ( !defined('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT') ) {
+  define('PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE_DEFAULT', 30);
+}
 // Cron: 投稿1件の処理後に待機する秒数（API負荷を分散）
-define('PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS', 2);
+if ( !defined('PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS') ) {
+  define('PRODUCT_BLOCK_CRON_POST_SLEEP_SECONDS', 2);
+}
 // Cron: ブロック1つのAPIリクエスト後に待機する秒数（Amazon PA-API は 1 TPS 目安のため 2 秒で余裕を持たせる）
-define('PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS', 2);
+if ( !defined('PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS') ) {
+  define('PRODUCT_BLOCK_CRON_API_SLEEP_SECONDS', 2);
+}
 // 商品リンクブロック自動更新のバッチサイズ（1回のCronで処理する投稿数）
 define('OP_PRODUCT_BLOCK_AUTO_UPDATE_BATCH_SIZE', 'product_block_auto_update_batch_size');
 if ( !function_exists( 'get_product_block_auto_update_batch_size' ) ):
