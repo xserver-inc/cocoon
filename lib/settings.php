@@ -315,6 +315,14 @@ add_action( 'enqueue_block_editor_assets', 'cocoon_enqueue_toolbar_script' );
 if ( ! function_exists( 'cocoon_enqueue_toolbar_script' ) ):
 function cocoon_enqueue_toolbar_script() {
   if ( is_visual_editor_style_enable() && is_admin() ) {
+    // 本体の依存欠落や意図しない読み込みの防止（出力済みは許可）
+    if (
+      ! wp_script_is( 'cocoon-blocks-js', 'registered' ) ||
+      ( ! wp_script_is( 'cocoon-blocks-js', 'enqueued' ) && ! wp_script_is( 'cocoon-blocks-js', 'done' ) )
+    ) {
+      return;
+    }
+
     // スクリプトファイルのパスを変数に保持する（filemtime でバージョン管理するため）
     $toolbar_js = '/js/gutenberg-toolbar.js';
     $toolbar_js_path = get_cocoon_template_directory() . $toolbar_js;
