@@ -3,12 +3,17 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '../../server-side-render';
 import classnames from 'classnames';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
+
+  // テンプレート一覧の取得完了判定
+  const isTemplateListReady =
+    typeof gbTemplates !== 'undefined' && Array.isArray( gbTemplates );
+  const templateList = isTemplateListReady ? gbTemplates : [];
   const classes = classnames( 'template-box', 'block-box', {
     [ 'template-' + id ]: !! ( id !== '-1' ),
     [ className ]: !! className,
@@ -25,8 +30,8 @@ export default function edit( props ) {
   function createOptions() {
     var options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
-    if ( typeof gbTemplates !== 'undefined' ) {
-      gbTemplates.forEach( ( temp ) => {
+    if ( isTemplateListReady ) {
+      templateList.forEach( ( temp ) => {
         if ( isTemplateIdExist === false && temp.id == id ) {
           isTemplateIdExist = true;
         }
@@ -56,12 +61,9 @@ export default function edit( props ) {
       'ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。',
       THEME_NAME
     );
-    if ( typeof gbTemplates === 'undefined' || gbTemplates.length === 0 ) {
+    if ( isTemplateListReady && templateList.length === 0 ) {
       msg = __( 'テンプレートが登録されていません。', THEME_NAME ) + setmsg;
-    } else if (
-      typeof gbTemplates !== 'undefined' &&
-      abledDropdownListItemCount === 0
-    ) {
+    } else if ( isTemplateListReady && abledDropdownListItemCount === 0 ) {
       //テンプレート非表示などで有効に選択できるテンプレートが存在しない場合
       msg =
         __( '有効なテンプレートが登録されていません。', THEME_NAME ) +
@@ -70,14 +72,16 @@ export default function edit( props ) {
           'もしくは登録されているテンプレートを表示設定にしてください。。',
           THEME_NAME
         );
-    } else if ( typeof gbTemplates !== 'undefined' ) {
+    } else if ( isTemplateListReady ) {
       //ドロップダウンにテンプレートの選択肢がある場合
       msg = __( 'テンプレートを選択してください。', THEME_NAME );
     } else {
       return '';
     }
     return (
-      <div class="cocoon-render-message editor-template-message">{ msg }</div>
+      <div className="cocoon-render-message editor-template-message">
+        { msg }
+      </div>
     );
   };
 
@@ -96,7 +100,7 @@ export default function edit( props ) {
   // テンプレートを消したりして存在しないランキングIDだった場合は-1をセットする
   // これをすることによりブロックエディターリロード時でも「テンプレートを選択してください。」などのエラーメッセージが出力される
   // ServerSideRenderも呼び出されない
-  if ( ! isTemplateIdExist ) {
+  if ( isTemplateListReady && ! isTemplateIdExist && id != '-1' ) {
     setAttributes( { id: '-1' } );
   }
 
@@ -113,7 +117,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
-          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+          __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
         />
         { getTemplateContent() }
       </div>

@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
  *
- * @uses {wp-editor} for WP editor styles.
+ * Loads shared fonts and editor body classes for Cocoon blocks.
  * @since 1.0.0
  */
 // Hook: Frontend assets.
@@ -83,7 +83,7 @@ endif;
  * @uses {wp-blocks} for block type registration & related functions.
  * @uses {wp-element} for WP Element abstraction — structure of blocks.
  * @uses {wp-i18n} to internationalize the block's text.
- * @uses {wp-editor} for WP editor styles.
+ * @uses {wp-block-editor} for WP block editor styles.
  * @since 1.0.0
  */
 // Hook: Editor assets.

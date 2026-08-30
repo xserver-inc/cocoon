@@ -3,12 +3,17 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { SelectControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '../../server-side-render';
 import classnames from 'classnames';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const { id } = attributes;
+
+  // ランキング一覧の取得完了判定
+  const isRankingListReady =
+    typeof gbItemRankings !== 'undefined' && Array.isArray( gbItemRankings );
+  const rankingList = isRankingListReady ? gbItemRankings : [];
   const classes = classnames( 'ranking-box', 'block-box', {
     [ 'ranking-' + id ]: !! ( id !== '-1' ),
     [ className ]: !! className,
@@ -25,8 +30,8 @@ export default function edit( props ) {
   function createOptions() {
     var options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
-    if ( typeof gbItemRankings !== 'undefined' ) {
-      gbItemRankings.forEach( ( rank ) => {
+    if ( isRankingListReady ) {
+      rankingList.forEach( ( rank ) => {
         if ( isRankingIdExist === false && rank.id == id ) {
           isRankingIdExist = true;
         }
@@ -56,15 +61,9 @@ export default function edit( props ) {
       'ダッシュボードメニューの「Cocoon設定」→「ランキング」からランキングを作成してください。',
       THEME_NAME
     );
-    if (
-      typeof gbItemRankings === 'undefined' ||
-      gbItemRankings.length === 0
-    ) {
+    if ( isRankingListReady && rankingList.length === 0 ) {
       msg = __( 'ランキングが登録されていません。', THEME_NAME ) + setmsg;
-    } else if (
-      typeof gbItemRankings !== 'undefined' &&
-      abledDropdownListItemCount === 0
-    ) {
+    } else if ( isRankingListReady && abledDropdownListItemCount === 0 ) {
       //ランキング非表示などで有効に選択できるランキングが存在しない場合
       msg =
         __( '有効なランキングが登録されていません。', THEME_NAME ) +
@@ -73,14 +72,16 @@ export default function edit( props ) {
           'もしくは登録されているランキングを表示設定にしてください。。',
           THEME_NAME
         );
-    } else if ( typeof gbItemRankings !== 'undefined' ) {
+    } else if ( isRankingListReady ) {
       //ドロップダウンにランキングの選択肢がある場合
       msg = __( 'ランキングを選択してください。', THEME_NAME );
     } else {
       return '';
     }
     return (
-      <div class="cocoon-render-message editor-ranking-message">{ msg }</div>
+      <div className="cocoon-render-message editor-ranking-message">
+        { msg }
+      </div>
     );
   };
 
@@ -99,7 +100,7 @@ export default function edit( props ) {
   // ランキングを消したりして存在しないランキングIDだった場合は-1をセットする
   // これをすることによりブロックエディターリロード時でも「ランキングを選択してください。」などのエラーメッセージが出力される
   // ServerSideRenderも呼び出されない
-  if ( ! isRankingIdExist ) {
+  if ( isRankingListReady && ! isRankingIdExist && id != '-1' ) {
     setAttributes( { id: '-1' } );
   }
 
@@ -116,7 +117,7 @@ export default function edit( props ) {
           }
           options={ options }
           __nextHasNoMarginBottom={ true }
-          __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+          __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
         />
         { getRankingContent() }
       </div>
