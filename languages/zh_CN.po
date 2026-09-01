@@ -17774,13 +17774,37 @@ msgstr "最近%1$d天 %2$s PV / 前%1$d天 %3$s PV"
 msgid "新登場"
 msgstr "新"
 
-#: lib/page-access/analytics/render-func.php:554
-msgid "少ない"
-msgstr "少"
+#: lib/page-access/analytics/render-func.php:922
+msgid "突出日"
+msgstr "异常日"
 
-#: lib/page-access/analytics/render-func.php:558
-msgid "多い"
-msgstr "多"
+#: lib/page-access/analytics/render-func.php:938
+msgid "色分け基準"
+msgstr "颜色分级标准"
+
+#. translators: %s: 最小PV数
+#: lib/page-access/analytics/render-func.php:943
+#, php-format
+msgid "%s PV以上"
+msgstr "%s PV及以上"
+
+#. translators: %s: PV数
+#: lib/page-access/analytics/render-func.php:946
+#, php-format
+msgid "%s PV"
+msgstr "%s PV"
+
+#. translators: 1: 最小PV数, 2: 最大PV数
+#: lib/page-access/analytics/render-func.php:949
+#, php-format
+msgid "%1$s～%2$s PV"
+msgstr "%1$s～%2$s PV"
+
+#. translators: %s: 突出日と判定する最小PV数
+#: lib/page-access/analytics/render-func.php:961
+#, php-format
+msgid "枠＝突出日（%s PV以上）"
+msgstr "边框：异常日（%s PV及以上）"
 
 #: lib/page-access/analytics/settings-forms.php:24
 msgid "アクセス解析のキャッシュをクリアしました。"

@@ -555,6 +555,282 @@ function cocoon_analytics_render_trending_list($rows, $days = 7){
 endif;
 
 /**
+ * ヒートマップで安全に扱えるPV値へ正規化する
+ *
+ * @param mixed $value PV値。
+ * @return int|null 0以上PHP_INT_MAX未満の整数。不正な値の場合はnull。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_normalize_pv' ) ):
+function cocoon_analytics_heatmap_normalize_pv($value){
+  if (!is_numeric($value)) return null;
+
+  $number = (float) $value;
+  if ($number < 0 || $number >= PHP_INT_MAX || is_infinite($number) || is_nan($number)) return null;
+  return (int) $number;
+}
+endif;
+
+/**
+ * 数値配列から指定位置のパーセンタイル値を求める
+ *
+ * @param array $values 数値配列。
+ * @param float $percentile 0から1までの位置。
+ * @return float パーセンタイル値。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_percentile' ) ):
+function cocoon_analytics_heatmap_percentile($values, $percentile){
+  $numbers = array();
+  foreach ((array) $values as $value) {
+    if (!is_numeric($value)) continue;
+
+    $number = (float) $value;
+    if ($number < 0 || $number >= PHP_INT_MAX || is_infinite($number) || is_nan($number)) continue;
+    $numbers[] = $number;
+  }
+  if (empty($numbers)) return 0.0;
+
+  sort($numbers, SORT_NUMERIC);
+  if (!is_numeric($percentile)) {
+    $percentile = 0.0;
+  } else {
+    $percentile = (float) $percentile;
+    if (is_nan($percentile)) {
+      $percentile = 0.0;
+    } elseif (is_infinite($percentile)) {
+      $percentile = $percentile > 0 ? 1.0 : 0.0;
+    } else {
+      $percentile = max(0.0, min(1.0, $percentile));
+    }
+  }
+  // 配列上の小数位置を前後2点で線形補間し、データ数に左右されにくい四分位値にします
+  $position = (count($numbers) - 1) * $percentile;
+  $lower_index = (int) floor($position);
+  $upper_index = (int) ceil($position);
+  if ($lower_index === $upper_index) return $numbers[$lower_index];
+
+  $weight = $position - $lower_index;
+  return $numbers[$lower_index] + (($numbers[$upper_index] - $numbers[$lower_index]) * $weight);
+}
+endif;
+
+/**
+ * ヒートマップの色分け境界値と突出日判定値を求める
+ *
+ * 集計途中の当日、未来日、0PVの日は基準データから除外します。
+ *
+ * @param array  $map 日付をキー、PV数を値とする配列。
+ * @param string $today サイトのタイムゾーンにおける当日（Y-m-d）。
+ * @return array 色分け境界値、突出日判定値、基準日数。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_scale' ) ):
+function cocoon_analytics_heatmap_scale($map, $today){
+  $completed_pvs = array();
+  foreach ((array) $map as $date => $pv) {
+    // Y-m-d形式の日付は文字列比較で時系列順になるため、当日以降を安全に除外できます
+    if (!is_string($date) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date) || $date >= $today) continue;
+    $normalized_pv = cocoon_analytics_heatmap_normalize_pv($pv);
+    if ($normalized_pv === null || $normalized_pv <= 0) continue;
+    $completed_pvs[] = $normalized_pv;
+  }
+  sort($completed_pvs, SORT_NUMERIC);
+
+  $sample_count = count($completed_pvs);
+  $default_outlier_threshold = null;
+  if ($sample_count >= 4) {
+    $q1 = cocoon_analytics_heatmap_percentile($completed_pvs, 0.25);
+    $median = cocoon_analytics_heatmap_percentile($completed_pvs, 0.5);
+    $q3 = cocoon_analytics_heatmap_percentile($completed_pvs, 0.75);
+    $default_thresholds = array($q1, $median, $q3);
+    $iqr = $q3 - $q1;
+    // 各四分位に2日以上入る8日目から、IQRが正の場合だけ突出判定を有効にします
+    if ($sample_count >= 8 && $iqr > 0) {
+      $outlier_candidate = $q3 + (3 * $iqr);
+      $is_valid_outlier_candidate = !is_infinite($outlier_candidate)
+        && !is_nan($outlier_candidate)
+        && $outlier_candidate < PHP_INT_MAX;
+      if ($is_valid_outlier_candidate) {
+        $default_outlier_threshold = $outlier_candidate;
+      }
+    }
+  } else {
+    // データが少なく四分位が安定しない間は、従来と同じ最大値比率を使います
+    $max_pv = empty($completed_pvs) ? 0 : max($completed_pvs);
+    $default_thresholds = array($max_pv * 0.25, $max_pv * 0.5, $max_pv * 0.75);
+  }
+
+  /**
+   * ヒートマップの3つの色分け境界値を変更します。
+   *
+   * 3要素の昇順かつ0以上PHP_INT_MAX未満の有限数値を返してください。不正な値は既定値へ戻ります。
+   *
+   * @since 2.9.6
+   *
+   * @param float[] $default_thresholds 自動計算した3つの色分け境界値。
+   * @param int[]   $completed_pvs     完了済みの非ゼロ日を昇順に並べたPV数。
+   * @param string  $today             サイトのタイムゾーンにおける当日（Y-m-d）。
+   */
+  $filtered_thresholds = apply_filters(
+    'cocoon_analytics_heatmap_thresholds',
+    $default_thresholds,
+    $completed_pvs,
+    $today
+  );
+
+  $thresholds = $default_thresholds;
+  if (is_array($filtered_thresholds) && count($filtered_thresholds) === 3) {
+    $candidate_thresholds = array();
+    $is_valid = true;
+    foreach (array_values($filtered_thresholds) as $threshold) {
+      if (!is_numeric($threshold)) {
+        $is_valid = false;
+        break;
+      }
+      $threshold = (float) $threshold;
+      if ($threshold < 0 || $threshold >= PHP_INT_MAX || is_infinite($threshold) || is_nan($threshold)) {
+        $is_valid = false;
+        break;
+      }
+      $candidate_thresholds[] = $threshold;
+    }
+    // 色の意味が逆転しないよう、フィルター後も小さい順であることを確認します
+    $is_ascending = $is_valid
+      && $candidate_thresholds[0] <= $candidate_thresholds[1]
+      && $candidate_thresholds[1] <= $candidate_thresholds[2];
+    if ($is_ascending) {
+      $thresholds = $candidate_thresholds;
+    }
+  }
+
+  /**
+   * ヒートマップの突出日判定値を変更します。
+   *
+   * 0以上PHP_INT_MAX未満の有限数値を返してください。falseまたはnullで突出表示を無効化できます。
+   * 既定値は自動計算した四分位数から求め、色分け境界値フィルターとは独立しています。
+   *
+   * @since 2.9.6
+   *
+   * @param float|null $default_outlier_threshold 既定の突出日判定値。
+   * @param int[]      $completed_pvs             完了済みの非ゼロ日を昇順に並べたPV数。
+   * @param float[]    $thresholds                フィルター適用後の3つの色分け境界値。
+   * @param string     $today                     サイトのタイムゾーンにおける当日（Y-m-d）。
+   */
+  $filtered_outlier_threshold = apply_filters(
+    'cocoon_analytics_heatmap_outlier_threshold',
+    $default_outlier_threshold,
+    $completed_pvs,
+    $thresholds,
+    $today
+  );
+
+  if ($filtered_outlier_threshold === false || $filtered_outlier_threshold === null) {
+    $outlier_threshold = null;
+  } elseif (is_numeric($filtered_outlier_threshold)) {
+    $candidate_outlier_threshold = (float) $filtered_outlier_threshold;
+    $is_valid_outlier = $candidate_outlier_threshold >= 0
+      && $candidate_outlier_threshold < PHP_INT_MAX
+      && !is_infinite($candidate_outlier_threshold)
+      && !is_nan($candidate_outlier_threshold);
+    $outlier_threshold = $is_valid_outlier ? $candidate_outlier_threshold : $default_outlier_threshold;
+  } else {
+    $outlier_threshold = $default_outlier_threshold;
+  }
+
+  return array(
+    'thresholds' => $thresholds,
+    'outlier_threshold' => $outlier_threshold,
+    'sample_count' => $sample_count,
+  );
+}
+endif;
+
+/**
+ * PV数をヒートマップの色レベルへ変換する
+ *
+ * @param mixed $pv PV数。
+ * @param array $thresholds 3つの色分け境界値。
+ * @return int 0から4までの色レベル。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_level' ) ):
+function cocoon_analytics_heatmap_level($pv, $thresholds){
+  $pv = cocoon_analytics_heatmap_normalize_pv($pv);
+  if ($pv === null || $pv <= 0) return 0;
+  if (!is_array($thresholds) || count($thresholds) < 3) return 1;
+
+  $thresholds = array_values($thresholds);
+  if ($pv <= $thresholds[0]) return 1;
+  if ($pv <= $thresholds[1]) return 2;
+  if ($pv <= $thresholds[2]) return 3;
+  return 4;
+}
+endif;
+
+/**
+ * PV数が突出日判定値を超えているかを返す
+ *
+ * @param mixed      $pv PV数。
+ * @param float|null $threshold 突出日判定値。
+ * @return bool 突出日の場合はtrue。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_is_outlier' ) ):
+function cocoon_analytics_heatmap_is_outlier($pv, $threshold){
+  $pv = cocoon_analytics_heatmap_normalize_pv($pv);
+  if ($pv === null || $pv <= 0 || !is_numeric($threshold)) return false;
+
+  $threshold = (float) $threshold;
+  if ($threshold < 0 || $threshold >= PHP_INT_MAX || is_infinite($threshold) || is_nan($threshold)) return false;
+  return $pv > $threshold;
+}
+endif;
+
+/**
+ * 凡例に表示する、実在する色レベルと整数PV範囲を返す
+ *
+ * 四分位値が重なる場合は空になるレベルを除外し、色と数値範囲の対応を保ちます。
+ *
+ * @param float[] $thresholds 3つの色分け境界値。
+ * @return array 色レベル、最小PV、最大PVの配列。
+ */
+if ( !function_exists( 'cocoon_analytics_heatmap_legend_items' ) ):
+function cocoon_analytics_heatmap_legend_items($thresholds){
+  $items = array(
+    array('level' => 0, 'min' => 0, 'max' => 0),
+  );
+  if (!is_array($thresholds) || count($thresholds) < 3) return $items;
+
+  $normalized_thresholds = array();
+  foreach (array_slice(array_values($thresholds), 0, 3) as $threshold) {
+    if (!is_numeric($threshold)) return $items;
+
+    $threshold = (float) $threshold;
+    if ($threshold < 0 || $threshold >= PHP_INT_MAX || is_infinite($threshold) || is_nan($threshold)) return $items;
+    $normalized_thresholds[] = $threshold;
+  }
+  if (
+    $normalized_thresholds[0] > $normalized_thresholds[1]
+    || $normalized_thresholds[1] > $normalized_thresholds[2]
+  ) {
+    return $items;
+  }
+
+  $range_min = 1;
+  foreach ($normalized_thresholds as $index => $threshold) {
+    $range_max = max(0, (int) floor($threshold));
+    if ($range_max >= $range_min) {
+      $items[] = array(
+        'level' => $index + 1,
+        'min' => $range_min,
+        'max' => $range_max,
+      );
+      $range_min = $range_max + 1;
+    }
+  }
+
+  $items[] = array('level' => 4, 'min' => $range_min, 'max' => null);
+  return $items;
+}
+endif;
+
+/**
  * カレンダーヒートマップ（直近52週）
  */
 if ( !function_exists( 'cocoon_analytics_render_heatmap' ) ):
@@ -570,8 +846,9 @@ function cocoon_analytics_render_heatmap(){
   $to   = date('Y-m-d', $end_ts);
 
   $map = cocoon_analytics_daily_pv_map($from, $to);
-  $max_pv = 0;
-  foreach ($map as $v) { if ($v > $max_pv) $max_pv = $v; }
+  $scale = cocoon_analytics_heatmap_scale($map, $today);
+  $thresholds = $scale['thresholds'];
+  $outlier_threshold = $scale['outlier_threshold'];
 
   //グリッドは日曜始まりなので、開始日からの相対日数で曜日名をロケール追従させる
   $wd = array();
@@ -589,7 +866,9 @@ function cocoon_analytics_render_heatmap(){
   while ($cur <= $end_ts) {
     $d = (int) date('w', $cur);
     $date = date('Y-m-d', $cur);
-    $pv = isset($map[$date]) ? (int) $map[$date] : 0;
+    $pv = isset($map[$date]) ? cocoon_analytics_heatmap_normalize_pv($map[$date]) : 0;
+    // 集計基準と表示値が食い違わないよう、不正なPVは表示時にも0として扱います
+    if ($pv === null) $pv = 0;
     $weeks[$w][$d] = array('date' => $date, 'pv' => $pv, 'future' => ($cur > $today_ts));
     if ($d === 6) $w++;
     $cur = strtotime($date . ' +1 day');
@@ -627,24 +906,27 @@ function cocoon_analytics_render_heatmap(){
     echo '<div class="cocoon-analytics-heatmap-month">' . esc_html($month_label) . '</div>';
     for ($i = 0; $i < 7; $i++) {
       if (!isset($week_cells[$i])) {
-        echo '<div class="cocoon-analytics-heatmap-cell is-empty"></div>';
+        echo '<div class="cocoon-analytics-heatmap-cell is-empty" aria-hidden="true"></div>';
         continue;
       }
       $c = $week_cells[$i];
       $pv = $c['pv'];
-      $level = 0;
-      if ($max_pv > 0 && $pv > 0) {
-        $ratio = $pv / $max_pv;
-        if     ($ratio > 0.75) $level = 4;
-        elseif ($ratio > 0.50) $level = 3;
-        elseif ($ratio > 0.25) $level = 2;
-        else                    $level = 1;
-      }
+      $is_outlier = !$c['future'] && cocoon_analytics_heatmap_is_outlier($pv, $outlier_threshold);
+      // 突出日はフィルター後の色境界にかかわらず、仕様どおり最濃色と枠を組み合わせます
+      $level = $is_outlier ? 4 : cocoon_analytics_heatmap_level($pv, $thresholds);
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
-      $tip = esc_attr(date_i18n($tip_format, strtotime($c['date'])) . ' : ' . number_format_i18n($pv) . ' ' . __('PV', THEME_NAME));
+      if ($is_outlier) $cls .= ' is-outlier';
+      $tip_text = date_i18n($tip_format, strtotime($c['date']))
+        . ' : ' . number_format_i18n($pv) . ' ' . __('PV', THEME_NAME);
+      if ($is_outlier) $tip_text .= ' / ' . __('突出日', THEME_NAME);
+      $tip = esc_attr($tip_text);
+      $accessibility_attr = $c['future']
+        ? ' aria-hidden="true"'
+        : ' role="img" aria-label="' . $tip . '"';
       // ブラウザ標準の遅いツールチップの代わりに、モダンなカスタムツールチップ用の属性を付与します
-      echo '<div class="' . esc_attr($cls) . '" data-tooltip="' . $tip . '"></div>';
+      echo '<div class="' . esc_attr($cls) . '"' . $accessibility_attr
+        . ' data-tooltip="' . $tip . '"></div>';
     }
     echo '</div>';
   }
@@ -653,11 +935,35 @@ function cocoon_analytics_render_heatmap(){
 
   // 凡例
   echo '<div class="cocoon-analytics-heatmap-legend">';
-  echo '<span>' . esc_html__('少ない', THEME_NAME) . '</span>';
-  for ($l = 0; $l <= 4; $l++) {
-    echo '<span class="cocoon-analytics-heatmap-cell is-level-' . $l . '"></span>';
+  echo '<span class="cocoon-analytics-heatmap-legend-title">' . esc_html__('色分け基準', THEME_NAME) . '</span>';
+  foreach (cocoon_analytics_heatmap_legend_items($thresholds) as $item) {
+    $min = number_format_i18n($item['min']);
+    if ($item['max'] === null) {
+      /* translators: %s: 最小PV数 */
+      $label = sprintf(__('%s PV以上', THEME_NAME), $min);
+    } elseif ($item['min'] === $item['max']) {
+      /* translators: %s: PV数 */
+      $label = sprintf(__('%s PV', THEME_NAME), $min);
+    } else {
+      /* translators: 1: 最小PV数, 2: 最大PV数 */
+      $label = sprintf(__('%1$s～%2$s PV', THEME_NAME), $min, number_format_i18n($item['max']));
+    }
+    echo '<span class="cocoon-analytics-heatmap-legend-item">';
+    echo '<span class="cocoon-analytics-heatmap-cell is-level-' . esc_attr($item['level'])
+      . '" aria-hidden="true"></span>';
+    echo '<span>' . esc_html($label) . '</span>';
+    echo '</span>';
   }
-  echo '<span>' . esc_html__('多い', THEME_NAME) . '</span>';
+
+  if ($outlier_threshold !== null) {
+    $outlier_min = max(1, (int) floor($outlier_threshold) + 1);
+    /* translators: %s: 突出日と判定する最小PV数 */
+    $outlier_text = sprintf(__('枠＝突出日（%s PV以上）', THEME_NAME), number_format_i18n($outlier_min));
+    echo '<span class="cocoon-analytics-heatmap-legend-item cocoon-analytics-heatmap-legend-outlier">';
+    echo '<span class="cocoon-analytics-heatmap-cell is-level-4 is-outlier" aria-hidden="true"></span>';
+    echo esc_html($outlier_text);
+    echo '</span>';
+  }
   echo '</div>';
   echo '</div>';
 }

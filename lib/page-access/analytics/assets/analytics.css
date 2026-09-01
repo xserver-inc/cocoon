@@ -82,7 +82,11 @@
   font-size: 10px;
   line-height: 1.3;
   border-radius: 4px;
-  white-space: nowrap;
+  width: max-content;
+  max-width: min(240px, calc(100vw - 48px));
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   opacity: 0;
   pointer-events: none;
@@ -116,25 +120,51 @@
   opacity: 1;
 }
 
+/* 下3段では吹き出しを上向きに開き、スクロール領域の下端で切れないようにします */
+.cocoon-analytics-heatmap-week > .cocoon-analytics-heatmap-cell:nth-child(n+6)::after {
+  top: auto;
+  bottom: 140%;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.cocoon-analytics-heatmap-week > .cocoon-analytics-heatmap-cell:nth-child(n+6)::before {
+  top: auto;
+  bottom: 110%;
+  border-color: rgba(30, 30, 30, 0.9) transparent transparent;
+}
+
+.cocoon-analytics-heatmap-week > .cocoon-analytics-heatmap-cell:nth-child(n+6)[data-tooltip]:hover::after {
+  transform: translateX(-50%) translateY(0);
+}
+
 .cocoon-analytics-heatmap-cell.is-empty {
   background: transparent;
 }
 
-.cocoon-analytics-heatmap-cell.is-future {
-  background: #f5f6f8;
-  opacity: 0.4;
-}
 .cocoon-analytics-heatmap-cell.is-level-0 { background: #ebedf0; }
 .cocoon-analytics-heatmap-cell.is-level-1 { background: #c6e48b; }
 .cocoon-analytics-heatmap-cell.is-level-2 { background: #7bc96f; }
 .cocoon-analytics-heatmap-cell.is-level-3 { background: #239a3b; }
 .cocoon-analytics-heatmap-cell.is-level-4 { background: #196127; }
 
+.cocoon-analytics-heatmap-cell.is-future {
+  background: #f5f6f8;
+  opacity: 0.4;
+}
+
+/* 色だけに頼らず突出日を識別できるよう、セルの内側に枠を表示します */
+.cocoon-analytics-heatmap-cell.is-outlier {
+  outline: 2px solid #f0b849;
+  outline-offset: -2px;
+}
+
 .cocoon-analytics-heatmap-legend {
   margin-top: 10px;
   display: flex;
-  align-items: center;
-  gap: 4px;
+  align-items: flex-start;
+  column-gap: 10px;
+  row-gap: 4px;
+  flex-wrap: wrap;
   font-size: 11px;
   color: #666;
   justify-content: flex-end;
@@ -143,6 +173,69 @@
 .cocoon-analytics-heatmap-legend .cocoon-analytics-heatmap-cell {
   display: inline-block;
   pointer-events: none;
+}
+
+.cocoon-analytics-heatmap-legend-title {
+  font-weight: 600;
+}
+
+.cocoon-analytics-heatmap-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.cocoon-analytics-heatmap-legend-item .cocoon-analytics-heatmap-cell {
+  flex: 0 0 13px;
+}
+
+@media (forced-colors: active) {
+  .cocoon-analytics-heatmap-cell {
+    box-sizing: border-box;
+    background: Canvas;
+    border: 1px solid CanvasText;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-level-0 {
+    border-color: GrayText;
+    border-style: dotted;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-level-1 {
+    border-color: GrayText;
+    border-style: solid;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-level-2 {
+    border-color: CanvasText;
+    border-style: dashed;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-level-3 {
+    border: 2px solid CanvasText;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-level-4 {
+    background: CanvasText;
+    border: 1px solid CanvasText;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-outlier {
+    outline-color: Highlight;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-future {
+    background: Canvas;
+    border-color: GrayText;
+    border-style: dashed;
+  }
+
+  .cocoon-analytics-heatmap-cell.is-empty {
+    background: transparent;
+    border: 0;
+  }
 }
 
 /* PV推移トグルボタン */

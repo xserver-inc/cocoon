@@ -3736,12 +3736,36 @@ msgstr ""
 msgid "直近%1$d日のPVとその前%1$d日のPVの比較"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:656
-msgid "少ない"
+#: lib/page-access/analytics/render-func.php:922
+msgid "突出日"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:660
-msgid "多い"
+#: lib/page-access/analytics/render-func.php:938
+msgid "色分け基準"
+msgstr ""
+
+#. translators: %s: 最小PV数
+#: lib/page-access/analytics/render-func.php:943
+#, php-format
+msgid "%s PV以上"
+msgstr ""
+
+#. translators: %s: PV数
+#: lib/page-access/analytics/render-func.php:946
+#, php-format
+msgid "%s PV"
+msgstr ""
+
+#. translators: 1: 最小PV数, 2: 最大PV数
+#: lib/page-access/analytics/render-func.php:949
+#, php-format
+msgid "%1$s～%2$s PV"
+msgstr ""
+
+#. translators: %s: 突出日と判定する最小PV数
+#: lib/page-access/analytics/render-func.php:961
+#, php-format
+msgid "枠＝突出日（%s PV以上）"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:14

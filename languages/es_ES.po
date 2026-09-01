@@ -19044,13 +19044,37 @@ msgstr "Últimos %1$d días: %2$s PV / %1$d días anteriores: %3$s PV"
 msgid "新登場"
 msgstr "Nuevo"
 
-#: lib/page-access/analytics/render-func.php:554
-msgid "少ない"
-msgstr "Bajo"
+#: lib/page-access/analytics/render-func.php:922
+msgid "突出日"
+msgstr "Día atípico"
 
-#: lib/page-access/analytics/render-func.php:558
-msgid "多い"
-msgstr "Alto"
+#: lib/page-access/analytics/render-func.php:938
+msgid "色分け基準"
+msgstr "Escala de colores"
+
+#. translators: %s: 最小PV数
+#: lib/page-access/analytics/render-func.php:943
+#, php-format
+msgid "%s PV以上"
+msgstr "%s PV o más"
+
+#. translators: %s: PV数
+#: lib/page-access/analytics/render-func.php:946
+#, php-format
+msgid "%s PV"
+msgstr "%s PV"
+
+#. translators: 1: 最小PV数, 2: 最大PV数
+#: lib/page-access/analytics/render-func.php:949
+#, php-format
+msgid "%1$s～%2$s PV"
+msgstr "%1$s–%2$s PV"
+
+#. translators: %s: 突出日と判定する最小PV数
+#: lib/page-access/analytics/render-func.php:961
+#, php-format
+msgid "枠＝突出日（%s PV以上）"
+msgstr "Borde: día atípico (%s PV o más)"
 
 #: lib/page-access/analytics/settings-forms.php:24
 msgid "アクセス解析のキャッシュをクリアしました。"
