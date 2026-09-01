@@ -3765,7 +3765,7 @@ msgid "アクセス解析ダッシュボードを有効にする"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:29
-msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
+msgid "無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:33

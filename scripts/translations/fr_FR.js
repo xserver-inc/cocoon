@@ -407,7 +407,7 @@ module.exports = {
   '集計済みデータを可視化するダッシュボードの設定です。': 'Réglages du tableau de bord qui visualise les données agrégées.',
   'ダッシュボード機能': 'Fonctionnalité du tableau de bord',
   'アクセス解析ダッシュボードを有効にする': "Activer le tableau de bord d'analyse des accès",
-  '無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。': "Si désactivé, les onglets du tableau de bord sont masqués et seul l'onglet « Réglages » est affiché.",
+  '無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。': 'Lorsque cette option est désactivée, tous les onglets du tableau de bord sont masqués et seul le formulaire de réglages est affiché.',
   'キャッシュTTL（分）': 'TTL du cache (minutes)',
   '5分': '5 minutes',
   '15分': '15 minutes',

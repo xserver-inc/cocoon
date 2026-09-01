@@ -17946,8 +17946,8 @@ msgid "アクセス解析ダッシュボードを有効にする"
 msgstr "접속 분석 대시보드 활성화"
 
 #: lib/page-access/analytics/settings-forms.php:50
-msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
-msgstr "비활성화하면 대시보드 관련 탭이 숨겨지고 \"설정\" 탭만 표시됩니다."
+msgid "無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。"
+msgstr "비활성화하면 대시보드 관련 탭이 모두 숨겨지고 설정 양식만 표시됩니다."
 
 #: lib/page-access/analytics/settings-forms.php:54
 msgid "キャッシュTTL（分）"

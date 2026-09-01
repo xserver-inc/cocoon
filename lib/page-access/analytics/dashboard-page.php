@@ -13,9 +13,9 @@ if (!current_user_can('manage_options')) {
 }
 
 // 入力値
-$view = isset($_GET['view']) ? sanitize_key($_GET['view']) : 'dashboard';
-$allowed_views = array('dashboard', 'ranking', 'posts', 'terms', 'authors', 'lifecycle', 'export', 'settings');
-if (!in_array($view, $allowed_views, true)) $view = 'dashboard';
+// ビュー名のサニタイズと許可リスト判定は解決関数へ集約する
+$requested_view = isset($_GET['view']) ? wp_unslash($_GET['view']) : null;
+$view = cocoon_analytics_resolve_view($requested_view);
 
 $default_period = get_access_analytics_default_period();
 $preset = isset($_GET['period']) ? sanitize_key($_GET['period']) : $default_period;

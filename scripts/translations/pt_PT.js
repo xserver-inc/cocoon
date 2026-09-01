@@ -404,7 +404,7 @@ module.exports = {
   '集計済みデータを可視化するダッシュボードの設定です。': 'Definições do painel que visualiza os dados agregados.',
   'ダッシュボード機能': 'Funcionalidade do painel',
   'アクセス解析ダッシュボードを有効にする': 'Ativar o painel de análise de acessos',
-  '無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。': 'Se desativado, os separadores do painel ficam ocultos e apenas o separador "Definições" é apresentado.',
+  '無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。': 'Se desativado, todos os separadores do painel ficam ocultos e apenas o formulário de definições é apresentado.',
   'キャッシュTTL（分）': 'TTL da cache (minutos)',
   '5分': '5 minutos',
   '15分': '15 minutos',

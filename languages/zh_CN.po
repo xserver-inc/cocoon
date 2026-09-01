@@ -17807,8 +17807,8 @@ msgid "アクセス解析ダッシュボードを有効にする"
 msgstr "启用访问统计仪表盘"
 
 #: lib/page-access/analytics/settings-forms.php:50
-msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
-msgstr "停用后仪表盘相关标签页将被隐藏，仅显示\"设置\"标签页。"
+msgid "無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。"
+msgstr "停用后，所有仪表盘相关标签页都会隐藏，仅显示设置表单。"
 
 #: lib/page-access/analytics/settings-forms.php:54
 msgid "キャッシュTTL（分）"

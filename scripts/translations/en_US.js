@@ -408,7 +408,7 @@ module.exports = {
   '集計済みデータを可視化するダッシュボードの設定です。': 'Settings for the dashboard that visualizes the aggregated data.',
   'ダッシュボード機能': 'Dashboard Feature',
   'アクセス解析ダッシュボードを有効にする': 'Enable the access analytics dashboard',
-  '無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。': 'When disabled, the dashboard tabs are hidden and only the "Settings" tab is shown.',
+  '無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。': 'When disabled, all dashboard tabs are hidden and only the settings form is shown.',
   'キャッシュTTL（分）': 'Cache TTL (Minutes)',
   '5分': '5 Minutes',
   '15分': '15 Minutes',

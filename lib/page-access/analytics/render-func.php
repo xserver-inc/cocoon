@@ -153,10 +153,36 @@ function cocoon_analytics_get_no_image_thumb_tag(){
 endif;
 
 /**
+ * アクセス解析画面の表示ビューを解決する
+ */
+if ( !function_exists( 'cocoon_analytics_resolve_view' ) ):
+function cocoon_analytics_resolve_view($requested_view = null){
+  // 機能が無効な場合は、古い集計系URLからでも設定画面を直接表示する
+  if (!is_access_analytics_enable()) {
+    return 'settings';
+  }
+
+  $allowed_views = array('dashboard', 'ranking', 'posts', 'terms', 'authors', 'lifecycle', 'export', 'settings');
+  $view = is_null($requested_view) ? 'dashboard' : sanitize_key($requested_view);
+
+  if (!in_array($view, $allowed_views, true)) {
+    return 'dashboard';
+  }
+
+  return $view;
+}
+endif;
+
+/**
  * タブナビを出力
  */
 if ( !function_exists( 'cocoon_analytics_render_tabs' ) ):
 function cocoon_analytics_render_tabs($current){
+  // 機能が無効な場合は切り替え先がないため、単独の設定タブも出力しない
+  if (!is_access_analytics_enable()) {
+    return;
+  }
+
   $tabs = array(
     'dashboard' => __('ダッシュボード', THEME_NAME),
     'ranking'   => __('ランキング', THEME_NAME),
@@ -167,10 +193,6 @@ function cocoon_analytics_render_tabs($current){
     'export'    => __('エクスポート', THEME_NAME),
     'settings'  => __('設定', THEME_NAME),
   );
-  //ダッシュボード機能が無効なときは、開いても内容が表示されない集計系タブを出さない
-  if (!is_access_analytics_enable()) {
-    $tabs = array('settings' => $tabs['settings']);
-  }
   echo '<h2 class="nav-tab-wrapper cocoon-analytics-tabs">';
   foreach ($tabs as $slug => $label) {
     $url = admin_url('admin.php?page=theme-access&view=' . $slug);

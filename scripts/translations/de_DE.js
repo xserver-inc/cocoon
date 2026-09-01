@@ -406,7 +406,7 @@ module.exports = {
   '集計済みデータを可視化するダッシュボードの設定です。': 'Einstellungen für das Dashboard, das die erfassten Daten visualisiert.',
   'ダッシュボード機能': 'Dashboard-Funktion',
   'アクセス解析ダッシュボードを有効にする': 'Zugriffsanalyse-Dashboard aktivieren',
-  '無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。': 'Wenn deaktiviert, werden die Dashboard-Tabs ausgeblendet und nur der Tab „Einstellungen“ wird angezeigt.',
+  '無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。': 'Wenn deaktiviert, werden alle Dashboard-Tabs ausgeblendet und nur das Einstellungsformular angezeigt.',
   'キャッシュTTL（分）': 'Cache-TTL (Minuten)',
   '5分': '5 Minuten',
   '15分': '15 Minuten',
