@@ -3765,7 +3765,7 @@ msgstr ""
 #. translators: %s: 突出日と判定する最小PV数
 #: lib/page-access/analytics/render-func.php:961
 #, php-format
-msgid "枠＝突出日（%s PV以上）"
+msgid "突出日（%s PV以上）"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:14

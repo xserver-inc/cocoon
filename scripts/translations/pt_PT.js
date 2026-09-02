@@ -401,7 +401,7 @@ module.exports = {
   '%s PV': '%s PV',
   '%1$s～%2$s PV': '%1$s–%2$s PV',
   '%s PV以上': '%s PV ou mais',
-  '枠＝突出日（%s PV以上）': 'Contorno: dia atípico (%s PV ou mais)',
+  '突出日（%s PV以上）': 'Dia atípico (%s PV ou mais)',
   'アクセス解析のキャッシュをクリアしました。': 'A cache da análise de acessos foi limpa.',
   'テーマ内で独自にアクセス集計を行います。集計結果は「人気記事」ウィジェットや本ダッシュボードで使用されます。': 'O tema realiza a sua própria agregação de acessos. Os resultados agregados são utilizados no widget "Artigos populares" e neste painel.',
   'アクセス解析ダッシュボード': 'Painel de análise de acessos',

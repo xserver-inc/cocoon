@@ -403,7 +403,7 @@ module.exports = {
   '%s PV': '%s PV',
   '%1$s～%2$s PV': '%1$s–%2$s PV',
   '%s PV以上': '%s PV oder mehr',
-  '枠＝突出日（%s PV以上）': 'Rahmen: Ausreißertag (%s PV oder mehr)',
+  '突出日（%s PV以上）': 'Ausreißertag (%s PV oder mehr)',
   'アクセス解析のキャッシュをクリアしました。': 'Der Zugriffsanalyse-Cache wurde geleert.',
   'テーマ内で独自にアクセス集計を行います。集計結果は「人気記事」ウィジェットや本ダッシュボードで使用されます。': 'Das Theme führt eine eigene Zugriffserfassung durch. Die erfassten Ergebnisse werden im Widget „Beliebte Beiträge“ und in diesem Dashboard verwendet.',
   'アクセス解析ダッシュボード': 'Zugriffsanalyse-Dashboard',

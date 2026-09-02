@@ -17942,8 +17942,8 @@ msgstr "%1$s–%2$s PV"
 #. translators: %s: 突出日と判定する最小PV数
 #: lib/page-access/analytics/render-func.php:961
 #, php-format
-msgid "枠＝突出日（%s PV以上）"
-msgstr "테두리: 이상치 날짜(%s PV 이상)"
+msgid "突出日（%s PV以上）"
+msgstr "이상치 날짜(%s PV 이상)"
 
 #: lib/page-access/analytics/settings-forms.php:24
 msgid "アクセス解析のキャッシュをクリアしました。"

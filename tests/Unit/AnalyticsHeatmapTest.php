@@ -525,9 +525,9 @@ class AnalyticsHeatmapTest extends TestCase
     }
 
     /**
-     * 突出日は境界フックで通常色が薄くなっても最濃色と枠を併用することをテスト
+     * 突出日は境界フックで通常色が薄くなっても専用クラスと説明を出力することをテスト
      */
-    public function test_render_heatmap_突出日は最濃色と枠と説明を出力する(): void
+    public function test_render_heatmap_突出日は専用クラスと説明を出力する(): void
     {
         $today = current_time('Y-m-d');
         $past_date = date('Y-m-d', strtotime($today . ' -1 day'));
@@ -571,7 +571,7 @@ class AnalyticsHeatmapTest extends TestCase
     /**
      * 突出判定が無効なら突出セルと突出凡例を出力しないことをテスト
      */
-    public function test_render_heatmap_突出判定が無効なら枠と凡例を出力しない(): void
+    public function test_render_heatmap_突出判定が無効なら専用クラスと凡例を出力しない(): void
     {
         $today = current_time('Y-m-d');
         $map = array();

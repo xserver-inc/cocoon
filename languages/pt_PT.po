@@ -18871,8 +18871,8 @@ msgstr "%1$s–%2$s PV"
 #. translators: %s: 突出日と判定する最小PV数
 #: lib/page-access/analytics/render-func.php:961
 #, php-format
-msgid "枠＝突出日（%s PV以上）"
-msgstr "Contorno: dia atípico (%s PV ou mais)"
+msgid "突出日（%s PV以上）"
+msgstr "Dia atípico (%s PV ou mais)"
 
 #: lib/page-access/analytics/settings-forms.php:24
 msgid "アクセス解析のキャッシュをクリアしました。"

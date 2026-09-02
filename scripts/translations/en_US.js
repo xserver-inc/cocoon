@@ -405,7 +405,7 @@ module.exports = {
   '%s PV': '%s PV',
   '%1$s～%2$s PV': '%1$s–%2$s PV',
   '%s PV以上': '%s PV or more',
-  '枠＝突出日（%s PV以上）': 'Border: outlier day (%s PV or more)',
+  '突出日（%s PV以上）': 'Outlier day (%s PV or more)',
   'アクセス解析のキャッシュをクリアしました。': 'Access analytics cache cleared.',
   'テーマ内で独自にアクセス集計を行います。集計結果は「人気記事」ウィジェットや本ダッシュボードで使用されます。': 'The theme performs its own access aggregation. The aggregated results are used by the "Popular Posts" widget and this dashboard.',
   'アクセス解析ダッシュボード': 'Access Analytics Dashboard',

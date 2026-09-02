@@ -152,10 +152,9 @@
   opacity: 0.4;
 }
 
-/* 色だけに頼らず突出日を識別できるよう、セルの内側に枠を表示します */
+/* 突出日は通常日の緑と区別できるよう、オレンジで塗りつぶします */
 .cocoon-analytics-heatmap-cell.is-outlier {
-  outline: 2px solid #f0b849;
-  outline-offset: -2px;
+  background: #e6a23c;
 }
 
 .cocoon-analytics-heatmap-legend {
@@ -223,7 +222,9 @@
   }
 
   .cocoon-analytics-heatmap-cell.is-outlier {
-    outline-color: Highlight;
+    forced-color-adjust: none;
+    background: Highlight;
+    border: 0;
   }
 
   .cocoon-analytics-heatmap-cell.is-future {

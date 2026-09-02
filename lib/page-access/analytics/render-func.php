@@ -912,7 +912,7 @@ function cocoon_analytics_render_heatmap(){
       $c = $week_cells[$i];
       $pv = $c['pv'];
       $is_outlier = !$c['future'] && cocoon_analytics_heatmap_is_outlier($pv, $outlier_threshold);
-      // 突出日はフィルター後の色境界にかかわらず、仕様どおり最濃色と枠を組み合わせます
+      // 突出日は最上位レベルとし、専用クラスでオレンジの背景色を適用します
       $level = $is_outlier ? 4 : cocoon_analytics_heatmap_level($pv, $thresholds);
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
@@ -958,7 +958,7 @@ function cocoon_analytics_render_heatmap(){
   if ($outlier_threshold !== null) {
     $outlier_min = max(1, (int) floor($outlier_threshold) + 1);
     /* translators: %s: 突出日と判定する最小PV数 */
-    $outlier_text = sprintf(__('枠＝突出日（%s PV以上）', THEME_NAME), number_format_i18n($outlier_min));
+    $outlier_text = sprintf(__('突出日（%s PV以上）', THEME_NAME), number_format_i18n($outlier_min));
     echo '<span class="cocoon-analytics-heatmap-legend-item cocoon-analytics-heatmap-legend-outlier">';
     echo '<span class="cocoon-analytics-heatmap-cell is-level-4 is-outlier" aria-hidden="true"></span>';
     echo esc_html($outlier_text);
