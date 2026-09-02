@@ -644,7 +644,9 @@ function cocoon_analytics_heatmap_scale($map, $today){
     $iqr = $q3 - $q1;
     // 各四分位に2日以上入る8日目から、IQRが正の場合だけ突出判定を有効にします
     if ($sample_count >= 8 && $iqr > 0) {
-      $outlier_candidate = $q3 + (3 * $iqr);
+      // 普段のばらつきと上位約2%の境界を両方超える日の強調
+      $p98 = cocoon_analytics_heatmap_percentile($completed_pvs, 0.98);
+      $outlier_candidate = max($q3 + (3 * $iqr), $p98);
       $is_valid_outlier_candidate = !is_infinite($outlier_candidate)
         && !is_nan($outlier_candidate)
         && $outlier_candidate < PHP_INT_MAX;
@@ -705,7 +707,7 @@ function cocoon_analytics_heatmap_scale($map, $today){
    * ヒートマップの突出日判定値を変更します。
    *
    * 0以上PHP_INT_MAX未満の有限数値を返してください。falseまたはnullで突出表示を無効化できます。
-   * 既定値は自動計算した四分位数から求め、色分け境界値フィルターとは独立しています。
+   * 既定値はQ3＋3×IQRと98パーセンタイルの大きい方で、色分け境界値フィルターとは独立しています。
    *
    * @since 2.9.6
    *

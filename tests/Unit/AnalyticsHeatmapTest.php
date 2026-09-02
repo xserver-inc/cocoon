@@ -67,9 +67,9 @@ class AnalyticsHeatmapTest extends TestCase
     }
 
     /**
-     * 第3四分位数に四分位範囲の3倍を加えた値を突出日の境界にすることをテスト
+     * 普段のばらつきの基準より98パーセンタイルが高ければ、突出日の境界を引き上げることをテスト
      */
-    public function test_scale_突出判定値は第3四分位数と3倍IQRから求める(): void
+    public function test_scale_突出判定値を98パーセンタイルまで引き上げる(): void
     {
         $map = array(
             '2026-08-23' => 100,
@@ -84,14 +84,78 @@ class AnalyticsHeatmapTest extends TestCase
 
         $scale = cocoon_analytics_heatmap_scale($map, '2026-09-01');
 
-        // Q1=275、Q3=625、IQR=350なので突出判定値は625+350×3になる
+        // 従来の境界1675を上回る98パーセンタイル8698（700と10000の間の補間値）
         $this->assertEquals(array(275, 450, 625), $scale['thresholds']);
-        $this->assertEquals(1675, $scale['outlier_threshold']);
+        $this->assertEqualsWithDelta(8698, $scale['outlier_threshold'], 0.000001);
         $this->assertSame(1, cocoon_analytics_heatmap_level(100, $scale['thresholds']));
         $this->assertSame(2, cocoon_analytics_heatmap_level(300, $scale['thresholds']));
         $this->assertSame(3, cocoon_analytics_heatmap_level(500, $scale['thresholds']));
         $this->assertSame(4, cocoon_analytics_heatmap_level(700, $scale['thresholds']));
         $this->assertTrue(cocoon_analytics_heatmap_is_outlier(10000, $scale['outlier_threshold']));
+    }
+
+    /**
+     * PVの分布に合わせて突出日を絞り、同率の境界値や通常の変動を突出扱いしないことをテスト
+     */
+    #[DataProvider('selectiveOutlierProvider')]
+    public function test_scale_突出日をアクセス上位の大きなピークに絞る(
+        array $pvs,
+        array $expected_thresholds,
+        float $expected_outlier_threshold,
+        array $expected_outlier_pvs
+    ): void {
+        $map = array();
+        // 0PVの日を多く含めた場合の上位2%の基準への影響確認
+        for ($day = 0; $day < 365; $day++) {
+            $date = date('Y-m-d', strtotime('2025-09-01 +' . $day . ' days'));
+            $map[$date] = $pvs[$day] ?? 0;
+        }
+        // 集計途中の当日と未来の大きな値が判定基準から除外されることの確認
+        $map['2026-09-01'] = 999999;
+        $map['2026-09-02'] = 999999;
+
+        $scale = cocoon_analytics_heatmap_scale($map, '2026-09-01');
+
+        $this->assertSame(count($pvs), $scale['sample_count']);
+        $this->assertEquals($expected_thresholds, $scale['thresholds']);
+        $this->assertEqualsWithDelta($expected_outlier_threshold, $scale['outlier_threshold'], 0.000001);
+        $outlier_pvs = array_values(array_filter($pvs, static function (int $pv) use ($scale): bool {
+            return cocoon_analytics_heatmap_is_outlier($pv, $scale['outlier_threshold']);
+        }));
+        $this->assertSame($expected_outlier_pvs, $outlier_pvs);
+    }
+
+    public static function selectiveOutlierProvider(): array
+    {
+        // 通常は1～4PVで、14PV以上の日が多い分布の再現
+        $normal_pvs = array_merge(array_fill(0, 40, 1), array_fill(0, 25, 2), array_fill(0, 15, 4));
+
+        return array(
+            'アクセスのある100日のうち突出日を2日に絞る' => array(
+                array_merge($normal_pvs, range(14, 28), array(40, 50, 60, 80, 100)),
+                array(1, 2, 4),
+                60.4,
+                array(80, 100),
+            ),
+            '上位の同率PVは除きさらに高いピークだけを残す' => array(
+                array_merge($normal_pvs, range(14, 23), array_fill(0, 9, 40), array(200)),
+                array(1, 2, 4),
+                40.0,
+                array(200),
+            ),
+            '上位がすべて同率なら無理に突出日を選ばない' => array(
+                array_merge($normal_pvs, range(14, 23), array_fill(0, 10, 40)),
+                array(1, 2, 4),
+                40.0,
+                array(),
+            ),
+            '普段のばらつきの基準が高ければ従来の判定を維持する' => array(
+                range(100, 800, 100),
+                array(275, 450, 625),
+                1675.0,
+                array(),
+            ),
+        );
     }
 
     /**
@@ -425,7 +489,7 @@ class AnalyticsHeatmapTest extends TestCase
 
         $scale = cocoon_analytics_heatmap_scale($this->eightDayMap(), '2026-09-01');
 
-        $this->assertEquals(1675, $scale['outlier_threshold']);
+        $this->assertEqualsWithDelta(8698, $scale['outlier_threshold'], 0.000001);
     }
 
     public static function invalidOutlierThresholdProvider(): array
