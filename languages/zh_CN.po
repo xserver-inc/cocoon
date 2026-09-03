@@ -17782,26 +17782,26 @@ msgstr "异常日"
 msgid "色分け基準"
 msgstr "颜色分级标准"
 
-#. translators: %s: 最小PV数
 #: lib/page-access/analytics/render-func.php:943
+#. translators: %s: 最小PV数
 #, php-format
 msgid "%s PV以上"
 msgstr "%s PV及以上"
 
-#. translators: %s: PV数
 #: lib/page-access/analytics/render-func.php:946
+#. translators: %s: PV数
 #, php-format
 msgid "%s PV"
 msgstr "%s PV"
 
-#. translators: 1: 最小PV数, 2: 最大PV数
 #: lib/page-access/analytics/render-func.php:949
+#. translators: 1: 最小PV数, 2: 最大PV数
 #, php-format
 msgid "%1$s～%2$s PV"
 msgstr "%1$s～%2$s PV"
 
-#. translators: %s: 突出日と判定する最小PV数
 #: lib/page-access/analytics/render-func.php:961
+#. translators: %s: 突出日と判定する最小PV数
 #, php-format
 msgid "突出日（%s PV以上）"
 msgstr "异常日（%s PV及以上）"
