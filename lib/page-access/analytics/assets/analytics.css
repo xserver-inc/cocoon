@@ -152,9 +152,9 @@
   opacity: 0.4;
 }
 
-/* 突出日は通常日の緑と区別できるよう、オレンジで塗りつぶします */
+/* 突出日だけに適用するGitHub Primerの暗い緑 */
 .cocoon-analytics-heatmap-cell.is-outlier {
-  background: #e6a23c;
+  background: #033a16;
 }
 
 .cocoon-analytics-heatmap-legend {

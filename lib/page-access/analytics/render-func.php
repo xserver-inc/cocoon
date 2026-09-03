@@ -914,7 +914,7 @@ function cocoon_analytics_render_heatmap(){
       $c = $week_cells[$i];
       $pv = $c['pv'];
       $is_outlier = !$c['future'] && cocoon_analytics_heatmap_is_outlier($pv, $outlier_threshold);
-      // 突出日は最上位レベルとし、専用クラスでオレンジの背景色を適用します
+      // 突出日は専用クラスで通常日より暗い緑の背景色を適用
       $level = $is_outlier ? 4 : cocoon_analytics_heatmap_level($pv, $thresholds);
       $cls = 'cocoon-analytics-heatmap-cell is-level-' . $level;
       if ($c['future']) $cls .= ' is-future';
