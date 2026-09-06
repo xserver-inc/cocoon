@@ -81,7 +81,8 @@ npm run make-pot
 **内部動作:**
 - `scripts/setup-wpcli.js` が `vendor/bin/wp-cli.phar` の存在を確認
 - 未存在なら GitHub から WP-CLI Phar を自動ダウンロード
-- `wp i18n make-pot . languages/cocoon.pot --slug=cocoon --domain=cocoon --ignore-domain --exclude="node_modules,vendor,tests,scripts,tmp/css-custom.php,plugins,fonts,icomoon,webfonts,blocks/dist"` を実行
+- `wp i18n make-pot . languages/cocoon.pot --slug=cocoon --domain=cocoon --ignore-domain --exclude="node_modules,vendor,tests,scripts,docker,scratch,tmp/css-custom.php,plugins,fonts,icomoon,webfonts,blocks/dist"` を実行
+- `docker/` の診断用コードと `scratch/` の一時作業ファイルは、配布用の翻訳カタログに含めない
 - JavaScriptは`blocks/src`などのソースを抽出し、生成済みの`blocks/dist`は重複防止のため除外
 
 ---

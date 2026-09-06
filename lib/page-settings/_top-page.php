@@ -172,7 +172,33 @@ endif;
 <style id="cocoon-settings-tabs-css">
   <?php echo cocoon_get_settings_tabs_css($cocoon_settings_tabs); ?>
 </style>
-<div id="tabs" class="tabs">
+<?php
+// 保存済みの表示モードによる初期描画のちらつき防止
+$cocoon_settings_initial_navigation_mode = function_exists( 'cocoon_get_settings_navigation_mode' )
+  ? cocoon_get_settings_navigation_mode()
+  : 'tabs';
+?>
+<div id="tabs" class="tabs" data-navigation-initial-mode="<?php echo esc_attr( $cocoon_settings_initial_navigation_mode ); ?>">
+  <?php if ( 'responsive' === $cocoon_settings_initial_navigation_mode ): ?>
+  <script>
+    // JavaScript有効時の初期タブ非表示と初期化失敗時の従来表示への復帰
+    ( function() {
+      var tabs = document.currentScript.parentElement;
+
+      if ( ! tabs ) {
+        return;
+      }
+
+      var revealFallbackTabs = function() {
+        tabs.classList.remove( 'is-navigation-booting' );
+      };
+
+      tabs.classList.add( 'is-navigation-booting' );
+      document.addEventListener( 'DOMContentLoaded', revealFallbackTabs, { once: true } );
+      window.setTimeout( revealFallbackTabs, 10000 );
+    }() );
+  </script>
+  <?php endif; ?>
   <?php foreach ($cocoon_settings_tabs as $cocoon_tab_id => $cocoon_tab): ?>
     <input id="tab-<?php echo esc_attr($cocoon_tab_id); ?>-input" value="tab-<?php echo esc_attr($cocoon_tab_id); ?>-input" class="tab-input" type="radio" name="tab-input"<?php echo $cocoon_tab_id === $cocoon_selected_tab ? ' checked="checked"' : ''; ?>>
     <label for="tab-<?php echo esc_attr($cocoon_tab_id); ?>-input" id="tab-<?php echo esc_attr($cocoon_tab_id); ?>-label" class="tab-<?php echo esc_attr($cocoon_tab_id); ?>-label tab-label"><?php echo esc_html($cocoon_tab['label']); ?></label>

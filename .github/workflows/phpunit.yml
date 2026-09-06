@@ -46,11 +46,11 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Run unit tests
-        run: vendor/bin/phpunit --testsuite unit --colors=always
+        run: vendor/bin/phpunit --testsuite unit --exclude-group distribution --colors=always
 
       - name: Run unit tests with coverage
         if: matrix.php-version == '8.3'
-        run: vendor/bin/phpunit --testsuite unit --coverage-text --coverage-clover=coverage.xml
+        run: vendor/bin/phpunit --testsuite unit --exclude-group distribution --coverage-text --coverage-clover=coverage.xml
 
       - name: Upload coverage report
         if: matrix.php-version == '8.3'
@@ -59,6 +59,40 @@ jobs:
           name: coverage-report
           path: coverage.xml
           retention-days: 30
+
+  # ====================================================================
+  # Cocoon設定UIの配布検査（重いアーカイブ生成は1回だけ実行）
+  # ====================================================================
+  settings-release-tests:
+    name: Cocoon Settings Release Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, json
+          coverage: none
+          tools: composer:v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run settings release tests
+        run: npm run test:release
 
   # ====================================================================
   # WordPress 統合テスト

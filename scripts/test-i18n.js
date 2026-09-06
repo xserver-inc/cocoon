@@ -26,11 +26,51 @@ const LOCALES = [
 ];
 const JAPANESE_PATTERN = /[ぁ-んァ-ヶ一-龠々ー～]/u;
 const JAPANESE_KANA_PATTERN = /[ぁ-んァ-ヶ々ー]/u;
+// 開発環境の診断コードが配布用カタログに混入していないことの確認
+const assertProductionReferences = ( catalog, label ) => {
+  for ( const entries of Object.values( catalog.translations ) ) {
+    for ( const entry of Object.values( entries ) ) {
+      const references = ( entry.comments?.reference || '' ).split( /\s+/u );
+      assert.ok(
+        ! references.some( ( reference ) =>
+          /^(?:docker|scratch)[\\/]/u.test( reference )
+        ),
+        `${ label }に開発専用ファイルの翻訳参照があります: ${ entry.msgid }`
+      );
+    }
+  }
+};
+const COCOON_SETTINGS_NAVIGATION_MSGIDS = [
+  '設定メニューの表示',
+  'おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。',
+  'おすすめ表示',
+  '画面の広さに応じて設定メニューを自動で見やすく切り替えます。',
+  '従来の表示',
+  'これまでと同じ順番でタブを表示します。',
+  '表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。',
+  '表示モードの保存期限が切れました。ページを再読み込みしてください。',
+  '表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。',
+  'Cocoon設定項目',
+  '設定メニュー',
+  '設定項目',
+  '設定項目を検索',
+  '該当する設定項目がありません。',
+  '%d件の設定項目が見つかりました。',
+  'その他',
+  '外観・レイアウト',
+  'コンテンツ',
+  '集客・計測',
+  'パーツ・導線',
+  '管理・拡張',
+  'システム・情報',
+];
 
 //中国語では共通漢字を許容し、それ以外の言語では日本語の漢字も未翻訳として検出する
 const hasUnexpectedJapanese = ( locale, value ) =>
-  ( locale.startsWith( 'zh_' ) ? JAPANESE_KANA_PATTERN : JAPANESE_PATTERN )
-    .test( value );
+  ( locale.startsWith( 'zh_' )
+    ? JAPANESE_KANA_PATTERN
+    : JAPANESE_PATTERN
+  ).test( value );
 
 //POヘッダーから、そのロケールで必要な複数形の数を取得する
 const getPluralFormsCount = ( parsed ) => {
@@ -151,13 +191,14 @@ for ( const locale of LOCALES ) {
     const value = skinDictionary[ key ];
     assert.ok( value, `${ locale }のスキンメタデータ翻訳が空です: ${ key }` );
     assert.ok(
-      !JAPANESE_KANA_PATTERN.test( value ) && !value.includes( 'undefined' ),
+      ! JAPANESE_KANA_PATTERN.test( value ) && ! value.includes( 'undefined' ),
       `${ locale }のスキンメタデータ翻訳に日本語または未定義値が残っています: ${ key }`
     );
   }
 
   const poPath = path.join( THEME_ROOT, 'languages', `${ locale }.po` );
   const parsed = gettextParser.po.parse( fs.readFileSync( poPath ) );
+  assertProductionReferences( parsed, `${ locale } PO` );
   const pluralFormsCount = getPluralFormsCount( parsed );
   const madeOnlyCatalogKeys = new Set();
   const untranslated = [];
@@ -165,27 +206,49 @@ for ( const locale of LOCALES ) {
   const placeholderMismatches = [];
   const htmlTagMismatches = [];
 
+  // 新しいCocoon設定UIの全msgidが、各言語へ確実に取り込まれていることを固定する。
+  for ( const msgid of COCOON_SETTINGS_NAVIGATION_MSGIDS ) {
+    const entry =
+      parsed.translations[ '' ] && parsed.translations[ '' ][ msgid ];
+
+    assert.ok(
+      entry,
+      `${ locale }のPOにCocoon設定UI文言がありません: ${ msgid }`
+    );
+    assert.ok(
+      entry.msgstr && entry.msgstr[ 0 ],
+      `${ locale }のCocoon設定UI翻訳が空です: ${ msgid }`
+    );
+  }
+
   //変更禁止スキンだけを参照するカタログ項目は、翻訳内容の監査対象から除外する
   for ( const [ context, entries ] of Object.entries( parsed.translations ) ) {
     for ( const [ msgid, entry ] of Object.entries( entries ) ) {
-      const references = ( entry.comments && entry.comments.reference || '' )
+      const references = (
+        ( entry.comments && entry.comments.reference ) ||
+        ''
+      )
         .split( /\s+/u )
         .filter( Boolean );
       if (
         msgid &&
         references.length > 0 &&
         references.every( ( reference ) =>
-          reference.replace( /\\/gu, '/' ).startsWith( 'skins/skin-made-in-heaven/' )
+          reference
+            .replace( /\\/gu, '/' )
+            .startsWith( 'skins/skin-made-in-heaven/' )
         )
       ) {
-        madeOnlyCatalogKeys.add( context ? `${ context }\u0004${ msgid }` : msgid );
+        madeOnlyCatalogKeys.add(
+          context ? `${ context }\u0004${ msgid }` : msgid
+        );
       }
     }
   }
 
   for ( const [ context, entries ] of Object.entries( parsed.translations ) ) {
     for ( const [ msgid, entry ] of Object.entries( entries ) ) {
-      if ( !msgid ) {
+      if ( ! msgid ) {
         continue;
       }
 
@@ -198,20 +261,21 @@ for ( const locale of LOCALES ) {
       if (
         entry.msgid_plural &&
         ( translatedForms.length !== pluralFormsCount ||
-          translatedForms.some( ( value ) => !value ) )
+          translatedForms.some( ( value ) => ! value ) )
       ) {
         incompletePlurals.push( `${ context }\u0004${ msgid }` );
       }
 
       if (
         JAPANESE_PATTERN.test( msgid ) &&
-        ( !translatedForms[ 0 ] || hasUnexpectedJapanese( locale, translatedForms[ 0 ] ) )
+        ( ! translatedForms[ 0 ] ||
+          hasUnexpectedJapanese( locale, translatedForms[ 0 ] ) )
       ) {
         untranslated.push( `${ context }\u0004${ msgid }` );
       }
 
       for ( const [ formIndex, msgstr ] of translatedForms.entries() ) {
-        if ( !msgstr ) {
+        if ( ! msgstr ) {
           continue;
         }
 
@@ -224,13 +288,17 @@ for ( const locale of LOCALES ) {
           JSON.stringify( extractPlaceholders( msgstr ) ) !==
           JSON.stringify( extractPlaceholders( source ) )
         ) {
-          placeholderMismatches.push( `${ context }\u0004${ msgid }[${ formIndex }]` );
+          placeholderMismatches.push(
+            `${ context }\u0004${ msgid }[${ formIndex }]`
+          );
         }
         if (
           JSON.stringify( extractHtmlTags( msgstr ) ) !==
           JSON.stringify( extractHtmlTags( source ) )
         ) {
-          htmlTagMismatches.push( `${ context }\u0004${ msgid }[${ formIndex }]` );
+          htmlTagMismatches.push(
+            `${ context }\u0004${ msgid }[${ formIndex }]`
+          );
         }
       }
     }
@@ -273,10 +341,14 @@ for ( const locale of LOCALES ) {
   //補正辞書はコンテキストと全複数形を含めてPOへ反映されていることを確認する
   for ( const correction of corrections ) {
     const context = correction.context || '';
-    const entry = parsed.translations[ context ] &&
+    const entry =
+      parsed.translations[ context ] &&
       parsed.translations[ context ][ correction.msgid ];
 
-    assert.ok( entry, `${ locale }のPOに補正対象がありません: ${ correction.msgid }` );
+    assert.ok(
+      entry,
+      `${ locale }のPOに補正対象がありません: ${ correction.msgid }`
+    );
     assert.strictEqual(
       entry.msgid_plural || undefined,
       correction.msgidPlural,
@@ -303,12 +375,40 @@ for ( const locale of LOCALES ) {
   const jedMessages = JSON.parse( fs.readFileSync( jsonPath, 'utf8' ) )
     .locale_data.messages;
 
+  // 新UIの翻訳はPOだけでなく、WordPressが実際に読むMO・l10n.phpまで完全一致させる。
+  for ( const msgid of COCOON_SETTINGS_NAVIGATION_MSGIDS ) {
+    const poTranslation = defaultEntries[ msgid ].msgstr[ 0 ];
+    const moEntry = moEntries[ msgid ];
+
+    assert.ok(
+      moEntry,
+      `${ locale }のMOにCocoon設定UI文言がありません: ${ msgid }`
+    );
+    assert.strictEqual(
+      moEntry.msgstr[ 0 ],
+      poTranslation,
+      `${ locale }のPOとMOでCocoon設定UI翻訳が一致しません: ${ msgid }`
+    );
+    assert.strictEqual(
+      l10nMessages[ msgid ],
+      poTranslation,
+      `${ locale }のPOとl10n.phpでCocoon設定UI翻訳が一致しません: ${ msgid }`
+    );
+    assert.deepStrictEqual(
+      extractPlaceholders( poTranslation ),
+      extractPlaceholders( msgid ),
+      `${ locale }のCocoon設定UI翻訳でプレースホルダーが一致しません: ${ msgid }`
+    );
+  }
+
   const moKanaResidues = [];
   for ( const [ context, entries ] of Object.entries( mo.translations ) ) {
     for ( const [ msgid, entry ] of Object.entries( entries ) ) {
       if (
         msgid &&
-        !madeOnlyCatalogKeys.has( context ? `${ context }\u0004${ msgid }` : msgid ) &&
+        ! madeOnlyCatalogKeys.has(
+          context ? `${ context }\u0004${ msgid }` : msgid
+        ) &&
         entry.msgstr &&
         entry.msgstr.some( ( value ) => hasUnexpectedJapanese( locale, value ) )
       ) {
@@ -317,13 +417,15 @@ for ( const locale of LOCALES ) {
     }
   }
   const jedKanaResidues = Object.entries( jedMessages )
-    .filter( ( [ msgid, values ] ) =>
-      msgid &&
-      !madeOnlyCatalogKeys.has( msgid ) &&
-      Array.isArray( values ) &&
-      values.some( ( value ) =>
-        typeof value === 'string' && hasUnexpectedJapanese( locale, value )
-      )
+    .filter(
+      ( [ msgid, values ] ) =>
+        msgid &&
+        ! madeOnlyCatalogKeys.has( msgid ) &&
+        Array.isArray( values ) &&
+        values.some(
+          ( value ) =>
+            typeof value === 'string' && hasUnexpectedJapanese( locale, value )
+        )
     )
     .map( ( [ msgid ] ) => msgid );
 
@@ -358,7 +460,8 @@ for ( const locale of LOCALES ) {
     const catalogKey = context
       ? `${ context }\u0004${ correction.msgid }`
       : correction.msgid;
-    const moEntry = mo.translations[ context ] &&
+    const moEntry =
+      mo.translations[ context ] &&
       mo.translations[ context ][ correction.msgid ];
 
     assert.deepStrictEqual(
@@ -401,9 +504,7 @@ assert.match(
   'ログインユーザー限定ブロックのタイトルが翻訳されていません。'
 );
 
-const skinCatalog = readThemeFile(
-  'lib/page-settings/skin-translations.php'
-);
+const skinCatalog = readThemeFile( 'lib/page-settings/skin-translations.php' );
 const skinFunctions = readThemeFile( 'lib/page-settings/skin-funcs.php' );
 const themeUtils = readThemeFile( 'lib/utils.php' );
 const themeScripts = readThemeFile( 'lib/scripts.php' );
@@ -427,14 +528,20 @@ assert.match(
   'スキン説明文が実行時翻訳になっていません。'
 );
 assert.ok(
-  !skinCatalog.includes( 'Made in Heaven' ) &&
-    !skinMetadata.keys.some( ( key ) => /メイド[・･]イン[・･]ヘブン/u.test( key ) ),
+  ! skinCatalog.includes( 'Made in Heaven' ) &&
+    ! skinMetadata.keys.some( ( key ) =>
+      /メイド[・･]イン[・･]ヘブン/u.test( key )
+    ),
   '変更禁止スキンがスキン翻訳カタログへ含まれています。'
 );
 
 //style.cssの日本語メタデータが、禁止スキンを除いてすべてカタログ登録済みか確認する
-const skinStyles = findFiles( path.join( THEME_ROOT, 'skins' ), 'style.css' )
-  .filter( ( file ) => !file.includes( `${ path.sep }skin-made-in-heaven${ path.sep }` ) );
+const skinStyles = findFiles(
+  path.join( THEME_ROOT, 'skins' ),
+  'style.css'
+).filter(
+  ( file ) => ! file.includes( `${ path.sep }skin-made-in-heaven${ path.sep }` )
+);
 const discoveredSkinMetadata = new Set();
 for ( const stylePath of skinStyles ) {
   const style = fs.readFileSync( stylePath, 'utf8' );
@@ -495,11 +602,17 @@ for ( const stylePath of skinStyles ) {
   const style = fs.readFileSync( stylePath, 'utf8' );
   for ( const line of style.split( /\r?\n/u ) ) {
     const declaration = line.replace( /\/\*.*\*\//gu, '' );
-    if ( /content\s*:/u.test( declaration ) && JAPANESE_PATTERN.test( declaration ) ) {
+    if (
+      /content\s*:/u.test( declaration ) &&
+      JAPANESE_PATTERN.test( declaration )
+    ) {
       assert.match(
         declaration,
         /var\(--cocoon-skin-/u,
-        `CSSのcontentに未翻訳の日本語があります: ${ path.relative( THEME_ROOT, stylePath ) }`
+        `CSSのcontentに未翻訳の日本語があります: ${ path.relative(
+          THEME_ROOT,
+          stylePath
+        ) }`
       );
     }
   }
@@ -513,11 +626,17 @@ for ( const stylePath of [
   const style = fs.readFileSync( stylePath, 'utf8' );
   for ( const line of style.split( /\r?\n/u ) ) {
     const declaration = line.replace( /\/\*.*\*\//gu, '' );
-    if ( /content\s*:/u.test( declaration ) && JAPANESE_PATTERN.test( declaration ) ) {
+    if (
+      /content\s*:/u.test( declaration ) &&
+      JAPANESE_PATTERN.test( declaration )
+    ) {
       assert.match(
         declaration,
         /var\(--cocoon-/u,
-        `テーマCSSのcontentに未翻訳の日本語があります: ${ path.relative( THEME_ROOT, stylePath ) }`
+        `テーマCSSのcontentに未翻訳の日本語があります: ${ path.relative(
+          THEME_ROOT,
+          stylePath
+        ) }`
       );
     }
   }
@@ -526,7 +645,9 @@ for ( const stylePath of [
 //Cocoon固有文言の翻訳呼び出しが、必ずテーマのテキストドメインを使うことを確認する
 const themeDomainRequirements = {
   'lib/comments.php': [ '名前:</span>' ],
-  'lib/original-menu.php': [ 'このページにアクセスする管理者権限がありません。' ],
+  'lib/original-menu.php': [
+    'このページにアクセスする管理者権限がありません。',
+  ],
   'lib/page-settings/about-forms.php': [
     '利用中のプラグイン：',
     '停止中のプラグイン：',
@@ -546,11 +667,15 @@ const themeDomainRequirements = {
   'lib/html-forms.php': [ 'NO USER' ],
 };
 
-for ( const [ relativePath, messages ] of Object.entries( themeDomainRequirements ) ) {
+for ( const [ relativePath, messages ] of Object.entries(
+  themeDomainRequirements
+) ) {
   const sourceLines = readThemeFile( relativePath ).split( /\r?\n/u );
 
   for ( const message of messages ) {
-    const matchingLines = sourceLines.filter( ( line ) => line.includes( message ) );
+    const matchingLines = sourceLines.filter( ( line ) =>
+      line.includes( message )
+    );
     assert.ok(
       matchingLines.length > 0,
       `テキストドメイン検査対象が見つかりません: ${ relativePath } / ${ message }`
@@ -615,17 +740,14 @@ assert.doesNotMatch(
 const bookmarklet = readThemeFile( 'js/rakuten-bookmarklet.js' );
 const runUnsupportedBookmarklet = ( language ) => {
   let alertMessage = '';
-  vm.runInNewContext(
-    bookmarklet.replace( /^javascript:\s*/u, '' ),
-    {
-      navigator: { language },
-      location: { href: 'https://example.com/', host: 'example.com' },
-      alert: ( message ) => {
-        alertMessage = message;
-      },
-      document: {},
-    }
-  );
+  vm.runInNewContext( bookmarklet.replace( /^javascript:\s*/u, '' ), {
+    navigator: { language },
+    location: { href: 'https://example.com/', host: 'example.com' },
+    alert: ( message ) => {
+      alertMessage = message;
+    },
+    document: {},
+  } );
   return alertMessage;
 };
 
@@ -716,6 +838,8 @@ const POT_EXCLUDE_SEGMENTS = [
   'vendor',
   'tests',
   'scripts',
+  'docker',
+  'scratch',
   'plugins',
   'fonts',
   'icomoon',
@@ -754,6 +878,7 @@ const potCatalog = gettextParser.po.parse(
   fs.readFileSync( path.join( THEME_ROOT, 'languages', 'cocoon.pot' ) )
 );
 const potMsgids = new Set();
+assertProductionReferences( potCatalog, 'POT' );
 
 for ( const context of Object.values( potCatalog.translations ) ) {
   for ( const msgid of Object.keys( context ) ) {

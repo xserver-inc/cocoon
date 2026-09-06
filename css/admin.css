@@ -20507,7 +20507,7 @@ form.admin-settings .postbox {
   margin: 1em 0;
 }
 
-#tabs > div {
+#tabs > .metabox-holder {
   display: none;
 }
 

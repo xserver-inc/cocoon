@@ -6,9 +6,6 @@ module.exports = {
     'scss/at-rule-no-unknown': true,
     'scss/selector-no-redundant-nesting-selector': true,
 
-    // CSS順序 (Prettierで管理するため無効化)
-    'order/properties-order': null,
-
     // WordPress/Cocoon specific
     'selector-class-pattern': null, // WordPressの命名規則に合わせるため無効
     'custom-property-pattern': null,
@@ -49,8 +46,6 @@ module.exports = {
     // Function
     'function-url-quotes': 'always',
 
-    // String
-    'string-quotes': 'single',
   },
   ignoreFiles: [
     '**/*.min.css',
