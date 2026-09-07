@@ -1349,7 +1349,24 @@ if ( !function_exists( 'get_theme_logs_path' ) ):
 function get_theme_logs_path(){
   $dir = get_theme_resources_path().'logs/';
   if (!file_exists($dir)) mkdir($dir, 0777, true);
+  protect_theme_directory($dir);
   return $dir;
+}
+endif;
+
+//ディレクトリへの外部アクセスを遮断するファイルを設置
+if ( !function_exists( 'protect_theme_directory' ) ):
+function protect_theme_directory($dir){
+  $htaccess = $dir.'.htaccess';
+  if (!file_exists($htaccess)) {
+    //Apache2.2と2.4のどちらでも拒否されるように両方の書式を記述
+    @file_put_contents($htaccess, '<IfModule mod_authz_core.c>'.PHP_EOL.'  Require all denied'.PHP_EOL.'</IfModule>'.PHP_EOL.'<IfModule !mod_authz_core.c>'.PHP_EOL.'  Order allow,deny'.PHP_EOL.'  Deny from all'.PHP_EOL.'</IfModule>'.PHP_EOL);
+  }
+  //.htaccessが効かない環境での一覧表示対策
+  $index = $dir.'index.php';
+  if (!file_exists($index)) {
+    @file_put_contents($index, '<?php // Silence is golden.'.PHP_EOL);
+  }
 }
 endif;
 
@@ -3031,6 +3048,10 @@ function get_sticky_post_ids_in_categories($category_ids, $sticky_post_ids = nul
     return array();
   }
 
+  //IDの並び順が異なっても同じ組み合わせとして扱う
+  sort($category_ids, SORT_NUMERIC);
+  sort($sticky_post_ids, SORT_NUMERIC);
+
   //同一リクエスト内で同じ組み合わせを繰り返し検索しない
   static $post_ids_cache = array();
   $cache_key = implode(',', $category_ids).'|'.implode(',', $sticky_post_ids);
@@ -3929,7 +3950,8 @@ endif;
 if ( !function_exists( 'use_gutenberg_editor' ) ):
 function use_gutenberg_editor(){
   $current_screen = get_current_screen();
-  return ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() );
+  // 画面情報がない場合はメソッド確認を省略し、旧Gutenbergの判定は残す。
+  return ( $current_screen && method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() );
 }
 endif;
 

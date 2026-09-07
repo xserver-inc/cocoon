@@ -7,6 +7,70 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// Cocoon本体の設定とは分離し、表示モードだけをサイト別・ユーザー別に保存する。
+if ( !defined( 'COCOON_SETTINGS_NAVIGATION_MODE_OPTION' ) ) {
+  define( 'COCOON_SETTINGS_NAVIGATION_MODE_OPTION', 'cocoon_settings_navigation_mode' );
+}
+
+// 保存値が未設定または不正な場合は、後方互換を優先して従来タブへ戻す。
+if ( !function_exists( 'cocoon_normalize_settings_navigation_mode' ) ):
+function cocoon_normalize_settings_navigation_mode( $mode ) {
+  $allowed_modes = array( 'responsive', 'tabs' );
+
+  return is_string( $mode ) && in_array( $mode, $allowed_modes, true ) ? $mode : 'tabs';
+}
+endif;
+
+// 現在のサイトにおける管理者個人の表示モードを取得する。
+if ( !function_exists( 'cocoon_get_settings_navigation_mode' ) ):
+function cocoon_get_settings_navigation_mode() {
+  $user_id = get_current_user_id();
+  $saved_mode = $user_id ? get_user_option( COCOON_SETTINGS_NAVIGATION_MODE_OPTION, $user_id ) : '';
+
+  return cocoon_normalize_settings_navigation_mode( $saved_mode );
+}
+endif;
+
+add_action( 'wp_ajax_cocoon_settings_save_navigation_mode', 'cocoon_ajax_save_settings_navigation_mode' );
+
+// 専用AJAXで表示モード1項目だけを保存し、既存のCocoon設定保存処理は通さない。
+if ( !function_exists( 'cocoon_ajax_save_settings_navigation_mode' ) ):
+function cocoon_ajax_save_settings_navigation_mode() {
+  if ( !current_user_can( 'manage_options' ) ) {
+    wp_send_json_error( array( 'message' => 'forbidden' ), 403 );
+    return;
+  }
+
+  check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce' );
+
+  $mode = isset( $_POST['mode'] ) && is_string( $_POST['mode'] )
+    ? sanitize_key( wp_unslash( $_POST['mode'] ) )
+    : '';
+
+  if ( !in_array( $mode, array( 'responsive', 'tabs' ), true ) ) {
+    wp_send_json_error( array( 'message' => 'invalid_mode' ), 400 );
+    return;
+  }
+
+  $user_id = get_current_user_id();
+  if ( !$user_id ) {
+    wp_send_json_error( array( 'message' => 'invalid_user' ), 403 );
+    return;
+  }
+
+  update_user_option( $user_id, COCOON_SETTINGS_NAVIGATION_MODE_OPTION, $mode, false );
+
+  // 同じ値の再保存ではfalseになるため、戻り値ではなく再読込した値で保存結果を判定する。
+  $saved_mode = get_user_option( COCOON_SETTINGS_NAVIGATION_MODE_OPTION, $user_id );
+  if ( $saved_mode !== $mode ) {
+    wp_send_json_error( array( 'message' => 'save_failed' ), 500 );
+    return;
+  }
+
+  wp_send_json_success( array( 'mode' => $mode ) );
+}
+endif;
+
 //管理画面に読み込むリソースの設定
 add_action('admin_print_styles', 'admin_print_styles_custom');
 if ( !function_exists( 'admin_print_styles_custom' ) ):
@@ -66,6 +130,128 @@ function admin_print_styles_custom() {
   ///////////////////////////////////////
   //管理画面用での独自JavaScriptの読み込み
   wp_enqueue_script( 'admin-javascript', get_cocoon_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
+
+  // Cocoon設定画面だけで、既存radioと同期する表示専用ナビゲーションを読み込む。
+  if (is_admin_php_page()) {
+    $settings_navigation_css = '/css/cocoon-settings.css';
+    $settings_navigation_css_path = get_cocoon_template_directory() . $settings_navigation_css;
+    $settings_navigation_js = '/js/cocoon-settings-navigation.js';
+    $settings_navigation_js_path = get_cocoon_template_directory() . $settings_navigation_js;
+
+    // 設定画面専用のデザインだけを、この画面に限定して読み込む。
+    wp_enqueue_style(
+      'cocoon-settings',
+      get_cocoon_template_directory_uri() . $settings_navigation_css,
+      array( 'admin-style' ),
+      file_exists( $settings_navigation_css_path ) ? filemtime( $settings_navigation_css_path ) : false
+    );
+
+    wp_enqueue_script(
+      'cocoon-settings-navigation',
+      get_cocoon_template_directory_uri() . $settings_navigation_js,
+      array(),
+      file_exists( $settings_navigation_js_path ) ? filemtime( $settings_navigation_js_path ) : false,
+      true
+    );
+
+    // 表示モード専用の保存情報と翻訳済み文言だけを渡し、Cocoon設定値は渡さない。
+    wp_localize_script(
+      'cocoon-settings-navigation',
+      'cocoonSettingsNavigationData',
+      array(
+        'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+        'nonce' => wp_create_nonce( 'cocoon_settings_navigation_mode' ),
+        'initialMode' => cocoon_get_settings_navigation_mode(),
+        'viewModeLabel' => __( '設定メニューの表示', THEME_NAME ),
+        'viewModeDescription' => __( 'おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。', THEME_NAME ),
+        'responsiveModeLabel' => __( 'おすすめ表示', THEME_NAME ),
+        'responsiveModeDescription' => __( '画面の広さに応じて設定メニューを自動で見やすく切り替えます。', THEME_NAME ),
+        'tabsModeLabel' => __( '従来の表示', THEME_NAME ),
+        'tabsModeDescription' => __( 'これまでと同じ順番でタブを表示します。', THEME_NAME ),
+        'modeSaveError' => __( '表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。', THEME_NAME ),
+        'modeNonceError' => __( '表示モードの保存期限が切れました。ページを再読み込みしてください。', THEME_NAME ),
+        'modeTimeoutError' => __( '表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。', THEME_NAME ),
+        'navigationLabel' => __( 'Cocoon設定項目', THEME_NAME ),
+        'menuTitle' => __( '設定メニュー', THEME_NAME ),
+        'mobileLabel' => __( '設定項目', THEME_NAME ),
+        'searchLabel' => __( '設定項目を検索', THEME_NAME ),
+        'searchPlaceholder' => __( '設定項目を検索', THEME_NAME ),
+        'noResults' => __( '該当する設定項目がありません。', THEME_NAME ),
+        'resultsLabel' => __( '%d件の設定項目が見つかりました。', THEME_NAME ),
+        'fallbackLabel' => __( 'その他', THEME_NAME ),
+        'groups' => array(
+          array(
+            'label' => __( '外観・レイアウト', THEME_NAME ),
+            'tabs' => array(
+              'tab-skin-input',
+              'tab-all-input',
+              'tab-theme-header-input',
+              'tab-column-input',
+              'tab-footer-input',
+              'tab-mobile-buttons-input',
+            ),
+          ),
+          array(
+            'label' => __( 'コンテンツ', THEME_NAME ),
+            'tabs' => array(
+              'tab-title-input',
+              'tab-index-page-input',
+              'tab-single-page-input',
+              'tab-page-page-input',
+              'tab-content-page-input',
+              'tab-toc-page-input',
+              'tab-image-input',
+              'tab-code-highlight-input',
+              'tab-comment-input',
+              'tab-page-404-input',
+            ),
+          ),
+          array(
+            'label' => __( '集客・計測', THEME_NAME ),
+            'tabs' => array(
+              'tab-ads-input',
+              'tab-seo-input',
+              'tab-ogp-input',
+              'tab-analytics-input',
+              'tab-sns-share-input',
+              'tab-sns-follow-input',
+            ),
+          ),
+          array(
+            'label' => __( 'パーツ・導線', THEME_NAME ),
+            'tabs' => array(
+              'tab-blog-card-input',
+              'tab-notice-area-input',
+              'tab-appeal-area-input',
+              'tab-recommended-input',
+              'tab-carousel-input',
+              'tab-buttons-input',
+              'tab-widget-input',
+              'tab-widget-area-input',
+            ),
+          ),
+          array(
+            'label' => __( '管理・拡張', THEME_NAME ),
+            'tabs' => array(
+              'tab-amp-input',
+              'tab-pwa-input',
+              'tab-admin-input',
+              'tab-editor-input',
+              'tab-apis-input',
+              'tab-others-input',
+            ),
+          ),
+          array(
+            'label' => __( 'システム・情報', THEME_NAME ),
+            'tabs' => array(
+              'tab-reset-input',
+              'tab-about-input',
+            ),
+          ),
+        ),
+      )
+    );
+  }
 
   //投稿ページの場合
   if (is_admin_post_page()) {
@@ -200,6 +386,17 @@ function customize_admin_add_column($column_name, $post_id) {
 
   //PV表示
   if ( is_admin_list_pv_visible() && ('pv' === $column_name) ) {
+    //1記事4クエリを避けるため、一覧に表示中の全記事分のPVを最初の1回でまとめて先読み
+    static $pv_cache_primed = false;
+    if ( !$pv_cache_primed ) {
+      $pv_cache_primed = true;
+      if ( function_exists('prime_several_access_count_cache') && get_admin_panel_pv_type() !== 'jetpack' ) {
+        global $wp_query;
+        if ( !empty($wp_query->posts) ) {
+          prime_several_access_count_cache(wp_list_pluck($wp_query->posts, 'ID'), get_accesses_post_type());
+        }
+      }
+    }
     $thum =
     '<div class="pv-wrap">'.
       '<div class="pv-title">'.

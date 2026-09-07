@@ -4152,6 +4152,14 @@ div.search-form {
   font-size: 20px;
 }
 
+.button-block > [class~=btn-l] {
+  display: block;
+}
+.button-block > [class~=btn-l]::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .alignleft .btn-l.has-custom-width, .alignleft .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignleft a.has-custom-width,
 .alignleft.btn-wrap-l.has-custom-width a {
   margin-right: auto;

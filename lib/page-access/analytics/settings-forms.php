@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
             <th scope="row"><?php generate_label_tag(OP_ACCESS_ANALYTICS_ENABLE, __('ダッシュボード機能', THEME_NAME)); ?></th>
             <td>
               <?php generate_checkbox_tag(OP_ACCESS_ANALYTICS_ENABLE, is_access_analytics_enable(), __('アクセス解析ダッシュボードを有効にする', THEME_NAME)); ?>
-              <?php generate_tips_tag(__('無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。', THEME_NAME)); ?>
+              <?php generate_tips_tag(__('無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。', THEME_NAME)); ?>
             </td>
           </tr>
           <tr>

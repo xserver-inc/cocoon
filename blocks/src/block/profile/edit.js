@@ -8,12 +8,17 @@ import {
   ToggleControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '../../server-side-render';
 import classnames from 'classnames';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const { id, label, isImageCircle } = attributes;
+
+  // プロフィール一覧の取得完了判定
+  const isProfileListReady =
+    typeof gbUsers !== 'undefined' && Array.isArray( gbUsers );
+  const profileList = isProfileListReady ? gbUsers : [];
   const classes = classnames( 'profile-block-box', 'block-box', {
     [ 'profile-block-box-' + id ]: !! ( id !== '-1' ),
     [ className ]: !! className,
@@ -30,8 +35,8 @@ export default function edit( props ) {
   function createOptions() {
     const options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
-    if ( typeof gbUsers !== 'undefined' ) {
-      gbUsers.forEach( ( user ) => {
+    if ( isProfileListReady ) {
+      profileList.forEach( ( user ) => {
         if ( isProfileIdExist === false && user.id == id ) {
           isProfileIdExist = true;
         }
@@ -50,9 +55,9 @@ export default function edit( props ) {
 
   const getProfileMessage = () => {
     let msg = '';
-    if ( typeof gbUsers !== 'undefined' && abledDropdownListItemCount === 0 ) {
+    if ( isProfileListReady && abledDropdownListItemCount === 0 ) {
       msg = __( '選択できるユーザーがありません。', THEME_NAME );
-    } else if ( typeof gbUsers !== 'undefined' ) {
+    } else if ( isProfileListReady ) {
       msg = __( 'ユーザーを選択してください。', THEME_NAME );
     } else {
       return '';
@@ -73,7 +78,7 @@ export default function edit( props ) {
 
   const options = createOptions();
 
-  if ( ! isProfileIdExist ) {
+  if ( isProfileListReady && ! isProfileIdExist && id != '-1' ) {
     setAttributes( { id: '-1' } );
   }
 

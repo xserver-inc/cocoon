@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.4.3\n"
+"Project-Id-Version: Cocoon 2.9.5.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 #: blocks/src/block/login-user-only/index.php:19
 #: lib/shortcodes.php:323
 #: lib/tinymce/shortcodes.php:237
-#: blocks/src/blocks.js:150
+#: blocks/src/blocks.js:141
 #: blocks/src/toolbutton/dropdown-shortcodes.js:254
 #: skins/silk/gutenberg.js:106
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
@@ -132,9 +132,9 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: functions.php:557
-#: functions.php:558
-#: lib/admin.php:419
+#: functions.php:562
+#: functions.php:563
+#: lib/admin.php:616
 msgid "パターン一覧"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:210
 #: lib/admin-tinymce-qtag.php:537
-#: lib/admin.php:150
+#: lib/admin.php:336
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -315,11 +315,11 @@ msgstr ""
 #: lib/custom-fields/memo-field.php:20
 #: skins/skin-made-in-heaven/lib/hook-wp.php:155
 #: blocks/src/block-extension/style-extension/style01.js:142
-#: blocks/src/block/icon-box/deprecated.js:98
+#: blocks/src/block/icon-box/deprecated.js:154
 #: blocks/src/block/icon-box/edit.js:45
 #: blocks/src/block/tab-box/edit.js:99
 #: blocks/src/block/test-box/deprecated.js:98
-#: blocks/src/old/tab-box/block.js:109
+#: blocks/src/old/tab-box/block.js:171
 msgid "メモ"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:357
 #: lib/block-editor-styles-group.php:50
 #: lib/block-editor-styles-paragraph.php:85
-#: lib/page-settings/_top-page.php:224
+#: lib/page-settings/settings-tabs.php:32
 #: lib/sns-share.php:1015
 #: lib/sns-share.php:1028
 #: lib/_defins.php:419
@@ -335,11 +335,11 @@ msgstr ""
 #: tmp/mobile-comments-button.php:12
 #: blocks/src/block-extension/style-extension/style01.js:146
 #: blocks/src/block-extension/style-extension/style02.js:106
-#: blocks/src/block/icon-box/deprecated.js:102
+#: blocks/src/block/icon-box/deprecated.js:158
 #: blocks/src/block/icon-box/edit.js:49
 #: blocks/src/block/tab-box/edit.js:75
 #: blocks/src/block/test-box/deprecated.js:102
-#: blocks/src/old/tab-box/block.js:85
+#: blocks/src/old/tab-box/block.js:147
 msgid "コメント"
 msgstr ""
 
@@ -348,11 +348,11 @@ msgstr ""
 #: lib/block-editor-styles-group.php:58
 #: lib/block-editor-styles-paragraph.php:93
 #: blocks/src/block-extension/style-extension/style01.js:150
-#: blocks/src/block/icon-box/deprecated.js:106
+#: blocks/src/block/icon-box/deprecated.js:162
 #: blocks/src/block/icon-box/edit.js:53
 #: blocks/src/block/tab-box/edit.js:115
 #: blocks/src/block/test-box/deprecated.js:106
-#: blocks/src/old/tab-box/block.js:125
+#: blocks/src/old/tab-box/block.js:187
 #: blocks/src/toolbutton/html.js:132
 #: blocks/src/toolbutton/ruby.js:235
 msgid "OK"
@@ -363,11 +363,11 @@ msgstr ""
 #: lib/block-editor-styles-group.php:66
 #: lib/block-editor-styles-paragraph.php:101
 #: blocks/src/block-extension/style-extension/style01.js:154
-#: blocks/src/block/icon-box/deprecated.js:110
+#: blocks/src/block/icon-box/deprecated.js:166
 #: blocks/src/block/icon-box/edit.js:57
 #: blocks/src/block/tab-box/edit.js:119
 #: blocks/src/block/test-box/deprecated.js:110
-#: blocks/src/old/tab-box/block.js:129
+#: blocks/src/old/tab-box/block.js:191
 msgid "NG"
 msgstr ""
 
@@ -376,11 +376,11 @@ msgstr ""
 #: lib/block-editor-styles-group.php:74
 #: lib/block-editor-styles-paragraph.php:109
 #: blocks/src/block-extension/style-extension/style01.js:158
-#: blocks/src/block/icon-box/deprecated.js:114
+#: blocks/src/block/icon-box/deprecated.js:170
 #: blocks/src/block/icon-box/edit.js:61
 #: blocks/src/block/tab-box/edit.js:123
 #: blocks/src/block/test-box/deprecated.js:114
-#: blocks/src/old/tab-box/block.js:133
+#: blocks/src/old/tab-box/block.js:195
 msgid "GOOD"
 msgstr ""
 
@@ -389,11 +389,11 @@ msgstr ""
 #: lib/block-editor-styles-group.php:82
 #: lib/block-editor-styles-paragraph.php:117
 #: blocks/src/block-extension/style-extension/style01.js:162
-#: blocks/src/block/icon-box/deprecated.js:118
+#: blocks/src/block/icon-box/deprecated.js:174
 #: blocks/src/block/icon-box/edit.js:65
 #: blocks/src/block/tab-box/edit.js:127
 #: blocks/src/block/test-box/deprecated.js:118
-#: blocks/src/old/tab-box/block.js:137
+#: blocks/src/old/tab-box/block.js:199
 msgid "BAD"
 msgstr ""
 
@@ -406,12 +406,12 @@ msgstr ""
 #: skins/skin-made-in-heaven/lib/hook-cocoon.php:122
 #: skins/skin-made-in-heaven/lib/panel-main.php:95
 #: blocks/src/block-extension/style-extension/style01.js:166
-#: blocks/src/block/icon-box/deprecated.js:122
+#: blocks/src/block/icon-box/deprecated.js:178
 #: blocks/src/block/icon-box/edit.js:69
 #: blocks/src/block/profile/index.js:21
 #: blocks/src/block/tab-box/edit.js:131
 #: blocks/src/block/test-box/deprecated.js:122
-#: blocks/src/old/tab-box/block.js:141
+#: blocks/src/old/tab-box/block.js:203
 #: blocks/src/toolbutton/dropdown-shortcodes.js:142
 #: skins/silk/gutenberg.js:94
 msgid "プロフィール"
@@ -424,7 +424,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:250
 #: lib/block-editor-styles-group.php:101
 #: lib/block-editor-styles-paragraph.php:136
-#: blocks/src/block/info-box/deprecated.js:85
+#: blocks/src/block/info-box/deprecated.js:141
 #: blocks/src/block/info-box/edit.js:33
 msgid "プライマリー（濃い水色）"
 msgstr ""
@@ -432,7 +432,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:255
 #: lib/block-editor-styles-group.php:109
 #: lib/block-editor-styles-paragraph.php:144
-#: blocks/src/block/info-box/deprecated.js:89
+#: blocks/src/block/info-box/deprecated.js:145
 #: blocks/src/block/info-box/edit.js:37
 msgid "セカンダリー（濃い灰色）"
 msgstr ""
@@ -454,7 +454,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:270
 #: lib/block-editor-styles-group.php:133
 #: lib/block-editor-styles-paragraph.php:168
-#: blocks/src/block/info-box/deprecated.js:101
+#: blocks/src/block/info-box/deprecated.js:157
 #: blocks/src/block/info-box/edit.js:49
 msgid "ワーニング（薄い黄色）"
 msgstr ""
@@ -462,7 +462,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:275
 #: lib/block-editor-styles-group.php:141
 #: lib/block-editor-styles-paragraph.php:176
-#: blocks/src/block/info-box/deprecated.js:105
+#: blocks/src/block/info-box/deprecated.js:161
 #: blocks/src/block/info-box/edit.js:53
 msgid "デンジャー（薄い赤色）"
 msgstr ""
@@ -470,7 +470,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:280
 #: lib/block-editor-styles-group.php:149
 #: lib/block-editor-styles-paragraph.php:184
-#: blocks/src/block/info-box/deprecated.js:109
+#: blocks/src/block/info-box/deprecated.js:165
 #: blocks/src/block/info-box/edit.js:57
 msgid "ライト（白色）"
 msgstr ""
@@ -478,7 +478,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:285
 #: lib/block-editor-styles-group.php:157
 #: lib/block-editor-styles-paragraph.php:192
-#: blocks/src/block/info-box/deprecated.js:113
+#: blocks/src/block/info-box/deprecated.js:169
 #: blocks/src/block/info-box/edit.js:61
 msgid "ダーク（暗い灰色）"
 msgstr ""
@@ -506,11 +506,11 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:786
 #: lib/admin-tinymce-qtag.php:819
 #: lib/gutenberg.php:110
-#: lib/widgets/cta-box.php:184
+#: lib/widgets/cta-box.php:193
 #: blocks/src/block/cta/edit.js:224
-#: blocks/src/block/sticky-box/deprecated.js:87
+#: blocks/src/block/sticky-box/deprecated.js:221
 #: blocks/src/block/sticky-box/edit.js:33
-#: blocks/src/old/tab-box/block.js:155
+#: blocks/src/old/tab-box/block.js:217
 #: blocks/src/toolbutton/badge-grey.js:14
 msgid "灰色"
 msgstr ""
@@ -534,16 +534,16 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:791
 #: lib/admin-tinymce-qtag.php:824
 #: lib/gutenberg.php:80
-#: lib/widgets/cta-box.php:179
+#: lib/widgets/cta-box.php:188
 #: blocks/src/block/cta/edit.js:213
-#: blocks/src/block/sticky-box/deprecated.js:91
+#: blocks/src/block/sticky-box/deprecated.js:225
 #: blocks/src/block/sticky-box/edit.js:37
-#: blocks/src/old/blank-box/block.js:78
+#: blocks/src/old/blank-box/block.js:135
 #: blocks/src/old/caption-box/block.js:72
 #: blocks/src/old/label-box/block.js:71
-#: blocks/src/old/micro-balloon-1/block.js:98
-#: blocks/src/old/micro-balloon/block.js:97
-#: blocks/src/old/tab-box/block.js:159
+#: blocks/src/old/micro-balloon-1/block.js:185
+#: blocks/src/old/micro-balloon/block.js:182
+#: blocks/src/old/tab-box/block.js:221
 #: blocks/src/old/tab-caption-box/block.js:72
 #: blocks/src/old/toggle-box/block.js:75
 #: blocks/src/toolbutton/badge-yellow.js:14
@@ -569,16 +569,16 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:796
 #: lib/admin-tinymce-qtag.php:829
 #: lib/gutenberg.php:20
-#: lib/widgets/cta-box.php:167
+#: lib/widgets/cta-box.php:176
 #: blocks/src/block/cta/edit.js:189
-#: blocks/src/block/sticky-box/deprecated.js:95
+#: blocks/src/block/sticky-box/deprecated.js:229
 #: blocks/src/block/sticky-box/edit.js:41
-#: blocks/src/old/blank-box/block.js:82
+#: blocks/src/old/blank-box/block.js:139
 #: blocks/src/old/caption-box/block.js:76
 #: blocks/src/old/label-box/block.js:75
-#: blocks/src/old/micro-balloon-1/block.js:102
-#: blocks/src/old/micro-balloon/block.js:101
-#: blocks/src/old/tab-box/block.js:163
+#: blocks/src/old/micro-balloon-1/block.js:189
+#: blocks/src/old/micro-balloon/block.js:186
+#: blocks/src/old/tab-box/block.js:225
 #: blocks/src/old/tab-caption-box/block.js:76
 #: blocks/src/old/toggle-box/block.js:79
 #: blocks/src/toolbutton/badge-red.js:14
@@ -607,16 +607,16 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:801
 #: lib/admin-tinymce-qtag.php:834
 #: lib/gutenberg.php:45
-#: lib/widgets/cta-box.php:172
+#: lib/widgets/cta-box.php:181
 #: blocks/src/block/cta/edit.js:197
-#: blocks/src/block/sticky-box/deprecated.js:99
+#: blocks/src/block/sticky-box/deprecated.js:233
 #: blocks/src/block/sticky-box/edit.js:45
-#: blocks/src/old/blank-box/block.js:86
+#: blocks/src/old/blank-box/block.js:143
 #: blocks/src/old/caption-box/block.js:80
 #: blocks/src/old/label-box/block.js:79
-#: blocks/src/old/micro-balloon-1/block.js:106
-#: blocks/src/old/micro-balloon/block.js:105
-#: blocks/src/old/tab-box/block.js:167
+#: blocks/src/old/micro-balloon-1/block.js:193
+#: blocks/src/old/micro-balloon/block.js:190
+#: blocks/src/old/tab-box/block.js:229
 #: blocks/src/old/tab-caption-box/block.js:80
 #: blocks/src/old/toggle-box/block.js:83
 #: blocks/src/toolbutton/badge-blue.js:14
@@ -645,16 +645,16 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:806
 #: lib/admin-tinymce-qtag.php:839
 #: lib/gutenberg.php:65
-#: lib/widgets/cta-box.php:176
+#: lib/widgets/cta-box.php:185
 #: blocks/src/block/cta/edit.js:207
-#: blocks/src/block/sticky-box/deprecated.js:103
+#: blocks/src/block/sticky-box/deprecated.js:237
 #: blocks/src/block/sticky-box/edit.js:49
-#: blocks/src/old/blank-box/block.js:90
+#: blocks/src/old/blank-box/block.js:147
 #: blocks/src/old/caption-box/block.js:84
 #: blocks/src/old/label-box/block.js:83
-#: blocks/src/old/micro-balloon-1/block.js:110
-#: blocks/src/old/micro-balloon/block.js:109
-#: blocks/src/old/tab-box/block.js:171
+#: blocks/src/old/micro-balloon-1/block.js:197
+#: blocks/src/old/micro-balloon/block.js:194
+#: blocks/src/old/tab-box/block.js:233
 #: blocks/src/old/tab-caption-box/block.js:84
 #: blocks/src/old/toggle-box/block.js:87
 #: blocks/src/toolbutton/badge-green.js:14
@@ -673,63 +673,64 @@ msgstr ""
 #: lib/utils.php:1037
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
-#: blocks/src/block/blogcard/deprecated.js:83
+#: blocks/src/block/blogcard/deprecated.js:150
 #: blocks/src/block/blogcard/edit.js:64
 #: blocks/src/block/tab-box/edit.js:71
 #: blocks/src/old/blogcard-class/block.js:91
-#: blocks/src/old/tab-box/block.js:81
+#: blocks/src/old/tab-box/block.js:143
 msgid "チェック"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:387
 #: blocks/src/block/tab-box/edit.js:79
-#: blocks/src/old/tab-box/block.js:89
+#: blocks/src/old/tab-box/block.js:151
 msgid "ポイント"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:417
 #: blocks/src/block/tab-box/edit.js:83
-#: blocks/src/old/tab-box/block.js:93
+#: blocks/src/old/tab-box/block.js:155
 msgid "ティップス"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:447
 #: blocks/src/block/tab-box/edit.js:87
-#: blocks/src/old/tab-box/block.js:97
+#: blocks/src/old/tab-box/block.js:159
 msgid "ヒント"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:477
 #: lib/admin-tinymce-qtag.php:1688
 #: lib/utils.php:1036
-#: blocks/src/block/blogcard/deprecated.js:87
+#: blocks/src/block/blogcard/deprecated.js:154
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
 #: blocks/src/old/blogcard-class/block.js:95
-#: blocks/src/old/tab-box/block.js:101
+#: blocks/src/old/tab-box/block.js:163
 msgid "ピックアップ"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:507
 #: blocks/src/block/tab-box/edit.js:95
-#: blocks/src/old/tab-box/block.js:105
+#: blocks/src/old/tab-box/block.js:167
 msgid "ブックマーク"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:567
 #: lib/admin-tinymce-qtag.php:1700
-#: lib/page-access/analytics/dashboard-page.php:644
+#: lib/page-access/analytics/dashboard-page.php:656
+#: lib/page-access/click-analytics/dashboard.php:44
 #: lib/utils.php:1041
-#: blocks/src/block/blogcard/deprecated.js:95
+#: blocks/src/block/blogcard/deprecated.js:162
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
-#: blocks/src/old/tab-box/block.js:113
+#: blocks/src/old/tab-box/block.js:175
 msgid "ダウンロード"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:597
 #: blocks/src/block/tab-box/edit.js:107
-#: blocks/src/old/tab-box/block.js:117
+#: blocks/src/old/tab-box/block.js:179
 msgid "ブレイク"
 msgstr ""
 
@@ -737,7 +738,7 @@ msgstr ""
 #: lib/page-settings/apis-forms.php:29
 #: lib/page-settings/apis-funcs.php:142
 #: blocks/src/block/tab-box/edit.js:111
-#: blocks/src/old/tab-box/block.js:121
+#: blocks/src/old/tab-box/block.js:183
 msgid "Amazon"
 msgstr ""
 
@@ -747,7 +748,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:849
 #: lib/gutenberg.php:90
-#: lib/widgets/cta-box.php:181
+#: lib/widgets/cta-box.php:190
 #: blocks/src/block/cta/edit.js:218
 #: blocks/src/old/button-wrap/block.js:143
 #: blocks/src/old/button/block.js:161
@@ -763,7 +764,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:859
 #: lib/gutenberg.php:25
-#: lib/widgets/cta-box.php:168
+#: lib/widgets/cta-box.php:177
 #: blocks/src/block/cta/edit.js:190
 #: blocks/src/old/button-wrap/block.js:91
 #: blocks/src/old/button/block.js:109
@@ -857,10 +858,10 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:982
 #: lib/page-settings/editor-forms.php:139
-#: lib/page-settings/_top-page.php:242
+#: lib/page-settings/settings-tabs.php:38
 #: blocks/src/block/button/deprecated.js:29
 #: blocks/src/block/button/index.js:20
-#: blocks/src/blocks.js:119
+#: blocks/src/blocks.js:110
 #: blocks/src/old/button-1/block.js:43
 #: blocks/src/old/button-1/block.js:52
 #: blocks/src/old/button/block.js:24
@@ -1165,13 +1166,14 @@ msgid "囲みブログカードラベル"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1646
+#: lib/page-access/click-analytics/dashboard.php:31
 #: lib/page-settings/image-forms.php:214
 #: lib/page-settings/single-funcs.php:76
 #: lib/utils.php:1032
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
-#: blocks/src/block/blogcard/deprecated.js:59
+#: blocks/src/block/blogcard/deprecated.js:126
 #: blocks/src/block/blogcard/edit.js:40
 #: blocks/src/old/blogcard-class/block.js:71
 msgid "関連記事"
@@ -1179,7 +1181,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1652
 #: lib/utils.php:1033
-#: blocks/src/block/blogcard/deprecated.js:63
+#: blocks/src/block/blogcard/deprecated.js:130
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
 msgid "参考記事"
@@ -1187,7 +1189,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1658
 #: lib/utils.php:1034
-#: blocks/src/block/blogcard/deprecated.js:67
+#: blocks/src/block/blogcard/deprecated.js:134
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
 msgstr ""
@@ -1200,7 +1202,7 @@ msgstr ""
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
 #: skins/skin-made-in-heaven/lib/panel-option.php:72
-#: blocks/src/block/blogcard/deprecated.js:71
+#: blocks/src/block/blogcard/deprecated.js:138
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
 #: blocks/src/old/blogcard-class/block.js:79
@@ -1209,25 +1211,26 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1670
 #: lib/utils.php:1038
-#: blocks/src/block/blogcard/deprecated.js:75
+#: blocks/src/block/blogcard/deprecated.js:142
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
 msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1676
-#: lib/shortcodes.php:1201
+#: lib/shortcodes.php:1242
 #: lib/utils.php:1039
 #: lib/widgets/cta-box.php:34
-#: blocks/src/block/blogcard/deprecated.js:79
+#: blocks/src/block/blogcard/deprecated.js:146
 #: blocks/src/block/blogcard/edit.js:60
 #: blocks/src/old/blogcard-class/block.js:87
 msgid "詳細はこちら"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1694
+#: lib/page-access/click-analytics/dashboard.php:43
 #: lib/utils.php:1040
-#: blocks/src/block/blogcard/deprecated.js:91
+#: blocks/src/block/blogcard/deprecated.js:158
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
 msgid "公式サイト"
@@ -1249,11 +1252,108 @@ msgstr ""
 msgid "商品リンクの追加"
 msgstr ""
 
-#: lib/admin.php:146
+#: lib/admin.php:165
+msgid "設定メニューの表示"
+msgstr ""
+
+#: lib/admin.php:166
+msgid "おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。"
+msgstr ""
+
+#: lib/admin.php:167
+msgid "おすすめ表示"
+msgstr ""
+
+#: lib/admin.php:168
+msgid "画面の広さに応じて設定メニューを自動で見やすく切り替えます。"
+msgstr ""
+
+#: lib/admin.php:169
+msgid "従来の表示"
+msgstr ""
+
+#: lib/admin.php:170
+msgid "これまでと同じ順番でタブを表示します。"
+msgstr ""
+
+#: lib/admin.php:171
+msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
+msgstr ""
+
+#: lib/admin.php:172
+msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
+msgstr ""
+
+#: lib/admin.php:173
+msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
+msgstr ""
+
+#: lib/admin.php:174
+msgid "Cocoon設定項目"
+msgstr ""
+
+#: lib/admin.php:175
+msgid "設定メニュー"
+msgstr ""
+
+#: lib/admin.php:176
+msgid "設定項目"
+msgstr ""
+
+#: lib/admin.php:177
+#: lib/admin.php:178
+msgid "設定項目を検索"
+msgstr ""
+
+#: lib/admin.php:179
+msgid "該当する設定項目がありません。"
+msgstr ""
+
+#: lib/admin.php:180
+#, php-format
+msgid "%d件の設定項目が見つかりました。"
+msgstr ""
+
+#: lib/admin.php:181
+#: lib/custom-fields/other-field.php:17
+#: lib/custom-fields/other-field.php:19
+#: lib/page-access/analytics/dashboard-page.php:103
+#: lib/page-access/analytics/dashboard-page.php:116
+#: lib/page-access/analytics/dashboard-page.php:128
+#: lib/page-access/click-analytics/dashboard.php:33
+#: lib/page-settings/settings-tabs.php:48
+msgid "その他"
+msgstr ""
+
+#: lib/admin.php:184
+msgid "外観・レイアウト"
+msgstr ""
+
+#: lib/admin.php:195
+msgid "コンテンツ"
+msgstr ""
+
+#: lib/admin.php:210
+msgid "集客・計測"
+msgstr ""
+
+#: lib/admin.php:221
+msgid "パーツ・導線"
+msgstr ""
+
+#: lib/admin.php:234
+msgid "管理・拡張"
+msgstr ""
+
+#: lib/admin.php:245
+msgid "システム・情報"
+msgstr ""
+
+#: lib/admin.php:332
 msgid "ID"
 msgstr ""
 
-#: lib/admin.php:147
+#: lib/admin.php:333
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1262,121 +1362,121 @@ msgstr ""
 msgid "文字数"
 msgstr ""
 
-#: lib/admin.php:148
-#: lib/page-access/access-func.php:1027
-#: lib/page-access/analytics/enqueue-func.php:107
-#: lib/page-access/analytics/render-func.php:382
-#: lib/page-access/analytics/render-func.php:619
+#: lib/admin.php:334
+#: lib/page-access/access-func.php:752
+#: lib/page-access/analytics/enqueue-func.php:119
+#: lib/page-access/analytics/render-func.php:448
+#: lib/page-access/analytics/render-func.php:1024
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:149
+#: lib/admin.php:335
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
 msgid "アイキャッチ"
 msgstr ""
 
-#: lib/admin.php:184
+#: lib/admin.php:370
 msgid "　題："
 msgstr ""
 
-#: lib/admin.php:192
+#: lib/admin.php:378
 msgid "本文："
 msgstr ""
 
-#: lib/admin.php:207
+#: lib/admin.php:404
 msgid "日："
 msgstr ""
 
-#: lib/admin.php:215
+#: lib/admin.php:412
 msgid "週："
 msgstr ""
 
-#: lib/admin.php:223
+#: lib/admin.php:420
 msgid "月："
 msgstr ""
 
-#: lib/admin.php:231
+#: lib/admin.php:428
 msgid "全："
 msgstr ""
 
-#: lib/admin.php:316
+#: lib/admin.php:513
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr ""
 
-#: lib/admin.php:404
+#: lib/admin.php:601
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr ""
 
-#: lib/admin.php:410
-#: lib/page-access/analytics/render-func.php:161
+#: lib/admin.php:607
+#: lib/page-access/analytics/render-func.php:226
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
-#: lib/admin.php:411
+#: lib/admin.php:608
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr ""
 
-#: lib/admin.php:412
+#: lib/admin.php:609
 msgid "固定ページ一覧"
 msgstr ""
 
-#: lib/admin.php:413
+#: lib/admin.php:610
 msgid "メディア一覧"
 msgstr ""
 
-#: lib/admin.php:414
+#: lib/admin.php:611
 msgid "テーマ"
 msgstr ""
 
-#: lib/admin.php:424
+#: lib/admin.php:621
 msgid "カスタマイズ"
 msgstr ""
 
-#: lib/admin.php:425
-#: lib/page-settings/_top-page.php:264
+#: lib/admin.php:622
+#: lib/page-settings/settings-tabs.php:44
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr ""
 
-#: lib/admin.php:426
+#: lib/admin.php:623
 #: skins/skin-made-in-heaven/lib/hook-wp.php:665
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
-#: blocks/src/block/navicard/edit.js:158
+#: blocks/src/block/navicard/edit.js:163
 msgid "メニュー"
 msgstr ""
 
-#: lib/admin.php:427
+#: lib/admin.php:624
 msgid "テーマの編集"
 msgstr ""
 
-#: lib/admin.php:428
+#: lib/admin.php:625
 msgid "プラグイン一覧"
 msgstr ""
 
-#: lib/admin.php:472
+#: lib/admin.php:669
 msgid "すべてのユーザー"
 msgstr ""
 
-#: lib/admin.php:528
+#: lib/admin.php:725
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:588
-#: lib/admin.php:602
+#: lib/admin.php:785
+#: lib/admin.php:799
 msgid "Excerpt"
 msgstr ""
 
 #: lib/block-amazon-product-link-cron.php:19
-#: lib/page-settings/apis-forms.php:385
+#: lib/page-settings/apis-forms.php:386
 msgid "2日ごと"
 msgstr ""
 
@@ -1385,12 +1485,12 @@ msgid "3日ごと"
 msgstr ""
 
 #: lib/block-amazon-product-link-cron.php:29
-#: lib/page-settings/apis-forms.php:387
+#: lib/page-settings/apis-forms.php:388
 msgid "5日ごと"
 msgstr ""
 
 #: lib/block-amazon-product-link-cron.php:34
-#: lib/page-settings/apis-forms.php:389
+#: lib/page-settings/apis-forms.php:390
 msgid "2週間ごと"
 msgstr ""
 
@@ -1731,7 +1831,8 @@ msgstr ""
 
 #: lib/content-category.php:257
 #: lib/content-tag.php:233
-#: lib/page-settings/_top-page.php:203
+#: lib/page-access/click-analytics/dashboard.php:30
+#: lib/page-settings/settings-tabs.php:25
 msgid "本文"
 msgstr ""
 
@@ -1838,33 +1939,50 @@ msgstr ""
 msgid "※カスタム投稿のカテゴリーなったとしても公開ページはタグとして認識されます。"
 msgstr ""
 
-#: lib/creators-api.php:95
-msgid "Creators APIの認証バージョンが正しくありません。"
-msgstr ""
-
-#: lib/creators-api.php:146
+#: lib/creators-api.php:171
 msgid "Creators APIのトークン取得に失敗しました。"
 msgstr ""
 
-#: lib/creators-api.php:153
+#: lib/creators-api.php:178
 msgid "Creators APIのトークンレスポンスを解析できませんでした。"
 msgstr ""
 
-#: lib/creators-api.php:168
-#: lib/creators-api.php:564
-#: lib/creators-api.php:798
+#: lib/creators-api.php:202
+#: lib/creators-api.php:534
 msgid "Creators APIのアクセストークンが取得できませんでした。"
 msgstr ""
 
-#: lib/creators-api.php:650
-#: lib/creators-api.php:891
+#: lib/creators-api.php:228
+msgid "Creators APIの認証バージョンが正しくありません。"
+msgstr ""
+
+#: lib/creators-api.php:503
+msgid "Creators APIの認証に失敗しました。「Cocoon設定」の「API」タブで認証情報IDとシークレットを確認してください。"
+msgstr ""
+
+#: lib/creators-api.php:510
+#, php-format
+msgid "Amazonへのリクエストが制限されています。約%d分後に再度お試しください。"
+msgstr ""
+
+#: lib/creators-api.php:515
+msgid "Amazonへのリクエストが制限されているため、しばらく時間をおいてから再度お試しください。"
+msgstr ""
+
+#: lib/creators-api.php:883
+#: lib/creators-api.php:1114
+msgid "AmazonアソシエイトのトラッキングIDが入力されていません。「Cocoon設定」の「API」タブから入力してください。"
+msgstr ""
+
+#: lib/creators-api.php:985
+#: lib/creators-api.php:1193
 msgid "Creators APIのレスポンスを解析できませんでした。"
 msgstr ""
 
 #: lib/custom-fields/ad-field.php:17
 #: lib/custom-fields/ad-field.php:18
 #: lib/custom-fields/ad-field.php:20
-#: lib/page-settings/_top-page.php:176
+#: lib/page-settings/settings-tabs.php:16
 #: lib/widgets/ad.php:19
 #: blocks/src/block/ad/edit.js:25
 #: blocks/src/block/ad/index.js:21
@@ -1893,7 +2011,7 @@ msgstr ""
 #: lib/custom-fields/amp-field.php:20
 #: lib/custom-fields/amp-field.php:22
 #: lib/page-cache/cache-forms.php:79
-#: lib/page-settings/_top-page.php:252
+#: lib/page-settings/settings-tabs.php:41
 msgid "AMP"
 msgstr ""
 
@@ -1929,15 +2047,6 @@ msgstr ""
 msgid "この投稿に記録しておきたいメモがある場合は記入してください。"
 msgstr ""
 
-#: lib/custom-fields/other-field.php:17
-#: lib/custom-fields/other-field.php:19
-#: lib/page-access/analytics/dashboard-page.php:96
-#: lib/page-access/analytics/dashboard-page.php:109
-#: lib/page-access/analytics/dashboard-page.php:121
-#: lib/page-settings/_top-page.php:276
-msgid "その他"
-msgstr ""
-
 #: lib/custom-fields/other-field.php:32
 msgid "アーカイブに出力しない"
 msgstr ""
@@ -1968,22 +2077,22 @@ msgstr ""
 #: lib/page-settings/comment-forms.php:43
 #: lib/page-settings/single-forms.php:319
 #: lib/page-speech-balloon/form.php:90
-#: lib/settings.php:670
+#: lib/settings.php:678
 #: blocks/src/block-extension/style-extension/border01.js:42
 #: blocks/src/block-extension/style-extension/style01.js:42
 #: blocks/src/block-extension/style-extension/style02.js:42
 #: blocks/src/block/balloon/edit.js:231
-#: blocks/src/block/navicard/edit.js:105
+#: blocks/src/block/navicard/edit.js:110
 #: blocks/src/block/new-list/edit.js:150
 #: blocks/src/block/popular-list/edit.js:230
 #: blocks/src/old/balloon-ex-fix1/block.js:174
 #: blocks/src/old/balloon-ex-v2/block.js:94
-#: blocks/src/old/balloon-ex/block.js:164
-#: blocks/src/old/blank-box/block.js:74
+#: blocks/src/old/balloon-ex/block.js:291
+#: blocks/src/old/blank-box/block.js:131
 #: blocks/src/old/caption-box/block.js:68
 #: blocks/src/old/label-box/block.js:67
-#: blocks/src/old/micro-balloon-1/block.js:94
-#: blocks/src/old/micro-balloon/block.js:93
+#: blocks/src/old/micro-balloon-1/block.js:181
+#: blocks/src/old/micro-balloon/block.js:178
 #: blocks/src/old/tab-caption-box/block.js:68
 #: blocks/src/old/toggle-box/block.js:71
 msgid "デフォルト"
@@ -2160,7 +2269,7 @@ msgstr ""
 #: lib/custom-fields/seo-field.php:17
 #: lib/custom-fields/seo-field.php:18
 #: lib/custom-fields/seo-field.php:20
-#: lib/page-settings/_top-page.php:182
+#: lib/page-settings/settings-tabs.php:18
 msgid "SEO"
 msgstr ""
 
@@ -2261,26 +2370,25 @@ msgstr ""
 
 #: lib/custom-fields/update-field.php:88
 #: lib/custom-fields/update-field.php:90
-#: lib/page-access/access-func.php:779
+#: lib/page-access/access-func.php:780
 msgid "年"
 msgstr ""
 
 #: lib/custom-fields/update-field.php:92
-#: lib/page-access/access-func.php:778
-#: lib/page-access/analytics/dashboard-page.php:185
-#: lib/page-access/analytics/enqueue-func.php:71
+#: lib/page-access/access-func.php:779
+#: lib/page-access/analytics/dashboard-page.php:192
+#: lib/page-access/analytics/enqueue-func.php:80
 msgid "月"
 msgstr ""
 
 #: lib/custom-fields/update-field.php:102
 #: lib/custom-fields/update-field.php:104
-#: lib/page-access/access-func.php:776
-#: lib/page-access/access-func.php:906
-#: lib/page-access/access-func.php:910
-#: lib/page-access/analytics/dashboard-page.php:183
-#: lib/page-access/analytics/enqueue-func.php:70
-#: lib/page-access/analytics/enqueue-func.php:110
-#: lib/page-settings/apis-forms.php:337
+#: lib/page-access/access-func.php:753
+#: lib/page-access/access-func.php:777
+#: lib/page-access/analytics/dashboard-page.php:190
+#: lib/page-access/analytics/enqueue-func.php:79
+#: lib/page-access/analytics/enqueue-func.php:124
+#: lib/page-settings/apis-forms.php:338
 msgid "日"
 msgstr ""
 
@@ -2313,7 +2421,7 @@ msgid "キーカラー"
 msgstr ""
 
 #: lib/gutenberg.php:30
-#: lib/widgets/cta-box.php:169
+#: lib/widgets/cta-box.php:178
 #: blocks/src/block/cta/edit.js:191
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
@@ -2344,7 +2452,7 @@ msgid "黄緑色"
 msgstr ""
 
 #: lib/gutenberg.php:75
-#: lib/widgets/cta-box.php:178
+#: lib/widgets/cta-box.php:187
 #: blocks/src/block/cta/edit.js:212
 #: blocks/src/old/button-wrap/block.js:131
 #: blocks/src/old/button/block.js:149
@@ -2356,7 +2464,7 @@ msgid "アンバー"
 msgstr ""
 
 #: lib/gutenberg.php:95
-#: lib/widgets/cta-box.php:182
+#: lib/widgets/cta-box.php:191
 #: blocks/src/block/cta/edit.js:220
 #: blocks/src/old/button-wrap/block.js:147
 #: blocks/src/old/button/block.js:165
@@ -2364,7 +2472,7 @@ msgid "ディープオレンジ"
 msgstr ""
 
 #: lib/gutenberg.php:100
-#: lib/widgets/cta-box.php:183
+#: lib/widgets/cta-box.php:192
 #: blocks/src/block/cta/edit.js:223
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
@@ -2624,10 +2732,10 @@ msgstr ""
 #: lib/html-forms.php:573
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:22
-#: blocks/src/old/balloon-2/block.js:28
+#: blocks/src/old/balloon-2/block.js:29
 #: blocks/src/old/balloon-ex-fix1/block.js:24
 #: blocks/src/old/balloon-ex-v2/block.js:22
-#: blocks/src/old/balloon-ex/block.js:23
+#: blocks/src/old/balloon-ex/block.js:24
 #: blocks/src/old/balloon/block.js:20
 msgid "未入力"
 msgstr ""
@@ -2666,21 +2774,21 @@ msgid "フロントページのみ"
 msgstr ""
 
 #: lib/html-forms.php:803
+#: lib/page-settings/settings-tabs.php:23
 #: lib/page-settings/sns-follow-forms.php:97
 #: lib/page-settings/sns-share-forms-bottom.php:101
 #: lib/page-settings/sns-share-forms-top.php:88
-#: lib/page-settings/_top-page.php:197
 #: lib/widgets/display-widgets.php:167
 msgid "投稿"
 msgstr ""
 
 #: lib/html-forms.php:804
 #: lib/page-settings/about-forms.php:82
+#: lib/page-settings/settings-tabs.php:24
 #: lib/page-settings/sns-follow-forms.php:100
 #: lib/page-settings/sns-share-forms-bottom.php:104
 #: lib/page-settings/sns-share-forms-top.php:91
 #: lib/page-settings/toc-forms.php:78
-#: lib/page-settings/_top-page.php:200
 #: lib/shortcodes.php:517
 #: lib/widgets/display-widgets.php:170
 msgid "固定ページ"
@@ -2707,7 +2815,7 @@ msgid "検索結果一覧"
 msgstr ""
 
 #: lib/html-forms.php:810
-#: lib/page-settings/_top-page.php:248
+#: lib/page-settings/settings-tabs.php:40
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr ""
@@ -2771,50 +2879,50 @@ msgstr ""
 msgid "WLWで編集"
 msgstr ""
 
-#: lib/html-forms.php:1061
+#: lib/html-forms.php:1066
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1301
-#: lib/html-forms.php:1843
+#: lib/html-forms.php:1314
+#: lib/html-forms.php:1856
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1425
+#: lib/html-forms.php:1438
 #, php-format
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1429
+#: lib/html-forms.php:1442
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1468
+#: lib/html-forms.php:1481
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1701
+#: lib/html-forms.php:1714
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1704
+#: lib/html-forms.php:1717
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1707
+#: lib/html-forms.php:1720
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1710
+#: lib/html-forms.php:1723
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1713
+#: lib/html-forms.php:1726
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1756
+#: lib/html-forms.php:1769
 #: lib/shortcodes.php:1071
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -2878,7 +2986,7 @@ msgid "サイドバートップの広告に注意"
 msgstr ""
 
 #: lib/original-menu.php:14
-#: lib/page-settings/_top-page.php:128
+#: lib/page-settings/_top-page.php:135
 msgid "Cocoon 設定"
 msgstr ""
 
@@ -2888,7 +2996,7 @@ msgstr ""
 #: skins/skin-made-in-heaven/lib/hook-wp.php:338
 #: blocks/src/block/balloon/index.js:21
 #: blocks/src/old/balloon-1/block.js:63
-#: blocks/src/old/balloon-2/block.js:52
+#: blocks/src/old/balloon-2/block.js:178
 #: blocks/src/old/balloon/block.js:45
 msgid "吹き出し"
 msgstr ""
@@ -2896,7 +3004,7 @@ msgstr ""
 #: lib/original-menu.php:16
 #: lib/page-func-text/_top-page.php:37
 #: lib/tinymce/function-texts.php:52
-#: blocks/src/block/template/edit.js:107
+#: blocks/src/block/template/edit.js:111
 #: blocks/src/block/template/index.js:21
 #: blocks/src/toolbutton/dropdown-templates.js:57
 #: blocks/src/toolbutton/dropdown-templates.js:70
@@ -2916,13 +3024,13 @@ msgid "アフィリエイトタグ"
 msgstr ""
 
 #: lib/original-menu.php:18
-#: lib/page-access/analytics/render-func.php:162
+#: lib/page-access/analytics/render-func.php:228
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
 #: lib/utils.php:1071
 #: lib/widgets/item-ranking.php:19
 #: lib/widgets/item-ranking.php:72
-#: blocks/src/block/ranking/edit.js:110
+#: blocks/src/block/ranking/edit.js:111
 #: blocks/src/block/ranking/index.js:21
 #: blocks/src/toolbutton/dropdown-rankings.js:58
 #: blocks/src/toolbutton/dropdown-rankings.js:71
@@ -2933,7 +3041,7 @@ msgstr ""
 #: lib/original-menu.php:19
 #: lib/page-access/access-forms.php:14
 #: lib/page-access/access-forms.php:26
-#: lib/page-access/analytics/dashboard-page.php:58
+#: lib/page-access/analytics/dashboard-page.php:61
 msgid "アクセス集計"
 msgstr ""
 
@@ -3091,66 +3199,153 @@ msgstr ""
 msgid "設定間隔ごとに新しいキャッシュを生成します"
 msgstr ""
 
-#: lib/page-access/access-func.php:629
+#: lib/page-access/access-func.php:719
 msgid "アクセス推移 (Cocoon)"
 msgstr ""
 
-#: lib/page-access/access-func.php:702
-#: lib/page-access/analytics/dashboard-page.php:148
-#: lib/page-access/analytics/render-func.php:187
-#: lib/page-access/analytics/render-func.php:264
+#: lib/page-access/access-func.php:751
+msgid "PV数"
+msgstr ""
+
+#: lib/page-access/access-func.php:754
+#: lib/page-access/analytics/enqueue-func.php:125
+msgid "日数"
+msgstr ""
+
+#: lib/page-access/access-func.php:755
+#: lib/page-access/analytics/enqueue-func.php:126
+msgid "部分週"
+msgstr ""
+
+#: lib/page-access/access-func.php:756
+msgid "集計データがまだありません。"
+msgstr ""
+
+#: lib/page-access/access-func.php:757
+msgid "データの取得に失敗しました。"
+msgstr ""
+
+#: lib/page-access/access-func.php:778
+#: lib/page-access/analytics/dashboard-page.php:191
+msgid "週"
+msgstr ""
+
+#: lib/page-access/access-func.php:787
+#: lib/page-access/analytics/enqueue-func.php:140
+msgid "読み込み中..."
+msgstr ""
+
+#: lib/page-access/access-func.php:799
+msgid "人気記事 TOP5"
+msgstr ""
+
+#: lib/page-access/access-func.php:817
+msgid "アクセス集計の詳細を見る"
+msgstr ""
+
+#: lib/page-access/analytics/ajax-func.php:21
+msgid "（無題）"
+msgstr ""
+
+#: lib/page-access/analytics/ajax-func.php:103
+msgid "(タイトルなし)"
+msgstr ""
+
+#: lib/page-access/analytics/ajax-func.php:244
+#: lib/page-access/analytics/ajax-func.php:284
+#: lib/page-access/analytics/dashboard-page.php:517
+#: lib/page-access/analytics/dashboard-page.php:537
+msgid "不明"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:39
+msgid "クリック解析データを完全削除しました。"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:48
+msgid "アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:54
+msgid "アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:88
+msgid "アクセスカレンダー（直近52週）"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:155
+#: lib/page-access/analytics/query-func.php:189
+#: lib/page-access/analytics/render-func.php:253
+#: lib/page-access/analytics/render-func.php:330
 #: lib/page-access/analytics/settings-forms.php:55
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "今日"
 msgstr ""
 
-#: lib/page-access/access-func.php:703
-#: lib/page-access/analytics/dashboard-page.php:150
-#: lib/page-access/analytics/dashboard-page.php:546
-#: lib/page-access/analytics/dashboard-page.php:574
-#: lib/page-access/analytics/render-func.php:189
-#: lib/page-access/analytics/render-func.php:266
+#: lib/page-access/analytics/dashboard-page.php:156
+#: lib/page-access/analytics/render-func.php:254
+#: lib/page-access/analytics/render-func.php:331
+msgid "昨日"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:157
+#: lib/page-access/analytics/dashboard-page.php:553
+#: lib/page-access/analytics/dashboard-page.php:581
+#: lib/page-access/analytics/query-func.php:190
+#: lib/page-access/analytics/render-func.php:255
+#: lib/page-access/analytics/render-func.php:332
 #: lib/page-access/analytics/settings-forms.php:56
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "直近7日"
 msgstr ""
 
-#: lib/page-access/access-func.php:704
-#: lib/page-access/analytics/dashboard-page.php:151
-#: lib/page-access/analytics/dashboard-page.php:547
-#: lib/page-access/analytics/dashboard-page.php:575
-#: lib/page-access/analytics/render-func.php:190
+#: lib/page-access/analytics/dashboard-page.php:158
+#: lib/page-access/analytics/dashboard-page.php:554
+#: lib/page-access/analytics/dashboard-page.php:582
+#: lib/page-access/analytics/query-func.php:191
+#: lib/page-access/analytics/render-func.php:256
 #: lib/page-access/analytics/settings-forms.php:57
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "直近30日"
 msgstr ""
 
-#: lib/page-access/access-func.php:705
-#: lib/page-access/analytics/dashboard-page.php:152
-#: lib/page-access/analytics/dashboard-page.php:548
-#: lib/page-access/analytics/dashboard-page.php:576
-#: lib/page-access/analytics/render-func.php:191
+#: lib/page-access/analytics/dashboard-page.php:159
+#: lib/page-access/analytics/dashboard-page.php:555
+#: lib/page-access/analytics/dashboard-page.php:583
+#: lib/page-access/analytics/query-func.php:192
+#: lib/page-access/analytics/render-func.php:257
 #: lib/page-access/analytics/settings-forms.php:58
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "直近90日"
 msgstr ""
 
-#: lib/page-access/access-func.php:706
-#: lib/page-access/analytics/dashboard-page.php:153
-#: lib/page-access/analytics/render-func.php:192
-#: lib/page-access/analytics/render-func.php:267
+#: lib/page-access/analytics/dashboard-page.php:160
+#: lib/page-access/analytics/query-func.php:193
+#: lib/page-access/analytics/render-func.php:258
+#: lib/page-access/analytics/render-func.php:333
 #: lib/page-access/analytics/settings-forms.php:59
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "今月"
 msgstr ""
 
-#: lib/page-access/access-func.php:707
-#: lib/page-access/analytics/dashboard-page.php:549
-#: lib/page-access/analytics/dashboard-page.php:577
-msgid "直近1年"
+#: lib/page-access/analytics/dashboard-page.php:161
+#: lib/page-access/analytics/render-func.php:259
+msgid "先月"
 msgstr ""
 
-#: lib/page-access/access-func.php:708
-#: lib/page-access/analytics/dashboard-page.php:156
-#: lib/page-access/analytics/dashboard-page.php:550
-#: lib/page-access/analytics/dashboard-page.php:578
-#: lib/page-access/analytics/render-func.php:195
+#: lib/page-access/analytics/dashboard-page.php:162
+#: lib/page-access/analytics/render-func.php:260
+msgid "年初来"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:163
+#: lib/page-access/analytics/dashboard-page.php:557
+#: lib/page-access/analytics/dashboard-page.php:585
+#: lib/page-access/analytics/query-func.php:195
+#: lib/page-access/analytics/render-func.php:261
 #: lib/page-access/analytics/settings-forms.php:60
+#: lib/page-access/click-analytics/dashboard.php:71
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
@@ -3158,200 +3353,129 @@ msgstr ""
 msgid "全期間"
 msgstr ""
 
-#: lib/page-access/access-func.php:726
-msgid "(タイトルなし)"
-msgstr ""
-
-#: lib/page-access/access-func.php:777
-#: lib/page-access/analytics/dashboard-page.php:184
-msgid "週"
-msgstr ""
-
-#: lib/page-access/access-func.php:795
-msgid "人気記事 TOP5"
-msgstr ""
-
-#: lib/page-access/access-func.php:830
-#: lib/page-access/access-func.php:991
-msgid "集計データがまだありません。"
-msgstr ""
-
-#: lib/page-access/access-func.php:839
-msgid "アクセス集計の詳細を見る"
-msgstr ""
-
-#: lib/page-access/access-func.php:880
-msgid "PV数"
-msgstr ""
-
-#: lib/page-access/access-func.php:906
-#: lib/page-access/analytics/enqueue-func.php:112
-msgid "部分週"
-msgstr ""
-
-#: lib/page-access/access-func.php:910
-#: lib/page-access/analytics/enqueue-func.php:111
-msgid "日数"
-msgstr ""
-
-#: lib/page-access/analytics/ajax-func.php:63
-#: lib/page-access/analytics/ajax-func.php:103
-#: lib/page-access/analytics/dashboard-page.php:510
-#: lib/page-access/analytics/dashboard-page.php:530
-msgid "不明"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:45
-msgid "アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:51
-msgid "アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:81
-msgid "アクセスカレンダー（直近52週）"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:149
-#: lib/page-access/analytics/render-func.php:188
-#: lib/page-access/analytics/render-func.php:265
-msgid "昨日"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:154
-#: lib/page-access/analytics/render-func.php:193
-msgid "先月"
-msgstr ""
-
-#: lib/page-access/analytics/dashboard-page.php:155
-#: lib/page-access/analytics/render-func.php:194
-msgid "年初来"
-msgstr ""
-
 #. translators: 1: 開始日, 2: 終了日
-#: lib/page-access/analytics/dashboard-page.php:168
-#: lib/page-access/analytics/enqueue-func.php:123
+#: lib/page-access/analytics/dashboard-page.php:175
+#: lib/page-access/analytics/enqueue-func.php:137
 #: lib/page-access/analytics/render-func.php:73
-#: lib/page-access/analytics/render-func.php:227
+#: lib/page-access/analytics/render-func.php:293
 #, php-format
 msgid "%1$s 〜 %2$s"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:180
+#: lib/page-access/analytics/dashboard-page.php:187
 msgid "PV推移"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:188
+#: lib/page-access/analytics/dashboard-page.php:195
 msgid "PV推移グラフ"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:193
+#: lib/page-access/analytics/dashboard-page.php:200
 msgid "カテゴリー別PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:194
+#: lib/page-access/analytics/dashboard-page.php:201
 msgid "カテゴリー別PV構成"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:197
+#: lib/page-access/analytics/dashboard-page.php:204
 msgid "タグ別PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:198
+#: lib/page-access/analytics/dashboard-page.php:205
 msgid "タグ別PV構成"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:201
+#: lib/page-access/analytics/dashboard-page.php:208
 msgid "投稿タイプ別PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:202
+#: lib/page-access/analytics/dashboard-page.php:209
 msgid "投稿タイプ別PV構成"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:205
+#: lib/page-access/analytics/dashboard-page.php:212
 msgid "人気記事 TOP10"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:209
+#: lib/page-access/analytics/dashboard-page.php:216
 msgid "急上昇記事 TOP10（直近7日）"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:213
-#: lib/page-access/analytics/dashboard-page.php:214
+#: lib/page-access/analytics/dashboard-page.php:220
+#: lib/page-access/analytics/dashboard-page.php:221
 msgid "曜日別PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:222
+#: lib/page-access/analytics/dashboard-page.php:229
 msgid "タイトルバーをドラッグしてタイルを並び替えできます。配置はユーザーごとに保存されます。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:223
+#: lib/page-access/analytics/dashboard-page.php:230
 msgid "タイル配置を既定に戻す"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:266
-#: lib/page-access/analytics/dashboard-page.php:313
+#: lib/page-access/analytics/dashboard-page.php:273
+#: lib/page-access/analytics/dashboard-page.php:320
 msgid "投稿タイプ:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:269
-#: lib/page-access/analytics/dashboard-page.php:340
+#: lib/page-access/analytics/dashboard-page.php:276
+#: lib/page-access/analytics/dashboard-page.php:347
 msgid "絞り込み"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:317
+#: lib/page-access/analytics/dashboard-page.php:324
 msgid "著者:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:318
+#: lib/page-access/analytics/dashboard-page.php:325
 msgid "名前で検索..."
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:323
+#: lib/page-access/analytics/dashboard-page.php:330
 msgid "カテゴリー:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:324
+#: lib/page-access/analytics/dashboard-page.php:331
 msgid "カテゴリー名で検索..."
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:328
+#: lib/page-access/analytics/dashboard-page.php:335
 msgid "最小PV:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:331
+#: lib/page-access/analytics/dashboard-page.php:338
 msgid "最大PV:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:334
+#: lib/page-access/analytics/dashboard-page.php:341
 msgid "並び:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:336
+#: lib/page-access/analytics/dashboard-page.php:343
 msgid "PV降順"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:337
+#: lib/page-access/analytics/dashboard-page.php:344
 msgid "PV昇順（低PV）"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:369
+#: lib/page-access/analytics/dashboard-page.php:376
 #, php-format
 msgid "全 %s 件"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:373
+#: lib/page-access/analytics/dashboard-page.php:380
 #: lib/page-affiliate-tag/form.php:30
 #: lib/page-func-text/form.php:30
 #: lib/page-item-ranking/form.php:80
 #: lib/page-settings/appeal-forms.php:112
-#: lib/page-settings/_top-page.php:179
+#: lib/page-settings/settings-tabs.php:17
 #: lib/page-speech-balloon/form.php:49
 #: lib/widgets/author-box.php:68
 #: lib/widgets/box-menus.php:73
-#: lib/widgets/cta-box.php:101
+#: lib/widgets/cta-box.php:110
 #: lib/widgets/fb-like-balloon.php:69
 #: lib/widgets/fb-like-box.php:99
 #: lib/widgets/item-ranking.php:65
@@ -3370,232 +3494,281 @@ msgstr ""
 #: blocks/src/block/timeline-item/deprecated.js:50
 #: blocks/src/block/timeline-item/edit.js:28
 #: blocks/src/block/timeline/edit.js:188
-#: blocks/src/blocks.js:129
+#: blocks/src/blocks.js:120
 msgid "タイトル"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:373
-#: blocks/src/block/icon-box/deprecated.js:80
+#: lib/page-access/analytics/dashboard-page.php:380
+#: blocks/src/block/icon-box/deprecated.js:136
 #: blocks/src/block/icon-box/edit.js:27
-#: blocks/src/block/info-box/deprecated.js:79
+#: blocks/src/block/info-box/deprecated.js:135
 #: blocks/src/block/info-box/edit.js:27
-#: blocks/src/block/sticky-box/deprecated.js:81
+#: blocks/src/block/sticky-box/deprecated.js:215
 #: blocks/src/block/sticky-box/edit.js:27
 #: blocks/src/block/test-box/deprecated.js:80
 #: blocks/src/micro/micro-balloon/edit.js:79
 #: blocks/src/micro/micro-text/edit.js:53
-#: blocks/src/old/blank-box/block.js:68
-#: blocks/src/old/micro-balloon-1/block.js:70
-#: blocks/src/old/micro-balloon/block.js:69
-#: blocks/src/old/tab-box/block.js:75
+#: blocks/src/old/blank-box/block.js:125
+#: blocks/src/old/micro-balloon-1/block.js:157
+#: blocks/src/old/micro-balloon/block.js:154
+#: blocks/src/old/tab-box/block.js:137
 msgid "タイプ"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:373
-#: lib/page-access/analytics/dashboard-page.php:504
-#: lib/page-access/analytics/render-func.php:165
+#: lib/page-access/analytics/dashboard-page.php:380
+#: lib/page-access/analytics/dashboard-page.php:511
+#: lib/page-access/analytics/render-func.php:231
 msgid "著者"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:373
+#: lib/page-access/analytics/dashboard-page.php:380
 msgid "公開日"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:376
+#: lib/page-access/analytics/dashboard-page.php:383
 msgid "無題"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:449
+#: lib/page-access/analytics/dashboard-page.php:456
 msgid "タクソノミー:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:456
+#: lib/page-access/analytics/dashboard-page.php:463
 #: blocks/src/block-extension/group-link.js:134
 msgid "適用"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:470
+#: lib/page-access/analytics/dashboard-page.php:477
 #, php-format
 msgid "%s 別PV ランキング"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:474
+#: lib/page-access/analytics/dashboard-page.php:481
 msgid "名称"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:486
+#: lib/page-access/analytics/dashboard-page.php:493
 msgid "上位10分布"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:500
+#: lib/page-access/analytics/dashboard-page.php:507
 msgid "著者別集計"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:504
+#: lib/page-access/analytics/dashboard-page.php:511
 msgid "記事数"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:504
-#: lib/page-access/analytics/render-func.php:268
+#: lib/page-access/analytics/dashboard-page.php:511
+#: lib/page-access/analytics/render-func.php:334
 msgid "総PV"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:504
+#: lib/page-access/analytics/dashboard-page.php:511
 msgid "平均PV/記事"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:515
+#: lib/page-access/analytics/dashboard-page.php:522
 msgid "著者別PV（上位10）"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:544
+#: lib/page-access/analytics/dashboard-page.php:551
 msgid "集計期間:"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:554
+#: lib/page-access/analytics/dashboard-page.php:556
+#: lib/page-access/analytics/dashboard-page.php:584
+#: lib/page-access/analytics/query-func.php:194
+msgid "直近1年"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:561
 msgid "記事タイトルで検索..."
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:569
+#: lib/page-access/analytics/dashboard-page.php:576
 msgid "記事を選択してください"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:579
-#: lib/page-access/analytics/render-func.php:196
+#: lib/page-access/analytics/dashboard-page.php:586
+#: lib/page-access/analytics/render-func.php:262
+#: lib/page-access/click-analytics/dashboard.php:71
 msgid "カスタム"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:584
-#: lib/page-access/analytics/dashboard-page.php:640
-#: lib/page-access/analytics/render-func.php:216
+#: lib/page-access/analytics/dashboard-page.php:591
+#: lib/page-access/analytics/dashboard-page.php:652
+#: lib/page-access/analytics/render-func.php:282
+#: lib/page-access/click-analytics/dashboard.php:77
 msgid "〜"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:592
+#: lib/page-access/analytics/dashboard-page.php:599
 msgid "リスト期間に合わせる"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:602
+#: lib/page-access/analytics/dashboard-page.php:609
 msgid "左側のリストから記事を選択すると、公開後のアクセス推移グラフが表示されます。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:616
+#: lib/page-access/analytics/dashboard-page.php:623
 msgid "エクスポート機能は無効化されています。"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:624
+#: lib/page-access/analytics/dashboard-page.php:631
 msgid "対象"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:626
+#: lib/page-access/analytics/dashboard-page.php:633
 msgid "日次PV推移"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:627
+#: lib/page-access/analytics/dashboard-page.php:634
 msgid "人気記事ランキング"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:628
+#: lib/page-access/analytics/dashboard-page.php:635
 msgid "記事別全量"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:629
+#: lib/page-access/analytics/dashboard-page.php:636
 msgid "著者別"
 msgstr ""
 
-#: lib/page-access/analytics/dashboard-page.php:632
-msgid "形式"
+#: lib/page-access/analytics/dashboard-page.php:637
+#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/dashboard.php:52
+#: lib/page-access/click-analytics/settings-form.php:15
+msgid "内部リンク"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:638
+#: lib/page-access/click-analytics/dashboard.php:52
+#: lib/page-access/click-analytics/settings-form.php:16
+msgid "外部リンク"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:639
+msgid "外部ドメイン別"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:640
+msgid "クリック日次集計"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:641
+msgid "クリック位置グリッド"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:644
+msgid "形式"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php:650
 msgid "期間"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:72
+#: lib/page-access/analytics/enqueue-func.php:81
 msgid "火"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:73
+#: lib/page-access/analytics/enqueue-func.php:82
 msgid "水"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:74
+#: lib/page-access/analytics/enqueue-func.php:83
 msgid "木"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:75
+#: lib/page-access/analytics/enqueue-func.php:84
 msgid "金"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:76
+#: lib/page-access/analytics/enqueue-func.php:85
 msgid "土"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:108
-msgid "日付"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:109
-msgid "公開後日数"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:113
-msgid "レイアウトを保存しました"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:114
-msgid "レイアウトの保存に失敗しました"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:115
-msgid "タイル配置を既定に戻しますか？"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:117
-msgid "選択した期間のアクセスデータがありません。"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:119
-msgid "表示期間の合計"
-msgstr ""
-
 #: lib/page-access/analytics/enqueue-func.php:120
-msgid "リスト期間の合計"
+#: lib/page-access/click-analytics/dashboard.php:164
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "クリック"
 msgstr ""
 
 #: lib/page-access/analytics/enqueue-func.php:121
-msgid "累計"
+#: lib/page-access/click-analytics/dashboard.php:124
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "推定CTR"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:124
-msgid "グラフはリストと異なる期間を表示中"
+#: lib/page-access/analytics/enqueue-func.php:122
+msgid "日付"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:125
-msgid "該当する記事が見つかりませんでした。"
-msgstr ""
-
-#: lib/page-access/analytics/enqueue-func.php:126
-msgid "読み込み中..."
+#: lib/page-access/analytics/enqueue-func.php:123
+msgid "公開後日数"
 msgstr ""
 
 #: lib/page-access/analytics/enqueue-func.php:127
-msgid "エラーが発生しました"
+msgid "レイアウトを保存しました"
 msgstr ""
 
 #: lib/page-access/analytics/enqueue-func.php:128
-msgid "通信エラーが発生しました"
+msgid "レイアウトの保存に失敗しました"
 msgstr ""
 
 #: lib/page-access/analytics/enqueue-func.php:129
+msgid "タイル配置を既定に戻しますか？"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:131
+msgid "選択した期間のアクセスデータがありません。"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:133
+msgid "表示期間の合計"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:134
+msgid "リスト期間の合計"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:135
+msgid "累計"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:138
+msgid "グラフはリストと異なる期間を表示中"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:139
+msgid "該当する記事が見つかりませんでした。"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:141
+msgid "エラーが発生しました"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:142
+msgid "通信エラーが発生しました"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:143
 msgid "一致する項目がありません"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:144
+msgid "候補から記事を選択してください。"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php:145
+msgid "記事を検索中..."
 msgstr ""
 
 #: lib/page-access/analytics/export-func.php:19
 msgid "エクスポート機能が無効です。"
 msgstr ""
 
-#: lib/page-access/analytics/export-func.php:68
+#: lib/page-access/analytics/export-func.php:77
 msgid "対象が不正です。"
 msgstr ""
 
@@ -3604,30 +3777,53 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:151
+#: lib/page-access/analytics/render-func.php:154
+msgid "記事:"
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:155
+msgid "タイトル・キーワード・IDで検索..."
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:162
+#, php-format
+msgid "記事 #%s"
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:172
+msgid "記事の選択を解除"
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:190
 msgid "NO IMAGE"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:163
+#: lib/page-access/analytics/render-func.php:227
+#: lib/page-access/click-analytics/settings-form.php:9
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析"
+msgstr ""
+
+#: lib/page-access/analytics/render-func.php:229
 msgid "記事別"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:164
+#: lib/page-access/analytics/render-func.php:230
 msgid "カテゴリー/タグ"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:166
-#: lib/page-access/analytics/render-func.php:376
-#: lib/page-access/analytics/render-func.php:503
+#: lib/page-access/analytics/render-func.php:232
+#: lib/page-access/analytics/render-func.php:442
+#: lib/page-access/analytics/render-func.php:569
 msgid "ライフサイクル"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:167
+#: lib/page-access/analytics/render-func.php:233
 #: lib/page-access/analytics/settings-forms.php:67
 msgid "エクスポート"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:168
+#: lib/page-access/analytics/render-func.php:234
 #: lib/_defins.php:348
 #: blocks/src/block/faq/edit.js:127
 #: blocks/src/block/login-user-only/edit.js:34
@@ -3635,13 +3831,16 @@ msgstr ""
 msgid "設定"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:207
+#: lib/page-access/analytics/render-func.php:273
+#: lib/page-access/click-analytics/dashboard.php:69
 msgid "期間:"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:219
-#: lib/page-access/analytics/render-func.php:374
-#: lib/page-access/analytics/render-func.php:501
+#: lib/page-access/analytics/render-func.php:285
+#: lib/page-access/analytics/render-func.php:440
+#: lib/page-access/analytics/render-func.php:567
+#: lib/page-access/click-analytics/dashboard.php:111
+#: lib/page-access/click-analytics/dashboard.php:264
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
 #: lib/page-settings/single-forms.php:301
@@ -3649,29 +3848,29 @@ msgstr ""
 msgid "表示"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:264
+#: lib/page-access/analytics/render-func.php:330
 msgid "昨日比"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:266
+#: lib/page-access/analytics/render-func.php:332
 msgid "前週比"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:267
+#: lib/page-access/analytics/render-func.php:333
 msgid "前月比"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:309
+#: lib/page-access/analytics/render-func.php:375
 msgid "データがありません。"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:330
-#: lib/page-access/analytics/render-func.php:455
+#: lib/page-access/analytics/render-func.php:396
+#: lib/page-access/analytics/render-func.php:521
 msgid "削除済み"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:375
-#: lib/page-access/analytics/render-func.php:502
+#: lib/page-access/analytics/render-func.php:441
+#: lib/page-access/analytics/render-func.php:568
 #: lib/page-affiliate-tag/list.php:87
 #: lib/page-func-text/list.php:87
 #: lib/page-item-ranking/list.php:101
@@ -3680,48 +3879,75 @@ msgstr ""
 msgid "編集"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:383
+#: lib/page-access/analytics/render-func.php:449
 msgid "期間全体の総PVに占めるこの記事の割合"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:385
+#: lib/page-access/analytics/render-func.php:451
 #: tmp/mobile-share-button.php:22
 msgid "シェア"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:413
+#: lib/page-access/analytics/render-func.php:479
+#: lib/page-access/click-analytics/dashboard.php:82
+#: lib/page-access/click-analytics/dashboard.php:96
+#: lib/page-access/click-analytics/dashboard.php:104
 #: lib/page-cache/cache-forms.php:25
 msgid "すべて"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:428
+#: lib/page-access/analytics/render-func.php:494
 msgid "指定した期間のアクセスデータがありません。"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:439
+#: lib/page-access/analytics/render-func.php:505
 msgid "急上昇中の記事はありません。"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:490
+#: lib/page-access/analytics/render-func.php:556
 #, php-format
 msgid "直近%1$d日 %2$s PV / 前%1$d日 %3$s PV"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:511
+#: lib/page-access/analytics/render-func.php:577
 msgid "新登場"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:520
+#: lib/page-access/analytics/render-func.php:586
 #, php-format
 msgid "直近%1$d日のPVとその前%1$d日のPVの比較"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:630
-msgid "少ない"
+#: lib/page-access/analytics/render-func.php:1025
+msgid "突出日"
 msgstr ""
 
-#: lib/page-access/analytics/render-func.php:634
-msgid "多い"
+#: lib/page-access/analytics/render-func.php:1041
+msgid "色分け基準"
+msgstr ""
+
+#. translators: %s: 最小PV数
+#: lib/page-access/analytics/render-func.php:1046
+#, php-format
+msgid "%s PV以上"
+msgstr ""
+
+#. translators: %s: PV数
+#: lib/page-access/analytics/render-func.php:1049
+#, php-format
+msgid "%s PV"
+msgstr ""
+
+#. translators: 1: 最小PV数, 2: 最大PV数
+#: lib/page-access/analytics/render-func.php:1052
+#, php-format
+msgid "%1$s～%2$s PV"
+msgstr ""
+
+#. translators: %s: 突出日と判定する最小PV数
+#: lib/page-access/analytics/render-func.php:1064
+#, php-format
+msgid "突出日（%s PV以上）"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:14
@@ -3745,7 +3971,7 @@ msgid "アクセス解析ダッシュボードを有効にする"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:29
-msgid "無効にするとダッシュボード系タブは非表示になり、「設定」タブのみ表示されます。"
+msgid "無効にするとダッシュボード系タブはすべて非表示になり、設定フォームだけが表示されます。"
 msgstr ""
 
 #: lib/page-access/analytics/settings-forms.php:33
@@ -3784,19 +4010,659 @@ msgstr ""
 msgid "集計結果の transient キャッシュを一括削除します。"
 msgstr ""
 
-#: lib/page-access/analytics/settings-forms.php:89
+#: lib/page-access/analytics/settings-forms.php:91
 #: lib/page-item-ranking/form.php:111
 #: lib/page-speed-up/_top-page.php:51
 msgid "変更を保存"
 msgstr ""
 
-#: lib/page-access/analytics/settings-posts.php:28
+#: lib/page-access/analytics/settings-posts.php:29
 msgid "アクセス解析のキャッシュをクリアしました。"
 msgstr ""
 
-#: lib/page-access/analytics/settings-posts.php:39
+#: lib/page-access/analytics/settings-posts.php:43
 #: lib/page-speed-up/_top-page.php:27
 msgid "設定を変更しました。"
+msgstr ""
+
+#: lib/page-access/click-analytics/admin-actions.php:13
+msgid "この操作を行う管理者権限がありません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:18
+#, php-format
+msgid "有効標本数 %s / 100"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:21
+#, php-format
+msgid "サンプルクリック %s / 10"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:30
+#: lib/page-settings/settings-tabs.php:26
+#: lib/page-settings/toc-forms.php:96
+#: lib/page-settings/toc-funcs.php:62
+#: lib/toc.php:98
+#: lib/widgets/toc.php:19
+#: skins/skin-made-in-heaven/lib/hook-cocoon.php:359
+#: skins/skin-made-in-heaven/lib/panel-main.php:69
+msgid "目次"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:30
+#: lib/page-cache/cache-forms.php:64
+#: lib/page-settings/image-forms.php:217
+#: lib/page-settings/settings-tabs.php:30
+#: blocks/src/block/blogcard/index.js:54
+#: blocks/src/old/blogcard-class/block.js:34
+msgid "ブログカード"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/widgets/cta-box.php:19
+#: blocks/src/block/cta/index.js:21
+msgid "CTA"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-settings/settings-tabs.php:15
+msgid "ヘッダー"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:32
+msgid "ナビ"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:32
+#: lib/widget-areas.php:18
+#: tmp/mobile-sidebar-button.php:21
+msgid "サイドバー"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:32
+#: lib/page-settings/settings-tabs.php:37
+msgid "フッター"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:33
+#: lib/page-settings/mobile-buttons-forms.php:38
+msgid "モバイルメニュー"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:42
+msgid "外部・参考資料"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/dashboard.php:148
+#: blocks/src/toolbutton/dropdown-affiliates.js:57
+msgid "アフィリエイト"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "参考資料"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "SNS"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "ページ内リンク"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "メール"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "電話"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "SMS"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:52
+msgid "概要"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:52
+msgid "クリックマップ"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:80
+msgid "端末:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:82
+msgid "PC"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:82
+msgid "タブレット"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:82
+#: lib/page-settings/settings-tabs.php:39
+#: skins/silk/functions.php:229
+msgid "モバイル"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:89
+msgid "クリック元記事:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:90
+msgid "記事タイトル・キーワード・IDで検索..."
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:94
+msgid "掲載位置:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:102
+msgid "リンク種別:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:120
+msgid "総クリック"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:121
+msgid "日次セッションユニーク合計"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:122
+msgid "内部リンククリック"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:123
+msgid "外部遷移"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:125
+msgid "内部到着率"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:126
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "エンゲージ率"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:133
+#, php-format
+msgid "前期間比 %s%%"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:139
+msgid "推定CTRのWilson 95%信頼区間"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:139
+msgid "有効標本数"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:141
+#, php-format
+msgid "データ不足のためCTRは参考値です（%s）。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:156
+msgid "該当するクリックデータがありません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:162
+msgid "クリック元"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:163
+#: skins/silk/functions.php:234
+msgid "リンク"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:163
+msgid "種別・位置"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:164
+msgid "推定表示"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:164
+msgid "日次ユニーク合計"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "到着率"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "平均クリック時間"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:173
+#, php-format
+msgid "95%% CI %1$s〜%2$s / n=%3$s"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:174
+#: lib/page-settings/about-forms.php:90
+#: lib/page-settings/carousel-forms.php:157
+msgid "秒"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:185
+msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:217
+msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:220
+msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:237
+msgid "日次保持期間より古い範囲は月次集計を使用するため、月途中の開始・終了日は概算です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:241
+msgid "クリック・推定CTR推移"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:241
+msgid "クリック推移"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:245
+msgid "高需要・低到達"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:245
+msgid "十分なデータがたまると、上部へ移す候補を表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:246
+msgid "高露出・低反応"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:246
+msgid "十分なデータがたまると、文言やデザインの改善候補を表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:247
+msgid "遷移後ミスマッチ"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:247
+msgid "到着後の閲覧が弱いリンクはありません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:248
+msgid "外部遷移候補"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:248
+msgid "外部クリックは購入・申込みではなく外部遷移です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:251
+msgid "クリック上位リンク"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "集計単位:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "掲載箇所別"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "リンク先別"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "ドメイン別"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "並び順:"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "ユニーク"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "CTR"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:265
+msgid "変更"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:268
+msgid "ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:275
+msgid "クリックマップを表示する記事を検索して選択してください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:279
+msgid "公開中の記事を指定してください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:299
+msgid "現在と異なる旧レイアウトのクリックが%件あります。現在のページには重ねていません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:300
+msgid "旧レイアウト一覧"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:310
+msgid "クリックマップページプレビュー"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:318
+msgid "リンク別クリック"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:324
+msgid "掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:270
+msgid "クリック解析は無効です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:271
+msgid "クリック解析テーブルがありません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:273
+msgid "送信サイズが不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:275
+msgid "JSONが不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:276
+msgid "送信元が不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:288
+msgid "識別子が不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:291
+msgid "送信内容が不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:293
+msgid "計測トークンが不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:295
+msgid "クリック元が不正です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/rest-func.php:296
+msgid "送信回数が多すぎます。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:11
+msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。AMP、アーカイブ、検索結果は初版の計測対象外です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析を有効にする"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "アップデート後は自動で有効になりません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:14
+msgid "計測対象"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:17
+msgid "アンカー・ダウンロード・電話・メール"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:19
+msgid "詳細計測"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:20
+msgid "リンクの実表示と推定CTRを計測する"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:21
+msgid "丸めたクリック位置を計測する"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:22
+msgid "内部リンクの到着・エンゲージを計測する"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:24
+msgid "プライバシー"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:25
+msgid "ログインユーザーを除外する"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:26
+msgid "DNT/GPCを尊重する"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:27
+msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "自動サンプリング"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次・位置データ保持"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "30日"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "90日"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "400日"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "月次データ保持"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "12か月"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "24か月"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "60か月"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "除外ドメイン"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "1行に1ドメインを入力します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "除外URL文字列"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "URLに含まれる文字列を1行ずつ入力します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "表示を許可するクエリ"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:37
+msgid "収集状態"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:40
+#, php-format
+msgid "直近14日の受信イベント: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:41
+#, php-format
+msgid "直近14日の拒否イベント: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:42
+#, php-format
+msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:43
+#, php-format
+msgid "イベント欠損率（検証除外）: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:44
+#, php-format
+msgid "直近7日CTR診断: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より上昇"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より低下"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "異常なし"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "データ不足"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:45
+#, php-format
+msgid "最終受信: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:45
+msgid "未受信"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:46
+#, php-format
+msgid "最終サンプリング集計: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:46
+msgid "未集計"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#, php-format
+msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#: lib/page-access/click-analytics/settings-form.php:48
+msgid "未実行"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:48
+#, php-format
+msgid "最終メンテナンス: %1$s / %2$sms"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:49
+#, php-format
+msgid "DB使用量: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:50
+#, php-format
+msgid "次回メンテナンス: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:50
+msgid "未予約"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#, php-format
+msgid "Cron遅延: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#: lib/page-item-ranking/form.php:134
+#: lib/page-settings/amp-forms.php:54
+#: lib/page-settings/blogcard-in-forms.php:108
+#: lib/page-settings/image-forms.php:109
+#: lib/page-settings/image-forms.php:129
+#: lib/page-settings/skin-forms.php:36
+#: skins/raku-add-fadein/functions.php:306
+#: skins/skin-made-in-heaven/lib/panel-main.php:82
+#: skins/skin-made-in-heaven/lib/panel-visual.php:40
+#: skins/skin-made-in-heaven/lib/panel-visual.php:91
+#: skins/skin-made-in-heaven/lib/panel-visual.php:106
+#: blocks/src/block/blogcard/deprecated.js:122
+#: blocks/src/block/blogcard/edit.js:36
+#: blocks/src/old/blogcard-class/block.js:67
+msgid "なし"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:53
+msgid "トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データを完全削除"
 msgstr ""
 
 #: lib/page-affiliate-tag/affiliate-tag-func.php:39
@@ -4066,14 +4932,6 @@ msgstr ""
 msgid "人気記事ウィジェットのランキング結果キャッシュを削除します。"
 msgstr ""
 
-#: lib/page-cache/cache-forms.php:64
-#: lib/page-settings/image-forms.php:217
-#: lib/page-settings/_top-page.php:218
-#: blocks/src/block/blogcard/index.js:54
-#: blocks/src/old/blogcard-class/block.js:34
-msgid "ブログカード"
-msgstr ""
-
 #: lib/page-cache/cache-forms.php:67
 msgid "ブログカードキャッシュの削除"
 msgstr ""
@@ -4224,23 +5082,6 @@ msgstr ""
 #: lib/page-item-ranking/form.php:131
 #: lib/utils.php:1072
 msgid "評価："
-msgstr ""
-
-#: lib/page-item-ranking/form.php:134
-#: lib/page-settings/amp-forms.php:54
-#: lib/page-settings/blogcard-in-forms.php:108
-#: lib/page-settings/image-forms.php:109
-#: lib/page-settings/image-forms.php:129
-#: lib/page-settings/skin-forms.php:36
-#: skins/raku-add-fadein/functions.php:306
-#: skins/skin-made-in-heaven/lib/panel-main.php:82
-#: skins/skin-made-in-heaven/lib/panel-visual.php:40
-#: skins/skin-made-in-heaven/lib/panel-visual.php:91
-#: skins/skin-made-in-heaven/lib/panel-visual.php:106
-#: blocks/src/block/blogcard/deprecated.js:55
-#: blocks/src/block/blogcard/edit.js:36
-#: blocks/src/old/blogcard-class/block.js:67
-msgid "なし"
 msgstr ""
 
 #: lib/page-item-ranking/form.php:135
@@ -4612,11 +5453,6 @@ msgstr ""
 
 #: lib/page-settings/about-forms.php:90
 msgid "PHP最大実行時間："
-msgstr ""
-
-#: lib/page-settings/about-forms.php:90
-#: lib/page-settings/carousel-forms.php:157
-msgid "秒"
 msgstr ""
 
 #: lib/page-settings/about-forms.php:94
@@ -6249,7 +7085,7 @@ msgid "各種APIやアフィリエイトIDの設定です。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:39
-msgid "※こちらの設定は非推奨です。2026年1月31日以降PA-APIの仕様変更により、一部商品情報（価格等）が取得できなくなります。全機能を利用するには、Creators APIの設定を行ってください。"
+msgid "※こちらの設定は非推奨です。PA-APIの仕様変更により、一部商品情報（価格等）は取得できなくなっています。全機能を利用するには、Creators APIの設定を行ってください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:42
@@ -6260,7 +7096,7 @@ msgstr ""
 #: lib/page-settings/apis-forms.php:50
 #: lib/page-settings/apis-forms.php:62
 #: lib/page-settings/apis-forms.php:69
-#: lib/page-settings/apis-forms.php:79
+#: lib/page-settings/apis-forms.php:80
 msgid "Amazon必須"
 msgstr ""
 
@@ -6268,11 +7104,11 @@ msgstr ""
 #: lib/page-settings/apis-forms.php:51
 #: lib/page-settings/apis-forms.php:63
 #: lib/page-settings/apis-forms.php:70
-#: lib/page-settings/apis-forms.php:80
-#: lib/page-settings/apis-forms.php:146
-#: lib/page-settings/apis-forms.php:154
-#: lib/page-settings/apis-forms.php:161
-#: lib/page-settings/apis-forms.php:308
+#: lib/page-settings/apis-forms.php:81
+#: lib/page-settings/apis-forms.php:147
+#: lib/page-settings/apis-forms.php:155
+#: lib/page-settings/apis-forms.php:162
+#: lib/page-settings/apis-forms.php:309
 msgid "もしも必須"
 msgstr ""
 
@@ -6305,449 +7141,453 @@ msgid "Creators APIのシークレットを入力してください。"
 msgstr ""
 
 #: lib/page-settings/apis-forms.php:74
+msgid "Amazonから認証情報と一緒に発行される「バージョン」は、認証情報IDから自動判定されるため入力の必要はありません。"
+msgstr ""
+
+#: lib/page-settings/apis-forms.php:75
 msgid "Creators APIとPA-APIの両方が設定されている場合、Creators APIが優先されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:78
+#: lib/page-settings/apis-forms.php:79
 msgid "トラッキングID"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:82
+#: lib/page-settings/apis-forms.php:83
 msgid "yourid-22"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:83
+#: lib/page-settings/apis-forms.php:84
 msgid "AmazonアソシエイトのトラッキングIDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:87
+#: lib/page-settings/apis-forms.php:88
 msgid "カタログ写真を表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:88
+#: lib/page-settings/apis-forms.php:89
 msgid "サムネイルとは別に商品に関連付けられている「カタログ写真（サンプル画像）」をボタン形式で全て表示します。ボタン状にマウスを乗せると大きな写真で表示されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:90
-#: lib/page-settings/apis-forms.php:178
+#: lib/page-settings/apis-forms.php:91
+#: lib/page-settings/apis-forms.php:179
 msgid "価格を表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:94
+#: lib/page-settings/apis-forms.php:95
 msgid "標準価格"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:95
+#: lib/page-settings/apis-forms.php:96
 msgid "在庫価格（デフォルト）"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:96
+#: lib/page-settings/apis-forms.php:97
 msgid "最安値"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:97
+#: lib/page-settings/apis-forms.php:98
 msgid "最高値"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:103
+#: lib/page-settings/apis-forms.php:104
 msgid "データー取得時点のAmazon販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:104
+#: lib/page-settings/apis-forms.php:105
 msgid "仕様変更によりPA-APIが利用されている場合は、価格は取得できません。価格を表示する場合は、Creators APIを利用してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:107
-#: lib/page-settings/apis-forms.php:181
+#: lib/page-settings/apis-forms.php:108
+#: lib/page-settings/apis-forms.php:182
 #: blocks/src/block/new-list/edit.js:246
 msgid "説明文を表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:108
+#: lib/page-settings/apis-forms.php:109
 msgid "Amazon側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:111
+#: lib/page-settings/apis-forms.php:112
 msgid "レビューを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:113
+#: lib/page-settings/apis-forms.php:114
 msgid "レビューページへのリンクテキストを入力"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:114
+#: lib/page-settings/apis-forms.php:115
 msgid "レビューページへのリンクを表示します。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:116
-#: lib/page-settings/apis-forms.php:184
+#: lib/page-settings/apis-forms.php:117
+#: lib/page-settings/apis-forms.php:185
 msgid "ロゴを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:117
+#: lib/page-settings/apis-forms.php:118
 msgid "Amazon商品リンクのロゴの表示切り替え。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:119
+#: lib/page-settings/apis-forms.php:120
 msgid "Amazon検索ボタンを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:120
+#: lib/page-settings/apis-forms.php:121
 msgid "Amazonのキーワード検索ボタンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:123
+#: lib/page-settings/apis-forms.php:124
 msgid "Amazonの検索ボタンに表示するテキストを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:125
-#: lib/page-settings/apis-forms.php:193
+#: lib/page-settings/apis-forms.php:126
+#: lib/page-settings/apis-forms.php:194
 msgid "検索ボタンのリンク先を詳細ページにする"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:126
+#: lib/page-settings/apis-forms.php:127
 msgid "Amazon検索ボタンのリンクURLを商品詳細ページにするか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:138
+#: lib/page-settings/apis-forms.php:139
 #: lib/page-settings/apis-funcs.php:223
 msgid "楽天"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:144
+#: lib/page-settings/apis-forms.php:145
 msgid "楽天アプリケーションID"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:145
-#: lib/page-settings/apis-forms.php:153
-#: lib/page-settings/apis-forms.php:160
+#: lib/page-settings/apis-forms.php:146
+#: lib/page-settings/apis-forms.php:154
+#: lib/page-settings/apis-forms.php:161
 msgid "楽天必須"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:149
+#: lib/page-settings/apis-forms.php:150
 msgid "楽天APIを利用するためのアプリケーションIDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:152
+#: lib/page-settings/apis-forms.php:153
 msgid "楽天アフィリエイトID"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:157
+#: lib/page-settings/apis-forms.php:158
 msgid "楽天アフィリエイト用のIDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:159
+#: lib/page-settings/apis-forms.php:160
 msgid "楽天アクセスキー"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:164
+#: lib/page-settings/apis-forms.php:165
 msgid "楽天APIの利用に必要なアクセスキーです。アプリを再登録して取得してください。<br>※旧API（app.rakuten.co.jp）は2026年5月に廃止予定です。未入力の場合は廃止まで旧APIが使用されますが、お早めにアクセスキーを設定してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:170
+#: lib/page-settings/apis-forms.php:171
 msgid "楽天標準ソート順"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:171
+#: lib/page-settings/apis-forms.php:172
 msgid "アフィリエイト料率順（高い順）"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:172
+#: lib/page-settings/apis-forms.php:173
 msgid "価格順（安い順）"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:173
+#: lib/page-settings/apis-forms.php:174
 msgid "価格順（高い順）"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:175
+#: lib/page-settings/apis-forms.php:176
 msgid "商品並び替え優先度"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:176
+#: lib/page-settings/apis-forms.php:177
 msgid "同一商品番号の商品が複数あった場合の表示優先度です。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:179
+#: lib/page-settings/apis-forms.php:180
 msgid "データー取得時点の楽天市場販売ページでの値段を表示します。ショートコードでpriceオプションが設定されている場合は、そちらが優先されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:182
+#: lib/page-settings/apis-forms.php:183
 msgid "楽天側に登録されている説明文を表示します（情報がない場合は表示されません）。descオプションが設定されている場合は、オプション値が優先して表示されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:185
+#: lib/page-settings/apis-forms.php:186
 msgid "楽天商品リンクのロゴの表示切り替え。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:187
+#: lib/page-settings/apis-forms.php:188
 msgid "楽天検索ボタンを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:188
+#: lib/page-settings/apis-forms.php:189
 msgid "楽天のキーワード検索ボタンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:191
+#: lib/page-settings/apis-forms.php:192
 msgid "楽天の検索ボタンに表示するテキストを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:194
+#: lib/page-settings/apis-forms.php:195
 msgid "楽天検索ボタンのリンク先URLを商品詳細ページにするか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:205
+#: lib/page-settings/apis-forms.php:206
 #: lib/page-settings/apis-funcs.php:263
 msgid "Yahoo!ショッピング"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:210
+#: lib/page-settings/apis-forms.php:211
 msgid "バリューコマースsid"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:215
+#: lib/page-settings/apis-forms.php:216
 msgid "バリューコマースpid"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:219
+#: lib/page-settings/apis-forms.php:220
 msgid "バリューコマースからYahoo!ショッピングに登録しsidとpidを取得してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:224
+#: lib/page-settings/apis-forms.php:225
 msgid "Yahoo!検索ボタンを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:225
+#: lib/page-settings/apis-forms.php:226
 msgid "Yahoo!のキーワード検索ボタンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:228
+#: lib/page-settings/apis-forms.php:229
 msgid "Yahoo!ショッピングの検索ボタンに表示するテキストを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:240
+#: lib/page-settings/apis-forms.php:241
 #: lib/page-settings/apis-funcs.php:287
 msgid "メルカリ"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:245
+#: lib/page-settings/apis-forms.php:246
 msgid "メルカリアンバサダーID"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:250
+#: lib/page-settings/apis-forms.php:251
 msgid "メルカリの「アンバサダーID」を取得してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:255
+#: lib/page-settings/apis-forms.php:256
 msgid "メルカリ検索ボタンを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:256
+#: lib/page-settings/apis-forms.php:257
 msgid "メルカリのキーワード検索ボタンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:259
+#: lib/page-settings/apis-forms.php:260
 msgid "メルカリの検索ボタンに表示するテキストを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:272
+#: lib/page-settings/apis-forms.php:273
 #: lib/page-settings/apis-funcs.php:313
 msgid "DMM"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:277
+#: lib/page-settings/apis-forms.php:278
 msgid "DMMアフィリエイトID"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:282
+#: lib/page-settings/apis-forms.php:283
 msgid "DMMアフィリエイトの「アフィリエイトID」をを取得してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:287
+#: lib/page-settings/apis-forms.php:288
 msgid "DMM検索ボタンを表示する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:288
+#: lib/page-settings/apis-forms.php:289
 msgid "DMMのキーワード検索ボタンを表示するか。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:291
+#: lib/page-settings/apis-forms.php:292
 msgid "DMMの検索ボタンに表示するテキストを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:303
+#: lib/page-settings/apis-forms.php:304
 #: blocks/src/block/amazon-product-link/components/SettingsPanel.js:181
 #: blocks/src/block/rakuten-product-link/components/SettingsPanel.js:186
 msgid "もしもアフィリエイト"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:307
+#: lib/page-settings/apis-forms.php:308
 msgid "リンクをもしもアフィリエイトを経由にする"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:309
+#: lib/page-settings/apis-forms.php:310
 msgid "もしもアフィリエイト経由でAmazonリンクを掲載し報酬を得ます。【重要】2019年1月23日の<a href=\"https://affiliate.amazon.co.jp/help/topic/t52/ref=amb_link_zYXX0aRKMACI_Qkj9rR6Nw_1?pf_rd_p=c08a6c9b-94fe-481e-ad8b-b2c640121b1f\" target=\"_blank\" rel=\"noopener\">PA-APIの仕様変更</a>により、APIが生成するリンクから売上が発生しないとAPIが利用できなくなりました。ですので、<span class=\"red\">もしもアフィリエイト経由の場合は、30日でAPIが利用できなくなる可能性があります</span>。AmazonのAPIを利用したい場合は、この機能は有効にしないことをおすすめします。PA-APIの制限がクリアできない場合は、楽天商品リンクをご利用ください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:311
+#: lib/page-settings/apis-forms.php:312
 msgid "Amazon a_id"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:314
+#: lib/page-settings/apis-forms.php:315
 msgid "もしもアフィリエイトのAmazon IDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:314
-#: lib/page-settings/apis-forms.php:319
-#: lib/page-settings/apis-forms.php:324
+#: lib/page-settings/apis-forms.php:315
+#: lib/page-settings/apis-forms.php:320
+#: lib/page-settings/apis-forms.php:325
 msgid "未入力の場合はデフォルトのリンクが出力されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:316
+#: lib/page-settings/apis-forms.php:317
 msgid "楽天 a_id"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:319
+#: lib/page-settings/apis-forms.php:320
 msgid "もしもアフィリエイトの楽天IDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:321
+#: lib/page-settings/apis-forms.php:322
 msgid "Yahoo!ショッピング a_id"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:324
+#: lib/page-settings/apis-forms.php:325
 msgid "もしもアフィリエイトのYahoo!ショッピングIDを入力してください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:332
+#: lib/page-settings/apis-forms.php:333
 msgid "楽天キャッシュの保存期間"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:338
+#: lib/page-settings/apis-forms.php:339
 msgid "APIキャッシュのリフレッシュ間隔を設定します。1～3650日の間隔を選べます。間隔が短いほどAPIのリクエスト制限にかかる可能性が高くなりますのでご注意ください。アクセス数の多いサイトは長めに設定しておくことをおすすめします。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:338
+#: lib/page-settings/apis-forms.php:339
 msgid "Amazon APIのキャッシュは利用規約により24時間で更新されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:347
+#: lib/page-settings/apis-forms.php:348
 msgid "https://affiliate.amazon.co.jp/help/operating/paapilicenseagreement"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:347
+#: lib/page-settings/apis-forms.php:348
 msgid "Amazon.co.jp Product Advertising API ライセンス契約"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:348
+#: lib/page-settings/apis-forms.php:349
 msgid "https://affiliate.amazon.co.jp/help/topic/t32/"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:348
+#: lib/page-settings/apis-forms.php:349
 msgid "Product Advertising API (PA-API) の利用ガイドライン"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:349
+#: lib/page-settings/apis-forms.php:350
 msgid "https://webservice.rakuten.co.jp/guide/rule"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:349
+#: lib/page-settings/apis-forms.php:350
 msgid "楽天ウェブサービス規約"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:358
+#: lib/page-settings/apis-forms.php:359
 msgid "商品リンクブロックの自動更新"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:361
+#: lib/page-settings/apis-forms.php:362
 msgid "Amazon・楽天商品リンクブロックの商品情報をWP-Cronで定期的に自動更新する設定です。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:368
+#: lib/page-settings/apis-forms.php:369
 msgid "自動更新"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:375
+#: lib/page-settings/apis-forms.php:376
 msgid "商品リンクブロックの情報を自動的に定期更新する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:377
+#: lib/page-settings/apis-forms.php:378
 msgid "ONにすると、下記の更新間隔で全投稿・固定ページのAmazon・楽天商品リンクブロックを自動更新します。OFFにするとスケジュールが解除されます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:384
+#: lib/page-settings/apis-forms.php:385
 msgid "1日ごと"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:386
+#: lib/page-settings/apis-forms.php:387
 msgid "3日ごと（推奨）"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:388
+#: lib/page-settings/apis-forms.php:389
 msgid "1週間ごと"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:395
+#: lib/page-settings/apis-forms.php:396
 msgid "更新間隔"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:397
+#: lib/page-settings/apis-forms.php:398
 msgid "更新間隔が短いほどAPIのリクエスト数が増えます。Amazon・楽天それぞれのAPIリクエスト制限にご注意ください。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:401
+#: lib/page-settings/apis-forms.php:402
 msgid "5投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:402
+#: lib/page-settings/apis-forms.php:403
 msgid "10投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:403
+#: lib/page-settings/apis-forms.php:404
 msgid "20投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:404
+#: lib/page-settings/apis-forms.php:405
 msgid "30投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:405
+#: lib/page-settings/apis-forms.php:406
 msgid "50投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:406
+#: lib/page-settings/apis-forms.php:407
 msgid "100投稿"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:412
+#: lib/page-settings/apis-forms.php:413
 msgid "1回あたりの処理投稿数"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:414
+#: lib/page-settings/apis-forms.php:415
 msgid "1回のCron実行で処理する投稿数です。投稿数が多いサイトでは大きめの値にしてください。ただし、1投稿あたりのブロック数が多いほどAPIリクエストも増えます。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:415
+#: lib/page-settings/apis-forms.php:416
 msgid "※共有ホスティングをご利用の場合は30以下を推奨します。50以上に設定するとサーバー側のタイムアウト制限により処理が中断される場合があります。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:429
+#: lib/page-settings/apis-forms.php:430
 msgid "エラー設定"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:432
+#: lib/page-settings/apis-forms.php:433
 msgid "APIに関するエラー通知の設定です。"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:440
+#: lib/page-settings/apis-forms.php:441
 msgid "メール通知"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:445
+#: lib/page-settings/apis-forms.php:446
 msgid "商品リンク切れ情報をメールで送信する"
 msgstr ""
 
-#: lib/page-settings/apis-forms.php:446
+#: lib/page-settings/apis-forms.php:447
 msgid "APIで商品情報を取得できなかった際に、WordPressに登録されているメール宛にエラーメッセージを送信します。※メール送信は数分遅れる可能性もあります。"
 msgstr ""
 
@@ -6866,7 +7706,7 @@ msgid "アピールエリアのタイトルを入力してください。入力�
 msgstr ""
 
 #: lib/page-settings/appeal-forms.php:125
-#: lib/widgets/cta-box.php:140
+#: lib/widgets/cta-box.php:149
 #: lib/widgets/fb-like-balloon.php:76
 #: lib/widgets/fb-like-box.php:106
 #: blocks/src/block/cta/edit.js:152
@@ -6928,7 +7768,7 @@ msgstr ""
 #: lib/page-settings/appeal-forms.php:181
 #: lib/page-settings/appeal-forms.php:186
 #: lib/page-settings/buttons-forms.php:78
-#: lib/widgets/cta-box.php:162
+#: lib/widgets/cta-box.php:171
 #: blocks/src/block/cta/edit.js:185
 msgid "ボタン色"
 msgstr ""
@@ -8751,7 +9591,7 @@ msgid "カルーセルカードのサムネイル。"
 msgstr ""
 
 #: lib/page-settings/image-forms.php:215
-#: lib/page-settings/_top-page.php:236
+#: lib/page-settings/settings-tabs.php:36
 msgid "カルーセル"
 msgstr ""
 
@@ -9082,21 +9922,17 @@ msgstr ""
 msgid "モバイル環境で表示するレイアウトの設定です。"
 msgstr ""
 
-#: lib/page-settings/mobile-buttons-forms.php:38
-msgid "モバイルメニュー"
-msgstr ""
-
 #: lib/page-settings/mobile-buttons-forms.php:43
 msgid "ボタンを表示しない"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:45
-#: lib/settings.php:420
+#: lib/settings.php:428
 msgid "ヘッダーモバイルボタン"
 msgstr ""
 
 #: lib/page-settings/mobile-buttons-forms.php:46
-#: lib/settings.php:422
+#: lib/settings.php:430
 msgid "フッターモバイルボタン"
 msgstr ""
 
@@ -9630,11 +10466,11 @@ msgid "メニュー選択"
 msgstr ""
 
 #: lib/page-settings/recommended-forms.php:61
-#: blocks/src/block/box-menu/edit.js:40
-#: blocks/src/block/navicard/edit.js:43
-#: blocks/src/block/profile/edit.js:32
-#: blocks/src/block/ranking/edit.js:27
-#: blocks/src/block/template/edit.js:27
+#: blocks/src/block/box-menu/edit.js:45
+#: blocks/src/block/navicard/edit.js:48
+#: blocks/src/block/profile/edit.js:37
+#: blocks/src/block/ranking/edit.js:32
+#: blocks/src/block/template/edit.js:32
 msgid "未選択"
 msgstr ""
 
@@ -9685,7 +10521,7 @@ msgid "全テーマ設定の内容をリセットします。リセットを行�
 msgstr ""
 
 #: lib/page-settings/reset-forms.php:25
-#: lib/page-settings/_top-page.php:279
+#: lib/page-settings/settings-tabs.php:49
 msgid "リセット"
 msgstr ""
 
@@ -9904,6 +10740,93 @@ msgstr ""
 msgid "「投稿日・更新日を表示」を選択した場合は、「更新日」が優先して検索エンジンに伝えられます。"
 msgstr ""
 
+#: lib/page-settings/settings-tabs.php:13
+msgid "スキン"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:14
+#: skins/skin-made-in-heaven/lib/panel-main.php:34
+msgid "全体"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:19
+msgid "OGP"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:20
+msgid "アクセス解析・認証"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:21
+#: skins/silk/functions.php:236
+msgid "カラム"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:22
+msgid "インデックス"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:27
+msgid "SNSシェア"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:28
+msgid "SNSフォロー"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:29
+#: skins/skin-made-in-heaven/lib/panel-option.php:87
+#: skins/skin-made-in-heaven/lib/panel-option.php:89
+#: skins/skin-made-in-heaven/lib/panel-visual.php:28
+#: skins/skin-made-in-heaven/lib/panel-visual.php:42
+#: skins/skin-made-in-heaven/lib/panel-visual.php:67
+#: skins/skin-made-in-heaven/lib/panel-visual.php:69
+#: blocks/src/block/cta/edit.js:113
+msgid "画像"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:31
+msgid "コード"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:33
+msgid "通知"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:34
+msgid "アピールエリア"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:35
+#: lib/widgets/recommended-cards.php:19
+msgid "おすすめカード"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:42
+msgid "PWA"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:43
+msgid "管理者画面"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:45
+msgid "ウィジェットエリア"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:46
+#: skins/skin-made-in-heaven/lib/panel-editor.php:16
+msgid "エディター"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:47
+msgid "API"
+msgstr ""
+
+#: lib/page-settings/settings-tabs.php:50
+msgid "テーマ情報"
+msgstr ""
+
 #: lib/page-settings/single-forms.php:13
 msgid "カテゴリー・タグ表示設定"
 msgstr ""
@@ -9989,8 +10912,8 @@ msgid "関連記事見出し"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1197
-#: lib/widgets/cta-box.php:108
+#: lib/shortcodes.php:1238
+#: lib/widgets/cta-box.php:117
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
 #: blocks/src/block-universal/label-box/deprecated.js:25
@@ -9998,9 +10921,9 @@ msgstr ""
 #: blocks/src/block-universal/tab-caption-box/deprecated.js:25
 #: blocks/src/block-universal/tab-caption-box/edit.js:20
 #: blocks/src/block/cta/edit.js:85
-#: blocks/src/blocks.js:135
-#: blocks/src/blocks.js:138
-#: blocks/src/blocks.js:141
+#: blocks/src/blocks.js:126
+#: blocks/src/blocks.js:129
+#: blocks/src/blocks.js:132
 #: blocks/src/old/caption-box/block.js:23
 #: blocks/src/old/label-box/block.js:22
 #: blocks/src/old/tab-caption-box/block.js:23
@@ -10025,7 +10948,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:192
 #: lib/widgets/popular-entries.php:189
 #: lib/widgets/related-entries.php:182
-#: blocks/src/block/navicard/edit.js:100
+#: blocks/src/block/navicard/edit.js:105
 #: blocks/src/block/new-list/edit.js:145
 #: blocks/src/block/popular-list/edit.js:225
 msgid "表示タイプ"
@@ -11684,16 +12607,6 @@ msgstr ""
 msgid "目次タイトル"
 msgstr ""
 
-#: lib/page-settings/toc-forms.php:96
-#: lib/page-settings/toc-funcs.php:62
-#: lib/page-settings/_top-page.php:206
-#: lib/toc.php:98
-#: lib/widgets/toc.php:19
-#: skins/skin-made-in-heaven/lib/hook-cocoon.php:359
-#: skins/skin-made-in-heaven/lib/panel-main.php:69
-msgid "目次"
-msgstr ""
-
 #: lib/page-settings/toc-forms.php:97
 msgid "目次の上にラベル表示されるタイトルを入力してください。"
 msgstr ""
@@ -11879,125 +12792,25 @@ msgstr ""
 msgid "除外ウィジェット"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:138
+#: lib/page-settings/_top-page.php:145
 msgid "設定はリセットされました。"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:143
+#: lib/page-settings/_top-page.php:150
 msgid "設定は保存されました。"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:157
+#: lib/page-settings/_top-page.php:164
 msgid "Cocoonの設定全般についてはマニュアルを参照してください。"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:158
+#: lib/page-settings/_top-page.php:165
 msgid "テーマ利用マニュアル"
 msgstr ""
 
-#: lib/page-settings/_top-page.php:162
-#: lib/page-settings/_top-page.php:506
+#: lib/page-settings/_top-page.php:169
+#: lib/page-settings/_top-page.php:228
 msgid "変更をまとめて保存"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:167
-msgid "スキン"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:170
-#: skins/skin-made-in-heaven/lib/panel-main.php:34
-msgid "全体"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:173
-msgid "ヘッダー"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:185
-msgid "OGP"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:188
-msgid "アクセス解析・認証"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:191
-#: skins/silk/functions.php:236
-msgid "カラム"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:194
-msgid "インデックス"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:209
-msgid "SNSシェア"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:212
-msgid "SNSフォロー"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:215
-#: skins/skin-made-in-heaven/lib/panel-option.php:87
-#: skins/skin-made-in-heaven/lib/panel-option.php:89
-#: skins/skin-made-in-heaven/lib/panel-visual.php:28
-#: skins/skin-made-in-heaven/lib/panel-visual.php:42
-#: skins/skin-made-in-heaven/lib/panel-visual.php:67
-#: skins/skin-made-in-heaven/lib/panel-visual.php:69
-#: blocks/src/block/cta/edit.js:113
-msgid "画像"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:221
-msgid "コード"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:227
-msgid "通知"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:230
-msgid "アピールエリア"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:233
-#: lib/widgets/recommended-cards.php:19
-msgid "おすすめカード"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:239
-msgid "フッター"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:245
-#: skins/silk/functions.php:229
-msgid "モバイル"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:257
-msgid "PWA"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:261
-msgid "管理者画面"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:267
-msgid "ウィジェットエリア"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:270
-#: skins/skin-made-in-heaven/lib/panel-editor.php:16
-msgid "エディター"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:273
-msgid "API"
-msgstr ""
-
-#: lib/page-settings/_top-page.php:282
-msgid "テーマ情報"
 msgstr ""
 
 #: lib/page-speech-balloon/demo.php:11
@@ -12044,7 +12857,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:225
 #: blocks/src/old/balloon-ex-fix1/block.js:168
 #: blocks/src/old/balloon-ex-v2/block.js:88
-#: blocks/src/old/balloon-ex/block.js:158
+#: blocks/src/old/balloon-ex/block.js:285
 msgid "吹き出しスタイル"
 msgstr ""
 
@@ -12052,7 +12865,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:235
 #: blocks/src/old/balloon-ex-fix1/block.js:178
 #: blocks/src/old/balloon-ex-v2/block.js:98
-#: blocks/src/old/balloon-ex/block.js:168
+#: blocks/src/old/balloon-ex/block.js:295
 msgid "フラット"
 msgstr ""
 
@@ -12060,7 +12873,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:239
 #: blocks/src/old/balloon-ex-fix1/block.js:182
 #: blocks/src/old/balloon-ex-v2/block.js:102
-#: blocks/src/old/balloon-ex/block.js:172
+#: blocks/src/old/balloon-ex/block.js:299
 msgid "LINE風"
 msgstr ""
 
@@ -12068,7 +12881,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:243
 #: blocks/src/old/balloon-ex-fix1/block.js:186
 #: blocks/src/old/balloon-ex-v2/block.js:106
-#: blocks/src/old/balloon-ex/block.js:176
+#: blocks/src/old/balloon-ex/block.js:303
 msgid "考え事"
 msgstr ""
 
@@ -12080,7 +12893,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:251
 #: blocks/src/old/balloon-ex-fix1/block.js:194
 #: blocks/src/old/balloon-ex-v2/block.js:114
-#: blocks/src/old/balloon-ex/block.js:184
+#: blocks/src/old/balloon-ex/block.js:311
 msgid "人物位置"
 msgstr ""
 
@@ -12088,7 +12901,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:257
 #: blocks/src/old/balloon-ex-fix1/block.js:200
 #: blocks/src/old/balloon-ex-v2/block.js:120
-#: blocks/src/old/balloon-ex/block.js:190
+#: blocks/src/old/balloon-ex/block.js:317
 msgid "左"
 msgstr ""
 
@@ -12096,7 +12909,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:261
 #: blocks/src/old/balloon-ex-fix1/block.js:204
 #: blocks/src/old/balloon-ex-v2/block.js:124
-#: blocks/src/old/balloon-ex/block.js:194
+#: blocks/src/old/balloon-ex/block.js:321
 msgid "右"
 msgstr ""
 
@@ -12108,7 +12921,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:269
 #: blocks/src/old/balloon-ex-fix1/block.js:212
 #: blocks/src/old/balloon-ex-v2/block.js:132
-#: blocks/src/old/balloon-ex/block.js:202
+#: blocks/src/old/balloon-ex/block.js:329
 msgid "アイコンスタイル"
 msgstr ""
 
@@ -12116,7 +12929,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:275
 #: blocks/src/old/balloon-ex-fix1/block.js:218
 #: blocks/src/old/balloon-ex-v2/block.js:140
-#: blocks/src/old/balloon-ex/block.js:208
+#: blocks/src/old/balloon-ex/block.js:335
 msgid "四角（枠線なし）"
 msgstr ""
 
@@ -12124,7 +12937,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:279
 #: blocks/src/old/balloon-ex-fix1/block.js:222
 #: blocks/src/old/balloon-ex-v2/block.js:144
-#: blocks/src/old/balloon-ex/block.js:212
+#: blocks/src/old/balloon-ex/block.js:339
 msgid "四角（枠線あり）"
 msgstr ""
 
@@ -12132,7 +12945,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:283
 #: blocks/src/old/balloon-ex-fix1/block.js:226
 #: blocks/src/old/balloon-ex-v2/block.js:148
-#: blocks/src/old/balloon-ex/block.js:216
+#: blocks/src/old/balloon-ex/block.js:343
 msgid "丸（枠線なし）"
 msgstr ""
 
@@ -12140,7 +12953,7 @@ msgstr ""
 #: blocks/src/block/balloon/edit.js:287
 #: blocks/src/old/balloon-ex-fix1/block.js:230
 #: blocks/src/old/balloon-ex-v2/block.js:152
-#: blocks/src/old/balloon-ex/block.js:220
+#: blocks/src/old/balloon-ex/block.js:347
 msgid "丸（枠線あり）"
 msgstr ""
 
@@ -12500,27 +13313,27 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: lib/profile.php:39
+#: lib/profile.php:46
 msgid "プロフィール画像"
 msgstr ""
 
-#: lib/profile.php:43
+#: lib/profile.php:50
 msgid "プロフィール画像のアップロード"
 msgstr ""
 
-#: lib/profile.php:49
+#: lib/profile.php:56
 msgid "自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めです。"
 msgstr ""
 
-#: lib/profile.php:49
+#: lib/profile.php:56
 msgid "ページサイズ縮小のため<a href=\"https://tinypng.com/\" target=\"_blank\" rel=\"noopener\">TinyPNG</a>等で登録前にで圧縮することをおすすめします。"
 msgstr ""
 
-#: lib/profile.php:55
+#: lib/profile.php:62
 msgid "プロフィールページURL"
 msgstr ""
 
-#: lib/profile.php:61
+#: lib/profile.php:68
 msgid "プロフィール情報が入力してあるページURLを入力してください。プロフィール名のリンクがプロフィールページに変更されます。未入力の場合は、著者のアーカイブページにリンクされます。"
 msgstr ""
 
@@ -12584,98 +13397,98 @@ msgstr ""
 msgid "です。"
 msgstr ""
 
-#: lib/settings.php:418
+#: lib/settings.php:426
 #: tmp/navi.php:9
 msgid "ヘッダーメニュー"
 msgstr ""
 
-#: lib/settings.php:419
+#: lib/settings.php:427
 msgid "ヘッダーモバイルメニュー"
 msgstr ""
 
-#: lib/settings.php:421
+#: lib/settings.php:429
 #: tmp/navi-footer.php:9
 msgid "フッターメニュー"
 msgstr ""
 
-#: lib/settings.php:423
+#: lib/settings.php:431
 msgid "モバイルスライドインメニュー"
 msgstr ""
 
-#: lib/settings.php:669
+#: lib/settings.php:677
 msgid "通常のカード表示"
 msgstr ""
 
-#: lib/settings.php:672
+#: lib/settings.php:680
 msgid "カードの上下に破線の区切り線が表示されます。"
 msgstr ""
 
-#: lib/settings.php:673
-#: blocks/src/block/navicard/edit.js:110
+#: lib/settings.php:681
+#: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
 msgid "カードの上下に区切り線を入れる"
 msgstr ""
 
-#: lib/settings.php:673
-#: blocks/src/block/navicard/edit.js:111
+#: lib/settings.php:681
+#: blocks/src/block/navicard/edit.js:116
 #: blocks/src/block/new-list/edit.js:156
 #: blocks/src/block/popular-list/edit.js:236
 msgid "（縦並び表示のみ）"
 msgstr ""
 
-#: lib/settings.php:675
+#: lib/settings.php:683
 msgid "カード自体を罫線で囲みます。"
 msgstr ""
 
-#: lib/settings.php:676
-#: blocks/src/block/navicard/edit.js:115
+#: lib/settings.php:684
+#: blocks/src/block/navicard/edit.js:120
 #: blocks/src/block/new-list/edit.js:160
 #: blocks/src/block/popular-list/edit.js:240
 msgid "カードに枠線を表示する"
 msgstr ""
 
-#: lib/settings.php:678
+#: lib/settings.php:686
 msgid "大きなサムネイル画像の下にタイトルを表示します。"
 msgstr ""
 
-#: lib/settings.php:679
-#: blocks/src/block/navicard/edit.js:119
+#: lib/settings.php:687
+#: blocks/src/block/navicard/edit.js:124
 #: blocks/src/block/new-list/edit.js:164
 #: blocks/src/block/popular-list/edit.js:244
 msgid "大きなサムネイル表示にする"
 msgstr ""
 
-#: lib/settings.php:681
+#: lib/settings.php:689
 msgid "大きなサムネイル画像の下段にタイトルを重ねます。"
 msgstr ""
 
-#: lib/settings.php:682
-#: blocks/src/block/navicard/edit.js:123
+#: lib/settings.php:690
+#: blocks/src/block/navicard/edit.js:128
 #: blocks/src/block/new-list/edit.js:168
 #: blocks/src/block/popular-list/edit.js:248
 msgid "大きなサムネイルにタイトルを重ねて表示する"
 msgstr ""
 
-#: lib/settings.php:691
+#: lib/settings.php:699
 #: blocks/src/block/amazon-product-link/components/SettingsPanel.js:64
 #: blocks/src/block/rakuten-product-link/components/SettingsPanel.js:62
 msgid "画像のみ"
 msgstr ""
 
-#: lib/settings.php:692
+#: lib/settings.php:700
 msgid "画像中央に白文字タイトル"
 msgstr ""
 
-#: lib/settings.php:693
+#: lib/settings.php:701
 msgid "画像中央にラベルでタイトル"
 msgstr ""
 
-#: lib/settings.php:694
+#: lib/settings.php:702
 msgid "画像下段を黒背景にしタイトルを重ねる"
 msgstr ""
 
-#: lib/settings.php:706
+#: lib/settings.php:714
 msgid "ニュース"
 msgstr ""
 
@@ -12712,48 +13525,48 @@ msgstr ""
 msgid "このエラーメッセージは\"サイト管理者のみ\"に表示されています。"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1069
+#: lib/shortcodes-amazon.php:1066
 msgid "Amazon商品取得エラー"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1071
+#: lib/shortcodes-amazon.php:1068
 msgid "Amazon商品リンクが取得できませんでした。"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1087
+#: lib/shortcodes-amazon.php:1084
 msgid "Amazonで商品の詳細を見る"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1091
+#: lib/shortcodes-amazon.php:1088
 #, php-format
 msgid "Amazonで「%s」に関する詳細を見る"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1125
+#: lib/shortcodes-amazon.php:1122
 msgid "商品を取得できませんでした。Creators APIは正常に応答しましたが、商品情報が含まれていません。"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1126
+#: lib/shortcodes-amazon.php:1123
 msgid "考えられる原因："
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1128
+#: lib/shortcodes-amazon.php:1125
 msgid "存在しないASINを指定している"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1129
+#: lib/shortcodes-amazon.php:1126
 msgid "ASINが正しくない（半角英数字10文字）"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1130
+#: lib/shortcodes-amazon.php:1127
 msgid "商品が販売終了・取り下げされている"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1131
+#: lib/shortcodes-amazon.php:1128
 msgid "トラッキングIDが正しくない"
 msgstr ""
 
-#: lib/shortcodes-amazon.php:1132
+#: lib/shortcodes-amazon.php:1129
 msgid "Creators APIの認証情報が正しくない"
 msgstr ""
 
@@ -12818,11 +13631,11 @@ msgstr ""
 msgid "エラー："
 msgstr ""
 
-#: lib/shortcodes.php:1260
+#: lib/shortcodes.php:1326
 msgid "A,B,C,D,E"
 msgstr ""
 
-#: lib/shortcodes.php:1372
+#: lib/shortcodes.php:1438
 msgid "総計"
 msgstr ""
 
@@ -13169,7 +13982,7 @@ msgstr ""
 #: lib/tinymce/shortcodes.php:106
 #: blocks/src/block/search-box/deprecated.js:16
 #: blocks/src/block/search-box/edit.js:7
-#: blocks/src/blocks.js:122
+#: blocks/src/blocks.js:113
 #: blocks/src/toolbutton/dropdown-shortcodes.js:150
 #: blocks/src/toolbutton/dropdown-shortcodes.js:160
 #: blocks/src/toolbutton/dropdown-shortcodes.js:169
@@ -13442,89 +14255,84 @@ msgstr ""
 msgid "スキン制御"
 msgstr ""
 
-#: lib/utils.php:2608
+#: lib/utils.php:2625
 msgid "Cocoon："
 msgstr ""
 
-#: lib/utils.php:2609
+#: lib/utils.php:2626
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 
-#: lib/utils.php:2611
+#: lib/utils.php:2628
 msgid "表示設定を開く"
 msgstr ""
 
-#: lib/utils.php:2735
+#: lib/utils.php:2752
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2743
+#: lib/utils.php:2760
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2751
+#: lib/utils.php:2768
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2759
+#: lib/utils.php:2776
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2767
-#: lib/utils.php:2782
+#: lib/utils.php:2784
+#: lib/utils.php:2799
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2778
-#: lib/utils.php:2781
+#: lib/utils.php:2795
+#: lib/utils.php:2798
 #, php-format
 msgid "%s年"
 msgid_plural "%s年"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2783
+#: lib/utils.php:2800
 #, php-format
 msgid "%1$s%2$s"
 msgstr ""
 
-#: lib/utils.php:4338
+#: lib/utils.php:4426
 msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
 msgstr ""
 
-#: lib/utils.php:4339
+#: lib/utils.php:4427
 #: skins/skin-demo-php/functions.php:45
 msgid "スキンから入力したタイトル"
 msgstr ""
 
-#: lib/utils.php:4340
+#: lib/utils.php:4428
 #: skins/skin-demo-php/functions.php:46
 msgid "スキンから入力したアピールエリアメッセージです。"
 msgstr ""
 
-#: lib/utils.php:4341
+#: lib/utils.php:4429
 #: skins/skin-demo-php/functions.php:47
 msgid "スキンボタンキャプション"
-msgstr ""
-
-#: lib/widget-areas.php:18
-#: tmp/mobile-sidebar-button.php:21
-msgid "サイドバー"
 msgstr ""
 
 #: lib/widget-areas.php:20
@@ -13794,14 +14602,14 @@ msgid "記事を書いた著者のプロフィール情報を表示するウィ�
 msgstr ""
 
 #: lib/widgets/author-box.php:75
-#: blocks/src/block/blogcard/deprecated.js:49
+#: blocks/src/block/blogcard/deprecated.js:116
 #: blocks/src/block/blogcard/edit.js:30
-#: blocks/src/block/profile/edit.js:87
+#: blocks/src/block/profile/edit.js:92
 #: blocks/src/block/tab-box/edit.js:65
 #: blocks/src/block/timeline-item/deprecated.js:22
 #: blocks/src/block/timeline-item/deprecated.js:42
 #: blocks/src/block/timeline-item/edit.js:20
-#: blocks/src/blocks.js:128
+#: blocks/src/blocks.js:119
 #: blocks/src/old/blogcard-class/block.js:61
 msgid "ラベル"
 msgstr ""
@@ -13811,7 +14619,7 @@ msgid "例：この記事を書いた人"
 msgstr ""
 
 #: lib/widgets/author-box.php:82
-#: blocks/src/block/profile/edit.js:93
+#: blocks/src/block/profile/edit.js:98
 msgid "画像を円形にする"
 msgstr ""
 
@@ -13820,7 +14628,7 @@ msgid "※「プロフィール画像・情報」や、「フォローボタン�
 msgstr ""
 
 #: lib/widgets/box-menus.php:19
-#: blocks/src/block/box-menu/edit.js:107
+#: blocks/src/block/box-menu/edit.js:111
 #: blocks/src/block/box-menu/index.js:38
 msgid "ボックスメニュー"
 msgstr ""
@@ -13846,93 +14654,88 @@ msgid "内容："
 msgstr ""
 
 #: lib/widgets/classic-text.php:65
-#: lib/widgets/cta-box.php:143
+#: lib/widgets/cta-box.php:152
 #: lib/widgets/mobile-text.php:83
 #: lib/widgets/pc-text.php:82
 #: blocks/src/block/cta/edit.js:161
 msgid "自動的に段落を追加する"
 msgstr ""
 
-#: lib/widgets/cta-box.php:19
-#: blocks/src/block/cta/index.js:21
-msgid "CTA"
-msgstr ""
-
 #: lib/widgets/cta-box.php:20
 msgid "コール・トゥ・アクションで訪問者にとってもらいたい行動を促すウィジェットです。"
 msgstr ""
 
-#: lib/widgets/cta-box.php:115
+#: lib/widgets/cta-box.php:124
 msgid "画像とメッセージのレイアウト（サイドバー・フッター以外）"
 msgstr ""
 
-#: lib/widgets/cta-box.php:119
+#: lib/widgets/cta-box.php:128
 #: blocks/src/block/cta/edit.js:95
 msgid "画像・メッセージを上下に配置"
 msgstr ""
 
-#: lib/widgets/cta-box.php:120
+#: lib/widgets/cta-box.php:129
 #: blocks/src/block/cta/edit.js:99
 msgid "画像・メッセージを左右に配置"
 msgstr ""
 
-#: lib/widgets/cta-box.php:121
+#: lib/widgets/cta-box.php:130
 #: blocks/src/block/cta/edit.js:103
 msgid "メッセージ・画像を左右に配置"
 msgstr ""
 
-#: lib/widgets/cta-box.php:129
+#: lib/widgets/cta-box.php:138
 msgid "画像（選択ボタンが動作しない場合は再読み込み）"
 msgstr ""
 
-#: lib/widgets/cta-box.php:148
+#: lib/widgets/cta-box.php:157
 #: blocks/src/block/cta/edit.js:171
 msgid "ボタンテキスト"
 msgstr ""
 
-#: lib/widgets/cta-box.php:155
+#: lib/widgets/cta-box.php:164
 #: blocks/src/block/cta/edit.js:179
 msgid "ボタンURL"
 msgstr ""
 
-#: lib/widgets/cta-box.php:166
+#: lib/widgets/cta-box.php:175
 #: blocks/src/block/cta/edit.js:188
 #: blocks/src/toolbutton/button-black.js:14
 #: blocks/src/toolbutton/button-white-black.js:14
 msgid "黒色"
 msgstr ""
 
-#: lib/widgets/cta-box.php:170
+#: lib/widgets/cta-box.php:179
 #: blocks/src/block/cta/edit.js:192
 msgid "深紫"
 msgstr ""
 
-#: lib/widgets/cta-box.php:171
+#: lib/widgets/cta-box.php:180
 #: blocks/src/block/cta/edit.js:194
 msgid "紺色（インディゴ）"
 msgstr ""
 
-#: lib/widgets/cta-box.php:173
+#: lib/widgets/cta-box.php:182
 #: blocks/src/block/cta/edit.js:198
 msgid "水色"
 msgstr ""
 
-#: lib/widgets/cta-box.php:174
+#: lib/widgets/cta-box.php:183
 #: blocks/src/block/cta/edit.js:200
 msgid "明るい青（シアン）"
 msgstr ""
 
-#: lib/widgets/cta-box.php:175
+#: lib/widgets/cta-box.php:184
 #: blocks/src/block/cta/edit.js:204
 msgid "緑色がかった青（ティール）"
 msgstr ""
 
-#: lib/widgets/cta-box.php:177
+#: lib/widgets/cta-box.php:186
 #: blocks/src/block/cta/edit.js:209
 msgid "明るい緑"
 msgstr ""
 
-#: lib/widgets/cta-box.php:180
+#: lib/widgets/cta-box.php:189
 #: blocks/src/block/cta/edit.js:215
 msgid "琥珀色（アンバー）"
 msgstr ""
@@ -14068,7 +14871,7 @@ msgid "仕切り線を表示する"
 msgstr ""
 
 #: lib/widgets/info-list.php:155
-#: lib/widgets/new-entries.php:226
+#: lib/widgets/new-entries.php:227
 #: blocks/src/block/info-list/edit.js:143
 msgid "更新日順に並び替える"
 msgstr ""
@@ -14082,7 +14885,7 @@ msgid "商品・サービスのランキングを表示するウィジェット�
 msgstr ""
 
 #: lib/widgets/item-ranking.php:84
-#: blocks/src/block/ranking/edit.js:78
+#: blocks/src/block/ranking/edit.js:77
 msgid "ランキングを選択してください。"
 msgstr ""
 
@@ -14135,7 +14938,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:201
 #: lib/widgets/popular-entries.php:213
 #: lib/widgets/related-entries.php:203
-#: blocks/src/block/navicard/edit.js:136
+#: blocks/src/block/navicard/edit.js:141
 #: blocks/src/block/new-list/edit.js:226
 #: blocks/src/block/popular-list/edit.js:261
 msgid "横並び表示にする"
@@ -14152,7 +14955,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:208
 #: lib/widgets/popular-entries.php:220
 #: lib/widgets/related-entries.php:210
-#: blocks/src/block/navicard/edit.js:144
+#: blocks/src/block/navicard/edit.js:149
 #: blocks/src/block/new-list/edit.js:234
 #: blocks/src/block/popular-list/edit.js:269
 msgid "タイトルを太字にする"
@@ -14162,7 +14965,7 @@ msgstr ""
 #: lib/widgets/new-entries.php:214
 #: lib/widgets/popular-entries.php:238
 #: lib/widgets/related-entries.php:216
-#: blocks/src/block/navicard/edit.js:150
+#: blocks/src/block/navicard/edit.js:155
 #: blocks/src/block/new-list/edit.js:240
 #: blocks/src/block/popular-list/edit.js:291
 msgid "カードに矢印を表示する"
@@ -14192,12 +14995,12 @@ msgstr ""
 msgid "オフの場合も、通常の並び順では表示されることがあります。"
 msgstr ""
 
-#: lib/widgets/new-entries.php:232
+#: lib/widgets/new-entries.php:233
 #: lib/widgets/popular-entries.php:244
 msgid "除外投稿ID（カンマ区切りでIDを入力してください）"
 msgstr ""
 
-#: lib/widgets/new-entries.php:239
+#: lib/widgets/new-entries.php:240
 #: lib/widgets/popular-entries.php:251
 #: lib/widgets/related-entries.php:221
 msgid "除外カテゴリー（除外するものを選択してください）"
@@ -14945,10 +15748,6 @@ msgstr ""
 
 #: skins/silk/functions.php:232
 msgid "水平"
-msgstr ""
-
-#: skins/silk/functions.php:234
-msgid "リンク"
 msgstr ""
 
 #: skins/silk/functions.php:235
@@ -16044,8 +16843,8 @@ msgstr ""
 #: blocks/src/micro/micro-balloon/edit.js:98
 #: blocks/src/old/button-1/block.js:141
 #: blocks/src/old/button-wrap-1/block.js:129
-#: blocks/src/old/micro-balloon-1/block.js:119
-#: blocks/src/old/micro-balloon/block.js:118
+#: blocks/src/old/micro-balloon-1/block.js:206
+#: blocks/src/old/micro-balloon/block.js:203
 msgid "円形にする"
 msgstr ""
 
@@ -16107,7 +16906,7 @@ msgstr ""
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:131
 #: blocks/src/block/tab-box/index.js:22
-#: blocks/src/old/tab-box/block.js:27
+#: blocks/src/old/tab-box/block.js:95
 msgid "タブボックス"
 msgstr ""
 
@@ -17262,14 +18061,14 @@ msgstr ""
 #: blocks/src/block-universal/label-box/edit.js:111
 #: blocks/src/block-universal/tab-caption-box/edit.js:111
 #: blocks/src/block/balloon/edit.js:204
-#: blocks/src/block/blogcard/deprecated.js:47
+#: blocks/src/block/blogcard/deprecated.js:114
 #: blocks/src/block/blogcard/edit.js:28
-#: blocks/src/block/icon-box/deprecated.js:78
+#: blocks/src/block/icon-box/deprecated.js:134
 #: blocks/src/block/icon-box/edit.js:25
 #: blocks/src/block/icon-list/edit.js:89
-#: blocks/src/block/info-box/deprecated.js:77
+#: blocks/src/block/info-box/deprecated.js:133
 #: blocks/src/block/info-box/edit.js:25
-#: blocks/src/block/sticky-box/deprecated.js:79
+#: blocks/src/block/sticky-box/deprecated.js:213
 #: blocks/src/block/sticky-box/edit.js:25
 #: blocks/src/block/tab-box/edit.js:63
 #: blocks/src/block/test-box/deprecated.js:78
@@ -17278,18 +18077,18 @@ msgstr ""
 #: blocks/src/micro/micro-balloon/edit.js:77
 #: blocks/src/micro/micro-text/edit.js:51
 #: blocks/src/old/balloon-1/block.js:105
-#: blocks/src/old/balloon-2/block.js:155
+#: blocks/src/old/balloon-2/block.js:264
 #: blocks/src/old/balloon-ex-fix1/block.js:152
 #: blocks/src/old/balloon-ex-v2/block.js:77
-#: blocks/src/old/balloon-ex/block.js:145
+#: blocks/src/old/balloon-ex/block.js:272
 #: blocks/src/old/balloon/block.js:86
-#: blocks/src/old/blank-box/block.js:66
+#: blocks/src/old/blank-box/block.js:123
 #: blocks/src/old/blogcard-class/block.js:59
 #: blocks/src/old/caption-box/block.js:60
 #: blocks/src/old/label-box/block.js:59
-#: blocks/src/old/micro-balloon-1/block.js:68
-#: blocks/src/old/micro-balloon/block.js:67
-#: blocks/src/old/tab-box/block.js:73
+#: blocks/src/old/micro-balloon-1/block.js:155
+#: blocks/src/old/micro-balloon/block.js:152
+#: blocks/src/old/tab-box/block.js:135
 #: blocks/src/old/tab-caption-box/block.js:60
 #: blocks/src/old/toggle-box/block.js:63
 msgid "スタイル設定"
@@ -17317,9 +18116,9 @@ msgstr ""
 #: blocks/src/old/button/block.js:99
 #: blocks/src/old/caption-box/block.js:62
 #: blocks/src/old/label-box/block.js:61
-#: blocks/src/old/micro-balloon-1/block.js:88
-#: blocks/src/old/micro-balloon/block.js:87
-#: blocks/src/old/tab-box/block.js:149
+#: blocks/src/old/micro-balloon-1/block.js:175
+#: blocks/src/old/micro-balloon/block.js:172
+#: blocks/src/old/tab-box/block.js:211
 #: blocks/src/old/tab-caption-box/block.js:62
 #: blocks/src/old/toggle-box/block.js:65
 msgid "色設定"
@@ -17601,10 +18400,10 @@ msgstr ""
 
 #: blocks/src/block/balloon/edit.js:206
 #: blocks/src/old/balloon-1/block.js:107
-#: blocks/src/old/balloon-2/block.js:157
+#: blocks/src/old/balloon-2/block.js:266
 #: blocks/src/old/balloon-ex-fix1/block.js:154
 #: blocks/src/old/balloon-ex-v2/block.js:79
-#: blocks/src/old/balloon-ex/block.js:147
+#: blocks/src/old/balloon-ex/block.js:274
 #: blocks/src/old/balloon/block.js:88
 msgid "人物"
 msgstr ""
@@ -17616,17 +18415,17 @@ msgstr ""
 #: blocks/src/block/balloon/index.js:38
 #: blocks/src/old/balloon-ex-fix1/block.js:67
 #: blocks/src/old/balloon-ex-v2/block.js:29
-#: blocks/src/old/balloon-ex/block.js:64
+#: blocks/src/old/balloon-ex/block.js:210
 msgid "登録されている吹き出しのオプションを変更できます。"
 msgstr ""
 
 #: blocks/src/block/blank-box/index.js:23
-#: blocks/src/old/blank-box/block.js:29
+#: blocks/src/old/blank-box/block.js:87
 msgid "白抜きボックス"
 msgstr ""
 
 #: blocks/src/block/blank-box/index.js:25
-#: blocks/src/old/blank-box/block.js:32
+#: blocks/src/old/blank-box/block.js:90
 msgid "コンテンツを囲むだけのブランクボックスを表示します。"
 msgstr ""
 
@@ -17635,23 +18434,23 @@ msgstr ""
 msgid "ブログカード表示用の入力ブロックを表示します。URLは複数入力可能です。"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:60
+#: blocks/src/block/box-menu/edit.js:65
 msgid "ダッシュボードメニューの「外観」→「メニュー」からボックスメニューを作成してください。"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:65
+#: blocks/src/block/box-menu/edit.js:70
 msgid "ボックスメニューが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:71
+#: blocks/src/block/box-menu/edit.js:73
 msgid "有効なボックスメニューが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:73
+#: blocks/src/block/box-menu/edit.js:75
 msgid "もしくは登録されているボックスメニューを表示設定にしてください。"
 msgstr ""
 
-#: blocks/src/block/box-menu/edit.js:78
+#: blocks/src/block/box-menu/edit.js:80
 msgid "ボックスメニューを選択してください。"
 msgstr ""
 
@@ -17806,7 +18605,7 @@ msgstr ""
 
 #: blocks/src/block/cta/edit.js:78
 #: blocks/src/block/info-list/edit.js:99
-#: blocks/src/block/navicard/edit.js:98
+#: blocks/src/block/navicard/edit.js:103
 #: blocks/src/block/new-list/edit.js:133
 #: blocks/src/block/popular-list/edit.js:205
 msgid "基本設定"
@@ -17861,17 +18660,17 @@ msgstr ""
 msgid "よくある質問と回答。"
 msgstr ""
 
-#: blocks/src/block/icon-box/deprecated.js:86
+#: blocks/src/block/icon-box/deprecated.js:142
 #: blocks/src/block/test-box/deprecated.js:86
 msgid "補足情報(i)"
 msgstr ""
 
-#: blocks/src/block/icon-box/deprecated.js:90
+#: blocks/src/block/icon-box/deprecated.js:146
 #: blocks/src/block/test-box/deprecated.js:90
 msgid "補足情報(?)"
 msgstr ""
 
-#: blocks/src/block/icon-box/deprecated.js:94
+#: blocks/src/block/icon-box/deprecated.js:150
 #: blocks/src/block/test-box/deprecated.js:94
 msgid "補足情報(!)"
 msgstr ""
@@ -17896,11 +18695,11 @@ msgstr ""
 msgid "リストポイントにアイコンを適用した非順序リストです。"
 msgstr ""
 
-#: blocks/src/block/info-box/deprecated.js:93
+#: blocks/src/block/info-box/deprecated.js:149
 msgid "インフォ（薄い青）"
 msgstr ""
 
-#: blocks/src/block/info-box/deprecated.js:97
+#: blocks/src/block/info-box/deprecated.js:153
 msgid "サクセス（薄い緑）"
 msgstr ""
 
@@ -17955,15 +18754,15 @@ msgstr ""
 msgid "ログインしているユーザーにのみコンテンツを表示します"
 msgstr ""
 
-#: blocks/src/block/navicard/edit.js:63
+#: blocks/src/block/navicard/edit.js:68
 msgid "ダッシュボードメニューの「外観」→「メニュー」からメニューを作成してください。"
 msgstr ""
 
-#: blocks/src/block/navicard/edit.js:68
+#: blocks/src/block/navicard/edit.js:73
 msgid "メニューが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/navicard/edit.js:70
+#: blocks/src/block/navicard/edit.js:75
 msgid "メニューを選択してください。"
 msgstr ""
 
@@ -18075,15 +18874,15 @@ msgstr ""
 msgid "人気記事の一覧を表示します。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:54
+#: blocks/src/block/profile/edit.js:59
 msgid "選択できるユーザーがありません。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:56
+#: blocks/src/block/profile/edit.js:61
 msgid "ユーザーを選択してください。"
 msgstr ""
 
-#: blocks/src/block/profile/edit.js:103
+#: blocks/src/block/profile/edit.js:108
 msgid "ユーザー"
 msgstr ""
 
@@ -18233,24 +19032,24 @@ msgstr ""
 msgid "楽天商品をエディタ内で検索・選択し、静的な商品リンクを挿入します。"
 msgstr ""
 
-#: blocks/src/block/ranking/edit.js:43
-#: blocks/src/block/template/edit.js:43
+#: blocks/src/block/ranking/edit.js:48
+#: blocks/src/block/template/edit.js:48
 msgid "（リスト非表示）"
 msgstr ""
 
-#: blocks/src/block/ranking/edit.js:55
+#: blocks/src/block/ranking/edit.js:60
 msgid "ダッシュボードメニューの「Cocoon設定」→「ランキング」からランキングを作成してください。"
 msgstr ""
 
-#: blocks/src/block/ranking/edit.js:63
+#: blocks/src/block/ranking/edit.js:65
 msgid "ランキングが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/ranking/edit.js:70
+#: blocks/src/block/ranking/edit.js:69
 msgid "有効なランキングが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/ranking/edit.js:72
+#: blocks/src/block/ranking/edit.js:71
 msgid "もしくは登録されているランキングを表示設定にしてください。。"
 msgstr ""
 
@@ -18275,7 +19074,7 @@ msgid "目立つ濃いめの色で付箋風にメッセージを伝えるため�
 msgstr ""
 
 #: blocks/src/block/tab-box/index.js:24
-#: blocks/src/old/tab-box/block.js:30
+#: blocks/src/old/tab-box/block.js:98
 msgid "タブにメッセージ内容を伝えるための文字が書かれているボックスです。"
 msgstr ""
 
@@ -18320,23 +19119,23 @@ msgstr ""
 msgid "表示する内容をタブで切り替えることができるボックスです。"
 msgstr ""
 
-#: blocks/src/block/template/edit.js:55
+#: blocks/src/block/template/edit.js:60
 msgid "ダッシュボードメニューの「Cocoon設定」→「テンプレート」からテンプレートを作成してください。"
 msgstr ""
 
-#: blocks/src/block/template/edit.js:60
+#: blocks/src/block/template/edit.js:65
 msgid "テンプレートが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/template/edit.js:67
+#: blocks/src/block/template/edit.js:69
 msgid "有効なテンプレートが登録されていません。"
 msgstr ""
 
-#: blocks/src/block/template/edit.js:69
+#: blocks/src/block/template/edit.js:71
 msgid "もしくは登録されているテンプレートを表示設定にしてください。。"
 msgstr ""
 
-#: blocks/src/block/template/edit.js:75
+#: blocks/src/block/template/edit.js:77
 msgid "テンプレートを選択してください。"
 msgstr ""
 
@@ -18374,27 +19173,27 @@ msgstr ""
 msgid "旧トグルボックス。クリックすることでコンテンツ内容の表示を切り替えることができるボックスです。"
 msgstr ""
 
-#: blocks/src/blocks.js:125
+#: blocks/src/blocks.js:116
 msgid "タイムラインのタイトル"
 msgstr ""
 
-#: blocks/src/blocks.js:132
+#: blocks/src/blocks.js:123
 msgid "アコーディオン見出し"
 msgstr ""
 
-#: blocks/src/blocks.js:144
+#: blocks/src/blocks.js:135
 #: blocks/src/micro/micro-balloon/deprecated.js:18
-#: blocks/src/old/micro-balloon-1/block.js:19
-#: blocks/src/old/micro-balloon/block.js:19
+#: blocks/src/old/micro-balloon-1/block.js:20
+#: blocks/src/old/micro-balloon/block.js:20
 msgid "マイクロコピーバルーン"
 msgstr ""
 
-#: blocks/src/blocks.js:147
+#: blocks/src/blocks.js:138
 #: blocks/src/micro/micro-text/deprecated.js:17
 msgid "マイクロコピーテキスト"
 msgstr ""
 
-#: blocks/src/blocks.js:189
+#: blocks/src/blocks.js:180
 msgid "キャンペーン期間中のみ表示されるコンテンツです。"
 msgstr ""
 
@@ -18412,8 +19211,8 @@ msgid "言語選択"
 msgstr ""
 
 #: blocks/src/helpers.js:31
-#: blocks/src/old/blank-box/block.js:22
-#: blocks/src/old/tab-box/block.js:20
+#: blocks/src/old/blank-box/block.js:23
+#: blocks/src/old/tab-box/block.js:21
 msgid "こちらをクリックして設定変更。この入力は公開ページで反映されません。"
 msgstr ""
 
@@ -18830,27 +19629,27 @@ msgstr ""
 
 #: blocks/src/micro/micro-balloon/edit.js:85
 #: blocks/src/micro/micro-text/edit.js:59
-#: blocks/src/old/micro-balloon-1/block.js:76
-#: blocks/src/old/micro-balloon/block.js:75
+#: blocks/src/old/micro-balloon-1/block.js:163
+#: blocks/src/old/micro-balloon/block.js:160
 msgid "下寄り"
 msgstr ""
 
 #: blocks/src/micro/micro-balloon/edit.js:89
 #: blocks/src/micro/micro-text/edit.js:63
-#: blocks/src/old/micro-balloon-1/block.js:80
-#: blocks/src/old/micro-balloon/block.js:79
+#: blocks/src/old/micro-balloon-1/block.js:167
+#: blocks/src/old/micro-balloon/block.js:164
 msgid "上寄り"
 msgstr ""
 
 #: blocks/src/micro/micro-balloon/index.js:22
-#: blocks/src/old/micro-balloon-1/block.js:29
-#: blocks/src/old/micro-balloon/block.js:28
+#: blocks/src/old/micro-balloon-1/block.js:127
+#: blocks/src/old/micro-balloon/block.js:124
 msgid "マイクロバルーン"
 msgstr ""
 
 #: blocks/src/micro/micro-balloon/index.js:24
-#: blocks/src/old/micro-balloon-1/block.js:32
-#: blocks/src/old/micro-balloon/block.js:31
+#: blocks/src/old/micro-balloon-1/block.js:130
+#: blocks/src/old/micro-balloon/block.js:127
 msgid "コンバージョンリンク（ボタン）の直上もしくは直下にテキストバルーン表示して、コンバージョン率アップを図るためのマイクロコピーです。"
 msgstr ""
 
@@ -18863,14 +19662,14 @@ msgid "コンバージョンリンク（ボタン）の直上もしくは直下�
 msgstr ""
 
 #: blocks/src/old/balloon-1/block.js:66
-#: blocks/src/old/balloon-2/block.js:55
+#: blocks/src/old/balloon-2/block.js:181
 #: blocks/src/old/balloon/block.js:48
 msgid "登録されている吹き出しを挿入できます。"
 msgstr ""
 
 #: blocks/src/old/balloon-ex-fix1/block.js:64
 #: blocks/src/old/balloon-ex-v2/block.js:26
-#: blocks/src/old/balloon-ex/block.js:61
+#: blocks/src/old/balloon-ex/block.js:207
 msgid "吹き出しEX"
 msgstr ""
 
@@ -18956,10 +19755,6 @@ msgstr ""
 
 #: blocks/src/toolbutton/custom.js:23
 msgid "カスタムテキスト"
-msgstr ""
-
-#: blocks/src/toolbutton/dropdown-affiliates.js:57
-msgid "アフィリエイト"
 msgstr ""
 
 #: blocks/src/toolbutton/dropdown-badges.js:22

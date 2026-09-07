@@ -1015,6 +1015,17 @@ div.search-form{
   }
 }
 
+// .btn-lのSass @extendをランキングへ波及させず、通常ボタン内の改行だけを同じインライン整形コンテキストで処理する
+.button-block > [class~="btn-l"] {
+  display: block;
+
+  // flexの縦中央揃えを外しても、右端の矢印をボタン全体の中央に維持する
+  &::after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
 .alignleft .btn-l.has-custom-width,
 .alignleft.btn-wrap-l.has-custom-width a{
   margin-right: auto;

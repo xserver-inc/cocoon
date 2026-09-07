@@ -31,7 +31,7 @@ class CTABoxWidgetItem extends WP_Widget {
     $image_url = !empty($instance['image_url']) ? $instance['image_url'] : '';
     $message = !empty( $instance['message'] ) ? $instance['message'] : '';
     $filter = !empty( $instance['filter'] ) ? $instance['filter'] : 0;
-    $button_text = !empty( $instance['button_text'] ) ? $instance['button_text'] : __( '詳細はこちら', THEME_NAME );
+    $button_text = isset($instance['button_text']) && is_scalar($instance['button_text']) && (string)$instance['button_text'] !== '' ? (string)$instance['button_text'] : __( '詳細はこちら', THEME_NAME );
     $button_url = !empty( $instance['button_url'] ) ? $instance['button_url'] : '';
     $button_color_class = !empty( $instance['button_color_class'] ) ? $instance['button_color_class'] : 'btn-red';
 
@@ -60,16 +60,25 @@ class CTABoxWidgetItem extends WP_Widget {
   }
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags(!empty($new_instance['title']) ? $new_instance['title'] : '');
-    $instance['heading'] = strip_tags(!empty($new_instance['heading']) ? $new_instance['heading'] : '');
-    $instance['layout'] = strip_tags(!empty( $new_instance['layout'] ) ? $new_instance['layout'] : '');
-    $instance['image_url'] = strip_tags(!empty( $new_instance['image_url'] ) ? $new_instance['image_url'] : '');
-    $instance['message'] = !empty( $new_instance['message'] ) ? $new_instance['message'] : '';
+    $instance['title'] = isset($new_instance['title']) && is_scalar($new_instance['title']) ? sanitize_text_field((string)$new_instance['title']) : '';
+    $instance['heading'] = isset($new_instance['heading']) && is_scalar($new_instance['heading']) ? sanitize_text_field((string)$new_instance['heading']) : '';
+    $instance['layout'] = isset($new_instance['layout']) && is_scalar($new_instance['layout']) ? trim((string)$new_instance['layout']) : '';
+    $instance['image_url'] = isset($new_instance['image_url']) && is_scalar($new_instance['image_url']) ? esc_url_raw((string)$new_instance['image_url']) : '';
+    $instance['message'] = isset($new_instance['message']) && is_scalar($new_instance['message']) ? wp_kses_post((string)$new_instance['message']) : '';
     $instance['filter'] = !empty( $new_instance['filter'] ) ;
-    $instance['button_text'] = strip_tags(!empty($new_instance['button_text']) ? $new_instance['button_text'] : '');
-    $instance['button_url'] = strip_tags(!empty($new_instance['button_url']) ? $new_instance['button_url'] : '');
-    $instance['button_color_class'] = strip_tags(!empty($new_instance['button_color_class']) ? $new_instance['button_color_class'] : '');
-      return $instance;
+    $instance['button_text'] = isset($new_instance['button_text']) && is_scalar($new_instance['button_text']) ? sanitize_text_field((string)$new_instance['button_text']) : '';
+    $instance['button_url'] = isset($new_instance['button_url']) && is_scalar($new_instance['button_url']) ? esc_url_raw((string)$new_instance['button_url']) : '';
+    $instance['button_color_class'] = isset($new_instance['button_color_class']) && is_scalar($new_instance['button_color_class']) ? trim((string)$new_instance['button_color_class']) : '';
+
+    // 管理画面で選べるCTAデザインと互換用クラスだけの許可
+    if ( !in_array($instance['layout'], get_cta_allowed_layout_classes(), true) ) {
+      $instance['layout'] = 'cta-top-and-bottom';
+    }
+    if ( !in_array($instance['button_color_class'], get_cta_allowed_button_color_classes(), true) ) {
+      $instance['button_color_class'] = 'btn-red';
+    }
+
+    return $instance;
   }
   function form($instance) {
     if(empty($instance)){//notice回避
@@ -91,7 +100,7 @@ class CTABoxWidgetItem extends WP_Widget {
     $image_url = esc_attr(!empty($instance['image_url']) ? $instance['image_url'] : null);
     $message = esc_attr(!empty($instance['message']) ? $instance['message'] : null);
     $filter = esc_attr(!empty($instance['filter']) ? $instance['filter'] : 0);
-    $button_text = esc_attr(!empty($instance['button_text']) ? $instance['button_text'] : null);
+    $button_text = esc_attr(isset($instance['button_text']) && is_scalar($instance['button_text']) ? (string)$instance['button_text'] : '');
     $button_url = esc_attr(!empty($instance['button_url']) ? $instance['button_url'] : null);
     $button_color_class = esc_attr(!empty($instance['button_color_class']) ? $instance['button_color_class'] : null);
     ?>

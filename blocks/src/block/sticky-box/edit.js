@@ -10,9 +10,9 @@ import { Fragment } from '@wordpress/element';
 import classnames from 'classnames';
 
 export default function edit( { attributes, setAttributes, className } ) {
-  const { style } = attributes;
+  const { boxStyle } = attributes;
   const classes = classnames( 'blank-box', 'block-box', 'sticky', {
-    [ style ]: !! style,
+    [ boxStyle ]: !! boxStyle,
     [ className ]: !! className,
   } );
   const blockProps = useBlockProps( {
@@ -25,8 +25,8 @@ export default function edit( { attributes, setAttributes, className } ) {
         <PanelBody title={ __( 'スタイル設定', THEME_NAME ) }>
           <SelectControl
             label={ __( 'タイプ', THEME_NAME ) }
-            value={ style }
-            onChange={ ( value ) => setAttributes( { style: value } ) }
+            value={ boxStyle }
+            onChange={ ( value ) => setAttributes( { boxStyle: value } ) }
             options={ [
               {
                 value: '',
@@ -50,7 +50,7 @@ export default function edit( { attributes, setAttributes, className } ) {
               },
             ] }
             __nextHasNoMarginBottom={ true }
-            __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+            __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
           />
         </PanelBody>
       </InspectorControls>

@@ -49,7 +49,7 @@ final class StickyPostExclusionTest extends TestCase
             ->once()
             ->with([
                 'post__in' => [101, 202],
-                'category__in' => [9, 4],
+                'category__in' => [4, 9],
                 'post_type' => 'post',
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
@@ -63,7 +63,7 @@ final class StickyPostExclusionTest extends TestCase
 
         $this->assertSame(
             [202, 101],
-            get_sticky_post_ids_in_categories($category_ids, $sticky_post_ids)
+            get_sticky_post_ids_in_categories(array_reverse($category_ids), array_reverse($sticky_post_ids))
         );
         $this->assertSame(
             [202, 101],

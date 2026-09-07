@@ -6,6 +6,7 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
+import { addNoopenerToBlankTargets } from './add-noopener';
 
 export default function save( { attributes } ) {
   const {
@@ -64,14 +65,8 @@ export default function save( { attributes } ) {
     style: styles,
   } );
 
-  // rel属性の値をチェックして変換を行う
-  let tagCode;
-  if ( ! tag.includes( ' rel="noopener' ) ) {
-    tagCode = tag.replace(
-      ' target="_blank"',
-      ' target="_blank" rel="noopener"'
-    );
-  }
+  // 各リンクの既存属性を保持したnoopener補完結果。
+  const tagCode = addNoopenerToBlankTargets( tag );
   return (
     <div { ...blockProps }>
       <RichText.Content value={ tagCode } />

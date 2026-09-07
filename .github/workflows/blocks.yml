@@ -1,0 +1,49 @@
+name: Blocks Tests
+
+on:
+  push:
+    branches: [master, main, develop]
+    paths:
+      - 'blocks/**'
+      - '.github/workflows/blocks.yml'
+  pull_request:
+    branches: [master, main, develop]
+    paths:
+      - 'blocks/**'
+      - '.github/workflows/blocks.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: 'blocks-${{ github.workflow }}-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Blocks unit tests and build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: blocks
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: blocks/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run block compatibility tests
+        run: npm run test:unit -- --runInBand
+
+      - name: Verify production build
+        run: npm run build

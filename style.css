@@ -6,7 +6,7 @@ Theme URI: https://wp-cocoon.com/
 Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
-Version: 2.9.4.3
+Version: 2.9.5.1
 Requires at least: 6.1.0
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
@@ -4175,6 +4175,14 @@ div.search-form {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.button-block > [class~=btn-l] {
+  display: block;
+}
+.button-block > [class~=btn-l]::after {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .alignleft .btn-l.has-custom-width, .alignleft .ranking-item-link-buttons a.has-custom-width, .ranking-item-link-buttons .alignleft a.has-custom-width,

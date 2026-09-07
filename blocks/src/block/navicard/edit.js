@@ -8,12 +8,17 @@ import {
   __experimentalDivider as Divider,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { ServerSideRender } from '@wordpress/editor';
+import ServerSideRender from '../../server-side-render';
 import classnames from 'classnames';
 
 export default function edit( props ) {
   const { attributes, setAttributes, className } = props;
   const { id, menuType, bold, arrow, horizontal } = attributes;
+
+  // ナビカード用メニュー一覧の取得完了判定
+  const isNavicardListReady =
+    typeof gbNavMenus !== 'undefined' && Array.isArray( gbNavMenus );
+  const navicardList = isNavicardListReady ? gbNavMenus : [];
   const classes = classnames( 'navicard', 'block-box', {
     [ 'menu-' + id ]: !! ( id !== '-1' ),
     [ className ]: !! className,
@@ -27,8 +32,8 @@ export default function edit( props ) {
 
   function getMenuNameFromId( id ) {
     let name = '';
-    if ( typeof gbNavMenus !== 'undefined' ) {
-      for ( const menu of gbNavMenus ) {
+    if ( isNavicardListReady ) {
+      for ( const menu of navicardList ) {
         if ( menu.term_id == id ) {
           name = menu.name;
           break;
@@ -41,8 +46,8 @@ export default function edit( props ) {
   function createOptions() {
     const options = [];
     options.push( { value: '-1', label: __( '未選択', THEME_NAME ) } );
-    if ( typeof gbNavMenus !== 'undefined' ) {
-      gbNavMenus.forEach( ( menu ) => {
+    if ( isNavicardListReady ) {
+      navicardList.forEach( ( menu ) => {
         if ( isNavicardIdExist === false && menu.term_id == id ) {
           isNavicardIdExist = true;
         }
@@ -64,9 +69,9 @@ export default function edit( props ) {
       'ダッシュボードメニューの「外観」→「メニュー」からメニューを作成してください。',
       THEME_NAME
     );
-    if ( typeof gbNavMenus === 'undefined' || gbNavMenus.length === 0 ) {
+    if ( isNavicardListReady && navicardList.length === 0 ) {
       msg = __( 'メニューが登録されていません。', THEME_NAME ) + setmsg;
-    } else if ( typeof gbNavMenus !== 'undefined' ) {
+    } else if ( isNavicardListReady ) {
       msg = __( 'メニューを選択してください。', THEME_NAME );
     } else {
       return '';
@@ -88,7 +93,7 @@ export default function edit( props ) {
 
   const options = createOptions();
 
-  if ( ! isNavicardIdExist ) {
+  if ( isNavicardListReady && ! isNavicardIdExist && id != '-1' ) {
     setAttributes( { id: '-1' } );
   }
 

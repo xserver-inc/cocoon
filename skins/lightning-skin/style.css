@@ -370,6 +370,11 @@ table{
 	margin-top: -5px;
 }
 
+/* 明示的な中央配置に変わった通常ボタンは、従来と同じ矢印位置になるよう補正量を調整する */
+.button-block > .btn.btn-l::after{
+	margin-top: -2.5px;
+}
+
 /* シェア・フォローボタンタイトル */
 .article-footer .sns-share-message,.article-footer .sns-follow-message{
 	display: flex;

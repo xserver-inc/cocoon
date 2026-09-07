@@ -327,6 +327,11 @@ if (!function_exists('wp_remote_retrieve_body')) {
 
 if (!function_exists('current_time')) {
     function current_time($type, $gmt = 0) {
+        global $test_mock_current_time_callback;
+        if (is_callable($test_mock_current_time_callback)) {
+            return $test_mock_current_time_callback($type, $gmt);
+        }
+
         if ($type === 'timestamp') {
             return time();
         }

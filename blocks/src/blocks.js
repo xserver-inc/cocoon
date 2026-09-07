@@ -12,17 +12,8 @@ import {
 import { compareVersions } from 'compare-versions';
 import { __ } from '@wordpress/i18n';
 import { THEME_NAME } from './helpers';
+import { observePatternEditorToggleBox } from './pattern-editor-toggle-box';
 const cocoonBlocksPro = [];
-import { subscribe } from '@wordpress/data';
-
-//パターンエディターでアコーディオンブロックを使用しない
-const unsubscribe = subscribe( () => {
-  const postType = wp.data.select( 'core/editor' ).getCurrentPostType();
-  if ( postType === 'wp_block' ) {
-    wp.blocks.unregisterBlockType( 'cocoon-blocks/toggle-box-1' );
-    unsubscribe(); // 取得できたらサブスクリプションを解除
-  }
-} );
 
 //構造化したブロック
 import * as balloon from './block/balloon';
@@ -240,6 +231,9 @@ export const registerCocoonBlocks = ( blocks = __getCocoonBlocks() ) => {
 };
 
 registerCocoonBlocks();
+
+// パターンエディターで旧アコーディオンブロックを使用しない監視。
+observePatternEditorToggleBox();
 
 //デフォルトブロックの拡張
 import './custom/code/block.js';

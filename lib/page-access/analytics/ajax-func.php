@@ -80,6 +80,118 @@ function cocoon_analytics_ajax_search_posts(){
 }
 endif;
 
+add_action('wp_ajax_cocoon_analytics_get_dashboard_widget', 'cocoon_analytics_ajax_get_dashboard_widget');
+add_action('wp_ajax_cocoon_analytics_get_dashboard_ranking', 'cocoon_analytics_ajax_get_dashboard_ranking');
+
+/**
+ * ダッシュボードウィジェットの人気記事ランキングを表示用に整形して返す
+ */
+if ( !function_exists( 'cocoon_analytics_dashboard_ranking_items' ) ):
+function cocoon_analytics_dashboard_ranking_items($from, $to, $limit = 5){
+  $rows = cocoon_analytics_ranking($from, $to, null, $limit);
+  // タイトルとパーマリンクの取得で記事ごとにクエリが出ないよう、投稿キャッシュを一括で温める
+  // タームも含めるのはパーマリンク構造に %category% がある場合に必要なため
+  if (!empty($rows) && function_exists('_prime_post_caches')) {
+    _prime_post_caches(wp_list_pluck($rows, 'post_id'), true, false);
+  }
+  $items = array();
+  $rank = 1;
+  foreach ($rows as $item) {
+    $post_id = $item['post_id'];
+    $title = get_the_title($post_id);
+    if (empty($title)) {
+      $title = __('(タイトルなし)', THEME_NAME);
+    }
+    $items[] = array(
+      'rank'  => $rank,
+      'title' => $title,
+      'url'   => esc_url_raw(get_permalink($post_id)),
+      'pv'    => number_format_i18n($item['pv']),
+    );
+    $rank++;
+  }
+  return $items;
+}
+endif;
+
+/**
+ * ダッシュボードウィジェットのリクエスト共通の権限・nonce検証
+ */
+if ( !function_exists( 'cocoon_analytics_dashboard_widget_guard' ) ):
+function cocoon_analytics_dashboard_widget_guard(){
+  if (!current_user_can('manage_options')) {
+    wp_send_json_error(array('message' => 'forbidden'), 403);
+  }
+  check_ajax_referer('cocoon_analytics_dashboard_widget', 'nonce');
+  // 設定でダッシュボード機能が無効なら集計クエリを一切実行しない
+  if (!is_access_count_enable() || !is_access_analytics_enable()) {
+    wp_send_json_error(array('message' => 'disabled'), 403);
+  }
+}
+endif;
+
+/**
+ * AJAX: ダッシュボードウィジェットのグラフ＋初期ランキングを取得
+ *
+ * ウィジェットが実際に表示されたときだけ呼ばれるため、
+ * 非表示・折りたたみ状態では集計クエリが一切走らない。
+ */
+if ( !function_exists( 'cocoon_analytics_ajax_get_dashboard_widget' ) ):
+function cocoon_analytics_ajax_get_dashboard_widget(){
+  cocoon_analytics_dashboard_widget_guard();
+
+  $to = current_time('Y-m-d');
+
+  // 1. 日別: 直近7日間（本日を含む）
+  $daily = cocoon_analytics_daily_pv(date('Y-m-d', strtotime($to . ' -6 days')), $to);
+
+  // 2. 週別: 直近7週分（今週を含む）
+  $weekly = cocoon_analytics_weekly_pv(date('Y-m-d', strtotime($to . ' -48 days')), $to);
+  if (count($weekly) > 7) {
+    $weekly = array_slice($weekly, -7);
+  }
+
+  // 3. 月別: 直近7ヶ月分（当月を含む）。月末日に-6ヶ月すると翌月へ繰り上がるため、先に月初へ丸める
+  $monthly_from = date('Y-m-01', strtotime(date('Y-m-01', strtotime($to)) . ' -6 months'));
+  $monthly = cocoon_analytics_monthly_pv($monthly_from, $to);
+  if (count($monthly) > 7) {
+    $monthly = array_slice($monthly, -7);
+  }
+
+  // 4. 年別: 直近7年分（今年を含む）。年の基準はサイトのタイムゾーン
+  $yearly = cocoon_analytics_yearly_pv(((int) current_time('Y') - 6) . '-01-01', $to);
+
+  // 5. 人気記事は初期表示期間の1件だけ取得し、期間切り替え時に追加取得する
+  $period = cocoon_analytics_widget_period_range(get_access_analytics_default_period());
+
+  wp_send_json_success(array(
+    'daily'   => cocoon_analytics_chart_labels($daily, 'daily'),
+    'weekly'  => cocoon_analytics_chart_labels($weekly, 'weekly'),
+    'monthly' => cocoon_analytics_chart_labels($monthly, 'monthly'),
+    'yearly'  => cocoon_analytics_chart_labels($yearly, 'yearly'),
+    'period'  => $period['key'],
+    'ranking' => cocoon_analytics_dashboard_ranking_items($period['from'], $period['to']),
+  ));
+}
+endif;
+
+/**
+ * AJAX: ダッシュボードウィジェットの人気記事ランキングを期間指定で取得
+ */
+if ( !function_exists( 'cocoon_analytics_ajax_get_dashboard_ranking' ) ):
+function cocoon_analytics_ajax_get_dashboard_ranking(){
+  cocoon_analytics_dashboard_widget_guard();
+
+  $requested = isset($_GET['period']) ? sanitize_key($_GET['period']) : '';
+  $period = cocoon_analytics_widget_period_range($requested);
+
+  wp_send_json_success(array(
+    'period'  => $period['key'],
+    'ranking' => cocoon_analytics_dashboard_ranking_items($period['from'], $period['to']),
+  ));
+}
+endif;
+
 /**
  * AJAX: 記事一覧をPV順で取得（検索キーワード対応、ページング対応）
  */

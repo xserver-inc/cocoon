@@ -11,12 +11,19 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // 自前でプロフィール画像のアップロード
 ///////////////////////////////////////
 //プロフィール画面で設定したプロフィール画像
-if ( !function_exists( 'get_the_author_upladed_avatar_url' ) ):
-function get_the_author_upladed_avatar_url($user_id){
+if ( !function_exists( 'get_the_author_uploaded_avatar_url' ) ):
+function get_the_author_uploaded_avatar_url($user_id){
   if (!$user_id) {
     $user_id = get_the_posts_author_id();
   }
+  //ユーザーメタキーは既存データ保持のため誤字のまま
   return esc_html(get_the_author_meta('upladed_avatar', $user_id));
+}
+endif;
+//エイリアス（関数名にスペルミスがあったので。子テーマカスタマイズ時のエラー回避用）
+if ( !function_exists( 'get_the_author_upladed_avatar_url' ) ):
+function get_the_author_upladed_avatar_url($user_id){
+  return get_the_author_uploaded_avatar_url($user_id);
 }
 endif;
 //プロフィール画面で設定したプロフィールページURL
@@ -44,7 +51,7 @@ function add_avatar_to_user_profile($user) {
       </th>
       <td>
       <?php
-        generate_upload_image_tag('upladed_avatar', get_the_author_upladed_avatar_url($user->ID));
+        generate_upload_image_tag('upladed_avatar', get_the_author_uploaded_avatar_url($user->ID));
        ?>
        <p class="description"><?php _e( '自前でプロフィール画像をアップロードする場合は画像を選択してください。Gravatarよりこちらのプロフィール画像が優先されます。240×240pxの正方形の画像がお勧めです。', THEME_NAME ) ?><?php _e( 'ページサイズ縮小のため<a href="https://tinypng.com/" target="_blank" rel="noopener">TinyPNG</a>等で登録前にで圧縮することをおすすめします。', THEME_NAME ) ?></p>
       </td>
@@ -76,19 +83,41 @@ add_action('personal_options_update', 'update_avatar_to_user_profile');
 add_action('edit_user_profile_update', 'update_avatar_to_user_profile');
 if ( !function_exists( 'update_avatar_to_user_profile' ) ):
 function update_avatar_to_user_profile($user_id) {
-  if ( current_user_can('edit_user',$user_id) || is_user_administrator() ){
-    // URL値をサニタイズしてからDB保存
-    $upladed_avatar = isset($_POST['upladed_avatar']) ? esc_url_raw($_POST['upladed_avatar']) : '';
-    update_user_meta($user_id, 'upladed_avatar', $upladed_avatar);
-    $profile_page_url = isset($_POST['profile_page_url']) ? esc_url_raw($_POST['profile_page_url']) : '';
-    update_user_meta($user_id, 'profile_page_url', $profile_page_url);
+  $user_id = (int)$user_id;
+  if ( !$user_id || !current_user_can('edit_user', $user_id) ) {
+    return;
+  }
 
-    //LINE@ URLの%40が消えるので@に変換する処理
-    if (isset($_POST['line_at_url'])) {
-      // %40を@に変換してからURLをサニタイズ
-      $_POST['line_at_url'] = esc_url_raw(str_replace('%40', '@', $_POST['line_at_url']));
+  // WordPress標準プロフィールフォームで発行されるnonceの検証
+  if ( !isset($_POST['_wpnonce']) || !is_scalar($_POST['_wpnonce']) ) {
+    return;
+  }
+  $nonce = sanitize_text_field(wp_unslash((string)$_POST['_wpnonce']));
+  if ( !wp_verify_nonce($nonce, 'update-user_'.$user_id) ) {
+    return;
+  }
+
+  // POSTに存在するCocoon独自メタだけを対象にした部分更新
+  $url_meta_keys = array('upladed_avatar', 'profile_page_url');
+  foreach ($url_meta_keys as $meta_key) {
+    if ( !array_key_exists($meta_key, $_POST) || !is_scalar($_POST[$meta_key]) ) {
+      continue;
     }
-    //_v($_POST['line_at_url']);
+
+    $value = esc_url_raw(wp_unslash((string)$_POST[$meta_key]));
+    update_user_meta($user_id, $meta_key, $value);
+  }
+
+  if ( array_key_exists('line_at_url', $_POST) ) {
+    // 配列入力をWordPress標準保存へ渡さないための未送信扱い
+    if ( !is_scalar($_POST['line_at_url']) ) {
+      unset($_POST['line_at_url']);
+      return;
+    }
+
+    // LINE@ URLの%40を維持するための@への変換
+    $line_at_url = wp_unslash((string)$_POST['line_at_url']);
+    $_POST['line_at_url'] = esc_url_raw(str_replace('%40', '@', $line_at_url));
   }
 }
 endif;
@@ -107,10 +136,10 @@ function get_uploaded_user_profile_avatar( $avatar, $id_or_email, $size, $defaul
   if ( empty( $user_id ) || $args['force_default'] == true)
     return $avatar;
 
-  if (get_the_author_upladed_avatar_url($user_id)) {
+  if (get_the_author_uploaded_avatar_url($user_id)) {
     $alt = !empty($alt) ? $alt : get_the_author_meta( 'display_name', $user_id );;
     $author_class = is_author( $user_id ) ? ' current-author' : '' ;
-    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_upladed_avatar_url($user_id) ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
+    $avatar = "<img alt='" . esc_attr( $alt ) . "' src='" . esc_url( get_the_author_uploaded_avatar_url($user_id) ) . "' class='avatar avatar-{$size}{$author_class} photo' height='{$size}' width='{$size}' />";
   }
 
   return $avatar;

@@ -23,9 +23,12 @@
       "type": "string",
       "default": ""
     },
-    "style": {
+    "balloonStyle": {
       "type": "string",
       "default": "stn"
+    },
+    "style": {
+      "type": "object"
     },
     "position": {
       "type": "string",

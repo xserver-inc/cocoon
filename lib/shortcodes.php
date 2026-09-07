@@ -1188,12 +1188,53 @@ function toc_error_admin_notices() {
 }
 endif;
 
+//CTAで利用可能なレイアウトクラス
+if ( !function_exists( 'get_cta_allowed_layout_classes' ) ):
+function get_cta_allowed_layout_classes() {
+  return array(
+    '',
+    'cta-top-and-bottom',
+    'cta-left-and-right',
+    'cta-right-and-left',
+  );
+}
+endif;
+
+//CTAで利用可能なボタン色クラス
+if ( !function_exists( 'get_cta_allowed_button_color_classes' ) ):
+function get_cta_allowed_button_color_classes() {
+  return array(
+    '',
+    'btn-white',
+    'btn-black',
+    'btn-red',
+    'btn-pink',
+    'btn-purple',
+    'btn-deep',
+    'btn-indigo',
+    'btn-blue',
+    'btn-light-blue',
+    'btn-cyan',
+    'btn-teal',
+    'btn-green',
+    'btn-light-green',
+    'btn-lime',
+    'btn-yellow',
+    'btn-amber',
+    'btn-orange',
+    'btn-deep-orange',
+    'btn-brown',
+    'btn-grey',
+    'btn-blue-grey',
+  );
+}
+endif;
+
 //CTAショートコード（主にCTAブロック用）
 add_shortcode('cta', 'get_cta_tag');
 if ( !function_exists( 'get_cta_tag' ) ):
 function get_cta_tag($atts, $content = '' ){
-  $content = (string)$content;
-  extract(shortcode_atts(array(
+  $atts = shortcode_atts(array(
     'heading' => __( '見出し', THEME_NAME ),
     'image_url' => '',
     'layout' => 'cta-top-and-bottom',
@@ -1201,24 +1242,49 @@ function get_cta_tag($atts, $content = '' ){
     'button_text' => __( '詳細はこちら', THEME_NAME ),
     'button_url' => './',
     'button_color' => 'btn-red',
-  ), $atts, 'cta'));
+  ), is_array($atts) ? $atts : array(), 'cta');
 
-  //改行フィルターを適用
-  if ($filter) {
-    $content = wpautop($content);
+  $content = is_scalar($content) ? (string)$content : '';
+  $heading = is_scalar($atts['heading']) ? sanitize_text_field((string)$atts['heading']) : '';
+  $image_url = is_scalar($atts['image_url']) ? esc_url_raw((string)$atts['image_url']) : '';
+  $layout = is_scalar($atts['layout']) ? trim((string)$atts['layout']) : 'cta-top-and-bottom';
+  $filter = !empty($atts['filter']);
+  $button_text = is_scalar($atts['button_text']) ? sanitize_text_field((string)$atts['button_text']) : '';
+  $button_url = is_scalar($atts['button_url']) ? esc_url_raw((string)$atts['button_url']) : '';
+  $button_color = is_scalar($atts['button_color']) ? trim((string)$atts['button_color']) : 'btn-red';
+
+  // 固定されたデザイン選択肢だけを通すための許可リスト検証
+  if ( !in_array($layout, get_cta_allowed_layout_classes(), true) ) {
+    $layout = 'cta-top-and-bottom';
+  }
+  if ( !in_array($button_color, get_cta_allowed_button_color_classes(), true) ) {
+    $button_color = 'btn-red';
   }
 
-  set_query_var('_HEADING', $heading);
-  set_query_var('_LAYOUT', $layout);
-  set_query_var('_IMAGE_URL', $image_url);
-  set_query_var('_MESSAGE', $content);
-  set_query_var('_BUTTON_TEXT', $button_text);
-  set_query_var('_BUTTON_URL', $button_url);
-  set_query_var('_BUTTON_COLOR_CLASS', $button_color);
+  //改行フィルターを適用
+  if ($filter && $content !== '') {
+    $content = wpautop($content);
+  }
+  $content = wp_kses_post($content);
+
+  $template_args = array(
+    '_HEADING' => $heading,
+    '_LAYOUT' => $layout,
+    '_IMAGE_URL' => $image_url,
+    '_MESSAGE' => $content,
+    '_BUTTON_TEXT' => $button_text,
+    '_BUTTON_URL' => $button_url,
+    '_BUTTON_COLOR_CLASS' => $button_color,
+  );
+
+  // 子テーマの既存CTAテンプレート向けクエリ変数との互換維持
+  foreach ($template_args as $key => $value) {
+    set_query_var($key, $value);
+  }
 
   ob_start();
-  cocoon_template_part('tmp/cta-box');
-  $tag = (ob_get_clean());
+  cocoon_template_part('tmp/cta-box', null, $template_args);
+  $tag = ob_get_clean();
 
   return apply_filters('get_cta_tag', $tag);
 }

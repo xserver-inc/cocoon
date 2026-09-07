@@ -5,25 +5,80 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 
-import { THEME_NAME, CLICK_POINT_MSG, BLOCK_CLASS } from '../../helpers';
+import { THEME_NAME, CLICK_POINT_MSG } from '../../helpers';
+import {
+  isLegacyStyle,
+  migrateLegacyStyleAttribute,
+} from '../../style-attribute-compat';
 import classnames from 'classnames';
 
 import { __ } from '@wordpress/i18n';
 const { createBlock } = wp.blocks;
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import {
+  InnerBlocks,
+  InspectorControls,
+  useBlockProps,
+} from '@wordpress/block-editor';
 const { PanelBody, SelectControl } = wp.components;
 import { Fragment } from '@wordpress/element';
+
+const DEFAULT_BOX_STYLE = 'primary-box';
+
+// WordPress 7.0で破損が起きる直前の属性定義を、現行block.jsonから独立して保持します。
+const LEGACY_STYLE_ATTRIBUTES = {
+  style: {
+    type: [ 'string', 'object' ],
+    default: DEFAULT_BOX_STYLE,
+  },
+};
+
+// deprecatedの検証条件が将来のsupports変更に追随しないよう、当時の値を固定します。
+const LEGACY_SUPPORTS = {
+  anchor: true,
+  html: false,
+};
+
+// 現行直前のHTMLを再現し、正常な旧記事とWordPress 7.0で壊れた記事の両方を検出します。
+function saveLegacyStyle( { attributes } ) {
+  const { style } = attributes;
+  const classes = classnames( 'block-box', {
+    [ style ]: !! style,
+  } );
+  const blockProps = useBlockProps.save( {
+    className: classes,
+  } );
+
+  return (
+    <div { ...blockProps }>
+      <InnerBlocks.Content />
+    </div>
+  );
+}
+
+// どの旧形式からでも、deprecatedを経由せず現行属性へ直接移行します。
+const migrateStyle = ( attributes ) =>
+  migrateLegacyStyleAttribute( attributes, 'boxStyle', DEFAULT_BOX_STYLE );
+
+const legacyStyle = {
+  apiVersion: 3,
+  supports: LEGACY_SUPPORTS,
+  attributes: LEGACY_STYLE_ATTRIBUTES,
+  isEligible: isLegacyStyle,
+  migrate: migrateStyle,
+  save: saveLegacyStyle,
+};
 
 //classの取得
 function getClasses( style ) {
   const classes = classnames( {
     [ style ]: !! style,
-    [ 'block-box' ]: true,
+    'block-box': true,
   } );
   return classes;
 }
 
 export default [
+  legacyStyle,
   {
     attributes: {
       content: {
@@ -67,9 +122,10 @@ export default [
         },
       ],
     },
+    migrate: migrateStyle,
 
     edit( { attributes, setAttributes, className } ) {
-      const { content, style } = attributes;
+      const { style } = attributes;
 
       return (
         <Fragment>
@@ -114,7 +170,7 @@ export default [
                   },
                 ] }
                 __nextHasNoMarginBottom={ true }
-                __next40pxDefaultSize={ true }  // 新しいデフォルトサイズに対応
+                __next40pxDefaultSize={ true } // 新しいデフォルトサイズに対応
               />
             </PanelBody>
           </InspectorControls>
@@ -127,7 +183,7 @@ export default [
     },
 
     save( { attributes } ) {
-      const { content, style } = attributes;
+      const { style } = attributes;
       return (
         <div className={ getClasses( style ) }>
           <InnerBlocks.Content />

@@ -110,6 +110,9 @@ async function main() {
     'vendor',
     'tests',
     'scripts',
+    // 開発環境の診断コードと一時作業ファイルの除外
+    'docker',
+    'scratch',
     'tmp/css-custom.php',
     'plugins', // サードパーティJSプラグイン（minified含む）を除外
     'fonts', // フォントファイルを除外
@@ -147,7 +150,9 @@ async function main() {
     const normalized = pot.replace( /^"POT-Creation-Date: [^\n]*\n/m, '' );
     if ( normalized !== pot ) {
       fs.writeFileSync( potPath, normalized );
-      console.log( '🧹 POT-Creation-Date ヘッダーを除去しました（決定論的出力）。' );
+      console.log(
+        '🧹 POT-Creation-Date ヘッダーを除去しました（決定論的出力）。'
+      );
     }
 
     console.log( '\n✅ languages/cocoon.pot の更新が完了しました！' );

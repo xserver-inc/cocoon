@@ -61,7 +61,7 @@ function generate_dynamic_image($post_id, $new_image_path, $width, $height) {
   // 投稿者の表示名の取得
   $author_name = get_the_author_meta('display_name', $author_id);
   // 投稿者のアバター画像を取得
-  $avatar_url = get_the_author_upladed_avatar_url($author_id);
+  $avatar_url = get_the_author_uploaded_avatar_url($author_id);
 
 
   // ベース画像の作成
@@ -378,7 +378,7 @@ function generate_dynamic_featured_image($post_id) {
   // 投稿者の表示名の取得
   $author_name = get_the_author_meta('display_name', $author_id);
   // 投稿者のアバター画像を取得
-  $avatar_url = get_the_author_upladed_avatar_url($author_id);
+  $avatar_url = get_the_author_uploaded_avatar_url($author_id);
 
   // 画像のサイズを設定
   $width = 1280;

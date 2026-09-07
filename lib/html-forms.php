@@ -1023,6 +1023,11 @@ function generate_popular_entries_tag($atts){
   // offset分を除外して抽出
   $records = $all_records ? array_slice($all_records, $offset, $entry_count) : array();
 
+  //カードごとにget_post()・メタ・タームのクエリが走るため、表示分をまとめて先読み
+  if ($records && function_exists('_prime_post_caches')) {
+    _prime_post_caches(wp_list_pluck($records, 'ID'), true, true);
+  }
+
   $cards_classes = get_additional_widget_entry_cards_classes(array(
     'type'            => $entry_type,
     'ranking_visible' => $ranking_visible,

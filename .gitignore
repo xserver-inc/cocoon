@@ -12,6 +12,9 @@ package-lock.json
 .agent
 .agents/
 
+# 一時作業フォルダ
+/scratch/
+
 # GitHub Copilot
 .github/copilot-instructions.md
 .github/docs/

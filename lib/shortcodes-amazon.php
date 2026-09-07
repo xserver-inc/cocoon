@@ -561,7 +561,7 @@ function amazon_product_link_shortcode($atts){
       $json_error_message_str = is_string($json_error_message) ? $json_error_message : '';
 
       $admin_message = __( 'アイテムを取得できませんでした。', THEME_NAME ).'<br>';
-      $admin_message .= '<pre class="nohighlight"><b>'.$json_error_code.'</b><br>'.preg_replace('/AWS Access Key ID: .+?\. /', '', $json_error_message_str).'</pre>';
+      $admin_message .= '<pre class="nohighlight"><b>'.esc_html($json_error_code).'</b><br>'.esc_html(preg_replace('/AWS Access Key ID: .+?\. /', '', $json_error_message_str)).'</pre>';
       $admin_message .= '<span class="red">'.__( 'このエラーメッセージは"サイト管理者のみ"に表示されています。', THEME_NAME ).'</span>';
 
       //キャッシュ名の取得
@@ -575,13 +575,10 @@ function amazon_product_link_shortcode($atts){
           $json_error_message.PHP_EOL;
         error_log_to_amazon_product($asin, $msg);
 
-        //リクエスト過多エラーの場合はキャッシュを保存しない
-        if ($json_error_code != 'TooManyRequests') {
-          //エラーの場合は一日だけキャッシュ
-          $expiration = DAY_IN_SECONDS;
-          //Amazon APIキャッシュの保存
-          set_transient($transient_id, $res, $expiration);
-        }
+        //一時的な障害は短時間だけ保持し、復旧後すぐ再取得できるようにする
+        $expiration = is_amazon_api_temporary_error_code($json_error_code) ? 5 * MINUTE_IN_SECONDS : DAY_IN_SECONDS;
+        //このキャッシュはログ・メールの重複送信を防ぐ役割も兼ねる
+        set_transient($transient_id, $res, $expiration);
       }
 
       return get_amazon_admin_error_message_tag($associate_url, $admin_message, null, null, $buttons_tag, $title, $keyword);

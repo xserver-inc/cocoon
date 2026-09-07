@@ -19,6 +19,9 @@ class DistributionFilesTest extends TestCase
     /** @var array export-ignore されているパスの一覧 */
     private array $exportIgnoredPaths = [];
 
+    /** @var array|null Gitで追跡されているパスの一覧 */
+    private static ?array $trackedFiles = null;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,6 +47,7 @@ class DistributionFilesTest extends TestCase
     {
         $fullPath = $this->themeRoot . '/' . ltrim($relativePath, '/');
         $this->assertFileExists($fullPath, "{$description} ({$relativePath}) が存在しません");
+        $this->assertGitTracked($relativePath, $description);
 
         foreach ($this->exportIgnoredPaths as $ignoredPath) {
             $normalizedIgnored = '/' . ltrim($ignoredPath, '/');
@@ -64,6 +68,37 @@ class DistributionFilesTest extends TestCase
                 );
             }
         }
+    }
+
+    /**
+     * 作業ツリーにあるだけの未追跡ファイルを、配布可能と誤判定しないための検証
+     */
+    private function assertGitTracked(string $relativePath, string $description): void
+    {
+        $gitMetadataPath = $this->themeRoot . '/.git';
+        if (!file_exists($gitMetadataPath)) {
+            return;
+        }
+
+        if (self::$trackedFiles === null) {
+            $output = [];
+            $exitCode = 0;
+            $command = 'git -C ' . escapeshellarg($this->themeRoot) . ' -c core.quotepath=false ls-files';
+
+            exec($command, $output, $exitCode);
+            $this->assertSame(0, $exitCode, 'Git追跡ファイルの一覧を取得できませんでした');
+            self::$trackedFiles = array_map(
+                static fn (string $path): string => str_replace('\\', '/', trim($path)),
+                $output
+            );
+        }
+
+        $normalizedTarget = str_replace('\\', '/', ltrim($relativePath, '/'));
+        $this->assertContains(
+            $normalizedTarget,
+            self::$trackedFiles,
+            "{$description} ({$relativePath}) がGitの追跡対象になっていません"
+        );
     }
 
     // ========================================================================
@@ -88,8 +123,200 @@ class DistributionFilesTest extends TestCase
             'amp.css'          => ['amp.css', 'AMP用CSS'],
             'editor-style.css' => ['editor-style.css', 'エディタ用CSS'],
             'keyframes.css'    => ['keyframes.css', 'アニメーションCSS'],
+            'cocoon-settings.css' => ['css/cocoon-settings.css', 'Cocoon設定画面CSS'],
             'javascript.js'    => ['javascript.js', 'メインJavaScript'],
         ];
+    }
+
+    /**
+     * 現在の作業内容から実際の配布tarを作り、追跡漏れとexport-ignoreを同時に検証する。
+     */
+    #[\PHPUnit\Framework\Attributes\Group('distribution')]
+    public function test_Git配布アーカイブに設定画面の実行ファイルだけが含まれる(): void
+    {
+        if (!file_exists($this->themeRoot . '/.git')) {
+            $this->markTestSkipped('Git管理情報がない配布環境ではアーカイブを再生成できません');
+        }
+
+        $temporaryIndex = tempnam(sys_get_temp_dir(), 'cocoon-git-index-');
+        $temporaryArchive = tempnam(sys_get_temp_dir(), 'cocoon-archive-');
+        $temporaryObjects = tempnam(sys_get_temp_dir(), 'cocoon-git-objects-');
+        $this->assertIsString($temporaryIndex);
+        $this->assertIsString($temporaryArchive);
+        $this->assertIsString($temporaryObjects);
+
+        // 空ファイルをGit indexとして誤認させないよう、パスだけ確保してから削除する。
+        unlink($temporaryIndex);
+        unlink($temporaryArchive);
+        unlink($temporaryObjects);
+        mkdir($temporaryObjects);
+
+        $previousIndex = getenv('GIT_INDEX_FILE');
+        $previousObjectDirectory = getenv('GIT_OBJECT_DIRECTORY');
+        $previousAlternates = getenv('GIT_ALTERNATE_OBJECT_DIRECTORIES');
+        $objectsOutput = $this->runGitCommand(['rev-parse', '--git-path', 'objects']);
+        $objectsPath = trim(implode("\n", $objectsOutput));
+        if (!preg_match('~\A(?:[A-Za-z]:[\\\\/]|/)~', $objectsPath)) {
+            $objectsPath = $this->themeRoot . '/' . $objectsPath;
+        }
+        $repositoryObjects = realpath($objectsPath);
+        $this->assertIsString($repositoryObjects);
+        putenv('GIT_INDEX_FILE=' . $temporaryIndex);
+        putenv('GIT_OBJECT_DIRECTORY=' . $temporaryObjects);
+        putenv('GIT_ALTERNATE_OBJECT_DIRECTORIES=' . $repositoryObjects);
+
+        try {
+            // 実indexを変更せず、HEADと現在の作業ツリー全体を一時indexへ合成する。
+            $this->runGitCommand(['read-tree', 'HEAD']);
+            $this->runGitCommand(['add', '-A', '--', '.']);
+            $treeOutput = $this->runGitCommand(['write-tree']);
+            $treeId = trim(implode("\n", $treeOutput));
+            $this->assertMatchesRegularExpression('/\A[0-9a-f]{40,64}\z/', $treeId);
+
+            $this->runGitCommand([
+                'archive',
+                '--format=tar',
+                '--output=' . $temporaryArchive,
+                $treeId,
+            ]);
+
+            $archiveEntries = $this->readTarEntryNames($temporaryArchive);
+            $this->assertContains('js/cocoon-settings-navigation.js', $archiveEntries);
+            $this->assertContains('css/cocoon-settings.css', $archiveEntries);
+
+            // 管理画面が利用する8言語の全翻訳形式を、実際の配布アーカイブ上で固定する。
+            foreach (['de_DE', 'en_US', 'es_ES', 'fr_FR', 'ko_KR', 'pt_PT', 'zh_CN', 'zh_TW'] as $locale) {
+                foreach (['po', 'mo', 'l10n.php'] as $extension) {
+                    $this->assertContains("languages/{$locale}.{$extension}", $archiveEntries);
+                }
+            }
+
+            $this->assertNotContains(
+                '.github/docs/COCOON-SETTINGS-DESIGN-IMPLEMENTATION-PLAN.md',
+                $archiveEntries
+            );
+            $this->assertNotContains(
+                '.github/docs/COCOON-SETTINGS-DATA-COMPATIBILITY-REPORT.md',
+                $archiveEntries
+            );
+            $this->assertNotContains('tests/js/cocoon-settings-navigation.test.js', $archiveEntries);
+            $this->assertNotContains('package.json', $archiveEntries);
+        } finally {
+            // 一時的な環境変数とファイルを、成功・失敗にかかわらず必ず元へ戻す。
+            if ($previousIndex === false) {
+                putenv('GIT_INDEX_FILE');
+            } else {
+                putenv('GIT_INDEX_FILE=' . $previousIndex);
+            }
+            if ($previousObjectDirectory === false) {
+                putenv('GIT_OBJECT_DIRECTORY');
+            } else {
+                putenv('GIT_OBJECT_DIRECTORY=' . $previousObjectDirectory);
+            }
+            if ($previousAlternates === false) {
+                putenv('GIT_ALTERNATE_OBJECT_DIRECTORIES');
+            } else {
+                putenv('GIT_ALTERNATE_OBJECT_DIRECTORIES=' . $previousAlternates);
+            }
+
+            if (file_exists($temporaryIndex)) {
+                unlink($temporaryIndex);
+            }
+            if (file_exists($temporaryArchive)) {
+                unlink($temporaryArchive);
+            }
+            $this->removeTemporaryDirectory($temporaryObjects);
+        }
+    }
+
+    /**
+     * 一時indexを共有したままGitコマンドを実行する。
+     *
+     * @param array<int, string> $arguments Gitへ渡す引数。
+     * @return array<int, string> 標準出力。
+     */
+    private function runGitCommand(array $arguments): array
+    {
+        $command = 'git -C ' . escapeshellarg($this->themeRoot)
+            . ' -c core.autocrlf=false -c core.safecrlf=false -c core.excludesFile=';
+        foreach ($arguments as $argument) {
+            $command .= ' ' . escapeshellarg($argument);
+        }
+
+        $output = [];
+        $exitCode = 0;
+        exec($command, $output, $exitCode);
+        $this->assertSame(0, $exitCode, 'Gitコマンドに失敗しました: ' . implode(' ', $arguments));
+
+        return $output;
+    }
+
+    /**
+     * Gitが生成したustarのヘッダーを読み、配布パスの一覧へ変換する。
+     *
+     * @return array<int, string> アーカイブ内のパス。
+     */
+    private function readTarEntryNames(string $archivePath): array
+    {
+        $handle = fopen($archivePath, 'rb');
+        $this->assertIsResource($handle);
+        $entries = [];
+
+        try {
+            while (!feof($handle)) {
+                $header = fread($handle, 512);
+                if (!is_string($header) || strlen($header) < 512 || trim($header, "\0") === '') {
+                    break;
+                }
+
+                // ustarのprefixとnameを結合し、長い配布パスにも対応する。
+                $name = rtrim(substr($header, 0, 100), "\0");
+                $prefix = rtrim(substr($header, 345, 155), "\0");
+                $entryName = $prefix === '' ? $name : $prefix . '/' . $name;
+                $entries[] = rtrim($entryName, '/');
+
+                // 次の512バイト境界までデータ本体を読み飛ばす。
+                $sizeField = trim(substr($header, 124, 12), " \0");
+                $entrySize = $sizeField === '' ? 0 : octdec($sizeField);
+                $paddedSize = (int) (ceil($entrySize / 512) * 512);
+                if ($paddedSize > 0) {
+                    fseek($handle, $paddedSize, SEEK_CUR);
+                }
+            }
+        } finally {
+            fclose($handle);
+        }
+
+        return $entries;
+    }
+
+    /**
+     * このテストが作成した一時Git objectディレクトリだけを後始末する。
+     */
+    private function removeTemporaryDirectory(string $directory): void
+    {
+        if (!is_dir($directory)) {
+            return;
+        }
+
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($directory, \FilesystemIterator::SKIP_DOTS),
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+
+        foreach ($iterator as $item) {
+            if ($item->isDir()) {
+                chmod($item->getPathname(), 0777);
+                rmdir($item->getPathname());
+            } else {
+                // Git objectはWindowsで読み取り専用になるため、削除前に書込み可能へ戻す。
+                chmod($item->getPathname(), 0666);
+                unlink($item->getPathname());
+            }
+        }
+
+        chmod($directory, 0777);
+        rmdir($directory);
     }
 
     // ========================================================================
@@ -585,6 +812,7 @@ class DistributionFilesTest extends TestCase
     {
         return [
             'admin-javascript.js'            => ['js/admin-javascript.js', '管理画面JS'],
+            'cocoon-settings-navigation.js'  => ['js/cocoon-settings-navigation.js', 'Cocoon設定ナビゲーションJS'],
             'gutenberg-editor-classes.js'     => ['js/gutenberg-editor-classes.js', 'Gutenbergエディタクラス付与JS'],
             'gutenberg-toolbar.js'            => ['js/gutenberg-toolbar.js', 'Gutenbergツールバー用JS'],
             'set-event-passive.js'            => ['js/set-event-passive.js', 'パッシブイベントJS'],
@@ -631,6 +859,8 @@ class DistributionFilesTest extends TestCase
             'Composer JSON'        => ['/composer.json', 'Composer設定'],
             'Composer Lock'        => ['/composer.lock', 'Composerロック'],
             '翻訳スクリプト'       => ['/scripts/', '翻訳ワークフロー用スクリプト'],
+            'Cocoon設定実装計画書' => ['/.github/docs/COCOON-SETTINGS-DESIGN-IMPLEMENTATION-PLAN.md', '内部実装計画書'],
+            'Cocoon設定互換性報告書' => ['/.github/docs/COCOON-SETTINGS-DATA-COMPATIBILITY-REPORT.md', '内部互換性報告書'],
             'gitattributes'        => ['/.gitattributes', 'gitattributes'],
             'gitignore'            => ['/.gitignore', 'gitignore'],
         ];

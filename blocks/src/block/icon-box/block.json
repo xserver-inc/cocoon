@@ -7,9 +7,12 @@
     "box"
   ],
   "attributes": {
-    "style": {
+    "boxStyle": {
       "type": "string",
       "default": "information-box"
+    },
+    "style": {
+      "type": "object"
     }
   },
   "example": {
