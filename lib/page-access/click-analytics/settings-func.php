@@ -242,3 +242,11 @@ function cocoon_click_save_settings(){
   }
 }
 endif;
+
+if ( !function_exists( 'cocoon_click_map_device_width' ) ):
+function cocoon_click_map_device_width($device){
+  // 管理画面の幅に左右されず、選んだ端末のレスポンシブ配置を再現します。
+  $widths = array('mobile' => 390, 'tablet' => 820, 'desktop' => 1280);
+  return isset($widths[$device]) ? $widths[$device] : $widths['desktop'];
+}
+endif;

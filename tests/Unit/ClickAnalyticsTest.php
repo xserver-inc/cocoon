@@ -11,6 +11,7 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/settings-fu
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/statistics-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/normalize-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/rest-func.php';
+require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/admin-query-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/export-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
 
@@ -165,5 +166,68 @@ class ClickAnalyticsTest extends TestCase
         $this->assertSame('192.0.2.0/24', cocoon_click_network_bucket('192.0.2.123'));
         $this->assertSame('20010db800000000/64', cocoon_click_network_bucket('2001:db8::1234'));
         $this->assertSame('', cocoon_click_network_bucket('not-an-ip'));
+    }
+
+    public function testRelativeAndAbsoluteFragmentsShareAnIdentity(): void
+    {
+        foreach (array('details', '日本語の見出し', rawurlencode('日本語の見出し')) as $fragment) {
+            $relative = cocoon_click_normalize_destination('#' . $fragment, 'https://example.com/article');
+            $absolute = cocoon_click_normalize_destination('https://example.com/article#' . $fragment, 'https://example.com/article');
+            $this->assertSame($relative['canonical'], $absolute['canonical']);
+            $this->assertStringStartsWith('#', $relative['canonical']);
+        }
+        $this->assertSame('#日本語の見出し', $relative['canonical']);
+    }
+
+    public function testExclusionMatchesBeforeRemovingQueryValues(): void
+    {
+        $previous = $GLOBALS['test_theme_mods'] ?? array();
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_EXCLUDED_URLS] = 'private=1';
+        try {
+            $this->assertFalse(cocoon_click_normalize_destination('https://outside.test/path?private=1', 'https://example.com/article'));
+        } finally {
+            $GLOBALS['test_theme_mods'] = $previous;
+        }
+    }
+
+    public function testContactLabelDoesNotStoreAddress(): void
+    {
+        $destination = cocoon_click_normalize_destination('mailto:person@example.com', 'https://example.com/article');
+        $identity = cocoon_click_build_link_identity(10, $destination, array('label' => 'person@example.com'));
+        $this->assertSame('mailto:', $identity['anchor_text']);
+    }
+
+    public function testOverviewArrivalRateUsesInternalClicksOnly(): void
+    {
+        $row = cocoon_click_metric_row(array('clicks' => 100, 'internal_clicks' => 10, 'arrivals' => 10));
+        $this->assertEquals(1, $row['arrival_rate']);
+        $external = cocoon_click_metric_row(array('clicks' => 90, 'destination_type' => 'external'));
+        $this->assertNull($external['arrival_rate']);
+    }
+
+    public function testValidCookieIsExcludedEvenAfterRestClearsCurrentUser(): void
+    {
+        \Brain\Monkey\Functions\when('wp_validate_auth_cookie')->justReturn(42);
+        $this->assertTrue(cocoon_click_request_user_is_excluded());
+    }
+
+    public function testInternalOutcomesRespectInternalTrackingSetting(): void
+    {
+        $previous = $GLOBALS['test_theme_mods'] ?? array();
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_TRACK_INTERNAL] = 0;
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_OUTCOMES] = 1;
+        try {
+            $this->assertFalse(cocoon_click_event_is_trackable('internal_outcome', 'internal'));
+        } finally {
+            $GLOBALS['test_theme_mods'] = $previous;
+        }
+    }
+
+    public function testMapPreviewUsesDeviceWidths(): void
+    {
+        $this->assertSame(390, cocoon_click_map_device_width('mobile'));
+        $this->assertSame(820, cocoon_click_map_device_width('tablet'));
+        $this->assertSame(1280, cocoon_click_map_device_width('desktop'));
+        $this->assertSame(1280, cocoon_click_map_device_width('invalid'));
     }
 }

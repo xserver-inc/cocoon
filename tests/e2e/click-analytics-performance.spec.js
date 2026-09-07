@@ -9,7 +9,9 @@ const collector = fs.readFileSync(collectorPath, 'utf8');
 test('計測JavaScriptは8KB以下で100リンク初期処理にLong Taskを発生させない', async ({page}) => {
   expect(zlib.gzipSync(Buffer.from(collector)).length).toBeLessThanOrEqual(8192);
   const links = Array.from({length: 100}, (_, index) => `<a href="#link-${index}">link ${index}</a>`).join('');
-  await page.setContent(`<!doctype html><html><body><main class="entry-content">${links}</main></body></html>`);
+  // 実際の公開ページと同じく、ストレージを利用できるオリジンで計測します。
+  await page.route("https://analytics.test/**", route => route.fulfill({contentType: "text/html; charset=utf-8", body: `<!doctype html><html><body><main class="entry-content">${links}</main></body></html>`}));
+  await page.goto("https://analytics.test/article");
   await page.evaluate(() => {
     window.__cocoonLongTasks = [];
     window.__cocoonObservationStarted = performance.now();

@@ -32,60 +32,51 @@ endif;
 
 if ( !function_exists( 'cocoon_click_stats_source_sql' ) ):
 function cocoon_click_stats_source_sql($from, $to){
-  $today = current_time('Y-m-d');
-  $cutoff = gmdate('Y-m-d', strtotime($today . ' -' . (get_click_analytics_daily_retention() - 1) . ' days'));
+  $cutoff = max(cocoon_click_retention_cutoff(current_time('Y-m-d'), get_click_analytics_daily_retention()), (string) get_theme_option('click_analytics_daily_purged_before', ''));
+  $status = get_theme_option(OP_CLICK_ANALYTICS_MONTHLY_STATUS, array());
+  $finalized = isset($status['finalized_through']) ? $status['finalized_through'] : '';
+  $columns = 'source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches';
+  $daily = 'SELECT stat_date AS period_date,' . $columns . ' FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '` WHERE stat_date BETWEEN %s AND %s';
+  $monthly = "SELECT CONCAT(stat_month,'-01') AS period_date," . $columns . ' FROM `' . CLICK_STATS_MONTHLY_TABLE_NAME . '` WHERE stat_month BETWEEN %s AND %s';
   $parts = array();
   $args = array();
   $approximate = false;
   $direct_sql = '';
   $direct_where = '';
-  $current_month = current_time('Y-m-01');
-  $to_month_end = gmdate('Y-m-t', strtotime($to));
-  $monthly_status = get_theme_option(OP_CLICK_ANALYTICS_MONTHLY_STATUS, array());
-  $monthly_ready = isset($monthly_status['status'], $monthly_status['covered_through'])
-    && $monthly_status['status'] === 'success'
-    && $monthly_status['covered_through'] >= substr($to, 0, 7);
-  $is_closed_month_range = $monthly_ready && substr($from, 8, 2) === '01' && $to === $to_month_end && $to < $current_month;
-  if ($is_closed_month_range) {
-    // 閉じた月だけの期間は、日次行を再集計せず確定済み月次表から読みます。
-    $parts[] = "SELECT CONCAT(stat_month,'-01') AS period_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches FROM `" . CLICK_STATS_MONTHLY_TABLE_NAME . '` WHERE stat_month BETWEEN %s AND %s';
-    $args[] = substr($from, 0, 7);
-    $args[] = substr($to, 0, 7);
-    $approximate = true;
-    $direct_sql = '`' . CLICK_STATS_MONTHLY_TABLE_NAME . '`';
-    $direct_where = 's.stat_month BETWEEN %s AND %s';
-  } elseif ($from >= $cutoff) {
-    $parts[] = 'SELECT stat_date AS period_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '` WHERE stat_date BETWEEN %s AND %s';
-    $args[] = $from;
-    $args[] = $to;
+  // 日次と月次の保存範囲を別々に判定し、月次より長く残る日次も読み出します。
+  $oldest_month = gmdate('Y-m', strtotime(current_time('Y-m-01') . ' -' . get_click_analytics_monthly_retention() . ' months'));
+  if (!empty($status['covered_from'])) $oldest_month = max($oldest_month, $status['covered_from']);
+  $monthly_from = max(substr($from, 0, 7), $oldest_month);
+  $cutoff_month = substr($cutoff, 8, 2) === '01' ? gmdate('Y-m', strtotime($cutoff . ' -1 day')) : substr($cutoff, 0, 7);
+  $monthly_to = min(substr($to, 0, 7), $finalized, $cutoff_month);
+  if ($from >= $cutoff || $finalized === '' || $monthly_from > $monthly_to) {
+    $parts[] = $daily;
+    $args = array($from, $to);
     $direct_sql = '`' . CLICK_STATS_DAILY_TABLE_NAME . '`';
     $direct_where = 's.stat_date BETWEEN %s AND %s';
   } else {
-    $approximate = true;
-    $last_month = gmdate('Y-m', strtotime($current_month . ' -1 day'));
-    $monthly_to = min(substr($to, 0, 7), $last_month);
-    if (substr($from, 0, 7) <= $monthly_to) {
-      $parts[] = "SELECT CONCAT(stat_month,'-01') AS period_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches FROM `" . CLICK_STATS_MONTHLY_TABLE_NAME . '` WHERE stat_month BETWEEN %s AND %s';
-      $args[] = substr($from, 0, 7);
-      $args[] = $monthly_to;
+    $month_start = $monthly_from . '-01';
+    $month_end = gmdate('Y-m-t', strtotime($monthly_to . '-01'));
+    if ($from < $month_start) {
+      $parts[] = $daily;
+      array_push($args, $from, gmdate('Y-m-d', strtotime($month_start . ' -1 day')));
     }
-    if ($to >= $current_month) {
-      $parts[] = 'SELECT stat_date AS period_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '` WHERE stat_date BETWEEN %s AND %s';
-      $args[] = max($from, $current_month);
-      $args[] = $to;
+    $parts[] = $monthly;
+    array_push($args, $monthly_from, $monthly_to);
+    $approximate = $from > $month_start || $to < $month_end;
+    if ($to > $month_end) {
+      $parts[] = $daily;
+      array_push($args, gmdate('Y-m-d', strtotime($month_end . ' +1 day')), $to);
+    }
+    if (count($parts) === 1) {
+      $direct_sql = '`' . CLICK_STATS_MONTHLY_TABLE_NAME . '`';
+      $direct_where = 's.stat_month BETWEEN %s AND %s';
     }
   }
-  if (!$parts) {
-    $parts[] = 'SELECT stat_date AS period_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '` WHERE 1=0';
-  }
-  return array(
-    'sql' => '(' . implode(' UNION ALL ', $parts) . ')',
-    'args' => $args,
-    'approximate' => $approximate,
-    'direct_sql' => $direct_sql,
-    'direct_where' => $direct_where,
-  );
+  return array('sql' => '(' . implode(' UNION ALL ', $parts) . ')', 'args' => $args,
+    'approximate' => $approximate, 'direct_sql' => $direct_sql, 'direct_where' => $direct_where);
 }
+
 endif;
 
 if ( !function_exists( 'cocoon_click_analytics_min_date' ) ):
@@ -202,7 +193,9 @@ function cocoon_click_metric_row($row){
   $row['effective_n'] = $interval['effective_n'];
   $row['data_sufficient'] = cocoon_click_data_is_sufficient($row['effective_n'], $row['sampled_clicks']);
   $row['data_sufficiency_reasons'] = cocoon_click_data_sufficiency_reasons($row['effective_n'], $row['sampled_clicks']);
-  $row['arrival_rate'] = $row['clicks'] > 0 ? $row['arrivals'] / $row['clicks'] : null;
+  // 外部クリックを内部到着率の分母に含めません。
+  $internal_clicks = isset($row['internal_clicks']) ? (int) $row['internal_clicks'] : (isset($row['destination_type']) && $row['destination_type'] !== 'internal' ? 0 : $row['clicks']);
+  $row['arrival_rate'] = $internal_clicks > 0 ? $row['arrivals'] / $internal_clicks : null;
   $row['engagement_rate'] = $row['arrivals'] > 0 ? $row['engaged_arrivals'] / $row['arrivals'] : null;
   $row['average_time_to_click_ms'] = $row['clicks'] > 0 ? $row['total_time_to_click_ms'] / $row['clicks'] : null;
   return $row;
@@ -361,23 +354,29 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
       }
       $base_args = array_merge($source['args'], $filter['args']);
       $total = (int) $wpdb->get_var(cocoon_click_prepare_query($count_sql, $base_args));
-      $aggregate_sql = "SELECT MIN(l.id) AS link_id,MAX(l.source_post_id) AS source_post_id,MAX(l.destination_url) AS destination_url,
-        MAX(l.destination_host) AS destination_host,MAX(l.destination_type) AS destination_type,MAX(l.target_post_id) AS target_post_id,
-        MAX(l.semantic_area) AS semantic_area,MAX(l.heading_label) AS heading_label,MAX(l.occurrence_no) AS occurrence_no,
-        MAX(l.anchor_text) AS anchor_text,MAX(l.element_type) AS element_type,MAX(l.is_affiliate) AS is_affiliate,
+      $aggregate_sql = "SELECT MIN(l.id) AS link_id,COUNT(DISTINCT l.source_post_id) AS source_count,
+        COUNT(DISTINCT l.id) AS definition_count,
+        SUM(CASE WHEN l.destination_type='internal' THEN s.clicks ELSE 0 END) AS internal_clicks,
         SUM(s.clicks) AS clicks,SUM(s.unique_clicks) AS unique_clicks,SUM(s.sampled_impressions) AS sampled_impressions,
         SUM(s.sampled_clicks) AS sampled_clicks,SUM(s.weighted_impressions) AS weighted_impressions,SUM(s.weighted_clicks) AS weighted_clicks,
         SUM(s.weight_squared) AS weight_squared,SUM(s.arrivals) AS arrivals,SUM(s.engaged_arrivals) AS engaged_arrivals,
         SUM(s.total_time_to_click_ms) AS total_time_to_click_ms
         FROM {$source_sql} s INNER JOIN `" . CLICK_LINKS_TABLE_NAME . "` l ON s.link_id=l.id WHERE {$base_where}
         GROUP BY {$group['key']}";
-      $sql = "{$aggregate_sql} ORDER BY {$order} LIMIT %d OFFSET %d";
+      // 代表表示は1つの定義から取得し、複数行のラベル・URLを混ぜません。
+      $sql = "SELECT grouped.*,representative.source_post_id,representative.destination_url,representative.destination_host,
+        representative.destination_type,representative.target_post_id,representative.semantic_area,representative.heading_label,
+        representative.occurrence_no,representative.anchor_text,representative.element_type,representative.is_affiliate
+        FROM ({$aggregate_sql}) grouped INNER JOIN `" . CLICK_LINKS_TABLE_NAME . "` representative ON grouped.link_id=representative.id
+        ORDER BY {$order} LIMIT %d OFFSET %d";
       $query_args = array_merge($base_args, array($args['per_page'], $offset));
       $rows = $wpdb->get_results(cocoon_click_prepare_query($sql, $query_args), ARRAY_A);
     }
     $pageviews = cocoon_click_analytics_pageviews($from, $to, $args);
     foreach ($rows as &$row) {
       $row = cocoon_click_metric_row($row);
+      $row['group'] = $args['group'];
+      if (isset($row['source_count']) && (int) $row['source_count'] > 1) $row['source_post_id'] = 0;
       $source_post_id = (int) $row['source_post_id'];
       $row['reach_rate'] = isset($pageviews[$source_post_id]) && $pageviews[$source_post_id] > 0 ? min(1, $row['weighted_impressions'] / $pageviews[$source_post_id]) : null;
     }
@@ -400,7 +399,7 @@ endif;
 if ( !function_exists( 'cocoon_click_wilson_lower_sql' ) ):
 function cocoon_click_wilson_lower_sql($clicks = 'weighted_clicks', $impressions = 'weighted_impressions', $weight_squared = 'weight_squared'){
   $effective_n = "(POW({$impressions},2)/NULLIF({$weight_squared},0))";
-  $rate = "({$clicks}/NULLIF({$impressions},0))";
+  $rate = "LEAST(1,GREATEST(0,{$clicks}/NULLIF({$impressions},0)))";
   return "(({$rate}+3.8416/(2*NULLIF({$effective_n},0))-1.96*SQRT(({$rate}*(1-{$rate})/NULLIF({$effective_n},0))+3.8416/(4*POW(NULLIF({$effective_n},0),2))))/(1+3.8416/NULLIF({$effective_n},0)))";
 }
 endif;
@@ -421,7 +420,7 @@ function cocoon_click_analytics_benchmarks($from, $to, $args = array()){
     $engaged = 0;
     foreach ((array) $rows as $row) {
       $key = $row['destination_type'] . '|' . $row['semantic_area'];
-      $groups[$key] = (float) $row['weighted_impressions'] > 0 ? (float) $row['weighted_clicks'] / (float) $row['weighted_impressions'] : null;
+      $groups[$key] = (float) $row['weighted_impressions'] > 0 ? min(1, max(0, (float) $row['weighted_clicks'] / (float) $row['weighted_impressions'])) : null;
       $arrivals += (int) $row['arrivals'];
       $engaged += (int) $row['engaged_arrivals'];
     }
@@ -503,7 +502,7 @@ function cocoon_click_analytics_health(){
   $database = defined('DB_NAME') ? DB_NAME : '';
   $bytes = 0;
   if ($database) {
-    $tables = array(CLICK_LINKS_TABLE_NAME, CLICK_STATS_DAILY_TABLE_NAME, CLICK_STATS_MONTHLY_TABLE_NAME, CLICK_HEATMAP_DAILY_TABLE_NAME, CLICK_BATCHES_TABLE_NAME, CLICK_UNIQUES_TABLE_NAME);
+    $tables = array(CLICK_LINKS_TABLE_NAME, CLICK_STATS_DAILY_TABLE_NAME, CLICK_STATS_MONTHLY_TABLE_NAME, CLICK_HEATMAP_DAILY_TABLE_NAME, CLICK_BATCHES_TABLE_NAME, CLICK_UNIQUES_TABLE_NAME, CLICK_LIMITS_TABLE_NAME);
     $in = implode(',', array_fill(0, count($tables), '%s'));
     $bytes = (int) $wpdb->get_var($wpdb->prepare("SELECT COALESCE(SUM(data_length+index_length),0) FROM information_schema.tables WHERE table_schema=%s AND table_name IN ({$in})", array_merge(array($database), $tables)));
   }
@@ -578,13 +577,13 @@ function cocoon_click_export_dataset($target, $from, $to){
   }
   $scope = $target === 'click_internal' ? 'internal' : 'external';
   $group = $target === 'click_domains' ? 'domain' : ($target === 'click_external' ? 'destination' : 'occurrence');
-  $headers = array('source_post_id', 'destination_url', 'domain', 'type', 'area', 'heading', 'label', 'impressions', 'clicks', 'unique_clicks', 'ctr', 'arrivals', 'engaged_arrivals');
+  $headers = array('source_post_id', 'destination_url', 'domain', 'type', 'area', 'heading', 'label', 'impressions', 'clicks', 'unique_clicks', 'ctr', 'arrivals', 'engaged_arrivals', 'group', 'source_count', 'representative_link');
   $rows = array();
   $page = 1;
   do {
     $result = cocoon_click_analytics_links_table($from, $to, array('scope' => $scope, 'group' => $group, 'page' => $page, 'per_page' => 100, 'order' => 'clicks'));
     foreach ($result['rows'] as $row) {
-      $rows[] = array($row['source_post_id'], $row['destination_url'], $row['destination_host'], $row['destination_type'], $row['semantic_area'], $row['heading_label'], $row['anchor_text'], $row['weighted_impressions'], $row['clicks'], $row['unique_clicks'], $row['ctr'], $row['arrivals'], $row['engaged_arrivals']);
+      $rows[] = array($row['source_post_id'], $row['destination_url'], $row['destination_host'], $row['destination_type'], $row['semantic_area'], $row['heading_label'], $row['anchor_text'], $row['weighted_impressions'], $row['clicks'], $row['unique_clicks'], $row['ctr'], $row['arrivals'], $row['engaged_arrivals'], $group, isset($row['source_count']) ? $row['source_count'] : 1, !empty($row['definition_count']) && $row['definition_count'] > 1 ? 1 : 0);
     }
     $page++;
   } while ($result['rows'] && (($page - 1) * 100) < $result['total'] && $page <= 1000);

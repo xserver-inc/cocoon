@@ -70,6 +70,10 @@
   vertical-align: bottom;
 }
 
+.cocoon-click-map-viewport {
+  overflow: auto;
+}
+
 .cocoon-click-map-frame-wrap {
   position: relative;
   width: min(100%, 1280px);

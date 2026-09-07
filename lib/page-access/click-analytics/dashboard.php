@@ -166,8 +166,8 @@ function cocoon_click_render_links_table($result, $show_source = true){
     </tr></thead><tbody>
     <?php foreach ($result['rows'] as $row): ?>
       <tr>
-        <?php if ($show_source): ?><td><a href="<?php echo esc_url(get_permalink($row['source_post_id'])); ?>" target="_blank" rel="noopener"><?php echo esc_html(cocoon_analytics_plain_title($row['source_post_id']) ?: '#' . $row['source_post_id']); ?></a></td><?php endif; ?>
-        <td><strong><?php echo esc_html(cocoon_click_render_link_title($row)); ?></strong><br><code><?php echo esc_html($row['destination_url']); ?></code><?php if ($row['heading_label'] !== ''): ?><br><small><?php echo esc_html($row['heading_label']); ?></small><?php endif; ?></td>
+        <?php if ($show_source): ?><td><?php if ((int) $row['source_post_id'] > 0): ?><a href="<?php echo esc_url(get_permalink($row['source_post_id'])); ?>" target="_blank" rel="noopener"><?php echo esc_html(cocoon_analytics_plain_title($row['source_post_id']) ?: '#' . $row['source_post_id']); ?></a><?php else: ?><?php esc_html_e('複数記事', THEME_NAME); ?><?php endif; ?></td><?php endif; ?>
+        <td><strong><?php echo esc_html(cocoon_click_render_link_title($row)); ?></strong><?php if (!empty($row['definition_count']) && $row['definition_count'] > 1): ?> <small><?php esc_html_e('代表リンク', THEME_NAME); ?></small><?php endif; ?><br><code><?php echo esc_html($row['destination_url']); ?></code><?php if ($row['heading_label'] !== ''): ?><br><small><?php echo esc_html($row['heading_label']); ?></small><?php endif; ?></td>
         <td><span class="cocoon-click-badge"><?php echo esc_html(cocoon_click_type_label($row['destination_type'])); ?></span> <span class="cocoon-click-badge"><?php echo esc_html(cocoon_click_area_label($row['semantic_area'])); ?></span><br><small><?php echo esc_html($row['element_type'] . ' #' . ((int) $row['occurrence_no'] + 1)); ?></small></td>
         <td><?php echo number_format_i18n($row['weighted_impressions']); ?></td><td><?php echo number_format_i18n($row['clicks']); ?></td><td><?php echo number_format_i18n($row['unique_clicks']); ?></td>
         <td><?php echo esc_html(cocoon_click_percent($row['ctr'])); ?><?php if ($row['ctr_lower'] !== null): ?><br><small><?php printf(esc_html__('95%% CI %1$s〜%2$s / n=%3$s', THEME_NAME), esc_html(cocoon_click_percent($row['ctr_lower'])), esc_html(cocoon_click_percent($row['ctr_upper'])), esc_html(number_format_i18n($row['effective_n'], 1))); ?></small><?php endif; ?><?php if (!$row['data_sufficient']): ?><br><small><?php echo esc_html(cocoon_click_sufficiency_label($row)); ?></small><?php endif; ?></td>
@@ -295,8 +295,9 @@ if ($click_view === 'overview') {
       ?>
       <div class="cocoon-analytics-card cocoon-click-map-card">
         <h3><?php echo esc_html(cocoon_analytics_plain_title($source_post_id)); ?> — <?php echo esc_html(strtoupper($device)); ?></h3>
+        <p class="description"><?php esc_html_e('端末の代表幅で表示しています。実際の画面幅や固定・追従要素の位置によって、クリック位置に差が生じる場合があります。', THEME_NAME); ?></p>
         <?php if ($old_clicks > 0): ?>
-          <div class="notice notice-warning inline"><p><?php printf(esc_html__('現在と異なる旧レイアウトのクリックが%件あります。現在のページには重ねていません。', THEME_NAME), $old_clicks); ?></p>
+          <div class="notice notice-warning inline"><p><?php printf(esc_html__('現在と異なる旧レイアウトのクリックが%d件あります。現在のページには重ねていません。', THEME_NAME), $old_clicks); ?></p>
             <details><summary><?php _e('旧レイアウト一覧', THEME_NAME); ?></summary><ul>
               <?php
               $old_layouts = array();
@@ -306,14 +307,14 @@ if ($click_view === 'overview') {
             </ul></details>
           </div>
         <?php endif; ?>
-        <div class="cocoon-click-map-frame-wrap">
+        <div class="cocoon-click-map-viewport"><div class="cocoon-click-map-frame-wrap" style="width:<?php echo (int) cocoon_click_map_device_width($device); ?>px">
           <iframe id="cocoon-click-map-frame" src="<?php echo esc_url(add_query_arg('cocoon_click_map_preview', '1', get_permalink($source_post_id))); ?>" title="<?php echo esc_attr__('クリックマップページプレビュー', THEME_NAME); ?>" loading="lazy"></iframe>
           <div id="cocoon-click-map-overlay" class="cocoon-click-map-overlay" aria-hidden="true">
             <?php foreach ($current_rows as $row): $opacity = 0.15 + (0.65 * ((int) $row['clicks'] / $max_clicks)); ?>
               <span class="cocoon-click-heat-cell" style="left:<?php echo (int) $row['x_bin'] * 10; ?>%;top:<?php echo (int) $row['y_bin'] * 2; ?>%;width:10%;height:2%;opacity:<?php echo esc_attr(number_format($opacity, 2, '.', '')); ?>" title="<?php echo esc_attr(number_format_i18n($row['clicks']) . ' clicks'); ?>"></span>
             <?php endforeach; ?>
           </div>
-        </div>
+        </div></div>
       </div>
       <div class="cocoon-analytics-card"><h3><?php _e('リンク別クリック', THEME_NAME); ?></h3><?php cocoon_click_render_links_table(array('rows' => $map_links, 'total' => count($map_links), 'page' => 1, 'per_page' => 100), false); ?></div>
       <?php

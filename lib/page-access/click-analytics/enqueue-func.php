@@ -41,7 +41,8 @@ function cocoon_click_enqueue_tracking_script(){
     'respectPrivacy' => is_click_analytics_respect_privacy(),
     'initialConsent' => (bool) apply_filters('cocoon_click_analytics_initial_consent', true),
   );
-  wp_localize_script(COCOON_CLICK_ANALYTICS_SCRIPT_HANDLE, 'CocoonClickAnalyticsConfig', $config);
+  // 真偽値を文字列へ変換せず、同意待ちの false をそのままブラウザーへ渡します。
+  wp_add_inline_script(COCOON_CLICK_ANALYTICS_SCRIPT_HANDLE, 'window.CocoonClickAnalyticsConfig = ' . wp_json_encode($config, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) . ';', 'before');
 }
 endif;
 

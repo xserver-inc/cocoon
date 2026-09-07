@@ -35,6 +35,9 @@ $page_notice = '';
 if ($view === 'settings') {
   require_once dirname(__FILE__) . '/settings-posts.php';
   $page_notice = cocoon_analytics_save_settings();
+  if ($page_notice === '' && !empty($_GET['cocoon_click_delete_failed'])) {
+    $page_notice = '<div class="notice notice-error"><p><strong>' . esc_html__('クリック解析データを削除できませんでした。データベースの状態を確認して再試行してください。', THEME_NAME) . '</strong></p></div>';
+  }
   if ($page_notice === '' && !empty($_GET['cocoon_click_deleted'])) {
     $page_notice = '<div class="notice notice-success is-dismissible"><p><strong>' . esc_html__('クリック解析データを完全削除しました。', THEME_NAME) . '</strong></p></div>';
   }

@@ -47,19 +47,31 @@ endif;
 
 if ( !function_exists( 'cocoon_click_rate_limit_allows' ) ):
 function cocoon_click_rate_limit_allows($session_id){
-  if (!function_exists('wp_using_ext_object_cache') || !wp_using_ext_object_cache()) return true;
   $minute = (int) floor(time() / 60);
   $remote = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
   $network = cocoon_click_network_bucket($remote);
+  // サイト全体から順に制限し、セッションIDを変える大量送信でも一時行を増やし続けません。
   $checks = array(
-    array('session|' . $minute . '|' . $session_id, 30),
+    array('site|' . $minute, max(1, (int) apply_filters('cocoon_click_analytics_requests_per_minute', 6000))),
     array('network|' . $minute . '|' . $network, 600),
+    array('session|' . $minute . '|' . $session_id, 30),
   );
   foreach ($checks as $check) {
-    $key = 'rate_' . cocoon_click_hmac($check[0]);
-    if (wp_cache_add($key, 1, 'cocoon_click_analytics', 70)) continue;
-    $count = wp_cache_incr($key, 1, 'cocoon_click_analytics');
-    if ($count !== false && (int) $count > $check[1]) return false;
+    $key = cocoon_click_hmac('rate|' . $check[0]);
+    if (function_exists('wp_using_ext_object_cache') && wp_using_ext_object_cache()) {
+      if (wp_cache_add($key, 1, 'cocoon_click_analytics', 120)) continue;
+      $count = wp_cache_incr($key, 1, 'cocoon_click_analytics');
+      if ($count !== false) {
+        if ((int) $count > $check[1]) return false;
+        continue;
+      }
+    }
+    // 永続キャッシュがない環境でも、DB上で原子的に加算して制限を適用します。
+    global $wpdb;
+    $sql = $wpdb->prepare('INSERT INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES (%s,1,%s) ON DUPLICATE KEY UPDATE request_count=request_count+1', $key, gmdate('Y-m-d H:i:s', time() + 120));
+    if ($wpdb->query($sql) === false) return false;
+    $count = $wpdb->get_var($wpdb->prepare('SELECT request_count FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key=%s', $key));
+    if ($count === null || (int) $count > $check[1]) return false;
   }
   return true;
 }
@@ -91,8 +103,8 @@ function cocoon_click_accept_batch($batch_id, $now){
     $now,
     $expires
   );
-  $wpdb->query($sql);
-  return array('accepted' => ((int) $wpdb->rows_affected === 1), 'batch_key' => $batch_key);
+  $result = $wpdb->query($sql);
+  return array('accepted' => $result !== false && (int) $wpdb->rows_affected === 1, 'error' => $result === false, 'batch_key' => $batch_key);
 }
 endif;
 
@@ -100,7 +112,7 @@ if ( !function_exists( 'cocoon_click_event_is_trackable' ) ):
 function cocoon_click_event_is_trackable($event_type, $destination_type){
   if ($event_type === 'page_sample') return is_click_analytics_impressions_enable();
   if ($event_type === 'impression' && !is_click_analytics_impressions_enable()) return false;
-  if ($event_type === 'internal_outcome') return is_click_analytics_outcomes_enable() && $destination_type === 'internal';
+  if ($event_type === 'internal_outcome') return is_click_analytics_outcomes_enable() && is_click_analytics_track_internal() && $destination_type === 'internal';
   if ($destination_type === 'internal') return is_click_analytics_track_internal();
   if ($destination_type === 'external') return is_click_analytics_track_external();
   if (in_array($destination_type, array('anchor', 'download', 'mailto', 'tel', 'sms'), true)) return is_click_analytics_track_special();
@@ -159,14 +171,15 @@ function cocoon_click_upsert_link_definitions($definitions, $now){
   $sql = 'INSERT INTO `' . CLICK_LINKS_TABLE_NAME . '` '
     . '(link_key,slot_key,source_post_id,destination_key,destination_url,destination_host,destination_type,target_post_id,semantic_area,heading_key,heading_label,occurrence_no,anchor_text,element_type,rel_flags,target_blank,is_affiliate,first_seen_at,last_seen_at) VALUES '
     . implode(',', $placeholders)
-    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),is_affiliate=GREATEST(is_affiliate,VALUES(is_affiliate))';
-  $wpdb->query($wpdb->prepare($sql, $args));
+    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),target_post_id=GREATEST(target_post_id,VALUES(target_post_id)),is_affiliate=GREATEST(is_affiliate,VALUES(is_affiliate))';
+  if ($wpdb->query($wpdb->prepare($sql, $args)) === false) return false;
   $keys = array_column($definitions, 'link_key');
   $in = implode(',', array_fill(0, count($keys), '%s'));
   $rows = $wpdb->get_results($wpdb->prepare('SELECT id,link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ')', $keys), ARRAY_A);
+  if ($wpdb->last_error) return false;
   $map = array();
   foreach ((array) $rows as $row) $map[$row['link_key']] = (int) $row['id'];
-  return $map;
+  return count($map) === count($definitions) ? $map : false;
 }
 endif;
 
@@ -204,10 +217,11 @@ function cocoon_click_insert_uniques($date, $session_id, $batch_key, $link_ids, 
     $values[] = '(%s,%d,%s,%s,%s)';
     array_push($args, $date, $link_id, $session_key, $batch_key, $now);
   }
-  $wpdb->query($wpdb->prepare(
+  $result = $wpdb->query($wpdb->prepare(
     'INSERT IGNORE INTO `' . CLICK_UNIQUES_TABLE_NAME . '` (stat_date,link_id,session_key,batch_key,created_at) VALUES ' . implode(',', $values),
     $args
   ));
+  if ($result === false) return false;
   if (count($link_ids) === 1) {
     return array($link_ids[0] => (int) $wpdb->rows_affected);
   }
@@ -215,6 +229,7 @@ function cocoon_click_insert_uniques($date, $session_id, $batch_key, $link_ids, 
     'SELECT link_id,COUNT(*) AS total FROM `' . CLICK_UNIQUES_TABLE_NAME . '` WHERE batch_key=%s GROUP BY link_id',
     $batch_key
   ), ARRAY_A);
+  if ($wpdb->last_error) return false;
   $result = array();
   foreach ((array) $rows as $row) $result[(int) $row['link_id']] = (int) $row['total'];
   return $result;
@@ -225,7 +240,7 @@ if ( !function_exists( 'cocoon_click_upsert_stats' ) ):
 function cocoon_click_upsert_stats($rows, $now){
   global $wpdb;
   $rows = array_values($rows);
-  if (!$rows) return;
+  if (!$rows) return true;
   $values = array();
   $args = array();
   foreach ($rows as $row) {
@@ -245,14 +260,14 @@ function cocoon_click_upsert_stats($rows, $now){
   $sql = 'INSERT INTO `' . CLICK_STATS_DAILY_TABLE_NAME . '` '
     . '(stat_date,source_post_id,link_id,device,layout_revision,clicks,unique_clicks,sampled_impressions,sampled_clicks,weighted_impressions,weighted_clicks,weight_squared,arrivals,engaged_arrivals,total_time_to_click_ms,received_events,rejected_events,accepted_batches,duplicate_batches,updated_at) VALUES '
     . implode(',', $values) . ' ON DUPLICATE KEY UPDATE ' . implode(',', $updates);
-  $wpdb->query($wpdb->prepare($sql, $args));
+  return $wpdb->query($wpdb->prepare($sql, $args)) !== false;
 }
 endif;
 
 if ( !function_exists( 'cocoon_click_upsert_heatmap' ) ):
 function cocoon_click_upsert_heatmap($rows, $now){
   global $wpdb;
-  if (!$rows || !is_click_analytics_heatmap_enable()) return;
+  if (!$rows || !is_click_analytics_heatmap_enable()) return true;
   $values = array();
   $args = array();
   foreach ($rows as $row) {
@@ -261,21 +276,25 @@ function cocoon_click_upsert_heatmap($rows, $now){
   }
   $sql = 'INSERT INTO `' . CLICK_HEATMAP_DAILY_TABLE_NAME . '` (stat_date,source_post_id,device,layout_revision,x_bin,y_bin,clicks,updated_at) VALUES '
     . implode(',', $values) . ' ON DUPLICATE KEY UPDATE clicks=clicks+VALUES(clicks),updated_at=VALUES(updated_at)';
-  $wpdb->query($wpdb->prepare($sql, $args));
+  return $wpdb->query($wpdb->prepare($sql, $args)) !== false;
 }
 endif;
 
 if ( !function_exists( 'cocoon_click_rest_receive_events' ) ):
 function cocoon_click_rest_receive_events($request){
   if (!is_click_analytics_enable()) return cocoon_click_rest_error('click_analytics_disabled', __('クリック解析は無効です。', THEME_NAME), 403);
-  if (!cocoon_click_tables_exist()) return cocoon_click_rest_error('click_analytics_tables_missing', __('クリック解析テーブルがありません。', THEME_NAME), 503);
+  if (get_theme_option(OP_CLICK_ANALYTICS_TABLE_VERSION, '') !== CLICK_ANALYTICS_TABLE_VERSION || get_theme_option('click_analytics_schema_error', false) || !cocoon_click_tables_exist()) return cocoon_click_rest_error('click_analytics_tables_missing', __('クリック解析テーブルがありません。', THEME_NAME), 503);
   $raw = (string) $request->get_body();
   if ($raw === '' || strlen($raw) > 32768) return cocoon_click_rest_error('click_analytics_payload_size', __('送信サイズが不正です。', THEME_NAME), 413);
   $payload = json_decode($raw, true);
   if (!is_array($payload)) return cocoon_click_rest_error('click_analytics_json', __('JSONが不正です。', THEME_NAME), 400);
   if (!cocoon_click_request_origin_is_valid($request)) return cocoon_click_rest_error('click_analytics_origin', __('送信元が不正です。', THEME_NAME), 403);
-  if ((function_exists('is_user_administrator') && is_user_administrator()) || (is_click_analytics_exclude_logged_in() && is_user_logged_in())) return new WP_REST_Response(null, 204);
+  if (cocoon_click_request_user_is_excluded()) return new WP_REST_Response(null, 204);
   if (function_exists('is_useragent_robot') && is_useragent_robot()) return new WP_REST_Response(null, 204);
+  // 配列やオブジェクトを文字列へ変換せず、不正な型は受信時点で拒否します。
+  foreach (array('batch_id', 'session_id', 'layout_revision', 'device', 'token') as $field) {
+    if (!isset($payload[$field]) || !is_string($payload[$field])) return cocoon_click_rest_error('click_analytics_payload', __('送信内容が不正です。', THEME_NAME), 400);
+  }
   $batch_id = isset($payload['batch_id']) ? (string) $payload['batch_id'] : '';
   $session_id = isset($payload['session_id']) ? (string) $payload['session_id'] : '';
   $source_post_id = isset($payload['source_post_id']) ? (int) $payload['source_post_id'] : 0;
@@ -296,81 +315,154 @@ function cocoon_click_rest_receive_events($request){
   if (!cocoon_click_rate_limit_allows($session_id)) return cocoon_click_rest_error('click_analytics_rate', __('送信回数が多すぎます。', THEME_NAME), 429);
   $now = current_time('mysql');
   $date = current_time('Y-m-d');
-  $accepted_batch = cocoon_click_accept_batch($batch_id, $now);
-  if (!$accepted_batch['accepted']) {
-    $duplicate_stats = array();
-    cocoon_click_add_stat_row($duplicate_stats, $date, $source_post_id, 0, $device, $layout_revision, array('duplicate_batches' => 1));
-    cocoon_click_upsert_stats($duplicate_stats, $now);
-    return new WP_REST_Response(null, 204);
-  }
-  $weight = cocoon_click_sampling_weight($sampling_rate);
-  $source_url = get_permalink($source_post_id);
-  $prepared = array();
-  $definitions = array();
-  foreach ($events as $event) {
-    if (!is_array($event)) continue;
-    $type = isset($event['type']) ? sanitize_key($event['type']) : '';
-    if ($type === 'page_sample') {
-      if (is_click_analytics_impressions_enable()) $prepared[] = array('type' => 'page_sample', 'event' => $event, 'definition' => null);
-      continue;
+  global $wpdb;
+  $original_db = cocoon_click_begin_transaction();
+  if (!$original_db) return cocoon_click_rest_error('click_analytics_storage', __('計測データを保存できませんでした。再送してください。', THEME_NAME), 503);
+  // バッチID・リンク・ユニーク数・集計を同時に確定し、途中失敗時はすべて元に戻します。
+  try {
+    if (!cocoon_click_lock_month(substr($date, 0, 7))) throw new RuntimeException('month_lock');
+    // 月替わりで待機した受信は日付を取り直し、確定済みの前月へ後から書き込みません。
+    $now = current_time('mysql');
+    $current_date = current_time('Y-m-d');
+    if (substr($date, 0, 7) !== substr($current_date, 0, 7) && !cocoon_click_lock_month(substr($current_date, 0, 7))) throw new RuntimeException('month_lock');
+    $date = $current_date;
+    $accepted_batch = cocoon_click_accept_batch($batch_id, $now);
+    if ($accepted_batch['error']) throw new RuntimeException('batch');
+    if (!$accepted_batch['accepted']) {
+      $duplicate_stats = array();
+      cocoon_click_add_stat_row($duplicate_stats, $date, $source_post_id, 0, $device, $layout_revision, array('duplicate_batches' => 1));
+      if (!cocoon_click_upsert_stats($duplicate_stats, $now) || $wpdb->query('COMMIT') === false) throw new RuntimeException('duplicate');
+      return new WP_REST_Response(null, 204);
     }
-    $item = cocoon_click_sanitize_link_event($event, $source_post_id, $source_url);
-    if (!$item) continue;
-    $definitions[$item['definition']['link_key']] = $item['definition'];
-    $prepared[] = $item;
-  }
-  $link_map = cocoon_click_upsert_link_definitions($definitions, $now);
-  $stats = array();
-  $heatmap = array();
-  $unique_link_ids = array();
-  cocoon_click_add_stat_row($stats, $date, $source_post_id, 0, $device, $layout_revision, array(
-    'received_events' => count($prepared),
-    'rejected_events' => max(0, count($events) - count($prepared)),
-    'accepted_batches' => 1,
-  ));
-  foreach ($prepared as $item) {
-    $type = $item['type'];
-    $event = $item['event'];
-    if ($type === 'page_sample') {
-      cocoon_click_add_stat_row($stats, $date, $source_post_id, 0, $device, $layout_revision, array('sampled_impressions' => 1, 'weighted_impressions' => $weight, 'weight_squared' => $weight * $weight));
-      continue;
-    }
-    $link_key = $item['definition']['link_key'];
-    if (!isset($link_map[$link_key])) continue;
-    $link_id = $link_map[$link_key];
-    if ($type === 'impression') {
-      cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('sampled_impressions' => 1, 'weighted_impressions' => $weight, 'weight_squared' => $weight * $weight));
-    } elseif ($type === 'click') {
-      $increments = array('clicks' => 1, 'total_time_to_click_ms' => isset($event['time_to_click_ms']) ? min(86400000, max(0, (int) $event['time_to_click_ms'])) : 0);
-      if (!empty($event['sampled'])) {
-        $increments['sampled_clicks'] = 1;
-        $increments['weighted_clicks'] = $weight;
-        if (!empty($event['forced_impression'])) {
-          $increments['sampled_impressions'] = 1;
-          $increments['weighted_impressions'] = $weight;
-          $increments['weight_squared'] = $weight * $weight;
-        }
+    $weight = cocoon_click_sampling_weight($sampling_rate);
+    $source_url = get_permalink($source_post_id);
+    $prepared = array();
+    $definitions = array();
+    foreach ($events as $event) {
+      if (!is_array($event)) continue;
+      $type = isset($event['type']) ? sanitize_key($event['type']) : '';
+      if ($type === 'page_sample') {
+        if (is_click_analytics_impressions_enable()) $prepared[] = array('type' => 'page_sample', 'event' => $event, 'definition' => null);
+        continue;
       }
-      cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, $increments);
-      $unique_link_ids[] = $link_id;
-      if (is_click_analytics_heatmap_enable() && isset($event['x_bp'], $event['y_bp'])) {
-        $x_bp = (int) $event['x_bp'];
-        $y_bp = (int) $event['y_bp'];
-        if ($x_bp >= 0 && $x_bp <= 10000 && $y_bp >= 0 && $y_bp <= 10000) {
-          $heat_key = implode('|', array($date, $source_post_id, $device, $layout_revision, cocoon_click_coordinate_bin($x_bp, 10), cocoon_click_coordinate_bin($y_bp, 50)));
-          if (!isset($heatmap[$heat_key])) $heatmap[$heat_key] = array('stat_date' => $date, 'source_post_id' => $source_post_id, 'device' => $device, 'layout_revision' => $layout_revision, 'x_bin' => cocoon_click_coordinate_bin($x_bp, 10), 'y_bin' => cocoon_click_coordinate_bin($y_bp, 50), 'clicks' => 0);
-          $heatmap[$heat_key]['clicks']++;
-        }
-      }
-    } elseif ($type === 'internal_outcome') {
-      cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('arrivals' => 1, 'engaged_arrivals' => !empty($event['engaged']) ? 1 : 0));
+      $item = cocoon_click_sanitize_link_event($event, $source_post_id, $source_url);
+      if (!$item) continue;
+      $definitions[$item['definition']['link_key']] = $item['definition'];
+      $prepared[] = $item;
     }
+    // 上限を超える新規リンクだけを除外し、同じバッチの既存クリックは保存します。
+    $definitions = cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id);
+    $prepared = array_values(array_filter($prepared, function($item) use ($definitions){
+      return $item['type'] === 'page_sample' || isset($definitions[$item['definition']['link_key']]);
+    }));
+    $link_map = cocoon_click_upsert_link_definitions($definitions, $now);
+    if ($link_map === false) throw new RuntimeException('links');
+    $stats = array();
+    $heatmap = array();
+    $unique_link_ids = array();
+    cocoon_click_add_stat_row($stats, $date, $source_post_id, 0, $device, $layout_revision, array(
+      'received_events' => count($prepared),
+      'rejected_events' => max(0, count($events) - count($prepared)),
+      'accepted_batches' => 1,
+    ));
+    foreach ($prepared as $item) {
+      $type = $item['type'];
+      $event = $item['event'];
+      if ($type === 'page_sample') {
+        cocoon_click_add_stat_row($stats, $date, $source_post_id, 0, $device, $layout_revision, array('sampled_impressions' => 1, 'weighted_impressions' => $weight, 'weight_squared' => $weight * $weight));
+        continue;
+      }
+      $link_key = $item['definition']['link_key'];
+      if (!isset($link_map[$link_key])) continue;
+      $link_id = $link_map[$link_key];
+      if ($type === 'impression') {
+        cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('sampled_impressions' => 1, 'weighted_impressions' => $weight, 'weight_squared' => $weight * $weight));
+      } elseif ($type === 'click') {
+        $increments = array('clicks' => 1, 'total_time_to_click_ms' => isset($event['time_to_click_ms']) ? min(86400000, max(0, (int) $event['time_to_click_ms'])) : 0);
+        if (is_click_analytics_impressions_enable() && !empty($event['sampled'])) {
+          $increments['sampled_clicks'] = 1;
+          $increments['weighted_clicks'] = $weight;
+          if (!empty($event['forced_impression'])) {
+            $increments['sampled_impressions'] = 1;
+            $increments['weighted_impressions'] = $weight;
+            $increments['weight_squared'] = $weight * $weight;
+          }
+        }
+        cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, $increments);
+        $unique_link_ids[] = $link_id;
+        if (is_click_analytics_heatmap_enable() && isset($event['x_bp'], $event['y_bp'])) {
+          $x_bp = (int) $event['x_bp'];
+          $y_bp = (int) $event['y_bp'];
+          if ($x_bp >= 0 && $x_bp <= 10000 && $y_bp >= 0 && $y_bp <= 10000) {
+            $heat_key = implode('|', array($date, $source_post_id, $device, $layout_revision, cocoon_click_coordinate_bin($x_bp, 10), cocoon_click_coordinate_bin($y_bp, 50)));
+            if (!isset($heatmap[$heat_key])) $heatmap[$heat_key] = array('stat_date' => $date, 'source_post_id' => $source_post_id, 'device' => $device, 'layout_revision' => $layout_revision, 'x_bin' => cocoon_click_coordinate_bin($x_bp, 10), 'y_bin' => cocoon_click_coordinate_bin($y_bp, 50), 'clicks' => 0);
+            $heatmap[$heat_key]['clicks']++;
+          }
+        }
+      } elseif ($type === 'internal_outcome') {
+        cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('arrivals' => 1, 'engaged_arrivals' => !empty($event['engaged']) ? 1 : 0));
+      }
+    }
+    $unique_counts = cocoon_click_insert_uniques($date, $session_id, $accepted_batch['batch_key'], $unique_link_ids, $now);
+    if ($unique_counts === false) throw new RuntimeException('uniques');
+    foreach ($unique_counts as $link_id => $count) cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('unique_clicks' => $count));
+    if (!cocoon_click_upsert_stats($stats, $now) || !cocoon_click_upsert_heatmap(array_values($heatmap), $now)) throw new RuntimeException('stats');
+    if ($wpdb->query('COMMIT') === false) throw new RuntimeException('commit');
+  } catch (Throwable $error) {
+    $wpdb->query('ROLLBACK');
+    return cocoon_click_rest_error('click_analytics_storage', __('計測データを保存できませんでした。再送してください。', THEME_NAME), 503);
+  } finally {
+    cocoon_click_end_transaction($original_db);
   }
-  $unique_counts = cocoon_click_insert_uniques($date, $session_id, $accepted_batch['batch_key'], $unique_link_ids, $now);
-  foreach ($unique_counts as $link_id => $count) cocoon_click_add_stat_row($stats, $date, $source_post_id, $link_id, $device, $layout_revision, array('unique_clicks' => $count));
-  cocoon_click_upsert_stats($stats, $now);
-  cocoon_click_upsert_heatmap(array_values($heatmap), $now);
   do_action('cocoon_click_analytics_batch_recorded', count($prepared), $source_post_id);
   return new WP_REST_Response(null, 204);
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_request_user_is_excluded' ) ):
+function cocoon_click_request_user_is_excluded(){
+  if ((function_exists('is_user_administrator') && is_user_administrator()) || (is_click_analytics_exclude_logged_in() && is_user_logged_in())) return true;
+  // REST nonceがない匿名受信でも、有効なログインCookieを除外判定だけに使います。
+  $user_id = function_exists('wp_validate_auth_cookie') ? wp_validate_auth_cookie('', 'logged_in') : 0;
+  return $user_id && (is_click_analytics_exclude_logged_in() || user_can($user_id, 'manage_options'));
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_filter_definitions_by_capacity' ) ):
+function cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id){
+  global $wpdb;
+  if (!$definitions) return array();
+  $keys = array_keys($definitions);
+  $in = implode(',', array_fill(0, count($keys), '%s'));
+  $existing = $wpdb->get_col($wpdb->prepare('SELECT link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ')', $keys));
+  if ($wpdb->last_error) throw new RuntimeException('definition_lookup');
+  if (!array_diff($keys, (array) $existing)) return $definitions;
+  // 新規定義だけを直列化し、同時送信でもサイト全体・記事ごとの上限を超えません。
+  $key = cocoon_click_hmac('definition_capacity');
+  if ($wpdb->query($wpdb->prepare('INSERT IGNORE INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES (%s,0,%s)', $key, '9999-12-31 23:59:59')) === false) throw new RuntimeException('definition_lock');
+  if ($wpdb->get_var($wpdb->prepare('SELECT request_count FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key=%s FOR UPDATE', $key)) === null) throw new RuntimeException('definition_lock');
+  // ロック取得後の最新の行を確認し、他のリクエストが追加した定義も反映します。
+  $existing = $wpdb->get_col($wpdb->prepare('SELECT link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ') FOR UPDATE', $keys));
+  if ($wpdb->last_error) throw new RuntimeException('definition_lookup');
+  $site_limit = max(1, (int) apply_filters('cocoon_click_analytics_definition_limit', 100000));
+  $post_limit = max(1, (int) apply_filters('cocoon_click_analytics_post_definition_limit', 5000));
+  $site_count = $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` FOR UPDATE');
+  if ($site_count === null) throw new RuntimeException('definition_count');
+  $post_count = $wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE source_post_id=%d FOR UPDATE', $source_post_id));
+  if ($post_count === null) throw new RuntimeException('definition_count');
+  $available = max(0, min($site_limit - (int) $site_count, $post_limit - (int) $post_count));
+  $existing = array_fill_keys((array) $existing, true);
+  $accepted = array();
+  foreach ($definitions as $link_key => $definition) {
+    if (isset($existing[$link_key])) $accepted[$link_key] = $definition;
+    elseif ($available > 0) { $accepted[$link_key] = $definition; $available--; }
+  }
+  return $accepted;
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_definition_capacity_allows' ) ):
+function cocoon_click_definition_capacity_allows($definitions, $source_post_id){
+  return count(cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id)) === count($definitions);
 }
 endif;

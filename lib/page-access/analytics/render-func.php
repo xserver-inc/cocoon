@@ -198,6 +198,8 @@ if ( !function_exists( 'cocoon_analytics_resolve_view' ) ):
 function cocoon_analytics_resolve_view($requested_view = null){
   // 機能が無効な場合は、古い集計系URLからでも設定画面を直接表示する
   if (!is_access_analytics_enable()) {
+    // クリック計測だけを使う場合も、集計画面を独立して開けます。
+    if (function_exists('is_click_analytics_enable') && is_click_analytics_enable() && sanitize_key((string) $requested_view) === 'clicks') return 'clicks';
     return 'settings';
   }
 
@@ -218,7 +220,7 @@ endif;
 if ( !function_exists( 'cocoon_analytics_render_tabs' ) ):
 function cocoon_analytics_render_tabs($current){
   // 機能が無効な場合は切り替え先がないため、単独の設定タブも出力しない
-  if (!is_access_analytics_enable()) {
+  if (!is_access_analytics_enable() && !(function_exists('is_click_analytics_enable') && is_click_analytics_enable())) {
     return;
   }
 
@@ -233,6 +235,7 @@ function cocoon_analytics_render_tabs($current){
     'export'    => __('エクスポート', THEME_NAME),
     'settings'  => __('設定', THEME_NAME),
   );
+  if (!is_access_analytics_enable()) $tabs = array_intersect_key($tabs, array('clicks' => true, 'settings' => true));
   echo '<h2 class="nav-tab-wrapper cocoon-analytics-tabs">';
   foreach ($tabs as $slug => $label) {
     $url = admin_url('admin.php?page=theme-access&view=' . $slug);

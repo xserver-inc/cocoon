@@ -119,10 +119,14 @@ endif;
 
 if ( !function_exists( 'cocoon_click_normalize_destination' ) ):
 function cocoon_click_normalize_destination($raw_url, $source_url, $attributes = array()){
-  $raw_url = trim(html_entity_decode((string) $raw_url, ENT_QUOTES, 'UTF-8'));
+  if (!is_string($raw_url) || !is_string($source_url)) return false;
+  $raw_url = trim(html_entity_decode($raw_url, ENT_QUOTES, 'UTF-8'));
   if ($raw_url === '' || strlen($raw_url) > 2048) return false;
+  // 除外設定は機微なクエリ値を取り除く前に照合し、古いページからの送信にも適用します。
+  $exclusion_url = $raw_url[0] === '#' ? preg_replace('/#.*$/', '', $source_url) . $raw_url : cocoon_click_make_absolute_url($raw_url, $source_url);
+  if (cocoon_click_is_excluded_destination((string) wp_parse_url($exclusion_url, PHP_URL_HOST), $exclusion_url)) return false;
   if ($raw_url[0] === '#') {
-    $fragment = substr(preg_replace('/[^A-Za-z0-9_:\-.]/', '', $raw_url), 0, 191);
+    $fragment = cocoon_click_normalize_fragment(substr($raw_url, 1));
     return array('canonical' => $fragment, 'display' => $fragment, 'host' => '', 'type' => 'anchor', 'target_post_id' => 0);
   }
   $scheme = strtolower((string) wp_parse_url($raw_url, PHP_URL_SCHEME));
@@ -144,7 +148,7 @@ function cocoon_click_normalize_destination($raw_url, $source_url, $attributes =
     && cocoon_click_normalize_path(isset($parts['path']) ? $parts['path'] : '/') === cocoon_click_normalize_path(isset($source_parts['path']) ? $source_parts['path'] : '/')
     && (string) (isset($parts['query']) ? $parts['query'] : '') === (string) (isset($source_parts['query']) ? $source_parts['query'] : '');
   if ($same_page_fragment) {
-    $fragment = '#' . substr(preg_replace('/[^A-Za-z0-9_:\-.]/', '', $parts['fragment']), 0, 190);
+    $fragment = cocoon_click_normalize_fragment($parts['fragment']);
     return array('canonical' => $fragment, 'display' => $fragment, 'host' => '', 'type' => 'anchor', 'target_post_id' => 0);
   }
   $scheme = strtolower(isset($parts['scheme']) ? $parts['scheme'] : 'https');
@@ -165,14 +169,26 @@ function cocoon_click_normalize_destination($raw_url, $source_url, $attributes =
       : rawurlencode($key);
   }
   $display = $scheme . '://' . $host . $port_text . $path . ($display_pairs ? '?' . implode('&', $display_pairs) : '');
-  if (cocoon_click_is_excluded_destination($host, $display)) return false;
   $type = cocoon_click_is_internal_host($host) ? 'internal' : 'external';
   $path_lower = strtolower($path);
   if (!empty($attributes['download']) || preg_match('/\.(zip|pdf|docx?|xlsx?|pptx?|csv|epub|mp3|mp4|mov|webm)$/', $path_lower)) $type = 'download';
   if ($type === 'external' && !empty($attributes['is_affiliate'])) $type = 'affiliate';
   $type = cocoon_click_classify_external_destination($type, $host, $attributes);
   $type = apply_filters('cocoon_click_analytics_classify_destination', $type, $canonical, $attributes);
-  return array('canonical' => $canonical, 'display' => $display, 'host' => $host, 'type' => sanitize_key($type), 'target_post_id' => 0);
+  $target_post_id = 0;
+  // 基本パーマリンクの公開投稿IDはURLの機微な値とは分けて保持します。
+  if ($type === 'internal') {
+    foreach (array('p', 'page_id') as $post_key) {
+      if (isset($pairs[$post_key]) && ctype_digit($pairs[$post_key])) {
+        $target = get_post((int) $pairs[$post_key]);
+        if ($target && $target->post_status === 'publish' && in_array($target->post_type, array('post', 'page'), true)) {
+          $target_post_id = (int) $target->ID;
+          $display = $scheme . '://' . $host . $port_text . $path . '?' . $post_key . '=' . $target_post_id;
+        }
+      }
+    }
+  }
+  return array('canonical' => $canonical, 'display' => $display, 'host' => $host, 'type' => sanitize_key($type), 'target_post_id' => $target_post_id);
 }
 endif;
 
@@ -188,6 +204,8 @@ function cocoon_click_build_link_identity($source_post_id, $destination, $event)
   $element_type = isset($event['element_type']) ? sanitize_key($event['element_type']) : 'text';
   if (!in_array($element_type, array('text', 'button', 'image', 'blogcard'), true)) $element_type = 'text';
   $anchor = isset($event['label']) ? sanitize_text_field($event['label']) : '';
+  // 連絡先リンクでは表示ラベルにもメールアドレスや電話番号を残しません。
+  if (in_array($destination['type'], array('mailto', 'tel', 'sms'), true)) $anchor = $destination['type'] . ':';
   $anchor = function_exists('mb_substr') ? mb_substr($anchor, 0, 191) : substr($anchor, 0, 191);
   $slot_material = implode('|', array((int) $source_post_id, $area, $heading_key, $occurrence, $element_type));
   $slot_key = cocoon_click_hmac('slot|' . $slot_material);
@@ -204,5 +222,14 @@ function cocoon_click_build_link_identity($source_post_id, $destination, $event)
     'element_type' => $element_type,
     'anchor_text' => $anchor,
   );
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_normalize_fragment' ) ):
+function cocoon_click_normalize_fragment($fragment){
+  // 日本語IDとパーセント表記を共通化し、相対URLでも絶対URLでも同じキーにします。
+  $fragment = sanitize_text_field(rawurldecode((string) $fragment));
+  $fragment = function_exists('mb_substr') ? mb_substr($fragment, 0, 190) : substr($fragment, 0, 190);
+  return '#' . $fragment;
 }
 endif;

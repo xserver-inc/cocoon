@@ -4358,7 +4358,7 @@ msgid "公開中の記事を指定してください。"
 msgstr ""
 
 #: lib/page-access/click-analytics/dashboard.php:299
-msgid "現在と異なる旧レイアウトのクリックが%件あります。現在のページには重ねていません。"
+msgid "現在と異なる旧レイアウトのクリックが%d件あります。現在のページには重ねていません。"
 msgstr ""
 
 #: lib/page-access/click-analytics/dashboard.php:300
@@ -20182,4 +20182,29 @@ msgstr ""
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
+msgstr ""
+
+msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
+msgstr ""
+
+msgid "計測データを保存できませんでした。再送してください。"
+msgstr ""
+
+msgid "リンク定義数の上限に達しました。"
+msgstr ""
+
+msgid "複数記事"
+msgstr ""
+
+msgid "代表リンク"
+msgstr ""
+
+msgid "端末の代表幅で表示しています。実際の画面幅や固定・追従要素の位置によって、クリック位置に差が生じる場合があります。"
+msgstr ""
+
+msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
+msgstr ""
+
+#: lib/page-access/analytics/dashboard-page.php
+msgid "クリック解析データを削除できませんでした。データベースの状態を確認して再試行してください。"
 msgstr ""

@@ -1,6 +1,3 @@
-/**
- * Cocoon Click Analytics - lightweight front-end collector.
- */
 /* eslint-disable prefer-arrow-callback */
 (function (root, factory) {
   'use strict';
@@ -29,7 +26,7 @@
     return 'desktop';
   }
 
-  // サンプリング率を0〜100%へ丸め、ページごとに一度だけ抽出します。
+  // ページごとに表示を抽出します。
   function shouldSample(rate, randomValue) {
     return randomValue < clamp(Number(rate) || 0, 0, 100) / 100;
   }
@@ -60,13 +57,13 @@
   function normalizeComparableUrl(value, base) {
     try {
       const url = new URL(value, base);
-      return url.protocol.toLowerCase() + '//' + url.hostname.toLowerCase() + url.pathname.replace(/\/+$/, '') + url.search;
+      return url.protocol.toLowerCase() + '//' + url.host.toLowerCase() + url.pathname.replace(/\/+$/, '') + url.search;
     } catch (error) {
       return '';
     }
   }
 
-  // 日本語を含むJSONでも32KB制限を超えないようUTF-8の実バイト数を求めます。
+  // UTF-8の送信サイズを求めます。
   function utf8Length(value) {
     if (typeof TextEncoder !== 'undefined') {return new TextEncoder().encode(value).length;}
     let bytes = 0;
@@ -119,13 +116,21 @@
   const storagePrefix = 'cocoon_click_analytics_';
   const pendingKey = storagePrefix + 'pending_internal';
   const timers = new Map();
-  const metadataCache = new WeakMap();
+  const retries = new Set();
+  let consentVersion = 0;
+  let occurrenceDirty = true;
   let occurrenceCache = new WeakMap();
   let headingCache = new WeakMap();
-  const impressed = new WeakSet();
+  let impressed = new WeakMap();
+  let sampledClicks = new WeakMap();
+  let flushTimer = null;
   const impressionBuffer = [];
   const recentClicks = new Map();
-  const pageStartedAt = win.performance && typeof win.performance.now === 'function' ? win.performance.now() : Date.now();
+  // 滞在時間には、端末時計の変更で逆戻りしない時計を使います。
+  function elapsedTime() {
+    return win.performance && typeof win.performance.now === 'function' ? win.performance.now() : Date.now();
+  }
+  const pageStartedAt = elapsedTime();
   let observer = null;
   let mutationObserver = null;
   let started = false;
@@ -146,11 +151,11 @@
   }
 
   function setSessionValue(key, value) {
-    try {win.sessionStorage.setItem(key, value);} catch (error) { /* ストレージを使えないブラウザーでは送信だけ継続します。 */ }
+    try {win.sessionStorage.setItem(key, value);} catch (error) { /* 保存不可でも計測を続けます。 */ }
   }
 
   function removeSessionValue(key) {
-    try {win.sessionStorage.removeItem(key);} catch (error) { /* ストレージを使えないブラウザーでは送信だけ継続します。 */ }
+    try {win.sessionStorage.removeItem(key);} catch (error) { /* 保存不可でも計測を続けます。 */ }
   }
 
   function sessionId() {
@@ -165,37 +170,47 @@
     return id;
   }
 
-  const currentSessionId = sessionId();
+  let currentSessionId = null;
   const sampledPage = Boolean(config.impressions) && shouldSample(config.samplingRate, Math.random());
   const privacySignal = privacySignalEnabled(config.respectPrivacy, win.navigator);
-  let consentGranted = !privacySignal && config.initialConsent !== false;
+  let consentGranted = !privacySignal && (config.initialConsent === true || config.initialConsent === '1');
 
   function baseEnvelope(context) {
     const source = context || config;
     return {
       batch_id: randomId(),
-      session_id: currentSessionId,
+      session_id: source.sessionId || currentSessionId,
       source_post_id: Number(source.sourcePostId || source.source_post_id) || 0,
       layout_revision: source.layoutRevision || source.layout_revision || '',
       sampling_rate: Number(source.samplingRate || source.sampling_rate) || 10,
       token: source.token || '',
-      device: deviceType(win.innerWidth || doc.documentElement.clientWidth || 1024)
+      device: source.device || deviceType(win.innerWidth || doc.documentElement.clientWidth || 1024)
     };
   }
 
   function transmit(events, context) {
     if (!consentGranted || !events || !events.length) {return;}
     const envelope = baseEnvelope(context);
+    const version = consentVersion;
     splitBatches(events, 50, 30000, envelope).forEach(function (batch) {
       const payload = Object.assign({}, envelope, {batch_id: randomId(), events: batch});
       const body = JSON.stringify(payload);
-      let queued = false;
-      if (win.navigator.sendBeacon) {
-        try {queued = win.navigator.sendBeacon(config.endpoint, new Blob([body], {type: 'text/plain;charset=UTF-8'}));} catch (error) {queued = false;}
+      // 同じバッチIDで再送し、重複を防ぎます。
+      function send(attempt) {
+        if (!consentGranted || version !== consentVersion) {return;}
+        if (win.fetch) {
+          win.fetch(config.endpoint, {method: 'POST', body: body, credentials: 'same-origin', keepalive: true, headers: {'Content-Type': 'text/plain;charset=UTF-8'}})
+            .then(function (response) {if (response.status >= 500 || response.status === 429) {throw new Error('retry');}})
+            .catch(function () {
+              if (attempt >= 2 || !consentGranted || version !== consentVersion || doc.hidden) {return;}
+              const timer = win.setTimeout(function () {retries.delete(timer); send(attempt + 1);}, 1000 * Math.pow(2, attempt));
+              retries.add(timer);
+            });
+        } else if (win.navigator.sendBeacon) {
+          try {win.navigator.sendBeacon(config.endpoint, new Blob([body], {type: 'text/plain;charset=UTF-8'}));} catch (error) { /* 送信失敗を無視します。 */ }
+        }
       }
-      if (!queued && win.fetch) {
-        win.fetch(config.endpoint, {method: 'POST', body: body, credentials: 'same-origin', keepalive: true, headers: {'Content-Type': 'text/plain;charset=UTF-8'}}).catch(function () {});
-      }
+      send(0);
     });
   }
 
@@ -221,6 +236,7 @@
   }
 
   function indexOccurrences() {
+    occurrenceDirty = false;
     const counts = {};
     let currentHeading = '';
     occurrenceCache = new WeakMap();
@@ -253,7 +269,8 @@
   }
 
   function linkMetadata(anchor) {
-    if (metadataCache.has(anchor)) {return metadataCache.get(anchor);}
+    // 変更後の属性と掲載場所を使います。
+    if (occurrenceDirty) {indexOccurrences();}
     const rawHref = anchor.getAttribute('href') || '';
     const kind = destinationKind(rawHref, config.siteHosts || [], anchor.hasAttribute('download'), win.location.href);
     const area = areaFor(anchor);
@@ -279,7 +296,6 @@
       classification_hint: classificationHint(anchor),
       is_affiliate: Boolean(anchor.closest('.affiliate-tag,.amazon-item-box,.rakuten-item-box') || /affiliate|ref=|tag=/i.test(rawHref))
     };
-    metadataCache.set(anchor, meta);
     return meta;
   }
 
@@ -305,11 +321,17 @@
     return events;
   }
 
+  // 掲載情報の変更を別の表示として扱います。
+  function impressionKey(meta) {
+    return JSON.stringify([meta.href, meta.area, meta.heading, meta.occurrence, meta.label, meta.element_type]);
+  }
+
   function queueImpression(anchor) {
-    if (impressed.has(anchor) || !consentGranted) {return;}
+    if (!consentGranted || doc.hidden) {return;}
     const meta = linkMetadata(anchor);
-    if (isExcluded(meta)) {return;}
-    impressed.add(anchor);
+    const key = impressionKey(meta);
+    if (impressed.get(anchor) === key || isExcluded(meta)) {return;}
+    impressed.set(anchor, key);
     impressionBuffer.push(Object.assign({type: 'impression'}, meta));
     if (impressionBuffer.length >= 49) {flushImpressions();}
   }
@@ -324,6 +346,9 @@
   function pendingContext(meta) {
     return {
       expires: Date.now() + 10 * 60 * 1000,
+      source: normalizeComparableUrl(win.location.href, win.location.href),
+      sessionId: currentSessionId,
+      device: deviceType(win.innerWidth),
       target: normalizeComparableUrl(meta.href, win.location.href),
       sourcePostId: config.sourcePostId,
       layoutRevision: config.layoutRevision,
@@ -333,13 +358,31 @@
     };
   }
 
+  const crossTabPrefix = storagePrefix + 'cross_tab_';
+
+  // 別タブへ期限付きの到着情報を渡します。
+  function crossTabEntries() {
+    const entries = [];
+    try {
+      Object.keys(win.localStorage).filter(function (key) {return key.indexOf(crossTabPrefix) === 0;}).forEach(function (key) {
+        let pending = null;
+        try {pending = JSON.parse(win.localStorage.getItem(key));} catch (error) { /* 壊れた値は削除します。 */ }
+        if (!pending || pending.expires < Date.now()) {win.localStorage.removeItem(key);}
+        else {entries.push({key: key, pending: pending});}
+      });
+    } catch (error) { /* 保存不可でも計測を続けます。 */ }
+    return entries.sort(function (a, b) {return a.pending.expires - b.pending.expires;});
+  }
+
   function rememberInternalOutcome(meta, opensNewTab) {
     if (!config.outcomes || meta.kind !== 'internal') {return;}
-    setSessionValue(pendingKey, JSON.stringify(pendingContext(meta)));
-    if (opensNewTab) {
-      // 新しいタブへsessionStorageが複製された後、元タブ側だけに残る到着情報を消します。
-      win.setTimeout(function () {removeSessionValue(pendingKey);}, 1500);
-    }
+    const pending = pendingContext(meta);
+    if (!opensNewTab) {setSessionValue(pendingKey, JSON.stringify(pending)); return;}
+    try {
+      const entries = crossTabEntries();
+      entries.slice(0, Math.max(0, entries.length - 19)).forEach(function (entry) {win.localStorage.removeItem(entry.key);});
+      win.localStorage.setItem(crossTabPrefix + randomId(), JSON.stringify(pending));
+    } catch (error) { /* 保存不可でも遷移を続けます。 */ }
   }
 
   function clickPosition(event, anchor) {
@@ -361,34 +404,40 @@
     if (!consentGranted || event.isTrusted === false || (typeof event.button === 'number' && event.button === 2)) {return;}
     const anchor = event.target && event.target.closest ? event.target.closest('a[href]') : null;
     if (!anchor) {return;}
+    // 未抽出ページも掲載順を更新します。
+    if (!mutationObserver) {occurrenceDirty = true;}
     const meta = linkMetadata(anchor);
     if (isExcluded(meta)) {return;}
     const key = meta.href + '|' + meta.area + '|' + meta.occurrence;
     const now = Date.now();
     if (recentClicks.has(key) && now - recentClicks.get(key) < 2000) {return;}
     recentClicks.set(key, now);
-    const sampled = sampledPage;
-    const forcedImpression = sampled && !impressed.has(anchor);
-    if (forcedImpression) {impressed.add(anchor);}
-    const elapsed = win.performance && typeof win.performance.now === 'function' ? win.performance.now() - pageStartedAt : Date.now() - pageStartedAt;
+    const exposureKey = impressionKey(meta);
+    // CTRの成功は1表示につき最大1回です。
+    const sampled = sampledPage && sampledClicks.get(anchor) !== exposureKey;
+    const forcedImpression = sampled && impressed.get(anchor) !== exposureKey;
+    if (sampled) {sampledClicks.set(anchor, exposureKey);}
+    if (forcedImpression) {impressed.set(anchor, exposureKey);}
+    const elapsed = elapsedTime() - pageStartedAt;
     const eventData = Object.assign({
       type: 'click',
       sampled: sampled,
       forced_impression: forcedImpression,
       time_to_click_ms: Math.max(0, Math.round(elapsed))
     }, meta, config.heatmap ? clickPosition(event, anchor) : {});
-    const events = [eventData];
+    // 成立済みの表示をクリックと一緒に送ります。
+    const events = impressionBuffer.splice(0, impressionBuffer.length).concat([eventData]);
     markPageSample(events);
     transmit(events);
     rememberInternalOutcome(meta, meta.target_blank || event.button === 1 || event.ctrlKey || event.metaKey);
   }
 
   function initObserver() {
-    if (!sampledPage || !config.impressions || observer || !('IntersectionObserver' in win)) {return;}
-    // リンクが50%以上見えた状態を1秒保ったときだけ表示回数を成立させます。
+    if (!consentGranted || doc.hidden || !sampledPage || !config.impressions || observer || !('IntersectionObserver' in win)) {return;}
+    // 50%以上の可視状態を1秒保つと表示を数えます。
     observer = new win.IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (impressed.has(entry.target)) {return;}
+        if (impressed.get(entry.target) === impressionKey(linkMetadata(entry.target))) {return;}
         if (entry.intersectionRatio >= 0.5) {
           if (!timers.has(entry.target)) {
             timers.set(entry.target, win.setTimeout(function () {
@@ -407,22 +456,39 @@
       const meta = linkMetadata(anchor);
       if (!isExcluded(meta)) {observer.observe(anchor);}
     });
-    // 初心者向け: 後から追加されたリンクだけを監視へ足し、ページ全体の再走査を避けます。
+    // 追加・変更したリンクを監視し直します。
     if ('MutationObserver' in win) {
       mutationObserver = new win.MutationObserver(function (records) {
+        occurrenceDirty = true;
+        const anchors = new Set();
         records.forEach(function (record) {
-          record.addedNodes.forEach(function (node) {
-            if (!node || node.nodeType !== 1) {return;}
-            const anchors = node.matches && node.matches('a[href]') ? [node] : Array.prototype.slice.call(node.querySelectorAll ? node.querySelectorAll('a[href]') : []);
-            anchors.forEach(function (anchor) {
-              const meta = linkMetadata(anchor);
-              if (observer && !isExcluded(meta)) {observer.observe(anchor);}
-            });
+          const node = record.target.nodeType === 1 ? record.target : record.target.parentElement;
+          if (!node) {return;}
+          const parent = node.closest('a[href]');
+          if (parent) {anchors.add(parent);}
+          const candidates = record.type === 'childList' ? Array.from(record.addedNodes) : [node];
+          candidates.forEach(function (candidate) {
+            if (candidate.nodeType !== 1) {return;}
+            if (candidate.matches('a[href]')) {anchors.add(candidate);}
+            candidate.querySelectorAll('a[href]').forEach(function (anchor) {anchors.add(anchor);});
           });
         });
+        anchors.forEach(function (anchor) {
+          if (timers.has(anchor)) {win.clearTimeout(timers.get(anchor)); timers.delete(anchor);}
+          observer.unobserve(anchor);
+          if (!isExcluded(linkMetadata(anchor))) {observer.observe(anchor);}
+        });
       });
-      mutationObserver.observe(doc.body, {childList: true, subtree: true});
+      mutationObserver.observe(doc.body, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['href', 'rel', 'target', 'download', 'aria-label', 'alt', 'class', 'data-cocoon-click-label', 'data-cocoon-click-area', 'data-cocoon-click-type']});
     }
+  }
+
+  // 非表示・同意撤回で待機中の実表示を取り消します。
+  function stopObservation() {
+    if (observer) {observer.disconnect(); observer = null;}
+    if (mutationObserver) {mutationObserver.disconnect(); mutationObserver = null;}
+    timers.forEach(function (timer) {win.clearTimeout(timer);});
+    timers.clear();
   }
 
   function runWhenIdle(callback) {
@@ -432,35 +498,72 @@
 
   function sendOutcome(engaged) {
     if (!outcomeState || outcomeState.sent || !consentGranted) {return;}
+    if (engaged && doc.hidden) {return;}
     outcomeState.sent = true;
+    win.clearTimeout(outcomeState.timer);
     const eventData = Object.assign({}, outcomeState.pending.meta, {type: 'internal_outcome', engaged: Boolean(engaged)});
     transmit([eventData], outcomeState.pending);
-    removeSessionValue(pendingKey);
+  }
+
+  function activateOutcome(pending) {
+    if (!consentGranted || !config.outcomes || !config.trackInternal || !pending || !pending.meta || pending.expires < Date.now() || pending.target !== normalizeComparableUrl(win.location.href, win.location.href)) {return false;}
+    outcomeState = {pending: pending, sent: false, visibleAt: null, visibleMs: 0};
+    updateOutcomeVisibility();
+    return true;
+  }
+
+  // エンゲージ判定には画面が見えている時間だけを足します。
+  function updateOutcomeVisibility() {
+    const state = outcomeState;
+    if (!state || state.sent || !consentGranted) {return;}
+    win.clearTimeout(state.timer);
+    const now = elapsedTime();
+    if (state.visibleAt !== null) {state.visibleMs += now - state.visibleAt;}
+    state.visibleAt = doc.hidden ? null : now;
+    if (!doc.hidden) {
+      state.timer = win.setTimeout(function () {if (outcomeState === state) {sendOutcome(true);}}, Math.max(0, 10000 - state.visibleMs));
+    }
   }
 
   function initInternalOutcome() {
+    if (!config.outcomes || !config.trackInternal) {return;}
     let pending = null;
-    try {pending = JSON.parse(sessionValue(pendingKey) || 'null');} catch (error) {pending = null;}
-    if (!pending || !pending.meta || pending.expires < Date.now() || pending.target !== normalizeComparableUrl(win.location.href, win.location.href)) {
-      if (pending) {removeSessionValue(pendingKey);}
-      return;
-    }
-    // 遷移先で10秒滞在または25%スクロールしたときだけエンゲージ済みとします。
-    outcomeState = {pending: pending, sent: false};
-    win.setTimeout(function () {sendOutcome(true);}, 10000);
-    win.addEventListener('scroll', function () {
-      const height = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0, 1);
-      if ((win.scrollY + win.innerHeight) / height >= 0.25) {sendOutcome(true);}
-    }, {passive: true});
+    try {pending = JSON.parse(sessionValue(pendingKey) || 'null');} catch (error) { /* 壊れた値は読み捨てます。 */ }
+    removeSessionValue(pendingKey);
+    if (activateOutcome(pending)) {return;}
+    const claim = function () {
+      if (!consentGranted) {return;}
+      const source = normalizeComparableUrl(doc.referrer, win.location.href);
+      const target = normalizeComparableUrl(win.location.href, win.location.href);
+      if (!doc.referrer) {return;}
+      const entry = crossTabEntries().find(function (item) {return item.pending.source === source && item.pending.target === target;});
+      if (!entry) {return;}
+      try {win.localStorage.removeItem(entry.key);} catch (error) {return;}
+      activateOutcome(entry.pending);
+    };
+    // 到着情報をタブ間で排他制御します。
+    if (win.navigator.locks) {win.navigator.locks.request(storagePrefix + 'arrival', claim).catch(function () {});}
+    else {claim();}
   }
 
   function start() {
     if (!consentGranted || !config.endpoint || !config.sourcePostId) {return;}
+    if (!currentSessionId) {currentSessionId = sessionId();}
+    if (sampledPage && !flushTimer) {flushTimer = win.setInterval(flushImpressions, 5000);}
     if (started) {runWhenIdle(initObserver); return;}
     started = true;
     doc.addEventListener('click', handleClick, true);
     doc.addEventListener('auxclick', handleClick, true);
     initInternalOutcome();
+    win.addEventListener('scroll', function () {
+      const height = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0, 1);
+      if ((win.scrollY + win.innerHeight) / height >= 0.25) {sendOutcome(true);}
+    }, {passive: true});
+    doc.addEventListener('visibilitychange', function () {
+      updateOutcomeVisibility();
+      if (doc.hidden) {flushImpressions(); stopObservation();}
+      else if (consentGranted) {runWhenIdle(initObserver);}
+    });
     const afterLoad = function () {runWhenIdle(initObserver);};
     if (doc.readyState === 'complete') {afterLoad();} else {win.addEventListener('load', afterLoad, {once: true});}
     win.addEventListener('pagehide', function () {
@@ -471,14 +574,29 @@
 
   const publicApi = {
     setConsent: function (granted) {
-      consentGranted = Boolean(granted) && !privacySignal;
+      consentGranted = granted === true && !privacySignal;
       if (consentGranted) {start();}
       else {
-        if (observer) {observer.disconnect(); observer = null;}
-        if (mutationObserver) {mutationObserver.disconnect(); mutationObserver = null;}
-        timers.forEach(function (timer) {win.clearTimeout(timer);});
-        timers.clear();
+        // 再同意しても、撤回前の送信待ちは復活させません。
+        consentVersion += 1;
+        retries.forEach(function (timer) {win.clearTimeout(timer);});
+        retries.clear();
+        if (outcomeState) {win.clearTimeout(outcomeState.timer);}
+        stopObservation();
         impressionBuffer.length = 0;
+        if (flushTimer) {win.clearInterval(flushTimer); flushTimer = null;}
+        crossTabEntries().filter(function (entry) {return entry.pending.sessionId === currentSessionId;}).forEach(function (entry) {
+          try {win.localStorage.removeItem(entry.key);} catch (error) { /* ストレージ制限を無視します。 */ }
+        });
+        removeSessionValue(pendingKey);
+        removeSessionValue(storagePrefix + 'session');
+        removeSessionValue(storagePrefix + 'session_time');
+        currentSessionId = null;
+        outcomeState = null;
+        impressed = new WeakMap();
+        sampledClicks = new WeakMap();
+        recentClicks.clear();
+        pageSampleSent = false;
       }
     }
   };

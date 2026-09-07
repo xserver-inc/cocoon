@@ -13,12 +13,12 @@ function cocoon_click_handle_delete_data(){
     wp_die(__('この操作を行う管理者権限がありません。', THEME_NAME));
   }
   check_admin_referer('cocoon_click_delete_data');
-  cocoon_click_delete_all_data();
+  $deleted = cocoon_click_delete_all_data();
   cocoon_click_analytics_flush_cache();
   $url = add_query_arg(array(
     'page' => 'theme-access',
     'view' => 'settings',
-    'cocoon_click_deleted' => '1',
+    $deleted ? 'cocoon_click_deleted' : 'cocoon_click_delete_failed' => '1',
   ), admin_url('admin.php'));
   wp_safe_redirect($url);
   exit;
