@@ -90,6 +90,22 @@ PHP;
     }
 
     /**
+     * 監査の既定出力先を最新報告書へ固定し、旧報告書の上書きを防止
+     */
+    public function test_監査の既定参照先はマージ後の報告書である(): void
+    {
+        $source = $this->readThemeFile('scripts/audit-cocoon-settings-data-contract.php');
+        $this->assertSame(
+            1,
+            preg_match("~^const COCOON_SETTINGS_REPORT = '([^']+)';~m", $source, $matches)
+        );
+        $this->assertSame(
+            '.github/docs/cocoon-settings-merge-validation.md',
+            $matches[1]
+        );
+    }
+
+    /**
      * nonce、フォーム、隠しフィールド、保存ボタンの契約を検証する。
      */
     public function test_設定フォームの保存契約が維持されている(): void

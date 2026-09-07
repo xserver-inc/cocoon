@@ -93,6 +93,7 @@ const flushMicrotasks = async ( count = 12 ) => {
 
 // 各テストを完全に独立させるため、新しいDOMとブラウザAPIの代替実装を毎回用意する。
 const createHarness = async ( {
+  closedDetailsHaveRects = true,
   hasResizeObserver = true,
   initialChecked = 'alpha',
   initialMode = 'responsive',
@@ -173,7 +174,7 @@ const createHarness = async ( {
     };
   };
 
-  // jsdomにはレイアウト計算がないため、CSS上で見える要素だけに矩形がある状態を再現する。
+  // jsdomの矩形情報の補完と、閉じたdetails内にも矩形が残るブラウザーの再現
   Object.defineProperty( window.HTMLElement.prototype, 'getClientRects', {
     configurable: true,
     value() {
@@ -198,7 +199,12 @@ const createHarness = async ( {
       const isVisibleSummary =
         this.tagName === 'SUMMARY' && this.parentElement === closedDetails;
 
-      if ( closedDetails && this !== closedDetails && ! isVisibleSummary ) {
+      if (
+        ! closedDetailsHaveRects &&
+        closedDetails &&
+        this !== closedDetails &&
+        ! isVisibleSummary
+      ) {
         return [];
       }
 
@@ -1239,12 +1245,98 @@ const testUngroupedTab = async () => {
   dom.window.close();
 };
 
+// 閉じた分類の矩形有無に依存しないキーボード移動とTab停止位置の検証
+const testClosedGroupKeyboardNavigation = async () => {
+  for ( const closedDetailsHaveRects of [ true, false ] ) {
+    const harness = await createHarness( {
+      closedDetailsHaveRects,
+      ungroupedBeta: true,
+    } );
+    const { document, window } = harness;
+    const alphaButton = document.querySelector(
+      '[data-tab-target="tab-alpha-input"]'
+    );
+    const betaButton = document.querySelector(
+      '[data-tab-target="tab-beta-input"]'
+    );
+    const alphaGroup = alphaButton.closest( 'details' );
+    const betaGroup = betaButton.closest( 'details' );
+
+    try {
+      assert.ok( alphaGroup.open );
+      assert.ok( ! betaGroup.open );
+      assert.strictEqual(
+        betaButton.getClientRects().length > 0,
+        closedDetailsHaveRects,
+        '閉じた分類内の矩形をブラウザーごとの挙動で再現すること'
+      );
+
+      alphaButton.focus();
+      for ( const key of [ 'End', 'ArrowDown', 'Home', 'ArrowUp' ] ) {
+        pressKey( window, alphaButton, key );
+        assert.strictEqual(
+          document.activeElement,
+          alphaButton,
+          `${ key }では閉じた分類の項目へ移動しないこと`
+        );
+        assert.strictEqual( alphaButton.tabIndex, 0 );
+        assert.strictEqual( betaButton.tabIndex, -1 );
+      }
+
+      // 選択タブを変えずに別分類を開いた場合のTab停止位置の移動
+      betaGroup.open = true;
+      betaGroup.dispatchEvent( new window.Event( 'toggle' ) );
+      assert.ok( ! alphaGroup.open );
+      assert.strictEqual( alphaButton.tabIndex, -1 );
+      assert.strictEqual(
+        betaButton.tabIndex,
+        0,
+        '閉じた選択済み項目ではなく、開いた分類の先頭をTab停止にすること'
+      );
+      assert.ok( document.getElementById( 'tab-alpha-input' ).checked );
+
+      betaButton.focus();
+      for ( const key of [ 'Home', 'ArrowUp', 'End', 'ArrowDown' ] ) {
+        pressKey( window, betaButton, key );
+        assert.strictEqual( document.activeElement, betaButton );
+      }
+
+      // 全分類を閉じた場合の不可視項目へのTab停止の解除
+      betaGroup.open = false;
+      betaGroup.dispatchEvent( new window.Event( 'toggle' ) );
+      assert.strictEqual( alphaButton.tabIndex, -1 );
+      assert.strictEqual( betaButton.tabIndex, -1 );
+
+      // 検索による分類の再展開と通常表示への復帰
+      const search = document.getElementById(
+        'cocoon-settings-navigation-search'
+      );
+      search.value = 'a';
+      search.dispatchEvent( new window.Event( 'input', { bubbles: true } ) );
+      assert.ok( alphaGroup.open && betaGroup.open );
+      alphaButton.focus();
+      pressKey( window, alphaButton, 'End' );
+      assert.strictEqual( document.activeElement, betaButton );
+      search.value = '';
+      search.dispatchEvent( new window.Event( 'input', { bubbles: true } ) );
+      assert.ok( alphaGroup.open && ! betaGroup.open );
+      assert.strictEqual( alphaButton.tabIndex, 0 );
+      assert.strictEqual( betaButton.tabIndex, -1 );
+      assert.deepStrictEqual( harness.browserErrors, [] );
+    } finally {
+      harness.dom.window.close();
+    }
+  }
+};
+
 // 失敗時は終了コードを1にし、npmやCIから確実に検出できる自己完結テストにする。
 ( async () => {
   process.stdout.write( 'Running navigation and form behavior test...\n' );
   await testNavigationAndFormBehavior();
   process.stdout.write( '標準分類外の拡張タブを検証中...\n' );
   await testUngroupedTab();
+  process.stdout.write( '折りたたみ分類のキーボード操作を検証中...\n' );
+  await testClosedGroupKeyboardNavigation();
   process.stdout.write( 'Running navigation search state test...\n' );
   await testSearchStateAndRovingTabindex();
   process.stdout.write( 'Running in-viewport scroll behavior test...\n' );

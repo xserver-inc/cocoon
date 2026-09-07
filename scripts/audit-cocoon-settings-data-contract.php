@@ -9,7 +9,8 @@ declare(strict_types=1);
 
 // 設定タブ拡張を含むマージ直前のmasterを基準とした保存契約の比較
 const COCOON_SETTINGS_BASELINE = '578ca6d19';
-const COCOON_SETTINGS_REPORT = '.github/docs/COCOON-SETTINGS-DATA-COMPATIBILITY-REPORT.md';
+// 旧ブランチ報告書を履歴として保持するためのマージ後報告書への統一
+const COCOON_SETTINGS_REPORT = '.github/docs/cocoon-settings-merge-validation.md';
 const COCOON_SETTINGS_REPORT_STATIC_START = '<!-- BEGIN AUTO-GENERATED STATIC DATA CONTRACT -->';
 const COCOON_SETTINGS_REPORT_STATIC_END = '<!-- END AUTO-GENERATED STATIC DATA CONTRACT -->';
 

@@ -5,7 +5,7 @@
  */
 
 function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
-  // hidden属性と祖先を含むcomputed styleを調べ、実際に描画される要素だけを操作対象にする。
+  // hidden属性と祖先の表示状態に基づく、実際に描画される操作対象の判定
   const isElementVisible = ( element ) => {
     if ( ! element || ! element.isConnected ) {
       return false;
@@ -23,6 +23,19 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
         computedStyle.visibility === 'collapse'
       ) {
         return false;
+      }
+
+      // 矩形が残る閉じたdetailsの内容を除外し、先頭summaryとその子要素だけを許可
+      if (
+        currentElement.tagName === 'DETAILS' &&
+        ! currentElement.open &&
+        currentElement !== element
+      ) {
+        const summary = currentElement.querySelector( ':scope > summary' );
+
+        if ( ! summary || ! summary.contains( element ) ) {
+          return false;
+        }
       }
 
       currentElement = currentElement.parentElement;
