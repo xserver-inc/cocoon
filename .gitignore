@@ -9,8 +9,14 @@ package-lock.json
 .cursor/
 
 # Agent
+AGENTS.md
 .agent
 .agents/
+.codex/
+
+# サンプルと専用スクリプト
+/samples/
+/scripts/block-samples/
 
 # 一時作業フォルダ
 /scratch/
