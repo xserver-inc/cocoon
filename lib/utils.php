@@ -1050,7 +1050,7 @@ function get_blogcard_label_css_variables(){
     if ($translated === $default) {
       continue;
     }
-    $properties .= '--cocoon-bct-'.$suffix.'-text:"'.escape_css_content_string($translated).'";';
+    $properties .= '--cocoon-bct-'.$suffix.'-text:"'.escape_css_content_string($translated, $default).'";';
   }
 
   //日本語サイトなど上書きが不要な場合は何も出力しない
@@ -1086,7 +1086,7 @@ function get_skin_text_css_variables(){
     if ($translated === $default) {
       continue;
     }
-    $properties .= '--cocoon-skin-'.$name.'-text:"'.escape_css_content_string($translated).'";';
+    $properties .= '--cocoon-skin-'.$name.'-text:"'.escape_css_content_string($translated, $default).'";';
   }
 
   return $properties ? ':root{'.$properties.'}' : '';
@@ -1096,7 +1096,11 @@ endif;
 
 //CSSのcontent用文字列をエスケープする
 if ( !function_exists( 'escape_css_content_string' ) ):
-function escape_css_content_string($text){
+function escape_css_content_string($text, $fallback = ''){
+  // 不正なUTF-8による正規表現の失敗を防ぐため、有効な既定文言または空文字へ置換
+  if (1 !== preg_match('//u', $text)) {
+    $text = 1 === preg_match('//u', $fallback) ? $fallback : '';
+  }
   //style要素からの脱出を防ぐためタグ文字を除去
   $text = str_replace(array('<', '>'), '', $text);
   //改行はCSS文字列リテラルに含められないため空白へ置換

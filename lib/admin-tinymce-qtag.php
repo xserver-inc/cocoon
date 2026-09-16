@@ -17,28 +17,37 @@ if ( is_admin() && (($pagenow != 'widgets.php') && ($pagenow != 'customize.php')
 if ( !function_exists( 'add_quicktags_to_text_editor' ) ):
 function add_quicktags_to_text_editor() {
   //スクリプトキューにquicktagsが保存されているかチェック
-  if (wp_script_is('quicktags')){?>
+  if (wp_script_is('quicktags')){
+    $quicktag_buttons = array(
+      array('qt-pre', 'pre', '<pre>', '</pre>'),
+      array('qt-ruby', __( 'ふりがな', THEME_NAME ), '<ruby>', '<rt>'.esc_html(__( 'ふりがな', THEME_NAME )).'</rt></ruby>'),
+      array('qt-bold', __( '太字', THEME_NAME ), '<span class="bold">', '</span>'),
+      array('qt-red', __( '赤字', THEME_NAME ), '<span class="red">', '</span>'),
+      array('qt-bold-red', __( '太い赤字', THEME_NAME ), '<span class="bold-red">', '</span>'),
+      array('qt-red-under', __( '赤アンダー', THEME_NAME ), '<span class="red-under">', '</span>'),
+      array('qt-marker', __( '黄色マーカー', THEME_NAME ), '<span class="marker">', '</span>'),
+      array('qt-marker-under', __( '黄色アンダーマーカー', THEME_NAME ), '<span class="marker-under">', '</span>'),
+      array('qt-strike', __( '打ち消し線', THEME_NAME ), '<span class="strike">', '</span>'),
+      array('qt-badge', __( 'バッジ', THEME_NAME ), '<span class="badge">', '</span>'),
+      array('qt-keyboard-key', __( 'キーボード', THEME_NAME ), '<span class="keyboard-key">', '</span>'),
+      array('qt-information', __( '情報(i)', THEME_NAME ), '<div class="information-box">', '</div>'),
+      array('qt-question', __( '質問(?)', THEME_NAME ), '<div class="question-box">', '</div>'),
+      array('qt-alert', __( 'アラート(!)', THEME_NAME ), '<div class="alert-box">', '</div>'),
+      array('qt-sp-primary', __( 'primary', THEME_NAME ), '<div class="primary-box">', '</div>'),
+      array('qt-sp-success', __( 'success', THEME_NAME ), '<div class="success-box">', '</div>'),
+      array('qt-sp-info', 'info', '<div class="info-box">', '</div>'),
+      array('qt-sp-warning', __( 'warning', THEME_NAME ), '<div class="warning-box">', '</div>'),
+      array('qt-sp-danger', __( 'danger', THEME_NAME ), '<div class="danger-box">', '</div>'),
+    );
+    // 翻訳内の引用符・改行・HTMLタグと不正UTF-8を安全に扱うJSON出力
+    $quicktag_json = wp_json_encode($quicktag_buttons, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_INVALID_UTF8_SUBSTITUTE);
+    ?>
     <script>
     window.addEventListener('DOMContentLoaded', () => {
-      QTags.addButton('qt-pre','pre','<pre>','</pre>');
-      QTags.addButton('qt-ruby','<?php _e( 'ふりがな', THEME_NAME ) ?>','<ruby>','<rt><?php _e( 'ふりがな', THEME_NAME ) ?></rt></ruby>');
-      QTags.addButton('qt-bold','<?php _e( '太字', THEME_NAME ) ?>','<span class="bold">','</span>');
-      QTags.addButton('qt-red','<?php _e( '赤字', THEME_NAME ); ?>','<span class="red">','</span>');
-      QTags.addButton('qt-bold-red','<?php _e( '太い赤字', THEME_NAME ); ?>','<span class="bold-red">','</span>');
-      QTags.addButton('qt-red-under','<?php _e( '赤アンダー', THEME_NAME ); ?>','<span class="red-under">','</span>');
-      QTags.addButton('qt-marker','<?php _e( '黄色マーカー', THEME_NAME ); ?>','<span class="marker">','</span>');
-      QTags.addButton('qt-marker-under','<?php _e( '黄色アンダーマーカー', THEME_NAME ); ?>','<span class="marker-under">','</span>');
-      QTags.addButton('qt-strike','<?php _e( '打ち消し線', THEME_NAME ); ?>','<span class="strike">','</span>');
-      QTags.addButton('qt-badge','<?php _e( 'バッジ', THEME_NAME ); ?>','<span class="badge">','</span>');
-      QTags.addButton('qt-keyboard-key','<?php _e( 'キーボード', THEME_NAME ); ?>','<span class="keyboard-key">','</span>');
-      QTags.addButton('qt-information','<?php _e( '情報(i)', THEME_NAME ); ?>','<div class="information-box">','</div>');
-      QTags.addButton('qt-question','<?php _e( '質問(?)', THEME_NAME ); ?>','<div class="question-box">','</div>');
-      QTags.addButton('qt-alert','<?php _e( 'アラート(!)', THEME_NAME ); ?>','<div class="alert-box">','</div>');
-      QTags.addButton('qt-sp-primary','<?php _e( 'primary', THEME_NAME ); ?>','<div class="primary-box">','</div>');
-      QTags.addButton('qt-sp-success','<?php _e( 'success', THEME_NAME ); ?>','<div class="success-box">','</div>');
-      QTags.addButton('qt-sp-info','info','<div class="info-box">','</div>');
-      QTags.addButton('qt-sp-warning','<?php _e( 'warning', THEME_NAME ); ?>','<div class="warning-box">','</div>');
-      QTags.addButton('qt-sp-danger','<?php _e( 'danger', THEME_NAME ); ?>','<div class="danger-box">','</div>');
+      const buttons = <?php echo $quicktag_json; ?>;
+      buttons.forEach((button) => {
+        QTags.addButton(button[0], button[1], button[2], button[3]);
+      });
     });
     </script>
   <?php
@@ -52,9 +61,11 @@ add_filter('tiny_mce_before_init', 'initialize_tinymce_styles');
 if ( !function_exists( 'initialize_tinymce_styles' ) ):
 function initialize_tinymce_styles($init_array) {
 
-  // ブログカードラベルの翻訳用CSS変数をエディター内に反映する
+  // ブログカードラベルの翻訳用CSS変数をエディター内に反映
   $blogcard_label_css = get_blogcard_label_css_variables();
   if ($blogcard_label_css) {
+    // WordPressが外側の引用符を付けるため、JSON化したCSSから外側の引用符だけを除去
+    $blogcard_label_css = substr(wp_json_encode($blogcard_label_css, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT), 1, -1);
     $init_array['content_style'] = (isset($init_array['content_style']) ? rtrim($init_array['content_style']) . ' ' : '') . $blogcard_label_css;
   }
 
