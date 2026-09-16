@@ -64,6 +64,15 @@ function cocoon_analytics_handle_export(){
         $rows[] = array($r['post_author'], $u ? $u->display_name : '', $r['posts_with_pv'], $r['pv'], $r['avg_pv']);
       }
       break;
+    case 'click_internal':
+    case 'click_external':
+    case 'click_domains':
+    case 'click_daily':
+    case 'click_positions':
+      $dataset = cocoon_click_export_dataset($target, $from, $to);
+      $headers = $dataset['headers'];
+      $rows = $dataset['rows'];
+      break;
     default:
       wp_die(__('対象が不正です。', THEME_NAME));
   }
@@ -78,6 +87,14 @@ function cocoon_analytics_handle_export(){
 }
 endif;
 
+if ( !function_exists( 'cocoon_analytics_csv_safe_cell' ) ):
+function cocoon_analytics_csv_safe_cell($value){
+  if (!is_string($value)) return $value;
+  // 初心者向け: 表計算ソフトが文字列を数式として実行しないよう、危険な先頭記号を無効化します。
+  return preg_match('/^[\t\r\n ]*[=+\-@]/u', $value) || preg_match('/^[\t\r\n]/u', $value) ? "'" . $value : $value;
+}
+endif;
+
 if ( !function_exists( 'cocoon_analytics_output_csv' ) ):
 function cocoon_analytics_output_csv($filename, $headers, $rows){
   nocache_headers();
@@ -89,7 +106,7 @@ function cocoon_analytics_output_csv($filename, $headers, $rows){
   // PHP8.4以降の仕様変更に伴う非推奨警告を防ぐため、区切り文字、囲み文字、エスケープ文字を明示的に指定します
   fputcsv($out, $headers, ',', '"', '\\');
   foreach ($rows as $r) {
-    fputcsv($out, $r, ',', '"', '\\');
+    fputcsv($out, array_map('cocoon_analytics_csv_safe_cell', $r), ',', '"', '\\');
   }
   fclose($out);
 }

@@ -42,7 +42,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: Install dependencies
+      - name: Install theme dependencies
         run: composer install --prefer-dist --no-progress
 
       - name: Run unit tests
@@ -135,6 +135,12 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: Install WordPress-compatible PHPUnit
+        run: |
+          mkdir -p /tmp/cocoon-integration-tools
+          cp docker/phpunit/composer.integration.json /tmp/cocoon-integration-tools/composer.json
+          composer install --working-dir=/tmp/cocoon-integration-tools --prefer-dist --no-progress
+
       - name: Install WordPress test suite
         run: |
           # WordPress テストスイートをダウンロード・セットアップ
@@ -187,6 +193,7 @@ jobs:
           define('WP_TESTS_TITLE', 'Test Blog');
           define('WP_PHP_BINARY', 'php');
           define('WPLANG', '');
+          define('WP_TESTS_PHPUNIT_POLYFILLS_PATH', getenv('WP_TESTS_PHPUNIT_POLYFILLS_PATH'));
           EOF
 
           # テーマをWordPressにシンボリックリンク
@@ -198,4 +205,5 @@ jobs:
       - name: Run integration tests
         env:
           WP_TESTS_DIR: /tmp/wordpress-tests-lib
-        run: vendor/bin/phpunit --bootstrap tests/Integration/bootstrap.php --testsuite integration --colors=always
+          WP_TESTS_PHPUNIT_POLYFILLS_PATH: /tmp/cocoon-integration-tools/vendor/yoast/phpunit-polyfills
+        run: /tmp/cocoon-integration-tools/vendor/bin/phpunit -c phpunit.integration.xml --testsuite integration --colors=always

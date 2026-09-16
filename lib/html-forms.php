@@ -1222,9 +1222,9 @@ function generate_widget_entries_tag($atts){
 
   //除外記事ショートコードオプション
   if ($ex_posts) {
-    $args += array(
-      'post__not_in' => $ex_posts,
-    );
+    //既存の除外投稿を上書きせずウィジェット固有の除外投稿を統合する
+    $prev = isset($args['post__not_in']) ? (array)$args['post__not_in'] : array();
+    $args['post__not_in'] = array_values(array_unique(array_map('intval', array_merge($prev, (array)$ex_posts))));
   }
   //除外カテゴリーショートコードオプション
   if ($ex_cats) {

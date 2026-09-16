@@ -101,6 +101,7 @@ require_once abspath(__FILE__).'page-speech-balloon/speech-balloon-func.php';  /
 require_once abspath(__FILE__).'page-speed-up/speed-up-func.php';  //高速化設定関数
 require_once abspath(__FILE__).'page-access/access-func.php';  //アクセス数統計
 require_once abspath(__FILE__).'page-access/analytics/_loader.php';  //アクセス解析ダッシュボード
+require_once abspath(__FILE__).'page-access/click-analytics/_loader.php';  //クリック解析
 require_once abspath(__FILE__).'page-item-ranking/item-ranking-func.php';  //ランキング
 require_once abspath(__FILE__).'custom-fields/seo-field.php'; //SEOのページ設定
 require_once abspath(__FILE__).'custom-fields/ad-field.php';  //広告のページ設定

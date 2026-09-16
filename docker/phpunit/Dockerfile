@@ -5,6 +5,7 @@ FROM php:${PHP_VERSION}-cli-bookworm
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
+        curl \
         libicu-dev \
         libonig-dev \
         libxml2-dev \

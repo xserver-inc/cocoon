@@ -14,6 +14,137 @@
   padding: 4px 0;
 }
 
+/* クリック解析 */
+
+.cocoon-click-subtabs {
+  margin-bottom: 14px;
+}
+
+.cocoon-click-filter-bar,
+.cocoon-click-group-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 12px 0 18px;
+}
+
+.cocoon-click-kpi-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.cocoon-click-chart-wrap {
+  position: relative;
+  height: 300px;
+}
+
+.cocoon-click-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cocoon-click-insight-list {
+  margin: 0;
+}
+
+.cocoon-click-insight-list li {
+  margin: 0 0 10px 18px;
+}
+
+.cocoon-click-badge {
+  display: inline-block;
+  margin: 2px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f0f0f1;
+  white-space: nowrap;
+}
+
+.cocoon-click-table code {
+  display: inline-block;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.cocoon-click-map-viewport {
+  overflow: auto;
+}
+
+.cocoon-click-map-frame-wrap {
+  position: relative;
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cocoon-click-map-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: 800px;
+  border: 1px solid #c3c4c7;
+  pointer-events: none;
+}
+
+.cocoon-click-map-overlay {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  min-height: 800px;
+  pointer-events: none;
+}
+
+.cocoon-click-heat-cell {
+  position: absolute;
+  z-index: 1;
+  background: #d63638;
+}
+
+.cocoon-click-link-marker {
+  position: absolute;
+  z-index: 2;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background: #2271b1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font: 600 11px/18px sans-serif;
+  text-align: center;
+}
+
+.cocoon-click-map-unavailable::after {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  left: 12px;
+  padding: 8px;
+  background: #fff;
+  color: #d63638;
+  content: 'プレビューへバッジを重ねられませんでした';
+}
+
+.cocoon-click-causality-note {
+  margin-top: 18px;
+}
+
+@media screen and (width <= 782px) {
+  .cocoon-click-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cocoon-click-table {
+    min-width: 980px;
+  }
+}
+
 .cocoon-analytics-heatmap-grid {
   display: flex;
   gap: 4px;
@@ -303,7 +434,13 @@
 }
 
 .cocoon-analytics-suggest-item {
+  display: block;
+  width: 100%;
+  margin: 0;
   padding: 8px 12px;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
   font-size: 12px;
   color: #333;
   cursor: pointer;
@@ -321,11 +458,91 @@
 }
 
 .cocoon-analytics-suggest-no-results {
+  display: block;
   padding: 8px 12px;
   font-size: 12px;
   color: #999;
   font-style: italic;
   text-align: left;
+}
+
+/* 記事検索と著者・カテゴリー検索で共通利用する候補名です */
+.cocoon-analytics-suggest-item-name {
+  display: block;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.cocoon-analytics-suggest-item-meta {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: #646970;
+  font-size: 11px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+}
+
+.cocoon-analytics-post-picker-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: min(100%, 390px);
+}
+
+.cocoon-analytics-post-picker {
+  width: min(360px, 60vw);
+}
+
+.cocoon-analytics-post-picker-input {
+  width: 100%;
+  padding-right: 32px !important;
+}
+
+.cocoon-analytics-post-picker .cocoon-analytics-suggest-dropdown {
+  min-width: min(360px, 80vw);
+}
+
+.cocoon-analytics-suggest-clear {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #646970;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.cocoon-analytics-suggest-clear:hover,
+.cocoon-analytics-suggest-clear:focus-visible {
+  background: #f0f0f1;
+  color: #135e96;
+  outline: 2px solid var(--wp-admin-theme-color, #2271b1);
+  outline-offset: 0;
+}
+
+@media (width <= 782px) {
+  .cocoon-analytics-post-picker-field {
+    align-items: stretch;
+    flex: 1 1 100%;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cocoon-analytics-post-picker,
+  .cocoon-analytics-post-picker .cocoon-analytics-suggest-dropdown {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 /* タブが1行に収まらない画面幅でも自然に折り返して整列するようflexレイアウトにします */
@@ -397,12 +614,16 @@
 }
 
 .cocoon-analytics-kpi-label {
+  display: block;
   font-size: 12px;
   color: #666;
   margin-bottom: 6px;
+  min-height: 2.8em;
+  line-height: 1.4;
 }
 
 .cocoon-analytics-kpi-value {
+  display: block;
   font-size: 26px;
   font-weight: 600;
   color: #1d2327;
@@ -410,6 +631,7 @@
 }
 
 .cocoon-analytics-kpi-compare {
+  display: block;
   margin-top: 6px;
   font-size: 12px;
   color: #666;

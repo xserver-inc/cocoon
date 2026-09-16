@@ -12891,6 +12891,10 @@ msgstr "新文章標題"
 msgid "「固定表示」記事を先頭に表示する"
 msgstr "將「置頂」文章顯示在最前面"
 
+#: lib/widgets/new-entries.php:221
+msgid "オフの場合も、通常の並び順では表示されることがあります。"
+msgstr "即使關閉此選項，這些文章仍可能依一般排序顯示。"
+
 #: lib/widgets/new-entries.php:232
 #: lib/widgets/popular-entries.php:244
 msgid "除外投稿ID（カンマ区切りでIDを入力してください）"
@@ -17344,6 +17348,10 @@ msgstr "天數"
 msgid "不明"
 msgstr "不明"
 
+#: lib/page-access/analytics/ajax-func.php:21
+msgid "（無題）"
+msgstr "（無標題）"
+
 #: lib/page-access/analytics/dashboard-page.php:45
 msgid "アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。"
 msgstr "訪問分析儀表板功能目前已停用。請在「設定」分頁中啟用。"
@@ -17889,6 +17897,39 @@ msgstr "尚未設定 URL"
 msgid "%1$s 〜 %2$s"
 msgstr "%1$s ~ %2$s"
 
+#: lib/page-access/analytics/dashboard-page.php:42
+msgid "クリック解析データを完全削除しました。"
+msgstr "點擊分析資料已全部永久刪除。"
+
+#: lib/page-access/analytics/dashboard-page.php:640
+#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/dashboard.php:52
+#: lib/page-access/click-analytics/settings-form.php:15
+msgid "内部リンク"
+msgstr "內部連結"
+
+#: lib/page-access/analytics/dashboard-page.php:641
+#: lib/page-access/click-analytics/dashboard.php:52
+#: lib/page-access/click-analytics/settings-form.php:16
+msgid "外部リンク"
+msgstr "外部連結"
+
+#: lib/page-access/analytics/dashboard-page.php:642
+msgid "外部ドメイン別"
+msgstr "依外部網域"
+
+#: lib/page-access/analytics/dashboard-page.php:643
+msgid "クリック日次集計"
+msgstr "每日點擊統計"
+
+#: lib/page-access/analytics/dashboard-page.php:644
+msgid "クリック位置グリッド"
+msgstr "點擊位置網格"
+
+#: lib/page-access/analytics/dashboard-page.php:39
+msgid "クリック解析データを削除できませんでした。データベースの状態を確認して再試行してください。"
+msgstr "無法刪除點擊分析資料。請檢查資料庫狀態後重試。"
+
 #: lib/utils.php:1031
 msgid "ラベルなし"
 msgstr "無標籤"
@@ -17949,6 +17990,316 @@ msgstr "發生通訊錯誤"
 #: lib/page-access/analytics/enqueue-func.php:129
 msgid "一致する項目がありません"
 msgstr "沒有符合條件的項目"
+
+#: lib/page-access/analytics/enqueue-func.php:120
+#: lib/page-access/click-analytics/dashboard.php:164
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "クリック"
+msgstr "點擊"
+
+#: lib/page-access/analytics/enqueue-func.php:121
+#: lib/page-access/click-analytics/dashboard.php:124
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "推定CTR"
+msgstr "估算點擊率"
+
+#: lib/page-access/click-analytics/dashboard.php:18
+#, php-format
+msgid "有効標本数 %s / 100"
+msgstr "有效樣本數 %s / 100"
+
+#: lib/page-access/click-analytics/dashboard.php:21
+#, php-format
+msgid "サンプルクリック %s / 10"
+msgstr "樣本點擊次數 %s / 10"
+
+#: lib/page-access/click-analytics/dashboard.php:32
+msgid "ナビ"
+msgstr "導覽"
+
+#: lib/page-access/click-analytics/dashboard.php:42
+msgid "外部・参考資料"
+msgstr "外部／參考資料"
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "参考資料"
+msgstr "參考資料"
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "SNS"
+msgstr "社群媒體"
+
+#: lib/page-access/click-analytics/dashboard.php:43
+msgid "ページ内リンク"
+msgstr "頁內連結"
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "メール"
+msgstr "電子郵件"
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "電話"
+msgstr "電話"
+
+#: lib/page-access/click-analytics/dashboard.php:44
+msgid "SMS"
+msgstr "SMS"
+
+#: lib/page-access/click-analytics/dashboard.php:52
+msgid "概要"
+msgstr "概覽"
+
+#: lib/page-access/click-analytics/dashboard.php:52
+msgid "クリックマップ"
+msgstr "點擊地圖"
+
+#: lib/page-access/click-analytics/dashboard.php:80
+msgid "端末:"
+msgstr "裝置："
+
+#: lib/page-access/click-analytics/dashboard.php:82
+msgid "PC"
+msgstr "電腦"
+
+#: lib/page-access/click-analytics/dashboard.php:82
+msgid "タブレット"
+msgstr "平板電腦"
+
+#: lib/page-access/click-analytics/dashboard.php:89
+msgid "クリック元記事:"
+msgstr "來源文章："
+
+#: lib/page-access/click-analytics/dashboard.php:90
+msgid "記事タイトル・キーワード・IDで検索..."
+msgstr "依文章標題、關鍵字或 ID 搜尋..."
+
+#: lib/page-access/click-analytics/dashboard.php:94
+msgid "掲載位置:"
+msgstr "顯示位置："
+
+#: lib/page-access/click-analytics/dashboard.php:102
+msgid "リンク種別:"
+msgstr "連結類型："
+
+#: lib/page-access/click-analytics/dashboard.php:120
+msgid "総クリック"
+msgstr "總點擊次數"
+
+#: lib/page-access/click-analytics/dashboard.php:121
+msgid "日次セッションユニーク合計"
+msgstr "每日不重複工作階段數合計"
+
+#: lib/page-access/click-analytics/dashboard.php:122
+msgid "内部リンククリック"
+msgstr "內部連結點擊"
+
+#: lib/page-access/click-analytics/dashboard.php:123
+msgid "外部遷移"
+msgstr "外部跳轉"
+
+#: lib/page-access/click-analytics/dashboard.php:125
+msgid "内部到着率"
+msgstr "內部到達率"
+
+#: lib/page-access/click-analytics/dashboard.php:126
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "エンゲージ率"
+msgstr "互動率"
+
+#: lib/page-access/click-analytics/dashboard.php:133
+#, php-format
+msgid "前期間比 %s%%"
+msgstr "較上一期間變化 %s%%"
+
+#: lib/page-access/click-analytics/dashboard.php:139
+msgid "推定CTRのWilson 95%信頼区間"
+msgstr "估算點擊率的 Wilson 95% 信賴區間"
+
+#: lib/page-access/click-analytics/dashboard.php:139
+msgid "有効標本数"
+msgstr "有效樣本數"
+
+#: lib/page-access/click-analytics/dashboard.php:141
+#, php-format
+msgid "データ不足のためCTRは参考値です（%s）。"
+msgstr "由於資料不足，點擊率僅供參考（%s）。"
+
+#: lib/page-access/click-analytics/dashboard.php:156
+msgid "該当するクリックデータがありません。"
+msgstr "沒有符合條件的點擊資料。"
+
+#: lib/page-access/click-analytics/dashboard.php:162
+msgid "クリック元"
+msgstr "點擊來源"
+
+#: lib/page-access/click-analytics/dashboard.php:163
+msgid "種別・位置"
+msgstr "類型／位置"
+
+#: lib/page-access/click-analytics/dashboard.php:164
+msgid "推定表示"
+msgstr "估算曝光次數"
+
+#: lib/page-access/click-analytics/dashboard.php:164
+msgid "日次ユニーク合計"
+msgstr "每日不重複計數合計"
+
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "到着率"
+msgstr "到達率"
+
+#: lib/page-access/click-analytics/dashboard.php:165
+msgid "平均クリック時間"
+msgstr "平均點擊耗時"
+
+#: lib/page-access/click-analytics/dashboard.php:173
+#, php-format
+msgid "95%% CI %1$s〜%2$s / n=%3$s"
+msgstr "95%% 信賴區間 %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/dashboard.php:185
+msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
+msgstr "為加快顯示，連結總數與頁數依首次及最後觀測日期估算。"
+
+#: lib/page-access/click-analytics/dashboard.php:217
+msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
+msgstr "點擊分析目前已停用。可以查看歷史資料，但不會收集新資料。"
+
+#: lib/page-access/click-analytics/dashboard.php:220
+msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
+msgstr "無法建立點擊分析資料表。請重新開啟設定頁面。"
+
+#: lib/page-access/click-analytics/dashboard.php:237
+msgid "日次保持期間より古い範囲は月次集計を使用するため、月途中の開始・終了日は概算です。"
+msgstr "超出每日資料保留期限的範圍使用月度彙總，因此月中開始或結束的期間為估算值。"
+
+#: lib/page-access/click-analytics/dashboard.php:241
+msgid "クリック・推定CTR推移"
+msgstr "點擊與估算點擊率趨勢"
+
+#: lib/page-access/click-analytics/dashboard.php:241
+msgid "クリック推移"
+msgstr "點擊趨勢"
+
+#: lib/page-access/click-analytics/dashboard.php:245
+msgid "高需要・低到達"
+msgstr "高需求、低觸及"
+
+#: lib/page-access/click-analytics/dashboard.php:245
+msgid "十分なデータがたまると、上部へ移す候補を表示します。"
+msgstr "收集到足夠資料後，將顯示適合向上移動的連結。"
+
+#: lib/page-access/click-analytics/dashboard.php:246
+msgid "高露出・低反応"
+msgstr "高曝光、低回應"
+
+#: lib/page-access/click-analytics/dashboard.php:246
+msgid "十分なデータがたまると、文言やデザインの改善候補を表示します。"
+msgstr "收集到足夠資料後，將顯示適合改善文案或設計的連結。"
+
+#: lib/page-access/click-analytics/dashboard.php:247
+msgid "遷移後ミスマッチ"
+msgstr "跳轉後不相符"
+
+#: lib/page-access/click-analytics/dashboard.php:247
+msgid "到着後の閲覧が弱いリンクはありません。"
+msgstr "沒有到達後瀏覽互動較低的連結。"
+
+#: lib/page-access/click-analytics/dashboard.php:248
+msgid "外部遷移候補"
+msgstr "外部跳轉候選"
+
+#: lib/page-access/click-analytics/dashboard.php:248
+msgid "外部クリックは購入・申込みではなく外部遷移です。"
+msgstr "外部點擊表示跳轉至外部網站，不代表購買或申請。"
+
+#: lib/page-access/click-analytics/dashboard.php:251
+msgid "クリック上位リンク"
+msgstr "點擊次數最多的連結"
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "集計単位:"
+msgstr "分組方式："
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "掲載箇所別"
+msgstr "依顯示位置"
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "リンク先別"
+msgstr "依連結目標"
+
+#: lib/page-access/click-analytics/dashboard.php:263
+msgid "ドメイン別"
+msgstr "依網域"
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "並び順:"
+msgstr "排序方式："
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "ユニーク"
+msgstr "不重複"
+
+#: lib/page-access/click-analytics/dashboard.php:264
+msgid "CTR"
+msgstr "CTR"
+
+#: lib/page-access/click-analytics/dashboard.php:265
+msgid "変更"
+msgstr "變更"
+
+#: lib/page-access/click-analytics/dashboard.php:268
+msgid "ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。"
+msgstr "這些數值表示跳轉至外部網站，不代表已確認的購買或申請轉換。"
+
+#: lib/page-access/click-analytics/dashboard.php:275
+msgid "クリックマップを表示する記事を検索して選択してください。"
+msgstr "請搜尋並選擇要顯示點擊地圖的文章。"
+
+#: lib/page-access/click-analytics/dashboard.php:279
+msgid "公開中の記事を指定してください。"
+msgstr "請選擇已發佈的文章。"
+
+#: lib/page-access/click-analytics/dashboard.php:300
+msgid "現在と異なる旧レイアウトのクリックが%d件あります。現在のページには重ねていません。"
+msgstr "有 %d 次點擊來自與目前不同的舊版面配置，未疊加於目前頁面上。"
+
+#: lib/page-access/click-analytics/dashboard.php:301
+msgid "旧レイアウト一覧"
+msgstr "舊版面配置清單"
+
+#: lib/page-access/click-analytics/dashboard.php:311
+msgid "クリックマップページプレビュー"
+msgstr "點擊地圖頁面預覽"
+
+#: lib/page-access/click-analytics/dashboard.php:319
+msgid "リンク別クリック"
+msgstr "依連結統計點擊"
+
+#: lib/page-access/click-analytics/dashboard.php:325
+msgid "掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。"
+msgstr "顯示位置的差異屬於觀測資料。僅憑此頁面無法證明位置變更導致了點擊增加。"
+
+#: lib/page-access/click-analytics/dashboard.php:169
+msgid "複数記事"
+msgstr "多篇文章"
+
+#: lib/page-access/click-analytics/dashboard.php:170
+msgid "代表リンク"
+msgstr "代表連結"
+
+#: lib/page-access/click-analytics/dashboard.php:298
+msgid "端末の代表幅で表示しています。実際の画面幅や固定・追従要素の位置によって、クリック位置に差が生じる場合があります。"
+msgstr "依裝置的代表性寬度顯示。實際螢幕寬度及固定或黏性元素的位置可能導致點擊位置出現差異。"
+
+#: lib/page-access/analytics/enqueue-func.php:144
+msgid "候補から記事を選択してください。"
+msgstr "請從候選結果中選擇文章。"
+
+#: lib/page-access/analytics/enqueue-func.php:145
+msgid "記事を検索中..."
+msgstr "正在搜尋文章..."
 
 #: lib/page-access/analytics/render-func.php:546
 #, php-format
@@ -19858,3 +20209,317 @@ msgstr "在編輯器內搜尋並選擇樂天商品，插入靜態商品連結。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
+
+#: lib/page-access/analytics/render-func.php:154
+msgid "記事:"
+msgstr "文章："
+
+#: lib/page-access/analytics/render-func.php:155
+msgid "タイトル・キーワード・IDで検索..."
+msgstr "依標題、關鍵字或 ID 搜尋..."
+
+#: lib/page-access/analytics/render-func.php:162
+#, php-format
+msgid "記事 #%s"
+msgstr "文章 #%s"
+
+#: lib/page-access/analytics/render-func.php:172
+msgid "記事の選択を解除"
+msgstr "清除文章選擇"
+
+#: lib/page-access/analytics/render-func.php:229
+#: lib/page-access/click-analytics/settings-form.php:9
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析"
+msgstr "點擊分析"
+
+#: lib/page-access/click-analytics/settings-form.php:11
+msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。"
+msgstr "非同步彙總內部及外部連結的點擊、實際曝光與顯示位置。初版不統計彙整頁和搜尋結果。"
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析を有効にする"
+msgstr "啟用點擊分析"
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "アップデート後は自動で有効になりません。"
+msgstr "更新後不會自動啟用。"
+
+#: lib/page-access/click-analytics/settings-form.php:14
+msgid "計測対象"
+msgstr "統計範圍"
+
+#: lib/page-access/click-analytics/settings-form.php:17
+msgid "アンカー・ダウンロード・電話・メール"
+msgstr "錨點、下載、電話和電子郵件"
+
+#: lib/page-access/click-analytics/settings-form.php:19
+msgid "詳細計測"
+msgstr "詳細統計"
+
+#: lib/page-access/click-analytics/settings-form.php:20
+msgid "リンクの実表示と推定CTRを計測する"
+msgstr "統計連結的實際曝光與估算點擊率"
+
+#: lib/page-access/click-analytics/settings-form.php:21
+msgid "丸めたクリック位置を計測する"
+msgstr "統計取整後的點擊位置"
+
+#: lib/page-access/click-analytics/settings-form.php:22
+msgid "内部リンクの到着・エンゲージを計測する"
+msgstr "統計內部連結的到達與互動"
+
+#: lib/page-access/click-analytics/settings-form.php:24
+msgid "プライバシー"
+msgstr "隱私權"
+
+#: lib/page-access/click-analytics/settings-form.php:25
+msgid "ログインユーザーを除外する"
+msgstr "排除已登入使用者"
+
+#: lib/page-access/click-analytics/settings-form.php:26
+msgid "DNT/GPCを尊重する"
+msgstr "遵守 DNT/GPC"
+
+#: lib/page-access/click-analytics/settings-form.php:27
+msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
+msgstr "不儲存 IP 位址、完整 User-Agent、完整來源網址、輸入值或原始座標。"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "自動サンプリング"
+msgstr "自動取樣"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr "依最近 7 天的資料量，每日自動調整為 100%、20%、5% 或 1%。資料不足時為 10%。"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次・位置データ保持"
+msgstr "每日及位置資料保留"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "30日"
+msgstr "30 天"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "90日"
+msgstr "90 天"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "400日"
+msgstr "400 天"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "月次データ保持"
+msgstr "月度資料保留"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "12か月"
+msgstr "12 個月"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "24か月"
+msgstr "24 個月"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "60か月"
+msgstr "60 個月"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "除外ドメイン"
+msgstr "排除的網域"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "1行に1ドメインを入力します。"
+msgstr "每行輸入一個網域。"
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "除外URL文字列"
+msgstr "排除的 URL 字串"
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "URLに含まれる文字列を1行ずつ入力します。"
+msgstr "每行輸入一個要比對的 URL 字串。"
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "表示を許可するクエリ"
+msgstr "允許顯示的查詢參數"
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
+msgstr "格式為「網域:鍵,鍵」。未允許的查詢值不會儲存或顯示於管理介面中。"
+
+#: lib/page-access/click-analytics/settings-form.php:37
+msgid "収集状態"
+msgstr "收集狀態"
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%"
+msgstr "目前取樣率：%s%%"
+
+#: lib/page-access/click-analytics/settings-form.php:40
+#, php-format
+msgid "直近14日の受信イベント: %s"
+msgstr "最近 14 天接收的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:41
+#, php-format
+msgid "直近14日の拒否イベント: %s"
+msgstr "最近 14 天拒絕的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:42
+#, php-format
+msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgstr "最近 14 天的批次：正常 %1$s／重複 %2$s（重複率 %3$s）"
+
+#: lib/page-access/click-analytics/settings-form.php:43
+#, php-format
+msgid "イベント欠損率（検証除外）: %s"
+msgstr "事件遺失率（驗證排除）：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+#, php-format
+msgid "直近7日CTR診断: %s"
+msgstr "最近 7 天點擊率診斷：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より上昇"
+msgstr "高於正常範圍"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より低下"
+msgstr "低於正常範圍"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "異常なし"
+msgstr "無異常"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "データ不足"
+msgstr "資料不足"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+#, php-format
+msgid "最終受信: %s"
+msgstr "最後接收：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+msgid "未受信"
+msgstr "尚未接收"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+#, php-format
+msgid "最終サンプリング集計: %s"
+msgstr "最後取樣計算：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+msgid "未集計"
+msgstr "尚未統計"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#, php-format
+msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
+msgstr "月度重新統計：%1$s／完成 %2$s／更新列數 %3$s"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#: lib/page-access/click-analytics/settings-form.php:48
+msgid "未実行"
+msgstr "尚未執行"
+
+#: lib/page-access/click-analytics/settings-form.php:48
+#, php-format
+msgid "最終メンテナンス: %1$s / %2$sms"
+msgstr "最後維護：%1$s／%2$sms"
+
+#: lib/page-access/click-analytics/settings-form.php:49
+#, php-format
+msgid "DB使用量: %s"
+msgstr "資料庫使用量：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+#, php-format
+msgid "次回メンテナンス: %s"
+msgstr "下次維護：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+msgid "未予約"
+msgstr "尚未排程"
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#, php-format
+msgid "Cron遅延: %s"
+msgstr "Cron 延遲：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:53
+msgid "トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。"
+msgstr "因權杖無效等原因在批次接收前被拒絕的請求數，僅在有持久物件快取的環境中累計。接收後的事件數、重複與驗證排除始終記錄至資料庫統計中。"
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
+msgstr "確定永久刪除所有點擊分析資料嗎？此操作無法復原。"
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データを完全削除"
+msgstr "永久刪除點擊分析資料"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
+msgstr "在月度彙總完成前，每日資料可能會保留至超過保留期限。"
+
+#: lib/page-access/click-analytics/admin-actions.php:13
+msgid "この操作を行う管理者権限がありません。"
+msgstr "您沒有執行此操作的管理員權限。"
+
+#: lib/page-access/click-analytics/rest-func.php:285
+msgid "クリック解析は無効です。"
+msgstr "點擊分析已停用。"
+
+#: lib/page-access/click-analytics/rest-func.php:286
+msgid "クリック解析テーブルがありません。"
+msgstr "缺少點擊分析資料表。"
+
+#: lib/page-access/click-analytics/rest-func.php:288
+msgid "送信サイズが不正です。"
+msgstr "傳送資料大小無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:290
+msgid "JSONが不正です。"
+msgstr "JSON 無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:291
+msgid "送信元が不正です。"
+msgstr "傳送來源無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:307
+msgid "識別子が不正です。"
+msgstr "識別碼無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:296
+#: lib/page-access/click-analytics/rest-func.php:310
+msgid "送信内容が不正です。"
+msgstr "傳送內容無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:312
+msgid "計測トークンが不正です。"
+msgstr "追蹤權杖無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:314
+msgid "クリック元が不正です。"
+msgstr "點擊來源無效。"
+
+#: lib/page-access/click-analytics/rest-func.php:315
+msgid "送信回数が多すぎます。"
+msgstr "請求次數過多。"
+
+#: lib/page-access/click-analytics/rest-func.php:320
+#: lib/page-access/click-analytics/rest-func.php:413
+msgid "計測データを保存できませんでした。再送してください。"
+msgstr "無法儲存統計資料。請重新傳送。"
+
+#: lib/page-access/click-analytics/schema-func.php:260
+msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
+msgstr "點擊分析資料庫更新失敗。請檢查資料庫權限與可用空間。統計將暫停，直到更新完成。"
+
+msgid "リンク定義数の上限に達しました。"
+msgstr "連結定義數量已達上限。"

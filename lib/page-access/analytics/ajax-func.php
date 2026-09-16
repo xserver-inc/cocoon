@@ -10,6 +10,76 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // ログインユーザー向けのAjaxアクションを登録します
 add_action('wp_ajax_cocoon_analytics_get_posts', 'cocoon_analytics_ajax_get_posts');
 add_action('wp_ajax_cocoon_analytics_get_lifecycle', 'cocoon_analytics_ajax_get_lifecycle');
+add_action('wp_ajax_cocoon_analytics_search_posts', 'cocoon_analytics_ajax_search_posts');
+
+/**
+ * 記事選択UIの候補1件を共通形式へ整形する
+ */
+if ( !function_exists( 'cocoon_analytics_post_picker_item' ) ):
+function cocoon_analytics_post_picker_item($post){
+  $title = cocoon_analytics_plain_title($post);
+  if ($title === '') $title = __('（無題）', THEME_NAME);
+  $post_type = get_post_type_object($post->post_type);
+  $type_label = $post_type && isset($post_type->labels->singular_name) ? $post_type->labels->singular_name : $post->post_type;
+  return array(
+    'id'   => (int) $post->ID,
+    'name' => $title,
+    'meta' => sprintf('%s · %s · ID %s', $type_label, get_the_date(get_option('date_format'), $post), number_format_i18n($post->ID)),
+  );
+}
+endif;
+
+/**
+ * 記事選択UIへ返す公開記事をIDまたはキーワードで検索する
+ */
+if ( !function_exists( 'cocoon_analytics_search_posts' ) ):
+function cocoon_analytics_search_posts($keyword, $limit = 20){
+  $keyword = trim(sanitize_text_field($keyword));
+  if ($keyword === '') return array();
+  if (function_exists('mb_substr')) $keyword = mb_substr($keyword, 0, 100);
+  $limit = min(20, max(1, (int) $limit));
+
+  // 初心者向け: 数字だけが入力された場合は、記事IDの完全一致を最初に探します。
+  if (preg_match('/^[1-9][0-9]*$/', $keyword)) {
+    $post = get_post((int) $keyword);
+    if ($post && $post->post_status === 'publish' && in_array($post->post_type, array('post', 'page'), true)) {
+      return array(cocoon_analytics_post_picker_item($post));
+    }
+    return array();
+  }
+
+  // 初心者向け: 記事一覧を全件読み込まず、入力されたときだけ候補を最大20件検索します。
+  $query = new WP_Query(array(
+    'post_type'           => array('post', 'page'),
+    'post_status'         => 'publish',
+    's'                   => $keyword,
+    'posts_per_page'      => $limit,
+    'orderby'             => array('relevance' => 'DESC', 'date' => 'DESC'),
+    'ignore_sticky_posts' => true,
+    'no_found_rows'       => true,
+  ));
+  $items = array();
+  foreach ($query->posts as $post) {
+    $items[] = cocoon_analytics_post_picker_item($post);
+  }
+  return $items;
+}
+endif;
+
+/**
+ * AJAX: 記事タイトルの検索候補を返す
+ */
+if ( !function_exists( 'cocoon_analytics_ajax_search_posts' ) ):
+function cocoon_analytics_ajax_search_posts(){
+  if (!current_user_can('manage_options')) {
+    wp_send_json_error(array('message' => 'forbidden'), 403);
+  }
+  check_ajax_referer('cocoon_analytics_post_picker', 'nonce');
+  $keyword = isset($_GET['q']) ? sanitize_text_field(wp_unslash($_GET['q'])) : '';
+  wp_send_json_success(array('items' => cocoon_analytics_search_posts($keyword)));
+}
+endif;
+
 add_action('wp_ajax_cocoon_analytics_get_dashboard_widget', 'cocoon_analytics_ajax_get_dashboard_widget');
 add_action('wp_ajax_cocoon_analytics_get_dashboard_ranking', 'cocoon_analytics_ajax_get_dashboard_ranking');
 

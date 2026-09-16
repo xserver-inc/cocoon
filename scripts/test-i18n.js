@@ -154,6 +154,16 @@ const findJapaneseMetadataValues = ( value, propertyPath = [] ) => {
   return [];
 };
 
+// アクセス解析で使う翻訳項目の抽出と、追加漏れの検出対象への登録
+const analyticsCatalog = gettextParser.po.parse(
+  fs.readFileSync( path.join( THEME_ROOT, 'languages', 'cocoon.pot' ) )
+);
+const analyticsEntries = Object.entries( analyticsCatalog.translations ).flatMap(
+  ( [ context, entries ] ) => Object.values( entries )
+    .filter( ( entry ) => /lib\/page-access\//u.test( entry.comments?.reference || '' ) )
+    .map( ( entry ) => ( { context, msgid: entry.msgid } ) )
+);
+
 for ( const locale of LOCALES ) {
   const dictionary = additions( locale );
   const skinDictionary = skinMetadata( locale );
@@ -367,6 +377,17 @@ for ( const locale of LOCALES ) {
   const moEntries = mo.translations[ '' ];
   const l10nPath = path.join( THEME_ROOT, 'languages', `${ locale }.l10n.php` );
   const l10nMessages = readL10nMessages( l10nPath );
+
+  // 管理画面の翻訳がPO・MO・l10n.phpの全形式に揃っていることの確認
+  for ( const { context, msgid } of analyticsEntries ) {
+    const entry = parsed.translations[ context ]?.[ msgid ];
+    assert.ok( entry?.msgstr?.[ 0 ], locale + 'のPOにアクセス解析の翻訳がありません: ' + msgid );
+    assert.ok( ! /\bfuzzy\b/u.test( entry.comments?.flag || '' ), locale + 'のアクセス解析翻訳が未確定です: ' + msgid );
+    const key = context ? context + '\u0004' + msgid : msgid;
+    assert.strictEqual( mo.translations[ context ]?.[ msgid ]?.msgstr?.[ 0 ], entry.msgstr[ 0 ], locale + 'のMOにアクセス解析翻訳が反映されていません: ' + msgid );
+    assert.strictEqual( l10nMessages[ key ], entry.msgstr[ 0 ], locale + 'のl10n.phpにアクセス解析翻訳が反映されていません: ' + msgid );
+  }
+
   const jsonPath = path.join(
     THEME_ROOT,
     'languages',

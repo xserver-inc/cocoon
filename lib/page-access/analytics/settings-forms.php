@@ -83,6 +83,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
       </div>
     </div>
 
+    <?php require dirname(__FILE__) . '/../click-analytics/settings-form.php'; ?>
+
   </div>
 
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('access'); ?>">
@@ -92,4 +94,10 @@ if ( !defined( 'ABSPATH' ) ) exit;
 <?php //キャッシュクリアボタン専用の送信先 ?>
 <form id="cocoon-analytics-flush-form" method="post" action="">
   <input type="hidden" name="<?php echo HIDDEN_FIELD_NAME; ?>" value="<?php echo wp_create_nonce('access'); ?>">
+</form>
+
+<?php //クリック解析データの削除は設定保存と分離し、専用nonceで保護します。 ?>
+<form id="cocoon-click-delete-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+  <input type="hidden" name="action" value="cocoon_click_delete_data">
+  <?php wp_nonce_field('cocoon_click_delete_data'); ?>
 </form>

@@ -18,7 +18,7 @@
         "test": "phpunit --exclude-group distribution",
         "test:unit": "phpunit --testsuite unit --exclude-group distribution",
         "test:distribution": "phpunit --group distribution",
-        "test:integration": "phpunit --bootstrap tests/Integration/bootstrap.php --testsuite integration",
+        "test:integration": "phpunit -c phpunit.integration.xml --testsuite integration",
         "test:coverage": "phpunit --testsuite unit --exclude-group distribution --coverage-html tests/coverage --coverage-text",
         "test:coverage-clover": "phpunit --testsuite unit --exclude-group distribution --coverage-clover tests/coverage/clover.xml --coverage-text"
     },

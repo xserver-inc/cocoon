@@ -218,6 +218,7 @@ class NewEntryWidgetItem extends WP_Widget {
     <p>
       <?php
         generate_checkbox_tag($this->get_field_name('is_sticky_visible') , $is_sticky_visible, __( '「固定表示」記事を先頭に表示する', THEME_NAME ));
+        generate_tips_tag(__( 'オフの場合も、通常の並び順では表示されることがあります。', THEME_NAME ));
       ?>
     </p>
     <?php //更新日順に並べ替える ?>

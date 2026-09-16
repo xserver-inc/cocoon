@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Position = 0)]
-    [ValidateSet('up', 'down', 'status', 'logs', 'pma', 'test', 'check', 'config', 'loop', 'help')]
+    [ValidateSet('up', 'down', 'status', 'logs', 'pma', 'test', 'integration', 'benchmark', 'check', 'config', 'loop', 'help')]
     [string]$Action = 'status',
 
     [Parameter(Position = 1)]
@@ -131,6 +131,16 @@ function Invoke-UnitTests {
     Invoke-Compose -Arguments @('run', '--build', '--rm', 'phpunit')
 }
 
+function Invoke-IntegrationTests {
+    Write-Host 'WordPressとMySQLを使う統合テストを実行します。'
+    Invoke-Compose -Arguments @('--profile', 'tools', 'run', '--build', '--rm', 'phpunit-integration')
+}
+
+function Invoke-LargeDatabaseBenchmark {
+    Write-Host '100万日次集計・10万リンクの性能試験を実行します。'
+    Invoke-Compose -Arguments @('--profile', 'tools', 'run', '--build', '--rm', '-e', 'COCOON_CLICK_LARGE_BENCHMARK=1', 'phpunit-integration')
+}
+
 function Invoke-WordPressSmokeTest {
     # 起動済みサービスに限定したWordPress確認
     $runningServices = @(& $script:DockerExecutable @script:ComposeArguments 'ps' '--status' 'running' '--services')
@@ -161,6 +171,8 @@ function Show-DevelopmentHelp {
   logs    直近100行のログ表示
     pma     phpMyAdminを必要なときだけ起動
   test    Docker内でPHPUnitユニットテストを実行
+  integration  Docker内でWordPress・MySQL統合テストを実行
+  benchmark  100万日次集計・10万リンクのDB性能試験を実行
   check   Compose構文、PHPUnit、起動済みWordPressの一括確認
   config  Compose設定の構文確認
   loop    ファイル保存を監視してPHPUnitを反復実行
@@ -170,6 +182,8 @@ function Show-DevelopmentHelp {
   pwsh -NoProfile -File docker/dev.ps1 up
     pwsh -NoProfile -File docker/dev.ps1 pma
   pwsh -NoProfile -File docker/dev.ps1 test
+  pwsh -NoProfile -File docker/dev.ps1 integration
+  pwsh -NoProfile -File docker/dev.ps1 benchmark
   pwsh -NoProfile -File docker/dev.ps1 up env/wp7.0-php8.4.env
   pwsh -NoProfile -File docker/dev.ps1 loop
 '@ | Write-Host
@@ -210,10 +224,19 @@ switch ($Action) {
         Assert-DockerEngine
         Invoke-UnitTests
     }
+    'integration' {
+        Assert-DockerEngine
+        Invoke-IntegrationTests
+    }
+    'benchmark' {
+        Assert-DockerEngine
+        Invoke-LargeDatabaseBenchmark
+    }
     'check' {
         Invoke-Compose -Arguments @('config', '--quiet')
         Assert-DockerEngine
         Invoke-UnitTests
+        Invoke-IntegrationTests
         Invoke-WordPressSmokeTest
     }
     'config' {

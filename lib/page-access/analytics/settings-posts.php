@@ -24,6 +24,7 @@ function cocoon_analytics_save_settings(){
   // キャッシュクリアは設定変更操作ではないため保存処理を行わない
   if (isset($_POST['cocoon_analytics_flush'])) {
     cocoon_analytics_flush_cache();
+    cocoon_click_analytics_flush_cache();
     return '<div class="notice notice-success is-dismissible"><p><strong>' .
            esc_html__('アクセス解析のキャッシュをクリアしました。', THEME_NAME) . '</strong></p></div>';
   }
@@ -34,6 +35,9 @@ function cocoon_analytics_save_settings(){
   update_theme_option(OP_ACCESS_ANALYTICS_CACHE_TTL);
   update_theme_option(OP_ACCESS_ANALYTICS_DEFAULT_PERIOD);
   update_theme_option(OP_ACCESS_ANALYTICS_EXPORT_ENABLE);
+  cocoon_click_save_settings();
+  update_click_analytics_tables();
+  cocoon_click_manage_cron_schedule();
 
   return '<div class="notice notice-success is-dismissible"><p><strong>' .
          esc_html__('設定を変更しました。', THEME_NAME) . '</strong></p></div>';

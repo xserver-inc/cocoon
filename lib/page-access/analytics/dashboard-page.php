@@ -35,17 +35,23 @@ $page_notice = '';
 if ($view === 'settings') {
   require_once dirname(__FILE__) . '/settings-posts.php';
   $page_notice = cocoon_analytics_save_settings();
+  if ($page_notice === '' && !empty($_GET['cocoon_click_delete_failed'])) {
+    $page_notice = '<div class="notice notice-error"><p><strong>' . esc_html__('クリック解析データを削除できませんでした。データベースの状態を確認して再試行してください。', THEME_NAME) . '</strong></p></div>';
+  }
+  if ($page_notice === '' && !empty($_GET['cocoon_click_deleted'])) {
+    $page_notice = '<div class="notice notice-success is-dismissible"><p><strong>' . esc_html__('クリック解析データを完全削除しました。', THEME_NAME) . '</strong></p></div>';
+  }
 }
 
 // 通知を見出し直後へ出力するため、描画を打ち切る条件もタブ出力より前に判定
 $is_abort = false;
-if (!is_access_analytics_enable() && $view !== 'settings') {
+if (!is_access_analytics_enable() && !in_array($view, array('settings', 'clicks'), true)) {
   // ダッシュボード機能が無効な場合は設定のみ表示
   $page_notice = '<div class="notice notice-warning"><p>' .
                  esc_html__('アクセス解析ダッシュボード機能は現在無効化されています。「設定」タブで有効化してください。', THEME_NAME) .
                  '</p></div>';
   $is_abort = true;
-} elseif ($view !== 'settings' && !is_accesses_table_exist()) {
+} elseif (!in_array($view, array('settings', 'clicks'), true) && !is_accesses_table_exist()) {
   // テーブル存在チェック
   $page_notice = '<div class="notice notice-error"><p>' .
                  esc_html__('アクセス集計テーブルが存在しません。先に「集計設定」を開いてテーブルを作成してください。', THEME_NAME) .
@@ -67,6 +73,10 @@ if ($is_abort) {
 
 // --- 各ビュー ---
 switch ($view) {
+
+  case 'clicks':
+    require dirname(__FILE__) . '/../click-analytics/dashboard.php';
+    break;
 
   case 'dashboard':
     cocoon_analytics_render_period_form($preset, $from, $to, 'dashboard');
@@ -627,6 +637,11 @@ switch ($view) {
             <option value="ranking"><?php _e('人気記事ランキング', THEME_NAME); ?></option>
             <option value="posts"><?php _e('記事別全量', THEME_NAME); ?></option>
             <option value="authors"><?php _e('著者別', THEME_NAME); ?></option>
+            <option value="click_internal"><?php _e('内部リンク', THEME_NAME); ?></option>
+            <option value="click_external"><?php _e('外部リンク', THEME_NAME); ?></option>
+            <option value="click_domains"><?php _e('外部ドメイン別', THEME_NAME); ?></option>
+            <option value="click_daily"><?php _e('クリック日次集計', THEME_NAME); ?></option>
+            <option value="click_positions"><?php _e('クリック位置グリッド', THEME_NAME); ?></option>
           </select>
         </td></tr>
         <tr><th><?php _e('形式', THEME_NAME); ?></th><td>

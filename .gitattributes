@@ -34,3 +34,6 @@
 /package-lock.json        export-ignore
 /blocks/package.json      export-ignore
 /blocks/package-lock.json export-ignore
+
+# Dockerコンテナ内で実行するシェルスクリプトはWindowsでもLFを維持する
+*.sh text eol=lf

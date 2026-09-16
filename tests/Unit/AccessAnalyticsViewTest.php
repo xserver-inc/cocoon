@@ -78,6 +78,7 @@ class AccessAnalyticsViewTest extends TestCase
         $this->setAnalyticsEnabled(true);
 
         $this->assertSame('ranking', cocoon_analytics_resolve_view('RANKING'));
+        $this->assertSame('clicks', cocoon_analytics_resolve_view('CLICKS'));
     }
 
     /**
@@ -109,6 +110,7 @@ class AccessAnalyticsViewTest extends TestCase
 
         $this->assertSame('settings', cocoon_analytics_resolve_view('dashboard'));
         $this->assertSame('settings', cocoon_analytics_resolve_view('ranking'));
+        $this->assertSame('settings', cocoon_analytics_resolve_view('clicks'));
     }
 
     /**
@@ -136,14 +138,29 @@ class AccessAnalyticsViewTest extends TestCase
         cocoon_analytics_render_tabs('settings');
         $output = ob_get_clean();
 
-        $this->assertSame(8, substr_count($output, '<a '));
+        $this->assertSame(9, substr_count($output, '<a '));
+        $this->assertStringContainsString('view=clicks', $output);
         $this->assertStringContainsString('view=settings', $output);
         $this->assertStringContainsString('nav-tab-active', $output);
     }
 
     /**
-     * テスト対象のダッシュボード機能設定を切り替える
+     * クリック解析だけ有効な場合も集計タブを表示する
      */
+    public function testClicksCanBeUsedWithoutAccessAnalytics(): void
+    {
+        require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/settings-func.php';
+        $this->setAnalyticsEnabled(false);
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE] = 1;
+        $this->assertSame('clicks', cocoon_analytics_resolve_view('clicks'));
+        ob_start();
+        cocoon_analytics_render_tabs('clicks');
+        $html = ob_get_clean();
+        $this->assertSame(2, substr_count($html, '<a '));
+        $this->assertStringContainsString('view=clicks', $html);
+        $this->assertStringContainsString('view=settings', $html);
+    }
+
     private function setAnalyticsEnabled(bool $enabled): void
     {
         $GLOBALS['test_theme_mods'][OP_ACCESS_ANALYTICS_ENABLE] = $enabled ? 1 : 0;
