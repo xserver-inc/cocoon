@@ -30,7 +30,7 @@
     "@wordpress/data": "^9.14.0",
     "@wordpress/dom-ready": "^3.44.0",
     "@wordpress/i18n": "^4.44.0",
-    "@wordpress/scripts": "^34.1.0",
+    "@wordpress/scripts": "^34.2.0",
     "@wordpress/server-side-render": "5.19.2",
     "classnames": "^2.3.2",
     "clean-webpack-plugin": "^4.0.0",
