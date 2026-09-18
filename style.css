@@ -8072,6 +8072,11 @@ div.fb-like-mobile {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+@supports (-moz-appearance: none) {
+  .mobile-footer-menu-buttons {
+    padding-bottom: 0;
+  }
+}
 .logo-menu-button {
   text-align: center;
   font-weight: 900;
