@@ -18800,7 +18800,9 @@ msgstr "Click position grid"
 
 #: lib/page-access/analytics/dashboard-page.php:39
 msgid "クリック解析データを削除できませんでした。データベースの状態を確認して再試行してください。"
-msgstr "Could not delete click analytics data. Check the database status and try again."
+msgstr ""
+"Could not delete click analytics data. Check the database status and try "
+"again."
 
 #: lib/utils.php:1031
 msgid "ラベルなし"
@@ -19031,11 +19033,15 @@ msgstr "95%% CI %1$s–%2$s / n=%3$s"
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
-msgstr "For faster display, link and page counts are estimated from the first and last observed dates."
+msgstr ""
+"For faster display, link and page counts are estimated from the first and "
+"last observed dates."
 
 #: lib/page-access/click-analytics/dashboard.php:217
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
-msgstr "Click analytics is currently disabled. Historical data is available, but new data is not collected."
+msgstr ""
+"Click analytics is currently disabled. Historical data is available, but "
+"new data is not collected."
 
 #: lib/page-access/click-analytics/dashboard.php:220
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
@@ -19043,7 +19049,9 @@ msgstr "Click analytics tables could not be created. Reopen the settings page."
 
 #: lib/page-access/click-analytics/dashboard.php:237
 msgid "日次保持期間より古い範囲は月次集計を使用するため、月途中の開始・終了日は概算です。"
-msgstr "Dates older than the daily retention period use monthly totals, so periods starting or ending mid-month are approximate."
+msgstr ""
+"Dates older than the daily retention period use monthly totals, so periods "
+"starting or ending mid-month are approximate."
 
 #: lib/page-access/click-analytics/dashboard.php:241
 msgid "クリック・推定CTR推移"
@@ -19059,7 +19067,9 @@ msgstr "High demand, low reach"
 
 #: lib/page-access/click-analytics/dashboard.php:245
 msgid "十分なデータがたまると、上部へ移す候補を表示します。"
-msgstr "Once enough data is collected, links that could be moved higher will appear here."
+msgstr ""
+"Once enough data is collected, links that could be moved higher will appear "
+"here."
 
 #: lib/page-access/click-analytics/dashboard.php:246
 msgid "高露出・低反応"
@@ -19067,7 +19077,9 @@ msgstr "High exposure, low response"
 
 #: lib/page-access/click-analytics/dashboard.php:246
 msgid "十分なデータがたまると、文言やデザインの改善候補を表示します。"
-msgstr "Once enough data is collected, links whose wording or design could be improved will appear here."
+msgstr ""
+"Once enough data is collected, links whose wording or design could be "
+"improved will appear here."
 
 #: lib/page-access/click-analytics/dashboard.php:247
 msgid "遷移後ミスマッチ"
@@ -19123,7 +19135,9 @@ msgstr "Apply"
 
 #: lib/page-access/click-analytics/dashboard.php:268
 msgid "ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。"
-msgstr "These figures represent visits to external sites, not confirmed purchase or sign-up conversions."
+msgstr ""
+"These figures represent visits to external sites, not confirmed purchase or "
+"sign-up conversions."
 
 #: lib/page-access/click-analytics/dashboard.php:275
 msgid "クリックマップを表示する記事を検索して選択してください。"
@@ -19135,7 +19149,9 @@ msgstr "Select a published post."
 
 #: lib/page-access/click-analytics/dashboard.php:300
 msgid "現在と異なる旧レイアウトのクリックが%d件あります。現在のページには重ねていません。"
-msgstr "There are %d clicks from older layouts that differ from the current layout. They are not overlaid on the current page."
+msgstr ""
+"There are %d clicks from older layouts that differ from the current layout. "
+"They are not overlaid on the current page."
 
 #: lib/page-access/click-analytics/dashboard.php:301
 msgid "旧レイアウト一覧"
@@ -19151,7 +19167,9 @@ msgstr "Clicks by link"
 
 #: lib/page-access/click-analytics/dashboard.php:325
 msgid "掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。"
-msgstr "Differences by placement are observational data. This screen alone cannot establish that changing placement caused more clicks."
+msgstr ""
+"Differences by placement are observational data. This screen alone cannot "
+"establish that changing placement caused more clicks."
 
 #: lib/page-access/click-analytics/dashboard.php:169
 msgid "複数記事"
@@ -19163,7 +19181,9 @@ msgstr "Representative link"
 
 #: lib/page-access/click-analytics/dashboard.php:298
 msgid "端末の代表幅で表示しています。実際の画面幅や固定・追従要素の位置によって、クリック位置に差が生じる場合があります。"
-msgstr "Displayed at a representative width for the device. Click positions may differ due to actual screen width or fixed and sticky elements."
+msgstr ""
+"Displayed at a representative width for the device. Click positions may "
+"differ due to actual screen width or fixed and sticky elements."
 
 #: lib/page-access/analytics/enqueue-func.php:144
 msgid "候補から記事を選択してください。"
@@ -20866,6 +20886,341 @@ msgstr "Displays tabs in the same order as before."
 msgid "パーツ・導線"
 msgstr "Components & navigation"
 
+#: lib/page-access/analytics/render-func.php:154
+msgid "記事:"
+msgstr "Post:"
+
+#: lib/page-access/analytics/render-func.php:155
+msgid "タイトル・キーワード・IDで検索..."
+msgstr "Search by title, keyword, or ID..."
+
+#: lib/page-access/analytics/render-func.php:162
+#, php-format
+msgid "記事 #%s"
+msgstr "Post #%s"
+
+#: lib/page-access/analytics/render-func.php:172
+msgid "記事の選択を解除"
+msgstr "Clear post selection"
+
+#: lib/page-access/analytics/render-func.php:229
+#: lib/page-access/click-analytics/settings-form.php:9
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析"
+msgstr "Click analytics"
+
+#: lib/page-access/click-analytics/settings-form.php:11
+msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。"
+msgstr ""
+"Asynchronously aggregates internal and external link clicks, visible "
+"impressions, and placement. Archives and search results are not tracked in "
+"this initial version."
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析を有効にする"
+msgstr "Enable click analytics"
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "アップデート後は自動で有効になりません。"
+msgstr "Not enabled automatically after an update."
+
+#: lib/page-access/click-analytics/settings-form.php:14
+msgid "計測対象"
+msgstr "Tracking scope"
+
+#: lib/page-access/click-analytics/settings-form.php:17
+msgid "アンカー・ダウンロード・電話・メール"
+msgstr "Anchors, downloads, phone, and email"
+
+#: lib/page-access/click-analytics/settings-form.php:19
+msgid "詳細計測"
+msgstr "Detailed tracking"
+
+#: lib/page-access/click-analytics/settings-form.php:20
+msgid "リンクの実表示と推定CTRを計測する"
+msgstr "Track visible link impressions and estimated CTR"
+
+#: lib/page-access/click-analytics/settings-form.php:21
+msgid "丸めたクリック位置を計測する"
+msgstr "Track rounded click positions"
+
+#: lib/page-access/click-analytics/settings-form.php:22
+msgid "内部リンクの到着・エンゲージを計測する"
+msgstr "Track arrivals and engagement from internal links"
+
+#: lib/page-access/click-analytics/settings-form.php:24
+msgid "プライバシー"
+msgstr "Privacy"
+
+#: lib/page-access/click-analytics/settings-form.php:25
+msgid "ログインユーザーを除外する"
+msgstr "Exclude logged-in users"
+
+#: lib/page-access/click-analytics/settings-form.php:26
+msgid "DNT/GPCを尊重する"
+msgstr "Respect DNT/GPC"
+
+#: lib/page-access/click-analytics/settings-form.php:27
+msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
+msgstr ""
+"IP addresses, full User-Agent strings, full referrers, input values, and "
+"raw coordinates are not stored."
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "自動サンプリング"
+msgstr "Automatic sampling"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr ""
+"Automatically adjusts daily to 100%, 20%, 5%, or 1% based on the volume "
+"over the past 7 days. Uses 10% when data is insufficient."
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次・位置データ保持"
+msgstr "Daily and position data retention"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "30日"
+msgstr "30 days"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "90日"
+msgstr "90 days"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "400日"
+msgstr "400 days"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "月次データ保持"
+msgstr "Monthly data retention"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "12か月"
+msgstr "12 months"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "24か月"
+msgstr "24 months"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "60か月"
+msgstr "60 months"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "除外ドメイン"
+msgstr "Excluded domains"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "1行に1ドメインを入力します。"
+msgstr "Enter one domain per line."
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "除外URL文字列"
+msgstr "Excluded URL strings"
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "URLに含まれる文字列を1行ずつ入力します。"
+msgstr "Enter one string to match in URLs per line."
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "表示を許可するクエリ"
+msgstr "Allowed query parameters"
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
+msgstr ""
+"Use the format “domain:key,key”. Unapproved query values are not stored or "
+"displayed in the admin area."
+
+#: lib/page-access/click-analytics/settings-form.php:37
+msgid "収集状態"
+msgstr "Collection status"
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%"
+msgstr "Current sampling rate: %s%%"
+
+#: lib/page-access/click-analytics/settings-form.php:40
+#, php-format
+msgid "直近14日の受信イベント: %s"
+msgstr "Events received in the past 14 days: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:41
+#, php-format
+msgid "直近14日の拒否イベント: %s"
+msgstr "Events rejected in the past 14 days: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:42
+#, php-format
+msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgstr ""
+"Batches in the past 14 days: accepted %1$s / duplicate %2$s (duplicate rate "
+"%3$s)"
+
+#: lib/page-access/click-analytics/settings-form.php:43
+#, php-format
+msgid "イベント欠損率（検証除外）: %s"
+msgstr "Event loss rate (excluded by validation): %s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+#, php-format
+msgid "直近7日CTR診断: %s"
+msgstr "CTR diagnostics for the past 7 days: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より上昇"
+msgstr "Above the normal range"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より低下"
+msgstr "Below the normal range"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "異常なし"
+msgstr "No anomalies"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "データ不足"
+msgstr "Insufficient data"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+#, php-format
+msgid "最終受信: %s"
+msgstr "Last received: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+msgid "未受信"
+msgstr "Not received yet"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+#, php-format
+msgid "最終サンプリング集計: %s"
+msgstr "Last sampling calculation: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+msgid "未集計"
+msgstr "Not calculated yet"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#, php-format
+msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
+msgstr "Monthly recalculation: %1$s / completed %2$s / rows updated %3$s"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#: lib/page-access/click-analytics/settings-form.php:48
+msgid "未実行"
+msgstr "Not run yet"
+
+#: lib/page-access/click-analytics/settings-form.php:48
+#, php-format
+msgid "最終メンテナンス: %1$s / %2$sms"
+msgstr "Last maintenance: %1$s / %2$sms"
+
+#: lib/page-access/click-analytics/settings-form.php:49
+#, php-format
+msgid "DB使用量: %s"
+msgstr "Database usage: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+#, php-format
+msgid "次回メンテナンス: %s"
+msgstr "Next maintenance: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+msgid "未予約"
+msgstr "Not scheduled"
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#, php-format
+msgid "Cron遅延: %s"
+msgstr "Cron delay: %s"
+
+#: lib/page-access/click-analytics/settings-form.php:53
+msgid ""
+"トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ"
+"常時記録します。"
+msgstr ""
+"Requests rejected before batch acceptance, such as invalid tokens, are "
+"counted only when a persistent object cache is available. Accepted event "
+"counts, duplicates, and validation exclusions are always recorded in the "
+"database."
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
+msgstr "Permanently delete all click analytics data? This cannot be undone."
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データを完全削除"
+msgstr "Permanently delete click analytics data"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
+msgstr ""
+"Daily data may remain beyond the retention period until monthly aggregation "
+"is finalized."
+
+#: lib/page-access/click-analytics/admin-actions.php:13
+msgid "この操作を行う管理者権限がありません。"
+msgstr "You do not have administrator permission to perform this action."
+
+#: lib/page-access/click-analytics/rest-func.php:285
+msgid "クリック解析は無効です。"
+msgstr "Click analytics is disabled."
+
+#: lib/page-access/click-analytics/rest-func.php:286
+msgid "クリック解析テーブルがありません。"
+msgstr "Click analytics tables are missing."
+
+#: lib/page-access/click-analytics/rest-func.php:288
+msgid "送信サイズが不正です。"
+msgstr "Invalid payload size."
+
+#: lib/page-access/click-analytics/rest-func.php:290
+msgid "JSONが不正です。"
+msgstr "Invalid JSON."
+
+#: lib/page-access/click-analytics/rest-func.php:291
+msgid "送信元が不正です。"
+msgstr "Invalid origin."
+
+#: lib/page-access/click-analytics/rest-func.php:307
+msgid "識別子が不正です。"
+msgstr "Invalid identifier."
+
+#: lib/page-access/click-analytics/rest-func.php:296
+#: lib/page-access/click-analytics/rest-func.php:310
+msgid "送信内容が不正です。"
+msgstr "Invalid payload."
+
+#: lib/page-access/click-analytics/rest-func.php:312
+msgid "計測トークンが不正です。"
+msgstr "Invalid tracking token."
+
+#: lib/page-access/click-analytics/rest-func.php:314
+msgid "クリック元が不正です。"
+msgstr "Invalid click source."
+
+#: lib/page-access/click-analytics/rest-func.php:315
+msgid "送信回数が多すぎます。"
+msgstr "Too many requests."
+
+#: lib/page-access/click-analytics/rest-func.php:320
+#: lib/page-access/click-analytics/rest-func.php:413
+msgid "計測データを保存できませんでした。再送してください。"
+msgstr "Could not save tracking data. Please resend."
+
+#: lib/page-access/click-analytics/schema-func.php:260
+msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
+msgstr ""
+"The click analytics database update failed. Check database permissions and "
+"available space. Tracking is paused until the update completes."
+
+msgid "リンク定義数の上限に達しました。"
+msgstr "The maximum number of link definitions has been reached."
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -21186,317 +21541,3 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
-
-#: lib/page-access/analytics/render-func.php:154
-msgid "記事:"
-msgstr "Post:"
-
-#: lib/page-access/analytics/render-func.php:155
-msgid "タイトル・キーワード・IDで検索..."
-msgstr "Search by title, keyword, or ID..."
-
-#: lib/page-access/analytics/render-func.php:162
-#, php-format
-msgid "記事 #%s"
-msgstr "Post #%s"
-
-#: lib/page-access/analytics/render-func.php:172
-msgid "記事の選択を解除"
-msgstr "Clear post selection"
-
-#: lib/page-access/analytics/render-func.php:229
-#: lib/page-access/click-analytics/settings-form.php:9
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "クリック解析"
-msgstr "Click analytics"
-
-#: lib/page-access/click-analytics/settings-form.php:11
-msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。"
-msgstr "Asynchronously aggregates internal and external link clicks, visible impressions, and placement. Archives and search results are not tracked in this initial version."
-
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "クリック解析を有効にする"
-msgstr "Enable click analytics"
-
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "Not enabled automatically after an update."
-
-#: lib/page-access/click-analytics/settings-form.php:14
-msgid "計測対象"
-msgstr "Tracking scope"
-
-#: lib/page-access/click-analytics/settings-form.php:17
-msgid "アンカー・ダウンロード・電話・メール"
-msgstr "Anchors, downloads, phone, and email"
-
-#: lib/page-access/click-analytics/settings-form.php:19
-msgid "詳細計測"
-msgstr "Detailed tracking"
-
-#: lib/page-access/click-analytics/settings-form.php:20
-msgid "リンクの実表示と推定CTRを計測する"
-msgstr "Track visible link impressions and estimated CTR"
-
-#: lib/page-access/click-analytics/settings-form.php:21
-msgid "丸めたクリック位置を計測する"
-msgstr "Track rounded click positions"
-
-#: lib/page-access/click-analytics/settings-form.php:22
-msgid "内部リンクの到着・エンゲージを計測する"
-msgstr "Track arrivals and engagement from internal links"
-
-#: lib/page-access/click-analytics/settings-form.php:24
-msgid "プライバシー"
-msgstr "Privacy"
-
-#: lib/page-access/click-analytics/settings-form.php:25
-msgid "ログインユーザーを除外する"
-msgstr "Exclude logged-in users"
-
-#: lib/page-access/click-analytics/settings-form.php:26
-msgid "DNT/GPCを尊重する"
-msgstr "Respect DNT/GPC"
-
-#: lib/page-access/click-analytics/settings-form.php:27
-msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
-msgstr "IP addresses, full User-Agent strings, full referrers, input values, and raw coordinates are not stored."
-
-#: lib/page-access/click-analytics/settings-form.php:29
-msgid "自動サンプリング"
-msgstr "Automatic sampling"
-
-#: lib/page-access/click-analytics/settings-form.php:29
-msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
-msgstr "Automatically adjusts daily to 100%, 20%, 5%, or 1% based on the volume over the past 7 days. Uses 10% when data is insufficient."
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "日次・位置データ保持"
-msgstr "Daily and position data retention"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "30日"
-msgstr "30 days"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "90日"
-msgstr "90 days"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "400日"
-msgstr "400 days"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "月次データ保持"
-msgstr "Monthly data retention"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "12か月"
-msgstr "12 months"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "24か月"
-msgstr "24 months"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "60か月"
-msgstr "60 months"
-
-#: lib/page-access/click-analytics/settings-form.php:32
-msgid "除外ドメイン"
-msgstr "Excluded domains"
-
-#: lib/page-access/click-analytics/settings-form.php:32
-msgid "1行に1ドメインを入力します。"
-msgstr "Enter one domain per line."
-
-#: lib/page-access/click-analytics/settings-form.php:33
-msgid "除外URL文字列"
-msgstr "Excluded URL strings"
-
-#: lib/page-access/click-analytics/settings-form.php:33
-msgid "URLに含まれる文字列を1行ずつ入力します。"
-msgstr "Enter one string to match in URLs per line."
-
-#: lib/page-access/click-analytics/settings-form.php:34
-msgid "表示を許可するクエリ"
-msgstr "Allowed query parameters"
-
-#: lib/page-access/click-analytics/settings-form.php:34
-msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
-msgstr "Use the format “domain:key,key”. Unapproved query values are not stored or displayed in the admin area."
-
-#: lib/page-access/click-analytics/settings-form.php:37
-msgid "収集状態"
-msgstr "Collection status"
-
-#: lib/page-access/click-analytics/settings-form.php:39
-#, php-format
-msgid "現在のサンプリング率: %s%%"
-msgstr "Current sampling rate: %s%%"
-
-#: lib/page-access/click-analytics/settings-form.php:40
-#, php-format
-msgid "直近14日の受信イベント: %s"
-msgstr "Events received in the past 14 days: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:41
-#, php-format
-msgid "直近14日の拒否イベント: %s"
-msgstr "Events rejected in the past 14 days: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:42
-#, php-format
-msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
-msgstr "Batches in the past 14 days: accepted %1$s / duplicate %2$s (duplicate rate %3$s)"
-
-#: lib/page-access/click-analytics/settings-form.php:43
-#, php-format
-msgid "イベント欠損率（検証除外）: %s"
-msgstr "Event loss rate (excluded by validation): %s"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-#, php-format
-msgid "直近7日CTR診断: %s"
-msgstr "CTR diagnostics for the past 7 days: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "通常範囲より上昇"
-msgstr "Above the normal range"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "通常範囲より低下"
-msgstr "Below the normal range"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "異常なし"
-msgstr "No anomalies"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "データ不足"
-msgstr "Insufficient data"
-
-#: lib/page-access/click-analytics/settings-form.php:45
-#, php-format
-msgid "最終受信: %s"
-msgstr "Last received: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:45
-msgid "未受信"
-msgstr "Not received yet"
-
-#: lib/page-access/click-analytics/settings-form.php:46
-#, php-format
-msgid "最終サンプリング集計: %s"
-msgstr "Last sampling calculation: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:46
-msgid "未集計"
-msgstr "Not calculated yet"
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#, php-format
-msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
-msgstr "Monthly recalculation: %1$s / completed %2$s / rows updated %3$s"
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#: lib/page-access/click-analytics/settings-form.php:48
-msgid "未実行"
-msgstr "Not run yet"
-
-#: lib/page-access/click-analytics/settings-form.php:48
-#, php-format
-msgid "最終メンテナンス: %1$s / %2$sms"
-msgstr "Last maintenance: %1$s / %2$sms"
-
-#: lib/page-access/click-analytics/settings-form.php:49
-#, php-format
-msgid "DB使用量: %s"
-msgstr "Database usage: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:50
-#, php-format
-msgid "次回メンテナンス: %s"
-msgstr "Next maintenance: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:50
-msgid "未予約"
-msgstr "Not scheduled"
-
-#: lib/page-access/click-analytics/settings-form.php:51
-#, php-format
-msgid "Cron遅延: %s"
-msgstr "Cron delay: %s"
-
-#: lib/page-access/click-analytics/settings-form.php:53
-msgid "トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。"
-msgstr "Requests rejected before batch acceptance, such as invalid tokens, are counted only when a persistent object cache is available. Accepted event counts, duplicates, and validation exclusions are always recorded in the database."
-
-#: lib/page-access/click-analytics/settings-form.php:54
-msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
-msgstr "Permanently delete all click analytics data? This cannot be undone."
-
-#: lib/page-access/click-analytics/settings-form.php:54
-msgid "クリック解析データを完全削除"
-msgstr "Permanently delete click analytics data"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
-msgstr "Daily data may remain beyond the retention period until monthly aggregation is finalized."
-
-#: lib/page-access/click-analytics/admin-actions.php:13
-msgid "この操作を行う管理者権限がありません。"
-msgstr "You do not have administrator permission to perform this action."
-
-#: lib/page-access/click-analytics/rest-func.php:285
-msgid "クリック解析は無効です。"
-msgstr "Click analytics is disabled."
-
-#: lib/page-access/click-analytics/rest-func.php:286
-msgid "クリック解析テーブルがありません。"
-msgstr "Click analytics tables are missing."
-
-#: lib/page-access/click-analytics/rest-func.php:288
-msgid "送信サイズが不正です。"
-msgstr "Invalid payload size."
-
-#: lib/page-access/click-analytics/rest-func.php:290
-msgid "JSONが不正です。"
-msgstr "Invalid JSON."
-
-#: lib/page-access/click-analytics/rest-func.php:291
-msgid "送信元が不正です。"
-msgstr "Invalid origin."
-
-#: lib/page-access/click-analytics/rest-func.php:307
-msgid "識別子が不正です。"
-msgstr "Invalid identifier."
-
-#: lib/page-access/click-analytics/rest-func.php:296
-#: lib/page-access/click-analytics/rest-func.php:310
-msgid "送信内容が不正です。"
-msgstr "Invalid payload."
-
-#: lib/page-access/click-analytics/rest-func.php:312
-msgid "計測トークンが不正です。"
-msgstr "Invalid tracking token."
-
-#: lib/page-access/click-analytics/rest-func.php:314
-msgid "クリック元が不正です。"
-msgstr "Invalid click source."
-
-#: lib/page-access/click-analytics/rest-func.php:315
-msgid "送信回数が多すぎます。"
-msgstr "Too many requests."
-
-#: lib/page-access/click-analytics/rest-func.php:320
-#: lib/page-access/click-analytics/rest-func.php:413
-msgid "計測データを保存できませんでした。再送してください。"
-msgstr "Could not save tracking data. Please resend."
-
-#: lib/page-access/click-analytics/schema-func.php:260
-msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
-msgstr "The click analytics database update failed. Check database permissions and available space. Tracking is paused until the update completes."
-
-msgid "リンク定義数の上限に達しました。"
-msgstr "The maximum number of link definitions has been reached."

@@ -19893,6 +19893,322 @@ msgstr "按与以往相同的顺序显示选项卡。"
 msgid "パーツ・導線"
 msgstr "组件与导航"
 
+#: lib/page-access/analytics/render-func.php:154
+msgid "記事:"
+msgstr "文章："
+
+#: lib/page-access/analytics/render-func.php:155
+msgid "タイトル・キーワード・IDで検索..."
+msgstr "按标题、关键词或 ID 搜索..."
+
+#: lib/page-access/analytics/render-func.php:162
+#, php-format
+msgid "記事 #%s"
+msgstr "文章 #%s"
+
+#: lib/page-access/analytics/render-func.php:172
+msgid "記事の選択を解除"
+msgstr "清除文章选择"
+
+#: lib/page-access/analytics/render-func.php:229
+#: lib/page-access/click-analytics/settings-form.php:9
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析"
+msgstr "点击分析"
+
+#: lib/page-access/click-analytics/settings-form.php:11
+msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。"
+msgstr "异步汇总内部及外部链接的点击、实际展示和展示位置。初版不统计归档页和搜索结果。"
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "クリック解析を有効にする"
+msgstr "启用点击分析"
+
+#: lib/page-access/click-analytics/settings-form.php:13
+msgid "アップデート後は自動で有効になりません。"
+msgstr "更新后不会自动启用。"
+
+#: lib/page-access/click-analytics/settings-form.php:14
+msgid "計測対象"
+msgstr "统计范围"
+
+#: lib/page-access/click-analytics/settings-form.php:17
+msgid "アンカー・ダウンロード・電話・メール"
+msgstr "锚点、下载、电话和电子邮件"
+
+#: lib/page-access/click-analytics/settings-form.php:19
+msgid "詳細計測"
+msgstr "详细统计"
+
+#: lib/page-access/click-analytics/settings-form.php:20
+msgid "リンクの実表示と推定CTRを計測する"
+msgstr "统计链接的实际展示和估算点击率"
+
+#: lib/page-access/click-analytics/settings-form.php:21
+msgid "丸めたクリック位置を計測する"
+msgstr "统计取整后的点击位置"
+
+#: lib/page-access/click-analytics/settings-form.php:22
+msgid "内部リンクの到着・エンゲージを計測する"
+msgstr "统计内部链接的到达和互动"
+
+#: lib/page-access/click-analytics/settings-form.php:24
+msgid "プライバシー"
+msgstr "隐私"
+
+#: lib/page-access/click-analytics/settings-form.php:25
+msgid "ログインユーザーを除外する"
+msgstr "排除已登录用户"
+
+#: lib/page-access/click-analytics/settings-form.php:26
+msgid "DNT/GPCを尊重する"
+msgstr "遵守 DNT/GPC"
+
+#: lib/page-access/click-analytics/settings-form.php:27
+msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
+msgstr "不保存 IP 地址、完整 User-Agent、完整来源网址、输入值或原始坐标。"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "自動サンプリング"
+msgstr "自动采样"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr "根据最近 7 天的数据量，每日自动调整为 100%、20%、5% 或 1%。数据不足时为 10%。"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次・位置データ保持"
+msgstr "每日及位置数据保留"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "30日"
+msgstr "30 天"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "90日"
+msgstr "90 天"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "400日"
+msgstr "400 天"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "月次データ保持"
+msgstr "月度数据保留"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "12か月"
+msgstr "12 个月"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "24か月"
+msgstr "24 个月"
+
+#: lib/page-access/click-analytics/settings-form.php:31
+msgid "60か月"
+msgstr "60 个月"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "除外ドメイン"
+msgstr "排除的域名"
+
+#: lib/page-access/click-analytics/settings-form.php:32
+msgid "1行に1ドメインを入力します。"
+msgstr "每行输入一个域名。"
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "除外URL文字列"
+msgstr "排除的 URL 字符串"
+
+#: lib/page-access/click-analytics/settings-form.php:33
+msgid "URLに含まれる文字列を1行ずつ入力します。"
+msgstr "每行输入一个要匹配的 URL 字符串。"
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "表示を許可するクエリ"
+msgstr "允许显示的查询参数"
+
+#: lib/page-access/click-analytics/settings-form.php:34
+msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
+msgstr "格式为“域名:键,键”。未允许的查询值不会保存或显示在管理界面中。"
+
+#: lib/page-access/click-analytics/settings-form.php:37
+msgid "収集状態"
+msgstr "收集状态"
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%"
+msgstr "当前采样率：%s%%"
+
+#: lib/page-access/click-analytics/settings-form.php:40
+#, php-format
+msgid "直近14日の受信イベント: %s"
+msgstr "最近 14 天接收的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:41
+#, php-format
+msgid "直近14日の拒否イベント: %s"
+msgstr "最近 14 天拒绝的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:42
+#, php-format
+msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgstr "最近 14 天的批次：正常 %1$s／重复 %2$s（重复率 %3$s）"
+
+#: lib/page-access/click-analytics/settings-form.php:43
+#, php-format
+msgid "イベント欠損率（検証除外）: %s"
+msgstr "事件丢失率（验证排除）：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+#, php-format
+msgid "直近7日CTR診断: %s"
+msgstr "最近 7 天点击率诊断：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より上昇"
+msgstr "高于正常范围"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "通常範囲より低下"
+msgstr "低于正常范围"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "異常なし"
+msgstr "无异常"
+
+#: lib/page-access/click-analytics/settings-form.php:44
+msgid "データ不足"
+msgstr "数据不足"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+#, php-format
+msgid "最終受信: %s"
+msgstr "最后接收：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:45
+msgid "未受信"
+msgstr "尚未接收"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+#, php-format
+msgid "最終サンプリング集計: %s"
+msgstr "最后采样计算：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:46
+msgid "未集計"
+msgstr "尚未统计"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#, php-format
+msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
+msgstr "月度重新统计：%1$s／完成 %2$s／更新行数 %3$s"
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#: lib/page-access/click-analytics/settings-form.php:48
+msgid "未実行"
+msgstr "尚未执行"
+
+#: lib/page-access/click-analytics/settings-form.php:48
+#, php-format
+msgid "最終メンテナンス: %1$s / %2$sms"
+msgstr "最后维护：%1$s／%2$sms"
+
+#: lib/page-access/click-analytics/settings-form.php:49
+#, php-format
+msgid "DB使用量: %s"
+msgstr "数据库使用量：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+#, php-format
+msgid "次回メンテナンス: %s"
+msgstr "下次维护：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:50
+msgid "未予約"
+msgstr "尚未安排"
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#, php-format
+msgid "Cron遅延: %s"
+msgstr "Cron 延迟：%s"
+
+#: lib/page-access/click-analytics/settings-form.php:53
+msgid ""
+"トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ"
+"常時記録します。"
+msgstr "因令牌无效等原因在批次接收前被拒绝的请求数，仅在有持久对象缓存的环境中累计。接收后的事件数、重复和验证排除始终记录到数据库统计中。"
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
+msgstr "确定永久删除所有点击分析数据吗？此操作无法撤销。"
+
+#: lib/page-access/click-analytics/settings-form.php:54
+msgid "クリック解析データを完全削除"
+msgstr "永久删除点击分析数据"
+
+#: lib/page-access/click-analytics/settings-form.php:30
+msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
+msgstr "在月度汇总完成前，每日数据可能会保留至超过保留期限。"
+
+#: lib/page-access/click-analytics/admin-actions.php:13
+msgid "この操作を行う管理者権限がありません。"
+msgstr "您没有执行此操作的管理员权限。"
+
+#: lib/page-access/click-analytics/rest-func.php:285
+msgid "クリック解析は無効です。"
+msgstr "点击分析已禁用。"
+
+#: lib/page-access/click-analytics/rest-func.php:286
+msgid "クリック解析テーブルがありません。"
+msgstr "缺少点击分析数据表。"
+
+#: lib/page-access/click-analytics/rest-func.php:288
+msgid "送信サイズが不正です。"
+msgstr "发送数据大小无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:290
+msgid "JSONが不正です。"
+msgstr "JSON 无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:291
+msgid "送信元が不正です。"
+msgstr "发送来源无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:307
+msgid "識別子が不正です。"
+msgstr "标识符无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:296
+#: lib/page-access/click-analytics/rest-func.php:310
+msgid "送信内容が不正です。"
+msgstr "发送内容无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:312
+msgid "計測トークンが不正です。"
+msgstr "跟踪令牌无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:314
+msgid "クリック元が不正です。"
+msgstr "点击来源无效。"
+
+#: lib/page-access/click-analytics/rest-func.php:315
+msgid "送信回数が多すぎます。"
+msgstr "请求次数过多。"
+
+#: lib/page-access/click-analytics/rest-func.php:320
+#: lib/page-access/click-analytics/rest-func.php:413
+msgid "計測データを保存できませんでした。再送してください。"
+msgstr "无法保存统计数据。请重新发送。"
+
+#: lib/page-access/click-analytics/schema-func.php:260
+msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
+msgstr "点击分析数据库更新失败。请检查数据库权限和可用空间。统计将暂停，直到更新完成。"
+
+msgid "リンク定義数の上限に達しました。"
+msgstr "链接定义数量已达到上限。"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20207,317 +20523,3 @@ msgstr "在编辑器内搜索并选择乐天商品，插入静态商品链接。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n-j"
-
-#: lib/page-access/analytics/render-func.php:154
-msgid "記事:"
-msgstr "文章："
-
-#: lib/page-access/analytics/render-func.php:155
-msgid "タイトル・キーワード・IDで検索..."
-msgstr "按标题、关键词或 ID 搜索..."
-
-#: lib/page-access/analytics/render-func.php:162
-#, php-format
-msgid "記事 #%s"
-msgstr "文章 #%s"
-
-#: lib/page-access/analytics/render-func.php:172
-msgid "記事の選択を解除"
-msgstr "清除文章选择"
-
-#: lib/page-access/analytics/render-func.php:229
-#: lib/page-access/click-analytics/settings-form.php:9
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "クリック解析"
-msgstr "点击分析"
-
-#: lib/page-access/click-analytics/settings-form.php:11
-msgid "内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。"
-msgstr "异步汇总内部及外部链接的点击、实际展示和展示位置。初版不统计归档页和搜索结果。"
-
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "クリック解析を有効にする"
-msgstr "启用点击分析"
-
-#: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "更新后不会自动启用。"
-
-#: lib/page-access/click-analytics/settings-form.php:14
-msgid "計測対象"
-msgstr "统计范围"
-
-#: lib/page-access/click-analytics/settings-form.php:17
-msgid "アンカー・ダウンロード・電話・メール"
-msgstr "锚点、下载、电话和电子邮件"
-
-#: lib/page-access/click-analytics/settings-form.php:19
-msgid "詳細計測"
-msgstr "详细统计"
-
-#: lib/page-access/click-analytics/settings-form.php:20
-msgid "リンクの実表示と推定CTRを計測する"
-msgstr "统计链接的实际展示和估算点击率"
-
-#: lib/page-access/click-analytics/settings-form.php:21
-msgid "丸めたクリック位置を計測する"
-msgstr "统计取整后的点击位置"
-
-#: lib/page-access/click-analytics/settings-form.php:22
-msgid "内部リンクの到着・エンゲージを計測する"
-msgstr "统计内部链接的到达和互动"
-
-#: lib/page-access/click-analytics/settings-form.php:24
-msgid "プライバシー"
-msgstr "隐私"
-
-#: lib/page-access/click-analytics/settings-form.php:25
-msgid "ログインユーザーを除外する"
-msgstr "排除已登录用户"
-
-#: lib/page-access/click-analytics/settings-form.php:26
-msgid "DNT/GPCを尊重する"
-msgstr "遵守 DNT/GPC"
-
-#: lib/page-access/click-analytics/settings-form.php:27
-msgid "IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。"
-msgstr "不保存 IP 地址、完整 User-Agent、完整来源网址、输入值或原始坐标。"
-
-#: lib/page-access/click-analytics/settings-form.php:29
-msgid "自動サンプリング"
-msgstr "自动采样"
-
-#: lib/page-access/click-analytics/settings-form.php:29
-msgid "直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
-msgstr "根据最近 7 天的数据量，每日自动调整为 100%、20%、5% 或 1%。数据不足时为 10%。"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "日次・位置データ保持"
-msgstr "每日及位置数据保留"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "30日"
-msgstr "30 天"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "90日"
-msgstr "90 天"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "400日"
-msgstr "400 天"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "月次データ保持"
-msgstr "月度数据保留"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "12か月"
-msgstr "12 个月"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "24か月"
-msgstr "24 个月"
-
-#: lib/page-access/click-analytics/settings-form.php:31
-msgid "60か月"
-msgstr "60 个月"
-
-#: lib/page-access/click-analytics/settings-form.php:32
-msgid "除外ドメイン"
-msgstr "排除的域名"
-
-#: lib/page-access/click-analytics/settings-form.php:32
-msgid "1行に1ドメインを入力します。"
-msgstr "每行输入一个域名。"
-
-#: lib/page-access/click-analytics/settings-form.php:33
-msgid "除外URL文字列"
-msgstr "排除的 URL 字符串"
-
-#: lib/page-access/click-analytics/settings-form.php:33
-msgid "URLに含まれる文字列を1行ずつ入力します。"
-msgstr "每行输入一个要匹配的 URL 字符串。"
-
-#: lib/page-access/click-analytics/settings-form.php:34
-msgid "表示を許可するクエリ"
-msgstr "允许显示的查询参数"
-
-#: lib/page-access/click-analytics/settings-form.php:34
-msgid "「ドメイン:キー,キー」の形式。許可しないクエリ値は管理画面へ保存・表示しません。"
-msgstr "格式为“域名:键,键”。未允许的查询值不会保存或显示在管理界面中。"
-
-#: lib/page-access/click-analytics/settings-form.php:37
-msgid "収集状態"
-msgstr "收集状态"
-
-#: lib/page-access/click-analytics/settings-form.php:39
-#, php-format
-msgid "現在のサンプリング率: %s%%"
-msgstr "当前采样率：%s%%"
-
-#: lib/page-access/click-analytics/settings-form.php:40
-#, php-format
-msgid "直近14日の受信イベント: %s"
-msgstr "最近 14 天接收的事件：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:41
-#, php-format
-msgid "直近14日の拒否イベント: %s"
-msgstr "最近 14 天拒绝的事件：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:42
-#, php-format
-msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
-msgstr "最近 14 天的批次：正常 %1$s／重复 %2$s（重复率 %3$s）"
-
-#: lib/page-access/click-analytics/settings-form.php:43
-#, php-format
-msgid "イベント欠損率（検証除外）: %s"
-msgstr "事件丢失率（验证排除）：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-#, php-format
-msgid "直近7日CTR診断: %s"
-msgstr "最近 7 天点击率诊断：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "通常範囲より上昇"
-msgstr "高于正常范围"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "通常範囲より低下"
-msgstr "低于正常范围"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "異常なし"
-msgstr "无异常"
-
-#: lib/page-access/click-analytics/settings-form.php:44
-msgid "データ不足"
-msgstr "数据不足"
-
-#: lib/page-access/click-analytics/settings-form.php:45
-#, php-format
-msgid "最終受信: %s"
-msgstr "最后接收：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:45
-msgid "未受信"
-msgstr "尚未接收"
-
-#: lib/page-access/click-analytics/settings-form.php:46
-#, php-format
-msgid "最終サンプリング集計: %s"
-msgstr "最后采样计算：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:46
-msgid "未集計"
-msgstr "尚未统计"
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#, php-format
-msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
-msgstr "月度重新统计：%1$s／完成 %2$s／更新行数 %3$s"
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#: lib/page-access/click-analytics/settings-form.php:48
-msgid "未実行"
-msgstr "尚未执行"
-
-#: lib/page-access/click-analytics/settings-form.php:48
-#, php-format
-msgid "最終メンテナンス: %1$s / %2$sms"
-msgstr "最后维护：%1$s／%2$sms"
-
-#: lib/page-access/click-analytics/settings-form.php:49
-#, php-format
-msgid "DB使用量: %s"
-msgstr "数据库使用量：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:50
-#, php-format
-msgid "次回メンテナンス: %s"
-msgstr "下次维护：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:50
-msgid "未予約"
-msgstr "尚未安排"
-
-#: lib/page-access/click-analytics/settings-form.php:51
-#, php-format
-msgid "Cron遅延: %s"
-msgstr "Cron 延迟：%s"
-
-#: lib/page-access/click-analytics/settings-form.php:53
-msgid "トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。"
-msgstr "因令牌无效等原因在批次接收前被拒绝的请求数，仅在有持久对象缓存的环境中累计。接收后的事件数、重复和验证排除始终记录到数据库统计中。"
-
-#: lib/page-access/click-analytics/settings-form.php:54
-msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
-msgstr "确定永久删除所有点击分析数据吗？此操作无法撤销。"
-
-#: lib/page-access/click-analytics/settings-form.php:54
-msgid "クリック解析データを完全削除"
-msgstr "永久删除点击分析数据"
-
-#: lib/page-access/click-analytics/settings-form.php:30
-msgid "日次データは月次集計の確定まで、保持期限を超えて残る場合があります。"
-msgstr "在月度汇总完成前，每日数据可能会保留至超过保留期限。"
-
-#: lib/page-access/click-analytics/admin-actions.php:13
-msgid "この操作を行う管理者権限がありません。"
-msgstr "您没有执行此操作的管理员权限。"
-
-#: lib/page-access/click-analytics/rest-func.php:285
-msgid "クリック解析は無効です。"
-msgstr "点击分析已禁用。"
-
-#: lib/page-access/click-analytics/rest-func.php:286
-msgid "クリック解析テーブルがありません。"
-msgstr "缺少点击分析数据表。"
-
-#: lib/page-access/click-analytics/rest-func.php:288
-msgid "送信サイズが不正です。"
-msgstr "发送数据大小无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:290
-msgid "JSONが不正です。"
-msgstr "JSON 无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:291
-msgid "送信元が不正です。"
-msgstr "发送来源无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:307
-msgid "識別子が不正です。"
-msgstr "标识符无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:296
-#: lib/page-access/click-analytics/rest-func.php:310
-msgid "送信内容が不正です。"
-msgstr "发送内容无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:312
-msgid "計測トークンが不正です。"
-msgstr "跟踪令牌无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:314
-msgid "クリック元が不正です。"
-msgstr "点击来源无效。"
-
-#: lib/page-access/click-analytics/rest-func.php:315
-msgid "送信回数が多すぎます。"
-msgstr "请求次数过多。"
-
-#: lib/page-access/click-analytics/rest-func.php:320
-#: lib/page-access/click-analytics/rest-func.php:413
-msgid "計測データを保存できませんでした。再送してください。"
-msgstr "无法保存统计数据。请重新发送。"
-
-#: lib/page-access/click-analytics/schema-func.php:260
-msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
-msgstr "点击分析数据库更新失败。请检查数据库权限和可用空间。统计将暂停，直到更新完成。"
-
-msgid "リンク定義数の上限に達しました。"
-msgstr "链接定义数量已达到上限。"
