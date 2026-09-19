@@ -19445,7 +19445,13 @@ msgstr ""
 "El análisis de clics está desactivado. Puede consultar los datos "
 "históricos, pero no se recopilan datos nuevos."
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr "Para iniciar el seguimiento, marque «Activar el análisis de clics» en la pestaña «%s» y haga clic en «Guardar cambios»."
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr ""
 "No se pudieron crear las tablas de análisis de clics. Vuelva a abrir la "
@@ -21353,8 +21359,8 @@ msgid "クリック解析を有効にする"
 msgstr "Activar el análisis de clics"
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "No se activa automáticamente tras una actualización."
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
+msgstr "Activado de forma predeterminada. Si se desactiva, permanecerá desactivado después de una actualización."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"

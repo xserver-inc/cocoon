@@ -19043,7 +19043,13 @@ msgstr ""
 "Click analytics is currently disabled. Historical data is available, but "
 "new data is not collected."
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr "To start tracking, select “Enable click analytics” in the %s tab and click “Save Changes”."
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr "Click analytics tables could not be created. Reopen the settings page."
 
@@ -20921,8 +20927,8 @@ msgid "クリック解析を有効にする"
 msgstr "Enable click analytics"
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "Not enabled automatically after an update."
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
+msgstr "Enabled by default. If disabled, it will remain disabled after an update."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"

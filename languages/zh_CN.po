@@ -18163,7 +18163,13 @@ msgstr "为加快显示，链接总数和页数根据首次及最后观测日期
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr "点击分析当前已禁用。可以查看历史数据，但不会收集新数据。"
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr "要开始统计，请在“%s”选项卡中勾选“启用点击分析”，然后点击“保存更改”。"
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr "无法创建点击分析数据表。请重新打开设置页面。"
 
@@ -19925,8 +19931,8 @@ msgid "クリック解析を有効にする"
 msgstr "启用点击分析"
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "更新后不会自动启用。"
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
+msgstr "默认启用。禁用后，更新后仍会保持禁用状态。"
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"

@@ -4273,7 +4273,13 @@ msgstr ""
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr ""
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr ""
 
@@ -4453,7 +4459,7 @@ msgid "クリック解析を有効にする"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:14

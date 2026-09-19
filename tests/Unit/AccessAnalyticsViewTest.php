@@ -24,6 +24,7 @@ class AccessAnalyticsViewTest extends TestCase
         if (!self::$analytics_functions_loaded) {
             require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/query-func.php';
             require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
+            require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/settings-func.php';
             self::$analytics_functions_loaded = true;
         }
 
@@ -34,7 +35,7 @@ class AccessAnalyticsViewTest extends TestCase
         $this->previous_theme_mods = $GLOBALS['test_theme_mods'] ?? null;
 
         $GLOBALS['_THEME_OPTIONS'] = array();
-        $GLOBALS['test_theme_mods'] = array();
+        $GLOBALS['test_theme_mods'] = array(OP_CLICK_ANALYTICS_ENABLE => 0);
 
         // WordPress本体と同様にビュー名を小文字の安全なキーへ変換する
         Functions\when('sanitize_key')->alias(static function ($value): string {
@@ -133,6 +134,7 @@ class AccessAnalyticsViewTest extends TestCase
     public function test_render_tabs_有効時は全タブを出力する(): void
     {
         $this->setAnalyticsEnabled(true);
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE] = 1;
 
         ob_start();
         cocoon_analytics_render_tabs('settings');
@@ -161,8 +163,39 @@ class AccessAnalyticsViewTest extends TestCase
         $this->assertStringContainsString('view=settings', $html);
     }
 
+    public function testDisabledClicksHideOnlyTheClickAnalyticsTab(): void
+    {
+        $this->setAnalyticsEnabled(true);
+        $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE] = 0;
+
+        foreach (array('dashboard', 'clicks', 'settings') as $view) {
+            ob_start();
+            cocoon_analytics_render_tabs($view);
+            $html = ob_get_clean();
+
+            $this->assertSame(8, substr_count($html, '<a '));
+            $this->assertStringNotContainsString('view=clicks', $html);
+            $this->assertStringContainsString('view=dashboard', $html);
+            $this->assertStringContainsString('view=settings', $html);
+        }
+    }
+
     private function setAnalyticsEnabled(bool $enabled): void
     {
         $GLOBALS['test_theme_mods'][OP_ACCESS_ANALYTICS_ENABLE] = $enabled ? 1 : 0;
+    }
+
+    public function testDefaultClicksAreAvailableWithoutAccessAnalytics(): void
+    {
+        $this->setAnalyticsEnabled(false);
+        unset($GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE]);
+
+        $this->assertSame('clicks', cocoon_analytics_resolve_view('clicks'));
+        ob_start();
+        cocoon_analytics_render_tabs('clicks');
+        $html = ob_get_clean();
+        $this->assertSame(2, substr_count($html, '<a '));
+        $this->assertStringContainsString('view=clicks', $html);
+        $this->assertStringContainsString('view=settings', $html);
     }
 }

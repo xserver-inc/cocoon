@@ -10,7 +10,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
   <div class="inside">
     <p><?php _e('内部・外部リンクのクリック、実表示、掲載位置を非同期で集計します。アーカイブ、検索結果は初版の計測対象外です。', THEME_NAME); ?></p>
     <table class="form-table"><tbody>
-      <tr><th><?php generate_label_tag(OP_CLICK_ANALYTICS_ENABLE, __('クリック解析', THEME_NAME)); ?></th><td><?php generate_checkbox_tag(OP_CLICK_ANALYTICS_ENABLE, is_click_analytics_enable(), __('クリック解析を有効にする', THEME_NAME)); ?><p class="description"><?php _e('アップデート後は自動で有効になりません。', THEME_NAME); ?></p></td></tr>
+      <tr><th><?php generate_label_tag(OP_CLICK_ANALYTICS_ENABLE, __('クリック解析', THEME_NAME)); ?></th><td><?php generate_checkbox_tag(OP_CLICK_ANALYTICS_ENABLE, is_click_analytics_enable(), __('クリック解析を有効にする', THEME_NAME)); ?><p class="description"><?php _e('初期設定では有効です。無効にした設定はアップデート後も維持されます。', THEME_NAME); ?></p></td></tr>
       <tr><th><?php _e('計測対象', THEME_NAME); ?></th><td>
         <p><?php generate_checkbox_tag(OP_CLICK_ANALYTICS_TRACK_INTERNAL, is_click_analytics_track_internal(), __('内部リンク', THEME_NAME)); ?></p>
         <p><?php generate_checkbox_tag(OP_CLICK_ANALYTICS_TRACK_EXTERNAL, is_click_analytics_track_external(), __('外部リンク', THEME_NAME)); ?></p>

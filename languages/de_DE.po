@@ -19434,7 +19434,13 @@ msgstr ""
 "Die Klickanalyse ist derzeit deaktiviert. Bisherige Daten sind verfügbar, "
 "neue Daten werden jedoch nicht erfasst."
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr "Um die Erfassung zu starten, aktivieren Sie „Klickanalyse aktivieren“ im Tab „%s“ und klicken Sie auf „Änderungen speichern“."
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr ""
 "Die Klickanalysetabellen konnten nicht erstellt werden. Öffnen Sie die "
@@ -21363,8 +21369,8 @@ msgid "クリック解析を有効にする"
 msgstr "Klickanalyse aktivieren"
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "Wird nach einem Update nicht automatisch aktiviert."
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
+msgstr "Standardmäßig aktiviert. Eine deaktivierte Einstellung bleibt auch nach einem Update erhalten."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"

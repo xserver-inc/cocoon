@@ -214,7 +214,13 @@ $filters = array(
 cocoon_click_render_subtabs($click_view);
 
 if (!is_click_analytics_enable()) {
-  echo '<div class="notice notice-warning inline"><p>' . esc_html__('クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。', THEME_NAME) . '</p></div>';
+  echo '<div class="notice notice-warning inline"><p>' . esc_html__('クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。', THEME_NAME) . '</p><p>';
+  printf(
+    // translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
+    esc_html__('計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。', THEME_NAME),
+    '<a href="' . esc_url(admin_url('admin.php?page=theme-access&view=settings#click_analytics_enable_1')) . '">' . esc_html__('設定', THEME_NAME) . '</a>'
+  );
+  echo '</p></div>';
 }
 if (!cocoon_click_tables_exist()) {
   echo '<div class="notice notice-error inline"><p>' . esc_html__('クリック解析テーブルを作成できていません。設定画面を開き直してください。', THEME_NAME) . '</p></div>';

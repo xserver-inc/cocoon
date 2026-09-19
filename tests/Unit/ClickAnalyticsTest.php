@@ -17,6 +17,22 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testTrackingIsEnabledByDefaultAndRespectsSavedSettings(): void
+    {
+        $previous = $GLOBALS['test_theme_mods'] ?? array();
+        try {
+            unset($GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE]);
+            $this->assertTrue(is_click_analytics_enable());
+
+            foreach (array(0, '0', false, 1, '1', true) as $savedValue) {
+                $GLOBALS['test_theme_mods'][OP_CLICK_ANALYTICS_ENABLE] = $savedValue;
+                $this->assertSame((bool) $savedValue, is_click_analytics_enable());
+            }
+        } finally {
+            $GLOBALS['test_theme_mods'] = $previous;
+        }
+    }
+
     public function testPostPickerShowsTitleAndSubmitsHiddenPostId(): void
     {
         \Brain\Monkey\Functions\when('wp_parse_args')->alias(static function ($args, $defaults) {

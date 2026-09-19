@@ -235,6 +235,10 @@ function cocoon_analytics_render_tabs($current){
     'export'    => __('エクスポート', THEME_NAME),
     'settings'  => __('設定', THEME_NAME),
   );
+  // クリック解析が無効な場合の専用タブの除外
+  if (!function_exists('is_click_analytics_enable') || !is_click_analytics_enable()) {
+    unset($tabs['clicks']);
+  }
   if (!is_access_analytics_enable()) $tabs = array_intersect_key($tabs, array('clicks' => true, 'settings' => true));
   echo '<h2 class="nav-tab-wrapper cocoon-analytics-tabs">';
   foreach ($tabs as $slug => $label) {

@@ -26,6 +26,33 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         parent::tearDown();
     }
 
+    public function testDefaultTrackingCanBeDisabledAndStaysDisabledAfterSchemaUpdate(): void
+    {
+        $previousMods = get_theme_mods();
+        $previousPost = $_POST;
+        try {
+            remove_theme_mod(OP_CLICK_ANALYTICS_ENABLE);
+            update_click_analytics_tables();
+            $this->assertTrue(is_click_analytics_enable());
+
+            // チェックを外した設定フォームの送信内容
+            $_POST = array();
+            cocoon_click_save_settings();
+            $this->assertSame(0, get_theme_mod(OP_CLICK_ANALYTICS_ENABLE));
+
+            // 更新処理後も保存済みの無効設定を維持することの確認
+            update_click_analytics_tables();
+            $this->assertFalse(is_click_analytics_enable());
+
+            $_POST[OP_CLICK_ANALYTICS_ENABLE] = '1';
+            cocoon_click_save_settings();
+            $this->assertTrue(is_click_analytics_enable());
+        } finally {
+            $_POST = $previousPost;
+            update_option('theme_mods_' . get_stylesheet(), $previousMods);
+        }
+    }
+
     private function receiveEvents(array $events, string $batchId, bool $heatmap, int $postId = 0, bool $impressions = true): array
     {
         global $wpdb;

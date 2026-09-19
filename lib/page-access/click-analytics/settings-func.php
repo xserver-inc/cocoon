@@ -27,7 +27,7 @@ define('OP_CLICK_ANALYTICS_ENABLED_AT', 'click_analytics_enabled_at');
 
 if ( !function_exists( 'is_click_analytics_enable' ) ):
 function is_click_analytics_enable(){
-  return (bool) get_theme_option(OP_CLICK_ANALYTICS_ENABLE, 0);
+  return (bool) get_theme_option(OP_CLICK_ANALYTICS_ENABLE, 1);
 }
 endif;
 

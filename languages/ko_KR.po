@@ -18302,7 +18302,13 @@ msgstr "빠른 표시를 위해 링크 및 페이지 수는 최초·최종 관�
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr "클릭 분석이 비활성화되어 있습니다. 과거 데이터는 볼 수 있지만 새 데이터는 수집되지 않습니다."
 
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#, php-format
+msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
+msgstr "측정을 시작하려면 “%s” 탭에서 “클릭 분석 활성화”를 선택하고 “변경사항 저장”을 클릭하세요."
+
+#: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr "클릭 분석 테이블을 생성하지 못했습니다. 설정 화면을 다시 여세요."
 
@@ -20084,8 +20090,8 @@ msgid "クリック解析を有効にする"
 msgstr "클릭 분석 활성화"
 
 #: lib/page-access/click-analytics/settings-form.php:13
-msgid "アップデート後は自動で有効になりません。"
-msgstr "업데이트 후 자동으로 활성화되지 않습니다."
+msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
+msgstr "기본적으로 활성화됩니다. 비활성화한 설정은 업데이트 후에도 유지됩니다."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"
