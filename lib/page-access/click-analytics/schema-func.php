@@ -15,6 +15,7 @@ define('CLICK_HEATMAP_DAILY_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_he
 define('CLICK_BATCHES_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_batches');
 define('CLICK_UNIQUES_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_uniques');
 define('CLICK_LIMITS_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_limits');
+define('TRANSIENT_CLICK_ANALYTICS_TABLE_UPDATING', THEME_NAME . '_click_analytics_table_updating');
 
 if ( !function_exists( 'cocoon_click_tables_exist' ) ):
 function cocoon_click_tables_exist($force_database_check = false){
@@ -23,7 +24,7 @@ function cocoon_click_tables_exist($force_database_check = false){
   global $wpdb;
   $tables = array(CLICK_LINKS_TABLE_NAME, CLICK_STATS_DAILY_TABLE_NAME, CLICK_STATS_MONTHLY_TABLE_NAME, CLICK_HEATMAP_DAILY_TABLE_NAME, CLICK_BATCHES_TABLE_NAME, CLICK_UNIQUES_TABLE_NAME, CLICK_LIMITS_TABLE_NAME);
   $placeholders = implode(',', array_fill(0, count($tables), '%s'));
-  // 初心者向け: 専用テーブルを1件ずつ確認せず、初回だけ1本のSQLでまとめて確認します。
+  // 専用テーブルを個別に問い合わせず、1本のSQLでまとめて確認
   $count = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=%s AND table_name IN ({$placeholders})", array_merge(array(DB_NAME), $tables)));
   return $count === count($tables);
 }
@@ -160,6 +161,10 @@ function create_click_analytics_tables(){
     KEY expires_at (expires_at)
   )";
   global $wpdb;
+  //行数の多いテーブルでは主キー置換に時間がかかり、PHPのタイムアウトで永久に完了しなくなるおそれ
+  if (function_exists('set_time_limit')) {
+    @set_time_limit(600);
+  }
   $all_created = true;
   foreach ($tables as $index => $sql) {
     // バッチ受理と集計を一括確定できるよう、全テーブルをInnoDBで作成します。
@@ -210,7 +215,7 @@ function cocoon_click_ensure_layout_primary_key($table, $period_column){
   $columns = array_column($indexes, 'Column_name');
   $expected = array($period_column, 'source_post_id', 'link_id', 'device', 'layout_revision');
   if ($columns === $expected) return true;
-  // 初心者向け: レイアウト改訂ごとの集計が混ざらないよう複合主キーを一度だけ更新します。
+  // レイアウト改訂ごとの集計混在を防ぐための複合主キーへの一度限りの移行
   return $wpdb->query("ALTER TABLE `{$table}` DROP PRIMARY KEY, ADD PRIMARY KEY (`{$period_column}`,`source_post_id`,`link_id`,`device`,`layout_revision`)") !== false;
 }
 endif;
@@ -218,7 +223,14 @@ endif;
 if ( !function_exists( 'update_click_analytics_tables' ) ):
 function update_click_analytics_tables(){
   $installed = get_theme_option(OP_CLICK_ANALYTICS_TABLE_VERSION, '');
-  if (is_update_db_table($installed, CLICK_ANALYTICS_TABLE_VERSION)) create_click_analytics_tables();
+  if (!is_update_db_table($installed, CLICK_ANALYTICS_TABLE_VERSION)) return;
+  //管理画面表示のたびに呼ばれるため、長時間かかる主キー置換が同時多発してロック待ちになるのを防止
+  if (!DEBUG_MODE) {
+    if (get_transient(TRANSIENT_CLICK_ANALYTICS_TABLE_UPDATING)) return;
+    set_transient(TRANSIENT_CLICK_ANALYTICS_TABLE_UPDATING, 1, 15 * MINUTE_IN_SECONDS);
+  }
+  create_click_analytics_tables();
+  delete_transient(TRANSIENT_CLICK_ANALYTICS_TABLE_UPDATING);
 }
 endif;
 

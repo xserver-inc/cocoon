@@ -9,6 +9,8 @@ add_action('rest_api_init', 'cocoon_click_register_rest_routes');
 
 if ( !function_exists( 'cocoon_click_register_rest_routes' ) ):
 function cocoon_click_register_rest_routes(){
+  // 未ログイン訪問者とキャッシュ配信ページからも受信するため、権限判定ではなくトークン・Origin・レート制限で保護します。
+  // トークンは公開ページのHTMLに含まれるため、偽の計測データ送信を完全には防げません。改ざん耐性より計測の網羅性を優先した設計です。
   register_rest_route('cocoon/v1', '/click-events', array(
     'methods' => 'POST',
     'callback' => 'cocoon_click_rest_receive_events',
@@ -79,7 +81,7 @@ endif;
 
 if ( !function_exists( 'cocoon_click_network_bucket' ) ):
 function cocoon_click_network_bucket($ip){
-  // 初心者向け: IPそのものは保存せず、レート制限に必要なネットワーク範囲だけを一時キーにします。
+  // IPそのものを保存せず、レート制限に必要なネットワーク範囲だけを一時キー化
   if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
     $parts = explode('.', $ip);
     return implode('.', array_slice($parts, 0, 3)) . '.0/24';
@@ -167,7 +169,7 @@ function cocoon_click_upsert_link_definitions($definitions, $now){
       $definition['is_affiliate'], $now, $now
     );
   }
-  // 初心者向け: 1リンクずつSQLを実行せず、複数リンクを1回のINSERTにまとめます。
+  // 1リンクずつSQLを実行せず、複数リンクを1回のINSERTへ集約
   $sql = 'INSERT INTO `' . CLICK_LINKS_TABLE_NAME . '` '
     . '(link_key,slot_key,source_post_id,destination_key,destination_url,destination_host,destination_type,target_post_id,semantic_area,heading_key,heading_label,occurrence_no,anchor_text,element_type,rel_flags,target_blank,is_affiliate,first_seen_at,last_seen_at) VALUES '
     . implode(',', $placeholders)
@@ -251,7 +253,7 @@ function cocoon_click_upsert_stats($rows, $now){
       $row['total_time_to_click_ms'], $row['received_events'], $row['rejected_events'], $row['accepted_batches'],
       $row['duplicate_batches'], $now);
   }
-  // 初心者向け: 同時アクセスでも増分を失わないよう、DB側で各カウンターを原子的に足します。
+  // 同時アクセスでも増分を失わないDB側での原子的な加算
   $updates = array();
   foreach (array('clicks', 'unique_clicks', 'sampled_impressions', 'sampled_clicks', 'weighted_impressions', 'weighted_clicks', 'weight_squared', 'arrivals', 'engaged_arrivals', 'total_time_to_click_ms', 'received_events', 'rejected_events', 'accepted_batches', 'duplicate_batches') as $column) {
     $updates[] = $column . '=' . $column . '+VALUES(' . $column . ')';
@@ -316,7 +318,7 @@ function cocoon_click_rest_receive_events($request){
   $now = current_time('mysql');
   $date = current_time('Y-m-d');
   global $wpdb;
-  $original_db = cocoon_click_begin_transaction();
+  $original_db = cocoon_click_begin_transaction(max(1, (int) apply_filters('cocoon_click_analytics_lock_wait_timeout', 5)));
   if (!$original_db) return cocoon_click_rest_error('click_analytics_storage', __('計測データを保存できませんでした。再送してください。', THEME_NAME), 503);
   // バッチID・リンク・ユニーク数・集計を同時に確定し、途中失敗時はすべて元に戻します。
   try {
@@ -412,7 +414,7 @@ function cocoon_click_rest_receive_events($request){
     $wpdb->query('ROLLBACK');
     return cocoon_click_rest_error('click_analytics_storage', __('計測データを保存できませんでした。再送してください。', THEME_NAME), 503);
   } finally {
-    cocoon_click_end_transaction($original_db);
+    cocoon_click_end_transaction($original_db, true);
   }
   do_action('cocoon_click_analytics_batch_recorded', count($prepared), $source_post_id);
   return new WP_REST_Response(null, 204);
@@ -446,6 +448,7 @@ function cocoon_click_filter_definitions_by_capacity($definitions, $source_post_
   if ($wpdb->last_error) throw new RuntimeException('definition_lookup');
   $site_limit = max(1, (int) apply_filters('cocoon_click_analytics_definition_limit', 100000));
   $post_limit = max(1, (int) apply_filters('cocoon_click_analytics_post_definition_limit', 5000));
+  // REPEATABLE READの古いスナップショットではなく確定済みの件数を読むための現在読み取り
   $site_count = $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` FOR UPDATE');
   if ($site_count === null) throw new RuntimeException('definition_count');
   $post_count = $wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE source_post_id=%d FOR UPDATE', $source_post_id));

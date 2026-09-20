@@ -98,7 +98,7 @@ function cocoon_click_rollup_monthly(){
     $updates[] = $column . '=GREATEST(' . $column . ',VALUES(' . $column . '))';
   }
   $updates[] = 'updated_at=VALUES(updated_at)';
-  // 初心者向け: 足し直しではなく月全体を置き換え、Cron再実行でも二重集計を防ぎます。
+  // 日次の合計と既存の月次の大きい方を採用し、Cron再実行時の二重集計を回避
   $sql = "INSERT INTO `{$monthly}` (stat_month,source_post_id,link_id,device,layout_revision," . implode(',', $columns) . ",updated_at)
     SELECT DATE_FORMAT(stat_date,'%Y-%m'),source_post_id,link_id,device,layout_revision," . implode(',', $selects) . ",%s
     FROM `{$daily}` WHERE stat_date >= %s AND stat_date < %s

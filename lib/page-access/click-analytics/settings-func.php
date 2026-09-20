@@ -116,7 +116,7 @@ if ( !function_exists( 'get_click_analytics_sampling_rate' ) ):
 function get_click_analytics_sampling_rate(){
   $rate = (int) get_theme_option(OP_CLICK_ANALYTICS_SAMPLING_RATE, 10);
   if (!in_array($rate, cocoon_click_allowed_sampling_rates(), true)) $rate = 10;
-  // 初心者向け: フィルター後も許可済みの率だけに絞り、重み計算が壊れないようにします。
+  // フィルター後も許可済みの率だけに絞り、重み計算の破綻を回避
   $rate = (int) apply_filters('cocoon_click_analytics_sampling_rate', $rate);
   return in_array($rate, cocoon_click_allowed_sampling_rates(), true) ? $rate : 10;
 }
@@ -170,7 +170,7 @@ function cocoon_click_hmac($value){
   } else {
     $secret = THEME_NAME . '|click-analytics';
   }
-  // 初心者向け: サイト固有の秘密鍵で変換し、元の識別値をDBへ保存しません。
+  // サイト固有の秘密鍵での変換による、元の識別値をDBへ保存しない処理
   return hash_hmac('sha256', (string) $value, $secret);
 }
 endif;

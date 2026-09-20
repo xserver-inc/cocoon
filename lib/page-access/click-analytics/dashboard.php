@@ -197,7 +197,7 @@ function cocoon_click_render_insight_list($title, $rows, $empty){
     return;
   }
   echo '<ul class="cocoon-click-insight-list">';
-  foreach ($rows as $row) printf('<li><strong>%s</strong><br><small>%s / CTR %s / %s clicks</small></li>', esc_html(cocoon_click_render_link_title($row)), esc_html(cocoon_click_area_label($row['semantic_area'])), esc_html(cocoon_click_percent($row['ctr'])), number_format_i18n($row['clicks']));
+  foreach ($rows as $row) printf('<li><strong>%s</strong><br><small>%s / CTR %s / %s</small></li>', esc_html(cocoon_click_render_link_title($row)), esc_html(cocoon_click_area_label($row['semantic_area'])), esc_html(cocoon_click_percent($row['ctr'])), esc_html(sprintf(__('%sクリック', THEME_NAME), number_format_i18n($row['clicks']))));
   echo '</ul></div>';
 }
 endif;
@@ -317,7 +317,7 @@ if ($click_view === 'overview') {
           <iframe id="cocoon-click-map-frame" src="<?php echo esc_url(add_query_arg('cocoon_click_map_preview', '1', get_permalink($source_post_id))); ?>" title="<?php echo esc_attr__('クリックマップページプレビュー', THEME_NAME); ?>" loading="lazy"></iframe>
           <div id="cocoon-click-map-overlay" class="cocoon-click-map-overlay" aria-hidden="true">
             <?php foreach ($current_rows as $row): $opacity = 0.15 + (0.65 * ((int) $row['clicks'] / $max_clicks)); ?>
-              <span class="cocoon-click-heat-cell" style="left:<?php echo (int) $row['x_bin'] * 10; ?>%;top:<?php echo (int) $row['y_bin'] * 2; ?>%;width:10%;height:2%;opacity:<?php echo esc_attr(number_format($opacity, 2, '.', '')); ?>" title="<?php echo esc_attr(number_format_i18n($row['clicks']) . ' clicks'); ?>"></span>
+              <span class="cocoon-click-heat-cell" style="left:<?php echo (int) $row['x_bin'] * 10; ?>%;top:<?php echo (int) $row['y_bin'] * 2; ?>%;width:10%;height:2%;opacity:<?php echo esc_attr(number_format($opacity, 2, '.', '')); ?>" title="<?php echo esc_attr(sprintf(__('%sクリック', THEME_NAME), number_format_i18n($row['clicks']))); ?>"></span>
             <?php endforeach; ?>
           </div>
         </div></div>

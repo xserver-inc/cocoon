@@ -294,7 +294,7 @@
       target_blank: anchor.getAttribute('target') === '_blank',
       download: anchor.hasAttribute('download'),
       classification_hint: classificationHint(anchor),
-      is_affiliate: Boolean(anchor.closest('.affiliate-tag,.amazon-item-box,.rakuten-item-box') || /affiliate|ref=|tag=/i.test(rawHref))
+      is_affiliate: Boolean(anchor.closest('.affiliate-tag,.amazon-item-box,.rakuten-item-box') || /affiliate/i.test(rawHref) || /[?&](tag|ref|aff|affid|af_id|associate_id)=/i.test(rawHref))
     };
     return meta;
   }
@@ -304,12 +304,16 @@
     if (meta.kind === 'internal' && !config.trackInternal) {return true;}
     if (meta.kind === 'external' && !config.trackExternal) {return true;}
     if (['anchor', 'download', 'mailto', 'tel', 'sms'].indexOf(meta.kind) >= 0 && !config.trackSpecial) {return true;}
-    const absolute = normalizeComparableUrl(meta.href, win.location.href);
-    if ((config.excludedUrls || []).some(function (value) {return value && absolute.indexOf(value) >= 0;})) {return true;}
+    // 末尾スラッシュを落とさない絶対URLでの照合による、サーバー側除外判定との一致
+    let parsed = null;
     try {
-      const host = new URL(meta.href, win.location.href).hostname.toLowerCase();
-      if ((config.excludedDomains || []).some(function (value) {const excluded = String(value).toLowerCase().replace(/^\./, ''); return host === excluded || host.endsWith('.' + excluded);})) {return true;}
-    } catch (error) { /* URLとして解釈できない値はサーバーへ送りません。 */ }
+      parsed = new URL(meta.href, win.location.href);
+    } catch (error) {
+      return true;
+    }
+    if ((config.excludedUrls || []).some(function (value) {return value && parsed.href.indexOf(value) >= 0;})) {return true;}
+    const host = parsed.hostname.toLowerCase();
+    if ((config.excludedDomains || []).some(function (value) {const excluded = String(value).toLowerCase().replace(/^\./, ''); return host === excluded || host.endsWith('.' + excluded);})) {return true;}
     return false;
   }
 
@@ -412,6 +416,10 @@
     const now = Date.now();
     if (recentClicks.has(key) && now - recentClicks.get(key) < 2000) {return;}
     recentClicks.set(key, now);
+    // 長時間滞在するページでの連打抑止記録の際限ない増加を防ぐ期限切れ削除
+    recentClicks.forEach(function (time, existing) {
+      if (now - time >= 2000) {recentClicks.delete(existing);}
+    });
     const exposureKey = impressionKey(meta);
     // CTRの成功は1表示につき最大1回です。
     const sampled = sampledPage && sampledClicks.get(anchor) !== exposureKey;
@@ -557,6 +565,8 @@
     initInternalOutcome();
     win.addEventListener('scroll', function () {
       const height = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0, 1);
+      // ファーストビューで25%が見える短い記事を即エンゲージ扱いにしないためのスクロール距離条件
+      if (win.scrollY < Math.min(200, Math.max(0, height - win.innerHeight))) {return;}
       if ((win.scrollY + win.innerHeight) / height >= 0.25) {sendOutcome(true);}
     }, {passive: true});
     doc.addEventListener('visibilitychange', function () {

@@ -16,7 +16,7 @@ function cocoon_click_effective_sample_size($sum_weight, $sum_weight_squared){
   $sum_weight = (float) $sum_weight;
   $sum_weight_squared = (float) $sum_weight_squared;
   if ($sum_weight <= 0 || $sum_weight_squared <= 0) return 0.0;
-  // 初心者向け: 重みがばらつくほど実質的な標本数が小さくなるように補正します。
+  // 重みのばらつきが大きいほど実質的な標本数を小さくする補正
   return ($sum_weight * $sum_weight) / $sum_weight_squared;
 }
 endif;
@@ -28,7 +28,7 @@ function cocoon_click_wilson_interval($weighted_clicks, $weighted_impressions, $
   $rate = min(1.0, max(0.0, (float) $weighted_clicks / $impressions));
   $effective_n = cocoon_click_effective_sample_size($impressions, $sum_weight_squared);
   if ($effective_n <= 0) return array('rate' => $rate, 'lower' => null, 'upper' => null, 'effective_n' => 0.0);
-  // 初心者向け: 少数データの100%を過大評価しないWilson信頼区間を計算します。
+  // 少数データの100%を過大評価しないWilson信頼区間の計算
   $z2 = $z * $z;
   $denominator = 1 + ($z2 / $effective_n);
   $center = ($rate + ($z2 / (2 * $effective_n))) / $denominator;
@@ -83,7 +83,7 @@ endif;
 if ( !function_exists( 'cocoon_click_sampling_weight' ) ):
 function cocoon_click_sampling_weight($sampling_rate){
   $sampling_rate = max(1, min(100, (int) $sampling_rate));
-  // 初心者向け: 20%抽出なら1件を5件相当として戻す逆確率重みを計算します。
+  // 20%抽出なら1件を5件相当へ戻す逆確率重みの計算
   return (int) round(100 / $sampling_rate);
 }
 endif;

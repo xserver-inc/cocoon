@@ -280,7 +280,7 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
       'domain' => array('expr' => 'l.destination_host', 'key' => 'l.destination_host'),
     );
     $group = isset($groups[$args['group']]) ? $groups[$args['group']] : $groups['occurrence'];
-    // 初心者向け: CTRは少数データを上位へ出さないWilson下限で並べます。
+    // 少数データのCTRを上位へ出さないWilson下限での並べ替え
     $effective_n = '(POW(weighted_impressions,2)/NULLIF(weight_squared,0))';
     $wilson_lower = cocoon_click_wilson_lower_sql();
     $order_map = array('clicks' => 'clicks DESC', 'unique' => 'unique_clicks DESC', 'impressions' => 'weighted_impressions DESC', 'ctr' => "CASE WHEN sampled_clicks>=10 AND {$effective_n}>=100 THEN {$wilson_lower} ELSE -1 END DESC");
@@ -411,7 +411,7 @@ function cocoon_click_analytics_benchmarks($from, $to, $args = array()){
     $source = cocoon_click_stats_source_sql($from, $to);
     $filter = cocoon_click_filter_sql($args, true);
     $base_args = array_merge($source['args'], $filter['args']);
-    // 初心者向け: 画面に出る上位行だけでなく、対象リンク全体から比較基準を作ります。
+    // 画面に出る上位行だけでなく、対象リンク全体からの比較基準の作成
     $sql = "SELECT l.destination_type,l.semantic_area,SUM(s.weighted_clicks) AS weighted_clicks,SUM(s.weighted_impressions) AS weighted_impressions,SUM(s.arrivals) AS arrivals,SUM(s.engaged_arrivals) AS engaged_arrivals
       FROM {$source['sql']} s INNER JOIN `" . CLICK_LINKS_TABLE_NAME . "` l ON s.link_id=l.id WHERE s.link_id>0{$filter['sql']} GROUP BY l.destination_type,l.semantic_area";
     $rows = $wpdb->get_results(cocoon_click_prepare_query($sql, $base_args), ARRAY_A);
@@ -564,6 +564,8 @@ endif;
 
 if ( !function_exists( 'cocoon_click_export_dataset' ) ):
 function cocoon_click_export_dataset($target, $from, $to){
+  // 全期間の書き出しでもメモリ上限を超えないよう、1ファイルの行数に上限を設けます。
+  $max_rows = max(1000, (int) apply_filters('cocoon_click_analytics_export_max_rows', 50000));
   if ($target === 'click_daily') {
     $headers = array('date', 'clicks', 'estimated_impressions', 'estimated_sampled_clicks', 'ctr');
     $rows = array();
@@ -572,7 +574,7 @@ function cocoon_click_export_dataset($target, $from, $to){
   }
   if ($target === 'click_positions') {
     global $wpdb;
-    $data = $wpdb->get_results($wpdb->prepare('SELECT stat_date,source_post_id,device,layout_revision,x_bin,y_bin,clicks FROM `' . CLICK_HEATMAP_DAILY_TABLE_NAME . '` WHERE stat_date BETWEEN %s AND %s ORDER BY stat_date,source_post_id', $from, $to), ARRAY_N);
+    $data = $wpdb->get_results($wpdb->prepare('SELECT stat_date,source_post_id,device,layout_revision,x_bin,y_bin,clicks FROM `' . CLICK_HEATMAP_DAILY_TABLE_NAME . '` WHERE stat_date BETWEEN %s AND %s ORDER BY stat_date,source_post_id LIMIT %d', $from, $to, $max_rows), ARRAY_N);
     return array('headers' => array('date', 'source_post_id', 'device', 'layout_revision', 'x_bin', 'y_bin', 'clicks'), 'rows' => $data);
   }
   $scope = $target === 'click_internal' ? 'internal' : 'external';
@@ -586,7 +588,7 @@ function cocoon_click_export_dataset($target, $from, $to){
       $rows[] = array($row['source_post_id'], $row['destination_url'], $row['destination_host'], $row['destination_type'], $row['semantic_area'], $row['heading_label'], $row['anchor_text'], $row['weighted_impressions'], $row['clicks'], $row['unique_clicks'], $row['ctr'], $row['arrivals'], $row['engaged_arrivals'], $group, isset($row['source_count']) ? $row['source_count'] : 1, !empty($row['definition_count']) && $row['definition_count'] > 1 ? 1 : 0);
     }
     $page++;
-  } while ($result['rows'] && (($page - 1) * 100) < $result['total'] && $page <= 1000);
-  return array('headers' => $headers, 'rows' => $rows);
+  } while ($result['rows'] && (($page - 1) * 100) < $result['total'] && count($rows) < $max_rows);
+  return array('headers' => $headers, 'rows' => array_slice($rows, 0, $max_rows));
 }
 endif;

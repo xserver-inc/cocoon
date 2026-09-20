@@ -26,7 +26,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
         <p><?php generate_checkbox_tag(OP_CLICK_ANALYTICS_RESPECT_PRIVACY, is_click_analytics_respect_privacy(), __('DNT/GPCを尊重する', THEME_NAME)); ?></p>
         <p class="description"><?php _e('IPアドレス、User-Agent本文、完全リファラー、入力値、生座標は保存しません。', THEME_NAME); ?></p>
       </td></tr>
-      <tr><th><?php _e('自動サンプリング', THEME_NAME); ?></th><td><strong><?php echo esc_html(get_click_analytics_sampling_rate()); ?>%</strong><p class="description"><?php _e('直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。', THEME_NAME); ?></p></td></tr>
+      <tr><th><?php _e('自動サンプリング', THEME_NAME); ?></th><td><strong><?php echo esc_html(get_click_analytics_sampling_rate()); ?>%</strong><p class="description"><?php _e('表示回数の計測にだけ適用される抽出率です。クリックは抽出にかかわらず常に全数を記録します。直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。', THEME_NAME); ?></p></td></tr>
       <tr><th><?php generate_label_tag(OP_CLICK_ANALYTICS_DAILY_RETENTION, __('日次・位置データ保持', THEME_NAME)); ?></th><td><?php generate_selectbox_tag(OP_CLICK_ANALYTICS_DAILY_RETENTION, array('30' => __('30日', THEME_NAME), '90' => __('90日', THEME_NAME), '400' => __('400日', THEME_NAME)), get_click_analytics_daily_retention()); ?><p class="description"><?php esc_html_e('日次データは月次集計の確定まで、保持期限を超えて残る場合があります。', THEME_NAME); ?></p></td></tr>
       <tr><th><?php generate_label_tag(OP_CLICK_ANALYTICS_MONTHLY_RETENTION, __('月次データ保持', THEME_NAME)); ?></th><td><?php generate_selectbox_tag(OP_CLICK_ANALYTICS_MONTHLY_RETENTION, array('12' => __('12か月', THEME_NAME), '24' => __('24か月', THEME_NAME), '60' => __('60か月', THEME_NAME)), get_click_analytics_monthly_retention()); ?></td></tr>
       <tr><th><?php generate_label_tag(OP_CLICK_ANALYTICS_EXCLUDED_DOMAINS, __('除外ドメイン', THEME_NAME)); ?></th><td><?php generate_textarea_tag(OP_CLICK_ANALYTICS_EXCLUDED_DOMAINS, esc_textarea(get_theme_option(OP_CLICK_ANALYTICS_EXCLUDED_DOMAINS, '')), "example.com\nsub.example.net", 4, 60); ?><p class="description"><?php _e('1行に1ドメインを入力します。', THEME_NAME); ?></p></td></tr>
@@ -36,9 +36,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
     <?php $health = cocoon_click_analytics_health(); ?>
     <h3><?php _e('収集状態', THEME_NAME); ?></h3>
     <ul class="ul-disc">
-      <li><?php printf(esc_html__('現在のサンプリング率: %s%%', THEME_NAME), esc_html($health['sampling_rate'])); ?></li>
-      <li><?php printf(esc_html__('直近14日の受信イベント: %s', THEME_NAME), $health['received_14days'] === null ? '—' : esc_html(number_format_i18n($health['received_14days']))); ?></li>
-      <li><?php printf(esc_html__('直近14日の拒否イベント: %s', THEME_NAME), $health['rejected_14days'] === null ? '—' : esc_html(number_format_i18n($health['rejected_14days']))); ?></li>
+      <li><?php printf(esc_html__('現在のサンプリング率: %s%%（表示計測のみ）', THEME_NAME), esc_html($health['sampling_rate'])); ?></li>
+      <li><?php printf(esc_html__('直近14日の受信イベント: %s', THEME_NAME), esc_html(number_format_i18n($health['received_14days']))); ?></li>
+      <li><?php printf(esc_html__('直近14日の拒否イベント: %s', THEME_NAME), esc_html(number_format_i18n($health['rejected_14days']))); ?></li>
       <li><?php printf(esc_html__('直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）', THEME_NAME), esc_html(number_format_i18n($health['accepted_batches_14days'])), esc_html(number_format_i18n($health['duplicate_batches_14days'])), esc_html(cocoon_click_format_percent($health['duplicate_rate']))); ?></li>
       <li><?php printf(esc_html__('イベント欠損率（検証除外）: %s', THEME_NAME), esc_html(cocoon_click_format_percent($health['missing_rate']))); ?></li>
       <li><?php printf(esc_html__('直近7日CTR診断: %s', THEME_NAME), esc_html(array_key_exists($health['ctr_anomaly'], array('high' => 1, 'low' => 1, 'stable' => 1)) ? array('high' => __('通常範囲より上昇', THEME_NAME), 'low' => __('通常範囲より低下', THEME_NAME), 'stable' => __('異常なし', THEME_NAME))[$health['ctr_anomaly']] : __('データ不足', THEME_NAME))); ?></li>
@@ -48,7 +48,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
       <li><?php printf(esc_html__('最終メンテナンス: %1$s / %2$sms', THEME_NAME), esc_html(isset($health['maintenance_status']['completed_at']) ? $health['maintenance_status']['completed_at'] : __('未実行', THEME_NAME)), esc_html(number_format_i18n(isset($health['maintenance_status']['duration_ms']) ? $health['maintenance_status']['duration_ms'] : 0))); ?></li>
       <li><?php printf(esc_html__('DB使用量: %s', THEME_NAME), esc_html(size_format($health['database_bytes']))); ?></li>
       <li><?php printf(esc_html__('次回メンテナンス: %s', THEME_NAME), esc_html($health['next_cron'] ? date_i18n(get_option('date_format') . ' ' . get_option('time_format'), $health['next_cron']) : __('未予約', THEME_NAME))); ?></li>
-      <li><?php printf(esc_html__('Cron遅延: %s', THEME_NAME), $health['cron_delay'] === null ? '—' : ($health['cron_delay'] <= 0 ? esc_html__('なし', THEME_NAME) : esc_html(human_time_diff(time() - $health['cron_delay'], time())))); ?></li>
+      <li><?php printf(esc_html__('Cron遅延: %s', THEME_NAME), $health['cron_delay'] <= 0 ? esc_html__('なし', THEME_NAME) : esc_html(human_time_diff(time() - $health['cron_delay'], time()))); ?></li>
     </ul>
     <?php if (!$health['health_cache_available']): ?><p class="description"><?php _e('トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。', THEME_NAME); ?></p><?php endif; ?>
     <p><button type="submit" class="button button-secondary" form="cocoon-click-delete-form" onclick="return confirm('<?php echo esc_js(__('クリック解析データをすべて削除します。元に戻せません。よろしいですか？', THEME_NAME)); ?>');"><?php _e('クリック解析データを完全削除', THEME_NAME); ?></button></p>
