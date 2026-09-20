@@ -48,6 +48,11 @@ const scssBuildAdmin = (done) => {
     done();
 }
 
+// Cocoon設定画面専用CSSの生成と完了待機
+const scssBuildSettings = () => gulp.src('./scss/cocoon-settings.scss')
+    .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(gulp.dest('./css/'));
+
 // エディター用 CSS をビルドしてテーマルートに出力するタスク
 const scssBuildEditor = (done) => {
     gulp.src('./scss/_editor-style.scss')
@@ -132,14 +137,14 @@ const scssBuildSkins = (done) => {
 
 // SCSS ファイルの変更を監視して自動ビルドするタスク
 const watchFiles = (done) => {
-    gulp.watch('./scss/**/*.scss', gulp.series(scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent));
+    gulp.watch('./scss/**/*.scss', gulp.series(scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildSettings, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent));
     gulp.watch(['skins/**/*.scss', '!skins/skin-test/**'], scssBuildSkins);
     done();
 }
 
 // デフォルトタスク（npx gulp で全 SCSS を一括ビルド）
 exports.default = gulp.series(
-    scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent, scssBuildSkins
+    scssBuildFront, scssBuildFontAwesome, scssBuildAdmin, scssBuildSettings, scssBuildEditor, scssBuildEditorToCss, scssBuildBlock, scssBuildEditorPage, scssBuildEntryContent, scssBuildSkins
 );
 
 // ファイル監視タスク（npx gulp watch で実行可能）
@@ -147,3 +152,6 @@ exports.watch = watchFiles;
 
 // style.css のみをビルド（npx gulp style で実行可能）
 exports.style = scssBuildStyleOnly;
+
+// Cocoon設定画面専用CSSだけの再ビルド
+exports.settings = scssBuildSettings;

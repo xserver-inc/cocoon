@@ -35,6 +35,7 @@
     "lighthouse": "^13.4.1",
     "jsdom": "^20.0.3",
     "po2json": "^0.4.5",
+    "postcss": "^8.5.23",
     "postcss-scss": "^4.0.9",
     "prettier": "npm:wp-prettier@^2.6.2",
     "run-script-os": "^1.1.6",

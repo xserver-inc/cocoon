@@ -21218,20 +21218,16 @@ msgid "設定メニューの表示"
 msgstr "Affichage du menu des réglages"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Le mode d’affichage n’a pas pu être enregistré. Vérifiez votre connexion et "
-"réessayez."
+msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Le mode d’affichage n’a pas pu être enregistré. L’affichage actuel est conservé, mais il pourrait ne pas être repris lors des prochaines visites. Vérifiez votre connexion et appuyez sur le bouton d’affichage sélectionné pour réessayer."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
-msgstr "La session d’enregistrement du mode d’affichage a expiré. Rechargez la page."
+msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgstr "La session d’enregistrement du mode d’affichage a expiré. L’affichage actuel est conservé, mais il ne sera pas repris lors des prochaines visites. Vérifiez les réglages en cours de modification avant de recharger la page."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Le délai d’enregistrement du mode d’affichage a expiré. Vérifiez votre "
-"connexion et réessayez."
+msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Le délai d’enregistrement du mode d’affichage a été dépassé. L’affichage actuel est conservé, mais il pourrait ne pas être repris lors des prochaines visites. Vérifiez votre connexion et appuyez sur le bouton d’affichage sélectionné pour réessayer."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -22013,3 +22009,11 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "Vous n’avez pas l’autorisation d’enregistrer le mode d’affichage. L’affichage actuel est conservé, mais il ne sera pas repris lors des prochaines visites. Contactez l’administrateur du site pour vérifier vos autorisations."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Réglages supplémentaires"

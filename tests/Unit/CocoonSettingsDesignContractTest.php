@@ -357,7 +357,7 @@ REGEX;
         $this->assertStringContainsString("'cocoonSettingsNavigationData'", $adminSource);
         $this->assertStringContainsString('filemtime( $settings_navigation_js_path )', $adminSource);
         $this->assertStringContainsString("'wp_ajax_cocoon_settings_save_navigation_mode'", $adminSource);
-        $this->assertStringContainsString("check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce' )", $adminSource);
+        $this->assertStringContainsString("check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce', false )", $adminSource);
         $this->assertStringContainsString("current_user_can( 'manage_options' )", $adminSource);
         $this->assertStringContainsString('update_user_option( $user_id, COCOON_SETTINGS_NAVIGATION_MODE_OPTION, $mode, false )', $adminSource);
         $this->assertStringContainsString(
@@ -373,7 +373,7 @@ REGEX;
         $this->assertStringContainsString("navigationItem.type = 'button';", $navigationScript);
         $this->assertStringContainsString("button.type = 'button';", $navigationScript);
         $this->assertStringContainsString("mobileSelect.setAttribute( 'aria-label'", $navigationScript);
-        $this->assertStringContainsString("navigationItem.setAttribute( 'aria-pressed', String( isActive ) );", $navigationScript);
+        $this->assertStringContainsString("navigationItem.setAttribute( 'aria-current', String( isActive ) );", $navigationScript);
         $this->assertStringContainsString("viewModeControl.setAttribute( 'role', 'radiogroup' );", $navigationScript);
         $this->assertStringContainsString("button.setAttribute( 'role', 'radio' );", $navigationScript);
         $this->assertStringContainsString("button.setAttribute( 'aria-checked', 'false' );", $navigationScript);
@@ -400,7 +400,7 @@ REGEX;
         );
         $this->assertStringContainsString("'is-navigation-mode-responsive'", $navigationScript);
         $this->assertStringContainsString("'is-navigation-mode-tabs'", $navigationScript);
-        $this->assertStringContainsString("'is-navigation-wide', tabs.clientWidth >= 1040", $navigationScript);
+        $this->assertStringContainsString("'is-navigation-wide', tabs.clientWidth >= minimumWidth", $navigationScript);
         $this->assertStringContainsString("[ 'ArrowUp', 'ArrowDown', 'Home', 'End' ]", $navigationScript);
         $this->assertStringContainsString("panel.scrollIntoView( { block: 'start' } );", $navigationScript);
         $this->assertStringContainsString('let isSavingNavigationMode = false;', $navigationScript);
@@ -416,7 +416,7 @@ REGEX;
         $this->assertStringContainsString("credentials: 'same-origin'", $navigationScript);
         $this->assertStringContainsString('const abortController = new AbortController();', $navigationScript);
         $this->assertStringContainsString('signal: abortController.signal,', $navigationScript);
-        $this->assertStringContainsString('}, 15000 );', $navigationScript);
+        $this->assertStringContainsString('}, 30000 );', $navigationScript);
         $this->assertStringContainsString('settings.modeNonceError || settings.modeSaveError', $navigationScript);
         $this->assertStringContainsString('settings.modeTimeoutError || settings.modeSaveError', $navigationScript);
         $this->assertLessThan(
@@ -451,19 +451,18 @@ REGEX;
         );
         $this->assertStringContainsString('max-block-size: calc(100vh - 64px);', $partial);
         $this->assertStringContainsString('scroll-margin-block-start: 64px;', $partial);
-        $this->assertStringContainsString('scroll-margin-block-start: 152px;', $partial);
+        $this->assertStringContainsString('scroll-margin-block-start: calc(var(--cocoon-settings-navigation-top) + 106px);', $partial);
 
-        // タブレットでは既存ラベルが既定表示となり、追加ナビゲーションは初期状態で非表示になる。
+        // 従来表示と初期化前の追加ナビゲーションの非表示
         $this->assertMatchesRegularExpression(
             '/:where\(#tabs > \.cocoon-settings-navigation\)\s*\{\s*display:\s*none;/',
             str_replace(["\r\n", "\r"], "\n", $partial)
         );
         $this->assertStringContainsString('#tabs > .tab-label {', $partial);
 
-        // モバイルは既存ラベルを隠し、44px以上のネイティブselectだけを表示する。
+        // おすすめ表示の中間幅とモバイル幅における44px以上の選択欄
         $this->assertMatchesRegularExpression(
-            '/@media screen and \(width <= 782px\).*?'
-                . '#tabs\.is-navigation-enhanced\.is-navigation-mode-responsive > \.tab-label\s*\{'
+            '/#tabs\.is-navigation-enhanced\.is-navigation-mode-responsive > \.tab-label\s*\{'
                 . '[^}]*display:\s*none !important;.*?'
                 . '\.cocoon-settings-mobile-select\).*?\{'
                 . '[^}]*min-block-size:\s*44px;/s',
@@ -495,7 +494,7 @@ REGEX;
             ':where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .cocoon-settings-navigation)',
             $partial
         );
-        $this->assertStringContainsString('top: 46px;', $partial);
+        $this->assertStringContainsString('--cocoon-settings-navigation-top: 46px;', $partial);
         $this->assertStringContainsString('z-index: 20;', $partial);
     }
 

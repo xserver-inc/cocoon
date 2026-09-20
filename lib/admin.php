@@ -36,12 +36,16 @@ add_action( 'wp_ajax_cocoon_settings_save_navigation_mode', 'cocoon_ajax_save_se
 // 専用AJAXで表示モード1項目だけを保存し、既存のCocoon設定保存処理は通さない。
 if ( !function_exists( 'cocoon_ajax_save_settings_navigation_mode' ) ):
 function cocoon_ajax_save_settings_navigation_mode() {
-  if ( !current_user_can( 'manage_options' ) ) {
-    wp_send_json_error( array( 'message' => 'forbidden' ), 403 );
+  // nonce失効と権限不足を識別できるJSON応答の返却
+  if ( false === check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce', false ) ) {
+    wp_send_json_error( array( 'code' => 'invalid_nonce' ), 403 );
     return;
   }
 
-  check_ajax_referer( 'cocoon_settings_navigation_mode', 'nonce' );
+  if ( !current_user_can( 'manage_options' ) ) {
+    wp_send_json_error( array( 'code' => 'forbidden' ), 403 );
+    return;
+  }
 
   $mode = isset( $_POST['mode'] ) && is_string( $_POST['mode'] )
     ? sanitize_key( wp_unslash( $_POST['mode'] ) )
@@ -54,7 +58,7 @@ function cocoon_ajax_save_settings_navigation_mode() {
 
   $user_id = get_current_user_id();
   if ( !$user_id ) {
-    wp_send_json_error( array( 'message' => 'invalid_user' ), 403 );
+    wp_send_json_error( array( 'code' => 'invalid_user' ), 403 );
     return;
   }
 
@@ -168,9 +172,10 @@ function admin_print_styles_custom() {
         'responsiveModeDescription' => __( '画面の広さに応じて設定メニューを自動で見やすく切り替えます。', THEME_NAME ),
         'tabsModeLabel' => __( '従来の表示', THEME_NAME ),
         'tabsModeDescription' => __( 'これまでと同じ順番でタブを表示します。', THEME_NAME ),
-        'modeSaveError' => __( '表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。', THEME_NAME ),
-        'modeNonceError' => __( '表示モードの保存期限が切れました。ページを再読み込みしてください。', THEME_NAME ),
-        'modeTimeoutError' => __( '表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。', THEME_NAME ),
+        'modeSaveError' => __( '表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。', THEME_NAME ),
+        'modeNonceError' => __( '表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。', THEME_NAME ),
+        'modeTimeoutError' => __( '表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。', THEME_NAME ),
+        'modePermissionError' => __( '表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。', THEME_NAME ),
         'navigationLabel' => __( 'Cocoon設定項目', THEME_NAME ),
         'menuTitle' => __( '設定メニュー', THEME_NAME ),
         'mobileLabel' => __( '設定項目', THEME_NAME ),
@@ -178,7 +183,7 @@ function admin_print_styles_custom() {
         'searchPlaceholder' => __( '設定項目を検索', THEME_NAME ),
         'noResults' => __( '該当する設定項目がありません。', THEME_NAME ),
         'resultsLabel' => __( '%d件の設定項目が見つかりました。', THEME_NAME ),
-        'fallbackLabel' => __( 'その他', THEME_NAME ),
+        'fallbackLabel' => __( '追加の設定', THEME_NAME ),
         'groups' => array(
           array(
             'label' => __( '外観・レイアウト', THEME_NAME ),

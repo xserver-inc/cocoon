@@ -20975,20 +20975,16 @@ msgid "設定メニューの表示"
 msgstr "Apresentação do menu de definições"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Não foi possível guardar o modo de apresentação. Verifique a ligação e "
-"tente novamente."
+msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Não foi possível guardar o modo de apresentação. A apresentação atual é mantida, mas poderá não ser aplicada em visitas futuras. Verifique a ligação e prima o botão de apresentação selecionado para tentar novamente."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
-msgstr "A sessão para guardar o modo de apresentação expirou. Recarregue a página."
+msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgstr "A sessão para guardar o modo de apresentação expirou. A apresentação atual é mantida, mas não será aplicada em visitas futuras. Reveja as definições que está a editar antes de recarregar a página."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"O tempo para guardar o modo de apresentação esgotou-se. Verifique a ligação "
-"e tente novamente."
+msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "O tempo limite para guardar o modo de apresentação foi excedido. A apresentação atual é mantida, mas poderá não ser aplicada em visitas futuras. Verifique a ligação e prima o botão de apresentação selecionado para tentar novamente."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21769,3 +21765,11 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "Não tem permissão para guardar o modo de apresentação. A apresentação atual é mantida, mas não será aplicada em visitas futuras. Contacte o administrador do site para verificar as suas permissões."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Definições adicionais"

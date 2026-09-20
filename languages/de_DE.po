@@ -21194,22 +21194,16 @@ msgid "設定メニューの表示"
 msgstr "Anzeige des Einstellungsmenüs"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Der Anzeigemodus konnte nicht gespeichert werden. Prüfen Sie Ihre "
-"Verbindung und versuchen Sie es erneut."
+msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Der Anzeigemodus konnte nicht gespeichert werden. Die aktuelle Anzeige bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch die ausgewählte Anzeigetaste."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
-msgstr ""
-"Die Sitzung zum Speichern des Anzeigemodus ist abgelaufen. Laden Sie die "
-"Seite neu."
+msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgstr "Die Sitzung zum Speichern des Anzeigemodus ist abgelaufen. Die aktuelle Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre laufenden Änderungen, bevor Sie die Seite neu laden."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Zeitüberschreitung beim Speichern des Anzeigemodus. Prüfen Sie Ihre "
-"Verbindung und versuchen Sie es erneut."
+msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Zeitüberschreitung beim Speichern des Anzeigemodus. Die aktuelle Anzeige bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch die ausgewählte Anzeigetaste."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21995,3 +21989,11 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j.n."
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "Sie haben keine Berechtigung, den Anzeigemodus zu speichern. Die aktuelle Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. Wenden Sie sich zur Prüfung Ihrer Berechtigungen an die Website-Administration."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Zusätzliche Einstellungen"

@@ -21185,22 +21185,16 @@ msgid "設定メニューの表示"
 msgstr "Visualización del menú de ajustes"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"No se ha podido guardar el modo de visualización. Comprueba la conexión e "
-"inténtalo de nuevo."
+msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "No se pudo guardar el modo de visualización. La visualización actual se mantiene, pero es posible que no se conserve en futuras visitas. Comprueba la conexión y pulsa el botón de visualización seleccionado para volver a intentarlo."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
-msgstr ""
-"La sesión para guardar el modo de visualización ha caducado. Recarga la "
-"página."
+msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgstr "La sesión para guardar el modo de visualización ha caducado. La visualización actual se mantiene, pero no se conservará en futuras visitas. Revisa los ajustes que estás editando antes de recargar la página."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
-msgstr ""
-"Se ha agotado el tiempo para guardar el modo de visualización. Comprueba la "
-"conexión e inténtalo de nuevo."
+msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Se agotó el tiempo de espera al guardar el modo de visualización. La visualización actual se mantiene, pero es posible que no se conserve en futuras visitas. Comprueba la conexión y pulsa el botón de visualización seleccionado para volver a intentarlo."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21982,3 +21976,11 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "No tienes permiso para guardar el modo de visualización. La visualización actual se mantiene, pero no se conservará en futuras visitas. Consulta tus permisos con el administrador del sitio."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Ajustes adicionales"

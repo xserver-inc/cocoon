@@ -67,6 +67,7 @@ const createNavigationSettings = ( initialMode ) => ( {
   modeSaveError: '表示モードを保存できませんでした。',
   modeNonceError:
     '表示モードの保存期限が切れました。ページを再読み込みしてください。',
+  modePermissionError: '表示モードを保存する権限がありません。',
   modeTimeoutError: '表示モードの保存がタイムアウトしました。',
   navigationLabel: 'Cocoon設定項目',
   menuTitle: '設定メニュー',
@@ -75,7 +76,7 @@ const createNavigationSettings = ( initialMode ) => ( {
   searchPlaceholder: '設定項目を検索',
   noResults: '該当する設定項目はありません。',
   resultsLabel: '%d件の設定項目が見つかりました。',
-  fallbackLabel: 'その他',
+  fallbackLabel: '追加の設定',
   groups: [
     {
       label: 'テスト分類',
@@ -98,6 +99,7 @@ const createHarness = async ( {
   initialChecked = 'alpha',
   initialMode = 'responsive',
   initialTabsClass = '',
+  reverseTabs = false,
   throwOnObserve = false,
   ungroupedBeta = false,
 } = {} ) => {
@@ -114,6 +116,11 @@ const createHarness = async ( {
   const { window } = dom;
   const { document } = window;
   const tabs = document.getElementById( 'tabs' );
+  if ( reverseTabs ) {
+    const alpha = document.getElementById( 'tab-alpha-input' );
+    tabs.insertBefore( document.getElementById( 'tab-beta-input' ), alpha );
+    tabs.insertBefore( document.querySelector( 'label[for="tab-beta-input"]' ), alpha );
+  }
   const scrollCalls = [];
   const resizeObservers = [];
   let tabsWidth = 1200;
@@ -146,18 +153,19 @@ const createHarness = async ( {
     const isResponsive = tabs.classList.contains(
       'is-navigation-mode-responsive'
     );
+    const usesSidebar = layoutMode === 'desktop' && tabs.classList.contains( 'is-navigation-wide' );
     const isEnhanced = tabs.classList.contains( 'is-navigation-enhanced' );
 
     if ( element.hidden ) {
       display = 'none';
     } else if ( element.classList.contains( 'cocoon-settings-navigation' ) ) {
-      display = isResponsive && layoutMode !== 'tablet' ? 'block' : 'none';
+      display = isResponsive && layoutMode !== 'fallback' ? 'block' : 'none';
     } else if ( element.classList.contains( 'cocoon-settings-sidebar' ) ) {
-      display = isResponsive && layoutMode === 'desktop' ? 'block' : 'none';
+      display = isResponsive && usesSidebar ? 'block' : 'none';
     } else if (
       element.classList.contains( 'cocoon-settings-mobile-picker' )
     ) {
-      display = isResponsive && layoutMode === 'mobile' ? 'block' : 'none';
+      display = isResponsive && ! usesSidebar ? 'block' : 'none';
     } else if ( element.classList.contains( 'is-navigation-excluded' ) ) {
       display = 'none';
     } else if (
@@ -165,7 +173,7 @@ const createHarness = async ( {
       ( element.classList.contains( 'tab-input' ) ||
         element.classList.contains( 'tab-label' ) )
     ) {
-      display = ! isResponsive || layoutMode === 'tablet' ? 'block' : 'none';
+      display = ! isResponsive || layoutMode === 'fallback' ? 'block' : 'none';
     }
 
     return {
@@ -533,7 +541,7 @@ const testNavigationAndFormBehavior = async () => {
   assert.strictEqual( document.activeElement, betaButton );
 
   harness.setTabsWidth( 900 );
-  harness.setLayoutMode( 'tablet' );
+  harness.setLayoutMode( 'fallback' );
   let ariaHiddenAtFocus = 'focus-event-not-fired';
   betaRadio.addEventListener( 'focus', () => {
     ariaHiddenAtFocus = betaRadio.getAttribute( 'aria-hidden' );
@@ -707,8 +715,8 @@ const testMobileSelectSynchronization = async () => {
   assert.strictEqual( alphaRadio.checked, false );
   assert.strictEqual( betaRadio.checked, true );
   assert.strictEqual( mobileSelect.value, 'tab-beta-input' );
-  assert.strictEqual( alphaButton.getAttribute( 'aria-pressed' ), 'false' );
-  assert.strictEqual( betaButton.getAttribute( 'aria-pressed' ), 'true' );
+  assert.strictEqual( alphaButton.getAttribute( 'aria-current' ), 'false' );
+  assert.strictEqual( betaButton.getAttribute( 'aria-current' ), 'true' );
   assert.ok(
     harness.scrollCalls.some(
       ( call ) => call.element === betaPanel && call.options.block === 'start'
@@ -759,7 +767,7 @@ const testHiddenCheckedRadioPreservation = async () => {
   assert.strictEqual( hiddenRadio.getClientRects().length, 0 );
 
   harness.setTabsWidth( 900 );
-  harness.setLayoutMode( 'tablet' );
+  harness.setLayoutMode( 'fallback' );
   harness.triggerResponsiveState();
   harness.setTabsWidth( 600 );
   harness.setLayoutMode( 'mobile' );
@@ -776,7 +784,7 @@ const testHiddenCheckedRadioPreservation = async () => {
   assert.strictEqual(
     hiddenRadio.getAttribute( 'aria-hidden' ),
     'true',
-    'タブレット表示でも非表示radioを読み上げ対象へ戻さないこと'
+    'CSSフォールバックでも非表示radioを読み上げ対象へ戻さないこと'
   );
   assert.strictEqual( hiddenRadio.tabIndex, -1 );
   assert.strictEqual( hiddenRadio.getClientRects().length, 0 );
@@ -883,7 +891,7 @@ const testViewModeSegmentedControl = async () => {
   harness.dom.window.close();
 };
 
-// 応答停止時に15秒で中断し、表示モード操作が必ず再び使えることを検証する。
+// 応答停止時の30秒での中断と表示モード操作の再開の検証
 const testTimeoutRecovery = async () => {
   const harness = await createHarness( { initialMode: 'tabs' } );
   const { document, window } = harness;
@@ -923,7 +931,7 @@ const testTimeoutRecovery = async () => {
   pressKey( window, tabsButton, 'ArrowLeft' );
   await flushMicrotasks();
 
-  assert.strictEqual( timeoutDelay, 15000, '保存停止を15秒で中断すること' );
+  assert.strictEqual( timeoutDelay, 30000, '保存停止を30秒で中断すること' );
   assert.strictEqual( control.hasAttribute( 'aria-busy' ), false );
   assert.strictEqual(
     control.querySelectorAll( '[aria-disabled="true"]' ).length,
@@ -935,15 +943,15 @@ const testTimeoutRecovery = async () => {
     status.textContent,
     '表示モードの保存がタイムアウトしました。'
   );
-  assertViewModeSelection( control, 'tabs' );
+  assertViewModeSelection( control, 'responsive' );
   assert.strictEqual(
     responsiveButton.getAttribute( 'aria-checked' ),
-    'false'
+    'true'
   );
   assert.strictEqual(
     document.activeElement,
-    tabsButton,
-    'タイムアウト時は保存済みradioへフォーカスも戻すこと'
+    control.querySelector( '[data-navigation-mode="responsive"]' ),
+    'タイムアウト時も現在のボタンへのフォーカスを維持すること'
   );
   assert.deepStrictEqual( harness.browserErrors, [] );
 
@@ -951,11 +959,11 @@ const testTimeoutRecovery = async () => {
 };
 
 // nonce失効を一般通信エラーと区別し、再読込が必要な案内を表示することを検証する。
-const testNonceFailureMessage = async () => {
+const testNonceFailureMessage = async ( code = 'invalid_nonce' ) => {
   const harness = await createHarness( { initialMode: 'tabs' } );
   const { document, window } = harness;
   window.fetch = async () => ( {
-    json: async () => ( { success: false } ),
+    json: async () => ( { data: { code }, success: false } ),
     ok: false,
     status: 403,
   } );
@@ -972,25 +980,29 @@ const testNonceFailureMessage = async () => {
   assert.strictEqual( status.hidden, false );
   assert.strictEqual(
     status.textContent,
-    '表示モードの保存期限が切れました。ページを再読み込みしてください。'
+    code === 'invalid_nonce'
+      ? window.cocoonSettingsNavigationData.modeNonceError
+      : code === 'forbidden' || code === 'invalid_user'
+      ? window.cocoonSettingsNavigationData.modePermissionError
+      : window.cocoonSettingsNavigationData.modeSaveError
   );
   assert.strictEqual( control.hasAttribute( 'aria-busy' ), false );
   assert.strictEqual(
     control.querySelectorAll( '[aria-disabled="true"]' ).length,
     0
   );
-  assertViewModeSelection( control, 'tabs' );
+  assertViewModeSelection( control, 'responsive' );
   assert.strictEqual(
     document.activeElement,
-    tabsButton,
-    'nonce失効時も保存済みradioへフォーカスを戻すこと'
+    control.querySelector( '[data-navigation-mode="responsive"]' ),
+    '認証失敗時も現在のボタンへのフォーカスを維持すること'
   );
   assert.deepStrictEqual( harness.browserErrors, [] );
 
   harness.dom.window.close();
 };
 
-// 一般的な保存失敗でも選択とフォーカスを戻し、グループ外のフォーカスは奪わない。
+// 一般保存失敗時の表示・入力・フォーカスの維持と同じモードへの再試行
 const testGeneralSaveFailureFocusRecovery = async () => {
   const harness = await createHarness( { initialMode: 'tabs' } );
   const { document, window } = harness;
@@ -1018,24 +1030,118 @@ const testGeneralSaveFailureFocusRecovery = async () => {
     status.textContent,
     '表示モードを保存できませんでした。'
   );
-  assertViewModeSelection( control, 'tabs' );
+  assertViewModeSelection( control, 'responsive' );
   assert.strictEqual(
     document.activeElement,
-    tabsButton,
-    '一般保存失敗時も保存済みradioへフォーカスを戻すこと'
+    control.querySelector( '[data-navigation-mode="responsive"]' ),
+    '一般保存失敗時も現在のボタンへのフォーカスを維持すること'
   );
 
+  let retryCount = 0;
+  const failedFetch = window.fetch;
+  window.fetch = ( ...args ) => {
+    retryCount += 1;
+    return failedFetch( ...args );
+  };
+  draftTitle.value = '未保存の入力';
   draftTitle.focus();
   responsiveButton.click();
   await flushMicrotasks();
-  assertViewModeSelection( control, 'tabs' );
+  assertViewModeSelection( control, 'responsive' );
   assert.strictEqual(
     document.activeElement,
     draftTitle,
     '失敗時にradiogroup外へ移っていたフォーカスを奪わないこと'
   );
+  assert.strictEqual( retryCount, 1 );
+  assert.strictEqual( draftTitle.value, '未保存の入力' );
   assert.deepStrictEqual( harness.browserErrors, [] );
 
+  harness.dom.window.close();
+};
+
+// 中間幅での分類付き選択欄と幅境界の往復・フォーカス移譲の検証
+const testIntermediateWidthAndHysteresis = async () => {
+  const harness = await createHarness();
+  const { document, tabs } = harness;
+  const item = document.querySelector( '[data-tab-target="tab-alpha-input"]' );
+  const select = document.getElementById( 'cocoon-settings-mobile-select' );
+  item.focus();
+  for ( const width of [ 1040, 1039, 1020 ] ) {
+    harness.setTabsWidth( width );
+    harness.triggerResponsiveState();
+    assert.ok( tabs.classList.contains( 'is-navigation-wide' ) );
+    assert.strictEqual( document.activeElement, item );
+  }
+  for ( const width of [ 1019, 748, 643, 1039 ] ) {
+    harness.setTabsWidth( width );
+    harness.triggerResponsiveState();
+    assert.ok( ! tabs.classList.contains( 'is-navigation-wide' ) );
+    assert.strictEqual( document.activeElement, select );
+    assert.strictEqual( document.getElementById( 'tab-alpha-input' ).getAttribute( 'aria-hidden' ), 'true' );
+  }
+  harness.setTabsWidth( 1040 );
+  harness.triggerResponsiveState();
+  assert.strictEqual( document.activeElement, item );
+  harness.dom.window.close();
+};
+
+// 実際のタブ順と現在項目の意味付け・ラベルの一意性の検証
+const testNavigationOrderAndLabels = async () => {
+  const harness = await createHarness( { reverseTabs: true } );
+  const { document } = harness;
+  assert.deepStrictEqual(
+    Array.from( document.querySelectorAll( '.cocoon-settings-navigation-item' ), ( item ) => item.dataset.tabTarget ),
+    [ 'tab-beta-input', 'tab-alpha-input' ]
+  );
+  assert.deepStrictEqual(
+    Array.from( document.querySelectorAll( '.cocoon-settings-mobile-select option' ), ( item ) => item.value ),
+    [ 'tab-beta-input', 'tab-alpha-input' ]
+  );
+  assert.strictEqual( document.querySelectorAll( '.cocoon-settings-navigation-item[aria-current="true"]' ).length, 1 );
+  assert.strictEqual( document.querySelectorAll( '.cocoon-settings-navigation-item[aria-pressed]' ).length, 0 );
+  const search = document.getElementById( 'cocoon-settings-navigation-search' );
+  assert.strictEqual( search.hasAttribute( 'aria-label' ), false );
+  assert.strictEqual( search.labels.length, 1 );
+  assert.strictEqual( search.labels[ 0 ].textContent, '設定項目を検索' );
+  harness.dom.window.close();
+};
+
+// 矢印操作時の全ナビ項目に対するレイアウト実測の防止
+const testNavigationVisibilityWithoutLayoutReads = async () => {
+  const harness = await createHarness();
+  const { document, window } = harness;
+  const item = document.querySelector( '[data-tab-target="tab-alpha-input"]' );
+  const nativeStyle = window.getComputedStyle;
+  let reads = 0;
+  window.getComputedStyle = ( ...args ) => {
+    reads += 1;
+    return nativeStyle( ...args );
+  };
+  pressKey( window, item, 'ArrowDown' );
+  assert.strictEqual( document.activeElement.dataset.tabTarget, 'tab-beta-input' );
+  assert.strictEqual( reads, 0, '矢印操作で計算済みスタイルを取得しないこと' );
+  harness.dom.window.close();
+};
+
+// エラー文言を設定する瞬間のライブリージョンの可視性の検証
+const testSaveErrorAnnouncementOrder = async () => {
+  const harness = await createHarness( { initialMode: 'tabs' } );
+  const { document, window } = harness;
+  const status = document.querySelector( '.cocoon-settings-view-mode-status' );
+  const descriptor = Object.getOwnPropertyDescriptor( window.Node.prototype, 'textContent' );
+  let hiddenWhenUpdated = null;
+  Object.defineProperty( status, 'textContent', {
+    get() { return descriptor.get.call( this ); },
+    set( value ) {
+      hiddenWhenUpdated = this.hidden;
+      descriptor.set.call( this, value );
+    },
+  } );
+  window.fetch = async () => { throw new Error( 'offline' ); };
+  document.querySelector( '[data-navigation-mode="responsive"]' ).click();
+  await flushMicrotasks();
+  assert.strictEqual( hiddenWhenUpdated, false );
   harness.dom.window.close();
 };
 
@@ -1227,11 +1333,11 @@ const testUngroupedTab = async () => {
     'cocoon-settings-mobile-select'
   );
   assert.ok( betaButton, '標準分類外のタブもナビに含まれること' );
-  assert.strictEqual( betaButton.getAttribute( 'aria-pressed' ), 'true' );
+  assert.strictEqual( betaButton.getAttribute( 'aria-current' ), 'true' );
   assert.strictEqual( mobileSelect.value, 'tab-beta-input' );
   assert.ok(
     mobileSelect.querySelector(
-      'optgroup[label="その他"] option[value="tab-beta-input"]'
+      'optgroup[label="追加の設定"] option[value="tab-beta-input"]'
     )
   );
   document.querySelector( '[data-tab-target="tab-alpha-input"]' ).click();
@@ -1350,9 +1456,16 @@ const testClosedGroupKeyboardNavigation = async () => {
   process.stdout.write( 'Running view mode segmented control test...\n' );
   await testViewModeSegmentedControl();
   process.stdout.write( 'Running timeout recovery test...\n' );
+  await testIntermediateWidthAndHysteresis();
+  await testNavigationOrderAndLabels();
+  await testNavigationVisibilityWithoutLayoutReads();
+  await testSaveErrorAnnouncementOrder();
   await testTimeoutRecovery();
   process.stdout.write( 'Running nonce failure test...\n' );
   await testNonceFailureMessage();
+  await testNonceFailureMessage( 'forbidden' );
+  await testNonceFailureMessage( 'invalid_user' );
+  await testNonceFailureMessage( 'unknown' );
   process.stdout.write( 'Running general save failure focus test...\n' );
   await testGeneralSaveFailureFocusRecovery();
   process.stdout.write(

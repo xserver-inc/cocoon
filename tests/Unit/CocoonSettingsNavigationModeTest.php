@@ -71,14 +71,27 @@ class CocoonSettingsNavigationModeTest extends TestCase
         $this->assertSame('tabs', cocoon_get_settings_navigation_mode());
     }
 
+    public function test_nonce失効時は権限確認と保存より先に専用エラーを返す(): void
+    {
+        Functions\expect('check_ajax_referer')->once()
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(false);
+        Functions\expect('current_user_can')->never();
+        Functions\expect('wp_send_json_error')->once()->with(['code' => 'invalid_nonce'], 403);
+        Functions\expect('update_user_option')->never();
+
+        cocoon_ajax_save_settings_navigation_mode();
+        $this->addToAssertionCount(1);
+    }
+
     public function test_権限がない場合は表示モードを保存しない(): void
     {
         $_POST = ['mode' => 'responsive', 'nonce' => 'nonce'];
 
         Functions\expect('wp_send_json_error')
             ->once()
-            ->with(['message' => 'forbidden'], 403);
-        Functions\expect('check_ajax_referer')->never();
+            ->with(['code' => 'forbidden'], 403);
+        Functions\expect('check_ajax_referer')->once()
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(1);
         Functions\expect('update_user_option')->never();
 
         cocoon_ajax_save_settings_navigation_mode();
@@ -92,7 +105,7 @@ class CocoonSettingsNavigationModeTest extends TestCase
         Functions\when('current_user_can')->justReturn(true);
         Functions\expect('check_ajax_referer')
             ->once()
-            ->with('cocoon_settings_navigation_mode', 'nonce');
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(1);
         Functions\expect('wp_unslash')->once()->with('invalid-mode')->andReturn('invalid-mode');
         Functions\expect('sanitize_key')->once()->with('invalid-mode')->andReturn('invalid-mode');
         Functions\expect('wp_send_json_error')
@@ -112,7 +125,7 @@ class CocoonSettingsNavigationModeTest extends TestCase
         Functions\when('current_user_can')->justReturn(true);
         Functions\expect('check_ajax_referer')
             ->once()
-            ->with('cocoon_settings_navigation_mode', 'nonce');
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(1);
         Functions\expect('wp_unslash')->never();
         Functions\expect('sanitize_key')->never();
         Functions\expect('wp_send_json_error')
@@ -132,7 +145,7 @@ class CocoonSettingsNavigationModeTest extends TestCase
         Functions\when('current_user_can')->justReturn(true);
         Functions\expect('check_ajax_referer')
             ->once()
-            ->with('cocoon_settings_navigation_mode', 'nonce');
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(1);
         Functions\expect('wp_unslash')->once()->with($mode)->andReturn($mode);
         Functions\expect('sanitize_key')->once()->with($mode)->andReturn($mode);
         Functions\expect('get_current_user_id')->once()->andReturn(42);
@@ -165,7 +178,7 @@ class CocoonSettingsNavigationModeTest extends TestCase
         Functions\when('current_user_can')->justReturn(true);
         Functions\expect('check_ajax_referer')
             ->once()
-            ->with('cocoon_settings_navigation_mode', 'nonce');
+            ->with('cocoon_settings_navigation_mode', 'nonce', false)->andReturn(1);
         Functions\expect('wp_unslash')->once()->with('responsive')->andReturn('responsive');
         Functions\expect('sanitize_key')->once()->with('responsive')->andReturn('responsive');
         Functions\expect('get_current_user_id')->once()->andReturn(42);

@@ -78,11 +78,13 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
   // PHP側の分類から、現在の画面に実在するAMP・PWAを含む項目だけを採用する。
   const groups = settings.groups
     .map( ( group ) => {
+      // フィルター適用済みの画面上のタブ順を優先したグループ内の整列
       const items = Array.isArray( group.tabs )
-        ? group.tabs
+        ? navigationInputs
+            .map( ( input ) => input.id )
             .filter( ( inputId ) => {
               if (
-                ! inputById.has( inputId ) ||
+                ! group.tabs.includes( inputId ) ||
                 configuredInputIds.has( inputId )
               ) {
                 return false;
@@ -139,7 +141,7 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
   let navigationMode = supportedModes.includes( settings.initialMode )
     ? settings.initialMode
     : tabsMode;
-  let savedNavigationMode = navigationMode;
+  let isNavigationModeSaved = true;
   let isSavingNavigationMode = false;
 
   const viewMode = document.createElement( 'div' );
@@ -232,7 +234,6 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
   search.type = 'search';
   search.autocomplete = 'off';
   search.placeholder = settings.searchPlaceholder;
-  search.setAttribute( 'aria-label', settings.searchLabel );
   sidebarHeader.append( searchLabel, search );
 
   const searchStatus = document.createElement( 'p' );
@@ -320,7 +321,7 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
       navigationItem.className = 'cocoon-settings-navigation-item';
       navigationItem.dataset.tabTarget = item.input.id;
       navigationItem.setAttribute( 'aria-controls', contentId );
-      navigationItem.setAttribute( 'aria-pressed', 'false' );
+      navigationItem.setAttribute( 'aria-current', 'false' );
       navigationItem.tabIndex = -1;
       navigationItem.textContent = item.label;
 
@@ -357,8 +358,12 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
   // 既存radioと全contentの兄弟関係を変えず、最初のcontent直前へ表示UIだけを挿入する。
   tabs.insertBefore( navigation, panels[ 0 ] );
 
+  // 管理済みの検索・開閉状態だけによる可視項目の取得
   const getVisibleNavigationItems = () =>
-    navigationItems.filter( ( item ) => isElementVisible( item ) );
+    navigationItems.filter( ( item ) => {
+      const group = groupElementByInputId.get( item.dataset.tabTarget );
+      return ! item.hidden && ! group.hidden && group.open;
+    } );
 
   // PCメニュー内のTab停止を1件に絞り、矢印移動後の位置もroving tabindexへ反映する。
   const setNavigationTabStop = ( preferredItem = null ) => {
@@ -437,7 +442,7 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     navigationItemByInputId.forEach( ( navigationItem, inputId ) => {
       const isActive = inputId === activeInputId;
       navigationItem.classList.toggle( 'is-active', isActive );
-      navigationItem.setAttribute( 'aria-pressed', String( isActive ) );
+      navigationItem.setAttribute( 'aria-current', String( isActive ) );
     } );
 
     groupElements.forEach( ( details ) => {
@@ -555,9 +560,12 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
 
   let interactionMode = null;
 
-  // CSSの2カラム条件と同じ実コンテンツ幅をJSで判定し、固定配置を壊すcontainmentを不要にする。
+  // スクロールバーによる境界付近の往復を防ぐ、開始幅と解除幅の分離
   const synchronizeNavigationWidth = () => {
-    tabs.classList.toggle( 'is-navigation-wide', tabs.clientWidth >= 1040 );
+    const minimumWidth = tabs.classList.contains( 'is-navigation-wide' )
+      ? 1020
+      : 1040;
+    tabs.classList.toggle( 'is-navigation-wide', tabs.clientWidth >= minimumWidth );
   };
 
   const getActiveViewModeButton = () =>
@@ -587,12 +595,6 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
       ? navigationItemByInputId.get( activeInput.id )
       : null;
     const firstVisibleNavigationItem = getVisibleNavigationItems()[ 0 ] || null;
-    const firstVisibleInput =
-      navigationInputs.find( ( input ) => {
-        const label = labelElementsByInputId.get( input.id );
-        return isElementVisible( input ) && isElementVisible( label );
-      } ) || null;
-
     if ( mode === 'desktop' ) {
       return [
         activeNavigationItem,
@@ -606,17 +608,23 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
       return [ mobileSelect, getActiveViewModeButton() ];
     }
 
-    const activeTabletInput =
+    const firstVisibleInput =
+      navigationInputs.find( ( input ) => {
+        const label = labelElementsByInputId.get( input.id );
+        return isElementVisible( input ) && isElementVisible( label );
+      } ) || null;
+
+    const activeTabInput =
       activeInput && inputById.has( activeInput.id ) ? activeInput : null;
 
-    return [ activeTabletInput, firstVisibleInput, getActiveViewModeButton() ];
+    return [ activeTabInput, firstVisibleInput, getActiveViewModeButton() ];
   };
 
-  // radioが表示されるタブレット状態だけアクセシビリティツリーとTab移動へ戻す。
+  // 従来表示やCSSフォールバックで可視となるradioの読み上げとTab移動の復元
   const synchronizeRadioAccessibility = ( mode ) => {
     inputs.forEach( ( input ) => {
       const canExposeRadio =
-        mode === 'tablet' && navigationInputIds.has( input.id );
+        mode === 'tabs' && navigationInputIds.has( input.id );
 
       if ( ! canExposeRadio ) {
         input.tabIndex = -1;
@@ -628,11 +636,11 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     } );
   };
 
-  // 表示中のUIを判定し、画面幅切替でフォーカスが非表示要素に残るのを防ぐ。
+  // 表示中のUIの判定と幅切替時の非表示要素からのフォーカス移譲
   const synchronizeInteractionMode = () => {
     const nextInteractionMode =
       window.getComputedStyle( navigation ).display === 'none'
-        ? 'tablet'
+        ? 'tabs'
         : window.getComputedStyle( mobilePicker ).display !== 'none'
         ? 'mobile'
         : 'desktop';
@@ -640,26 +648,26 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     const shouldTransferFocus =
       interactionMode !== null &&
       interactionMode !== nextInteractionMode &&
-      ( ( interactionMode === 'tablet' && inputs.includes( activeElement ) ) ||
+      ( ( interactionMode === 'tabs' && inputs.includes( activeElement ) ) ||
         ( interactionMode === 'desktop' &&
           sidebar.contains( activeElement ) ) ||
         ( interactionMode === 'mobile' &&
           mobilePicker.contains( activeElement ) ) );
     const activeInput = getActiveInput();
 
-    // タブレットへ移る場合は、focusイベントより先にradioを読み上げ可能な状態へ戻す。
-    if ( nextInteractionMode === 'tablet' ) {
+    // 従来表示へのfocusイベントに先立つradioの読み上げ状態の復元
+    if ( nextInteractionMode === 'tabs' ) {
       synchronizeRadioAccessibility( nextInteractionMode );
     }
 
-    // 現在のUIをaria-hiddenにする前に、次の表示UIにある可視要素へフォーカスを渡す。
+    // 現在のUIの非表示化に先立つ、次の可視UIへのフォーカス移譲
     if ( shouldTransferFocus ) {
       focusFirstVisibleCandidate(
         getFocusCandidatesForMode( nextInteractionMode, activeInput )
       );
     }
 
-    if ( nextInteractionMode !== 'tablet' ) {
+    if ( nextInteractionMode !== 'tabs' ) {
       synchronizeRadioAccessibility( nextInteractionMode );
     }
 
@@ -667,7 +675,7 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     interactionMode = nextInteractionMode;
   };
 
-  // CSSクラスと選択ボタンだけを更新し、radio・パネル・フォーム値には触れない。
+  // radio・パネル・フォーム値を保持したCSSクラスと選択ボタンの更新
   const applyNavigationMode = ( mode ) => {
     navigationMode = supportedModes.includes( mode ) ? mode : tabsMode;
     tabs.classList.toggle(
@@ -690,8 +698,9 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     synchronizeInteractionMode();
   };
 
-  // 表示モード専用AJAXだけを使い、失敗時は直前に保存済みの表示へ戻す。
+  // 表示モード専用AJAXによる保存と、失敗時の現在表示の維持
   const persistNavigationMode = async ( mode ) => {
+    isNavigationModeSaved = false;
     isSavingNavigationMode = true;
     viewModeControl.setAttribute( 'aria-busy', 'true' );
     viewModeButtons.forEach( ( button ) => {
@@ -705,11 +714,11 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     try {
       const abortController = new AbortController();
 
-      // 応答が止まった場合も15秒で必ず操作可能な状態へ戻す。
+      // 応答停止時に操作を再開するための30秒の上限
       timeoutId = window.setTimeout( () => {
         didTimeout = true;
         abortController.abort();
-      }, 15000 );
+      }, 30000 );
 
       const requestBody = new URLSearchParams( {
         action: 'cocoon_settings_save_navigation_mode',
@@ -725,45 +734,28 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
         body: requestBody.toString(),
         signal: abortController.signal,
       } );
-
-      if ( response.status === 403 ) {
-        const nonceError = new Error( 'navigation_mode_nonce_failed' );
-        nonceError.saveReason = 'nonce';
-        throw nonceError;
-      }
-
       const result = await response.json();
       const responseMode =
         result && result.data && typeof result.data.mode === 'string'
           ? result.data.mode
           : '';
 
-      if ( ! response.ok || ! result.success || responseMode !== mode ) {
-        throw new Error( 'navigation_mode_save_failed' );
+      if ( ! response.ok || ! result || ! result.success || responseMode !== mode ) {
+        const saveError = new Error( 'navigation_mode_save_failed' );
+        saveError.saveReason = result && result.data && result.data.code;
+        throw saveError;
       }
-
-      savedNavigationMode = mode;
+      isNavigationModeSaved = true;
     } catch ( error ) {
-      const shouldRestoreViewModeFocus = viewModeControl.contains(
-        document.activeElement
-      );
-      applyNavigationMode( savedNavigationMode );
-
-      // 切替ボタンにフォーカスがある場合だけ保存済み位置へ戻し、グループ外は奪わない。
-      if ( shouldRestoreViewModeFocus ) {
-        const savedModeButton = getActiveViewModeButton();
-
-        if ( savedModeButton ) {
-          savedModeButton.focus();
-        }
-      }
-
+      // 読み上げ対象への復帰後に行うエラーメッセージの更新
+      viewModeStatus.hidden = false;
       viewModeStatus.textContent = didTimeout
         ? settings.modeTimeoutError || settings.modeSaveError
-        : error && error.saveReason === 'nonce'
+        : error && error.saveReason === 'invalid_nonce'
         ? settings.modeNonceError || settings.modeSaveError
+        : error && [ 'forbidden', 'invalid_user' ].includes( error.saveReason )
+        ? settings.modePermissionError || settings.modeSaveError
         : settings.modeSaveError;
-      viewModeStatus.hidden = false;
     } finally {
       if ( timeoutId !== null ) {
         window.clearTimeout( timeoutId );
@@ -781,11 +773,16 @@ function cocoonBuildSettingsNavigation( tabs, settings, inputs, panels ) {
     button.addEventListener( 'click', () => {
       const requestedMode = button.dataset.navigationMode;
 
-      if ( requestedMode === navigationMode || isSavingNavigationMode ) {
+      if (
+        ( requestedMode === navigationMode && isNavigationModeSaved ) ||
+        isSavingNavigationMode
+      ) {
         return;
       }
 
-      applyNavigationMode( requestedMode );
+      if ( requestedMode !== navigationMode ) {
+        applyNavigationMode( requestedMode );
+      }
       persistNavigationMode( requestedMode );
     } );
 

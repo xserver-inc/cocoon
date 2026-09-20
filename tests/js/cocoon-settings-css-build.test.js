@@ -4,6 +4,7 @@ const assert = require( 'assert' );
 const fs = require( 'fs' );
 const path = require( 'path' );
 const sass = require( 'sass' );
+const postcss = require( 'postcss' );
 
 const scssPath = path.resolve( __dirname, '../../scss/cocoon-settings.scss' );
 const modernScssPath = path.resolve(
@@ -16,17 +17,48 @@ const navigationScriptPath = path.resolve(
   '../../js/cocoon-settings-navigation.js'
 );
 
-// OSごとの改行差だけを除き、末尾改行を含む配布CSS全体を同じ形式へそろえる。
-const normalizeCss = ( css ) =>
-  css.replace( /\r\n?/gu, '\n' ).replace( /\n*$/u, '\n' );
+// コメントと空の規則だけを除外し、宣言・セレクター・カスケード順を保持した比較
+const normalizeCss = ( css ) => {
+  const normalizeNodes = ( nodes ) => nodes.flatMap( ( node ) => {
+    if ( node.type === 'comment' ) {
+      return [];
+    }
+    const children = node.nodes ? normalizeNodes( node.nodes ) : null;
+    if ( node.type === 'rule' && children.length === 0 ) {
+      return [];
+    }
+    if ( node.type === 'decl' ) {
+      return [ [ node.type, node.prop, node.value, Boolean( node.important ) ] ];
+    }
+    return [ [ node.type, node.selector || node.name, node.params || '', children ] ];
+  } );
+  return normalizeNodes( postcss.parse( css.replace( /\r\n?/gu, '\n' ) ).nodes );
+};
 
-// 固定されたSass依存で専用SCSSを再生成し、配布CSSの更新漏れを1文字単位で検出する。
+assert.deepStrictEqual(
+  normalizeCss( '.empty { /* 制御コメント */ } .a { color: red; }' ),
+  normalizeCss( '.a { color: red; /* 制御コメント */ }' )
+);
+// 文字列内のコメント風表記と宣言順・詳細度・条件の違いの検出
+for ( const [ before, after ] of [
+  [ '.a { content: "/* a */"; }', '.a { content: "/* b */"; }' ],
+  [ '.a { color: red; }', '.a { color: blue; }' ],
+  [ '.a { color: red; }', '.b { color: red; }' ],
+  [ '.a { color: red; }', '.a { color: red !important; }' ],
+  [ '.a { color: red; color: blue; }', '.a { color: blue; color: red; }' ],
+  [ '@media (width < 600px) { .a { color: red; } }', '@media (width < 782px) { .a { color: red; } }' ],
+  [ '@layer first, second;', '@layer second, first;' ],
+] ) {
+  assert.notDeepStrictEqual( normalizeCss( before ), normalizeCss( after ) );
+}
+
+// 現在のSassによる再生成結果と配布CSSの実効スタイルの照合
 const generatedCss = sass.compile( scssPath, { style: 'expanded' } ).css;
 const distributedCss = fs.readFileSync( cssPath, 'utf8' );
 const modernScss = fs.readFileSync( modernScssPath, 'utf8' );
 const navigationScript = fs.readFileSync( navigationScriptPath, 'utf8' );
 
-assert.strictEqual(
+assert.deepStrictEqual(
   normalizeCss( distributedCss ),
   normalizeCss( generatedCss ),
   'scss/cocoon-settings.scssとcss/cocoon-settings.cssが一致しません。'
@@ -57,11 +89,11 @@ assert.match(
   '782px以下でも表示モードの2列が内容幅で押し広げられないようにしてください。'
 );
 
-// JSの実測幅とSCSSのwideクラスを対にし、1040px以上だけ2カラムへ移行する契約を固定する。
+// JSの開始幅1040px・解除幅1020pxとSCSSの2カラム表示の対応
 assert.match(
   navigationScript,
-  /tabs\.classList\.toggle\(\s*'is-navigation-wide',\s*tabs\.clientWidth\s*>=\s*1040\s*\);/u,
-  '広い画面へ切り替える実測幅は1040pxを維持してください。'
+  /const minimumWidth = tabs\.classList\.contains\( 'is-navigation-wide' \)\s*\? 1020\s*: 1040;/u,
+  '2カラムの開始幅と解除幅を維持してください。'
 );
 assert.match(
   modernScss,
@@ -86,5 +118,13 @@ for ( const declaration of [
     `長文翻訳対策の宣言がありません: ${ declaration }`
   );
 }
+
+// 管理バーの固定位置と、全モード共通の固定保存欄の契約
+assert.match( modernScss, /--cocoon-settings-navigation-top: 32px;/u );
+assert.match( mobileBreakpointScss, /--cocoon-settings-navigation-top: 46px;/u );
+assert.match( modernScss.slice( mobileBreakpointEnd ), /--cocoon-settings-navigation-top: 0px;/u );
+assert.match( mobileBreakpointScss, /:where\(form\.admin-settings > \.submit:last-of-type\)\s*\{\s*position: fixed;/u );
+assert.match( mobileBreakpointScss, /padding-block-end: calc\(76px \+ env\(safe-area-inset-bottom\)\);/u );
+assert.ok( modernScss.indexOf( 'top: var(--cocoon-settings-navigation-top);' ) < mobileBreakpointStart );
 
 process.stdout.write( 'Cocoon settings SCSS/CSS build test passed.\n' );

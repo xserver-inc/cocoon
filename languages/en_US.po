@@ -20761,16 +20761,16 @@ msgid "設定メニューの表示"
 msgstr "Settings menu display"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。通信状態を確認して、もう一度お試しください。"
-msgstr "The display mode could not be saved. Check your connection and try again."
+msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "The display mode could not be saved. The current display is preserved, but it may not carry over to future visits. Check your connection and press the selected display button to try again."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。ページを再読み込みしてください。"
-msgstr "The display mode save session has expired. Reload the page."
+msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgstr "The display mode save session has expired. The current display is preserved, but it will not carry over to future visits. Review any settings you are editing before reloading the page."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。通信状態を確認して、もう一度お試しください。"
-msgstr "Saving the display mode timed out. Check your connection and try again."
+msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgstr "Saving the display mode timed out. The current display is preserved, but it may not carry over to future visits. Check your connection and press the selected display button to try again."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21547,3 +21547,11 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "You do not have permission to save the display mode. The current display is preserved, but it will not carry over to future visits. Contact the site administrator to check your permissions."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Additional settings"
