@@ -20248,6 +20248,22 @@ msgstr "載入來源：%s"
 msgid "画像を読み込めませんでした。"
 msgstr "無法載入圖片。"
 
+#: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
+#, php-format
+msgid "%sクリック"
+msgstr "%s 次點擊"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid ""
+"表示回数の計測にだけ適用される抽出率です。クリックは抽出にかかわらず常に全数を記録します。直近7日間の規模に応じて100%、20%、5%、1%"
+"へ毎日自動調整します。データ不足時は10%です。"
+msgstr "此取樣率僅用於曝光次數統計。不論是否取樣，一律記錄所有點擊。每天依據最近7天的規模，自動調整為100%、20%、5%或1%。資料不足時為10%。"
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%（表示計測のみ）"
+msgstr "目前取樣率：%s%%（僅曝光次數統計）"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20562,17 +20578,3 @@ msgstr "在編輯器內搜尋並選擇樂天商品，插入靜態商品連結。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
-
-#: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
-#, php-format
-msgid "%sクリック"
-msgstr "%s 次點擊"
-
-#: lib/page-access/click-analytics/settings-form.php:29
-msgid "表示回数の計測にだけ適用される抽出率です。クリックは抽出にかかわらず常に全数を記録します。直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
-msgstr "此取樣率僅用於曝光次數統計。不論是否取樣，一律記錄所有點擊。每天依據最近7天的規模，自動調整為100%、20%、5%或1%。資料不足時為10%。"
-
-#: lib/page-access/click-analytics/settings-form.php:39
-#, php-format
-msgid "現在のサンプリング率: %s%%（表示計測のみ）"
-msgstr "目前取樣率：%s%%（僅曝光次數統計）"
