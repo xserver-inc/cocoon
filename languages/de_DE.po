@@ -21997,3 +21997,33 @@ msgstr "Sie haben keine Berechtigung, den Anzeigemodus zu speichern. Die aktuell
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "Zusätzliche Einstellungen"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Details"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Bild laden"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Quelle: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Das Bild konnte nicht geladen werden."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Bild laden"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Quelle: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Das Bild konnte nicht geladen werden."

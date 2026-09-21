@@ -14,9 +14,99 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/rest-func.p
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/admin-query-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/export-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
+require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/render-func.php';
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testPreviewUrlsPreserveImageQueriesAndRejectSecrets(): void
+    {
+        $this->assertSame('https://images.example.org/banner.png?id=123&w=320&h=180', cocoon_click_sanitize_image_url('https://images.example.org/banner.png?id=123&amp;w=320&amp;h=180'));
+        foreach (array('javascript:alert(1)', 'data:image/png;base64,xxx', 'https://user:pass@example.org/a.png', 'https://example.org/a.png" onerror="alert(1)', "https://example.org/a\n.png", array('src'), str_repeat('a', 2049)) as $url) {
+            $this->assertSame('', cocoon_click_sanitize_image_url($url));
+        }
+        foreach (array('https://example.org/image.php?id=123&w=320', 'https://www.google.com/s2/favicons?domain=example.org', 'https://example.org/resize?url=https%3A%2F%2Fexample.org%2Fphoto.png&fit=contain', 'https://example.org/sprite.svg#view') as $url) {
+            $this->assertSame($url, cocoon_click_sanitize_image_url($url));
+        }
+        foreach (array('token=private', 'X-Amz-Signature=private', 'api_key=private', '%74oken=private', '%74oken=%FF', 'key[]=private', 'jwt=private', 'url=https%3A%2F%2Fuser%3Asecret%40example.org%2Fa.png', 'url=https%3A%2F%2Fexample.org%2Fa.png%3Ftoken%3Dprivate') as $query) {
+            $this->assertSame('', cocoon_click_sanitize_image_url('https://example.org/image?' . $query));
+        }
+    }
+
+    private function mockPreviewRoots(): void
+    {
+        \Brain\Monkey\Functions\when('wp_get_upload_dir')->justReturn(array('baseurl' => 'https://example.org/uploads', 'basedir' => dirname(__DIR__, 2) . '/images', 'error' => false));
+        \Brain\Monkey\Functions\when('get_cocoon_template_directory_uri')->justReturn('https://example.org/theme');
+        \Brain\Monkey\Functions\when('get_cocoon_template_directory')->justReturn(dirname(__DIR__, 2));
+    }
+
+    public function testOnlyVerifiedStaticImagesCanAutoload(): void
+    {
+        $this->mockPreviewRoots();
+        $this->assertTrue(cocoon_click_image_can_autoload('https://example.org/uploads/no-image-160.png'));
+        $this->assertTrue(cocoon_click_image_can_autoload('https://example.org/theme/images/no-image-160.png'));
+        foreach (array('https://collector.example.org/pixel.png', 'http://127.0.0.1/image.png', 'http://192.168.1.1/image.png', 'https://example.org/uploads-evil/no-image-160.png', 'https://example.org/uploads/missing.png', 'https://example.org/uploads/no-image-160.png?id=123', 'https://example.org/theme/functions.php', 'https://example.org/uploads/%2e%2e/screenshot.png') as $url) {
+            $this->assertFalse(cocoon_click_image_can_autoload($url), $url);
+        }
+    }
+
+    public function testCaptionCleanupAndLegacyImageRecovery(): void
+    {
+        $base = array('destination_url' => 'https://example.org/page', 'is_affiliate' => 0);
+        $cases = array(
+            array('通常のリンク', '通常のリンク', ''),
+            array('カードの説明<img src="https://example.org/favicon.png" class="', 'カードの説明', ''),
+            array('&lt;img src=&quot;https://example.org/banner.png?w=320&amp;h=180&quot; alt=&quot;&quot; class=&quot;', '画像', 'https://example.org/banner.png?w=320&h=180'),
+            array('<img src="https://example.org/truncated', '画像', ''),
+            array('<img src="javascript:alert(1)" onerror="alert(2)">', '画像', ''),
+        );
+        foreach ($cases as $case) {
+            $preview = cocoon_click_link_preview($base + array('anchor_text' => $case[0]));
+            $this->assertSame(array('label' => $case[1], 'image_url' => $case[2]), $preview);
+        }
+        $preview = cocoon_click_link_preview($base + array('anchor_text' => 'バナー', 'image_url' => 'https://example.org/banner.png'));
+        $this->assertSame('バナー', $preview['label']);
+        $this->assertSame('https://example.org/banner.png', $preview['image_url']);
+    }
+
+    public function testTableEscapesCaptionsAndKeepsReliabilityOutsideDetails(): void
+    {
+        $this->mockPreviewRoots();
+        \Brain\Monkey\Functions\when('esc_html__')->alias(static function ($text, $domain) {
+            return esc_html(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('esc_html_e')->alias(static function ($text, $domain) {
+            echo esc_html(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('number_format_i18n')->alias(static function ($number, $decimals = 0) {
+            return number_format((float) $number, $decimals);
+        });
+        $row = array_merge(cocoon_click_metric_row(array('clicks' => 1, 'sampled_clicks' => 1, 'weighted_clicks' => 1, 'weighted_impressions' => 2, 'weight_squared' => 2)), array(
+            'source_post_id' => 0, 'anchor_text' => '安全な表示 " onmouseover="alert(1)',
+            'image_url' => 'https://example.org/banner.png', 'is_affiliate' => 0,
+            'destination_url' => 'https://example.org/?label=<script>alert(1)</script>',
+            'heading_label' => '<script>alert(2)</script>', 'destination_type' => 'external',
+            'semantic_area' => 'content', 'element_type' => 'image', 'occurrence_no' => 0,
+        ));
+        foreach (array(true, false) as $showSource) {
+            ob_start();
+            try {
+                cocoon_click_render_links_table(array('rows' => array($row)), $showSource);
+                $html = (string) ob_get_contents();
+            } finally {
+                ob_end_clean();
+            }
+            $this->assertStringNotContainsString('<script>', $html);
+            $this->assertStringNotContainsString(' onmouseover="', $html);
+            $this->assertStringNotContainsString('<img ', $html);
+            $this->assertStringContainsString('data-image-url="https://example.org/banner.png"', $html);
+            $this->assertStringContainsString('読み込み先: example.org', $html);
+            $this->assertSame($showSource ? 10 : 9, substr_count($html, 'scope="col"'));
+            $this->assertLessThan(strpos($html, '<details'), strpos($html, 'データ不足'));
+            $this->assertStringNotContainsString('<details open', $html);
+            $this->assertStringContainsString('95% CI', $html);
+        }
+    }
+
     public function testTrackingIsEnabledByDefaultAndRespectsSavedSettings(): void
     {
         $previous = $GLOBALS['test_theme_mods'] ?? array();

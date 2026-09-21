@@ -52,6 +52,14 @@ function cocoon_analytics_admin_enqueue($hook){
   );
 
   wp_enqueue_script(
+    'cocoon-click-previews',
+    $base . '/click-previews.js',
+    array(),
+    file_exists($path . '/click-previews.js') ? filemtime($path . '/click-previews.js') : false,
+    true
+  );
+
+  wp_enqueue_script(
     'cocoon-analytics-js',
     $base . '/analytics.js',
     array('cocoon-analytics-chartjs', 'cocoon-analytics-sortablejs', 'cocoon-analytics-suggest'),

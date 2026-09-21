@@ -21984,3 +21984,33 @@ msgstr "No tienes permiso para guardar el modo de visualización. La visualizaci
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "Ajustes adicionales"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Detalles"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Cargar imagen"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Origen: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "No se pudo cargar la imagen."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Cargar imagen"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Origen: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "No se pudo cargar la imagen."

@@ -192,6 +192,32 @@ function cocoon_click_normalize_destination($raw_url, $source_url, $attributes =
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_sanitize_image_url' ) ):
+function cocoon_click_sanitize_image_url($value){
+  if (!is_string($value) || strlen($value) > 2048) return '';
+  $value = html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+  // HTML属性の混入・認証情報・実行可能なURLスキームの除外
+  if ($value === '' || preg_match('/[\x00-\x20<>"\'\\\\]/', $value)) return '';
+  $parts = wp_parse_url($value);
+  if (!$parts || empty($parts['host']) || empty($parts['scheme'])
+      || !in_array(strtolower($parts['scheme']), array('http', 'https'), true)
+      || isset($parts['user']) || isset($parts['pass'])) return '';
+  // 入れ子の画像プロキシURLも含めた機密パラメーターの除外
+  $decoded = $value;
+  for ($depth = 0; $depth < 4; $depth++) {
+    if (preg_match('~https?://[^/?#\s]*@~i', $decoded)
+        || preg_match('/[?&#;][^=&#;]*(?:token|auth|password|passwd|secret|signature|(?:^|[_-])sig|api[_-]?key|nonce|session|credential|email|x-amz-|x-goog-)[^=&#;]*=/i', $decoded)
+        || preg_match('/[?&#;](?:key|sig|sid|pass|code|mail|jwt)(?:\[[^\]]*\])?=/i', $decoded)) return '';
+    $next = rawurldecode($decoded);
+    if ($next === $decoded) break;
+    if ($depth === 3) return '';
+    $decoded = $next;
+  }
+  // id・url・domainなど画像を特定するクエリと並び順の維持
+  return esc_url_raw($value, array('http', 'https'));
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_build_link_identity' ) ):
 function cocoon_click_build_link_identity($source_post_id, $destination, $event){
   $area = isset($event['area']) ? sanitize_key($event['area']) : 'other';

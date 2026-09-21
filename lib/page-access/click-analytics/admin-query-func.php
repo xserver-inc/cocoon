@@ -332,7 +332,7 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
       if ($candidate_ids) {
         $in = implode(',', array_fill(0, count($candidate_ids), '%d'));
         $details_sql = "SELECT l.id AS link_id,l.source_post_id,l.destination_url,l.destination_host,l.destination_type,l.target_post_id,
-          l.semantic_area,l.heading_label,l.occurrence_no,l.anchor_text,l.element_type,l.is_affiliate,
+          l.semantic_area,l.heading_label,l.occurrence_no,l.anchor_text,l.image_url,l.element_type,l.is_affiliate,
           SUM(s.clicks) AS clicks,SUM(s.unique_clicks) AS unique_clicks,SUM(s.sampled_impressions) AS sampled_impressions,
           SUM(s.sampled_clicks) AS sampled_clicks,SUM(s.weighted_impressions) AS weighted_impressions,SUM(s.weighted_clicks) AS weighted_clicks,
           SUM(s.weight_squared) AS weight_squared,SUM(s.arrivals) AS arrivals,SUM(s.engaged_arrivals) AS engaged_arrivals,
@@ -366,7 +366,7 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
       // 代表表示は1つの定義から取得し、複数行のラベル・URLを混ぜません。
       $sql = "SELECT grouped.*,representative.source_post_id,representative.destination_url,representative.destination_host,
         representative.destination_type,representative.target_post_id,representative.semantic_area,representative.heading_label,
-        representative.occurrence_no,representative.anchor_text,representative.element_type,representative.is_affiliate
+        representative.occurrence_no,representative.anchor_text,representative.image_url,representative.element_type,representative.is_affiliate
         FROM ({$aggregate_sql}) grouped INNER JOIN `" . CLICK_LINKS_TABLE_NAME . "` representative ON grouped.link_id=representative.id
         ORDER BY {$order} LIMIT %d OFFSET %d";
       $query_args = array_merge($base_args, array($args['per_page'], $offset));

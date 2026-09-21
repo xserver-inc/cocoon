@@ -5,47 +5,7 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( !function_exists( 'cocoon_click_percent' ) ):
-function cocoon_click_percent($value){
-  return cocoon_click_format_percent($value);
-}
-endif;
-
-if ( !function_exists( 'cocoon_click_sufficiency_label' ) ):
-function cocoon_click_sufficiency_label($row){
-  $labels = array();
-  if (in_array('effective_sample_size', $row['data_sufficiency_reasons'], true)) {
-    $labels[] = sprintf(__('有効標本数 %s / 100', THEME_NAME), number_format_i18n($row['effective_n'], 1));
-  }
-  if (in_array('sampled_clicks', $row['data_sufficiency_reasons'], true)) {
-    $labels[] = sprintf(__('サンプルクリック %s / 10', THEME_NAME), number_format_i18n($row['sampled_clicks']));
-  }
-  return implode('、', $labels);
-}
-endif;
-
-if ( !function_exists( 'cocoon_click_area_label' ) ):
-function cocoon_click_area_label($area){
-  $labels = array(
-    'content' => __('本文', THEME_NAME), 'toc' => __('目次', THEME_NAME), 'blogcard' => __('ブログカード', THEME_NAME),
-    'cta' => __('CTA', THEME_NAME), 'related' => __('関連記事', THEME_NAME), 'header' => __('ヘッダー', THEME_NAME),
-    'navi' => __('ナビ', THEME_NAME), 'sidebar' => __('サイドバー', THEME_NAME), 'footer' => __('フッター', THEME_NAME),
-    'mobile_menu' => __('モバイルメニュー', THEME_NAME), 'other' => __('その他', THEME_NAME),
-  );
-  return isset($labels[$area]) ? $labels[$area] : $area;
-}
-endif;
-
-if ( !function_exists( 'cocoon_click_type_label' ) ):
-function cocoon_click_type_label($type){
-  $labels = array(
-    'internal' => __('内部リンク', THEME_NAME), 'external' => __('外部・参考資料', THEME_NAME), 'affiliate' => __('アフィリエイト', THEME_NAME),
-    'official' => __('公式サイト', THEME_NAME), 'reference' => __('参考資料', THEME_NAME), 'social' => __('SNS', THEME_NAME), 'anchor' => __('ページ内リンク', THEME_NAME),
-    'download' => __('ダウンロード', THEME_NAME), 'mailto' => __('メール', THEME_NAME), 'tel' => __('電話', THEME_NAME), 'sms' => __('SMS', THEME_NAME),
-  );
-  return isset($labels[$type]) ? $labels[$type] : $type;
-}
-endif;
+require_once dirname(__FILE__) . '/render-func.php';
 
 if ( !function_exists( 'cocoon_click_render_subtabs' ) ):
 function cocoon_click_render_subtabs($current){
@@ -142,42 +102,6 @@ function cocoon_click_render_kpis($metrics, $previous = array()){
 }
 endif;
 
-if ( !function_exists( 'cocoon_click_render_link_title' ) ):
-function cocoon_click_render_link_title($row){
-  $label = $row['anchor_text'] !== '' ? $row['anchor_text'] : $row['destination_url'];
-  if ($row['is_affiliate']) $label .= ' [' . __('アフィリエイト', THEME_NAME) . ']';
-  return $label;
-}
-endif;
-
-if ( !function_exists( 'cocoon_click_render_links_table' ) ):
-function cocoon_click_render_links_table($result, $show_source = true){
-  if (!$result['rows']) {
-    echo '<div class="notice notice-info inline"><p>' . esc_html__('該当するクリックデータがありません。', THEME_NAME) . '</p></div>';
-    return;
-  }
-  ?>
-  <div class="cocoon-analytics-table-scroll"><table class="widefat striped cocoon-click-table">
-    <thead><tr>
-      <?php if ($show_source): ?><th><?php _e('クリック元', THEME_NAME); ?></th><?php endif; ?>
-      <th><?php _e('リンク', THEME_NAME); ?></th><th><?php _e('種別・位置', THEME_NAME); ?></th>
-      <th><?php _e('推定表示', THEME_NAME); ?></th><th><?php _e('クリック', THEME_NAME); ?></th><th><?php _e('日次ユニーク合計', THEME_NAME); ?></th>
-      <th><?php _e('推定CTR', THEME_NAME); ?></th><th><?php _e('到着率', THEME_NAME); ?></th><th><?php _e('エンゲージ率', THEME_NAME); ?></th><th><?php _e('平均クリック時間', THEME_NAME); ?></th>
-    </tr></thead><tbody>
-    <?php foreach ($result['rows'] as $row): ?>
-      <tr>
-        <?php if ($show_source): ?><td><?php if ((int) $row['source_post_id'] > 0): ?><a href="<?php echo esc_url(get_permalink($row['source_post_id'])); ?>" target="_blank" rel="noopener"><?php echo esc_html(cocoon_analytics_plain_title($row['source_post_id']) ?: '#' . $row['source_post_id']); ?></a><?php else: ?><?php esc_html_e('複数記事', THEME_NAME); ?><?php endif; ?></td><?php endif; ?>
-        <td><strong><?php echo esc_html(cocoon_click_render_link_title($row)); ?></strong><?php if (!empty($row['definition_count']) && $row['definition_count'] > 1): ?> <small><?php esc_html_e('代表リンク', THEME_NAME); ?></small><?php endif; ?><br><code><?php echo esc_html($row['destination_url']); ?></code><?php if ($row['heading_label'] !== ''): ?><br><small><?php echo esc_html($row['heading_label']); ?></small><?php endif; ?></td>
-        <td><span class="cocoon-click-badge"><?php echo esc_html(cocoon_click_type_label($row['destination_type'])); ?></span> <span class="cocoon-click-badge"><?php echo esc_html(cocoon_click_area_label($row['semantic_area'])); ?></span><br><small><?php echo esc_html($row['element_type'] . ' #' . ((int) $row['occurrence_no'] + 1)); ?></small></td>
-        <td><?php echo number_format_i18n($row['weighted_impressions']); ?></td><td><?php echo number_format_i18n($row['clicks']); ?></td><td><?php echo number_format_i18n($row['unique_clicks']); ?></td>
-        <td><?php echo esc_html(cocoon_click_percent($row['ctr'])); ?><?php if ($row['ctr_lower'] !== null): ?><br><small><?php printf(esc_html__('95%% CI %1$s〜%2$s / n=%3$s', THEME_NAME), esc_html(cocoon_click_percent($row['ctr_lower'])), esc_html(cocoon_click_percent($row['ctr_upper'])), esc_html(number_format_i18n($row['effective_n'], 1))); ?></small><?php endif; ?><?php if (!$row['data_sufficient']): ?><br><small><?php echo esc_html(cocoon_click_sufficiency_label($row)); ?></small><?php endif; ?></td>
-        <td><?php echo esc_html(cocoon_click_percent($row['arrival_rate'])); ?></td><td><?php echo esc_html(cocoon_click_percent($row['engagement_rate'])); ?></td><td><?php echo $row['average_time_to_click_ms'] === null ? '—' : esc_html(number_format_i18n($row['average_time_to_click_ms'] / 1000, 1) . __('秒', THEME_NAME)); ?></td>
-      </tr>
-    <?php endforeach; ?>
-    </tbody></table></div>
-  <?php
-}
-endif;
 
 if ( !function_exists( 'cocoon_click_render_pagination' ) ):
 function cocoon_click_render_pagination($result){

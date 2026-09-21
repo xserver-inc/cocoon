@@ -95,7 +95,37 @@
     return batches;
   }
 
+  // 表示中の画像と遅延読み込み画像からのプレビューURL取得
+  function imagePreviewUrl(image, base) {
+    if (!image) {return '';}
+    // HTTPの仮画像より、遅延読み込み属性の本画像を優先
+    const candidates = [image.getAttribute('data-src'), image.getAttribute('data-original'), image.getAttribute('data-lazy-src'), image.currentSrc, image.getAttribute('src')];
+    for (const candidate of candidates) {
+      if (!candidate || !String(candidate).trim()) {continue;}
+      try {
+        const url = new URL(candidate, base);
+        if (!/^https?:$/.test(url.protocol)) {continue;}
+        if (url.username || url.password) {return '';}
+        // 画像識別用のクエリを維持し、認証情報を含むURL全体を送信対象から除外
+        let decoded = url.href;
+        for (let depth = 0; depth < 4; depth += 1) {
+          if (/https?:\/\/[^/?#\s]*@/i.test(decoded)
+              || /[?&#;][^=&#;]*(?:token|auth|password|passwd|secret|signature|(?:^|[_-])sig|api[_-]?key|nonce|session|credential|email|x-amz-|x-goog-)[^=&#;]*=/i.test(decoded)
+              || /[?&#;](?:key|sig|sid|pass|code|mail|jwt)(?:\[[^\]]*\])?=/i.test(decoded)) {return '';}
+          // 不正なUTF-8が混在した場合も機密キーを見落とさないバイト単位の復号
+          const next = decoded.replace(/%([0-9a-f]{2})/gi, function (match, hex) {return String.fromCharCode(parseInt(hex, 16));});
+          if (next === decoded) {break;}
+          if (depth === 3) {return '';}
+          decoded = next;
+        }
+        if (url.href.length <= 2048) {return url.href;}
+      } catch (error) { /* 不正なURLを除外して次候補を確認 */ }
+    }
+    return '';
+  }
+
   const test = {
+    imagePreviewUrl: imagePreviewUrl,
     clamp: clamp,
     coordinateBasisPoints: coordinateBasisPoints,
     deviceType: deviceType,
@@ -289,6 +319,7 @@
       heading: headingFor(anchor),
       occurrence: occurrenceFor(anchor),
       element_type: element,
+      image_url: imagePreviewUrl(image, doc.baseURI),
       label: label,
       rel: anchor.getAttribute('rel') || '',
       target_blank: anchor.getAttribute('target') === '_blank',

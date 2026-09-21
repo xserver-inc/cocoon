@@ -20539,3 +20539,20 @@ msgstr "您沒有儲存顯示模式的權限。目前頁面的顯示保持不變
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "附加設定"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "詳細資訊"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "載入圖片"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "載入來源：%s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "無法載入圖片。"

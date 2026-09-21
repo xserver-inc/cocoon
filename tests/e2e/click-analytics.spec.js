@@ -14,7 +14,7 @@ function testHtml() {
       <a id="mail" href="mailto:test@example.com">メール</a>
       <a id="tel" href="tel:0312345678">電話</a>
       <div class="wp-block-button"><a id="button" href="https://outside.test/button" target="_blank">ボタン</a></div>
-      <div class="external-blogcard-wrap"><a id="blogcard" href="https://outside.test/card" target="_blank"><img alt="カード画像"></a></div>
+      <div class="external-blogcard-wrap"><a id="blogcard" href="https://outside.test/card" target="_blank"><img alt="カード画像" src="https://analytics.test/placeholder.png" data-src="https://analytics.test/card-thumb.png?id=123&amp;w=320&amp;h=180"></a></div>
       <blockquote><a id="reference" href="https://example.com/source" target="_blank">引用元</a></blockquote>
       <div id="target" style="margin-top:20px">到着点</div>
     </main>
@@ -107,6 +107,8 @@ test('通常・修飾・中クリックと各リンク形式を非同期送信�
   const clicks = events(payloads).filter((event) => event.type === 'click');
   expect(clicks.find((event) => event.href.includes('/button')).element_type).toBe('button');
   expect(clicks.find((event) => event.href.includes('/card')).element_type).toBe('blogcard');
+  expect(clicks.find((event) => event.href.includes('/card')).image_url).toBe('https://analytics.test/card-thumb.png?id=123&w=320&h=180');
+  expect(clicks.find((event) => event.href.includes('/card')).label).toBe('カード画像');
   expect(clicks.every((event) => Number.isInteger(event.x_bp) && Number.isInteger(event.y_bp))).toBeTruthy();
 });
 

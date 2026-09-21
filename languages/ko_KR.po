@@ -20698,3 +20698,33 @@ msgstr "표시 모드를 저장할 권한이 없습니다. 현재 화면 표시�
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "추가 설정"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "상세 정보"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "이미지 불러오기"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "불러올 위치: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "이미지를 불러오지 못했습니다."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "이미지 불러오기"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "불러올 위치: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "이미지를 불러오지 못했습니다."

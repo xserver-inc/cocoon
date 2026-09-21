@@ -20228,3 +20228,33 @@ msgstr ""
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr ""

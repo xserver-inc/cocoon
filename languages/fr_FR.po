@@ -22017,3 +22017,33 @@ msgstr "Vous n’avez pas l’autorisation d’enregistrer le mode d’affichage
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "Réglages supplémentaires"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Détails"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Charger l’image"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Source : %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Impossible de charger l’image."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Charger l’image"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Source : %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Impossible de charger l’image."

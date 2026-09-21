@@ -6,7 +6,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 global $wpdb;
-define('CLICK_ANALYTICS_TABLE_VERSION', '0.6.0');
+define('CLICK_ANALYTICS_TABLE_VERSION', '0.7.0');
 define('OP_CLICK_ANALYTICS_TABLE_VERSION', 'click_analytics_table_version');
 define('CLICK_LINKS_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_links');
 define('CLICK_STATS_DAILY_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_stats_daily');
@@ -57,6 +57,7 @@ function create_click_analytics_tables(){
     heading_label varchar(191) NOT NULL DEFAULT '',
     occurrence_no int(10) unsigned NOT NULL DEFAULT 0,
     anchor_text varchar(191) NOT NULL DEFAULT '',
+    image_url varchar(2048) NOT NULL DEFAULT '',
     element_type varchar(32) NOT NULL DEFAULT 'text',
     rel_flags varchar(191) NOT NULL DEFAULT '',
     target_blank tinyint(1) unsigned NOT NULL DEFAULT 0,

@@ -21773,3 +21773,33 @@ msgstr "Não tem permissão para guardar o modo de apresentação. A apresentaç
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "Definições adicionais"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Detalhes"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Carregar imagem"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Origem: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Não foi possível carregar a imagem."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Carregar imagem"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Origem: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Não foi possível carregar a imagem."

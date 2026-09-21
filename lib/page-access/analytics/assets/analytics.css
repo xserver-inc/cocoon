@@ -61,13 +61,147 @@
   white-space: nowrap;
 }
 
-.cocoon-click-table code {
-  display: inline-block;
-  max-width: 360px;
+.cocoon-click-table {
+  table-layout: fixed;
+  min-width: 1360px;
+}
+
+/* 数値比較に必要な幅を先に確保した列配分 */
+.cocoon-click-col-source { width: 14%; }
+.cocoon-click-col-link { width: 24%; }
+.cocoon-click-col-location { width: 12%; }
+.cocoon-click-col-impressions,
+.cocoon-click-col-clicks,
+.cocoon-click-col-arrival { width: 6%; }
+.cocoon-click-col-unique,
+.cocoon-click-col-ctr,
+.cocoon-click-col-engagement,
+.cocoon-click-col-time { width: 8%; }
+
+.cocoon-click-table-no-source .cocoon-click-col-link { width: 38%; }
+
+.cocoon-click-table th,
+.cocoon-click-table td {
+  padding: 12px 10px;
+  line-height: 1.5;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.cocoon-click-table th {
+  vertical-align: middle;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.cocoon-click-table th:not(.cocoon-click-cell-source, .cocoon-click-cell-link, .cocoon-click-cell-location),
+.cocoon-click-table .cocoon-click-number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cocoon-click-number { white-space: nowrap; }
+.cocoon-click-table tbody tr:hover { background: #f0f6fc; }
+
+.cocoon-click-link-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cocoon-click-image-consent {
+  flex: 0 1 150px;
+  min-width: 100px;
+}
+.cocoon-click-image-consent small {
+  display: block;
+  color: #646970;
+  font-size: 11px;
+}
+.cocoon-click-image-consent [hidden] { display: none; }
+
+/* 縦長・横長画像とも切り抜きなしの縮小表示 */
+.cocoon-click-thumbnail {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 64px;
+  max-height: 48px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.cocoon-click-link-caption,
+.cocoon-click-source-title,
+.cocoon-click-link-heading {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.cocoon-click-source-title { -webkit-line-clamp: 3; }
+.cocoon-click-cell-link:focus-within .cocoon-click-link-caption,
+.cocoon-click-cell-link:focus-within .cocoon-click-link-heading,
+.cocoon-click-source-title:focus { -webkit-line-clamp: unset; }
+
+.cocoon-click-table .cocoon-click-link-url {
+  display: block;
+  margin-top: 4px;
+  padding: 0;
+  background: transparent;
+  color: #50575e;
+  font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  vertical-align: bottom;
+}
+
+.cocoon-click-link-url:focus {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.cocoon-click-link-heading,
+.cocoon-click-link-note {
+  display: block;
+  margin-top: 4px;
+  color: #646970;
+}
+
+.cocoon-click-link-heading { display: -webkit-box; }
+.cocoon-click-link-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 5px; }
+.cocoon-click-link-badges .cocoon-click-badge { margin: 0; white-space: normal; }
+
+.cocoon-click-insufficient {
+  display: block;
+  color: #7a4900;
+  font-size: 11px;
+}
+
+.cocoon-click-stat-details {
+  margin-top: 3px;
+  white-space: normal;
+  font-size: 12px;
+}
+
+.cocoon-click-stat-details summary {
+  cursor: pointer;
+  color: #2271b1;
+}
+
+.cocoon-click-stat-details small {
+  display: block;
+  margin-top: 6px;
+  text-align: left;
+  color: #50575e;
+}
+
+.cocoon-click-table-scroll:focus-visible,
+.cocoon-click-table :focus-visible {
+  outline: 2px solid #2271b1;
+  outline-offset: -2px;
 }
 
 .cocoon-click-map-viewport {
@@ -140,9 +274,6 @@
     grid-template-columns: 1fr;
   }
 
-  .cocoon-click-table {
-    min-width: 980px;
-  }
 }
 
 .cocoon-analytics-heatmap-grid {

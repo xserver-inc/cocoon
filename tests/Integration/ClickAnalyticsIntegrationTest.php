@@ -388,6 +388,58 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         $this->assertSame(2, $result['rows'][0]['clicks']);
     }
 
+    public function testImagePreviewMigrationAndUpsertPreserveHistoricalLink(): void
+    {
+        global $wpdb;
+        $event = $this->clickEvent();
+        list($response, , $postId) = $this->receiveEvents(array($event), 'preview-legacy-0001', false);
+        $this->assertSame(204, $response->get_status());
+        $originalId = (int) $wpdb->get_var('SELECT id FROM `' . CLICK_LINKS_TABLE_NAME . '` LIMIT 1');
+
+        // 旧スキーマからの列追加と既存リンク・集計の維持
+        $wpdb->query('ALTER TABLE `' . CLICK_LINKS_TABLE_NAME . '` DROP COLUMN image_url');
+        create_click_analytics_tables();
+        $event['image_url'] = 'https://example.org/image.php?id=123&w=320';
+        list($response) = $this->receiveEvents(array($event), 'preview-image-0001', false, $postId);
+        $this->assertSame(204, $response->get_status());
+        unset($event['image_url']);
+        $this->receiveEvents(array($event), 'preview-old-client-0001', false, $postId);
+        $this->assertSame(1, (int) $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
+        $this->assertSame($originalId, (int) $wpdb->get_var('SELECT id FROM `' . CLICK_LINKS_TABLE_NAME . '` LIMIT 1'));
+
+        // 掲載箇所別とリンク先別の両方で同一画像を取得
+        foreach (array('occurrence', 'destination') as $group) {
+            cocoon_click_analytics_flush_cache();
+            $result = cocoon_click_analytics_links_table(current_time('Y-m-d'), current_time('Y-m-d'), array('group' => $group));
+            $this->assertCount(1, $result['rows']);
+            $this->assertSame('https://example.org/image.php?id=123&w=320', $result['rows'][0]['image_url']);
+            $this->assertSame(3, $result['rows'][0]['clicks']);
+        }
+    }
+
+    public function testAnonymousImageUrlsRequireManualLoadingAndSecretsAreNotStored(): void
+    {
+        global $wpdb;
+        require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/render-func.php';
+        $event = $this->clickEvent();
+        $event['image_url'] = 'https://collector.example.org/image.php?id=123';
+        list($response, , $postId) = $this->receiveEvents(array($event), 'unverified-image-0001', false);
+        $this->assertSame(204, $response->get_status());
+        $imageUrl = $wpdb->get_var('SELECT image_url FROM `' . CLICK_LINKS_TABLE_NAME . '` LIMIT 1');
+        $this->assertSame($event['image_url'], $imageUrl);
+        $this->assertFalse(cocoon_click_image_can_autoload($imageUrl));
+
+        $event['label'] = '機密画像';
+        $event['image_url'] = 'https://collector.example.org/image.php?id=123&token=private';
+        list($response) = $this->receiveEvents(array($event), 'secret-image-0001', false, $postId);
+        $this->assertSame(204, $response->get_status());
+        // 空文字をnullへ変換するget_varを避けた保存値の確認
+        $secretImage = $wpdb->get_row($wpdb->prepare('SELECT image_url FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE anchor_text=%s', '機密画像'), ARRAY_A);
+        $this->assertNotNull($secretImage);
+        $this->assertSame('', $secretImage['image_url']);
+        $this->assertTrue(cocoon_click_image_can_autoload(get_cocoon_template_directory_uri() . '/images/no-image-160.png'));
+    }
+
     public function testSchemaFailureDoesNotAdvanceVersion(): void
     {
         global $wpdb;

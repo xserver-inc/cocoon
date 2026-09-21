@@ -21555,3 +21555,33 @@ msgstr "You do not have permission to save the display mode. The current display
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "Additional settings"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Details"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Load image"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Source: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "The image could not be loaded."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Load image"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Source: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "The image could not be loaded."

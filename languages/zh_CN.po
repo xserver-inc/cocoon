@@ -20537,3 +20537,33 @@ msgstr "您没有保存显示模式的权限。当前页面的显示保持不变
 #: lib/admin.php:186
 msgid "追加の設定"
 msgstr "附加设置"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "详情"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "加载图片"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "加载来源：%s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "无法加载图片。"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "加载图片"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "加载来源：%s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "无法加载图片。"

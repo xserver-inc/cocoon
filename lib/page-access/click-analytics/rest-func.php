@@ -143,6 +143,7 @@ function cocoon_click_sanitize_link_event($event, $source_post_id, $source_url){
     'destination_url' => $destination['display'],
     'destination_host' => $destination['host'],
     'destination_type' => $destination['type'],
+    'image_url' => in_array($destination['type'], array('mailto', 'tel', 'sms'), true) ? '' : cocoon_click_sanitize_image_url(isset($event['image_url']) ? $event['image_url'] : ''),
     'target_post_id' => isset($destination['target_post_id']) ? (int) $destination['target_post_id'] : 0,
     'rel_flags' => implode(' ', $rel),
     'target_blank' => !empty($event['target_blank']) ? 1 : 0,
@@ -160,20 +161,20 @@ function cocoon_click_upsert_link_definitions($definitions, $now){
   $placeholders = array();
   $args = array();
   foreach ($definitions as $definition) {
-    $placeholders[] = '(%s,%s,%d,%s,%s,%s,%s,%d,%s,%s,%s,%d,%s,%s,%s,%d,%d,%s,%s)';
+    $placeholders[] = '(%s,%s,%d,%s,%s,%s,%s,%d,%s,%s,%s,%d,%s,%s,%s,%s,%d,%d,%s,%s)';
     array_push($args,
       $definition['link_key'], $definition['slot_key'], $definition['source_post_id'], $definition['destination_key'],
       $definition['destination_url'], $definition['destination_host'], $definition['destination_type'], $definition['target_post_id'],
       $definition['area'], $definition['heading_key'], $definition['heading_label'], $definition['occurrence'],
-      $definition['anchor_text'], $definition['element_type'], $definition['rel_flags'], $definition['target_blank'],
+      $definition['anchor_text'], isset($definition['image_url']) ? $definition['image_url'] : '', $definition['element_type'], $definition['rel_flags'], $definition['target_blank'],
       $definition['is_affiliate'], $now, $now
     );
   }
   // 1リンクずつSQLを実行せず、複数リンクを1回のINSERTへ集約
   $sql = 'INSERT INTO `' . CLICK_LINKS_TABLE_NAME . '` '
-    . '(link_key,slot_key,source_post_id,destination_key,destination_url,destination_host,destination_type,target_post_id,semantic_area,heading_key,heading_label,occurrence_no,anchor_text,element_type,rel_flags,target_blank,is_affiliate,first_seen_at,last_seen_at) VALUES '
+    . '(link_key,slot_key,source_post_id,destination_key,destination_url,destination_host,destination_type,target_post_id,semantic_area,heading_key,heading_label,occurrence_no,anchor_text,image_url,element_type,rel_flags,target_blank,is_affiliate,first_seen_at,last_seen_at) VALUES '
     . implode(',', $placeholders)
-    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),target_post_id=GREATEST(target_post_id,VALUES(target_post_id)),is_affiliate=GREATEST(is_affiliate,VALUES(is_affiliate))';
+    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),target_post_id=GREATEST(target_post_id,VALUES(target_post_id)),is_affiliate=GREATEST(is_affiliate,VALUES(is_affiliate)),image_url=IF(VALUES(image_url)<>\'\',VALUES(image_url),image_url)';
   if ($wpdb->query($wpdb->prepare($sql, $args)) === false) return false;
   $keys = array_column($definitions, 'link_key');
   $in = implode(',', array_fill(0, count($keys), '%s'));
