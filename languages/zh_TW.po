@@ -18165,8 +18165,8 @@ msgstr "為加快顯示，連結總數與頁數依首次及最後觀測日期估
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr "點擊分析目前已停用。可以查看歷史資料，但不會收集新資料。"
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
 msgstr "若要開始統計，請在「%s」分頁勾選「啟用點擊分析」，然後點擊「儲存變更」。"
@@ -19788,15 +19788,21 @@ msgid "設定メニューの表示"
 msgstr "設定選單顯示方式"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
 msgstr "無法儲存顯示模式。目前頁面的顯示保持不變，但可能不會保留到下次造訪。請檢查網路連線，並點選目前選取的顯示按鈕重試。"
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
 msgstr "顯示模式的儲存工作階段已過期。目前頁面的顯示保持不變，但不會保留到下次造訪。請先檢查正在編輯的設定，再重新載入頁面。"
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
 msgstr "儲存顯示模式逾時。目前頁面的顯示保持不變，但可能不會保留到下次造訪。請檢查網路連線，並點選目前選取的顯示按鈕重試。"
 
 #: lib/admin.php:174
@@ -20217,6 +20223,31 @@ msgstr "點擊分析資料庫更新失敗。請檢查資料庫權限與可用空
 msgid "リンク定義数の上限に達しました。"
 msgstr "連結定義數量已達上限。"
 
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "您沒有儲存顯示模式的權限。目前頁面的顯示保持不變，但不會保留到下次造訪。請聯絡網站管理員確認您的權限。"
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "附加設定"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "詳細資訊"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "載入圖片"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "載入來源：%s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "無法載入圖片。"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20531,28 +20562,3 @@ msgstr "在編輯器內搜尋並選擇樂天商品，插入靜態商品連結。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
-
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "您沒有儲存顯示模式的權限。目前頁面的顯示保持不變，但不會保留到下次造訪。請聯絡網站管理員確認您的權限。"
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "附加設定"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "詳細資訊"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "載入圖片"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "載入來源：%s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "無法載入圖片。"
