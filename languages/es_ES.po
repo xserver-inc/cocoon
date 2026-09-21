@@ -19445,11 +19445,13 @@ msgstr ""
 "El análisis de clics está desactivado. Puede consultar los datos "
 "históricos, pero no se recopilan datos nuevos."
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
-msgstr "Para iniciar el seguimiento, marque «Activar el análisis de clics» en la pestaña «%s» y haga clic en «Guardar cambios»."
+msgstr ""
+"Para iniciar el seguimiento, marque «Activar el análisis de clics» en la "
+"pestaña «%s» y haga clic en «Guardar cambios»."
 
 #: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
@@ -21185,16 +21187,33 @@ msgid "設定メニューの表示"
 msgstr "Visualización del menú de ajustes"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "No se pudo guardar el modo de visualización. La visualización actual se mantiene, pero es posible que no se conserve en futuras visitas. Comprueba la conexión y pulsa el botón de visualización seleccionado para volver a intentarlo."
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
+msgstr ""
+"No se pudo guardar el modo de visualización. La visualización actual se "
+"mantiene, pero es posible que no se conserve en futuras visitas. Comprueba "
+"la conexión y pulsa el botón de visualización seleccionado para volver a "
+"intentarlo."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
-msgstr "La sesión para guardar el modo de visualización ha caducado. La visualización actual se mantiene, pero no se conservará en futuras visitas. Revisa los ajustes que estás editando antes de recargar la página."
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
+msgstr ""
+"La sesión para guardar el modo de visualización ha caducado. La "
+"visualización actual se mantiene, pero no se conservará en futuras visitas. "
+"Revisa los ajustes que estás editando antes de recargar la página."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "Se agotó el tiempo de espera al guardar el modo de visualización. La visualización actual se mantiene, pero es posible que no se conserve en futuras visitas. Comprueba la conexión y pulsa el botón de visualización seleccionado para volver a intentarlo."
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
+msgstr ""
+"Se agotó el tiempo de espera al guardar el modo de visualización. La "
+"visualización actual se mantiene, pero es posible que no se conserve en "
+"futuras visitas. Comprueba la conexión y pulsa el botón de visualización "
+"seleccionado para volver a intentarlo."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21354,7 +21373,9 @@ msgstr "Activar el análisis de clics"
 
 #: lib/page-access/click-analytics/settings-form.php:13
 msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
-msgstr "Activado de forma predeterminada. Si se desactiva, permanecerá desactivado después de una actualización."
+msgstr ""
+"Activado de forma predeterminada. Si se desactiva, permanecerá desactivado "
+"después de una actualización."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"
@@ -21655,6 +21676,34 @@ msgstr ""
 
 msgid "リンク定義数の上限に達しました。"
 msgstr "Se ha alcanzado el límite de definiciones de enlaces."
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr ""
+"No tienes permiso para guardar el modo de visualización. La visualización "
+"actual se mantiene, pero no se conservará en futuras visitas. Consulta tus "
+"permisos con el administrador del sitio."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Ajustes adicionales"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Detalles"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Cargar imagen"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Origen: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "No se pudo cargar la imagen."
 
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
@@ -21977,31 +22026,6 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
 
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "No tienes permiso para guardar el modo de visualización. La visualización actual se mantiene, pero no se conservará en futuras visitas. Consulta tus permisos con el administrador del sitio."
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "Ajustes adicionales"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "Detalles"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Cargar imagen"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Origen: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "No se pudo cargar la imagen."
-
 #: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
 #, php-format
 msgid "%sクリック"
@@ -22015,16 +22039,3 @@ msgstr "Esta tasa de muestreo solo se aplica al registro de impresiones. Los cli
 #, php-format
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "Tasa de muestreo actual: %s%% (solo impresiones)"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Cargar imagen"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Origen: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "No se pudo cargar la imagen."

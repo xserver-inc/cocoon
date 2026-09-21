@@ -19434,11 +19434,13 @@ msgstr ""
 "Die Klickanalyse ist derzeit deaktiviert. Bisherige Daten sind verfügbar, "
 "neue Daten werden jedoch nicht erfasst."
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
-msgstr "Um die Erfassung zu starten, aktivieren Sie „Klickanalyse aktivieren“ im Tab „%s“ und klicken Sie auf „Änderungen speichern“."
+msgstr ""
+"Um die Erfassung zu starten, aktivieren Sie „Klickanalyse aktivieren“ im "
+"Tab „%s“ und klicken Sie auf „Änderungen speichern“."
 
 #: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
@@ -21194,16 +21196,33 @@ msgid "設定メニューの表示"
 msgstr "Anzeige des Einstellungsmenüs"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "Der Anzeigemodus konnte nicht gespeichert werden. Die aktuelle Anzeige bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch die ausgewählte Anzeigetaste."
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
+msgstr ""
+"Der Anzeigemodus konnte nicht gespeichert werden. Die aktuelle Anzeige "
+"bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht "
+"übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch "
+"die ausgewählte Anzeigetaste."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
-msgstr "Die Sitzung zum Speichern des Anzeigemodus ist abgelaufen. Die aktuelle Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre laufenden Änderungen, bevor Sie die Seite neu laden."
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
+msgstr ""
+"Die Sitzung zum Speichern des Anzeigemodus ist abgelaufen. Die aktuelle "
+"Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. "
+"Prüfen Sie Ihre laufenden Änderungen, bevor Sie die Seite neu laden."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "Zeitüberschreitung beim Speichern des Anzeigemodus. Die aktuelle Anzeige bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch die ausgewählte Anzeigetaste."
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
+msgstr ""
+"Zeitüberschreitung beim Speichern des Anzeigemodus. Die aktuelle Anzeige "
+"bleibt erhalten, wird aber möglicherweise bei künftigen Besuchen nicht "
+"übernommen. Prüfen Sie Ihre Verbindung und drücken Sie zum erneuten Versuch "
+"die ausgewählte Anzeigetaste."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21364,7 +21383,9 @@ msgstr "Klickanalyse aktivieren"
 
 #: lib/page-access/click-analytics/settings-form.php:13
 msgid "初期設定では有効です。無効にした設定はアップデート後も維持されます。"
-msgstr "Standardmäßig aktiviert. Eine deaktivierte Einstellung bleibt auch nach einem Update erhalten."
+msgstr ""
+"Standardmäßig aktiviert. Eine deaktivierte Einstellung bleibt auch nach "
+"einem Update erhalten."
 
 #: lib/page-access/click-analytics/settings-form.php:14
 msgid "計測対象"
@@ -21668,6 +21689,35 @@ msgstr ""
 
 msgid "リンク定義数の上限に達しました。"
 msgstr "Die maximale Anzahl an Linkdefinitionen wurde erreicht."
+
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr ""
+"Sie haben keine Berechtigung, den Anzeigemodus zu speichern. Die aktuelle "
+"Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. "
+"Wenden Sie sich zur Prüfung Ihrer Berechtigungen an die "
+"Website-Administration."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Zusätzliche Einstellungen"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Details"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Bild laden"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Quelle: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "Das Bild konnte nicht geladen werden."
 
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
@@ -21990,31 +22040,6 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j.n."
 
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "Sie haben keine Berechtigung, den Anzeigemodus zu speichern. Die aktuelle Anzeige bleibt erhalten, wird aber bei künftigen Besuchen nicht übernommen. Wenden Sie sich zur Prüfung Ihrer Berechtigungen an die Website-Administration."
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "Zusätzliche Einstellungen"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "Details"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Bild laden"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Quelle: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "Das Bild konnte nicht geladen werden."
-
 #: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
 #, php-format
 msgid "%sクリック"
@@ -22028,16 +22053,3 @@ msgstr "Diese Stichprobenrate gilt nur für die Erfassung von Impressionen. Klic
 #, php-format
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "Aktuelle Stichprobenrate: %s%% (nur Impressionen)"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Bild laden"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Quelle: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "Das Bild konnte nicht geladen werden."

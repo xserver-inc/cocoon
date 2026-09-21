@@ -19043,11 +19043,13 @@ msgstr ""
 "Click analytics is currently disabled. Historical data is available, but "
 "new data is not collected."
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
-msgstr "To start tracking, select “Enable click analytics” in the %s tab and click “Save Changes”."
+msgstr ""
+"To start tracking, select “Enable click analytics” in the %s tab and click "
+"“Save Changes”."
 
 #: lib/page-access/click-analytics/dashboard.php:226
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
@@ -20761,16 +20763,31 @@ msgid "設定メニューの表示"
 msgstr "Settings menu display"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "The display mode could not be saved. The current display is preserved, but it may not carry over to future visits. Check your connection and press the selected display button to try again."
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
+msgstr ""
+"The display mode could not be saved. The current display is preserved, but "
+"it may not carry over to future visits. Check your connection and press the "
+"selected display button to try again."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
-msgstr "The display mode save session has expired. The current display is preserved, but it will not carry over to future visits. Review any settings you are editing before reloading the page."
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
+msgstr ""
+"The display mode save session has expired. The current display is "
+"preserved, but it will not carry over to future visits. Review any settings "
+"you are editing before reloading the page."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "Saving the display mode timed out. The current display is preserved, but it may not carry over to future visits. Check your connection and press the selected display button to try again."
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
+msgstr ""
+"Saving the display mode timed out. The current display is preserved, but it "
+"may not carry over to future visits. Check your connection and press the "
+"selected display button to try again."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -21227,6 +21244,34 @@ msgstr ""
 msgid "リンク定義数の上限に達しました。"
 msgstr "The maximum number of link definitions has been reached."
 
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr ""
+"You do not have permission to save the display mode. The current display is "
+"preserved, but it will not carry over to future visits. Contact the site "
+"administrator to check your permissions."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "Additional settings"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "Details"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "Load image"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "Source: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "The image could not be loaded."
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -21548,31 +21593,6 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
 
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "You do not have permission to save the display mode. The current display is preserved, but it will not carry over to future visits. Contact the site administrator to check your permissions."
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "Additional settings"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "Details"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Load image"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Source: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "The image could not be loaded."
-
 #: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
 #, php-format
 msgid "%sクリック"
@@ -21586,16 +21606,3 @@ msgstr "This sampling rate applies only to impression tracking. All clicks are a
 #, php-format
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "Current sampling rate: %s%% (impression tracking only)"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "Load image"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "Source: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "The image could not be loaded."

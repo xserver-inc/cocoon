@@ -18302,8 +18302,8 @@ msgstr "빠른 표시를 위해 링크 및 페이지 수는 최초·최종 관�
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr "클릭 분석이 비활성화되어 있습니다. 과거 데이터는 볼 수 있지만 새 데이터는 수집되지 않습니다."
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
 msgstr "측정을 시작하려면 “%s” 탭에서 “클릭 분석 활성화”를 선택하고 “변경사항 저장”을 클릭하세요."
@@ -19943,16 +19943,28 @@ msgid "設定メニューの表示"
 msgstr "설정 메뉴 표시"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "표시 모드를 저장하지 못했습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않을 수 있습니다. 연결 상태를 확인하고 선택된 표시 버튼을 눌러 다시 시도하세요."
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
+msgstr ""
+"표시 모드를 저장하지 못했습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않을 수 있습니다. 연결 상태를 확인하고 "
+"선택된 표시 버튼을 눌러 다시 시도하세요."
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
-msgstr "표시 모드 저장 세션이 만료되었습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않습니다. 입력 중인 설정을 확인한 후 페이지를 새로고침하세요."
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
+msgstr ""
+"표시 모드 저장 세션이 만료되었습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않습니다. 입력 중인 설정을 확인한 후 "
+"페이지를 새로고침하세요."
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
-msgstr "표시 모드 저장 시간이 초과되었습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않을 수 있습니다. 연결 상태를 확인하고 선택된 표시 버튼을 눌러 다시 시도하세요."
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
+msgstr ""
+"표시 모드 저장 시간이 초과되었습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않을 수 있습니다. 연결 상태를 확인하고 "
+"선택된 표시 버튼을 눌러 다시 시도하세요."
 
 #: lib/admin.php:174
 msgid "Cocoon設定項目"
@@ -20376,6 +20388,33 @@ msgstr "클릭 분석 데이터베이스 갱신에 실패했습니다. 데이터
 msgid "リンク定義数の上限に達しました。"
 msgstr "링크 정의 수가 한도에 도달했습니다."
 
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr ""
+"표시 모드를 저장할 권한이 없습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않습니다. 사이트 관리자에게 권한을 "
+"확인하세요."
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "추가 설정"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "상세 정보"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "이미지 불러오기"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "불러올 위치: %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "이미지를 불러오지 못했습니다."
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20691,31 +20730,6 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n.j"
 
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "표시 모드를 저장할 권한이 없습니다. 현재 화면 표시는 유지되지만 다음 방문 시에는 적용되지 않습니다. 사이트 관리자에게 권한을 확인하세요."
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "추가 설정"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "상세 정보"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "이미지 불러오기"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "불러올 위치: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "이미지를 불러오지 못했습니다."
-
 #: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
 #, php-format
 msgid "%sクリック"
@@ -20729,16 +20743,3 @@ msgstr "노출수 측정에만 적용되는 샘플링 비율입니다. 클릭은
 #, php-format
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "현재 샘플링 비율: %s%% (노출수 측정만)"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "이미지 불러오기"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "불러올 위치: %s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "이미지를 불러오지 못했습니다."

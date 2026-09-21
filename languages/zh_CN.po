@@ -18163,8 +18163,8 @@ msgstr "为加快显示，链接总数和页数根据首次及最后观测日期
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr "点击分析当前已禁用。可以查看历史数据，但不会收集新数据。"
 
-#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #: lib/page-access/click-analytics/dashboard.php:220
+#. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
 msgstr "要开始统计，请在“%s”选项卡中勾选“启用点击分析”，然后点击“保存更改”。"
@@ -19786,15 +19786,21 @@ msgid "設定メニューの表示"
 msgstr "设置菜单显示方式"
 
 #: lib/admin.php:171
-msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgid ""
+"表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して"
+"再試行してください。"
 msgstr "无法保存显示模式。当前页面的显示保持不变，但可能不会保留到下次访问。请检查网络连接，并点击当前选中的显示按钮重试。"
 
 #: lib/admin.php:172
-msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
+msgid ""
+"表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてくださ"
+"い。"
 msgstr "显示模式的保存会话已过期。当前页面的显示保持不变，但不会保留到下次访问。请先检查正在编辑的设置，再重新加载页面。"
 
 #: lib/admin.php:173
-msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
+msgid ""
+"表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを"
+"押して再試行してください。"
 msgstr "保存显示模式超时。当前页面的显示保持不变，但可能不会保留到下次访问。请检查网络连接，并点击当前选中的显示按钮重试。"
 
 #: lib/admin.php:174
@@ -20215,6 +20221,31 @@ msgstr "点击分析数据库更新失败。请检查数据库权限和可用空
 msgid "リンク定義数の上限に達しました。"
 msgstr "链接定义数量已达到上限。"
 
+#: lib/admin.php:178
+msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
+msgstr "您没有保存显示模式的权限。当前页面的显示保持不变，但不会保留到下次访问。请联系网站管理员确认您的权限。"
+
+#: lib/admin.php:186
+msgid "追加の設定"
+msgstr "附加设置"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "詳細"
+msgstr "详情"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込む"
+msgstr "加载图片"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "読み込み先: %s"
+msgstr "加载来源：%s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "画像を読み込めませんでした。"
+msgstr "无法加载图片。"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20530,31 +20561,6 @@ msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n-j"
 
-#: lib/admin.php:178
-msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
-msgstr "您没有保存显示模式的权限。当前页面的显示保持不变，但不会保留到下次访问。请联系网站管理员确认您的权限。"
-
-#: lib/admin.php:186
-msgid "追加の設定"
-msgstr "附加设置"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "詳細"
-msgstr "详情"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "加载图片"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "加载来源：%s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "无法加载图片。"
-
 #: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
 #, php-format
 msgid "%sクリック"
@@ -20568,16 +20574,3 @@ msgstr "此采样率仅用于展示次数统计。无论是否采样，始终记
 #, php-format
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "当前采样率：%s%%（仅展示次数统计）"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込む"
-msgstr "加载图片"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "読み込み先: %s"
-msgstr "加载来源：%s"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "画像を読み込めませんでした。"
-msgstr "无法加载图片。"
