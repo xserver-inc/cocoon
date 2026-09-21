@@ -20246,6 +20246,20 @@ msgstr ""
 msgid "画像を読み込めませんでした。"
 msgstr ""
 
+#: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
+#, php-format
+msgid "%sクリック"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "表示回数の計測にだけ適用される抽出率です。クリックは抽出にかかわらず常に全数を記録します。直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%（表示計測のみ）"
+msgstr ""
+
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr ""

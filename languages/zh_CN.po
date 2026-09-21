@@ -20555,6 +20555,20 @@ msgstr "加载来源：%s"
 msgid "画像を読み込めませんでした。"
 msgstr "无法加载图片。"
 
+#: lib/page-access/click-analytics/dashboard.php:124 lib/page-access/click-analytics/dashboard.php:244
+#, php-format
+msgid "%sクリック"
+msgstr "%s 次点击"
+
+#: lib/page-access/click-analytics/settings-form.php:29
+msgid "表示回数の計測にだけ適用される抽出率です。クリックは抽出にかかわらず常に全数を記録します。直近7日間の規模に応じて100%、20%、5%、1%へ毎日自動調整します。データ不足時は10%です。"
+msgstr "此采样率仅用于展示次数统计。无论是否采样，始终记录全部点击。每天根据最近7天的规模自动调整为100%、20%、5%或1%。数据不足时为10%。"
+
+#: lib/page-access/click-analytics/settings-form.php:39
+#, php-format
+msgid "現在のサンプリング率: %s%%（表示計測のみ）"
+msgstr "当前采样率：%s%%（仅展示次数统计）"
+
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "加载图片"
