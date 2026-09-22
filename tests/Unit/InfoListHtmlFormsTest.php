@@ -7,6 +7,7 @@ namespace Cocoon\Tests\Unit;
 
 use Brain\Monkey\Functions;
 use Cocoon\Tests\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
@@ -191,6 +192,70 @@ final class InfoListHtmlFormsTest extends TestCase
         $this->assertTrue($loaded);
 
         return new \DOMXPath($document);
+    }
+
+    // キャプションと記事群の分離、およびクラス名の部分一致による誤判定の防止
+    private function assertInfoListStructure(string $output, int $count, bool $has_caption): void
+    {
+        $xpath = $this->createXPath($output);
+        $list = '//div[contains(concat(" ", normalize-space(@class), " "), " info-list ")]';
+        $items = 'div[contains(concat(" ", normalize-space(@class), " "), " info-list-item ")]';
+        $wrapper = $list . '/div[@class="info-list-items"]';
+        $expected_wrappers = $count > 0 ? 1 : 0;
+
+        $this->assertSame(1, (int) $xpath->evaluate('count(' . $list . ')'));
+        $this->assertSame($expected_wrappers, (int) $xpath->evaluate('count(' . $wrapper . ')'));
+        $this->assertSame($expected_wrappers, (int) $xpath->evaluate('count(//div[@class="info-list-items"])'));
+        $this->assertSame($count, (int) $xpath->evaluate('count(' . $wrapper . '/' . $items . ')'));
+        $this->assertSame($count, (int) $xpath->evaluate('count(//' . $items . ')'));
+        $this->assertSame((int) $has_caption, (int) $xpath->evaluate('count(//div[@class="info-list-caption"])'));
+        $this->assertSame(
+            (int) $has_caption,
+            (int) $xpath->evaluate('count(' . $list . '/div[@class="info-list-caption"][following-sibling::div[@class="info-list-items"]])')
+        );
+        $this->assertSame($has_caption ? 2 : 1, (int) $xpath->evaluate('count(' . $list . '/*)'));
+    }
+
+    public static function infoListStructureCases(): iterable
+    {
+        foreach ([0, 1, 3] as $count) {
+            foreach (['', '<b>新着 & 情報</b>'] as $caption) {
+                foreach ([0, 1] as $frame) {
+                    foreach ([0, 1] as $divider) {
+                        yield sprintf('%d件・見出し%d・枠%d・区切り%d', $count, (int) ($caption !== ''), $frame, $divider)
+                            => [$count, $caption, $frame, $divider];
+                    }
+                }
+            }
+        }
+    }
+
+    #[DataProvider('infoListStructureCases')]
+    public function test_generate_info_list_tag_記事群のみを単一の親要素で包む(int $count, string $caption, int $frame, int $divider): void
+    {
+        for ($id = 1; $id <= $count; $id++) {
+            InfoListWpQueryStub::$test_posts[] = (object) ['ID' => $id];
+        }
+        $this->expectPostdataReset();
+
+        $output = $this->renderInfoList([
+            'caption' => $caption,
+            'frame' => $frame,
+            'divider' => $divider,
+        ]);
+
+        $has_caption = $count > 0 && $caption !== '';
+        $this->assertInfoListStructure($output, $count, $has_caption);
+        $this->assertSame($count > 0 && (bool) $frame, str_contains($output, 'is-style-frame-border'));
+        $this->assertSame($count > 0 && (bool) $divider, str_contains($output, 'is-style-divider-line'));
+        if ($has_caption) {
+            $this->assertStringContainsString(esc_html($caption), $output);
+            $this->assertStringNotContainsString($caption, $output);
+        }
+        if ($count === 0) {
+            $this->assertStringContainsString('info-list-empty-message', $output);
+            $this->assertStringContainsString('is-empty', $output);
+        }
     }
 
     public function test_generate_info_list_tag_記事がある場合は表示用クラスを出力する(): void
@@ -378,6 +443,7 @@ final class InfoListHtmlFormsTest extends TestCase
 
         $output = get_info_list_shortcode([]);
 
+        $this->assertInfoListStructure($output, 1, true);
         $this->assertSame(5, InfoListWpQueryStub::$last_query_args['posts_per_page']);
         $this->assertSame([], InfoListWpQueryStub::$last_query_args['cat']);
         $this->assertSame('post', InfoListWpQueryStub::$last_query_args['post_type']);
@@ -400,6 +466,7 @@ final class InfoListHtmlFormsTest extends TestCase
             'caption' => '',
         ]);
 
+        $this->assertInfoListStructure($output, 1, false);
         $this->assertSame('book', InfoListWpQueryStub::$last_query_args['post_type']);
         $this->assertArrayNotHasKey('cat', InfoListWpQueryStub::$last_query_args);
         $this->assertSame(
@@ -450,6 +517,7 @@ final class InfoListHtmlFormsTest extends TestCase
         );
         $output = ob_get_clean();
 
+        $this->assertInfoListStructure($output, 1, false);
         $this->assertSame(4, InfoListWpQueryStub::$last_query_args['posts_per_page']);
         $this->assertSame('3,5', InfoListWpQueryStub::$last_query_args['cat']);
         $this->assertSame('post', InfoListWpQueryStub::$last_query_args['post_type']);
@@ -481,6 +549,7 @@ final class InfoListHtmlFormsTest extends TestCase
         );
 
         $this->assertSame(6, InfoListWpQueryStub::$last_query_args['posts_per_page']);
+        $this->assertInfoListStructure($output, 1, false);
         $this->assertSame('2,9', InfoListWpQueryStub::$last_query_args['cat']);
         $this->assertSame('post', InfoListWpQueryStub::$last_query_args['post_type']);
         $this->assertStringContainsString('class="info-list-box&quot; onmouseover=&quot;alert(1)"', $output);

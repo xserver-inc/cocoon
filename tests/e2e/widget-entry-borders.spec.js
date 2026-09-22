@@ -68,22 +68,54 @@ for (const skin of skinNames) {
   }
 }
 
-test('新着情報も1件は線なし、複数件は項目間のみで外枠は維持', async ({page}) => {
-  await page.route('**/*', route => route.abort());
-  for (const count of [1, 2, 5]) {
-    await page.setContent(`<style>${themeCss}</style><div class="info-list is-style-divider-line is-style-frame-border"><div class="info-list-caption">新着情報</div>${'<div class="info-list-item">記事</div>'.repeat(count)}</div>`);
-    const borders = await page.locator('.info-list-item').evaluateAll(items => items.map(item => {
-      const css = getComputedStyle(item);
-      return {top: parseFloat(css.borderTopWidth), bottom: parseFloat(css.borderBottomWidth)};
+for (const width of [1280, 390]) {
+  test(`新着情報の親要素追加後も区切り線・外枠・余白を維持 幅${width}`, async ({page}) => {
+    await page.setViewportSize({width, height: 900});
+    await page.route('**/*', route => route.abort());
+    const cases = [];
+    for (const count of [0, 1, 2, 5]) {
+      for (const caption of [false, true]) {
+        for (const frame of [false, true]) {
+          for (const divider of [false, true]) {
+            cases.push({count, caption, frame, divider});
+          }
+        }
+      }
+    }
+    // 実際の項目内構造に合わせた新旧HTMLの比較用フィクスチャー
+    const content = wrapped => `<style>${themeCss}</style>${cases.map(({count, caption, frame, divider}, id) => {
+      const items = Array.from({length: count}, (_, index) => `<div class="info-list-item"><div class="info-list-item-content"><a class="info-list-item-content-link" href="#item-${index}">折り返しを含む新着情報の記事タイトル ${index + 1}</a></div><div class="info-list-item-meta"><span class="info-list-item-date">2026/09/22</span></div></div>`).join('');
+      const children = count ? `${caption ? '<div class="info-list-caption">新着情報</div>' : ''}${wrapped ? `<div class="info-list-items">${items}</div>` : items}` : '<p class="info-list-empty-message">記事は見つかりませんでした。</p>';
+      return `<div data-case="${id}" class="info-list${count ? `${frame ? ' is-style-frame-border' : ''}${divider ? ' is-style-divider-line' : ''}` : ' is-empty'}">${children}</div>`;
+    }).join('')}`;
+    const measure = () => page.locator('[data-case]').evaluateAll(lists => lists.map(list => {
+      const box = list.getBoundingClientRect();
+      const css = getComputedStyle(list);
+      return {
+        width: box.width, height: box.height,
+        frame: [parseFloat(css.borderTopWidth), parseFloat(css.borderBottomWidth)],
+        items: Array.from(list.querySelectorAll('.info-list-item'), item => {
+          const rect = item.getBoundingClientRect();
+          const style = getComputedStyle(item);
+          return {x: rect.left - box.left, y: rect.top - box.top, width: rect.width, height: rect.height, top: parseFloat(style.borderTopWidth), bottom: parseFloat(style.borderBottomWidth)};
+        })
+      };
     }));
-    borders.forEach((border, index) => {
-      expect(border.top).toBe(0);
-      expect(border.bottom).toBe(index < count - 1 ? 1 : 0);
-    });
-    await expect(page.locator('.info-list')).toHaveCSS('border-top-width', '1px');
-    await expect(page.locator('.info-list')).toHaveCSS('border-bottom-width', '1px');
-  }
-});
+    await page.setContent(content(false));
+    const before = await measure();
+    await page.setContent(content(true));
+    const after = await measure();
+    // 一括比較による外観維持と、1件・複数件・空状態の区切り線仕様の検証
+    expect(after).toEqual(before);
+    expect(after.map(({frame, items}) => ({frame, borders: items.map(({top, bottom}) => ({top, bottom}))}))).toEqual(cases.map(({count, frame, divider}) => ({
+      frame: [count && frame ? 1 : 0, count && frame ? 1 : 0],
+      borders: Array.from({length: count}, (_, index) => ({top: 0, bottom: divider && index < count - 1 ? 1 : 0}))
+    })));
+    await expect(page.locator('.info-list > .info-list-items')).toHaveCount(cases.filter(({count}) => count > 0).length);
+    await expect(page.locator('.info-list-items > .info-list-item')).toHaveCount(cases.reduce((total, {count}) => total + count, 0));
+    await expect(page.locator('.info-list-items .info-list-caption')).toHaveCount(0);
+  });
+}
 
 test('Dockerの実際のブロック描画とフロント用CSSで新着記事・新着情報を確認', async ({page}, testInfo) => {
   const base = process.env.COCOON_TEST_URL;
@@ -133,6 +165,12 @@ test('Dockerの実際のブロック描画とフロント用CSSで新着記事�
       if (count === 1) {expect(actualCount).toBe(1);}
       else {expect(actualCount).toBeGreaterThan(1);}
       expect(actualCount).toBeLessThanOrEqual(count);
+      if (block === 'info-list') {
+        const list = page.locator(`[data-preview="${block}-${count}"] .info-list`);
+        await expect(list.locator(':scope > .info-list-items')).toHaveCount(1);
+        await expect(list.locator(':scope > .info-list-items > .info-list-item')).toHaveCount(actualCount);
+        await expect(list.locator('.info-list-items .info-list-caption')).toHaveCount(0);
+      }
       const borders = await items.evaluateAll(elements => elements.map(element => {
         const css = getComputedStyle(element);
         return {top: parseFloat(css.borderTopWidth), bottom: parseFloat(css.borderBottomWidth)};

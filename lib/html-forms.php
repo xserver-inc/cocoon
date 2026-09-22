@@ -1760,7 +1760,7 @@ function get_navi_card_wrap_tag($atts){
 }
 endif;
 
-//新着記事生成タグ
+//新着情報生成タグ
 if ( !function_exists( 'generate_info_list_tag' ) ):
 function generate_info_list_tag($atts){
   extract(shortcode_atts(array(
@@ -1833,25 +1833,27 @@ function generate_info_list_tag($atts){
       <?php if ($caption): ?>
         <div class="info-list-caption"><?php echo esc_html($caption); ?></div>
       <?php endif; ?>
-      <?php while ($query->have_posts()) : $query->the_post();
-        $date = get_the_time(get_site_date_format());
-        $update_date = get_update_time(get_site_date_format());
-        if ($modified && $update_date) {
-          $date = $update_date;
-        }
-      ?>
-        <div <?php post_class('info-list-item'); ?>>
-          <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
-          <?php do_action('info_list_item_meta_before'); ?>
-          <div class="info-list-item-meta">
-            <span class="info-list-item-date"><?php echo $date; ?></span>
-            <?php if ($comment): ?>
-              <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
-            <?php endif; ?>
-            <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
+      <div class="info-list-items">
+        <?php while ($query->have_posts()) : $query->the_post();
+          $date = get_the_time(get_site_date_format());
+          $update_date = get_update_time(get_site_date_format());
+          if ($modified && $update_date) {
+            $date = $update_date;
+          }
+        ?>
+          <div <?php post_class('info-list-item'); ?>>
+            <div class="info-list-item-content"><a href="<?php the_permalink(); ?>" class="info-list-item-content-link"><?php echo escape_shortcodes(get_the_title());?></a></div>
+            <?php do_action('info_list_item_meta_before'); ?>
+            <div class="info-list-item-meta">
+              <span class="info-list-item-date"><?php echo $date; ?></span>
+              <?php if ($comment): ?>
+                <span class="info-list-item-comment post-comment-count"><span class="fa fa-comment-o comment-icon" aria-hidden="true"></span><?php echo get_comments_number(); ?></span>
+              <?php endif; ?>
+              <span class="info-list-item-categorys"><?php the_nolink_categories() ?></span>
+            </div>
           </div>
-        </div>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
+      </div>
   <?php else :
     echo '<p class="info-list-empty-message">' . esc_html( __( '記事は見つかりませんでした。', THEME_NAME ) ) . '</p>';
   endif; ?>
