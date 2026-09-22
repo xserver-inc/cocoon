@@ -426,6 +426,11 @@ div#pager-post-navi{
 .is-dark-on select{
   color: #d1d1d1;
 }
+/* 明るい背景を持つ曜日・当日セルの文字色の固定と、ブロックの独自配色の維持 */
+.wp-calendar-table:not(.has-text-color):not(.has-background) th,
+.wp-calendar-table [id$="today"]{
+  color: #333;
+}
 /* DEBUG: ダーク */
 .is-dark-on .common-icon-box, .is-dark-on .box-menu, .is-dark-on input,
 .is-dark-on .toc, .is-dark-on .recent-comment-content,

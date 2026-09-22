@@ -83,7 +83,9 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   color:'.$color.';
   background-color: white;
 }
+/* 新着情報と独自配色のないカレンダーへの設定文字色の反映 */
 .content, .blogcard-label, .entry-card, .related-entry-card, .blogcard, .widget-entry-cards .a-wrap,
+.info-list-item-content-link, .info-list-item-content-link:hover, .wp-calendar-table:not(.has-text-color):not(.has-background),
 .post-navi-square.post-navi-border a, .index-tab-buttons .index-tab-button, .pager-post-navi a, .sidebar h2, .sidebar h3,
 .widget_recent_entries ul li a, .widget_categories ul li a, .widget_archive ul li a, .widget_pages ul li a, .widget_meta ul li a, .widget_rss ul li a, .widget_nav_menu ul li a,
 .recent-comment, .list-more-button, .menu-drawer a, .slick-initialized .slick-slide, .pager-post-navi a div, .menu-content, .is-dark-on .search-form div.sbtn::after{

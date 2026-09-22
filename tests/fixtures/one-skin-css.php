@@ -14,7 +14,7 @@ function add_action($tag, $callback, $priority = 10, $accepted_args = 1) {
   return true;
 }
 
-function get_site_background_color() { return ''; }
+function get_site_background_color() { return $GLOBALS['one_test_background'] ?? ''; }
 function get_site_key_color() { return ''; }
 function get_site_key_text_color() { return ''; }
 function get_site_text_color() { return $GLOBALS['one_test_color']; }
@@ -27,7 +27,13 @@ require ABSPATH . 'skins/one/functions.php';
 ob_end_clean();
 
 $styles = [];
-foreach (['default' => '', 'custom' => '#123456', 'light-text' => '#f4eedd'] as $name => $color) {
+// 既存の線色検証を保った、文字色と背景色の組み合わせの追加指定
+$colors = ['default' => '', 'custom' => '#123456', 'light-text' => '#f4eedd'];
+if (isset($argv[1])) {
+  $colors = ['requested' => $argv[1]];
+  $GLOBALS['one_test_background'] = $argv[2] ?? '';
+}
+foreach ($colors as $name => $color) {
   $GLOBALS['one_test_color'] = $color;
   ob_start();
   $GLOBALS['one_css_callback']();
