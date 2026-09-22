@@ -584,7 +584,8 @@ endif;
 //子テーマのjavascript.jsの読み込み
 if ( !function_exists( 'wp_enqueue_script_theme_child_js' ) ):
 function wp_enqueue_script_theme_child_js(){
-  if (is_child_theme()) {
+  // 子テーマに実ファイルがある場合だけの読み込み
+  if (is_child_theme() && is_file(get_cocoon_stylesheet_directory() . '/javascript.js')) {
     wp_enqueue_script( THEME_CHILD_JS, THEME_CHILD_JS_URL, array( 'jquery', THEME_JS ), false, true );
   }
 }
