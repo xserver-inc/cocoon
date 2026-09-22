@@ -6,12 +6,13 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if ( !function_exists( 'cocoon_click_render_pagination' ) ):
-function cocoon_click_render_pagination($result){
+function cocoon_click_render_pagination($result, $sort = array()){
   $pages = (int) ceil($result['total'] / max(1, $result['per_page']));
   if (!empty($result['total_is_estimate'])) echo '<p class="description">' . esc_html__('高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。', THEME_NAME) . '</p>';
   if ($pages <= 1) return;
   // リスト全体への番号ボタン用スタイルの適用を避けるリンク単位の取得
-  $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'array'));
+  $fragment = $sort ? '#cocoon-click-sort-' . cocoon_click_table_sort_args($sort)['order'] : '#cocoon-click-links';
+  $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'array', 'add_fragment' => $fragment));
   if ($links) echo '<div class="tablenav bottom cocoon-click-pagination"><div class="tablenav-pages"><span class="pagination-links">' . implode("\n", $links) . '</span></div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 endif;
@@ -141,11 +142,29 @@ function cocoon_click_render_ctr_details($row, $label){
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_render_sort_header' ) ):
+function cocoon_click_render_sort_header($key, $label, $sort){
+  $sort = cocoon_click_table_sort_args($sort);
+  $active = $key === $sort['order'];
+  $next = $active && $sort['direction'] === 'desc' ? 'asc' : 'desc';
+  // 絞り込み条件の維持と、並べ替え後の先頭ページ・操作列への移動
+  $url = add_query_arg(array('order' => $key, 'direction' => $next, 'paged' => false));
+  $url = explode('#', $url, 2)[0] . '#cocoon-click-sort-' . $key;
+  $icon = $active ? ($sort['direction'] === 'asc' ? '▲' : '▼') : '↕';
+  // translators: %s: 並べ替え対象の列名
+  $action = sprintf($next === 'asc' ? __('%s: 昇順で並べ替え', THEME_NAME) : __('%s: 降順で並べ替え', THEME_NAME), $label);
+  printf('<th scope="col" class="cocoon-click-cell-%s cocoon-click-sortable"%s><a id="cocoon-click-sort-%s" class="cocoon-click-sort" href="%s" aria-label="%s"><span>%s</span><span class="cocoon-click-sort-icon" aria-hidden="true">%s</span></a></th>',
+    esc_attr($key), $active ? ' aria-sort="' . ($sort['direction'] === 'asc' ? 'ascending' : 'descending') . '"' : '',
+    esc_attr($key), esc_url($url), esc_attr($action), esc_html($label), esc_html($icon));
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_render_links_table' ) ):
-function cocoon_click_render_links_table($result, $show_source = true){
+function cocoon_click_render_links_table($result, $show_source = true, $sort = array()){
   if (!$result['rows']) {
     echo '<div class="notice notice-info inline"><p>' . esc_html__('該当するクリックデータがありません。', THEME_NAME) . '</p></div>';
-    return;
+    // 空ページでも並べ替え条件の変更と先頭ページへの復帰が可能な見出しの維持
+    if (!$sort) return;
   }
   $has_manual_images = false;
   $columns = array();
@@ -158,13 +177,18 @@ function cocoon_click_render_links_table($result, $show_source = true){
     'time' => __('平均クリック時間', THEME_NAME),
   );
   ?>
-  <div class="cocoon-analytics-table-scroll cocoon-click-table-scroll" tabindex="0" role="region" aria-label="<?php echo esc_attr(__('クリック解析', THEME_NAME)); ?>">
+  <?php if ($sort): ?><p class="description cocoon-click-sort-help"><?php esc_html_e('列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。', THEME_NAME); ?></p><?php endif; ?>
+  <div<?php echo $sort ? ' id="cocoon-click-links"' : ''; ?> class="cocoon-analytics-table-scroll cocoon-click-table-scroll" tabindex="0" role="region" aria-label="<?php echo esc_attr(__('クリック解析', THEME_NAME)); ?>">
     <table class="widefat striped cocoon-click-table<?php echo $show_source ? '' : ' cocoon-click-table-no-source'; ?>">
       <colgroup>
         <?php foreach ($columns as $key => $label): ?><col class="cocoon-click-col-<?php echo esc_attr($key); ?>"><?php endforeach; ?>
       </colgroup>
       <thead><tr>
-        <?php foreach ($columns as $key => $label): ?><th scope="col" class="cocoon-click-cell-<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></th><?php endforeach; ?>
+        <?php foreach ($columns as $key => $label): ?>
+          <?php if ($sort && in_array($key, array('clicks', 'unique', 'impressions', 'ctr'), true)): ?>
+            <?php cocoon_click_render_sort_header($key, $label, $sort); ?>
+          <?php else: ?><th scope="col" class="cocoon-click-cell-<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></th><?php endif; ?>
+        <?php endforeach; ?>
       </tr></thead><tbody>
       <?php foreach ($result['rows'] as $row):
         $preview = cocoon_click_link_preview($row);

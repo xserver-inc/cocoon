@@ -63,7 +63,7 @@
 
 .cocoon-click-table {
   table-layout: fixed;
-  min-width: 1360px;
+  min-width: 1400px;
 }
 
 /* 数値比較に必要な幅を先に確保した列配分 */
@@ -102,6 +102,27 @@
 
 .cocoon-click-number { white-space: nowrap; }
 .cocoon-click-table tbody tr:hover { background: #f0f6fc; }
+
+/* 列見出し全体を操作対象とする並べ替えリンク */
+.cocoon-click-table th.cocoon-click-sortable { padding: 0; }
+.cocoon-click-table .cocoon-click-sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 44px;
+  padding: 12px 6px;
+  box-sizing: border-box;
+  color: #2271b1;
+  text-decoration: none;
+}
+.cocoon-click-sort-icon { flex: 0 0 auto; font-size: 11px; }
+.cocoon-click-sort:hover,
+.cocoon-click-sort:focus-visible { background: #f0f6fc; text-decoration: underline; }
+.cocoon-click-table th[aria-sort] { background: #f0f6fc; }
+.cocoon-click-table th[aria-sort] .cocoon-click-sort { font-weight: 600; }
+#cocoon-click-links,
+.cocoon-click-sort { scroll-margin-top: 80px; }
 
 .cocoon-click-link-preview {
   display: flex;

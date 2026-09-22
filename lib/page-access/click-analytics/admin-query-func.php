@@ -262,12 +262,40 @@ function cocoon_click_analytics_trend($from, $to, $args = array()){
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_table_sort_args' ) ):
+function cocoon_click_table_sort_args($args = array()){
+  // SQLと画面表示で共用する並べ替え条件の許可リスト
+  return array(
+    'order' => isset($args['order']) && in_array($args['order'], array('clicks', 'unique', 'impressions', 'ctr'), true) ? $args['order'] : 'clicks',
+    'direction' => isset($args['direction']) && $args['direction'] === 'asc' ? 'asc' : 'desc',
+  );
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_table_order_sql' ) ):
+function cocoon_click_table_order_sql($args){
+  $sort = cocoon_click_table_sort_args($args);
+  $columns = array('clicks' => 'clicks', 'unique' => 'unique_clicks', 'impressions' => 'weighted_impressions');
+  $direction = $sort['direction'] === 'asc' ? 'ASC' : 'DESC';
+  if ($sort['order'] === 'ctr') {
+    // 表示値と同じ0〜100%の推定率と、両方向での計算不能値の末尾配置
+    // 固定小数点除算の丸めによる順位逆転を防ぐ、PHPと同じ浮動小数点での比較
+    $rate = 'CASE WHEN weighted_impressions > 0 THEN LEAST(1, GREATEST(0, weighted_clicks * 1.0e0 / NULLIF(weighted_impressions, 0))) ELSE NULL END';
+    return "({$rate}) IS NULL ASC, {$rate} {$direction}, link_id ASC";
+  }
+  // 同値の行によるページ間の重複・脱落を防ぐ固定ID順
+  return $columns[$sort['order']] . " {$direction}, link_id ASC";
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_analytics_links_table' ) ):
 function cocoon_click_analytics_links_table($from, $to, $args = array()){
   $defaults = array('page' => 1, 'per_page' => 25, 'group' => 'occurrence', 'scope' => 'all', 'order' => 'clicks');
-  $args = array_merge($defaults, $args);
+  $args = array_merge($defaults, $args, cocoon_click_table_sort_args($args));
   $args['page'] = max(1, (int) $args['page']);
   $args['per_page'] = max(1, min(100, (int) $args['per_page']));
+  // 引数の指定順による同一条件の二重集計を防ぐキャッシュキーの統一
+  ksort($args);
   return cocoon_click_analytics_cached(array('links_table', $from, $to, $args), function() use ($from, $to, $args){
     global $wpdb;
     $source = cocoon_click_stats_source_sql($from, $to);
@@ -280,11 +308,7 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
       'domain' => array('expr' => 'l.destination_host', 'key' => 'l.destination_host'),
     );
     $group = isset($groups[$args['group']]) ? $groups[$args['group']] : $groups['occurrence'];
-    // 少数データのCTRを上位へ出さないWilson下限での並べ替え
-    $effective_n = '(POW(weighted_impressions,2)/NULLIF(weight_squared,0))';
-    $wilson_lower = cocoon_click_wilson_lower_sql();
-    $order_map = array('clicks' => 'clicks DESC', 'unique' => 'unique_clicks DESC', 'impressions' => 'weighted_impressions DESC', 'ctr' => "CASE WHEN sampled_clicks>=10 AND {$effective_n}>=100 THEN {$wilson_lower} ELSE -1 END DESC");
-    $order = isset($order_map[$args['order']]) ? $order_map[$args['order']] : $order_map['clicks'];
+    $order = cocoon_click_table_order_sql($args);
     // 日次データだけの期間は派生表を作らず、主キーの日付範囲を直接走査します。
     $source_sql = $source['direct_sql'] ? $source['direct_sql'] : $source['sql'];
     $period_where = $source['direct_where'] ? $source['direct_where'] . ' AND ' : '';
@@ -317,7 +341,7 @@ function cocoon_click_analytics_links_table($from, $to, $args = array()){
         'clicks' => 'SUM(s.clicks) AS clicks',
         'unique' => 'SUM(s.unique_clicks) AS unique_clicks',
         'impressions' => 'SUM(s.weighted_impressions) AS weighted_impressions',
-        'ctr' => 'SUM(s.sampled_clicks) AS sampled_clicks,SUM(s.weighted_impressions) AS weighted_impressions,SUM(s.weighted_clicks) AS weighted_clicks,SUM(s.weight_squared) AS weight_squared',
+        'ctr' => 'SUM(s.weighted_impressions) AS weighted_impressions,SUM(s.weighted_clicks) AS weighted_clicks',
       );
       $candidate_column = isset($candidate_columns[$args['order']]) ? $candidate_columns[$args['order']] : $candidate_columns['clicks'];
       $candidate_index = $source['direct_sql'] === '`' . CLICK_STATS_MONTHLY_TABLE_NAME . '`' ? ' FORCE INDEX (`report_candidates`)' : '';

@@ -20357,3 +20357,17 @@ msgstr ""
 msgctxt "block keyword"
 msgid "text"
 msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 昇順で並べ替え"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 降順で並べ替え"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
+msgstr ""

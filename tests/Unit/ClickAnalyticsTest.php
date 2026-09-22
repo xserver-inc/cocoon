@@ -18,6 +18,34 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/render-func
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testTableSortAcceptsOnlyKnownColumnsAndDirections(): void
+    {
+        $this->assertSame(array('order' => 'clicks', 'direction' => 'desc'), cocoon_click_table_sort_args());
+        foreach (array('clicks', 'unique', 'impressions', 'ctr') as $column) {
+            foreach (array('asc', 'desc') as $direction) {
+                $args = array('order' => $column, 'direction' => $direction);
+                $this->assertSame($args, cocoon_click_table_sort_args($args));
+            }
+        }
+        foreach (array('', 'unknown', 'clicks DESC; DROP TABLE links', array('ctr'), null) as $invalid) {
+            $this->assertSame(array('order' => 'clicks', 'direction' => 'desc'), cocoon_click_table_sort_args(array('order' => $invalid, 'direction' => $invalid)));
+        }
+    }
+
+    public function testTableOrderUsesDisplayedCtrAndStableTieBreakers(): void
+    {
+        $this->assertSame('clicks DESC, link_id ASC', cocoon_click_table_order_sql(array()));
+        $this->assertSame('unique_clicks ASC, link_id ASC', cocoon_click_table_order_sql(array('order' => 'unique', 'direction' => 'asc')));
+        foreach (array('asc', 'desc') as $direction) {
+            $sql = cocoon_click_table_order_sql(array('order' => 'ctr', 'direction' => $direction));
+            $this->assertStringContainsString('weighted_clicks * 1.0e0 / NULLIF(weighted_impressions, 0)', $sql);
+            $this->assertStringContainsString('IS NULL ASC', $sql);
+            $this->assertStringEndsWith(strtoupper($direction) . ', link_id ASC', $sql);
+            $this->assertStringNotContainsString('sampled_clicks', $sql);
+            $this->assertStringNotContainsString('weight_squared', $sql);
+        }
+    }
+
     public function testPaginationIsOmittedForZeroOrOnePage(): void
     {
         \Brain\Monkey\Functions\expect('paginate_links')->never();

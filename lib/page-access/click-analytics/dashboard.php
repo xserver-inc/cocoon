@@ -20,12 +20,15 @@ function cocoon_click_render_subtabs($current){
 endif;
 
 if ( !function_exists( 'cocoon_click_render_filters' ) ):
-function cocoon_click_render_filters($click_view, $preset, $from, $to, $filters){
+function cocoon_click_render_filters($click_view, $preset, $from, $to, $filters, $table_args = array()){
   ?>
   <form method="get" class="cocoon-analytics-filter-bar cocoon-click-filter-bar">
     <input type="hidden" name="page" value="theme-access">
     <input type="hidden" name="view" value="clicks">
     <input type="hidden" name="click_view" value="<?php echo esc_attr($click_view); ?>">
+    <?php foreach (array('order', 'direction', 'group') as $key): ?>
+      <?php if (isset($table_args[$key])): ?><input type="hidden" name="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($table_args[$key]); ?>"><?php endif; ?>
+    <?php endforeach; ?>
     <label><?php _e('期間:', THEME_NAME); ?>
       <select name="period">
         <?php foreach (array('today' => __('今日', THEME_NAME), '7days' => __('直近7日', THEME_NAME), '30days' => __('直近30日', THEME_NAME), '90days' => __('直近90日', THEME_NAME), 'thismonth' => __('今月', THEME_NAME), 'all' => __('全期間', THEME_NAME), 'custom' => __('カスタム', THEME_NAME)) as $key => $label): ?>
@@ -122,6 +125,10 @@ endif;
 
 $click_view = isset($_GET['click_view']) ? sanitize_key($_GET['click_view']) : 'overview';
 if (!in_array($click_view, array('overview', 'internal', 'external', 'map'), true)) $click_view = 'overview';
+$sort = cocoon_click_table_sort_args($_GET);
+$paged = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
+$group = isset($_GET['group']) && in_array($_GET['group'], array('occurrence', 'destination', 'domain'), true) ? $_GET['group'] : 'occurrence';
+if ($click_view === 'internal' && $group === 'domain') $group = 'destination';
 $filters = array(
   'device' => isset($_GET['device']) && in_array($_GET['device'], array('all', 'desktop', 'tablet', 'mobile'), true) ? $_GET['device'] : 'all',
   'source_post_id' => isset($_GET['source_post_id']) ? max(0, (int) $_GET['source_post_id']) : 0,
@@ -149,7 +156,8 @@ if ($preset === 'all') {
   if ($click_min_date) $from = $click_min_date;
 }
 
-cocoon_click_render_filters($click_view, $preset, $from, $to, $filters);
+$table_args = in_array($click_view, array('internal', 'external'), true) ? array_merge($sort, array('group' => $group)) : $sort;
+cocoon_click_render_filters($click_view, $preset, $from, $to, $filters, $table_args);
 
 if ($click_view === 'overview') {
   $metrics = cocoon_click_analytics_metrics($from, $to, $filters);
@@ -171,28 +179,25 @@ if ($click_view === 'overview') {
   cocoon_click_render_insight_list(__('遷移後ミスマッチ', THEME_NAME), $insights['post_click_mismatch'], __('到着後の閲覧が弱いリンクはありません。', THEME_NAME));
   cocoon_click_render_insight_list(__('外部遷移候補', THEME_NAME), $insights['external_candidates'], __('外部クリックは購入・申込みではなく外部遷移です。', THEME_NAME));
   echo '</div>';
-  $top = cocoon_click_analytics_links_table($from, $to, array_merge($filters, array('page' => 1, 'per_page' => 10, 'group' => 'occurrence', 'order' => 'clicks')));
-  echo '<div class="cocoon-analytics-card"><h3>' . esc_html__('クリック上位リンク', THEME_NAME) . '</h3>';
-  cocoon_click_render_links_table($top);
+  $top = cocoon_click_analytics_links_table($from, $to, array_merge($filters, $sort, array('page' => $paged, 'per_page' => 10, 'group' => 'occurrence')));
+  echo '<div class="cocoon-analytics-card"><h3>' . esc_html__('リンク別クリック', THEME_NAME) . '</h3>';
+  cocoon_click_render_links_table($top, true, $sort);
+  cocoon_click_render_pagination($top, $sort);
   echo '</div>';
 } elseif ($click_view === 'internal' || $click_view === 'external') {
   $scope = $click_view;
-  $group = isset($_GET['group']) && in_array($_GET['group'], array('occurrence', 'destination', 'domain'), true) ? $_GET['group'] : 'occurrence';
-  if ($click_view === 'internal' && $group === 'domain') $group = 'destination';
-  $order = isset($_GET['order']) && in_array($_GET['order'], array('clicks', 'unique', 'impressions', 'ctr'), true) ? $_GET['order'] : 'clicks';
-  $paged = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
   ?>
   <form method="get" class="cocoon-click-group-form">
-    <?php foreach ($_GET as $key => $value) if (!in_array($key, array('group', 'order', 'paged'), true) && is_scalar($value)) printf('<input type="hidden" name="%s" value="%s">', esc_attr($key), esc_attr($value)); ?>
+    <?php foreach ($_GET as $key => $value) if (!in_array($key, array('group', 'order', 'direction', 'paged'), true) && is_scalar($value)) printf('<input type="hidden" name="%s" value="%s">', esc_attr($key), esc_attr($value)); ?>
+    <?php foreach ($sort as $key => $value) printf('<input type="hidden" name="%s" value="%s">', esc_attr($key), esc_attr($value)); ?>
     <label><?php _e('集計単位:', THEME_NAME); ?> <select name="group"><option value="occurrence" <?php selected($group, 'occurrence'); ?>><?php _e('掲載箇所別', THEME_NAME); ?></option><option value="destination" <?php selected($group, 'destination'); ?>><?php _e('リンク先別', THEME_NAME); ?></option><?php if ($click_view === 'external'): ?><option value="domain" <?php selected($group, 'domain'); ?>><?php _e('ドメイン別', THEME_NAME); ?></option><?php endif; ?></select></label>
-    <label><?php _e('並び順:', THEME_NAME); ?> <select name="order"><option value="clicks" <?php selected($order, 'clicks'); ?>><?php _e('クリック', THEME_NAME); ?></option><option value="unique" <?php selected($order, 'unique'); ?>><?php _e('ユニーク', THEME_NAME); ?></option><option value="impressions" <?php selected($order, 'impressions'); ?>><?php _e('表示', THEME_NAME); ?></option><option value="ctr" <?php selected($order, 'ctr'); ?>><?php _e('CTR', THEME_NAME); ?></option></select></label>
     <?php submit_button(__('変更', THEME_NAME), 'secondary', '', false); ?>
   </form>
   <?php
   if ($click_view === 'external') echo '<p class="description">' . esc_html__('ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。', THEME_NAME) . '</p>';
-  $result = cocoon_click_analytics_links_table($from, $to, array_merge($filters, array('scope' => $scope, 'group' => $group, 'order' => $order, 'page' => $paged, 'per_page' => 25)));
-  cocoon_click_render_links_table($result);
-  cocoon_click_render_pagination($result);
+  $result = cocoon_click_analytics_links_table($from, $to, array_merge($filters, $sort, array('scope' => $scope, 'group' => $group, 'page' => $paged, 'per_page' => 25)));
+  cocoon_click_render_links_table($result, true, $sort);
+  cocoon_click_render_pagination($result, $sort);
 } else {
   $source_post_id = $filters['source_post_id'];
   if (!$source_post_id) {
@@ -216,6 +221,8 @@ if ($click_view === 'overview') {
       $current_data_from = max($from, $post_modified_date, $site_revision_date);
       $map_links = $current_data_from <= $to ? cocoon_click_analytics_map_links($current_data_from, $to, $source_post_id, $device, $current_layout) : array();
       $GLOBALS['cocoon_click_map_data'] = $map_links;
+      // マーカー用の上位リンクとは独立した、現在のレイアウト全体の並べ替えとページ分割
+      $map_table = $current_data_from <= $to ? cocoon_click_analytics_links_table($current_data_from, $to, array_merge($sort, array('source_post_id' => (int) $source_post_id, 'device' => $device, 'layout_revision' => $current_layout, 'page' => $paged, 'per_page' => 100, 'group' => 'occurrence'))) : array('rows' => array(), 'total' => 0, 'page' => 1, 'per_page' => 100);
       ?>
       <div class="cocoon-analytics-card cocoon-click-map-card">
         <h3><?php echo esc_html(cocoon_analytics_plain_title($source_post_id)); ?> — <?php echo esc_html(strtoupper($device)); ?></h3>
@@ -240,7 +247,7 @@ if ($click_view === 'overview') {
           </div>
         </div></div>
       </div>
-      <div class="cocoon-analytics-card"><h3><?php _e('リンク別クリック', THEME_NAME); ?></h3><?php cocoon_click_render_links_table(array('rows' => $map_links, 'total' => count($map_links), 'page' => 1, 'per_page' => 100), false); ?></div>
+      <div class="cocoon-analytics-card"><h3><?php _e('リンク別クリック', THEME_NAME); ?></h3><?php cocoon_click_render_links_table($map_table, false, $sort); cocoon_click_render_pagination($map_table, $sort); ?></div>
       <?php
     }
   }

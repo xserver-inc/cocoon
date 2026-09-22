@@ -21945,3 +21945,17 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 昇順で並べ替え"
+msgstr "%s: Ordenar por ordem crescente"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 降順で並べ替え"
+msgstr "%s: Ordenar por ordem decrescente"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
+msgstr "Clique no cabeçalho de uma coluna para ordenar. Clique novamente no mesmo cabeçalho para alternar entre a ordem crescente e decrescente."
