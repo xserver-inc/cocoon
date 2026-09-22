@@ -364,3 +364,118 @@ test('Dockerの実際のブロック描画とフロント用CSSで新着記事�
   expect(await previewImage.text()).toContain('M12 70H348 M12 140H348');
   expect(errors).toEqual(initialErrors);
 });
+
+// 報告対象の8色と同じ構造のsunsetを含む、新着情報の外枠余白の検証対象
+const infoSpacingSkins = ['skin-innocence', ...['earth', 'grape', 'lime', 'mango', 'moon', 'peach', 'sky', 'soil', 'sunset'].map(color => 'skin-tecurio-' + color)];
+const infoSpacingSelectors = ['.sidebar .widget_info_list:has(> .info-list.is-style-frame-border)', '.sidebar .widget_info_list:has(> .widget-title + .info-list.is-style-frame-border)', '.sidebar .widget_info_list:has(> .info-list.is-style-frame-border) > .widget-title', '.sidebar .widget_info_list > .info-list.is-style-frame-border'];
+
+// スキン固有の修正規則だけの除去による、従来表示の比較用CSSの生成
+function withoutInfoSpacing(css) {
+  const parsed = postcss.parse(css);
+  parsed.walkRules(rule => {
+    if (infoSpacingSelectors.includes(rule.selector)) {rule.remove();}
+  });
+  return parsed.toString();
+}
+
+// 縦に長いページで生じる座標の丸め誤差だけを許容した、寸法と装飾の比較
+function expectSpacingMetrics(actual, expected, label) {
+  expect(Object.keys(actual), label).toEqual(Object.keys(expected));
+  for (const [key, value] of Object.entries(actual)) {
+    const name = `${label}/${key}`;
+    if (typeof value === 'number') {
+      expect(value, name).toBeCloseTo(expected[key], 1);
+    } else if (value && typeof value === 'object') {
+      expectSpacingMetrics(value, expected[key], name);
+    } else {
+      expect(value, name).toEqual(expected[key]);
+    }
+  }
+}
+
+for (const skin of infoSpacingSkins) {
+  for (const width of [1280, 390, 320]) {
+    test(`新着情報の外枠余白 ${skin} 幅${width}`, async ({page}) => {
+      // 4領域・192条件の寸法比較に対応する、この検証だけの時間枠
+      test.slow();
+      await page.setViewportSize({width, height: 900});
+      await page.route('**/*', route => route.abort());
+      const cases = [];
+      for (const count of [0, 1, 3]) {
+        for (const frame of [false, true]) {
+          for (const title of [false, true]) {
+            for (const caption of [false, true]) {
+              for (const divider of [false, true]) {cases.push({count, frame, title, caption, divider});}
+            }
+          }
+        }
+      }
+      const widgets = (sidebar, extraClass = '') => cases.map(({count, frame, title, caption, divider}, id) => {
+        const entries = Array.from({length: count}, (_, i) => `<div class="info-list-item"><div class="info-list-item-content"><a href="#entry-${i}" class="info-list-item-content-link">長い記事タイトルの折り返し確認 ${i + 1}</a></div><div class="info-list-item-meta">2026/09/22</div></div>`).join('');
+        return `<aside data-spacing-case="${id}" class="widget widget_info_list ${sidebar ? 'widget-sidebar' : 'widget-content-top'} ${extraClass}">${title ? '<h3 class="widget-title">新着情報</h3>' : ''}<div class="info-list${count ? (frame ? ' is-style-frame-border' : '') + (divider ? ' is-style-divider-line' : '') : ' is-empty'}">${count ? (caption ? '<div class="info-list-caption">お知らせ</div>' : '') + '<div class="info-list-items">' + entries + '</div>' : '<p class="info-list-empty-message">記事は見つかりませんでした。</p>'}</div></aside>`;
+      }).join('');
+      const controls = '<aside data-control class="widget widget-sidebar widget_new_entries"><h3>新着記事</h3><div class="widget-entry-cards"><a class="a-wrap" href="#other">別ウィジェット</a></div></aside><aside data-control class="widget widget-sidebar widget_block"><div class="info-list-box"><div class="info-list is-style-frame-border">ブロックの新着情報</div></div></aside>';
+      // Cocoon設定で選択可能な最小余白による、見出し上マージンの消失の検出
+      const spacingCss = '.body .widget,.body .info-list{margin-bottom:0.1em}';
+      // 通常・追従・ドロワー・本文の各領域と、320px画面で縮小する検証幅
+      const markup = css => `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${themeCss}\n${spacingCss}\n${css}\n.spacing-region{width:${Math.min(width - 40, 320)}px;float:none;flex:none}.spacing-region#slide-in-sidebar{position:static;transform:none;visibility:visible;display:block;max-height:none;overflow:visible}.spacing-region{margin:20px;}</style></head><body class="body"><div id="sidebar" class="sidebar nwa spacing-region">${widgets(true)}${controls}<div id="sidebar-scroll" class="sidebar-scroll">${widgets(true, 'widget-sidebar-scroll')}</div></div><div id="slide-in-sidebar" class="sidebar nwa spacing-region">${widgets(true)}${controls}</div><main id="main" class="article entry-content spacing-region">${widgets(false)}</main></body></html>`;
+      const measure = () => page.locator('[data-spacing-case]').evaluateAll(widgets => widgets.map(widget => {
+        const list = widget.querySelector('.info-list');
+        const title = widget.querySelector('h3');
+        const outer = widget.getBoundingClientRect();
+        const rect = list.getBoundingClientRect();
+        const css = getComputedStyle(list);
+        const titleRect = title?.getBoundingClientRect();
+        return {
+          id: Number(widget.dataset.spacingCase),
+          region: widget.parentElement.id,
+          height: outer.height,
+          width: rect.width,
+          overflow: list.scrollWidth > list.clientWidth + 1,
+          previousGap: widget.previousElementSibling ? outer.top - widget.previousElementSibling.getBoundingClientRect().bottom : null,
+          font: parseFloat(css.fontSize),
+          gaps: [rect.top - (titleRect ? titleRect.bottom : outer.top), outer.right - rect.right, outer.bottom - rect.bottom, rect.left - outer.left],
+          padding: ['Top', 'Right', 'Bottom', 'Left'].map(side => css['padding' + side]),
+          frame: ['Top', 'Right', 'Bottom', 'Left'].map(side => css['border' + side + 'Width']),
+          title: titleRect ? {top: titleRect.top - outer.top, left: titleRect.left - outer.left, width: titleRect.width, height: titleRect.height, background: getComputedStyle(title).backgroundImage, color: getComputedStyle(title).backgroundColor} : null,
+          dividers: Array.from(list.querySelectorAll('.info-list-item'), item => getComputedStyle(item).borderBottomWidth)
+        };
+      }));
+      const controlsMeasure = () => page.locator('[data-control]').evaluateAll(elements => elements.map(element => {
+        const child = element.querySelector('div');
+        const rect = element.getBoundingClientRect();
+        const childRect = child.getBoundingClientRect();
+        return {width: rect.width, height: rect.height, x: childRect.left - rect.left, y: childRect.top - rect.top, childWidth: childRect.width, childHeight: childRect.height};
+      }));
+      const css = readSkinCss(skin);
+      await page.setContent(markup(withoutInfoSpacing(css)));
+      const before = await measure();
+      const controlsBefore = await controlsMeasure();
+      await page.setContent(markup(css));
+      const after = await measure();
+      expectSpacingMetrics(await controlsMeasure(), controlsBefore, `${skin}:別ウィジェットの外観維持`);
+      expect(after).toHaveLength(cases.length * 4);
+      for (const [index, row] of after.entries()) {
+        const config = cases[row.id];
+        // 非表示による偽の一致と、横方向のはみ出し・隣接ウィジェットの間隔変化の検出
+        expect(row.width).toBeGreaterThan(0);
+        expect(row.overflow).toBe(false);
+        expectSpacingMetrics({gap: row.previousGap}, {gap: before[index].previousGap}, `${skin}/${row.region}/${row.id}:隣接ウィジェットの間隔維持`);
+        if (row.region === 'main' || !config.frame || !config.count) {
+          expectSpacingMetrics(row, before[index], `${skin}/${row.region}/${row.id}:対象外の外観維持`);
+          continue;
+        }
+        // 枠線の外側の余白と、親要素の外へ抜けない下余白の照合
+        const gap = row.font * (skin === 'skin-innocence' ? 0.5 : 1);
+        for (const actual of row.gaps) {expect(actual, `${skin}/${row.region}/${row.id}:外側余白`).toBeGreaterThanOrEqual(gap - 0.1);}
+        expect(row.padding).toEqual(before[index].padding);
+        expect(row.frame).toEqual(['1px', '1px', '1px', '1px']);
+        expectSpacingMetrics({title: row.title}, {title: before[index].title}, `${skin}/${row.region}/${row.id}:見出しの外観維持`);
+        expect(row.dividers).toEqual(before[index].dividers);
+      }
+      const link = page.locator('#sidebar .info-list.is-style-frame-border a').first();
+      await link.focus();
+      await expect(link).toBeFocused();
+    });
+  }
+}

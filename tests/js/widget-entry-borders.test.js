@@ -76,6 +76,22 @@ for (const skin of ['skin-mixblue', 'skin-mixgreen', 'skin-mixred']) {
   ].sort(), `${skin}の最近のコメントの装飾の維持`);
 }
 
+// 見出し帯を持つスキンの、枠線付き新着情報だけの外側余白の検証
+for (const skin of ['skin-innocence', ...['earth', 'grape', 'lime', 'mango', 'moon', 'peach', 'sky', 'soil', 'sunset'].map(color => 'skin-tecurio-' + color)]) {
+  const rules = [];
+  postcss.parse(read(`skins/${skin}/style.css`)).walkRules(rule => {
+    if (rule.selector.includes('.widget_info_list')) {
+      rules.push([rule.selector, rule.nodes.filter(node => node.type === 'decl').map(node => [node.prop, node.value, Boolean(node.important)])]);
+    }
+  });
+  assert.deepStrictEqual(rules, [
+    ['.sidebar .widget_info_list:has(> .info-list.is-style-frame-border)', [['display', 'flow-root', false]]],
+    ...(skin === 'skin-innocence' ? [['.sidebar .widget_info_list:has(> .widget-title + .info-list.is-style-frame-border)', [['margin-top', '16px', false]]]] : []),
+    ['.sidebar .widget_info_list:has(> .info-list.is-style-frame-border) > .widget-title', [['margin-top', '0', false]]],
+    ['.sidebar .widget_info_list > .info-list.is-style-frame-border', [['margin', skin === 'skin-innocence' ? '0.5em' : '1em', false]]]
+  ], `${skin}の新着情報の外側余白と適用範囲`);
+}
+
 // 通常版と常時ダーク版の、共通SCSS由来の影除去と配布CSSへの反映確認
 for (const skin of ['simple-darkmode', 'simple-darkmode-always']) {
   const compiled = sass.compile(path.join(root, `skins/${skin}/scss/style.scss`), {logger: sass.Logger.silent}).css;

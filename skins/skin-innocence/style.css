@@ -605,6 +605,21 @@ button#comment-reply-btn {
 	padding: 0 0.5em 0.4em 0.5em;
 }
 
+/* 枠線付き新着情報だけの外側余白と、上下マージンのはみ出し防止 */
+.sidebar .widget_info_list:has(> .info-list.is-style-frame-border) {
+	display: flow-root;
+}
+/* 見出しから外側へ出ていた上余白の、ウィジェット本体での維持 */
+.sidebar .widget_info_list:has(> .widget-title + .info-list.is-style-frame-border) {
+	margin-top: 16px;
+}
+.sidebar .widget_info_list:has(> .info-list.is-style-frame-border) > .widget-title {
+	margin-top: 0;
+}
+.sidebar .widget_info_list > .info-list.is-style-frame-border {
+	margin: 0.5em;
+}
+
 .sidebar h2,
 .sidebar h3 {
 	color: #fff;
