@@ -557,10 +557,10 @@ a.page-numbers:hover {
 .widget-entry-cards .a-wrap {
 	list-style-type: none !important;
 	margin-bottom: 0;
-	border-bottom: solid 1px #cddee0;
 }
-.widget-entry-cards .a-wrap:last-of-type {
-	border-bottom: none;
+/* 縦並びの区切り線モードに限定した、最後以外のカードへの下線 */
+.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child) {
+	border-bottom: solid 1px #cddee0;
 }
 
 .widget-entry-cards .widget-entry-card-content {

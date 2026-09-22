@@ -37,6 +37,20 @@ for (const skin of fs.readdirSync(path.join(root, 'skins')).filter(name => name.
   assert.deepStrictEqual(partitionRules(read(`skins/${skin}/style.css`)), partitionRules(css), `${skin}の配布CSSとSCSSの不一致`);
 }
 
+// ブラウザーなしのリリース検証にも含む、Fuwari4色の無条件な線指定の再発防止
+for (const [color, border] of Object.entries({ebicha: '#e6c7c0', kachiiro: '#d1d1db', mirucha: '#d6d3ce', omeshicha: '#cddee0'})) {
+  const declarations = [];
+  postcss.parse(read(`skins/skin-fuwari-${color}/style.css`)).walkRules(rule => {
+    if (rule.selector.includes('.widget-entry-cards') && rule.selector.includes('.a-wrap')) {
+      rule.walkDecls(/^border(?:-|$)/, decl => declarations.push([rule.selector, decl.prop, decl.value, Boolean(decl.important)]));
+    }
+  });
+  assert.deepStrictEqual(declarations, [[
+    '.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child)',
+    'border-bottom', `solid 1px ${border}`, false
+  ]], `Fuwari ${color}の線指定の適用範囲`);
+}
+
 for (const block of ['new-list', 'popular-list', 'navicard']) {
   const source = read(`blocks/src/block/${block}/edit.js`);
   assert.ok(source.includes(label), `${block}の設定文言の不一致`);
