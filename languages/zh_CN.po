@@ -18067,6 +18067,57 @@ msgstr "平板电脑"
 msgid "クリック元記事:"
 msgstr "来源文章："
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr "没有%s的点击记录"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr "从热门文章中选择"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr "热门文章前10名"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr "搜索其他文章"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr "候选文章"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr "重试"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr "搜索结果"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr "PV（所有设备合计）"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr "该时段内没有访问数据。您可以按文章标题搜索。"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr "请正确指定开始和结束日期。"
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr "%s个候选项"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr "请从热门文章或搜索结果中选择文章，然后点击“显示”。"
+
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr "按文章标题、关键词或 ID 搜索..."
@@ -18154,6 +18205,47 @@ msgstr "平均点击耗时"
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
 msgstr "95%% 置信区间 %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr "估算CTR详情"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr "95%置信区间"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr "有效样本量（n）"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr "样本点击数"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr "比较参考值：%s或以上"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr "根据按抽样率校正后的展示次数和点击次数计算的估算值。"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr "置信区间反映估算CTR的不确定性。区间越宽，比较时越应谨慎。"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr "有效样本量（n）是考虑抽样率差异后的样本数量参考值。"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr "在两项比较参考值都达标之前，请仅将这些数值作为参考。"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
+msgstr "展示数据不足，无法计算置信区间。"
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -20236,6 +20328,10 @@ msgstr "详情"
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "加载图片"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr "为保护您的隐私，外部图片等部分图片不会自动加载，仅在您点击“加载图片”后加载。加载图片时，图片提供方会收到您的 IP 地址等连接信息。"
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format

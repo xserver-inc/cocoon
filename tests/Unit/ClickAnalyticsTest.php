@@ -18,6 +18,21 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/render-func
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testPaginationIsOmittedForZeroOrOnePage(): void
+    {
+        \Brain\Monkey\Functions\expect('paginate_links')->never();
+        foreach (array(0, 25) as $total) {
+            ob_start();
+            try {
+                cocoon_click_render_pagination(array('total' => $total, 'per_page' => 25, 'page' => 1));
+                $html = (string) ob_get_contents();
+            } finally {
+                ob_end_clean();
+            }
+            $this->assertSame('', $html);
+        }
+    }
+
     public function testPreviewUrlsPreserveImageQueriesAndRejectSecrets(): void
     {
         $this->assertSame('https://images.example.org/banner.png?id=123&w=320&h=180', cocoon_click_sanitize_image_url('https://images.example.org/banner.png?id=123&amp;w=320&amp;h=180'));
@@ -74,6 +89,9 @@ class ClickAnalyticsTest extends TestCase
         \Brain\Monkey\Functions\when('esc_html__')->alias(static function ($text, $domain) {
             return esc_html(__($text, $domain));
         });
+        \Brain\Monkey\Functions\when('esc_attr__')->alias(static function ($text, $domain) {
+            return esc_attr(__($text, $domain));
+        });
         \Brain\Monkey\Functions\when('esc_html_e')->alias(static function ($text, $domain) {
             echo esc_html(__($text, $domain));
         });
@@ -103,7 +121,86 @@ class ClickAnalyticsTest extends TestCase
             $this->assertSame($showSource ? 10 : 9, substr_count($html, 'scope="col"'));
             $this->assertLessThan(strpos($html, '<details'), strpos($html, 'データ不足'));
             $this->assertStringNotContainsString('<details open', $html);
-            $this->assertStringContainsString('95% CI', $html);
+            $this->assertStringContainsString('95%信頼区間', $html);
+            $this->assertStringContainsString('cocoon-click-stat-content', $html);
+        }
+    }
+
+    public function testImagePrivacyNoticeAppearsOnceOutsideScrollAreaOnlyForManualImages(): void
+    {
+        $this->mockPreviewRoots();
+        \Brain\Monkey\Functions\when('esc_html__')->alias(static function ($text, $domain) {
+            return esc_html(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('esc_html_e')->alias(static function ($text, $domain) {
+            echo esc_html(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('number_format_i18n')->alias(static function ($number, $decimals = 0) {
+            return number_format((float) $number, $decimals);
+        });
+        $row = array_merge(cocoon_click_metric_row(array()), array(
+            'source_post_id' => 0, 'anchor_text' => 'リンク', 'is_affiliate' => 0,
+            'destination_url' => 'https://example.org/page', 'heading_label' => '',
+            'destination_type' => 'external', 'semantic_area' => 'content',
+            'element_type' => 'image', 'occurrence_no' => 0, 'data_sufficient' => true,
+        ));
+        $manual = array_merge($row, array('image_url' => 'https://images.example.net/banner.png'));
+        $local = array_merge($row, array('image_url' => 'https://example.org/uploads/no-image-160.png'));
+        $notice = 'プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。';
+        foreach (array(true, false) as $showSource) {
+            // 同一リクエスト内の別テーブルに対する表示条件の独立性の確認
+            foreach (array(array($manual, $manual, $local), array($row), array($local), array()) as $rows) {
+                ob_start();
+                try {
+                    cocoon_click_render_links_table(array('rows' => $rows), $showSource);
+                    $html = (string) ob_get_contents();
+                } finally {
+                    ob_end_clean();
+                }
+                $expected = count($rows) === 3 ? 1 : 0;
+                $this->assertSame($expected, substr_count($html, 'cocoon-click-image-notice'));
+                $this->assertSame($expected, substr_count($html, esc_html($notice)));
+                if ($expected) {
+                    $this->assertMatchesRegularExpression('/<\/table>\s*<\/div>\s*<p class="description cocoon-click-image-notice">/', $html);
+                    $this->assertStringNotContainsString('<img class="cocoon-click-thumbnail" src="https://images.example.net/', $html);
+                }
+            }
+        }
+    }
+
+    public function testCtrDetailsShowsMetricsAndUnavailableConfidenceInterval(): void
+    {
+        \Brain\Monkey\Functions\when('esc_attr__')->alias(static function ($text, $domain) {
+            return esc_attr(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('esc_html_e')->alias(static function ($text, $domain) {
+            echo esc_html(__($text, $domain));
+        });
+        \Brain\Monkey\Functions\when('number_format_i18n')->alias(static function ($number, $decimals = 0) {
+            return number_format((float) $number, $decimals);
+        });
+        foreach (array(0, 28, 100) as $impressions) {
+            $row = cocoon_click_metric_row(array('weighted_clicks' => 21, 'weighted_impressions' => $impressions, 'weight_squared' => $impressions, 'sampled_clicks' => 21));
+            ob_start();
+            try {
+                cocoon_click_render_ctr_details($row, '<img src=x onerror=alert(1)>');
+                $html = (string) ob_get_contents();
+            } finally {
+                ob_end_clean();
+            }
+            $this->assertStringContainsString('推定CTRの詳細', $html);
+            $this->assertStringContainsString('有効標本数（n）', $html);
+            $this->assertStringContainsString('サンプルクリック', $html);
+            $this->assertStringContainsString('比較の目安: 100以上', $html);
+            $this->assertStringContainsString('比較の目安: 10以上', $html);
+            $this->assertStringContainsString('&lt;img src=x onerror=alert(1)&gt;', $html);
+            $this->assertStringNotContainsString('<img ', $html);
+            $this->assertSame($impressions < 100, strpos($html, 'データ不足') !== false);
+            $this->assertSame($impressions === 0, strpos($html, '信頼区間を計算できません。') !== false);
+            if ($impressions === 28) {
+                $this->assertStringContainsString('75.0%', $html);
+                $this->assertStringContainsString('56.6% 〜 87.3%', $html);
+            }
         }
     }
 

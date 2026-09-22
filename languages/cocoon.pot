@@ -4073,6 +4073,57 @@ msgstr ""
 msgid "クリック元記事:"
 msgstr ""
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr ""
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr ""
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr ""
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr ""
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr ""
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr ""
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr ""
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr ""
+
 #: lib/page-access/click-analytics/dashboard.php:50
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr ""
@@ -4417,6 +4468,10 @@ msgstr ""
 msgid "画像を読み込む"
 msgstr ""
 
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr ""
+
 #: lib/page-access/click-analytics/render-func.php:142
 #, php-format
 msgid "読み込み先: %s"
@@ -4442,6 +4497,47 @@ msgstr ""
 #: lib/page-access/click-analytics/render-func.php:166
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
 msgstr ""
 
 #: lib/page-access/click-analytics/render-func.php:173

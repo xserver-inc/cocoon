@@ -19357,6 +19357,57 @@ msgstr "Tablette"
 msgid "クリック元記事:"
 msgstr "Article source :"
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr "Aucun clic enregistré sur %s"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr "Choisir parmi les articles populaires"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr "Top 10 des articles"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr "Rechercher d’autres articles"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr "Choix d’articles"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr "Réessayer"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr "Résultats de recherche"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr "PV (tous les appareils)"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr "Aucune page vue sur cette période. Recherchez un article par son titre."
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr "Indiquez des dates de début et de fin valides."
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr "%s choix"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr "Choisissez un article populaire ou un résultat de recherche, puis cliquez sur « Afficher »."
+
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr "Rechercher par titre d’article, mot-clé ou ID..."
@@ -19444,6 +19495,47 @@ msgstr "Délai moyen avant le clic"
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
 msgstr "IC à 95%% %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr "Détails du CTR estimé"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr "Intervalle de confiance à 95 %"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr "Taille effective de l’échantillon (n)"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr "Clics échantillonnés"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr "Repère de comparaison : %s ou plus"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr "Estimation calculée à partir des impressions et des clics corrigés selon le taux d’échantillonnage."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr "L’intervalle de confiance indique l’incertitude du CTR estimé. Plus il est large, plus la comparaison doit être prudente."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr "La taille effective de l’échantillon (n) tient compte des différences de taux d’échantillonnage."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr "Considérez ces valeurs comme indicatives tant que les deux repères de comparaison ne sont pas atteints."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
+msgstr "Les données d’impressions sont insuffisantes pour calculer un intervalle de confiance."
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -21730,6 +21822,10 @@ msgstr "Détails"
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "Charger l’image"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr "Pour protéger votre vie privée, les images externes et certaines autres images ne sont pas chargées automatiquement, mais uniquement lorsque vous cliquez sur « Charger l’image ». Leur chargement transmet votre adresse IP et d’autres informations de connexion au fournisseur de l’image."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format

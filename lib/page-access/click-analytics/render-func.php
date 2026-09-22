@@ -5,6 +5,17 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+if ( !function_exists( 'cocoon_click_render_pagination' ) ):
+function cocoon_click_render_pagination($result){
+  $pages = (int) ceil($result['total'] / max(1, $result['per_page']));
+  if (!empty($result['total_is_estimate'])) echo '<p class="description">' . esc_html__('高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。', THEME_NAME) . '</p>';
+  if ($pages <= 1) return;
+  // リスト全体への番号ボタン用スタイルの適用を避けるリンク単位の取得
+  $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'array'));
+  if ($links) echo '<div class="tablenav bottom cocoon-click-pagination"><div class="tablenav-pages"><span class="pagination-links">' . implode("\n", $links) . '</span></div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_percent' ) ):
 function cocoon_click_percent($value){
   return cocoon_click_format_percent($value);
@@ -95,12 +106,48 @@ function cocoon_click_image_can_autoload($url){
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_render_ctr_details' ) ):
+function cocoon_click_render_ctr_details($row, $label){
+  ?>
+  <details class="cocoon-click-stat-details">
+    <summary aria-label="<?php echo esc_attr(__('推定CTR', THEME_NAME) . ': ' . $label . ' — ' . __('詳細', THEME_NAME)); ?>"><?php esc_html_e('詳細', THEME_NAME); ?></summary>
+    <div class="cocoon-click-stat-content">
+      <div class="cocoon-click-stat-header">
+        <h3 class="cocoon-click-stat-title"><?php esc_html_e('推定CTRの詳細', THEME_NAME); ?></h3>
+        <button type="button" class="cocoon-click-stat-close" aria-label="<?php echo esc_attr__('閉じる', THEME_NAME); ?>" hidden>×</button>
+      </div>
+      <p class="cocoon-click-stat-link"><?php echo esc_html($label); ?></p>
+      <dl class="cocoon-click-stat-metrics">
+        <div><dt><?php esc_html_e('推定CTR', THEME_NAME); ?></dt><dd class="cocoon-click-stat-rate"><?php echo esc_html(cocoon_click_percent($row['ctr'])); ?></dd></div>
+        <div><dt><?php esc_html_e('95%信頼区間', THEME_NAME); ?></dt><dd><?php echo $row['ctr_lower'] === null ? '—' : esc_html(cocoon_click_percent($row['ctr_lower']) . ' 〜 ' . cocoon_click_percent($row['ctr_upper'])); ?></dd></div>
+        <div><dt><?php esc_html_e('有効標本数（n）', THEME_NAME); ?></dt><dd><?php echo esc_html(number_format_i18n($row['effective_n'], 1)); ?><small><?php
+          // translators: %s: 比較に必要な有効標本数またはサンプルクリック数
+          echo esc_html(sprintf(__('比較の目安: %s以上', THEME_NAME), number_format_i18n(100)));
+        ?></small></dd></div>
+        <div><dt><?php esc_html_e('サンプルクリック', THEME_NAME); ?></dt><dd><?php echo esc_html(number_format_i18n($row['sampled_clicks'])); ?><small><?php echo esc_html(sprintf(__('比較の目安: %s以上', THEME_NAME), number_format_i18n(10))); ?></small></dd></div>
+      </dl>
+      <?php if (!$row['data_sufficient']): ?>
+        <p class="cocoon-click-stat-note"><strong><?php esc_html_e('データ不足', THEME_NAME); ?></strong><?php esc_html_e('両方の目安を満たすまでは、参考値としてご覧ください。', THEME_NAME); ?></p>
+      <?php endif; ?>
+      <div class="cocoon-click-stat-explanation">
+        <p><?php esc_html_e('抽出率を補正した表示回数とクリック数から算出した推定値です。', THEME_NAME); ?></p>
+        <p><?php esc_html_e('信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。', THEME_NAME); ?></p>
+        <p><?php esc_html_e('有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。', THEME_NAME); ?></p>
+        <?php if ($row['ctr_lower'] === null): ?><p><?php esc_html_e('表示データが不足しているため、信頼区間を計算できません。', THEME_NAME); ?></p><?php endif; ?>
+      </div>
+    </div>
+  </details>
+  <?php
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_render_links_table' ) ):
 function cocoon_click_render_links_table($result, $show_source = true){
   if (!$result['rows']) {
     echo '<div class="notice notice-info inline"><p>' . esc_html__('該当するクリックデータがありません。', THEME_NAME) . '</p></div>';
     return;
   }
+  $has_manual_images = false;
   $columns = array();
   if ($show_source) $columns['source'] = __('クリック元', THEME_NAME);
   $columns += array(
@@ -137,6 +184,7 @@ function cocoon_click_render_links_table($result, $show_source = true){
                 <?php if (cocoon_click_image_can_autoload($preview['image_url'])): ?>
                   <img class="cocoon-click-thumbnail" src="<?php echo esc_url($preview['image_url']); ?>" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
                 <?php else: ?>
+                  <?php $has_manual_images = true; ?>
                   <span class="cocoon-click-image-consent">
                     <button type="button" class="button button-small cocoon-click-load-image" data-image-url="<?php echo esc_attr($preview['image_url']); ?>"><?php esc_html_e('画像を読み込む', THEME_NAME); ?></button>
                     <small><?php echo esc_html(sprintf(__('読み込み先: %s', THEME_NAME), wp_parse_url($preview['image_url'], PHP_URL_HOST))); ?></small>
@@ -161,11 +209,7 @@ function cocoon_click_render_links_table($result, $show_source = true){
             <span><?php echo esc_html(cocoon_click_percent($row['ctr'])); ?></span>
             <?php if (!$row['data_sufficient']): ?><small class="cocoon-click-insufficient"><?php esc_html_e('データ不足', THEME_NAME); ?></small><?php endif; ?>
             <?php if ($row['ctr_lower'] !== null || !$row['data_sufficient']): ?>
-              <details class="cocoon-click-stat-details">
-                <summary aria-label="<?php echo esc_attr(__('推定CTR', THEME_NAME) . ': ' . $preview['label'] . ' — ' . __('詳細', THEME_NAME)); ?>"><?php esc_html_e('詳細', THEME_NAME); ?></summary>
-                <?php if ($row['ctr_lower'] !== null): ?><small><?php printf(esc_html__('95%% CI %1$s〜%2$s / n=%3$s', THEME_NAME), esc_html(cocoon_click_percent($row['ctr_lower'])), esc_html(cocoon_click_percent($row['ctr_upper'])), esc_html(number_format_i18n($row['effective_n'], 1))); ?></small><?php endif; ?>
-                <?php if (!$row['data_sufficient']): ?><small><?php echo esc_html(cocoon_click_sufficiency_label($row)); ?></small><?php endif; ?>
-              </details>
+              <?php cocoon_click_render_ctr_details($row, $preview['label']); ?>
             <?php endif; ?>
           </td>
           <td class="cocoon-click-number"><?php echo esc_html(cocoon_click_percent($row['arrival_rate'])); ?></td>
@@ -176,6 +220,9 @@ function cocoon_click_render_links_table($result, $show_source = true){
       </tbody>
     </table>
   </div>
+  <?php if ($has_manual_images): ?>
+    <p class="description cocoon-click-image-notice"><?php esc_html_e('プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。', THEME_NAME); ?></p>
+  <?php endif; ?>
   <?php
 }
 endif;

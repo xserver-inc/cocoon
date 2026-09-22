@@ -19334,6 +19334,57 @@ msgstr "Tablet"
 msgid "クリック元記事:"
 msgstr "Quellbeitrag:"
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr "Keine Klicks auf %s erfasst"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr "Aus beliebten Beiträgen wählen"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr "Top 10 Beiträge"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr "Andere Beiträge suchen"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr "Beitragsauswahl"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr "Erneut versuchen"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr "Suchergebnisse"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr "PV (alle Geräte)"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr "Keine Seitenaufrufe in diesem Zeitraum. Suchen Sie nach einem Beitragstitel."
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr "Geben Sie ein gültiges Start- und Enddatum an."
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr "%s Einträge"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr "Wählen Sie einen beliebten Beitrag oder ein Suchergebnis und klicken Sie auf „Anzeigen“."
+
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr "Nach Beitragstitel, Stichwort oder ID suchen..."
@@ -19421,6 +19472,47 @@ msgstr "Durchschnittliche Zeit bis zum Klick"
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
 msgstr "95%%-KI %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr "Details zur geschätzten CTR"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr "95%-Konfidenzintervall"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr "Effektive Stichprobengröße (n)"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr "Klicks in der Stichprobe"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr "Vergleichsrichtwert: mindestens %s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr "Schätzung aus Impressionen und Klicks, die um die Stichprobenrate bereinigt wurden."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr "Das Konfidenzintervall zeigt die Unsicherheit der geschätzten CTR. Je breiter es ist, desto vorsichtiger sollten Ergebnisse verglichen werden."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr "Die effektive Stichprobengröße (n) berücksichtigt Unterschiede in den Stichprobenraten."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr "Betrachten Sie diese Werte als Anhaltspunkte, bis beide Vergleichsrichtwerte erreicht sind."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
+msgstr "Für die Berechnung eines Konfidenzintervalls liegen nicht genügend Impressionsdaten vor."
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -21709,6 +21801,10 @@ msgstr "Details"
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "Bild laden"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr "Zum Schutz Ihrer Privatsphäre werden externe und bestimmte andere Bilder nicht automatisch geladen, sondern erst, wenn Sie auf „Bild laden“ klicken. Beim Laden werden Ihre IP-Adresse und weitere Verbindungsinformationen an den Bildanbieter übermittelt."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format

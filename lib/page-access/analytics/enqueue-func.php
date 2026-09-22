@@ -59,6 +59,14 @@ function cocoon_analytics_admin_enqueue($hook){
     true
   );
 
+  if (isset($_GET['view']) && $_GET['view'] === 'clicks') {
+    wp_enqueue_script('cocoon-click-stat-tips', $base . '/click-stat-tips.js', array(), filemtime($path . '/click-stat-tips.js'), true);
+  }
+
+  if (isset($_GET['view'], $_GET['click_view']) && $_GET['view'] === 'clicks' && $_GET['click_view'] === 'map') {
+    wp_enqueue_script('cocoon-map-post-picker', $base . '/map-post-picker.js', array(), filemtime($path . '/map-post-picker.js'), true);
+  }
+
   wp_enqueue_script(
     'cocoon-analytics-js',
     $base . '/analytics.js',
@@ -151,6 +159,13 @@ function cocoon_analytics_print_data(){
       'no_matching_items'  => __('一致する項目がありません', THEME_NAME),
       'select_post_result' => __('候補から記事を選択してください。', THEME_NAME),
       'search_posts'       => __('記事を検索中...', THEME_NAME),
+      'popular_posts'      => __('人気記事トップ10', THEME_NAME),
+      'post_results'       => __('検索結果', THEME_NAME),
+      'pv_all_devices'     => __('PV（全端末合計）', THEME_NAME),
+      'no_popular_posts'   => __('期間内のアクセスデータがありません。記事名で検索できます。', THEME_NAME),
+      'invalid_period'     => __('開始日と終了日を正しく指定してください。', THEME_NAME),
+      // translators: %s: 記事候補の件数
+      'post_candidate_count' => __('%s件の候補', THEME_NAME),
     ),
   );
 

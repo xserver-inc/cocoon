@@ -18206,6 +18206,57 @@ msgstr "태블릿"
 msgid "クリック元記事:"
 msgstr "클릭이 발생한 글:"
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr "%s 클릭 기록 없음"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr "인기 글에서 선택"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr "인기 글 상위 10개"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr "다른 글 검색"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr "글 후보"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr "다시 시도"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr "검색 결과"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr "PV(모든 기기 합계)"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr "해당 기간에 조회 데이터가 없습니다. 글 제목으로 검색할 수 있습니다."
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr "시작일과 종료일을 올바르게 입력해 주세요."
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr "후보 %s개"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr "인기 글 또는 검색 결과에서 글을 선택한 후 「표시」를 눌러 주세요."
+
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr "글 제목, 키워드 또는 ID로 검색..."
@@ -18293,6 +18344,47 @@ msgstr "평균 클릭 소요 시간"
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
 msgstr "95%% 신뢰 구간 %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr "추정 CTR 상세 정보"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr "95% 신뢰구간"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr "유효 표본 크기(n)"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr "표본 클릭 수"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr "비교 기준: %s 이상"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr "표본 추출률을 보정한 노출 수와 클릭 수로 계산한 추정값입니다."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr "신뢰구간은 추정 CTR의 불확실성을 나타냅니다. 구간이 넓을수록 신중하게 비교해 주세요."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr "유효 표본 크기(n)는 표본 추출률의 차이를 고려한 표본 수의 기준입니다."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr "두 비교 기준을 모두 충족할 때까지는 참고값으로 봐 주세요."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
+msgstr "노출 데이터가 부족하여 신뢰구간을 계산할 수 없습니다."
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -20405,6 +20497,10 @@ msgstr "상세 정보"
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "이미지 불러오기"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr "개인정보 보호를 위해 외부 이미지 등 일부 이미지는 자동으로 불러오지 않고, ‘이미지 불러오기’를 눌렀을 때 불러옵니다. 이미지를 불러오면 이미지 제공처에 사용자의 IP 주소 등 연결 정보가 전달됩니다."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format

@@ -45,10 +45,14 @@ function cocoon_click_render_filters($click_view, $preset, $from, $to, $filters)
       </select>
     </label>
     <?php
-    cocoon_analytics_render_post_picker('source_post_id', $filters['source_post_id'], array(
-      'label'       => __('クリック元記事:', THEME_NAME),
-      'placeholder' => __('記事タイトル・キーワード・IDで検索...', THEME_NAME),
-    ));
+    if ($click_view === 'map') {
+      cocoon_analytics_render_map_post_picker($filters['source_post_id']);
+    } else {
+      cocoon_analytics_render_post_picker('source_post_id', $filters['source_post_id'], array(
+        'label'       => __('クリック元記事:', THEME_NAME),
+        'placeholder' => __('記事タイトル・キーワード・IDで検索...', THEME_NAME),
+      ));
+    }
     ?>
     <?php if ($click_view !== 'map'): ?>
       <label><?php _e('掲載位置:', THEME_NAME); ?>
@@ -102,16 +106,6 @@ function cocoon_click_render_kpis($metrics, $previous = array()){
 }
 endif;
 
-
-if ( !function_exists( 'cocoon_click_render_pagination' ) ):
-function cocoon_click_render_pagination($result){
-  $pages = (int) ceil($result['total'] / max(1, $result['per_page']));
-  if (!empty($result['total_is_estimate'])) echo '<p class="description">' . esc_html__('高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。', THEME_NAME) . '</p>';
-  if ($pages <= 1) return;
-  $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'list'));
-  if ($links) echo '<div class="tablenav"><div class="tablenav-pages">' . $links . '</div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput
-}
-endif;
 
 if ( !function_exists( 'cocoon_click_render_insight_list' ) ):
 function cocoon_click_render_insight_list($title, $rows, $empty){
@@ -202,7 +196,7 @@ if ($click_view === 'overview') {
 } else {
   $source_post_id = $filters['source_post_id'];
   if (!$source_post_id) {
-    echo '<div class="notice notice-info inline"><p>' . esc_html__('クリックマップを表示する記事を検索して選択してください。', THEME_NAME) . '</p></div>';
+    echo '<div class="notice notice-info inline"><p>' . esc_html__('人気記事または検索結果から記事を選び、「表示」を押してください。', THEME_NAME) . '</p></div>';
   } else {
     $post = get_post($source_post_id);
     if (!$post || $post->post_status !== 'publish') {

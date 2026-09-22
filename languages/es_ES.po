@@ -19345,6 +19345,57 @@ msgstr "Tableta"
 msgid "クリック元記事:"
 msgstr "Entrada de origen:"
 
+
+#: lib/page-access/analytics/map-post-picker.php
+#, php-format
+msgid "%sのクリック記録なし"
+msgstr "Sin clics registrados en %s"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "アクセスの多い記事から選ぶ"
+msgstr "Elegir entre los artículos populares"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "人気記事トップ10"
+msgstr "10 artículos más populares"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "ほかの記事を検索"
+msgstr "Buscar otros artículos"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "記事候補"
+msgstr "Opciones de artículos"
+
+#: lib/page-access/analytics/map-post-picker.php
+msgid "再試行"
+msgstr "Reintentar"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "検索結果"
+msgstr "Resultados de búsqueda"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "PV（全端末合計）"
+msgstr "PV (todos los dispositivos)"
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "期間内のアクセスデータがありません。記事名で検索できます。"
+msgstr "No hay visitas en este período. Puede buscar por título."
+
+#: lib/page-access/analytics/enqueue-func.php
+msgid "開始日と終了日を正しく指定してください。"
+msgstr "Introduzca fechas de inicio y fin válidas."
+
+#: lib/page-access/analytics/enqueue-func.php
+#, php-format
+msgid "%s件の候補"
+msgstr "%s opciones"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
+msgstr "Elija un artículo popular o un resultado de búsqueda y pulse «Mostrar»."
+
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
 msgstr "Buscar por título de entrada, palabra clave o ID..."
@@ -19432,6 +19483,47 @@ msgstr "Tiempo medio hasta el clic"
 #, php-format
 msgid "95%% CI %1$s〜%2$s / n=%3$s"
 msgstr "IC del 95%% %1$s–%2$s / n=%3$s"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "推定CTRの詳細"
+msgstr "Detalles del CTR estimado"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "95%信頼区間"
+msgstr "Intervalo de confianza del 95%"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）"
+msgstr "Tamaño efectivo de la muestra (n)"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "サンプルクリック"
+msgstr "Clics de la muestra"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "比較の目安: %s以上"
+msgstr "Referencia de comparación: %s o más"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
+msgstr "Estimación calculada a partir de impresiones y clics ajustados según la tasa de muestreo."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
+msgstr "El intervalo de confianza indica la incertidumbre del CTR estimado. Cuanto más amplio sea, más prudente debe ser la comparación."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
+msgstr "El tamaño efectivo de la muestra (n) tiene en cuenta las diferencias en las tasas de muestreo."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
+msgstr "Considere estos valores orientativos hasta que se cumplan ambas referencias de comparación."
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表示データが不足しているため、信頼区間を計算できません。"
+msgstr "No hay suficientes datos de impresiones para calcular un intervalo de confianza."
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -21695,6 +21787,10 @@ msgstr "Detalles"
 #: lib/page-access/click-analytics/render-func.php
 msgid "画像を読み込む"
 msgstr "Cargar imagen"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgstr "Para proteger su privacidad, las imágenes externas y algunas otras imágenes no se cargan automáticamente, sino solo al pulsar «Cargar imagen». Al cargarlas, se comparte su dirección IP y otros datos de conexión con el proveedor de la imagen."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format
