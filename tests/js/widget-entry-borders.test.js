@@ -51,6 +51,14 @@ for (const [color, border] of Object.entries({ebicha: '#e6c7c0', kachiiro: '#d1d
   ]], `Fuwari ${color}の線指定の適用範囲`);
 }
 
+// 通常版と常時ダーク版の、共通SCSS由来の影除去と配布CSSへの反映確認
+for (const skin of ['simple-darkmode', 'simple-darkmode-always']) {
+  const compiled = sass.compile(path.join(root, `skins/${skin}/scss/style.scss`), {logger: sass.Logger.silent}).css;
+  const rules = partitionRules(read(`skins/${skin}/css/style.css`));
+  assert.deepStrictEqual(rules, partitionRules(compiled), `${skin}の配布CSSとSCSSの不一致`);
+  assert.deepStrictEqual(rules, [['.widget-entry-cards.border-partition .a-wrap', [['box-shadow', 'none', false]]]], `${skin}の区切り線と影の重複防止`);
+}
+
 for (const block of ['new-list', 'popular-list', 'navicard']) {
   const source = read(`blocks/src/block/${block}/edit.js`);
   assert.ok(source.includes(label), `${block}の設定文言の不一致`);

@@ -184,6 +184,10 @@ input.search-edit::placeholder {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
   transition-duration: 0.3s;
 }
+// 区切り線モードでの、ホバー時も含めたカードの影の除去
+.widget-entry-cards.border-partition .a-wrap {
+  box-shadow: none;
+}
 .a-wrap > div {
   border: none;
 }

@@ -331,6 +331,10 @@ input.search-edit::placeholder {
   transition-duration: 0.3s;
 }
 
+.widget-entry-cards.border-partition .a-wrap {
+  box-shadow: none;
+}
+
 .a-wrap > div {
   border: none;
 }
