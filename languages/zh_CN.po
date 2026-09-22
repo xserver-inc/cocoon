@@ -18067,7 +18067,6 @@ msgstr "平板电脑"
 msgid "クリック元記事:"
 msgstr "来源文章："
 
-
 #: lib/page-access/analytics/map-post-picker.php
 #, php-format
 msgid "%sのクリック記録なし"
@@ -20330,7 +20329,9 @@ msgid "画像を読み込む"
 msgstr "加载图片"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
+msgid ""
+"プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなど"
+"が伝わります。"
 msgstr "为保护您的隐私，外部图片等部分图片不会自动加载，仅在您点击“加载图片”后加载。加载图片时，图片提供方会收到您的 IP 地址等连接信息。"
 
 #: lib/page-access/click-analytics/render-func.php

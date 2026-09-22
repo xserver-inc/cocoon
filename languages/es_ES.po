@@ -19345,7 +19345,6 @@ msgstr "Tableta"
 msgid "クリック元記事:"
 msgstr "Entrada de origen:"
 
-
 #: lib/page-access/analytics/map-post-picker.php
 #, php-format
 msgid "%sのクリック記録なし"
@@ -19507,23 +19506,33 @@ msgstr "Referencia de comparación: %s o más"
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
-msgstr "Estimación calculada a partir de impresiones y clics ajustados según la tasa de muestreo."
+msgstr ""
+"Estimación calculada a partir de impresiones y clics ajustados según la "
+"tasa de muestreo."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
-msgstr "El intervalo de confianza indica la incertidumbre del CTR estimado. Cuanto más amplio sea, más prudente debe ser la comparación."
+msgstr ""
+"El intervalo de confianza indica la incertidumbre del CTR estimado. Cuanto "
+"más amplio sea, más prudente debe ser la comparación."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
-msgstr "El tamaño efectivo de la muestra (n) tiene en cuenta las diferencias en las tasas de muestreo."
+msgstr ""
+"El tamaño efectivo de la muestra (n) tiene en cuenta las diferencias en las "
+"tasas de muestreo."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
-msgstr "Considere estos valores orientativos hasta que se cumplan ambas referencias de comparación."
+msgstr ""
+"Considere estos valores orientativos hasta que se cumplan ambas referencias "
+"de comparación."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "表示データが不足しているため、信頼区間を計算できません。"
-msgstr "No hay suficientes datos de impresiones para calcular un intervalo de confianza."
+msgstr ""
+"No hay suficientes datos de impresiones para calcular un intervalo de "
+"confianza."
 
 #: lib/page-access/click-analytics/dashboard.php:185
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
@@ -21789,8 +21798,14 @@ msgid "画像を読み込む"
 msgstr "Cargar imagen"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
-msgstr "Para proteger su privacidad, las imágenes externas y algunas otras imágenes no se cargan automáticamente, sino solo al pulsar «Cargar imagen». Al cargarlas, se comparte su dirección IP y otros datos de conexión con el proveedor de la imagen."
+msgid ""
+"プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなど"
+"が伝わります。"
+msgstr ""
+"Para proteger su privacidad, las imágenes externas y algunas otras imágenes "
+"no se cargan automáticamente, sino solo al pulsar «Cargar imagen». Al "
+"cargarlas, se comparte su dirección IP y otros datos de conexión con el "
+"proveedor de la imagen."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format

@@ -18943,7 +18943,6 @@ msgstr "Tablet"
 msgid "クリック元記事:"
 msgstr "Source post:"
 
-
 #: lib/page-access/analytics/map-post-picker.php
 #, php-format
 msgid "%sのクリック記録なし"
@@ -18992,7 +18991,9 @@ msgstr "%s choices"
 
 #: lib/page-access/click-analytics/dashboard.php
 msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
-msgstr "Choose an article from the popular articles or search results, then click “Display”."
+msgstr ""
+"Choose an article from the popular articles or search results, then click "
+"“Display”."
 
 #: lib/page-access/click-analytics/dashboard.php:90
 msgid "記事タイトル・キーワード・IDで検索..."
@@ -19105,11 +19106,15 @@ msgstr "Comparison guideline: %s or more"
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
-msgstr "An estimate calculated from impressions and clicks adjusted for the sampling rate."
+msgstr ""
+"An estimate calculated from impressions and clicks adjusted for the "
+"sampling rate."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
-msgstr "The confidence interval indicates uncertainty in the estimated CTR. A wider interval calls for more caution when comparing results."
+msgstr ""
+"The confidence interval indicates uncertainty in the estimated CTR. A wider "
+"interval calls for more caution when comparing results."
 
 #: lib/page-access/click-analytics/render-func.php
 msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
@@ -21356,8 +21361,14 @@ msgid "画像を読み込む"
 msgstr "Load image"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
-msgstr "To protect your privacy, external images and certain other images are loaded only when you click “Load image”, not automatically. Loading an image shares your IP address and other connection information with the image provider."
+msgid ""
+"プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなど"
+"が伝わります。"
+msgstr ""
+"To protect your privacy, external images and certain other images are "
+"loaded only when you click “Load image”, not automatically. Loading an "
+"image shares your IP address and other connection information with the "
+"image provider."
 
 #: lib/page-access/click-analytics/render-func.php
 #, php-format
