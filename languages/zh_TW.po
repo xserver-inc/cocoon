@@ -11671,15 +11671,15 @@ msgid "通常のカード表示"
 msgstr "普通卡片顯示"
 
 #: lib/settings.php:680
-msgid "カードの上下に破線の区切り線が表示されます。"
-msgstr "在卡片的上下顯示虛線分隔線。"
+msgid "カード間に区切り線が表示されます。記事が1件の場合は表示されません。"
+msgstr "在卡片之間顯示分隔線。只有一篇文章時不顯示分隔線。"
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
-msgid "カードの上下に区切り線を入れる"
-msgstr "在卡片的上下添加分隔線"
+msgid "カード間に区切り線を入れる"
+msgstr "在卡片之間加入分隔線"
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:116

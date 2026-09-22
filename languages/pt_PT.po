@@ -12515,15 +12515,15 @@ msgid "通常のカード表示"
 msgstr "Exibição normal de cartão"
 
 #: lib/settings.php:680
-msgid "カードの上下に破線の区切り線が表示されます。"
-msgstr "Uma linha tracejada é exibida acima e abaixo do cartão."
+msgid "カード間に区切り線が表示されます。記事が1件の場合は表示されません。"
+msgstr "São apresentadas linhas de separação entre os cartões. Quando existe apenas um artigo, não é apresentada nenhuma linha."
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
-msgid "カードの上下に区切り線を入れる"
-msgstr "Adicionar uma linha de separação na parte superior e inferior do cartão"
+msgid "カード間に区切り線を入れる"
+msgstr "Adicionar linhas de separação entre os cartões"
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:116

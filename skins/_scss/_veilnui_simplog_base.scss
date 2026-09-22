@@ -364,9 +364,13 @@ body {
         border-radius: 0;
         border-bottom: solid $main-color-midium 1px;
 
-        &:first-of-type {
-          border-top: solid $main-color-midium 1px;
+        &:last-child {
+          border-bottom: 0;
         }
+      }
+
+      &.is-list-horizontal .a-wrap {
+        border: 0;
       }
     }
 
@@ -540,9 +544,13 @@ body {
         border-radius: 0;
         border-bottom: solid $main-color-midium 1px;
 
-        &:first-of-type {
-          border-top: solid $main-color-midium 1px;
+        &:last-child {
+          border-bottom: 0;
         }
+      }
+
+      &.is-list-horizontal .a-wrap {
+        border: 0;
       }
     }
 
@@ -583,9 +591,13 @@ body {
         border-radius: 0;
         border-bottom: solid $main-color-midium 1px;
 
-        &:first-of-type {
-          border-top: solid $main-color-midium 1px;
+        &:last-child {
+          border-bottom: 0;
         }
+      }
+
+      &.is-list-horizontal .a-wrap {
+        border: 0;
       }
     }
 
@@ -652,9 +664,13 @@ body {
         border-radius: 0;
         border-bottom: solid $main-color-midium 1px;
 
-        &:first-of-type {
-          border-top: solid $main-color-midium 1px;
+        &:last-child {
+          border-bottom: 0;
         }
+      }
+
+      &.is-list-horizontal .a-wrap {
+        border: 0;
       }
     }
 

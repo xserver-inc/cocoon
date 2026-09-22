@@ -188,8 +188,9 @@ label.screen-reader-text{
 .border-partition .a-wrap {
   border-bottom: 2px dotted var(--cocoon-x-thin-color);
 
-  &:first-of-type {
-    border-top: 2px dotted var(--cocoon-x-thin-color);
+  // 最後の区切り線の除外と、1件表示時の線なし表示
+  &:last-child {
+    border-bottom: 0;
   }
 }
 

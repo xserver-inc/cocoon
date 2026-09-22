@@ -2775,8 +2775,8 @@ label.screen-reader-text {
 .border-partition .a-wrap {
   border-bottom: 2px dotted var(--cocoon-x-thin-color);
 }
-.border-partition .a-wrap:first-of-type {
-  border-top: 2px dotted var(--cocoon-x-thin-color);
+.border-partition .a-wrap:last-child {
+  border-bottom: 0;
 }
 
 .border-partition.is-list-horizontal .a-wrap {

@@ -273,10 +273,13 @@ img{
 img.blogcard-favicon-image{
   vertical-align: baseline;
 }
-.border-partition a:first-of-type{
-  border-top: 1px dashed;
+.border-partition a:last-child{
+  border-bottom: 0;
   } .border-partition a{
   border-bottom: 1px dashed;
+}
+.border-partition.is-list-horizontal .a-wrap{
+  border: 0;
 }
 body .content-in .widget-entry-cards .a-wrap{
   margin-bottom: 7px;

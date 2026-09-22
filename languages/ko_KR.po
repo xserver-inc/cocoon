@@ -11788,15 +11788,15 @@ msgid "通常のカード表示"
 msgstr "일반 카드 표시"
 
 #: lib/settings.php:680
-msgid "カードの上下に破線の区切り線が表示されます。"
-msgstr "카드의 위아래에 구분선이 표시됩니다."
+msgid "カード間に区切り線が表示されます。記事が1件の場合は表示されません。"
+msgstr "카드 사이에 구분선이 표시됩니다. 글이 1개인 경우에는 표시되지 않습니다."
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:115
 #: blocks/src/block/new-list/edit.js:155
 #: blocks/src/block/popular-list/edit.js:235
-msgid "カードの上下に区切り線を入れる"
-msgstr "카드의 위아래에 구분선 넣기"
+msgid "カード間に区切り線を入れる"
+msgstr "카드 사이에 구분선 넣기"
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:116

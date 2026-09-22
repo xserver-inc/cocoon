@@ -681,11 +681,14 @@ span.post-date {
     top: 0.27em;
     left: 0.2em;
 }
-.border-partition a:first-of-type {
-    border-top: 2.5px dotted #e8e1d8;
+.border-partition a:last-child {
+    border-bottom: 0;
 }
 .border-partition a {
     border-bottom: 2.5px dotted #e8e1d8;
+}
+.border-partition.is-list-horizontal .a-wrap {
+    border: 0;
 }
 .widget-entry-cards.ranking-visible .card-thumb::before {
     line-height: 20px;

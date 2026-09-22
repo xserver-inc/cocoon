@@ -232,7 +232,7 @@ export default function edit( props ) {
               },
               {
                 label:
-                  __( 'カードの上下に区切り線を入れる', THEME_NAME ) +
+                  __( 'カード間に区切り線を入れる', THEME_NAME ) +
                   __( '（縦並び表示のみ）', THEME_NAME ),
                 value: 'border_partition',
               },
