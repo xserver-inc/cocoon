@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const postcss = require('postcss');
+const {execFileSync} = require('child_process');
 const {test, expect} = require('@playwright/test');
 
 test.describe.configure({mode: 'parallel'});
@@ -8,6 +9,9 @@ test.describe.configure({mode: 'parallel'});
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const themeCss = read('style.css') + '\n' + read('css/entry-content.css');
+// 実際のPHPと色変換関数による、未設定・濃色・淡色の動的CSSの取得
+const oneStyles = JSON.parse(execFileSync('php', [path.join(root, 'tests/fixtures/one-skin-css.php')], {encoding: 'utf8'}));
+const oneLineColors = {default: 'rgba(0, 0, 0, 0.3)', custom: 'rgba(18, 52, 86, 0.3)', 'light-text': 'rgba(244, 238, 221, 0.3)'};
 const fuwariLineColors = {
   'skin-fuwari-ebicha': 'rgb(230, 199, 192)',
   'skin-fuwari-kachiiro': 'rgb(209, 209, 219)',
@@ -38,7 +42,7 @@ function overridesWidgetBorders(css) {
 }
 
 // 既知の不具合スキンの固定登録と、関連する線指定の自動抽出の併用
-const skinNames = [...new Set(['', ...Object.keys(fuwariLineColors), ...Object.keys(additionalSkinStyles), ...fs.readdirSync(path.join(root, 'skins')).filter(name => {
+const skinNames = [...new Set(['', 'one', ...Object.keys(fuwariLineColors), ...Object.keys(additionalSkinStyles), ...fs.readdirSync(path.join(root, 'skins')).filter(name => {
   const file = path.join(root, `skins/${name}/style.css`);
   return fs.existsSync(file) && overridesWidgetBorders(readSkinCss(name));
 })])];
@@ -55,6 +59,7 @@ test('カード枠線のスキン抽出で無条件の下線指定も検出', ()
   expect(overridesWidgetBorders('/* .border-partition { border: 0; } */')).toBe(false);
   expect(skinNames).toEqual(expect.arrayContaining(Object.keys(fuwariLineColors)));
   expect(skinNames).toEqual(expect.arrayContaining(Object.keys(additionalSkinStyles)));
+  expect(skinNames).toContain('one');
 });
 
 // 実際のカードと横並び用ラッパーに合わせた、件数・表示形式ごとの検証用HTML
@@ -67,9 +72,9 @@ function fixture(type, count, mode) {
 
 for (const skin of skinNames) {
   const colorSchemes = additionalSkinStyles[skin] ? ['light', 'dark'] : ['light'];
-  const variations = [1280, 390].flatMap(width => colorSchemes.map(colorScheme => ({width, colorScheme})));
-  for (const {width, colorScheme} of variations) {
-    test(`カード間の区切り線 ${skin || '標準'} 幅${width}${additionalSkinStyles[skin] ? ` ${colorScheme}` : ''}`, async ({page}) => {
+  const variations = [1280, 390].flatMap(width => colorSchemes.flatMap(colorScheme => (skin === 'one' ? Object.keys(oneStyles) : ['default']).map(textColor => ({width, colorScheme, textColor}))));
+  for (const {width, colorScheme, textColor} of variations) {
+    test(`カード間の区切り線 ${skin || '標準'} 幅${width}${additionalSkinStyles[skin] ? ` ${colorScheme}` : ''}${skin === 'one' ? ` ${textColor}` : ''}`, async ({page}) => {
       await page.setViewportSize({width, height: 900});
       await page.emulateMedia({colorScheme});
       // スキンの外部フォント・画像への通信を伴わない表示検証
@@ -77,12 +82,15 @@ for (const skin of skinNames) {
       const cases = [];
       for (const type of cardTypes) {
         for (const count of [0, 1, 2, 5]) {
-          for (const mode of ['partition', 'horizontal', 'square', 'default', ...(fuwariLineColors[skin] || additionalSkinStyles[skin] ? ['squareHorizontal', 'defaultHorizontal'] : [])]) {
+          for (const mode of ['partition', 'horizontal', 'square', 'default', ...(skin === 'one' || fuwariLineColors[skin] || additionalSkinStyles[skin] ? ['squareHorizontal', 'defaultHorizontal'] : [])]) {
             cases.push(fixture(type, count, mode));
           }
         }
       }
-      await page.setContent(`<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${themeCss}\n${skin ? readSkinCss(skin) : ''}</style></head><body class="body"><div class="content-in"><main id="main" class="main"><article class="entry-content">${cases.join('')}</article><div class="list"><a data-shadow-control class="a-wrap" href="#archive">通常の記事一覧</a></div></main><aside id="sidebar" class="sidebar">${cases.join('')}</aside><aside id="slide-in-sidebar">${cases.join('')}</aside></div></body></html>`);
+      // 動的CSSの後付けによる色の遷移を避けた、初期描画時のスタイル適用
+      const dynamicCss = skin === 'one' ? oneStyles[textColor] : '';
+      const bodyClasses = skin === 'one' ? `is-shadow-on is-border-0 ${textColor === 'light-text' ? 'is-dark-on' : ''}` : '';
+      await page.setContent(`<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${themeCss}\n${skin ? readSkinCss(skin) : ''}\n${dynamicCss}</style></head><body class="body ${bodyClasses}"><div class="content-in"><main id="main" class="main"><article class="entry-content">${cases.join('')}</article><div class="list"><a data-shadow-control class="a-wrap" href="#archive">通常の記事一覧</a></div></main><aside id="sidebar" class="sidebar">${cases.join('')}</aside><aside id="slide-in-sidebar">${cases.join('')}</aside></div></body></html>`);
       // スキンのウィジェット指定外に置いた参照要素による、親テーマの立体的な四辺の色の取得
       const frameColors = fuwariLineColors[skin] ? await page.evaluate(() => {
         const reference = document.createElement('div');
@@ -128,6 +136,30 @@ for (const skin of skinNames) {
       }));
       // 全件の一括比較による、判定ごとのトレース記録負荷の削減
       expect(actual).toEqual(expected);
+      if (skin === 'one') {
+        // 区切り線の幅・線種・不透明度と、外枠の四辺・他形式の線なし表示の照合
+        const edges = results.map(result => ({id: result.id, cards: result.cards.map(card => card.edges)}));
+        const expectedEdges = results.map(result => ({
+          id: result.id,
+          cards: result.cards.map((card, index) => card.edges.map((edge, side) => {
+            const divider = result.mode === 'partition' && index < result.count - 1 && side === 2;
+            const square = result.mode.startsWith('square');
+            return {width: divider || square ? 1 : 0, style: divider ? 'dashed' : square ? 'solid' : 'none', color: divider || square ? oneLineColors[textColor] : edge.color};
+          }))
+        }));
+        expect(edges).toEqual(expectedEdges);
+        // ホバー・フォーカス時の線色の維持と、最後のカードの下線再発防止
+        const cards = page.locator('#main [data-case="new-2-partition"] .a-wrap');
+        for (const card of [cards.first(), cards.last()]) {
+          await card.hover();
+          await expect(card).toHaveCSS('border-bottom-color', oneLineColors[textColor]);
+          await card.focus();
+          await expect(card).toHaveCSS('border-bottom-color', oneLineColors[textColor]);
+        }
+        await expect(cards.first()).toHaveCSS('border-bottom-width', '1px');
+        await expect(cards.first()).toHaveCSS('border-bottom-style', 'dashed');
+        await expect(cards.last()).toHaveCSS('border-bottom-width', '0px');
+      }
       if (fuwariLineColors[skin]) {
         // 最終カードの四辺の維持と、区切り線の太さ・線種・スキン固有色の照合
         const edges = results.map(result => ({id: result.id, cards: result.cards.map(card => card.edges)}));

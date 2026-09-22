@@ -3,12 +3,12 @@
 //SILK WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
 //& one WordPress Theme Cocoon skin is derived from Simple-Darkmode WordPress Theme Cocoon skin, Copyright 2021 hiro(https://hirosite.com/)
 //Simple-Dark-mode WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
-/* ブロックエディターに適用するCSSを登録 */
+/* ブロックエディター用CSSの登録 */
 add_theme_support( 'editor-styles' );
 
 function org_theme_add_editor_styles() {
-    $editor_style_url = get_theme_file_uri( '/skins/one/editor-style.css' );
-    wp_enqueue_style( 'block-editor-style', $editor_style_url );
+  $editor_style_url = get_theme_file_uri( '/skins/one/editor-style.css' );
+  wp_enqueue_style( 'block-editor-style', $editor_style_url );
 }
 add_action( 'enqueue_block_editor_assets', 'org_theme_add_editor_styles' );
 
@@ -48,7 +48,7 @@ body.body,  #main.main, #sidebar.sidebar, .blogcard-label, .blogcard, .index-tab
 .blogcard,
 .search-edit, input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"],
 input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select, .list-more-button, .ecb-entry-border .entry-card-wrap,
-.recb-entry-border .related-entry-card-wrap, .border-square .a-wrap, .border-partition .a-wrap, .border-partition a:first-of-type, .post-navi-default.post-navi-border a,
+.recb-entry-border .related-entry-card-wrap, .border-square .a-wrap, .widget-entry-cards.border-partition .a-wrap, .post-navi-default.post-navi-border a,
 .pager-post-navi.post-navi-square.post-navi-border a, .ccb-carousel-border .a-wrap{
   border-color: '.colorcode_to_rgb_css_code(get_site_text_color(),0.3).';
 }
@@ -100,100 +100,100 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
 });
 
 add_action('cocoon_settings_after_save', function() {
-global $_THEME_OPTIONS;
-unset($_THEME_OPTIONS['site_background_color'] , $_THEME_OPTIONS['site_key_color'], $_THEME_OPTIONS['site_text_color'], $_THEME_OPTIONS['site_key_text_color']);
+  global $_THEME_OPTIONS;
+  unset($_THEME_OPTIONS['site_background_color'] , $_THEME_OPTIONS['site_key_color'], $_THEME_OPTIONS['site_text_color'], $_THEME_OPTIONS['site_key_text_color']);
 });
 add_filter('get_editor_key_color', function($color) {
   return get_theme_mod('site_key_color') ?: '#5be3ff';
 });
-//カスタマイザーに追加
+// カスタマイザーへの設定項目の追加
 function one_customize_register( $wp_customize ) {
 
-    $wp_customize->add_section( 'theme_setting', array(
-        'title'    => __( 'スキンoneの設定', THEME_NAME ),
-        'description' => __( '各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。', THEME_NAME ),
-        'priority' => 1,
-    ));
-    $wp_customize->add_setting( 'checkbox_one', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one', array(
-        'label'       => __( '本文見出し(H2)にカウントを付ける', THEME_NAME ),
-        'description' => __( '本文の見出しにカウントをつけたくない場合はチェックを外してください', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 1,
-        'type'        => 'checkbox',
-    )));
+  $wp_customize->add_section( 'theme_setting', array(
+    'title'    => __( 'スキンoneの設定', THEME_NAME ),
+    'description' => __( '各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。', THEME_NAME ),
+    'priority' => 1,
+  ));
+  $wp_customize->add_setting( 'checkbox_one', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one', array(
+    'label'       => __( '本文見出し(H2)にカウントを付ける', THEME_NAME ),
+    'description' => __( '本文の見出しにカウントをつけたくない場合はチェックを外してください', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 1,
+    'type'        => 'checkbox',
+  )));
 
-    $wp_customize->add_setting( 'checkbox_one2', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one2', array(
-        'label'       => __( 'PCでもスマートフォン用の固定フッターメニューを表示する', THEME_NAME ),
-        'description' => __( '従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 4,
-        'type'        => 'checkbox',
-    )));
-    $wp_customize->add_setting( 'checkbox_one3', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one3', array(
-        'label'       => __( '全体的に影を付ける', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 5,
-        'type'        => 'checkbox',
-    )));
-    $wp_customize->add_setting( 'checkbox_one4', array(
-        'default'  => false,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one4', array(
-        'label'       => __( 'ダークスキン対応にする', THEME_NAME ),
-        'description' => __( '背景をダークにしたときはチェックを入れてください', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 6,
-        'type'        => 'checkbox',
-    )));
-    $wp_customize->add_setting( 'checkbox_one5', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one5', array(
-        'label'       => __( '丸みをなくす', THEME_NAME ),
-        'description' => __( 'ボタンなどの角の丸みをなくしたいときはチェックを入れてください', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 7,
-        'type'        => 'checkbox',
-    )));
-    $wp_customize->add_setting( 'checkbox_one6', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one6', array(
-        'label'       => __( '本文の見出しを明朝体にする', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 2,
-        'type'        => 'checkbox',
-    )));
-    $wp_customize->add_setting( 'checkbox_one7', array(
-        'default'  => true,
-        'sanitize_callback' => 'one_sanitize_checkbox',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one7', array(
-        'label'       => __( 'サイドバーの見出しを明朝体にする', THEME_NAME ),
-        'section'     => 'theme_setting',
-        'priority'    => 3,
-        'type'        => 'checkbox',
-    )));
+  $wp_customize->add_setting( 'checkbox_one2', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one2', array(
+    'label'       => __( 'PCでもスマートフォン用の固定フッターメニューを表示する', THEME_NAME ),
+    'description' => __( '従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 4,
+    'type'        => 'checkbox',
+  )));
+  $wp_customize->add_setting( 'checkbox_one3', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one3', array(
+    'label'       => __( '全体的に影を付ける', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 5,
+    'type'        => 'checkbox',
+  )));
+  $wp_customize->add_setting( 'checkbox_one4', array(
+    'default'  => false,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one4', array(
+    'label'       => __( 'ダークスキン対応にする', THEME_NAME ),
+    'description' => __( '背景をダークにしたときはチェックを入れてください', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 6,
+    'type'        => 'checkbox',
+  )));
+  $wp_customize->add_setting( 'checkbox_one5', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one5', array(
+    'label'       => __( '丸みをなくす', THEME_NAME ),
+    'description' => __( 'ボタンなどの角の丸みをなくしたいときはチェックを入れてください', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 7,
+    'type'        => 'checkbox',
+  )));
+  $wp_customize->add_setting( 'checkbox_one6', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one6', array(
+    'label'       => __( '本文の見出しを明朝体にする', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 2,
+    'type'        => 'checkbox',
+  )));
+  $wp_customize->add_setting( 'checkbox_one7', array(
+    'default'  => true,
+    'sanitize_callback' => 'one_sanitize_checkbox',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'checkbox_one7', array(
+    'label'       => __( 'サイドバーの見出しを明朝体にする', THEME_NAME ),
+    'section'     => 'theme_setting',
+    'priority'    => 3,
+    'type'        => 'checkbox',
+  )));
 
 
 }
 function one_sanitize_checkbox( $checked ) {
-  // Boolean check.
+  // 真偽値への正規化
   return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
@@ -201,51 +201,58 @@ add_action( 'customize_register', 'one_customize_register' );
 
 if (get_theme_mod('checkbox_one',true)) {
   add_filter( 'body_class', 'my_class_names' );
-function my_class_names( $classes ) {
- $classes[] = 'is-count-on';
- return $classes;
-} }
- if (get_theme_mod('checkbox_one2',true)) {
-add_filter( 'body_class', 'my_class_names2' );
-function my_class_names2( $classes ) {
-  $classes[] = 'is-pcmenu-on';
-  return $classes;
- } }
-  if (get_theme_mod('checkbox_one3',true)) {
+  function my_class_names( $classes ) {
+    $classes[] = 'is-count-on';
+    return $classes;
+  }
+}
+if (get_theme_mod('checkbox_one2',true)) {
+  add_filter( 'body_class', 'my_class_names2' );
+  function my_class_names2( $classes ) {
+    $classes[] = 'is-pcmenu-on';
+    return $classes;
+  }
+}
+if (get_theme_mod('checkbox_one3',true)) {
   add_filter( 'body_class', 'my_class_names3' );
   function my_class_names3( $classes ) {
-   $classes[] = 'is-shadow-on';
-   return $classes;
-  } }
-  if (get_theme_mod('checkbox_one4',false)) {
-   add_filter( 'body_class', 'my_class_names4' );
-   function my_class_names4( $classes ) {
+    $classes[] = 'is-shadow-on';
+    return $classes;
+  }
+}
+if (get_theme_mod('checkbox_one4',false)) {
+  add_filter( 'body_class', 'my_class_names4' );
+  function my_class_names4( $classes ) {
     $classes[] = 'is-dark-on';
     return $classes;
-   } }
-    if (get_theme_mod('checkbox_one5',true)) {
-     add_filter( 'body_class', 'my_class_names5' );
-     function my_class_names5( $classes ) {
-      $classes[] = 'is-border-0';
-      return $classes;
-     } }
-      if (get_theme_mod('checkbox_one6',true)) {
-       add_filter( 'body_class', 'my_class_names6' );
-       function my_class_names6( $classes ) {
-        $classes[] = 'is-main-serif';
-        return $classes;
-       } }
-      if (get_theme_mod('checkbox_one7',true)) {
-       add_filter( 'body_class', 'my_class_names7' );
-       function my_class_names7( $classes ) {
-        $classes[] = 'is-sidebar-serif';
-        return $classes;
-       } }
+  }
+}
+if (get_theme_mod('checkbox_one5',true)) {
+  add_filter( 'body_class', 'my_class_names5' );
+  function my_class_names5( $classes ) {
+    $classes[] = 'is-border-0';
+    return $classes;
+  }
+}
+if (get_theme_mod('checkbox_one6',true)) {
+  add_filter( 'body_class', 'my_class_names6' );
+  function my_class_names6( $classes ) {
+    $classes[] = 'is-main-serif';
+    return $classes;
+  }
+}
+if (get_theme_mod('checkbox_one7',true)) {
+  add_filter( 'body_class', 'my_class_names7' );
+  function my_class_names7( $classes ) {
+    $classes[] = 'is-sidebar-serif';
+    return $classes;
+  }
+}
 
 
-//ウィジェットエリア追加
-  function one_widget_area() {
-  // ウィジェットを登録
+// ウィジェットエリアの追加
+function one_widget_area() {
+  // ウィジェットの登録
   register_sidebar( array(
     'id' => 'sidebar-one',
     'name' => __( '左固定サイドバー', THEME_NAME ),
@@ -255,16 +262,15 @@ function my_class_names2( $classes ) {
     'before_title' => '<p class="one-fixed-title">',
     'after_title' => '</p>',
   ) );
+}
+add_action( 'widgets_init', 'one_widget_area' );
+
+function one_widget_area_add() {
+  if ( is_active_sidebar( 'sidebar-one' ) ) {
+    dynamic_sidebar( 'sidebar-one' );
   }
-  add_action( 'widgets_init', 'one_widget_area' );
+}
 
-  function one_widget_area_add() {
-
-  		if ( is_active_sidebar( 'sidebar-one' ) ) {
-  			dynamic_sidebar( 'sidebar-one' );
-  		}
-  	}
-
-  add_action( 'wp_footer', 'one_widget_area_add' );
+add_action( 'wp_footer', 'one_widget_area_add' );
 
 ?>

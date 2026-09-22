@@ -59,6 +59,20 @@ for (const skin of ['simple-darkmode', 'simple-darkmode-always']) {
   assert.deepStrictEqual(rules, [['.widget-entry-cards.border-partition .a-wrap', [['box-shadow', 'none', false]]]], `${skin}の区切り線と影の重複防止`);
 }
 
+// 色の省略による上書きを避けた、ONEの区切り線の太さ・線種だけの指定
+const oneSelector = '.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child)';
+assert.deepStrictEqual(partitionRules(read('skins/one/style.css')), [[oneSelector, [
+  ['border-bottom-width', '1px', false], ['border-bottom-style', 'dashed', false]
+]]]);
+const oneStyles = JSON.parse(execFileSync('php', [path.join(root, 'tests/fixtures/one-skin-css.php')], {encoding: 'utf8'}));
+for (const [name, color] of Object.entries({default: 'rgba(0, 0, 0, 0.3)', custom: 'rgba(18, 52, 86, 0.3)', 'light-text': 'rgba(244, 238, 221, 0.3)'})) {
+  const rules = partitionRules(oneStyles[name]);
+  assert.strictEqual(rules.length, 1);
+  assert.ok(rules[0][0].split(',').map(selector => selector.trim()).includes('.widget-entry-cards.border-partition .a-wrap'));
+  assert.ok(!rules[0][0].includes(':first-of-type'), 'ONEの先頭カード専用線色の除去');
+  assert.deepStrictEqual(rules[0][1], [['border-color', color, false]]);
+}
+
 for (const block of ['new-list', 'popular-list', 'navicard']) {
   const source = read(`blocks/src/block/${block}/edit.js`);
   assert.ok(source.includes(label), `${block}の設定文言の不一致`);

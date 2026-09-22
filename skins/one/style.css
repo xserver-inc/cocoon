@@ -273,13 +273,10 @@ img{
 img.blogcard-favicon-image{
   vertical-align: baseline;
 }
-.border-partition a:last-child{
-  border-bottom: 0;
-  } .border-partition a{
-  border-bottom: 1px dashed;
-}
-.border-partition.is-list-horizontal .a-wrap{
-  border: 0;
+/* 動的な線色を保持した、縦並びの記事間だけの破線指定 */
+.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child){
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
 }
 body .content-in .widget-entry-cards .a-wrap{
   margin-bottom: 7px;
