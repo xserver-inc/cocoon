@@ -25,6 +25,11 @@ class MapPostPickerIntegrationTest extends IntegrationTestCase
 
     protected function tearDown(): void
     {
+        // WordPress未初期化によるスキップ時のDB後処理の除外
+        if (!defined('WP_TESTS_DOMAIN')) {
+            parent::tearDown();
+            return;
+        }
         global $wpdb;
         // 今回のテストで作成した投稿に属する記録だけの後片付け
         foreach ($this->candidateIds as $id) {
