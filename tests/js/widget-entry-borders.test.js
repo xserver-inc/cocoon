@@ -51,6 +51,31 @@ for (const [color, border] of Object.entries({ebicha: '#e6c7c0', kachiiro: '#d1d
   ]], `Fuwari ${color}の線指定の適用範囲`);
 }
 
+// ミックス3色のカード間だけの線指定と、最近のコメントの装飾の維持
+for (const skin of ['skin-mixblue', 'skin-mixgreen', 'skin-mixred']) {
+  const borders = [];
+  const comments = [];
+  postcss.parse(read(`skins/${skin}/style.css`)).walkRules(rule => {
+    for (const selector of rule.selectors) {
+      if (selector.includes('.widget-entry-cards') && selector.includes('.a-wrap')) {
+        rule.walkDecls(/^border(?:-|$)/, decl => borders.push([selector, decl.prop, decl.value, Boolean(decl.important)]));
+      }
+      if (selector === '.recent-comments .a-wrap') {
+        rule.walkDecls(decl => comments.push([decl.prop, decl.value, Boolean(decl.important)]));
+      }
+    }
+  });
+  assert.deepStrictEqual(borders, [[
+    '.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child)',
+    'border-bottom', '1px solid #d0d0c7', false
+  ]], `${skin}の線指定の適用範囲`);
+  assert.deepStrictEqual(comments.sort(), [
+    ['border-bottom', '1px solid #d0d0c7', false],
+    ['box-shadow', '0px 2px 0px #fbfafa', false],
+    ['color', '#5a5129', false]
+  ].sort(), `${skin}の最近のコメントの装飾の維持`);
+}
+
 // 通常版と常時ダーク版の、共通SCSS由来の影除去と配布CSSへの反映確認
 for (const skin of ['simple-darkmode', 'simple-darkmode-always']) {
   const compiled = sass.compile(path.join(root, `skins/${skin}/scss/style.scss`), {logger: sass.Logger.silent}).css;

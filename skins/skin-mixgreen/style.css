@@ -321,9 +321,14 @@ input[type='submit'] {
 /* ----- エントリーカード、コメント ----- */
 .widget-entry-cards .a-wrap,
 .recent-comments .a-wrap {
-  border-bottom: 1px solid #d0d0c7;
   box-shadow: 0px 2px 0px #fbfafa;
   color: #5a5129;
+}
+
+/* 縦並びのカード間の区切り線と、最近のコメントの下線 */
+.widget-entry-cards.border-partition:not(.is-list-horizontal) > .a-wrap:not(:last-child),
+.recent-comments .a-wrap {
+  border-bottom: 1px solid #d0d0c7;
 }
 
 /* ----- 境界線 ----- */
