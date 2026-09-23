@@ -61,6 +61,7 @@ function cocoon_analytics_admin_enqueue($hook){
 
   if (isset($_GET['view']) && $_GET['view'] === 'clicks') {
     wp_enqueue_script('cocoon-click-stat-tips', $base . '/click-stat-tips.js', array(), filemtime($path . '/click-stat-tips.js'), true);
+    wp_enqueue_script('cocoon-click-table-scroll', $base . '/click-table-scroll.js', array(), filemtime($path . '/click-table-scroll.js'), true);
   }
 
   if (isset($_GET['view'], $_GET['click_view']) && $_GET['view'] === 'clicks' && $_GET['click_view'] === 'map') {

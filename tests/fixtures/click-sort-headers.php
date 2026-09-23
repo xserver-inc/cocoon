@@ -14,6 +14,8 @@ function add_query_arg($args) {
     return '/admin.php?' . http_build_query($query);
 }
 require dirname(__DIR__) . '/wp-mock-functions.php';
+function esc_html__($text, $domain = '') {return esc_html(__($text, $domain));}
+function esc_html_e($text, $domain = '') {echo esc_html__($text, $domain);}
 require ABSPATH . 'lib/page-access/click-analytics/admin-query-func.php';
 require ABSPATH . 'lib/page-access/click-analytics/render-func.php';
 
@@ -28,8 +30,12 @@ function cocoon_test_sort_headers($query_string) {
     return ob_get_clean();
 }
 
-// 複数の並べ替え条件を1回のPHP起動で処理するCLI専用バッチ
-if (($argv[1] ?? '') === '--batch') {
+// 本番の表または複数の並べ替え見出しを出力するCLI専用フィクスチャー
+if (($argv[1] ?? '') === '--table') {
+    $_SERVER['REQUEST_URI'] = '/admin.php?' . ($argv[2] ?? '');
+    parse_str($argv[2] ?? '', $query);
+    cocoon_click_render_links_table(array('rows' => array()), ($query['click_view'] ?? '') !== 'map', cocoon_click_table_sort_args($query));
+} elseif (($argv[1] ?? '') === '--batch') {
     $headers = array();
     foreach (json_decode($argv[2], true, 512, JSON_THROW_ON_ERROR) as $query_string) {
         $headers[$query_string] = cocoon_test_sort_headers($query_string);

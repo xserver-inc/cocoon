@@ -20858,5 +20858,17 @@ msgid "%s: 降順で並べ替え"
 msgstr "%s: 내림차순 정렬"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
-msgstr "열 제목을 클릭하면 정렬할 수 있습니다. 같은 열 제목을 다시 클릭하면 오름차순과 내림차순이 전환됩니다."
+msgid "横にスクロールできます"
+msgstr "가로로 스크롤할 수 있습니다"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "표를 왼쪽으로 스크롤"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "표를 오른쪽으로 스크롤"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "데이터 해석 방법"

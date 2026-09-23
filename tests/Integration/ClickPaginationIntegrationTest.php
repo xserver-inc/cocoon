@@ -24,9 +24,13 @@ class ClickPaginationIntegrationTest extends IntegrationTestCase
                     $dom = new \DOMDocument();
                     $dom->loadHTML('<meta charset="utf-8">' . $html);
                     $xpath = new \DOMXPath($dom);
+                    $this->assertStringContainsString('class="cocoon-click-results-footer"', $html);
                     $this->assertStringContainsString('cocoon-click-pagination', $html);
                     $this->assertStringContainsString('class="pagination-links"', $html);
-                    $this->assertSame($current === 13, strpos($html, '<p class="description">') !== false);
+                    $this->assertSame($current === 13, strpos($html, 'class="description cocoon-click-estimate-note"') !== false);
+                    if ($current === 13) {
+                        $this->assertTrue(strpos($html, 'cocoon-click-estimate-note') < strpos($html, 'cocoon-click-pagination'));
+                    }
                     $this->assertSame(0, $xpath->query('//ul')->length);
                     $this->assertSame((string) $current, $xpath->query('//*[@aria-current="page"]')->item(0)->textContent);
                     $this->assertSame($current > 1 ? 1 : 0, $xpath->query('//a[contains(@class,"prev")]')->length);

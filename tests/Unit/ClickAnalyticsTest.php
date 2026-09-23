@@ -61,6 +61,22 @@ class ClickAnalyticsTest extends TestCase
         }
     }
 
+    public function testEstimatedSinglePageKeepsExplanationWithoutPageLinks(): void
+    {
+        \Brain\Monkey\Functions\expect('paginate_links')->never();
+        \Brain\Monkey\Functions\when('esc_html__')->alias(static function ($text) {return $text;});
+        ob_start();
+        try {
+            cocoon_click_render_pagination(array('total' => 25, 'per_page' => 25, 'page' => 1, 'total_is_estimate' => true));
+            $html = (string) ob_get_contents();
+        } finally {
+            ob_end_clean();
+        }
+        $this->assertStringContainsString('class="cocoon-click-results-footer"', $html);
+        $this->assertStringContainsString('class="description cocoon-click-estimate-note"', $html);
+        $this->assertStringNotContainsString('cocoon-click-pagination', $html);
+    }
+
     public function testPreviewUrlsPreserveImageQueriesAndRejectSecrets(): void
     {
         $this->assertSame('https://images.example.org/banner.png?id=123&w=320&h=180', cocoon_click_sanitize_image_url('https://images.example.org/banner.png?id=123&amp;w=320&amp;h=180'));
@@ -151,6 +167,12 @@ class ClickAnalyticsTest extends TestCase
             $this->assertStringNotContainsString('<details open', $html);
             $this->assertStringContainsString('95%信頼区間', $html);
             $this->assertStringContainsString('cocoon-click-stat-content', $html);
+            $this->assertStringContainsString('class="cocoon-click-scroll-controls" hidden', $html);
+            $this->assertStringContainsString('aria-label="表を左にスクロール"', $html);
+            $this->assertStringContainsString('aria-label="表を右にスクロール"', $html);
+            $this->assertStringContainsString('class="cocoon-click-table-frame"', $html);
+            $this->assertStringNotContainsString('列見出しをクリックすると並べ替えできます。', $html);
+            $this->assertStringContainsString('横にスクロールできます', $html);
         }
     }
 
@@ -189,7 +211,7 @@ class ClickAnalyticsTest extends TestCase
                 $this->assertSame($expected, substr_count($html, 'cocoon-click-image-notice'));
                 $this->assertSame($expected, substr_count($html, esc_html($notice)));
                 if ($expected) {
-                    $this->assertMatchesRegularExpression('/<\/table>\s*<\/div>\s*<p class="description cocoon-click-image-notice">/', $html);
+                    $this->assertMatchesRegularExpression('/<\/table>\s*(?:<\/div>\s*){3}<p class="description cocoon-click-image-notice">/', $html);
                     $this->assertStringNotContainsString('<img class="cocoon-click-thumbnail" src="https://images.example.net/', $html);
                 }
             }

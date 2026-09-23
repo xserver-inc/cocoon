@@ -20687,5 +20687,17 @@ msgid "%s: 降順で並べ替え"
 msgstr "%s：降冪排列"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
-msgstr "點擊欄位標題即可排序。再次點擊同一欄位標題，可切換升冪和降冪。"
+msgid "横にスクロールできます"
+msgstr "可橫向捲動"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "向左捲動表格"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "向右捲動表格"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "如何解讀資料"

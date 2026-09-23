@@ -8,12 +8,19 @@ if ( !defined( 'ABSPATH' ) ) exit;
 if ( !function_exists( 'cocoon_click_render_pagination' ) ):
 function cocoon_click_render_pagination($result, $sort = array()){
   $pages = (int) ceil($result['total'] / max(1, $result['per_page']));
-  if (!empty($result['total_is_estimate'])) echo '<p class="description">' . esc_html__('高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。', THEME_NAME) . '</p>';
-  if ($pages <= 1) return;
-  // リスト全体への番号ボタン用スタイルの適用を避けるリンク単位の取得
-  $fragment = $sort ? '#cocoon-click-sort-' . cocoon_click_table_sort_args($sort)['order'] : '#cocoon-click-links';
-  $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'array', 'add_fragment' => $fragment));
+  $has_estimate = !empty($result['total_is_estimate']);
+  if ($pages <= 1 && !$has_estimate) return;
+  $links = array();
+  if ($pages > 1) {
+    // リスト全体への番号ボタン用スタイルの適用を避けるリンク単位の取得
+    $fragment = $sort ? '#cocoon-click-sort-' . cocoon_click_table_sort_args($sort)['order'] : '#cocoon-click-links';
+    $links = paginate_links(array('base' => add_query_arg('paged', '%#%'), 'format' => '', 'current' => $result['page'], 'total' => $pages, 'type' => 'array', 'add_fragment' => $fragment));
+  }
+  if (!$has_estimate && !$links) return;
+  echo '<div class="cocoon-click-results-footer">';
+  if ($has_estimate) echo '<p class="description cocoon-click-estimate-note">' . esc_html__('高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。', THEME_NAME) . '</p>';
   if ($links) echo '<div class="tablenav bottom cocoon-click-pagination"><div class="tablenav-pages"><span class="pagination-links">' . implode("\n", $links) . '</span></div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput
+  echo '</div>';
 }
 endif;
 
@@ -177,7 +184,15 @@ function cocoon_click_render_links_table($result, $show_source = true, $sort = a
     'time' => __('平均クリック時間', THEME_NAME),
   );
   ?>
-  <?php if ($sort): ?><p class="description cocoon-click-sort-help"><?php esc_html_e('列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。', THEME_NAME); ?></p><?php endif; ?>
+  <div class="cocoon-click-table-panel">
+    <div class="cocoon-click-scroll-controls" hidden>
+      <span class="cocoon-click-scroll-hint"><span aria-hidden="true">↔</span> <?php esc_html_e('横にスクロールできます', THEME_NAME); ?></span>
+      <span class="cocoon-click-scroll-buttons">
+        <button type="button" class="button cocoon-click-scroll-left" aria-label="<?php echo esc_attr(__('表を左にスクロール', THEME_NAME)); ?>" title="<?php echo esc_attr(__('表を左にスクロール', THEME_NAME)); ?>"><span aria-hidden="true">←</span></button>
+        <button type="button" class="button cocoon-click-scroll-right" aria-label="<?php echo esc_attr(__('表を右にスクロール', THEME_NAME)); ?>" title="<?php echo esc_attr(__('表を右にスクロール', THEME_NAME)); ?>"><span aria-hidden="true">→</span></button>
+      </span>
+    </div>
+  <div class="cocoon-click-table-frame">
   <div<?php echo $sort ? ' id="cocoon-click-links"' : ''; ?> class="cocoon-analytics-table-scroll cocoon-click-table-scroll" tabindex="0" role="region" aria-label="<?php echo esc_attr(__('クリック解析', THEME_NAME)); ?>">
     <table class="widefat striped cocoon-click-table<?php echo $show_source ? '' : ' cocoon-click-table-no-source'; ?>">
       <colgroup>
@@ -243,6 +258,8 @@ function cocoon_click_render_links_table($result, $show_source = true, $sort = a
       <?php endforeach; ?>
       </tbody>
     </table>
+  </div>
+  </div>
   </div>
   <?php if ($has_manual_images): ?>
     <p class="description cocoon-click-image-notice"><?php esc_html_e('プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。', THEME_NAME); ?></p>

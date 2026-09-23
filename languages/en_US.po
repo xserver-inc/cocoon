@@ -21731,5 +21731,17 @@ msgid "%s: 降順で並べ替え"
 msgstr "%s: Sort descending"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
-msgstr "Click a column heading to sort. Click the same heading again to switch between ascending and descending order."
+msgid "横にスクロールできます"
+msgstr "Scroll horizontally to see more"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "Scroll table left"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "Scroll table right"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "How to read the data"

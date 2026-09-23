@@ -253,4 +253,4 @@ if ($click_view === 'overview') {
   }
 }
 
-echo '<p class="description cocoon-click-causality-note">' . esc_html__('掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。', THEME_NAME) . '</p>';
+echo '<aside class="cocoon-click-causality-note"><p class="cocoon-click-causality-title">' . esc_html__('データの見方', THEME_NAME) . '</p><p>' . esc_html__('掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。', THEME_NAME) . '</p></aside>';

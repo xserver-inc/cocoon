@@ -22204,5 +22204,17 @@ msgid "%s: 降順で並べ替え"
 msgstr "%s : Trier par ordre décroissant"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
-msgstr "Cliquez sur un en-tête de colonne pour trier. Cliquez à nouveau sur le même en-tête pour alterner entre les ordres croissant et décroissant."
+msgid "横にスクロールできます"
+msgstr "Faites défiler horizontalement pour en voir plus"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "Faire défiler le tableau vers la gauche"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "Faire défiler le tableau vers la droite"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "Comment interpréter les données"

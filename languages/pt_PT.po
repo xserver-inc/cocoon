@@ -21957,5 +21957,17 @@ msgid "%s: 降順で並べ替え"
 msgstr "%s: Ordenar por ordem decrescente"
 
 #: lib/page-access/click-analytics/render-func.php
-msgid "列見出しをクリックすると並べ替えできます。同じ列をもう一度クリックすると、昇順・降順が切り替わります。"
-msgstr "Clique no cabeçalho de uma coluna para ordenar. Clique novamente no mesmo cabeçalho para alternar entre a ordem crescente e decrescente."
+msgid "横にスクロールできます"
+msgstr "Desloque na horizontal para ver mais"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "Deslocar a tabela para a esquerda"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "Deslocar a tabela para a direita"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "Como interpretar os dados"
