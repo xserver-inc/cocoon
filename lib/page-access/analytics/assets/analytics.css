@@ -20,15 +20,6 @@
   margin-bottom: 14px;
 }
 
-.cocoon-click-filter-bar,
-.cocoon-click-group-form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 16px;
-  margin: 12px 0 18px;
-}
-
 .cocoon-click-kpi-grid {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
@@ -1216,6 +1207,209 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
+}
+
+/* 主な条件・詳細条件・適用中の条件の段階的な表示 */
+.cocoon-analytics-filter-bar.cocoon-click-filter-bar {
+  display: block;
+  padding: 16px;
+}
+
+.cocoon-click-filter-main,
+.cocoon-click-filter-fields,
+.cocoon-click-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+}
+
+.cocoon-click-filter-bar label,
+.cocoon-click-filter-bar .cocoon-analytics-post-picker-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cocoon-click-filter-main > .cocoon-analytics-post-picker-field {
+  flex: 1 1 280px;
+  max-width: 540px;
+}
+
+.cocoon-click-filter-bar .cocoon-analytics-post-picker,
+.cocoon-click-filter-bar .cocoon-map-picker {
+  width: 100%;
+  min-width: 0;
+}
+
+.cocoon-click-filter-bar .cocoon-analytics-suggest-dropdown {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cocoon-click-filter-bar select,
+.cocoon-click-filter-bar input[type="text"],
+.cocoon-click-filter-bar input[type="date"],
+.cocoon-click-filter-bar .button,
+.cocoon-click-filter-bar .cocoon-map-picker-trigger {
+  min-height: 40px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cocoon-click-filter-bar select {
+  min-width: 130px;
+  max-width: 100%;
+}
+
+.cocoon-click-filter-bar .cocoon-analytics-custom-range {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.cocoon-click-filter-bar [hidden] {
+  display: none !important;
+}
+
+.cocoon-click-filter-details {
+  margin-top: 12px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.cocoon-click-filter-details > summary {
+  padding: 12px 0 2px;
+  cursor: pointer;
+  color: #2271b1;
+  line-height: 1.8;
+}
+
+.cocoon-click-filter-summary,
+.cocoon-click-filter-count {
+  margin-inline-start: 8px;
+  color: #50575e;
+  font-size: 12px;
+}
+
+.cocoon-click-filter-count {
+  display: inline-block;
+  padding: 0 7px;
+  background: #f0f6fc;
+  border-radius: 12px;
+}
+
+.cocoon-click-filter-fields {
+  padding-top: 12px;
+}
+
+.cocoon-click-active-filters {
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cocoon-click-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  color: #1d2327;
+  background: #f6f7f7;
+  text-decoration: none;
+}
+
+.cocoon-click-filter-chip:hover {
+  border-color: #2271b1;
+  color: #135e96;
+}
+
+.cocoon-click-filter-clear {
+  padding: 5px;
+}
+
+.cocoon-click-group-switcher {
+  min-width: 0;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.cocoon-click-group-switcher legend {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cocoon-click-group-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cocoon-click-group-options button {
+  padding: 6px 14px;
+  min-height: 36px;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  background: #fff;
+  color: #2c3338;
+  font: inherit;
+  cursor: pointer;
+}
+
+.cocoon-click-group-options button:hover {
+  border-color: #2271b1;
+  color: #135e96;
+}
+
+.cocoon-click-group-options button[aria-pressed="true"] {
+  border-color: #2271b1;
+  background: #f0f6fc;
+  color: #135e96;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px #2271b1;
+}
+
+.cocoon-click-filter-details > summary:focus-visible,
+.cocoon-click-group-options button:focus-visible {
+  outline: 2px solid #2271b1;
+  outline-offset: 2px;
+}
+
+.cocoon-click-group-switcher .description {
+  margin: 8px 0 0;
+}
+
+@media (width <= 600px) {
+  .cocoon-click-filter-main > label,
+  .cocoon-click-filter-main > .cocoon-analytics-post-picker-field,
+  .cocoon-click-filter-fields > label {
+    flex: 1 1 100%;
+    max-width: none;
+    width: 100%;
+  }
+
+  .cocoon-click-filter-main > .cocoon-click-filter-submit {
+    width: 100%;
+  }
+
+  .cocoon-click-filter-summary {
+    display: none;
+  }
+
+  .cocoon-click-filter-bar select,
+  .cocoon-click-filter-bar input[type="text"],
+  .cocoon-click-filter-bar input[type="date"],
+  .cocoon-click-filter-bar .button,
+  .cocoon-click-group-options button,
+  .cocoon-click-filter-bar .cocoon-map-picker-trigger {
+    min-height: 44px;
+  }
 }
 
 .cocoon-analytics-range-label {

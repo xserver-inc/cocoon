@@ -22218,3 +22218,81 @@ msgstr "Faire défiler le tableau vers la droite"
 #: lib/page-access/click-analytics/dashboard.php
 msgid "データの見方"
 msgstr "Comment interpréter les données"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "開始日"
+msgstr "Date de début"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "終了日"
+msgstr "Date de fin"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "クリック元ページ:"
+msgstr "Page source :"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "すべてのページ（ページ名で絞り込み）"
+msgstr "Toutes les pages (rechercher par titre)"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "結果を表示"
+msgstr "Afficher les résultats"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件"
+msgstr "Plus de filtres"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置"
+msgstr "Appareil et emplacement"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置・リンク種別"
+msgstr "Appareil, emplacement et type de lien"
+
+#. translators: %d: 適用中の詳細条件の数
+#: lib/page-access/click-analytics/filter-func.php
+msgid "%d件を適用中"
+msgstr "Actifs : %d"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "適用中の詳細条件"
+msgstr "Filtres supplémentaires actifs"
+
+#. translators: %s: 解除する条件の名前と値
+#: lib/page-access/click-analytics/filter-func.php
+msgid "%sを解除"
+msgstr "Retirer %s"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件をクリア"
+msgstr "Effacer les filtres supplémentaires"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "掲載箇所ごと"
+msgstr "Par emplacement"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
+msgstr "Affiche chaque emplacement séparément, même si les liens ont la même destination."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "リンク先ごと"
+msgstr "Par destination"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先へのクリックをまとめて表示します。"
+msgstr "Regroupe les clics vers la même destination."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "ドメインごと"
+msgstr "Par domaine"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じドメインへのクリックをまとめて表示します。"
+msgstr "Regroupe les clics vers le même domaine."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "表のまとめ方"
+msgstr "Regroupement des lignes"

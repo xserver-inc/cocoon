@@ -6,6 +6,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 require_once dirname(__FILE__) . '/render-func.php';
+require_once dirname(__FILE__) . '/filter-func.php';
 
 if ( !function_exists( 'cocoon_click_render_subtabs' ) ):
 function cocoon_click_render_subtabs($current){
@@ -16,68 +17,6 @@ function cocoon_click_render_subtabs($current){
     printf('<a class="nav-tab%s" href="%s">%s</a>', $current === $key ? ' nav-tab-active' : '', esc_url($url), esc_html($label));
   }
   echo '</h3>';
-}
-endif;
-
-if ( !function_exists( 'cocoon_click_render_filters' ) ):
-function cocoon_click_render_filters($click_view, $preset, $from, $to, $filters, $table_args = array()){
-  ?>
-  <form method="get" class="cocoon-analytics-filter-bar cocoon-click-filter-bar">
-    <input type="hidden" name="page" value="theme-access">
-    <input type="hidden" name="view" value="clicks">
-    <input type="hidden" name="click_view" value="<?php echo esc_attr($click_view); ?>">
-    <?php foreach (array('order', 'direction', 'group') as $key): ?>
-      <?php if (isset($table_args[$key])): ?><input type="hidden" name="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($table_args[$key]); ?>"><?php endif; ?>
-    <?php endforeach; ?>
-    <label><?php _e('期間:', THEME_NAME); ?>
-      <select name="period">
-        <?php foreach (array('today' => __('今日', THEME_NAME), '7days' => __('直近7日', THEME_NAME), '30days' => __('直近30日', THEME_NAME), '90days' => __('直近90日', THEME_NAME), 'thismonth' => __('今月', THEME_NAME), 'all' => __('全期間', THEME_NAME), 'custom' => __('カスタム', THEME_NAME)) as $key => $label): ?>
-          <option value="<?php echo esc_attr($key); ?>" <?php selected($preset, $key); ?>><?php echo esc_html($label); ?></option>
-        <?php endforeach; ?>
-      </select>
-    </label>
-    <span class="cocoon-analytics-custom-range" <?php echo $preset === 'custom' ? '' : 'style="display:none;"'; ?>>
-      <input type="date" name="from" value="<?php echo esc_attr($from); ?>"> <?php _e('〜', THEME_NAME); ?>
-      <input type="date" name="to" value="<?php echo esc_attr($to); ?>">
-    </span>
-    <label><?php _e('端末:', THEME_NAME); ?>
-      <select name="device">
-        <?php foreach (array('all' => __('すべて', THEME_NAME), 'desktop' => __('PC', THEME_NAME), 'tablet' => __('タブレット', THEME_NAME), 'mobile' => __('モバイル', THEME_NAME)) as $key => $label): ?>
-          <option value="<?php echo esc_attr($key); ?>" <?php selected($filters['device'], $key); ?>><?php echo esc_html($label); ?></option>
-        <?php endforeach; ?>
-      </select>
-    </label>
-    <?php
-    if ($click_view === 'map') {
-      cocoon_analytics_render_map_post_picker($filters['source_post_id']);
-    } else {
-      cocoon_analytics_render_post_picker('source_post_id', $filters['source_post_id'], array(
-        'label'       => __('クリック元記事:', THEME_NAME),
-        'placeholder' => __('記事タイトル・キーワード・IDで検索...', THEME_NAME),
-      ));
-    }
-    ?>
-    <?php if ($click_view !== 'map'): ?>
-      <label><?php _e('掲載位置:', THEME_NAME); ?>
-        <select name="area">
-          <option value="all"><?php _e('すべて', THEME_NAME); ?></option>
-          <?php foreach (array('content', 'toc', 'blogcard', 'cta', 'related', 'header', 'navi', 'sidebar', 'footer', 'mobile_menu', 'other') as $area): ?>
-            <option value="<?php echo esc_attr($area); ?>" <?php selected($filters['area'], $area); ?>><?php echo esc_html(cocoon_click_area_label($area)); ?></option>
-          <?php endforeach; ?>
-        </select>
-      </label>
-      <label><?php _e('リンク種別:', THEME_NAME); ?>
-        <select name="link_type">
-          <option value="all"><?php _e('すべて', THEME_NAME); ?></option>
-          <?php foreach (array('internal', 'external', 'affiliate', 'official', 'reference', 'social', 'anchor', 'download', 'mailto', 'tel') as $type): ?>
-            <option value="<?php echo esc_attr($type); ?>" <?php selected($filters['link_type'], $type); ?>><?php echo esc_html(cocoon_click_type_label($type)); ?></option>
-          <?php endforeach; ?>
-        </select>
-      </label>
-    <?php endif; ?>
-    <?php submit_button(__('表示', THEME_NAME), 'secondary', '', false); ?>
-  </form>
-  <?php
 }
 endif;
 
@@ -129,12 +68,7 @@ $sort = cocoon_click_table_sort_args($_GET);
 $paged = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
 $group = isset($_GET['group']) && in_array($_GET['group'], array('occurrence', 'destination', 'domain'), true) ? $_GET['group'] : 'occurrence';
 if ($click_view === 'internal' && $group === 'domain') $group = 'destination';
-$filters = array(
-  'device' => isset($_GET['device']) && in_array($_GET['device'], array('all', 'desktop', 'tablet', 'mobile'), true) ? $_GET['device'] : 'all',
-  'source_post_id' => isset($_GET['source_post_id']) ? max(0, (int) $_GET['source_post_id']) : 0,
-  'area' => isset($_GET['area']) ? sanitize_key($_GET['area']) : 'all',
-  'link_type' => isset($_GET['link_type']) ? sanitize_key($_GET['link_type']) : 'all',
-);
+$filters = cocoon_click_filter_values($click_view, $_GET);
 
 cocoon_click_render_subtabs($click_view);
 
@@ -186,14 +120,7 @@ if ($click_view === 'overview') {
   echo '</div>';
 } elseif ($click_view === 'internal' || $click_view === 'external') {
   $scope = $click_view;
-  ?>
-  <form method="get" class="cocoon-click-group-form">
-    <?php foreach ($_GET as $key => $value) if (!in_array($key, array('group', 'order', 'direction', 'paged'), true) && is_scalar($value)) printf('<input type="hidden" name="%s" value="%s">', esc_attr($key), esc_attr($value)); ?>
-    <?php foreach ($sort as $key => $value) printf('<input type="hidden" name="%s" value="%s">', esc_attr($key), esc_attr($value)); ?>
-    <label><?php _e('集計単位:', THEME_NAME); ?> <select name="group"><option value="occurrence" <?php selected($group, 'occurrence'); ?>><?php _e('掲載箇所別', THEME_NAME); ?></option><option value="destination" <?php selected($group, 'destination'); ?>><?php _e('リンク先別', THEME_NAME); ?></option><?php if ($click_view === 'external'): ?><option value="domain" <?php selected($group, 'domain'); ?>><?php _e('ドメイン別', THEME_NAME); ?></option><?php endif; ?></select></label>
-    <?php submit_button(__('変更', THEME_NAME), 'secondary', '', false); ?>
-  </form>
-  <?php
+  cocoon_click_render_group_switcher($click_view, $group);
   if ($click_view === 'external') echo '<p class="description">' . esc_html__('ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。', THEME_NAME) . '</p>';
   $result = cocoon_click_analytics_links_table($from, $to, array_merge($filters, $sort, array('scope' => $scope, 'group' => $group, 'page' => $paged, 'per_page' => 25)));
   cocoon_click_render_links_table($result, true, $sort);

@@ -20383,3 +20383,81 @@ msgstr ""
 #: lib/page-access/click-analytics/dashboard.php
 msgid "データの見方"
 msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "開始日"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "終了日"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "クリック元ページ:"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "すべてのページ（ページ名で絞り込み）"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "結果を表示"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置・リンク種別"
+msgstr ""
+
+#. translators: %d: 適用中の詳細条件の数
+#: lib/page-access/click-analytics/filter-func.php
+msgid "%d件を適用中"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "適用中の詳細条件"
+msgstr ""
+
+#. translators: %s: 解除する条件の名前と値
+#: lib/page-access/click-analytics/filter-func.php
+msgid "%sを解除"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件をクリア"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "掲載箇所ごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "リンク先ごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先へのクリックをまとめて表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "ドメインごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じドメインへのクリックをまとめて表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "表のまとめ方"
+msgstr ""

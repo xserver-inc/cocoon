@@ -15,9 +15,45 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/admin-query
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/export-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/analytics/render-func.php';
 require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/render-func.php';
+require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/filter-func.php';
 
 class ClickAnalyticsTest extends TestCase
 {
+    public function testFiltersExcludeTypesOutsideTheCurrentView(): void
+    {
+        foreach (array('internal', 'anchor', 'official') as $type) {
+            $this->assertSame('all', cocoon_click_filter_values('internal', array('link_type' => $type))['link_type']);
+        }
+        foreach (array('internal', 'anchor') as $type) {
+            $this->assertSame('all', cocoon_click_filter_values('external', array('link_type' => $type))['link_type']);
+            $this->assertSame($type, cocoon_click_filter_values('overview', array('link_type' => $type))['link_type']);
+        }
+        $this->assertSame('official', cocoon_click_filter_values('external', array('link_type' => 'official'))['link_type']);
+        $map = cocoon_click_filter_values('map', array('device' => 'mobile', 'area' => 'content', 'link_type' => 'official'));
+        $this->assertSame(array('device' => 'mobile', 'area' => 'all', 'link_type' => 'all', 'source_post_id' => 0), $map);
+    }
+
+    public function testInvalidFilterValuesDoNotCreateInvisibleConditions(): void
+    {
+        foreach (array('unknown', array('mobile'), null) as $value) {
+            $filters = cocoon_click_filter_values('external', array('device' => $value, 'area' => $value, 'link_type' => $value));
+            $this->assertSame(array('device' => 'all', 'area' => 'all', 'link_type' => 'all', 'source_post_id' => 0), $filters);
+        }
+        $this->assertSame(0, cocoon_click_filter_values('overview', array('source_post_id' => array(42)))['source_post_id']);
+        $this->assertSame(42, cocoon_click_filter_values('overview', array('source_post_id' => '42'))['source_post_id']);
+    }
+
+    public function testExternalFiltersKeepEverySupportedDestinationType(): void
+    {
+        // 計測・集計側で対応している外部リンク種別と絞り込み候補の一致
+        foreach (array('external', 'affiliate', 'official', 'reference', 'social', 'download', 'mailto', 'tel', 'sms') as $type) {
+            foreach (array('overview', 'external') as $view) {
+                $this->assertSame($type, cocoon_click_filter_values($view, array('link_type' => $type))['link_type']);
+                $this->assertArrayHasKey($type, cocoon_click_filter_options($view)['link_type']);
+            }
+        }
+    }
+
     public function testTableSortAcceptsOnlyKnownColumnsAndDirections(): void
     {
         $this->assertSame(array('order' => 'clicks', 'direction' => 'desc'), cocoon_click_table_sort_args());
