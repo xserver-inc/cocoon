@@ -518,6 +518,31 @@ function cocoon_click_analytics_map_links($from, $to, $source_post_id, $device =
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_maintenance_health' ) ):
+function cocoon_click_maintenance_health($enabled, $enabled_at, $maintenance, $next_cron, $now, $sampling_updated = null){
+  $maintenance = is_array($maintenance) ? $maintenance : array();
+  $completed = cocoon_click_local_timestamp(isset($maintenance['completed_at']) ? $maintenance['completed_at'] : '');
+  $started = cocoon_click_local_timestamp($enabled_at);
+  $delay = $next_cron ? max(0, $now - $next_cron) : null;
+  if ($completed !== false && $delay !== null) $delay = max($delay, $now - $completed - DAY_IN_SECONDS);
+  $warning = false;
+  if ($enabled) {
+    // 初回実行待ちの猶予を含めた、未予約・失敗・48時間以上未完了の検出
+    $reference = $completed !== false ? $completed : $started;
+    $warning = !$next_cron || (isset($maintenance['status']) && $maintenance['status'] === 'error')
+      || ($reference !== false && $now - $reference >= 2 * DAY_IN_SECONDS)
+      || ($delay !== null && $delay >= DAY_IN_SECONDS);
+    // 削除だけの継続実行によって日次サンプリングの停止が隠れないための独立判定
+    if ($sampling_updated !== null) {
+      $sampling = cocoon_click_local_timestamp($sampling_updated);
+      $sampling_reference = $sampling !== false ? $sampling : $started;
+      if ($sampling_reference !== false && $now - $sampling_reference >= 2 * DAY_IN_SECONDS) $warning = true;
+    }
+  }
+  return array('delay' => $delay, 'warning' => $warning);
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_analytics_health' ) ):
 function cocoon_click_analytics_health(){
   global $wpdb;
@@ -546,13 +571,7 @@ function cocoon_click_analytics_health(){
     $accepted_batches = (int) $health_row['accepted_batches'];
     $duplicate_batches = (int) $health_row['duplicate_batches'];
   }
-  $cache_health_available = function_exists('wp_using_ext_object_cache') && wp_using_ext_object_cache();
-  if ($cache_health_available) {
-    for ($offset = 0; $offset < 14; $offset++) {
-      $date = gmdate('Y-m-d', strtotime(current_time('Y-m-d') . ' -' . $offset . ' days'));
-      $rejected += (int) wp_cache_get('request_rejected|' . $date, 'cocoon_click_analytics_health');
-    }
-  }
+  $rejected_requests = cocoon_click_rejected_requests_count($tables_exist);
   $today = current_time('Y-m-d');
   $current_from = gmdate('Y-m-d', strtotime($today . ' -6 days'));
   $previous_to = gmdate('Y-m-d', strtotime($current_from . ' -1 day'));
@@ -561,19 +580,21 @@ function cocoon_click_analytics_health(){
   $previous_metrics = $tables_exist ? cocoon_click_analytics_metrics($previous_from, $previous_to) : cocoon_click_metric_row(array());
   $maintenance = get_theme_option(OP_CLICK_ANALYTICS_MAINTENANCE_STATUS, array());
   $monthly = get_theme_option(OP_CLICK_ANALYTICS_MONTHLY_STATUS, array());
+  $maintenance = is_array($maintenance) ? $maintenance : array();
+  $monthly = is_array($monthly) ? $monthly : array();
   $next_cron = wp_next_scheduled(COCOON_CLICK_CRON_HOOK);
-  $last_maintenance = !empty($maintenance['completed_at']) ? strtotime($maintenance['completed_at']) : false;
-  $cron_delay = $next_cron && $next_cron < time() ? time() - $next_cron : 0;
-  if ($last_maintenance) $cron_delay = max($cron_delay, max(0, time() - $last_maintenance - DAY_IN_SECONDS));
+  $cron_health = cocoon_click_maintenance_health(is_click_analytics_enable(), get_theme_option(OP_CLICK_ANALYTICS_ENABLED_AT, ''), $maintenance, $next_cron, time(), get_theme_option(OP_CLICK_ANALYTICS_SAMPLING_UPDATED, ''));
   return array(
     'sampling_rate' => get_click_analytics_sampling_rate(),
     'sampling_updated' => get_theme_option(OP_CLICK_ANALYTICS_SAMPLING_UPDATED, ''),
     'last_ingested' => $last,
     'database_bytes' => $bytes,
     'next_cron' => $next_cron,
-    'cron_delay' => $next_cron ? $cron_delay : null,
+    'cron_delay' => $cron_health['delay'],
+    'cron_warning' => $cron_health['warning'],
     'received_14days' => $received,
     'rejected_14days' => $rejected,
+    'rejected_requests_14days' => $rejected_requests,
     'accepted_batches_14days' => $accepted_batches,
     'duplicate_batches_14days' => $duplicate_batches,
     'duplicate_rate' => ($accepted_batches + $duplicate_batches) > 0 ? $duplicate_batches / ($accepted_batches + $duplicate_batches) : null,
@@ -581,7 +602,6 @@ function cocoon_click_analytics_health(){
     'ctr_anomaly' => cocoon_click_detect_ctr_anomaly($current_metrics, $previous_metrics),
     'maintenance_status' => $maintenance,
     'monthly_status' => $monthly,
-    'health_cache_available' => $cache_health_available,
   );
 }
 endif;

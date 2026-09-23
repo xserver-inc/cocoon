@@ -6,7 +6,7 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 global $wpdb;
-define('CLICK_ANALYTICS_TABLE_VERSION', '0.7.0');
+define('CLICK_ANALYTICS_TABLE_VERSION', '0.8.0');
 define('OP_CLICK_ANALYTICS_TABLE_VERSION', 'click_analytics_table_version');
 define('CLICK_LINKS_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_links');
 define('CLICK_STATS_DAILY_TABLE_NAME', $wpdb->prefix . THEME_NAME . '_click_stats_daily');
@@ -196,6 +196,7 @@ function create_click_analytics_tables(){
     $engine = $wpdb->get_var($wpdb->prepare('SELECT ENGINE FROM information_schema.tables WHERE table_schema=%s AND table_name=%s', DB_NAME, $table));
     if (!$engine || (strtolower($engine) !== 'innodb' && $wpdb->query("ALTER TABLE `{$table}` ENGINE=InnoDB") === false)) $all_created = false;
   }
+  if ($all_created && !cocoon_click_refresh_definition_count()) $all_created = false;
   set_theme_mod('click_analytics_schema_error', !$all_created);
   if ($all_created) set_theme_mod(OP_CLICK_ANALYTICS_TABLE_VERSION, CLICK_ANALYTICS_TABLE_VERSION);
   return $all_created;
@@ -241,6 +242,8 @@ function cocoon_click_delete_all_data(){
   $original_db = cocoon_click_begin_transaction();
   if (!$original_db) return false;
   try {
+    // 登録・削除で共通の順序による容量行の先行ロック
+    if (is_db_table_exist(CLICK_LIMITS_TABLE_NAME) && cocoon_click_lock_definition_count() === false) throw new RuntimeException('definition_lock');
     // DELETEは途中失敗を戻せるため、参照先だけ消える部分削除を防げます。
     foreach (array(CLICK_HEATMAP_DAILY_TABLE_NAME, CLICK_UNIQUES_TABLE_NAME, CLICK_BATCHES_TABLE_NAME, CLICK_STATS_DAILY_TABLE_NAME, CLICK_STATS_MONTHLY_TABLE_NAME, CLICK_LINKS_TABLE_NAME, CLICK_LIMITS_TABLE_NAME) as $table) {
       // 存在確認の失敗を「表がない」と扱わず、取り消せる表だけを削除します。
@@ -248,6 +251,7 @@ function cocoon_click_delete_all_data(){
       if ($wpdb->last_error || ($engine !== null && strtolower($engine) !== 'innodb')) throw new RuntimeException('delete_schema');
       if ($engine !== null && $wpdb->query("DELETE FROM `{$table}`") === false) throw new RuntimeException('delete');
     }
+    if (is_db_table_exist(CLICK_LIMITS_TABLE_NAME) && !cocoon_click_write_definition_count(0)) throw new RuntimeException('definition_count');
     if ($wpdb->query('COMMIT') === false) throw new RuntimeException('commit');
   } catch (Throwable $error) {
     $wpdb->query('ROLLBACK');
@@ -259,6 +263,11 @@ function cocoon_click_delete_all_data(){
   remove_theme_mod('click_analytics_monthly_status');
   remove_theme_mod('click_analytics_daily_purged_before');
   remove_theme_mod('click_analytics_enrichment_cursor');
+  // DBの完全削除と同じ期間のキャッシュ集計の消去
+  for ($offset = 0; $offset < 15; $offset++) {
+    $date = gmdate('Y-m-d', strtotime(current_time('Y-m-d') . ' -' . $offset . ' days'));
+    wp_cache_delete('request_rejected|' . $date, 'cocoon_click_analytics_health');
+  }
   return true;
 }
 endif;

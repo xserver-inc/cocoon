@@ -20777,3 +20777,23 @@ msgstr "合并显示指向同一域名的点击。"
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr "表格分组方式"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "最近14天排除的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "最近14天拒绝的请求：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "已接受批次中的事件排除率：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "拒绝的请求是指因令牌无效或请求次数限制等原因而未被接受的发送次数。其统计单位与排除的事件不同，因此不计入事件排除率。"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "点击分析的定期任务未安排、已失败或长时间未完成。自动抽样和数据清理可能无法更新。请检查 WP-Cron 或服务器的定时任务设置。"

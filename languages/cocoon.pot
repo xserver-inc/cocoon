@@ -20461,3 +20461,23 @@ msgstr ""
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr ""

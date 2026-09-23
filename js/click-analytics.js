@@ -26,7 +26,7 @@
     return 'desktop';
   }
 
-  // ページごとに表示を抽出します。
+  // ページごとの表示抽出
   function shouldSample(rate, randomValue) {
     return randomValue < clamp(Number(rate) || 0, 0, 100) / 100;
   }
@@ -63,7 +63,7 @@
     }
   }
 
-  // UTF-8の送信サイズを求めます。
+  // UTF-8の送信サイズの算出
   function utf8Length(value) {
     if (typeof TextEncoder !== 'undefined') {return new TextEncoder().encode(value).length;}
     let bytes = 0;
@@ -77,7 +77,7 @@
     return bytes;
   }
 
-  // 1回の送信をイベント50件・約30KB以内へ分割します。
+  // 1回の送信をイベント50件・約30KB以内へ分割
   function splitBatches(events, maxEvents, maxBytes, envelope) {
     const batches = [];
     let current = [];
@@ -156,7 +156,7 @@
   let flushTimer = null;
   const impressionBuffer = [];
   const recentClicks = new Map();
-  // 滞在時間には、端末時計の変更で逆戻りしない時計を使います。
+  // 滞在時間計測における、端末時計の変更に影響されない単調時計の使用
   function elapsedTime() {
     return win.performance && typeof win.performance.now === 'function' ? win.performance.now() : Date.now();
   }
@@ -181,11 +181,11 @@
   }
 
   function setSessionValue(key, value) {
-    try {win.sessionStorage.setItem(key, value);} catch (error) { /* 保存不可でも計測を続けます。 */ }
+    try {win.sessionStorage.setItem(key, value);} catch (error) { /* 保存不可の場合も計測を継続 */ }
   }
 
   function removeSessionValue(key) {
-    try {win.sessionStorage.removeItem(key);} catch (error) { /* 保存不可でも計測を続けます。 */ }
+    try {win.sessionStorage.removeItem(key);} catch (error) { /* 保存不可の場合も計測を継続 */ }
   }
 
   function sessionId() {
@@ -225,7 +225,7 @@
     splitBatches(events, 50, 30000, envelope).forEach(function (batch) {
       const payload = Object.assign({}, envelope, {batch_id: randomId(), events: batch});
       const body = JSON.stringify(payload);
-      // 同じバッチIDで再送し、重複を防ぎます。
+      // 同じバッチIDでの再送による重複防止
       function send(attempt) {
         if (!consentGranted || version !== consentVersion) {return;}
         if (win.fetch) {
@@ -237,7 +237,7 @@
               retries.add(timer);
             });
         } else if (win.navigator.sendBeacon) {
-          try {win.navigator.sendBeacon(config.endpoint, new Blob([body], {type: 'text/plain;charset=UTF-8'}));} catch (error) { /* 送信失敗を無視します。 */ }
+          try {win.navigator.sendBeacon(config.endpoint, new Blob([body], {type: 'text/plain;charset=UTF-8'}));} catch (error) { /* 送信失敗の無視 */ }
         }
       }
       send(0);
@@ -299,7 +299,7 @@
   }
 
   function linkMetadata(anchor) {
-    // 変更後の属性と掲載場所を使います。
+    // 変更後の属性と掲載場所の使用
     if (occurrenceDirty) {indexOccurrences();}
     const rawHref = anchor.getAttribute('href') || '';
     const kind = destinationKind(rawHref, config.siteHosts || [], anchor.hasAttribute('download'), win.location.href);
@@ -356,7 +356,7 @@
     return events;
   }
 
-  // 掲載情報の変更を別の表示として扱います。
+  // 掲載情報変更後の別表示としての扱い
   function impressionKey(meta) {
     return JSON.stringify([meta.href, meta.area, meta.heading, meta.occurrence, meta.label, meta.element_type]);
   }
@@ -395,17 +395,17 @@
 
   const crossTabPrefix = storagePrefix + 'cross_tab_';
 
-  // 別タブへ期限付きの到着情報を渡します。
+  // 別タブへの期限付き到着情報の受け渡し
   function crossTabEntries() {
     const entries = [];
     try {
       Object.keys(win.localStorage).filter(function (key) {return key.indexOf(crossTabPrefix) === 0;}).forEach(function (key) {
         let pending = null;
-        try {pending = JSON.parse(win.localStorage.getItem(key));} catch (error) { /* 壊れた値は削除します。 */ }
+        try {pending = JSON.parse(win.localStorage.getItem(key));} catch (error) { /* 壊れた値の削除 */ }
         if (!pending || pending.expires < Date.now()) {win.localStorage.removeItem(key);}
         else {entries.push({key: key, pending: pending});}
       });
-    } catch (error) { /* 保存不可でも計測を続けます。 */ }
+    } catch (error) { /* 保存不可の場合も計測を継続 */ }
     return entries.sort(function (a, b) {return a.pending.expires - b.pending.expires;});
   }
 
@@ -417,7 +417,7 @@
       const entries = crossTabEntries();
       entries.slice(0, Math.max(0, entries.length - 19)).forEach(function (entry) {win.localStorage.removeItem(entry.key);});
       win.localStorage.setItem(crossTabPrefix + randomId(), JSON.stringify(pending));
-    } catch (error) { /* 保存不可でも遷移を続けます。 */ }
+    } catch (error) { /* 保存不可の場合も遷移を継続 */ }
   }
 
   function clickPosition(event, anchor) {
@@ -439,7 +439,7 @@
     if (!consentGranted || event.isTrusted === false || (typeof event.button === 'number' && event.button === 2)) {return;}
     const anchor = event.target && event.target.closest ? event.target.closest('a[href]') : null;
     if (!anchor) {return;}
-    // 未抽出ページも掲載順を更新します。
+    // 未抽出ページを含む掲載順の更新
     if (!mutationObserver) {occurrenceDirty = true;}
     const meta = linkMetadata(anchor);
     if (isExcluded(meta)) {return;}
@@ -452,7 +452,7 @@
       if (now - time >= 2000) {recentClicks.delete(existing);}
     });
     const exposureKey = impressionKey(meta);
-    // CTRの成功は1表示につき最大1回です。
+    // 1表示につき最大1回のCTR成功判定
     const sampled = sampledPage && sampledClicks.get(anchor) !== exposureKey;
     const forcedImpression = sampled && impressed.get(anchor) !== exposureKey;
     if (sampled) {sampledClicks.set(anchor, exposureKey);}
@@ -464,7 +464,7 @@
       forced_impression: forcedImpression,
       time_to_click_ms: Math.max(0, Math.round(elapsed))
     }, meta, config.heatmap ? clickPosition(event, anchor) : {});
-    // 成立済みの表示をクリックと一緒に送ります。
+    // 成立済みの表示とクリックの同時送信
     const events = impressionBuffer.splice(0, impressionBuffer.length).concat([eventData]);
     markPageSample(events);
     transmit(events);
@@ -473,7 +473,7 @@
 
   function initObserver() {
     if (!consentGranted || doc.hidden || !sampledPage || !config.impressions || observer || !('IntersectionObserver' in win)) {return;}
-    // 50%以上の可視状態を1秒保つと表示を数えます。
+    // 50%以上の可視状態を1秒維持した場合の表示加算
     observer = new win.IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (impressed.get(entry.target) === impressionKey(linkMetadata(entry.target))) {return;}
@@ -495,7 +495,7 @@
       const meta = linkMetadata(anchor);
       if (!isExcluded(meta)) {observer.observe(anchor);}
     });
-    // 追加・変更したリンクを監視し直します。
+    // 追加・変更したリンクの再監視
     if ('MutationObserver' in win) {
       mutationObserver = new win.MutationObserver(function (records) {
         occurrenceDirty = true;
@@ -522,7 +522,7 @@
     }
   }
 
-  // 非表示・同意撤回で待機中の実表示を取り消します。
+  // 非表示・同意撤回時の待機中の実表示の取り消し
   function stopObservation() {
     if (observer) {observer.disconnect(); observer = null;}
     if (mutationObserver) {mutationObserver.disconnect(); mutationObserver = null;}
@@ -551,7 +551,7 @@
     return true;
   }
 
-  // エンゲージ判定には画面が見えている時間だけを足します。
+  // エンゲージ判定への画面表示中の時間だけの加算
   function updateOutcomeVisibility() {
     const state = outcomeState;
     if (!state || state.sent || !consentGranted) {return;}
@@ -567,7 +567,7 @@
   function initInternalOutcome() {
     if (!config.outcomes || !config.trackInternal) {return;}
     let pending = null;
-    try {pending = JSON.parse(sessionValue(pendingKey) || 'null');} catch (error) { /* 壊れた値は読み捨てます。 */ }
+    try {pending = JSON.parse(sessionValue(pendingKey) || 'null');} catch (error) { /* 壊れた値の読み捨て */ }
     removeSessionValue(pendingKey);
     if (activateOutcome(pending)) {return;}
     const claim = function () {
@@ -580,7 +580,7 @@
       try {win.localStorage.removeItem(entry.key);} catch (error) {return;}
       activateOutcome(entry.pending);
     };
-    // 到着情報をタブ間で排他制御します。
+  // タブ間での到着情報の排他制御
     if (win.navigator.locks) {win.navigator.locks.request(storagePrefix + 'arrival', claim).catch(function () {});}
     else {claim();}
   }
@@ -618,7 +618,7 @@
       consentGranted = granted === true && !privacySignal;
       if (consentGranted) {start();}
       else {
-        // 再同意しても、撤回前の送信待ちは復活させません。
+        // 再同意時も撤回前の送信待ちを復元しない扱い
         consentVersion += 1;
         retries.forEach(function (timer) {win.clearTimeout(timer);});
         retries.clear();
@@ -627,7 +627,7 @@
         impressionBuffer.length = 0;
         if (flushTimer) {win.clearInterval(flushTimer); flushTimer = null;}
         crossTabEntries().filter(function (entry) {return entry.pending.sessionId === currentSessionId;}).forEach(function (entry) {
-          try {win.localStorage.removeItem(entry.key);} catch (error) { /* ストレージ制限を無視します。 */ }
+          try {win.localStorage.removeItem(entry.key);} catch (error) { /* ストレージ制限の無視 */ }
         });
         removeSessionValue(pendingKey);
         removeSessionValue(storagePrefix + 'session');

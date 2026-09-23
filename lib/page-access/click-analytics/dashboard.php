@@ -166,7 +166,7 @@ if ($click_view === 'overview') {
           </div>
         <?php endif; ?>
         <div class="cocoon-click-map-viewport"><div class="cocoon-click-map-frame-wrap" style="width:<?php echo (int) cocoon_click_map_device_width($device); ?>px">
-          <iframe id="cocoon-click-map-frame" src="<?php echo esc_url(add_query_arg('cocoon_click_map_preview', '1', get_permalink($source_post_id))); ?>" title="<?php echo esc_attr__('クリックマップページプレビュー', THEME_NAME); ?>" loading="lazy"></iframe>
+          <iframe id="cocoon-click-map-frame" src="<?php echo esc_url(get_permalink($source_post_id)); ?>" title="<?php echo esc_attr__('クリックマップページプレビュー', THEME_NAME); ?>" loading="lazy"></iframe>
           <div id="cocoon-click-map-overlay" class="cocoon-click-map-overlay" aria-hidden="true">
             <?php foreach ($current_rows as $row): $opacity = 0.15 + (0.65 * ((int) $row['clicks'] / $max_clicks)); ?>
               <span class="cocoon-click-heat-cell" style="left:<?php echo (int) $row['x_bin'] * 10; ?>%;top:<?php echo (int) $row['y_bin'] * 2; ?>%;width:10%;height:2%;opacity:<?php echo esc_attr(number_format($opacity, 2, '.', '')); ?>" title="<?php echo esc_attr(sprintf(__('%sクリック', THEME_NAME), number_format_i18n($row['clicks']))); ?>"></span>

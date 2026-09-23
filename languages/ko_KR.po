@@ -20950,3 +20950,23 @@ msgstr "같은 도메인으로 이동하는 클릭을 합산하여 표시합니�
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr "표 집계 방식"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "최근 14일의 제외된 이벤트: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "최근 14일의 거부된 요청: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "수락된 배치 내 이벤트 제외율: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "거부된 요청은 잘못된 토큰이나 요청 횟수 제한 등으로 수락되지 않은 전송 건수입니다. 제외된 이벤트와 집계 단위가 다르므로 이벤트 제외율에는 포함하지 않습니다."
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "클릭 분석 정기 작업이 예약되지 않았거나 실패했거나 오랫동안 완료되지 않았습니다. 자동 샘플링과 데이터 정리가 갱신되지 않을 수 있습니다. WP-Cron 또는 서버의 예약 작업 설정을 확인해 주세요."

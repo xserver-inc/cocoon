@@ -22259,3 +22259,23 @@ msgstr "Agrupa los clics que llevan al mismo dominio."
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr "Agrupar filas de la tabla"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "Eventos excluidos en los últimos 14 días: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "Solicitudes rechazadas en los últimos 14 días: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "Tasa de exclusión de eventos en lotes aceptados: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "Las solicitudes rechazadas son envíos no aceptados, por ejemplo, por un token no válido o un límite de solicitudes. Se cuentan solicitudes y no eventos, por lo que no se incluyen en la tasa de exclusión de eventos."
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "El mantenimiento del análisis de clics no está programado, ha fallado o lleva mucho tiempo sin completarse. Es posible que el muestreo automático y la limpieza de datos no se actualicen. Revise WP-Cron o las tareas programadas del servidor."

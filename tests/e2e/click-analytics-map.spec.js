@@ -62,3 +62,65 @@ test('後から読み込まれるプレビューの初期化と再読み込み�
   await expect(overlay.locator('.cocoon-click-heat-cell')).toHaveCount(1);
   await expect(overlay).toHaveCSS('height', '40000px');
 });
+
+test('遅延挿入・リンク移動・記事の縮小への追従と再描画の収束', async ({page}) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await openPreview(page, 1600);
+  await page.addScriptTag({content: analytics});
+  const overlay = page.locator('#cocoon-click-map-overlay');
+  const marker = overlay.locator('.cocoon-click-link-marker');
+  await expect(marker).toHaveCSS('top', '800px');
+  const article = page.frames().find(frame => frame.url().endsWith('/article'));
+  await article.evaluate(() => {
+    document.querySelector('main').style.height = '3200px';
+    document.querySelector('a').style.top = '1200px';
+  });
+  await expect(overlay).toHaveCSS('height', '3200px');
+  await expect(marker).toHaveCSS('top', '1200px');
+  await article.evaluate(() => {document.querySelector('a').style.top = '1400px';});
+  await expect(marker).toHaveCSS('top', '1400px');
+  await article.evaluate(() => {
+    document.querySelector('main').style.height = '1000px';
+    document.querySelector('a').style.top = '500px';
+  });
+  await expect(overlay).toHaveCSS('height', '1000px');
+  await expect(marker).toHaveCSS('top', '500px');
+  // 静止後にDOM書き換えが続かないことの実測
+  const changes = await overlay.evaluate(element => new Promise(resolve => {
+    let count = 0;
+    const observer = new MutationObserver(() => {count++;});
+    setTimeout(() => {
+      observer.observe(element, {childList: true});
+      setTimeout(() => {observer.disconnect(); resolve(count);}, 500);
+    }, 300);
+  }));
+  expect(changes).toBe(0);
+  expect(errors).toEqual([]);
+});
+
+test('非表示リンクによる掲載順の維持と異なるオリジンへの遷移時のバッジ消去', async ({page}) => {
+  await openPreview(page, 1600);
+  await page.evaluate(() => {
+    window.CocoonAnalytics.clickMap.push({semantic_area: 'content', occurrence_no: 1, clicks: 8});
+  });
+  await page.addScriptTag({content: analytics});
+  const marker = page.locator('.cocoon-click-link-marker');
+  await expect(marker).toHaveText('5');
+  const article = page.frames().find(frame => frame.url().endsWith('/article'));
+  await article.evaluate(() => {
+    const hidden = document.createElement('a');
+    hidden.href = '/hidden';
+    hidden.style.display = 'none';
+    document.querySelector('main').prepend(hidden);
+  });
+  await expect(marker).toHaveCount(1);
+  await expect(marker).toHaveText('8');
+  await page.route('https://other.test/**', route => route.fulfill({body: '<html><body>other</body></html>'}));
+  await page.locator('iframe').evaluate(frame => {frame.src = 'https://other.test/article';});
+  await expect(page.locator('#cocoon-click-map-overlay')).toHaveClass(/cocoon-click-map-unavailable/);
+  await expect(marker).toHaveCount(0);
+  await page.locator('iframe').evaluate(frame => {frame.src = '/article';});
+  await expect(marker).toHaveText('5');
+  await expect(page.locator('#cocoon-click-map-overlay')).not.toHaveClass(/cocoon-click-map-unavailable/);
+});

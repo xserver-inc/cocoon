@@ -22296,3 +22296,23 @@ msgstr "Regroupe les clics vers le même domaine."
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr "Regroupement des lignes"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "Événements exclus au cours des 14 derniers jours : %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "Requêtes rejetées au cours des 14 derniers jours : %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "Taux d’exclusion des événements dans les lots acceptés : %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "Les requêtes rejetées sont des envois non acceptés, par exemple en raison d’un jeton invalide ou d’une limite de requêtes. Elles comptent des requêtes et non des événements ; elles ne sont donc pas incluses dans le taux d’exclusion des événements."
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "La maintenance de l’analyse des clics n’est pas planifiée, a échoué ou reste inachevée depuis longtemps. L’échantillonnage automatique et le nettoyage des données risquent de ne pas être mis à jour. Vérifiez WP-Cron ou les tâches planifiées du serveur."

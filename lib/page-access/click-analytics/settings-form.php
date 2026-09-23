@@ -35,12 +35,16 @@ if ( !defined( 'ABSPATH' ) ) exit;
     </tbody></table>
     <?php $health = cocoon_click_analytics_health(); ?>
     <h3><?php _e('収集状態', THEME_NAME); ?></h3>
+    <?php if ($health['cron_warning']): ?>
+      <div class="notice notice-warning inline"><p><?php esc_html_e('クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。', THEME_NAME); ?></p></div>
+    <?php endif; ?>
     <ul class="ul-disc">
       <li><?php printf(esc_html__('現在のサンプリング率: %s%%（表示計測のみ）', THEME_NAME), esc_html($health['sampling_rate'])); ?></li>
       <li><?php printf(esc_html__('直近14日の受信イベント: %s', THEME_NAME), esc_html(number_format_i18n($health['received_14days']))); ?></li>
-      <li><?php printf(esc_html__('直近14日の拒否イベント: %s', THEME_NAME), esc_html(number_format_i18n($health['rejected_14days']))); ?></li>
+      <li><?php printf(esc_html__('直近14日の除外イベント: %s', THEME_NAME), esc_html(number_format_i18n($health['rejected_14days']))); ?></li>
+      <li><?php printf(esc_html__('直近14日の拒否リクエスト: %s', THEME_NAME), esc_html($health['rejected_requests_14days'] === null ? '—' : number_format_i18n($health['rejected_requests_14days']))); ?></li>
       <li><?php printf(esc_html__('直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）', THEME_NAME), esc_html(number_format_i18n($health['accepted_batches_14days'])), esc_html(number_format_i18n($health['duplicate_batches_14days'])), esc_html(cocoon_click_format_percent($health['duplicate_rate']))); ?></li>
-      <li><?php printf(esc_html__('イベント欠損率（検証除外）: %s', THEME_NAME), esc_html(cocoon_click_format_percent($health['missing_rate']))); ?></li>
+      <li><?php printf(esc_html__('受理バッチ内のイベント除外率: %s', THEME_NAME), esc_html(cocoon_click_format_percent($health['missing_rate']))); ?></li>
       <li><?php printf(esc_html__('直近7日CTR診断: %s', THEME_NAME), esc_html(array_key_exists($health['ctr_anomaly'], array('high' => 1, 'low' => 1, 'stable' => 1)) ? array('high' => __('通常範囲より上昇', THEME_NAME), 'low' => __('通常範囲より低下', THEME_NAME), 'stable' => __('異常なし', THEME_NAME))[$health['ctr_anomaly']] : __('データ不足', THEME_NAME))); ?></li>
       <li><?php printf(esc_html__('最終受信: %s', THEME_NAME), esc_html($health['last_ingested'] ?: __('未受信', THEME_NAME))); ?></li>
       <li><?php printf(esc_html__('最終サンプリング集計: %s', THEME_NAME), esc_html($health['sampling_updated'] ?: __('未集計', THEME_NAME))); ?></li>
@@ -48,9 +52,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
       <li><?php printf(esc_html__('最終メンテナンス: %1$s / %2$sms', THEME_NAME), esc_html(isset($health['maintenance_status']['completed_at']) ? $health['maintenance_status']['completed_at'] : __('未実行', THEME_NAME)), esc_html(number_format_i18n(isset($health['maintenance_status']['duration_ms']) ? $health['maintenance_status']['duration_ms'] : 0))); ?></li>
       <li><?php printf(esc_html__('DB使用量: %s', THEME_NAME), esc_html(size_format($health['database_bytes']))); ?></li>
       <li><?php printf(esc_html__('次回メンテナンス: %s', THEME_NAME), esc_html($health['next_cron'] ? date_i18n(get_option('date_format') . ' ' . get_option('time_format'), $health['next_cron']) : __('未予約', THEME_NAME))); ?></li>
-      <li><?php printf(esc_html__('Cron遅延: %s', THEME_NAME), $health['cron_delay'] <= 0 ? esc_html__('なし', THEME_NAME) : esc_html(human_time_diff(time() - $health['cron_delay'], time()))); ?></li>
+      <li><?php printf(esc_html__('Cron遅延: %s', THEME_NAME), $health['cron_delay'] === null ? esc_html__('未予約', THEME_NAME) : ($health['cron_delay'] <= 0 ? esc_html__('なし', THEME_NAME) : esc_html(human_time_diff(time() - $health['cron_delay'], time())))); ?></li>
     </ul>
-    <?php if (!$health['health_cache_available']): ?><p class="description"><?php _e('トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。', THEME_NAME); ?></p><?php endif; ?>
+    <p class="description"><?php _e('拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。', THEME_NAME); ?></p>
     <p><button type="submit" class="button button-secondary" form="cocoon-click-delete-form" onclick="return confirm('<?php echo esc_js(__('クリック解析データをすべて削除します。元に戻せません。よろしいですか？', THEME_NAME)); ?>');"><?php _e('クリック解析データを完全削除', THEME_NAME); ?></button></p>
   </div>
 </div>

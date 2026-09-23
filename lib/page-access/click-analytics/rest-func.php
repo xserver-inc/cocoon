@@ -28,11 +28,40 @@ endif;
 
 if ( !function_exists( 'cocoon_click_health_increment' ) ):
 function cocoon_click_health_increment($metric, $amount = 1){
-  if (!function_exists('wp_using_ext_object_cache') || !wp_using_ext_object_cache()) return;
-  $key = sanitize_key($metric) . '|' . current_time('Y-m-d');
-  if (!wp_cache_add($key, (int) $amount, 'cocoon_click_analytics_health', 15 * DAY_IN_SECONDS)) {
-    wp_cache_incr($key, (int) $amount, 'cocoon_click_analytics_health');
+  $amount = max(0, (int) $amount);
+  if ($metric !== 'request_rejected' || !$amount || !is_click_analytics_enable()) return;
+  $key = $metric . '|' . current_time('Y-m-d');
+  if (function_exists('wp_using_ext_object_cache') && wp_using_ext_object_cache()) {
+    if (wp_cache_add($key, $amount, 'cocoon_click_analytics_health', 15 * DAY_IN_SECONDS)) return;
+    if (wp_cache_incr($key, $amount, 'cocoon_click_analytics_health') !== false) return;
   }
+  // 拒否理由やIPで行数を増やさない、日付ごとに1行の代替記録
+  if (!cocoon_click_tables_exist()) return;
+  global $wpdb;
+  $previous = $wpdb->suppress_errors(true);
+  try {
+    $wpdb->query($wpdb->prepare('INSERT INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES (%s,%d,%s) ON DUPLICATE KEY UPDATE request_count=request_count+VALUES(request_count)', cocoon_click_hmac('health|' . $key), $amount, gmdate('Y-m-d H:i:s', time() + 15 * DAY_IN_SECONDS)));
+  } finally {
+    $wpdb->suppress_errors($previous);
+  }
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_rejected_requests_count' ) ):
+function cocoon_click_rejected_requests_count($tables_exist){
+  global $wpdb;
+  if (!$tables_exist) return null;
+  $keys = array();
+  $cached = 0;
+  for ($offset = 0; $offset < 14; $offset++) {
+    $date = gmdate('Y-m-d', strtotime(current_time('Y-m-d') . ' -' . $offset . ' days'));
+    $key = 'request_rejected|' . $date;
+    $keys[] = cocoon_click_hmac('health|' . $key);
+    $cached += (int) wp_cache_get($key, 'cocoon_click_analytics_health');
+  }
+  // キャッシュの有効・無効切り替え前後の履歴も含めた合計
+  $count = $wpdb->get_var($wpdb->prepare('SELECT COALESCE(SUM(request_count),0) FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key IN (' . implode(',', array_fill(0, count($keys), '%s')) . ')', $keys));
+  return $count === null || $wpdb->last_error ? null : (int) $count + $cached;
 }
 endif;
 
@@ -50,7 +79,7 @@ endif;
 if ( !function_exists( 'cocoon_click_rate_limit_allows' ) ):
 function cocoon_click_rate_limit_allows($session_id){
   $minute = (int) floor(time() / 60);
-  $remote = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+  $remote = cocoon_click_rate_limit_ip();
   $network = cocoon_click_network_bucket($remote);
   // サイト全体から順に制限し、セッションIDを変える大量送信でも一時行を増やし続けません。
   $checks = array(
@@ -76,6 +105,15 @@ function cocoon_click_rate_limit_allows($session_id){
     if ($count === null || (int) $count > $check[1]) return false;
   }
   return true;
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_rate_limit_ip' ) ):
+function cocoon_click_rate_limit_ip(){
+  $remote = isset($_SERVER['REMOTE_ADDR']) && is_string($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+  // 信頼済みプロキシを管理者が明示した場合だけの接続元IP差し替え
+  $filtered = apply_filters('cocoon_click_analytics_rate_limit_ip', $remote);
+  return is_string($filtered) && filter_var($filtered, FILTER_VALIDATE_IP) !== false ? $filtered : $remote;
 }
 endif;
 
@@ -154,10 +192,28 @@ function cocoon_click_sanitize_link_event($event, $source_post_id, $source_url){
 endif;
 
 if ( !function_exists( 'cocoon_click_upsert_link_definitions' ) ):
-function cocoon_click_upsert_link_definitions($definitions, $now){
+function cocoon_click_upsert_link_definitions($definitions, $now, $new_definition_count = null){
   global $wpdb;
   $definitions = array_values($definitions);
   if (!$definitions) return array();
+  // 単独呼び出しでも上限判定・定義登録・容量加算を一括確定するためのトランザクション
+  if ($new_definition_count === null) {
+    $original_db = cocoon_click_begin_transaction(5);
+    if (!$original_db) return false;
+    try {
+      $keyed = array_column($definitions, null, 'link_key');
+      $accepted = cocoon_click_filter_definitions_by_capacity($keyed, (int) $definitions[0]['source_post_id'], $new_definition_count);
+      if (count($accepted) !== count($keyed)) throw new RuntimeException('definition_capacity');
+      $map = cocoon_click_upsert_link_definitions($accepted, $now, $new_definition_count);
+      if ($map === false || $wpdb->query('COMMIT') === false) throw new RuntimeException('definitions');
+      return $map;
+    } catch (Throwable $error) {
+      $wpdb->query('ROLLBACK');
+      return false;
+    } finally {
+      cocoon_click_end_transaction($original_db, true);
+    }
+  }
   $placeholders = array();
   $args = array();
   foreach ($definitions as $definition) {
@@ -182,7 +238,10 @@ function cocoon_click_upsert_link_definitions($definitions, $now){
   if ($wpdb->last_error) return false;
   $map = array();
   foreach ((array) $rows as $row) $map[$row['link_key']] = (int) $row['id'];
-  return count($map) === count($definitions) ? $map : false;
+  if (count($map) !== count($definitions)) return false;
+  // 更新行を含むaffected rowsではなく、ロック下で確定した新規定義数だけの加算
+  if ($new_definition_count > 0 && $wpdb->query($wpdb->prepare('UPDATE `' . CLICK_LIMITS_TABLE_NAME . '` SET request_count=request_count+%d WHERE limit_key=%s', $new_definition_count, cocoon_click_hmac('definition_capacity'))) !== 1) return false;
+  return $map;
 }
 endif;
 
@@ -354,11 +413,11 @@ function cocoon_click_rest_receive_events($request){
       $prepared[] = $item;
     }
     // 上限を超える新規リンクだけを除外し、同じバッチの既存クリックは保存します。
-    $definitions = cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id);
+    $definitions = cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id, $new_definition_count);
     $prepared = array_values(array_filter($prepared, function($item) use ($definitions){
       return $item['type'] === 'page_sample' || isset($definitions[$item['definition']['link_key']]);
     }));
-    $link_map = cocoon_click_upsert_link_definitions($definitions, $now);
+    $link_map = cocoon_click_upsert_link_definitions($definitions, $now, $new_definition_count);
     if ($link_map === false) throw new RuntimeException('links');
     $stats = array();
     $heatmap = array();
@@ -432,26 +491,28 @@ function cocoon_click_request_user_is_excluded(){
 endif;
 
 if ( !function_exists( 'cocoon_click_filter_definitions_by_capacity' ) ):
-function cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id){
+function cocoon_click_filter_definitions_by_capacity($definitions, $source_post_id, &$new_definition_count = 0){
   global $wpdb;
+  $new_definition_count = 0;
   if (!$definitions) return array();
   $keys = array_keys($definitions);
   $in = implode(',', array_fill(0, count($keys), '%s'));
   $existing = $wpdb->get_col($wpdb->prepare('SELECT link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ')', $keys));
   if ($wpdb->last_error) throw new RuntimeException('definition_lookup');
-  if (!array_diff($keys, (array) $existing)) return $definitions;
-  // 新規定義だけを直列化し、同時送信でもサイト全体・記事ごとの上限を超えません。
-  $key = cocoon_click_hmac('definition_capacity');
-  if ($wpdb->query($wpdb->prepare('INSERT IGNORE INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES (%s,0,%s)', $key, '9999-12-31 23:59:59')) === false) throw new RuntimeException('definition_lock');
-  if ($wpdb->get_var($wpdb->prepare('SELECT request_count FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key=%s FOR UPDATE', $key)) === null) throw new RuntimeException('definition_lock');
-  // ロック取得後の最新の行を確認し、他のリクエストが追加した定義も反映します。
+  if (!array_diff($keys, (array) $existing)) {
+    // パージとの競合による既存定義の再作成を防ぐ、対象リンクだけのロック
+    $locked = $wpdb->get_col($wpdb->prepare('SELECT link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ') FOR UPDATE', $keys));
+    if ($wpdb->last_error || array_diff($keys, (array) $locked)) throw new RuntimeException('definition_changed');
+    return $definitions;
+  }
+  // 新規定義だけの直列化と、容量専用行からの最新総数の取得
+  $site_count = cocoon_click_lock_definition_count();
+  if ($site_count === false) throw new RuntimeException('definition_lock');
+  // ロック取得後に追加済みの定義も含めた現在読み取り
   $existing = $wpdb->get_col($wpdb->prepare('SELECT link_key FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE link_key IN (' . $in . ') FOR UPDATE', $keys));
   if ($wpdb->last_error) throw new RuntimeException('definition_lookup');
   $site_limit = max(1, (int) apply_filters('cocoon_click_analytics_definition_limit', 100000));
   $post_limit = max(1, (int) apply_filters('cocoon_click_analytics_post_definition_limit', 5000));
-  // REPEATABLE READの古いスナップショットではなく確定済みの件数を読むための現在読み取り
-  $site_count = $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` FOR UPDATE');
-  if ($site_count === null) throw new RuntimeException('definition_count');
   $post_count = $wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE source_post_id=%d FOR UPDATE', $source_post_id));
   if ($post_count === null) throw new RuntimeException('definition_count');
   $available = max(0, min($site_limit - (int) $site_count, $post_limit - (int) $post_count));
@@ -459,7 +520,7 @@ function cocoon_click_filter_definitions_by_capacity($definitions, $source_post_
   $accepted = array();
   foreach ($definitions as $link_key => $definition) {
     if (isset($existing[$link_key])) $accepted[$link_key] = $definition;
-    elseif ($available > 0) { $accepted[$link_key] = $definition; $available--; }
+    elseif ($available > 0) { $accepted[$link_key] = $definition; $available--; $new_definition_count++; }
   }
   return $accepted;
 }

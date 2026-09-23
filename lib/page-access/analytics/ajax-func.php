@@ -39,7 +39,7 @@ function cocoon_analytics_search_posts($keyword, $limit = 20){
   if (function_exists('mb_substr')) $keyword = mb_substr($keyword, 0, 100);
   $limit = min(20, max(1, (int) $limit));
 
-  // 初心者向け: 数字だけが入力された場合は、記事IDの完全一致を最初に探します。
+  // 数字のみの入力時における記事ID完全一致の優先検索
   if (preg_match('/^[1-9][0-9]*$/', $keyword)) {
     $post = get_post((int) $keyword);
     if ($post && $post->post_status === 'publish' && in_array($post->post_type, array('post', 'page'), true)) {
@@ -48,7 +48,7 @@ function cocoon_analytics_search_posts($keyword, $limit = 20){
     return array();
   }
 
-  // 初心者向け: 記事一覧を全件読み込まず、入力されたときだけ候補を最大20件検索します。
+  // 全件読み込みを避けた、入力時のみの最大20件の候補検索
   $query = new WP_Query(array(
     'post_type'           => array('post', 'page'),
     'post_status'         => 'publish',

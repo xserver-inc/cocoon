@@ -53,6 +53,65 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         }
     }
 
+    public function testDefaultEnabledTimestampAndSamplingRecalculation(): void
+    {
+        $previousMods = get_theme_mods();
+        try {
+            remove_theme_mod(OP_CLICK_ANALYTICS_ENABLE);
+            remove_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT);
+            $before = time();
+            cocoon_click_manage_cron_schedule();
+            $start = get_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT);
+            $this->assertGreaterThanOrEqual($before, cocoon_click_local_timestamp($start));
+            cocoon_click_update_sampling_rate();
+            $this->assertSame(10, get_click_analytics_sampling_rate());
+            $this->assertSame($start, get_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT));
+            set_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT, (new \DateTimeImmutable('now', wp_timezone()))->modify('-6 days')->format('Y-m-d H:i:s'));
+            cocoon_click_update_sampling_rate();
+            $this->assertSame(100, get_click_analytics_sampling_rate());
+            set_theme_mod(OP_CLICK_ANALYTICS_ENABLE, 0);
+            remove_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT);
+            cocoon_click_manage_cron_schedule();
+            $this->assertFalse(get_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT));
+        } finally {
+            update_option('theme_mods_' . get_stylesheet(), $previousMods);
+        }
+    }
+
+    public function testSamplingQueryFailurePreservesLastSuccessfulRate(): void
+    {
+        global $wpdb;
+        $previousMods = get_theme_mods();
+        $previousErrors = $wpdb->suppress_errors(true);
+        $fail = static function ($sql) {
+            return strpos($sql, 'SELECT COALESCE(SUM(weighted_impressions),0) AS pageviews') === 0 ? 'SELECT missing_sampling_column' : $sql;
+        };
+        try {
+            set_theme_mod(OP_CLICK_ANALYTICS_SAMPLING_RATE, 20);
+            set_theme_mod(OP_CLICK_ANALYTICS_SAMPLING_UPDATED, '2026-09-01 12:00:00');
+            add_filter('query', $fail);
+            $this->assertFalse(cocoon_click_update_sampling_rate());
+            $this->assertSame(20, get_click_analytics_sampling_rate());
+            $this->assertSame('2026-09-01 12:00:00', get_theme_mod(OP_CLICK_ANALYTICS_SAMPLING_UPDATED));
+        } finally {
+            remove_filter('query', $fail);
+            $wpdb->suppress_errors($previousErrors);
+            update_option('theme_mods_' . get_stylesheet(), $previousMods);
+        }
+    }
+
+    public function testDisabledTrackingDoesNotRecreateRejectedRequestHistory(): void
+    {
+        $previousMods = get_theme_mods();
+        try {
+            set_theme_mod(OP_CLICK_ANALYTICS_ENABLE, 0);
+            cocoon_click_health_increment('request_rejected', 10);
+            $this->assertSame(0, cocoon_click_rejected_requests_count(true));
+        } finally {
+            update_option('theme_mods_' . get_stylesheet(), $previousMods);
+        }
+    }
+
     private function receiveEvents(array $events, string $batchId, bool $heatmap, int $postId = 0, bool $impressions = true): array
     {
         global $wpdb;
@@ -277,8 +336,16 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
     public function testRateLimitWorksWithoutPersistentObjectCache(): void
     {
         $this->assertFalse((bool) wp_using_ext_object_cache());
-        for ($index = 0; $index < 30; $index++) $this->assertTrue(cocoon_click_rate_limit_allows('limit-session-001'));
-        $this->assertFalse(cocoon_click_rate_limit_allows('limit-session-001'));
+        // 分境界で正しくリセットされた結果と、同じ分内の制限不良の区別
+        for ($attempt = 0; $attempt < 3; $attempt++) {
+            $minute = (int) floor(time() / 60);
+            $results = array();
+            for ($index = 0; $index < 31; $index++) $results[] = cocoon_click_rate_limit_allows('limit-session-' . $attempt);
+            if ((int) floor(time() / 60) !== $minute) continue;
+            $this->assertSame(array_merge(array_fill(0, 30, true), array(false)), $results);
+            return;
+        }
+        $this->fail('実行が毎回分境界をまたいだため、同一分内のレート制限を検証できませんでした。');
     }
 
     public function testDefinitionLimitAllowsExistingLinksButRejectsNewOnes(): void
@@ -573,10 +640,11 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         $b = cocoon_click_sanitize_link_event($this->clickEvent('https://outside.test/b'), 20, home_url('/source'))['definition'];
         try {
             $original->query('START TRANSACTION');
-            $this->assertTrue(cocoon_click_definition_capacity_allows(array($a['link_key'] => $a), 10));
+            $accepted = cocoon_click_filter_definitions_by_capacity(array($a['link_key'] => $a), 10, $newCount);
+            $this->assertCount(1, $accepted);
             $other->query('START TRANSACTION');
             $this->assertSame('0', $other->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
-            cocoon_click_upsert_link_definitions(array($a['link_key'] => $a), current_time('mysql'));
+            cocoon_click_upsert_link_definitions($accepted, current_time('mysql'), $newCount);
             $original->query('COMMIT');
             $wpdb = $other;
             // 古いスナップショットで0件が見えていても、上限判定は確定後の1件を認識します。
@@ -813,7 +881,7 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         for ($index = 0; $index < 3000; $index++) $values[] = $wpdb->prepare('(%s,1,%s)', cocoon_click_hmac('expired-regression-' . $index), $expired);
         $wpdb->query('INSERT INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES ' . implode(',', $values));
         cocoon_click_continue_maintenance();
-        $this->assertSame('0', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LIMITS_TABLE_NAME . '`'));
+        $this->assertSame('0', $wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key<>%s', cocoon_click_hmac('definition_capacity'))));
         $this->assertFalse(wp_next_scheduled(COCOON_CLICK_CRON_CONTINUE_HOOK));
     }
 
@@ -832,5 +900,187 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
         $this->assertSame('1', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_BATCHES_TABLE_NAME . '`'));
         $this->assertSame('1', $wpdb->get_var('SELECT SUM(clicks) FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '`'));
         $this->assertTrue((bool) get_theme_option('click_analytics_maintenance_needed'));
+    }
+
+    private function definitionCount(): int
+    {
+        global $wpdb;
+        return (int) $wpdb->get_var($wpdb->prepare('SELECT request_count FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key=%s', cocoon_click_hmac('definition_capacity')));
+    }
+
+    public function testRejectedRequestsUseDatabaseWithoutMixingEventCounts(): void
+    {
+        $previousCache = wp_using_ext_object_cache();
+        wp_using_ext_object_cache(false);
+        try {
+            list($response) = $this->receiveEvents(array($this->clickEvent(), array('type' => 'invalid')), 'health-rejected-001', false);
+            $this->assertSame(204, $response->get_status());
+            for ($index = 0; $index < 3; $index++) cocoon_click_rest_error('click_analytics_rate', 'test', 429);
+            $health = cocoon_click_analytics_health();
+            $this->assertSame(3, $health['rejected_requests_14days']);
+            $this->assertSame(1, $health['rejected_14days']);
+            $this->assertEqualsWithDelta(0.5, $health['missing_rate'], 0.0001);
+            $this->assertTrue(cocoon_click_delete_all_data());
+            $this->assertSame(0, cocoon_click_rejected_requests_count(true));
+        } finally {
+            wp_using_ext_object_cache($previousCache);
+        }
+    }
+
+    public function testRejectedRequestCacheAndDatabaseFallbackAreCountedOnce(): void
+    {
+        $previousCache = wp_using_ext_object_cache();
+        $key = 'request_rejected|' . current_time('Y-m-d');
+        wp_cache_delete($key, 'cocoon_click_analytics_health');
+        try {
+            wp_using_ext_object_cache(true);
+            cocoon_click_health_increment('request_rejected');
+            cocoon_click_health_increment('request_rejected', 2);
+            $this->assertSame(3, cocoon_click_rejected_requests_count(true));
+            wp_using_ext_object_cache(false);
+            cocoon_click_health_increment('request_rejected', 4);
+            $this->assertSame(7, cocoon_click_rejected_requests_count(true));
+            cocoon_click_health_increment('unknown', 100);
+            $this->assertSame(7, cocoon_click_rejected_requests_count(true));
+            $this->assertNull(cocoon_click_rejected_requests_count(false));
+            $this->assertTrue(cocoon_click_delete_all_data());
+            $this->assertSame(0, cocoon_click_rejected_requests_count(true));
+        } finally {
+            wp_cache_delete($key, 'cocoon_click_analytics_health');
+            wp_using_ext_object_cache($previousCache);
+        }
+    }
+
+    public function testRejectedRequestHistoryExcludesExpiredDaysAndStorageErrorsDoNotRecurse(): void
+    {
+        global $wpdb;
+        $date = gmdate('Y-m-d', strtotime(current_time('Y-m-d') . ' -14 days'));
+        $wpdb->query($wpdb->prepare('INSERT INTO `' . CLICK_LIMITS_TABLE_NAME . '` (limit_key,request_count,expires_at) VALUES (%s,7,%s)', cocoon_click_hmac('health|request_rejected|' . $date), gmdate('Y-m-d H:i:s', time() + DAY_IN_SECONDS)));
+        $this->assertSame(0, cocoon_click_rejected_requests_count(true));
+        $previousCache = wp_using_ext_object_cache();
+        wp_using_ext_object_cache(false);
+        $fail = static function ($sql) { return str_starts_with($sql, 'INSERT INTO `' . CLICK_LIMITS_TABLE_NAME . '`') ? 'INVALID HEALTH INSERT' : $sql; };
+        add_filter('query', $fail);
+        try {
+            $this->assertWPErrorStatus(429, cocoon_click_rest_error('click_analytics_rate', 'test', 429));
+        } finally {
+            remove_filter('query', $fail);
+            wp_using_ext_object_cache($previousCache);
+        }
+        $this->assertSame(0, cocoon_click_rejected_requests_count(true));
+    }
+
+    public function testDefinitionCapacityNeverLocksTheWholeLinkTable(): void
+    {
+        $queries = array();
+        $capture = static function ($sql) use (&$queries) { $queries[] = $sql; return $sql; };
+        add_filter('query', $capture);
+        try {
+            list($response, , $postId) = $this->receiveEvents(array($this->clickEvent()), 'capacity-query-0001', false);
+            $this->assertSame(204, $response->get_status());
+            list($response) = $this->receiveEvents(array($this->clickEvent()), 'capacity-query-0002', false, $postId);
+            $this->assertSame(204, $response->get_status());
+        } finally {
+            remove_filter('query', $capture);
+        }
+        $this->assertSame(1, $this->definitionCount());
+        foreach ($queries as $sql) {
+            $this->assertDoesNotMatchRegularExpression('/SELECT COUNT\(\*\) FROM `' . preg_quote(CLICK_LINKS_TABLE_NAME, '/') . '`\s+FOR UPDATE/i', $sql);
+        }
+    }
+
+    public function testSiteAndPostCapacityKeepExistingClicks(): void
+    {
+        global $wpdb;
+        $siteLimit = static function () { return 2; };
+        $postLimit = static function () { return 1; };
+        add_filter('cocoon_click_analytics_definition_limit', $siteLimit);
+        add_filter('cocoon_click_analytics_post_definition_limit', $postLimit);
+        try {
+            list($response, , $postId) = $this->receiveEvents(array($this->clickEvent()), 'capacity-limit-0001', false);
+            $this->assertSame(204, $response->get_status());
+            list($response) = $this->receiveEvents(array($this->clickEvent(), $this->clickEvent('https://outside.test/new')), 'capacity-limit-0002', false, $postId);
+            $this->assertSame(204, $response->get_status());
+            $this->assertSame(1, $this->definitionCount());
+            list($response) = $this->receiveEvents(array($this->clickEvent()), 'capacity-limit-0003', false);
+            $this->assertSame(204, $response->get_status());
+            list($response) = $this->receiveEvents(array($this->clickEvent()), 'capacity-limit-0004', false);
+            $this->assertSame(204, $response->get_status());
+            $this->assertSame(2, $this->definitionCount());
+            $this->assertSame('2', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
+            $this->assertSame('3', $wpdb->get_var('SELECT SUM(clicks) FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '`'));
+        } finally {
+            remove_filter('cocoon_click_analytics_definition_limit', $siteLimit);
+            remove_filter('cocoon_click_analytics_post_definition_limit', $postLimit);
+        }
+    }
+
+    public function testCapacityMigrationCorrectionPruningAndDeletionStayConsistent(): void
+    {
+        global $wpdb;
+        $definition = cocoon_click_sanitize_link_event($this->clickEvent(), 10, home_url('/source'))['definition'];
+        $this->assertIsArray(cocoon_click_upsert_link_definitions(array($definition), '2020-01-01 00:00:00'));
+        $this->assertSame(1, $this->definitionCount());
+        // 旧版の専用行に残る0件から、既存リンクを保持したまま移行する場合の確認
+        $this->assertTrue(cocoon_click_write_definition_count(0));
+        set_theme_mod(OP_CLICK_ANALYTICS_TABLE_VERSION, '0.7.0');
+        $this->assertTrue(create_click_analytics_tables());
+        $this->assertSame(1, $this->definitionCount());
+        $this->assertTrue(cocoon_click_write_definition_count(99));
+        $this->assertTrue(cocoon_click_refresh_definition_count());
+        $this->assertSame(1, $this->definitionCount());
+        $this->assertSame(1, cocoon_click_prune_definitions('2021-01-01 00:00:00'));
+        $this->assertSame(0, $this->definitionCount());
+        $this->assertIsArray(cocoon_click_upsert_link_definitions(array($definition), current_time('mysql')));
+        $this->assertTrue(cocoon_click_delete_all_data());
+        $this->assertSame(0, $this->definitionCount());
+        $this->assertSame('0', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
+        $this->assertIsArray(cocoon_click_upsert_link_definitions(array($definition), current_time('mysql')));
+        $this->assertSame(1, $this->definitionCount());
+    }
+
+    public function testCounterWriteFailureRollsBackDefinitionsAndBatch(): void
+    {
+        global $wpdb;
+        $fail = static function ($sql) {
+            return str_starts_with($sql, 'UPDATE `' . CLICK_LIMITS_TABLE_NAME . '` SET request_count=request_count+') ? 'INVALID CAPACITY UPDATE' : $sql;
+        };
+        $previous = $wpdb->suppress_errors(true);
+        add_filter('query', $fail);
+        try {
+            list($response, , , , $request) = $this->receiveEvents(array($this->clickEvent()), 'capacity-rollback-001', false);
+            $this->assertWPErrorStatus(503, $response);
+        } finally {
+            remove_filter('query', $fail);
+            $wpdb->suppress_errors($previous);
+        }
+        $this->assertSame(0, $this->definitionCount());
+        $this->assertSame('0', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
+        $this->assertSame('0', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_BATCHES_TABLE_NAME . '`'));
+        $this->assertSame(204, cocoon_click_rest_receive_events($request)->get_status());
+        $this->assertSame(1, $this->definitionCount());
+    }
+
+    public function testExistingBatchIgnoresUnrelatedLinkAndCapacityLocks(): void
+    {
+        global $wpdb;
+        list(, , $postId) = $this->receiveEvents(array($this->clickEvent()), 'capacity-concurrent-001', false);
+        list(, , $otherPost) = $this->receiveEvents(array($this->clickEvent()), 'capacity-concurrent-002', false);
+        $other = new \wpdb(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
+        $timeout = static function () { return 1; };
+        add_filter('cocoon_click_analytics_lock_wait_timeout', $timeout);
+        try {
+            $other->query('START TRANSACTION');
+            $id = $wpdb->get_var($wpdb->prepare('SELECT id FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE source_post_id=%d', $otherPost));
+            $this->assertNotNull($other->get_var($other->prepare('SELECT id FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE id=%d FOR UPDATE', $id)));
+            $this->assertNotNull($other->get_var($other->prepare('SELECT request_count FROM `' . CLICK_LIMITS_TABLE_NAME . '` WHERE limit_key=%s FOR UPDATE', cocoon_click_hmac('definition_capacity'))));
+            list($response) = $this->receiveEvents(array($this->clickEvent()), 'capacity-concurrent-003', false, $postId);
+            $this->assertSame(204, $response->get_status());
+        } finally {
+            $other->query('ROLLBACK');
+            $other->close();
+            remove_filter('cocoon_click_analytics_lock_wait_timeout', $timeout);
+        }
+        $this->assertSame(2, $this->definitionCount());
     }
 }

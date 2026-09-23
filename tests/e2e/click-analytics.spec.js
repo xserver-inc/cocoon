@@ -295,14 +295,36 @@ test('背景で開いたページは表示を数えず、可視化後に数え�
 
 test('表示待ちの途中で非表示になると1秒の判定をやり直す', async ({page, context}) => {
   await mockVisibility(page, false);
+  // 実行PCの遅延を除いた、1秒タイマーの取消と再作成の検証
+  await page.addInitScript(() => {
+    const nativeTimeout = window.setTimeout.bind(window);
+    const nativeClearTimeout = window.clearTimeout.bind(window);
+    window.__impressionTimeouts = new Map();
+    let nextId = -1;
+    window.setTimeout = (callback, delay, ...args) => {
+      if (delay !== 1000) {return nativeTimeout(callback, delay, ...args);}
+      const id = nextId--;
+      window.__impressionTimeouts.set(id, () => callback(...args));
+      return id;
+    };
+    window.clearTimeout = id => {
+      if (window.__impressionTimeouts.has(id)) {window.__impressionTimeouts.delete(id);}
+      else {nativeClearTimeout(id);}
+    };
+  });
   const payloads = await setupCollector(page, context, {impressions: true});
-  await page.waitForTimeout(350);
+  await expect.poll(() => page.evaluate(() => window.__impressionTimeouts.size)).toBeGreaterThan(0);
   await setVisibility(page, true);
-  await page.waitForTimeout(1100);
+  expect(await page.evaluate(() => window.__impressionTimeouts.size)).toBe(0);
   await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
   expect(events(payloads).filter(event => event.type === 'impression')).toHaveLength(0);
   await setVisibility(page, false);
-  await page.waitForTimeout(1400);
+  await expect.poll(() => page.evaluate(() => window.__impressionTimeouts.size)).toBeGreaterThan(0);
+  await page.evaluate(() => {
+    const callbacks = Array.from(window.__impressionTimeouts.values());
+    window.__impressionTimeouts.clear();
+    callbacks.forEach(callback => callback());
+  });
   await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
   await expect.poll(() => events(payloads).filter(event => event.type === 'impression').length).toBeGreaterThan(0);
 });

@@ -31,6 +31,35 @@ function is_click_analytics_enable(){
 }
 endif;
 
+if ( !function_exists( 'cocoon_click_initialize_enabled_at' ) ):
+function cocoon_click_initialize_enabled_at(){
+  // 初期設定のまま有効になったサイトも含めた計測開始日時の記録
+  if (is_click_analytics_enable() && get_theme_option(OP_CLICK_ANALYTICS_ENABLED_AT, '') === '') {
+    set_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT, current_time('mysql'));
+  }
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_local_timestamp' ) ):
+function cocoon_click_local_timestamp($value){
+  if (!is_string($value) || !preg_match('/\A[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\z/', $value)) return false;
+  // WordPressの現地時刻をCronと比較可能なUTCタイムスタンプへ変換
+  $date = DateTimeImmutable::createFromFormat('!Y-m-d H:i:s', $value, wp_timezone());
+  return $date && $date->format('Y-m-d H:i:s') === $value ? $date->getTimestamp() : false;
+}
+endif;
+
+if ( !function_exists( 'cocoon_click_has_sampling_history' ) ):
+function cocoon_click_has_sampling_history($enabled_at, $now){
+  $started = cocoon_click_local_timestamp($enabled_at);
+  $current = cocoon_click_local_timestamp($now);
+  // 日付単位の集計期間に合わせた6暦日経過の判定
+  if ($started === false || $current === false) return false;
+  $threshold = (new DateTimeImmutable('@' . $current))->setTimezone(wp_timezone())->modify('-6 days');
+  return $started <= $threshold->getTimestamp();
+}
+endif;
+
 if ( !function_exists( 'is_click_analytics_track_internal' ) ):
 function is_click_analytics_track_internal(){
   return (bool) get_theme_option(OP_CLICK_ANALYTICS_TRACK_INTERNAL, 1);

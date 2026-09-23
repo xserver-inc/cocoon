@@ -90,7 +90,7 @@ endif;
 if ( !function_exists( 'cocoon_analytics_csv_safe_cell' ) ):
 function cocoon_analytics_csv_safe_cell($value){
   if (!is_string($value)) return $value;
-  // 初心者向け: 表計算ソフトが文字列を数式として実行しないよう、危険な先頭記号を無効化します。
+  // 表計算ソフトでの数式実行を防ぐ、危険な先頭記号の無効化
   return preg_match('/^[\t\r\n ]*[=+\-@]/u', $value) || preg_match('/^[\t\r\n]/u', $value) ? "'" . $value : $value;
 }
 endif;

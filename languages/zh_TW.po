@@ -20779,3 +20779,23 @@ msgstr "合併顯示指向相同網域的點擊。"
 #: lib/page-access/click-analytics/filter-func.php
 msgid "表のまとめ方"
 msgstr "表格分組方式"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "最近14天排除的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "最近14天拒絕的請求：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "已接受批次中的事件排除率：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "拒絕的請求是指因權杖無效或請求次數限制等原因而未被接受的傳送次數。其統計單位與排除的事件不同，因此不計入事件排除率。"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "點擊分析的定期工作未排程、已失敗或長時間未完成。自動抽樣和資料清理可能無法更新。請檢查 WP-Cron 或伺服器的排程設定。"

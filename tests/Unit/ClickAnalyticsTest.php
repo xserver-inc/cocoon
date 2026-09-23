@@ -336,6 +336,74 @@ class ClickAnalyticsTest extends TestCase
         $this->assertSame(1, cocoon_click_sampling_rate_for_daily_pv(10001, true));
     }
 
+    public function testSamplingHistoryRequiresSixCalendarDays(): void
+    {
+        \Brain\Monkey\Functions\when('wp_timezone')->justReturn(new \DateTimeZone('Asia/Tokyo'));
+        $now = '2026-09-23 12:00:00';
+        foreach (array('', 'invalid', "2026-09-01 12:00:00\0", '2026-02-30 12:00:00', array(), '2026-09-24 12:00:00', '2026-09-17 12:00:01') as $start) {
+            $this->assertFalse(cocoon_click_has_sampling_history($start, $now));
+        }
+        $this->assertTrue(cocoon_click_has_sampling_history('2026-09-17 12:00:00', $now));
+        $this->assertSame(10, cocoon_click_sampling_rate_for_daily_pv(0, false));
+        $this->assertSame(100, cocoon_click_sampling_rate_for_daily_pv(0, true));
+        $this->assertSame(strtotime('2026-09-23T03:00:00Z'), cocoon_click_local_timestamp($now));
+    }
+
+    public function testMaintenanceHealthDistinguishesPendingMissingFailedAndStaleRuns(): void
+    {
+        if (!defined('DAY_IN_SECONDS')) define('DAY_IN_SECONDS', 86400);
+        \Brain\Monkey\Functions\when('wp_timezone')->justReturn(new \DateTimeZone('Asia/Tokyo'));
+        $now = strtotime('2026-09-23T03:00:00Z');
+        $start = '2026-09-23 12:00:00';
+        $fresh = array('completed_at' => $start, 'status' => 'success');
+        $this->assertSame(array('delay' => 0, 'warning' => false), cocoon_click_maintenance_health(true, $start, array(), $now + 300, $now));
+        $this->assertSame(array('delay' => null, 'warning' => true), cocoon_click_maintenance_health(true, $start, $fresh, false, $now));
+        $this->assertFalse(cocoon_click_maintenance_health(false, $start, array(), false, $now)['warning']);
+        $this->assertFalse(cocoon_click_maintenance_health(true, $start, $fresh, $now + 300, $now)['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, $start, array('status' => 'error'), $now + 300, $now)['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, '2026-09-21 12:00:00', array(), $now + 300, $now)['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, $start, array('completed_at' => '2026-09-21 12:00:00'), $now + 300, $now)['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, $start, $fresh, $now - DAY_IN_SECONDS, $now)['warning']);
+        $this->assertFalse(cocoon_click_maintenance_health(true, $start, 'invalid', $now + 300, $now)['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, '2026-09-01 12:00:00', $fresh, $now + 300, $now, '')['warning']);
+        $this->assertTrue(cocoon_click_maintenance_health(true, $start, $fresh, $now + 300, $now, '2026-09-21 12:00:00')['warning']);
+        $this->assertFalse(cocoon_click_maintenance_health(true, '2026-09-01 12:00:00', $fresh, $now + 300, $now, $start)['warning']);
+    }
+
+    public function testRateLimitIpDefaultsToRemoteAddressWithoutTrustingHeaders(): void
+    {
+        $server = $_SERVER;
+        $filters = $GLOBALS['test_mock_apply_filters_callbacks'] ?? array();
+        try {
+            unset($GLOBALS['test_mock_apply_filters_callbacks']['cocoon_click_analytics_rate_limit_ip']);
+            $_SERVER['REMOTE_ADDR'] = '192.0.2.10';
+            $_SERVER['HTTP_X_FORWARDED_FOR'] = '203.0.113.42';
+            $_SERVER['HTTP_CF_CONNECTING_IP'] = '203.0.113.43';
+            $this->assertSame('192.0.2.10', cocoon_click_rate_limit_ip());
+            $this->assertSame('192.0.2.0/24', cocoon_click_network_bucket(cocoon_click_rate_limit_ip()));
+        } finally {
+            $_SERVER = $server;
+            $GLOBALS['test_mock_apply_filters_callbacks'] = $filters;
+        }
+    }
+
+    public function testRateLimitIpOnlyAcceptsValidFilteredAddresses(): void
+    {
+        $server = $_SERVER;
+        $filters = $GLOBALS['test_mock_apply_filters_callbacks'] ?? array();
+        try {
+            $_SERVER['REMOTE_ADDR'] = '192.0.2.10';
+            foreach (array('203.0.113.42', '2001:db8::42', '', 'invalid', '203.0.113.42, 192.0.2.10', array('203.0.113.42'), null, false, 42, new \stdClass()) as $value) {
+                $GLOBALS['test_mock_apply_filters_callbacks']['cocoon_click_analytics_rate_limit_ip'] = static function ($remote) use ($value) { return $value; };
+                $valid = is_string($value) && filter_var($value, FILTER_VALIDATE_IP) !== false;
+                $this->assertSame($valid ? $value : '192.0.2.10', cocoon_click_rate_limit_ip());
+            }
+        } finally {
+            $_SERVER = $server;
+            $GLOBALS['test_mock_apply_filters_callbacks'] = $filters;
+        }
+    }
+
     public function testEffectiveSampleSizeUsesSquaredWeights(): void
     {
         // 同じ重みが10観測ある場合、有効標本数も10になります。

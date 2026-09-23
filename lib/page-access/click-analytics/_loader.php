@@ -8,6 +8,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 require_once dirname(__FILE__) . '/settings-func.php';
 require_once dirname(__FILE__) . '/statistics-func.php';
 require_once dirname(__FILE__) . '/transaction-func.php';
+require_once dirname(__FILE__) . '/capacity-func.php';
 require_once dirname(__FILE__) . '/schema-func.php';
 require_once dirname(__FILE__) . '/normalize-func.php';
 require_once dirname(__FILE__) . '/rest-func.php';

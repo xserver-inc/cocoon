@@ -16,6 +16,7 @@ add_action('switch_theme', 'cocoon_click_unschedule_maintenance');
 
 if ( !function_exists( 'cocoon_click_manage_cron_schedule' ) ):
 function cocoon_click_manage_cron_schedule(){
+  cocoon_click_initialize_enabled_at();
   $scheduled = wp_next_scheduled(COCOON_CLICK_CRON_HOOK);
   // 計測停止後も保存済みデータの保持期限を管理します。
   $enabled = is_click_analytics_enable();
@@ -58,19 +59,17 @@ function cocoon_click_update_sampling_rate(){
     $from,
     current_time('Y-m-d')
   ), ARRAY_A);
-  $enabled_at = (string) get_theme_option(OP_CLICK_ANALYTICS_ENABLED_AT, '');
-  if ($enabled_at === '') {
-    $enabled_at = current_time('mysql');
-    set_theme_mod(OP_CLICK_ANALYTICS_ENABLED_AT, $enabled_at);
-  }
-  $history_started = strtotime($enabled_at);
-  $has_enough_history = $history_started !== false && $history_started <= strtotime(current_time('mysql') . ' -6 days');
+  // 集計失敗時の既存抽出率と最終成功日時の保持
+  if (!$row || $wpdb->last_error) return false;
+  cocoon_click_initialize_enabled_at();
+  $has_enough_history = cocoon_click_has_sampling_history(get_theme_option(OP_CLICK_ANALYTICS_ENABLED_AT, ''), current_time('mysql'));
   $daily = $has_enough_history ? (float) $row['pageviews'] / 7 : 0;
   $rate = cocoon_click_sampling_rate_for_daily_pv($daily, $has_enough_history);
   $rate = (int) apply_filters('cocoon_click_analytics_sampling_rate', $rate);
   if (!in_array($rate, cocoon_click_allowed_sampling_rates(), true)) $rate = 10;
   set_theme_mod(OP_CLICK_ANALYTICS_SAMPLING_RATE, $rate);
   set_theme_mod(OP_CLICK_ANALYTICS_SAMPLING_UPDATED, current_time('mysql'));
+  return true;
 }
 endif;
 
@@ -174,7 +173,8 @@ function cocoon_click_run_maintenance($purge_only = false){
   $failed = false;
   try {
     if (!$purge_only) {
-      if (is_click_analytics_enable()) cocoon_click_update_sampling_rate();
+      if (!cocoon_click_refresh_definition_count()) $failed = true;
+      if (is_click_analytics_enable() && !cocoon_click_update_sampling_rate()) $failed = true;
       $monthly_status = cocoon_click_rollup_monthly();
       if ($monthly_status['status'] !== 'success') $failed = true;
       if (!cocoon_click_enrich_internal_targets()) $failed = true;
@@ -263,10 +263,24 @@ endif;
 if ( !function_exists( 'cocoon_click_prune_definitions' ) ):
 function cocoon_click_prune_definitions($cutoff){
   global $wpdb;
-  // 保存期間を過ぎ、日次・月次のどちらからも参照されない定義だけを少しずつ削除します。
-  return $wpdb->query($wpdb->prepare('DELETE FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE last_seen_at<%s
+  $original_db = cocoon_click_begin_transaction(5);
+  if (!$original_db) return false;
+  try {
+    $count = cocoon_click_lock_definition_count();
+    if ($count === false) throw new RuntimeException('definition_lock');
+    // 保存期間を過ぎ、日次・月次の双方から参照されない定義の限定削除
+    $deleted = $wpdb->query($wpdb->prepare('DELETE FROM `' . CLICK_LINKS_TABLE_NAME . '` WHERE last_seen_at<%s
     AND NOT EXISTS (SELECT 1 FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '` d WHERE d.link_id=`' . CLICK_LINKS_TABLE_NAME . '`.id)
     AND NOT EXISTS (SELECT 1 FROM `' . CLICK_STATS_MONTHLY_TABLE_NAME . '` m WHERE m.link_id=`' . CLICK_LINKS_TABLE_NAME . '`.id)
     LIMIT 1000', $cutoff));
+    if ($deleted === false || !cocoon_click_write_definition_count($count - $deleted)) throw new RuntimeException('definition_count');
+    if ($wpdb->query('COMMIT') === false) throw new RuntimeException('definition_commit');
+    return (int) $deleted;
+  } catch (Throwable $error) {
+    $wpdb->query('ROLLBACK');
+    return false;
+  } finally {
+    cocoon_click_end_transaction($original_db, true);
+  }
 }
 endif;
