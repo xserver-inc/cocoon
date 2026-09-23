@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.5.4\n"
+"Project-Id-Version: Cocoon 2.9.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -670,7 +670,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:338
 #: lib/admin-tinymce-qtag.php:1693
-#: lib/utils.php:1037
+#: lib/utils.php:1038
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:150
@@ -701,7 +701,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:488
 #: lib/admin-tinymce-qtag.php:1699
-#: lib/utils.php:1036
+#: lib/utils.php:1037
 #: blocks/src/block/blogcard/deprecated.js:154
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -719,8 +719,8 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:578
 #: lib/admin-tinymce-qtag.php:1711
 #: lib/page-access/analytics/dashboard-page.php:659
-#: lib/page-access/click-analytics/render-func.php:55
-#: lib/utils.php:1041
+#: lib/page-access/click-analytics/render-func.php:63
+#: lib/utils.php:1042
 #: blocks/src/block/blogcard/deprecated.js:162
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1166,10 +1166,10 @@ msgid "囲みブログカードラベル"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1657
-#: lib/page-access/click-analytics/render-func.php:42
+#: lib/page-access/click-analytics/render-func.php:50
 #: lib/page-settings/image-forms.php:214
 #: lib/page-settings/single-funcs.php:76
-#: lib/utils.php:1032
+#: lib/utils.php:1033
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
@@ -1180,7 +1180,7 @@ msgid "関連記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1663
-#: lib/utils.php:1033
+#: lib/utils.php:1034
 #: blocks/src/block/blogcard/deprecated.js:130
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
@@ -1188,7 +1188,7 @@ msgid "参考記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1669
-#: lib/utils.php:1034
+#: lib/utils.php:1035
 #: blocks/src/block/blogcard/deprecated.js:134
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1197,7 +1197,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:1675
 #: lib/page-settings/carousel-forms.php:64
 #: lib/page-settings/image-forms.php:213
-#: lib/utils.php:1035
+#: lib/utils.php:1036
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
@@ -1210,7 +1210,7 @@ msgid "人気記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1681
-#: lib/utils.php:1038
+#: lib/utils.php:1039
 #: blocks/src/block/blogcard/deprecated.js:142
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
@@ -1219,7 +1219,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1687
 #: lib/shortcodes.php:1242
-#: lib/utils.php:1039
+#: lib/utils.php:1040
 #: lib/widgets/cta-box.php:34
 #: blocks/src/block/blogcard/deprecated.js:146
 #: blocks/src/block/blogcard/edit.js:60
@@ -1228,8 +1228,8 @@ msgid "詳細はこちら"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1705
-#: lib/page-access/click-analytics/render-func.php:54
-#: lib/utils.php:1040
+#: lib/page-access/click-analytics/render-func.php:62
+#: lib/utils.php:1041
 #: blocks/src/block/blogcard/deprecated.js:158
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
@@ -1237,13 +1237,13 @@ msgid "公式サイト"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1717
-#: lib/utils.php:1042
+#: lib/utils.php:1043
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1723
-#: lib/utils.php:1043
+#: lib/utils.php:1044
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr ""
@@ -1361,7 +1361,7 @@ msgstr ""
 
 #: lib/admin.php:339
 #: lib/page-access/access-func.php:752
-#: lib/page-access/analytics/enqueue-func.php:135
+#: lib/page-access/analytics/enqueue-func.php:137
 #: lib/page-access/analytics/render-func.php:455
 #: lib/page-access/analytics/render-func.php:1031
 msgid "PV"
@@ -1828,7 +1828,7 @@ msgstr ""
 
 #: lib/content-category.php:257
 #: lib/content-tag.php:233
-#: lib/page-access/click-analytics/render-func.php:41
+#: lib/page-access/click-analytics/render-func.php:49
 #: lib/page-settings/settings-tabs.php:25
 msgid "本文"
 msgstr ""
@@ -2049,7 +2049,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:106
 #: lib/page-access/analytics/dashboard-page.php:119
 #: lib/page-access/analytics/dashboard-page.php:131
-#: lib/page-access/click-analytics/render-func.php:44
+#: lib/page-access/click-analytics/render-func.php:52
 #: lib/page-settings/settings-tabs.php:48
 msgid "その他"
 msgstr ""
@@ -2384,7 +2384,7 @@ msgstr ""
 #: lib/custom-fields/update-field.php:92
 #: lib/page-access/access-func.php:779
 #: lib/page-access/analytics/dashboard-page.php:195
-#: lib/page-access/analytics/enqueue-func.php:96
+#: lib/page-access/analytics/enqueue-func.php:98
 msgid "月"
 msgstr ""
 
@@ -2393,8 +2393,8 @@ msgstr ""
 #: lib/page-access/access-func.php:753
 #: lib/page-access/access-func.php:777
 #: lib/page-access/analytics/dashboard-page.php:193
-#: lib/page-access/analytics/enqueue-func.php:95
-#: lib/page-access/analytics/enqueue-func.php:140
+#: lib/page-access/analytics/enqueue-func.php:97
+#: lib/page-access/analytics/enqueue-func.php:142
 #: lib/page-settings/apis-forms.php:338
 msgid "日"
 msgstr ""
@@ -2891,7 +2891,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
 #: lib/html-forms.php:1314
-#: lib/html-forms.php:1856
+#: lib/html-forms.php:1858
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
@@ -3034,7 +3034,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:230
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
-#: lib/utils.php:1071
+#: lib/utils.php:1072
 #: lib/widgets/item-ranking.php:19
 #: lib/widgets/item-ranking.php:72
 #: blocks/src/block/ranking/edit.js:111
@@ -3215,12 +3215,12 @@ msgid "PV数"
 msgstr ""
 
 #: lib/page-access/access-func.php:754
-#: lib/page-access/analytics/enqueue-func.php:141
+#: lib/page-access/analytics/enqueue-func.php:143
 msgid "日数"
 msgstr ""
 
 #: lib/page-access/access-func.php:755
-#: lib/page-access/analytics/enqueue-func.php:142
+#: lib/page-access/analytics/enqueue-func.php:144
 msgid "部分週"
 msgstr ""
 
@@ -3238,7 +3238,7 @@ msgid "週"
 msgstr ""
 
 #: lib/page-access/access-func.php:787
-#: lib/page-access/analytics/enqueue-func.php:156
+#: lib/page-access/analytics/enqueue-func.php:158
 msgid "読み込み中..."
 msgstr ""
 
@@ -3291,7 +3291,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:260
 #: lib/page-access/analytics/render-func.php:337
 #: lib/page-access/analytics/settings-forms.php:55
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "今日"
 msgstr ""
 
@@ -3308,7 +3308,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:262
 #: lib/page-access/analytics/render-func.php:339
 #: lib/page-access/analytics/settings-forms.php:56
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "直近7日"
 msgstr ""
 
@@ -3318,7 +3318,7 @@ msgstr ""
 #: lib/page-access/analytics/query-func.php:191
 #: lib/page-access/analytics/render-func.php:263
 #: lib/page-access/analytics/settings-forms.php:57
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "直近30日"
 msgstr ""
 
@@ -3328,7 +3328,7 @@ msgstr ""
 #: lib/page-access/analytics/query-func.php:192
 #: lib/page-access/analytics/render-func.php:264
 #: lib/page-access/analytics/settings-forms.php:58
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "直近90日"
 msgstr ""
 
@@ -3337,7 +3337,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:265
 #: lib/page-access/analytics/render-func.php:340
 #: lib/page-access/analytics/settings-forms.php:59
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "今月"
 msgstr ""
 
@@ -3357,7 +3357,7 @@ msgstr ""
 #: lib/page-access/analytics/query-func.php:195
 #: lib/page-access/analytics/render-func.php:268
 #: lib/page-access/analytics/settings-forms.php:60
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
@@ -3367,7 +3367,7 @@ msgstr ""
 
 #. translators: 1: 開始日, 2: 終了日
 #: lib/page-access/analytics/dashboard-page.php:178
-#: lib/page-access/analytics/enqueue-func.php:153
+#: lib/page-access/analytics/enqueue-func.php:155
 #: lib/page-access/analytics/render-func.php:73
 #: lib/page-access/analytics/render-func.php:300
 #, php-format
@@ -3604,14 +3604,13 @@ msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:589
 #: lib/page-access/analytics/render-func.php:269
-#: lib/page-access/click-analytics/dashboard.php:31
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "カスタム"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:594
 #: lib/page-access/analytics/dashboard-page.php:655
 #: lib/page-access/analytics/render-func.php:289
-#: lib/page-access/click-analytics/dashboard.php:37
 msgid "〜"
 msgstr ""
 
@@ -3648,14 +3647,14 @@ msgid "著者別"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:640
-#: lib/page-access/click-analytics/dashboard.php:12
-#: lib/page-access/click-analytics/render-func.php:53
+#: lib/page-access/click-analytics/dashboard.php:13
+#: lib/page-access/click-analytics/render-func.php:61
 #: lib/page-access/click-analytics/settings-form.php:15
 msgid "内部リンク"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:641
-#: lib/page-access/click-analytics/dashboard.php:12
+#: lib/page-access/click-analytics/dashboard.php:13
 #: lib/page-access/click-analytics/settings-form.php:16
 msgid "外部リンク"
 msgstr ""
@@ -3680,127 +3679,126 @@ msgstr ""
 msgid "期間"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:97
+#: lib/page-access/analytics/enqueue-func.php:99
 msgid "火"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:98
+#: lib/page-access/analytics/enqueue-func.php:100
 msgid "水"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:99
+#: lib/page-access/analytics/enqueue-func.php:101
 msgid "木"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:100
+#: lib/page-access/analytics/enqueue-func.php:102
 msgid "金"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:101
+#: lib/page-access/analytics/enqueue-func.php:103
 msgid "土"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:136
-#: lib/page-access/click-analytics/dashboard.php:188
-#: lib/page-access/click-analytics/render-func.php:155
+#: lib/page-access/analytics/enqueue-func.php:138
+#: lib/page-access/click-analytics/render-func.php:181
 msgid "クリック"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:137
-#: lib/page-access/click-analytics/dashboard.php:88
-#: lib/page-access/click-analytics/render-func.php:113
+#: lib/page-access/analytics/enqueue-func.php:139
+#: lib/page-access/click-analytics/dashboard.php:30
 #: lib/page-access/click-analytics/render-func.php:121
-#: lib/page-access/click-analytics/render-func.php:156
+#: lib/page-access/click-analytics/render-func.php:129
+#: lib/page-access/click-analytics/render-func.php:182
 msgid "推定CTR"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:138
+#: lib/page-access/analytics/enqueue-func.php:140
 msgid "日付"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:139
+#: lib/page-access/analytics/enqueue-func.php:141
 msgid "公開後日数"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:143
+#: lib/page-access/analytics/enqueue-func.php:145
 msgid "レイアウトを保存しました"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:144
+#: lib/page-access/analytics/enqueue-func.php:146
 msgid "レイアウトの保存に失敗しました"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:145
+#: lib/page-access/analytics/enqueue-func.php:147
 msgid "タイル配置を既定に戻しますか？"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:147
+#: lib/page-access/analytics/enqueue-func.php:149
 msgid "選択した期間のアクセスデータがありません。"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:149
+#: lib/page-access/analytics/enqueue-func.php:151
 msgid "表示期間の合計"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:150
+#: lib/page-access/analytics/enqueue-func.php:152
 msgid "リスト期間の合計"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:151
+#: lib/page-access/analytics/enqueue-func.php:153
 msgid "累計"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:154
+#: lib/page-access/analytics/enqueue-func.php:156
 msgid "グラフはリストと異なる期間を表示中"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:155
+#: lib/page-access/analytics/enqueue-func.php:157
 msgid "該当する記事が見つかりませんでした。"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:157
+#: lib/page-access/analytics/enqueue-func.php:159
 msgid "エラーが発生しました"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:158
+#: lib/page-access/analytics/enqueue-func.php:160
 msgid "通信エラーが発生しました"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:159
+#: lib/page-access/analytics/enqueue-func.php:161
 msgid "一致する項目がありません"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:160
+#: lib/page-access/analytics/enqueue-func.php:162
 msgid "候補から記事を選択してください。"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:161
+#: lib/page-access/analytics/enqueue-func.php:163
 msgid "記事を検索中..."
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:162
+#: lib/page-access/analytics/enqueue-func.php:164
 #: lib/page-access/analytics/map-post-picker.php:118
 msgid "人気記事トップ10"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:163
+#: lib/page-access/analytics/enqueue-func.php:165
 msgid "検索結果"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:164
+#: lib/page-access/analytics/enqueue-func.php:166
 msgid "PV（全端末合計）"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:165
+#: lib/page-access/analytics/enqueue-func.php:167
 msgid "期間内のアクセスデータがありません。記事名で検索できます。"
 msgstr ""
 
-#: lib/page-access/analytics/enqueue-func.php:166
+#: lib/page-access/analytics/enqueue-func.php:168
 msgid "開始日と終了日を正しく指定してください。"
 msgstr ""
 
 #. translators: %s: 記事候補の件数
-#: lib/page-access/analytics/enqueue-func.php:168
+#: lib/page-access/analytics/enqueue-func.php:170
 #, php-format
 msgid "%s件の候補"
 msgstr ""
@@ -3814,17 +3812,17 @@ msgid "対象が不正です。"
 msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:87
-#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/filter-func.php:8
 msgid "PC"
 msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:87
-#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/filter-func.php:8
 msgid "タブレット"
 msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:87
-#: lib/page-access/click-analytics/dashboard.php:42
+#: lib/page-access/click-analytics/filter-func.php:8
 #: lib/page-settings/settings-tabs.php:39
 #: skins/silk/functions.php:229
 msgid "モバイル"
@@ -3841,7 +3839,6 @@ msgid "アクセスの多い記事から選ぶ"
 msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:110
-#: lib/page-access/click-analytics/dashboard.php:52
 msgid "クリック元記事:"
 msgstr ""
 
@@ -3851,7 +3848,7 @@ msgid "記事の選択を解除"
 msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:118
-#: lib/page-access/click-analytics/render-func.php:117
+#: lib/page-access/click-analytics/render-func.php:125
 #: lib/page-settings/toc-forms.php:119
 #: lib/page-settings/toc-funcs.php:86
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
@@ -3894,7 +3891,7 @@ msgid "NO IMAGE"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:229
-#: lib/page-access/click-analytics/render-func.php:161
+#: lib/page-access/click-analytics/render-func.php:196
 #: lib/page-access/click-analytics/settings-form.php:9
 #: lib/page-access/click-analytics/settings-form.php:13
 msgid "クリック解析"
@@ -3920,7 +3917,7 @@ msgid "エクスポート"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:236
-#: lib/page-access/click-analytics/dashboard.php:139
+#: lib/page-access/click-analytics/dashboard.php:80
 #: lib/_defins.php:348
 #: blocks/src/block/faq/edit.js:127
 #: blocks/src/block/login-user-only/edit.js:34
@@ -3929,15 +3926,14 @@ msgid "設定"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:280
-#: lib/page-access/click-analytics/dashboard.php:29
+#: lib/page-access/click-analytics/filter-func.php:73
 msgid "期間:"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:292
 #: lib/page-access/analytics/render-func.php:447
 #: lib/page-access/analytics/render-func.php:574
-#: lib/page-access/click-analytics/dashboard.php:75
-#: lib/page-access/click-analytics/dashboard.php:188
+#: lib/page-access/click-analytics/filter-func.php:90
 #: lib/page-settings/page-forms.php:23
 #: lib/page-settings/single-forms.php:111
 #: lib/page-settings/single-forms.php:301
@@ -3986,9 +3982,9 @@ msgid "シェア"
 msgstr ""
 
 #: lib/page-access/analytics/render-func.php:486
-#: lib/page-access/click-analytics/dashboard.php:42
-#: lib/page-access/click-analytics/dashboard.php:60
-#: lib/page-access/click-analytics/dashboard.php:68
+#: lib/page-access/click-analytics/filter-func.php:8
+#: lib/page-access/click-analytics/filter-func.php:9
+#: lib/page-access/click-analytics/filter-func.php:10
 #: lib/page-cache/cache-forms.php:25
 msgid "すべて"
 msgstr ""
@@ -4126,225 +4122,270 @@ msgstr ""
 msgid "この操作を行う管理者権限がありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:12
+#: lib/page-access/click-analytics/dashboard.php:13
 msgid "概要"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:12
+#: lib/page-access/click-analytics/dashboard.php:13
 msgid "クリックマップ"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:40
-msgid "端末:"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:53
-msgid "記事タイトル・キーワード・IDで検索..."
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:58
-msgid "掲載位置:"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:66
-msgid "リンク種別:"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:84
+#: lib/page-access/click-analytics/dashboard.php:26
 msgid "総クリック"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:85
+#: lib/page-access/click-analytics/dashboard.php:27
 msgid "日次セッションユニーク合計"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:86
+#: lib/page-access/click-analytics/dashboard.php:28
 msgid "内部リンククリック"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:87
+#: lib/page-access/click-analytics/dashboard.php:29
 msgid "外部遷移"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:89
+#: lib/page-access/click-analytics/dashboard.php:31
 msgid "内部到着率"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:90
-#: lib/page-access/click-analytics/render-func.php:157
+#: lib/page-access/click-analytics/dashboard.php:32
+#: lib/page-access/click-analytics/render-func.php:183
 msgid "エンゲージ率"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:97
+#: lib/page-access/click-analytics/dashboard.php:39
 #, php-format
 msgid "前期間比 %s%%"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:103
+#: lib/page-access/click-analytics/dashboard.php:45
 msgid "推定CTRのWilson 95%信頼区間"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:103
+#: lib/page-access/click-analytics/dashboard.php:45
 msgid "有効標本数"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:105
+#: lib/page-access/click-analytics/dashboard.php:47
 #, php-format
 msgid "データ不足のためCTRは参考値です（%s）。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:118
-#: lib/page-access/click-analytics/dashboard.php:238
+#: lib/page-access/click-analytics/dashboard.php:60
+#: lib/page-access/click-analytics/dashboard.php:172
 #, php-format
 msgid "%sクリック"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:135
+#: lib/page-access/click-analytics/dashboard.php:76
 msgid "クリック解析は現在無効です。過去データは閲覧できますが、新しいデータは収集されません。"
 msgstr ""
 
 #. translators: %s: クリック解析の有効化項目へ移動する設定タブのリンク
-#: lib/page-access/click-analytics/dashboard.php:138
+#: lib/page-access/click-analytics/dashboard.php:79
 #, php-format
 msgid "計測を開始するには、「%s」タブで「クリック解析を有効にする」にチェックを入れ、「変更を保存」をクリックしてください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:144
+#: lib/page-access/click-analytics/dashboard.php:85
 msgid "クリック解析テーブルを作成できていません。設定画面を開き直してください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:161
+#: lib/page-access/click-analytics/dashboard.php:103
 msgid "日次保持期間より古い範囲は月次集計を使用するため、月途中の開始・終了日は概算です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:165
+#: lib/page-access/click-analytics/dashboard.php:107
 msgid "クリック・推定CTR推移"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:165
+#: lib/page-access/click-analytics/dashboard.php:107
 msgid "クリック推移"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:169
+#: lib/page-access/click-analytics/dashboard.php:111
 msgid "高需要・低到達"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:169
+#: lib/page-access/click-analytics/dashboard.php:111
 msgid "十分なデータがたまると、上部へ移す候補を表示します。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:170
+#: lib/page-access/click-analytics/dashboard.php:112
 msgid "高露出・低反応"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:170
+#: lib/page-access/click-analytics/dashboard.php:112
 msgid "十分なデータがたまると、文言やデザインの改善候補を表示します。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:171
+#: lib/page-access/click-analytics/dashboard.php:113
 msgid "遷移後ミスマッチ"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:171
+#: lib/page-access/click-analytics/dashboard.php:113
 msgid "到着後の閲覧が弱いリンクはありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:172
+#: lib/page-access/click-analytics/dashboard.php:114
 msgid "外部遷移候補"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:172
+#: lib/page-access/click-analytics/dashboard.php:114
 msgid "外部クリックは購入・申込みではなく外部遷移です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:175
-msgid "クリック上位リンク"
+#: lib/page-access/click-analytics/dashboard.php:117
+#: lib/page-access/click-analytics/dashboard.php:177
+msgid "リンク別クリック"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:187
-msgid "集計単位:"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:187
-msgid "掲載箇所別"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:187
-msgid "リンク先別"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:187
-msgid "ドメイン別"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:188
-msgid "並び順:"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:188
-msgid "ユニーク"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:188
-msgid "CTR"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:189
-msgid "変更"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php:192
+#: lib/page-access/click-analytics/dashboard.php:124
 msgid "ここで示す数値は外部サイトへの遷移であり、購入・申込みの確定コンバージョンではありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:199
+#: lib/page-access/click-analytics/dashboard.php:131
 msgid "人気記事または検索結果から記事を選び、「表示」を押してください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:203
+#: lib/page-access/click-analytics/dashboard.php:135
 msgid "公開中の記事を指定してください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:222
+#: lib/page-access/click-analytics/dashboard.php:156
 msgid "端末の代表幅で表示しています。実際の画面幅や固定・追従要素の位置によって、クリック位置に差が生じる場合があります。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:224
+#: lib/page-access/click-analytics/dashboard.php:158
 #, php-format
 msgid "現在と異なる旧レイアウトのクリックが%d件あります。現在のページには重ねていません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:225
+#: lib/page-access/click-analytics/dashboard.php:159
 msgid "旧レイアウト一覧"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:235
+#: lib/page-access/click-analytics/dashboard.php:169
 msgid "クリックマップページプレビュー"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:243
-msgid "リンク別クリック"
+#: lib/page-access/click-analytics/dashboard.php:183
+msgid "データの見方"
 msgstr ""
 
-#: lib/page-access/click-analytics/dashboard.php:249
+#: lib/page-access/click-analytics/dashboard.php:183
 msgid "掲載位置による差は観察データです。この画面だけでは、位置変更がクリックを増やしたという因果関係までは証明できません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:11
+#: lib/page-access/click-analytics/filter-func.php:54
+msgid "端末:"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:54
+msgid "掲載位置:"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:54
+msgid "リンク種別:"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:75
+msgid "開始日"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:77
+msgid "終了日"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:85
+msgid "クリック元ページ:"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:86
+msgid "すべてのページ（ページ名で絞り込み）"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:90
+msgid "結果を表示"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:95
+msgid "詳細条件"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:96
+msgid "端末・掲載位置"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:96
+msgid "端末・掲載位置・リンク種別"
+msgstr ""
+
+#. translators: %d: 適用中の詳細条件の数
+#: lib/page-access/click-analytics/filter-func.php:97
+#, php-format
+msgid "%d件を適用中"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:104
+msgid "適用中の詳細条件"
+msgstr ""
+
+#. translators: %s: 解除する条件の名前と値
+#: lib/page-access/click-analytics/filter-func.php:106
+#, php-format
+msgid "%sを解除"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:109
+msgid "詳細条件をクリア"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:121
+msgid "掲載箇所ごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:121
+msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:122
+msgid "リンク先ごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:122
+msgid "同じリンク先へのクリックをまとめて表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:124
+msgid "ドメインごと"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:124
+msgid "同じドメインへのクリックをまとめて表示します。"
+msgstr ""
+
+#: lib/page-access/click-analytics/filter-func.php:128
+msgid "表のまとめ方"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php:21
 msgid "高速表示のため、リンク総数とページ数は初回・最終観測期間から算出した概算です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:29
+#: lib/page-access/click-analytics/render-func.php:37
 #, php-format
 msgid "有効標本数 %s / 100"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:32
+#: lib/page-access/click-analytics/render-func.php:40
 #, php-format
 msgid "サンプルクリック %s / 10"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:41
+#: lib/page-access/click-analytics/render-func.php:49
 #: lib/page-settings/settings-tabs.php:26
 #: lib/page-settings/toc-forms.php:96
 #: lib/page-settings/toc-funcs.php:62
@@ -4355,7 +4396,7 @@ msgstr ""
 msgid "目次"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:41
+#: lib/page-access/click-analytics/render-func.php:49
 #: lib/page-cache/cache-forms.php:64
 #: lib/page-settings/image-forms.php:217
 #: lib/page-settings/settings-tabs.php:30
@@ -4364,72 +4405,72 @@ msgstr ""
 msgid "ブログカード"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:42
+#: lib/page-access/click-analytics/render-func.php:50
 #: lib/widgets/cta-box.php:19
 #: blocks/src/block/cta/index.js:21
 msgid "CTA"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:42
+#: lib/page-access/click-analytics/render-func.php:50
 #: lib/page-settings/settings-tabs.php:15
 msgid "ヘッダー"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:43
+#: lib/page-access/click-analytics/render-func.php:51
 msgid "ナビ"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:43
+#: lib/page-access/click-analytics/render-func.php:51
 #: lib/widget-areas.php:18
 #: tmp/mobile-sidebar-button.php:21
 msgid "サイドバー"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:43
+#: lib/page-access/click-analytics/render-func.php:51
 #: lib/page-settings/settings-tabs.php:37
 msgid "フッター"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:44
+#: lib/page-access/click-analytics/render-func.php:52
 #: lib/page-settings/mobile-buttons-forms.php:38
 msgid "モバイルメニュー"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:53
+#: lib/page-access/click-analytics/render-func.php:61
 msgid "外部・参考資料"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:53
-#: lib/page-access/click-analytics/render-func.php:72
+#: lib/page-access/click-analytics/render-func.php:61
+#: lib/page-access/click-analytics/render-func.php:80
 #: blocks/src/toolbutton/dropdown-affiliates.js:57
 msgid "アフィリエイト"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:54
+#: lib/page-access/click-analytics/render-func.php:62
 msgid "参考資料"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:54
+#: lib/page-access/click-analytics/render-func.php:62
 msgid "SNS"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:54
+#: lib/page-access/click-analytics/render-func.php:62
 msgid "ページ内リンク"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:55
+#: lib/page-access/click-analytics/render-func.php:63
 msgid "メール"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:55
+#: lib/page-access/click-analytics/render-func.php:63
 msgid "電話"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:55
+#: lib/page-access/click-analytics/render-func.php:63
 msgid "SMS"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:71
+#: lib/page-access/click-analytics/render-func.php:79
 #: lib/page-settings/settings-tabs.php:29
 #: skins/skin-made-in-heaven/lib/panel-option.php:87
 #: skins/skin-made-in-heaven/lib/panel-option.php:89
@@ -4441,170 +4482,194 @@ msgstr ""
 msgid "画像"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:113
+#: lib/page-access/click-analytics/render-func.php:121
 msgid "詳細"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:116
+#: lib/page-access/click-analytics/render-func.php:124
 msgid "推定CTRの詳細"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:122
+#: lib/page-access/click-analytics/render-func.php:130
 msgid "95%信頼区間"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:123
+#: lib/page-access/click-analytics/render-func.php:131
 msgid "有効標本数（n）"
 msgstr ""
 
 #. translators: %s: 比較に必要な有効標本数またはサンプルクリック数
-#: lib/page-access/click-analytics/render-func.php:125
-#: lib/page-access/click-analytics/render-func.php:127
+#: lib/page-access/click-analytics/render-func.php:133
+#: lib/page-access/click-analytics/render-func.php:135
 #, php-format
 msgid "比較の目安: %s以上"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:127
+#: lib/page-access/click-analytics/render-func.php:135
 msgid "サンプルクリック"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:130
-#: lib/page-access/click-analytics/render-func.php:210
-#: lib/page-access/click-analytics/settings-form.php:44
+#: lib/page-access/click-analytics/render-func.php:138
+#: lib/page-access/click-analytics/render-func.php:249
+#: lib/page-access/click-analytics/settings-form.php:48
 msgid "データ不足"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:130
+#: lib/page-access/click-analytics/render-func.php:138
 msgid "両方の目安を満たすまでは、参考値としてご覧ください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:133
+#: lib/page-access/click-analytics/render-func.php:141
 msgid "抽出率を補正した表示回数とクリック数から算出した推定値です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:134
+#: lib/page-access/click-analytics/render-func.php:142
 msgid "信頼区間は推定CTRの不確かさを示します。幅が広いほど、比較は慎重に行ってください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:135
+#: lib/page-access/click-analytics/render-func.php:143
 msgid "有効標本数（n）は、抽出率の違いを考慮した標本数の目安です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:136
+#: lib/page-access/click-analytics/render-func.php:144
 msgid "表示データが不足しているため、信頼区間を計算できません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:147
+#. translators: %s: 並べ替え対象の列名
+#: lib/page-access/click-analytics/render-func.php:162
+#, php-format
+msgid "%s: 昇順で並べ替え"
+msgstr ""
+
+#. translators: %s: 並べ替え対象の列名
+#: lib/page-access/click-analytics/render-func.php:162
+#, php-format
+msgid "%s: 降順で並べ替え"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php:172
 msgid "該当するクリックデータがありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:152
+#: lib/page-access/click-analytics/render-func.php:178
 msgid "クリック元"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:154
+#: lib/page-access/click-analytics/render-func.php:180
 #: skins/silk/functions.php:234
 msgid "リンク"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:154
+#: lib/page-access/click-analytics/render-func.php:180
 msgid "種別・位置"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:155
+#: lib/page-access/click-analytics/render-func.php:181
 msgid "推定表示"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:156
+#: lib/page-access/click-analytics/render-func.php:182
 msgid "日次ユニーク合計"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:157
+#: lib/page-access/click-analytics/render-func.php:183
 msgid "到着率"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:158
+#: lib/page-access/click-analytics/render-func.php:184
 msgid "平均クリック時間"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:171
+#: lib/page-access/click-analytics/render-func.php:189
+msgid "横にスクロールできます"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php:191
+msgid "表を左にスクロール"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php:192
+msgid "表を右にスクロール"
+msgstr ""
+
+#: lib/page-access/click-analytics/render-func.php:210
 msgid "複数記事"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:189
+#: lib/page-access/click-analytics/render-func.php:228
 msgid "画像を読み込む"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:190
+#: lib/page-access/click-analytics/render-func.php:229
 #, php-format
 msgid "読み込み先: %s"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:191
+#: lib/page-access/click-analytics/render-func.php:230
 msgid "画像を読み込めませんでした。"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:197
+#: lib/page-access/click-analytics/render-func.php:236
 msgid "代表リンク"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:217
+#: lib/page-access/click-analytics/render-func.php:256
 #: lib/page-settings/about-forms.php:90
 #: lib/page-settings/carousel-forms.php:157
 msgid "秒"
 msgstr ""
 
-#: lib/page-access/click-analytics/render-func.php:224
+#: lib/page-access/click-analytics/render-func.php:265
 msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:288
+#: lib/page-access/click-analytics/rest-func.php:347
 msgid "クリック解析は無効です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:289
+#: lib/page-access/click-analytics/rest-func.php:348
 msgid "クリック解析テーブルがありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:291
+#: lib/page-access/click-analytics/rest-func.php:350
 msgid "送信サイズが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:293
+#: lib/page-access/click-analytics/rest-func.php:352
 msgid "JSONが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:294
+#: lib/page-access/click-analytics/rest-func.php:353
 msgid "送信元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:299
-#: lib/page-access/click-analytics/rest-func.php:313
+#: lib/page-access/click-analytics/rest-func.php:358
+#: lib/page-access/click-analytics/rest-func.php:372
 msgid "送信内容が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:310
+#: lib/page-access/click-analytics/rest-func.php:369
 msgid "識別子が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:315
+#: lib/page-access/click-analytics/rest-func.php:374
 msgid "計測トークンが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:317
+#: lib/page-access/click-analytics/rest-func.php:376
 msgid "クリック元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:318
+#: lib/page-access/click-analytics/rest-func.php:377
 msgid "送信回数が多すぎます。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:323
-#: lib/page-access/click-analytics/rest-func.php:416
+#: lib/page-access/click-analytics/rest-func.php:382
+#: lib/page-access/click-analytics/rest-func.php:475
 msgid "計測データを保存できませんでした。再送してください。"
 msgstr ""
 
-#: lib/page-access/click-analytics/schema-func.php:273
+#: lib/page-access/click-analytics/schema-func.php:282
 msgid "クリック解析のデータベース更新に失敗しました。データベースの権限・空き容量を確認してください。計測は更新が完了するまで停止します。"
 msgstr ""
 
@@ -4733,100 +4798,110 @@ msgid "収集状態"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:39
-#, php-format
-msgid "現在のサンプリング率: %s%%（表示計測のみ）"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:40
-#, php-format
-msgid "直近14日の受信イベント: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:41
-#, php-format
-msgid "直近14日の拒否イベント: %s"
+msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:42
 #, php-format
-msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:43
 #, php-format
-msgid "イベント欠損率（検証除外）: %s"
+msgid "直近14日の受信イベント: %s"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:44
+#, php-format
+msgid "直近14日の除外イベント: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:45
+#, php-format
+msgid "直近14日の拒否リクエスト: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:46
+#, php-format
+msgid "直近14日のバッチ: 正常 %1$s / 重複 %2$s（重複率 %3$s）"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:47
+#, php-format
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:48
 #, php-format
 msgid "直近7日CTR診断: %s"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:44
+#: lib/page-access/click-analytics/settings-form.php:48
 msgid "通常範囲より上昇"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:44
+#: lib/page-access/click-analytics/settings-form.php:48
 msgid "通常範囲より低下"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:44
+#: lib/page-access/click-analytics/settings-form.php:48
 msgid "異常なし"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:45
-#, php-format
-msgid "最終受信: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:45
-msgid "未受信"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:46
-#, php-format
-msgid "最終サンプリング集計: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:46
-msgid "未集計"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#, php-format
-msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:47
-#: lib/page-access/click-analytics/settings-form.php:48
-msgid "未実行"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php:48
-#, php-format
-msgid "最終メンテナンス: %1$s / %2$sms"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:49
 #, php-format
-msgid "DB使用量: %s"
+msgid "最終受信: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:49
+msgid "未受信"
 msgstr ""
 
 #: lib/page-access/click-analytics/settings-form.php:50
+#, php-format
+msgid "最終サンプリング集計: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:50
+msgid "未集計"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#, php-format
+msgid "月次再集計: %1$s / 完了 %2$s / 更新行 %3$s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:51
+#: lib/page-access/click-analytics/settings-form.php:52
+msgid "未実行"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:52
+#, php-format
+msgid "最終メンテナンス: %1$s / %2$sms"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:53
+#, php-format
+msgid "DB使用量: %s"
+msgstr ""
+
+#: lib/page-access/click-analytics/settings-form.php:54
 #, php-format
 msgid "次回メンテナンス: %s"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:50
+#: lib/page-access/click-analytics/settings-form.php:54
+#: lib/page-access/click-analytics/settings-form.php:55
 msgid "未予約"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:51
+#: lib/page-access/click-analytics/settings-form.php:55
 #, php-format
 msgid "Cron遅延: %s"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:51
+#: lib/page-access/click-analytics/settings-form.php:55
 #: lib/page-item-ranking/form.php:134
 #: lib/page-settings/amp-forms.php:54
 #: lib/page-settings/blogcard-in-forms.php:108
@@ -4844,15 +4919,15 @@ msgstr ""
 msgid "なし"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:53
-msgid "トークン不正など、バッチ受理前に拒否したリクエスト数は永続オブジェクトキャッシュがある環境だけ加算します。受理後のイベント数・重複・検証除外はDB集計へ常時記録します。"
+#: lib/page-access/click-analytics/settings-form.php:57
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:54
+#: lib/page-access/click-analytics/settings-form.php:58
 msgid "クリック解析データをすべて削除します。元に戻せません。よろしいですか？"
 msgstr ""
 
-#: lib/page-access/click-analytics/settings-form.php:54
+#: lib/page-access/click-analytics/settings-form.php:58
 msgid "クリック解析データを完全削除"
 msgstr ""
 
@@ -5271,7 +5346,7 @@ msgid "項目の名前です。タグ・ショートコード入力も可能で�
 msgstr ""
 
 #: lib/page-item-ranking/form.php:131
-#: lib/utils.php:1072
+#: lib/utils.php:1073
 msgid "評価："
 msgstr ""
 
@@ -14385,126 +14460,126 @@ msgstr ""
 msgid "キャンペーン期間中のみ表示"
 msgstr ""
 
-#: lib/utils.php:874
+#: lib/utils.php:875
 msgid "スクロールできます"
 msgstr ""
 
-#: lib/utils.php:932
+#: lib/utils.php:933
 msgid "公開"
 msgstr ""
 
-#: lib/utils.php:933
+#: lib/utils.php:934
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:1031
+#: lib/utils.php:1032
 msgid "ラベルなし"
 msgstr ""
 
-#: lib/utils.php:1073
+#: lib/utils.php:1074
 msgid "する"
 msgstr ""
 
-#: lib/utils.php:1074
+#: lib/utils.php:1075
 msgid "続きを読む"
 msgstr ""
 
-#: lib/utils.php:1075
+#: lib/utils.php:1076
 msgid "この記事は参考になりましたか？"
 msgstr ""
 
-#: lib/utils.php:1076
+#: lib/utils.php:1077
 msgid "前の記事を読む"
 msgstr ""
 
-#: lib/utils.php:1077
+#: lib/utils.php:1078
 msgid "次の記事を読む"
 msgstr ""
 
-#: lib/utils.php:1078
+#: lib/utils.php:1079
 msgid "この記事は役に立ちましたか？"
 msgstr ""
 
-#: lib/utils.php:1079
+#: lib/utils.php:1080
 msgid "スキン制御"
 msgstr ""
 
-#: lib/utils.php:2629
+#: lib/utils.php:2630
 msgid "Cocoon："
 msgstr ""
 
-#: lib/utils.php:2630
+#: lib/utils.php:2631
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 
-#: lib/utils.php:2632
+#: lib/utils.php:2633
 msgid "表示設定を開く"
 msgstr ""
 
-#: lib/utils.php:2756
+#: lib/utils.php:2757
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2764
+#: lib/utils.php:2765
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2772
+#: lib/utils.php:2773
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2780
+#: lib/utils.php:2781
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2788
-#: lib/utils.php:2803
+#: lib/utils.php:2789
+#: lib/utils.php:2804
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2799
-#: lib/utils.php:2802
+#: lib/utils.php:2800
+#: lib/utils.php:2803
 #, php-format
 msgid "%s年"
 msgid_plural "%s年"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2804
+#: lib/utils.php:2805
 #, php-format
 msgid "%1$s%2$s"
 msgstr ""
 
-#: lib/utils.php:4430
+#: lib/utils.php:4431
 msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
 msgstr ""
 
-#: lib/utils.php:4431
+#: lib/utils.php:4432
 #: skins/skin-demo-php/functions.php:45
 msgid "スキンから入力したタイトル"
 msgstr ""
 
-#: lib/utils.php:4432
+#: lib/utils.php:4433
 #: skins/skin-demo-php/functions.php:46
 msgid "スキンから入力したアピールエリアメッセージです。"
 msgstr ""
 
-#: lib/utils.php:4433
+#: lib/utils.php:4434
 #: skins/skin-demo-php/functions.php:47
 msgid "スキンボタンキャプション"
 msgstr ""
@@ -15716,63 +15791,63 @@ msgstr ""
 msgid "画面幅 480px以下での表示枚数"
 msgstr ""
 
-#: skins/one/functions.php:113
+#: skins/one/functions.php:115
 msgid "スキンoneの設定"
 msgstr ""
 
-#: skins/one/functions.php:114
+#: skins/one/functions.php:116
 msgid "各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。"
 msgstr ""
 
-#: skins/one/functions.php:122
+#: skins/one/functions.php:124
 msgid "本文見出し(H2)にカウントを付ける"
 msgstr ""
 
-#: skins/one/functions.php:123
+#: skins/one/functions.php:125
 msgid "本文の見出しにカウントをつけたくない場合はチェックを外してください"
 msgstr ""
 
-#: skins/one/functions.php:134
+#: skins/one/functions.php:136
 msgid "PCでもスマートフォン用の固定フッターメニューを表示する"
 msgstr ""
 
-#: skins/one/functions.php:135
+#: skins/one/functions.php:137
 msgid "従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください"
 msgstr ""
 
-#: skins/one/functions.php:145
+#: skins/one/functions.php:147
 msgid "全体的に影を付ける"
 msgstr ""
 
-#: skins/one/functions.php:155
+#: skins/one/functions.php:157
 msgid "ダークスキン対応にする"
 msgstr ""
 
-#: skins/one/functions.php:156
+#: skins/one/functions.php:158
 msgid "背景をダークにしたときはチェックを入れてください"
 msgstr ""
 
-#: skins/one/functions.php:166
+#: skins/one/functions.php:168
 msgid "丸みをなくす"
 msgstr ""
 
-#: skins/one/functions.php:167
+#: skins/one/functions.php:169
 msgid "ボタンなどの角の丸みをなくしたいときはチェックを入れてください"
 msgstr ""
 
-#: skins/one/functions.php:177
+#: skins/one/functions.php:179
 msgid "本文の見出しを明朝体にする"
 msgstr ""
 
-#: skins/one/functions.php:187
+#: skins/one/functions.php:189
 msgid "サイドバーの見出しを明朝体にする"
 msgstr ""
 
-#: skins/one/functions.php:251
+#: skins/one/functions.php:260
 msgid "左固定サイドバー"
 msgstr ""
 
-#: skins/one/functions.php:252
+#: skins/one/functions.php:261
 msgid "PCでの閲覧時左端に固定で表示されるサイドバーです。"
 msgstr ""
 
@@ -20356,128 +20431,4 @@ msgstr ""
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
-msgstr ""
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 昇順で並べ替え"
-msgstr ""
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 降順で並べ替え"
-msgstr ""
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "横にスクロールできます"
-msgstr ""
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を左にスクロール"
-msgstr ""
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を右にスクロール"
-msgstr ""
-
-#: lib/page-access/click-analytics/dashboard.php
-msgid "データの見方"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "開始日"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "終了日"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "クリック元ページ:"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "すべてのページ（ページ名で絞り込み）"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "結果を表示"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置・リンク種別"
-msgstr ""
-
-#. translators: %d: 適用中の詳細条件の数
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%d件を適用中"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "適用中の詳細条件"
-msgstr ""
-
-#. translators: %s: 解除する条件の名前と値
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%sを解除"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件をクリア"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "掲載箇所ごと"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "リンク先ごと"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先へのクリックをまとめて表示します。"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "ドメインごと"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じドメインへのクリックをまとめて表示します。"
-msgstr ""
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "表のまとめ方"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の除外イベント: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の拒否リクエスト: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "受理バッチ内のイベント除外率: %s"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
-msgstr ""
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
 msgstr ""
