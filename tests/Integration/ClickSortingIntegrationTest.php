@@ -4,7 +4,7 @@ namespace Cocoon\Tests\Integration;
 
 class ClickSortingIntegrationTest extends IntegrationTestCase
 {
-    private array $originalMods = array();
+    private ?array $originalMods = null;
 
     protected function setUp(): void
     {
@@ -24,9 +24,15 @@ class ClickSortingIntegrationTest extends IntegrationTestCase
 
     protected function tearDown(): void
     {
-        cocoon_click_delete_all_data();
-        update_option('theme_mods_' . get_stylesheet(), $this->originalMods);
-        parent::tearDown();
+        try {
+            // 初期化前のスキップ時におけるWordPress依存処理の回避
+            if ($this->originalMods !== null) {
+                cocoon_click_delete_all_data();
+                update_option('theme_mods_' . get_stylesheet(), $this->originalMods);
+            }
+        } finally {
+            parent::tearDown();
+        }
     }
 
     public function testAllSortsAcrossPagesGroupsAndDailyMonthlySources(): void
