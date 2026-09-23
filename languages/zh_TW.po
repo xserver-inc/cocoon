@@ -20361,6 +20361,132 @@ msgstr "此取樣率僅用於曝光次數統計。不論是否取樣，一律記
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "目前取樣率：%s%%（僅曝光次數統計）"
 
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 昇順で並べ替え"
+msgstr "%s：升冪排列"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 降順で並べ替え"
+msgstr "%s：降冪排列"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "横にスクロールできます"
+msgstr "可橫向捲動"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "向左捲動表格"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "向右捲動表格"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "如何解讀資料"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "開始日"
+msgstr "開始日期"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "終了日"
+msgstr "結束日期"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "クリック元ページ:"
+msgstr "點擊來源頁面："
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "すべてのページ（ページ名で絞り込み）"
+msgstr "所有頁面（依頁面標題篩選）"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "結果を表示"
+msgstr "顯示結果"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件"
+msgstr "更多篩選條件"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置"
+msgstr "裝置、顯示位置"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置・リンク種別"
+msgstr "裝置、顯示位置、連結類型"
+
+#: lib/page-access/click-analytics/filter-func.php
+#. translators: %d: 適用中の詳細条件の数
+msgid "%d件を適用中"
+msgstr "已套用 %d 項"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "適用中の詳細条件"
+msgstr "已套用的其他篩選條件"
+
+#: lib/page-access/click-analytics/filter-func.php
+#. translators: %s: 解除する条件の名前と値
+msgid "%sを解除"
+msgstr "移除%s"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件をクリア"
+msgstr "清除其他篩選條件"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "掲載箇所ごと"
+msgstr "依顯示位置"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
+msgstr "即使連結目標相同，也依頁面中的顯示位置分別顯示。"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "リンク先ごと"
+msgstr "依連結目標"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先へのクリックをまとめて表示します。"
+msgstr "合併顯示指向相同連結目標的點擊。"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "ドメインごと"
+msgstr "依網域"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じドメインへのクリックをまとめて表示します。"
+msgstr "合併顯示指向相同網域的點擊。"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "表のまとめ方"
+msgstr "表格分組方式"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "最近14天排除的事件：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "最近14天拒絕的請求：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "已接受批次中的事件排除率：%s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr "拒絕的請求是指因權杖無效或請求次數限制等原因而未被接受的傳送次數。其統計單位與排除的事件不同，因此不計入事件排除率。"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid ""
+"クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-"
+"Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr "點擊分析的定期工作未排程、已失敗或長時間未完成。自動抽樣和資料清理可能無法更新。請檢查 WP-Cron 或伺服器的排程設定。"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20675,127 +20801,3 @@ msgstr "在編輯器內搜尋並選擇樂天商品，插入靜態商品連結。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 昇順で並べ替え"
-msgstr "%s：升冪排列"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 降順で並べ替え"
-msgstr "%s：降冪排列"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "横にスクロールできます"
-msgstr "可橫向捲動"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を左にスクロール"
-msgstr "向左捲動表格"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を右にスクロール"
-msgstr "向右捲動表格"
-
-#: lib/page-access/click-analytics/dashboard.php
-msgid "データの見方"
-msgstr "如何解讀資料"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "開始日"
-msgstr "開始日期"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "終了日"
-msgstr "結束日期"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "クリック元ページ:"
-msgstr "點擊來源頁面："
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "すべてのページ（ページ名で絞り込み）"
-msgstr "所有頁面（依頁面標題篩選）"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "結果を表示"
-msgstr "顯示結果"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件"
-msgstr "更多篩選條件"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置"
-msgstr "裝置、顯示位置"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置・リンク種別"
-msgstr "裝置、顯示位置、連結類型"
-
-#. translators: %d: 適用中の詳細条件の数
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%d件を適用中"
-msgstr "已套用 %d 項"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "適用中の詳細条件"
-msgstr "已套用的其他篩選條件"
-
-#. translators: %s: 解除する条件の名前と値
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%sを解除"
-msgstr "移除%s"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件をクリア"
-msgstr "清除其他篩選條件"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "掲載箇所ごと"
-msgstr "依顯示位置"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
-msgstr "即使連結目標相同，也依頁面中的顯示位置分別顯示。"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "リンク先ごと"
-msgstr "依連結目標"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先へのクリックをまとめて表示します。"
-msgstr "合併顯示指向相同連結目標的點擊。"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "ドメインごと"
-msgstr "依網域"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じドメインへのクリックをまとめて表示します。"
-msgstr "合併顯示指向相同網域的點擊。"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "表のまとめ方"
-msgstr "表格分組方式"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の除外イベント: %s"
-msgstr "最近14天排除的事件：%s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の拒否リクエスト: %s"
-msgstr "最近14天拒絕的請求：%s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "受理バッチ内のイベント除外率: %s"
-msgstr "已接受批次中的事件排除率：%s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
-msgstr "拒絕的請求是指因權杖無效或請求次數限制等原因而未被接受的傳送次數。其統計單位與排除的事件不同，因此不計入事件排除率。"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
-msgstr "點擊分析的定期工作未排程、已失敗或長時間未完成。自動抽樣和資料清理可能無法更新。請檢查 WP-Cron 或伺服器的排程設定。"

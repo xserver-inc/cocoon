@@ -12680,7 +12680,9 @@ msgstr "Visualización de tarjetas normales"
 
 #: lib/settings.php:680
 msgid "カード間に区切り線が表示されます。記事が1件の場合は表示されません。"
-msgstr "Se muestran líneas de separación entre las tarjetas. Si solo hay una entrada, no se muestra ninguna línea."
+msgstr ""
+"Se muestran líneas de separación entre las tarjetas. Si solo hay una "
+"entrada, no se muestra ninguna línea."
 
 #: lib/settings.php:681
 #: blocks/src/block/navicard/edit.js:115
@@ -21835,6 +21837,141 @@ msgstr ""
 msgid "現在のサンプリング率: %s%%（表示計測のみ）"
 msgstr "Tasa de muestreo actual: %s%% (solo impresiones)"
 
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 昇順で並べ替え"
+msgstr "%s: Ordenar de forma ascendente"
+
+#: lib/page-access/click-analytics/render-func.php
+#, php-format
+msgid "%s: 降順で並べ替え"
+msgstr "%s: Ordenar de forma descendente"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "横にスクロールできます"
+msgstr "Desplázate horizontalmente para ver más"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を左にスクロール"
+msgstr "Desplazar la tabla a la izquierda"
+
+#: lib/page-access/click-analytics/render-func.php
+msgid "表を右にスクロール"
+msgstr "Desplazar la tabla a la derecha"
+
+#: lib/page-access/click-analytics/dashboard.php
+msgid "データの見方"
+msgstr "Cómo interpretar los datos"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "開始日"
+msgstr "Fecha de inicio"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "終了日"
+msgstr "Fecha de fin"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "クリック元ページ:"
+msgstr "Página de origen:"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "すべてのページ（ページ名で絞り込み）"
+msgstr "Todas las páginas (buscar por título)"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "結果を表示"
+msgstr "Mostrar resultados"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件"
+msgstr "Más filtros"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置"
+msgstr "Dispositivo y ubicación"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "端末・掲載位置・リンク種別"
+msgstr "Dispositivo, ubicación y tipo de enlace"
+
+#: lib/page-access/click-analytics/filter-func.php
+#. translators: %d: 適用中の詳細条件の数
+msgid "%d件を適用中"
+msgstr "Activos: %d"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "適用中の詳細条件"
+msgstr "Filtros adicionales activos"
+
+#: lib/page-access/click-analytics/filter-func.php
+#. translators: %s: 解除する条件の名前と値
+msgid "%sを解除"
+msgstr "Quitar %s"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "詳細条件をクリア"
+msgstr "Borrar filtros adicionales"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "掲載箇所ごと"
+msgstr "Por ubicación"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
+msgstr ""
+"Muestra cada ubicación por separado, aunque los enlaces tengan el mismo "
+"destino."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "リンク先ごと"
+msgstr "Por destino"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じリンク先へのクリックをまとめて表示します。"
+msgstr "Agrupa los clics que llevan al mismo destino."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "ドメインごと"
+msgstr "Por dominio"
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "同じドメインへのクリックをまとめて表示します。"
+msgstr "Agrupa los clics que llevan al mismo dominio."
+
+#: lib/page-access/click-analytics/filter-func.php
+msgid "表のまとめ方"
+msgstr "Agrupar filas de la tabla"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の除外イベント: %s"
+msgstr "Eventos excluidos en los últimos 14 días: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "直近14日の拒否リクエスト: %s"
+msgstr "Solicitudes rechazadas en los últimos 14 días: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "受理バッチ内のイベント除外率: %s"
+msgstr "Tasa de exclusión de eventos en lotes aceptados: %s"
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
+msgstr ""
+"Las solicitudes rechazadas son envíos no aceptados, por ejemplo, por un "
+"token no válido o un límite de solicitudes. Se cuentan solicitudes y no "
+"eventos, por lo que no se incluyen en la tasa de exclusión de eventos."
+
+#: lib/page-access/click-analytics/settings-form.php
+msgid ""
+"クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-"
+"Cronまたはサーバーの定期実行設定を確認してください。"
+msgstr ""
+"El mantenimiento del análisis de clics no está programado, ha fallado o "
+"lleva mucho tiempo sin completarse. Es posible que el muestreo automático y "
+"la limpieza de datos no se actualicen. Revise WP-Cron o las tareas "
+"programadas del servidor."
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -22155,127 +22292,3 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 昇順で並べ替え"
-msgstr "%s: Ordenar de forma ascendente"
-
-#: lib/page-access/click-analytics/render-func.php
-#, php-format
-msgid "%s: 降順で並べ替え"
-msgstr "%s: Ordenar de forma descendente"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "横にスクロールできます"
-msgstr "Desplázate horizontalmente para ver más"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を左にスクロール"
-msgstr "Desplazar la tabla a la izquierda"
-
-#: lib/page-access/click-analytics/render-func.php
-msgid "表を右にスクロール"
-msgstr "Desplazar la tabla a la derecha"
-
-#: lib/page-access/click-analytics/dashboard.php
-msgid "データの見方"
-msgstr "Cómo interpretar los datos"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "開始日"
-msgstr "Fecha de inicio"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "終了日"
-msgstr "Fecha de fin"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "クリック元ページ:"
-msgstr "Página de origen:"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "すべてのページ（ページ名で絞り込み）"
-msgstr "Todas las páginas (buscar por título)"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "結果を表示"
-msgstr "Mostrar resultados"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件"
-msgstr "Más filtros"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置"
-msgstr "Dispositivo y ubicación"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "端末・掲載位置・リンク種別"
-msgstr "Dispositivo, ubicación y tipo de enlace"
-
-#. translators: %d: 適用中の詳細条件の数
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%d件を適用中"
-msgstr "Activos: %d"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "適用中の詳細条件"
-msgstr "Filtros adicionales activos"
-
-#. translators: %s: 解除する条件の名前と値
-#: lib/page-access/click-analytics/filter-func.php
-msgid "%sを解除"
-msgstr "Quitar %s"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "詳細条件をクリア"
-msgstr "Borrar filtros adicionales"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "掲載箇所ごと"
-msgstr "Por ubicación"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先でも、ページ内の掲載箇所ごとに表示します。"
-msgstr "Muestra cada ubicación por separado, aunque los enlaces tengan el mismo destino."
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "リンク先ごと"
-msgstr "Por destino"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じリンク先へのクリックをまとめて表示します。"
-msgstr "Agrupa los clics que llevan al mismo destino."
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "ドメインごと"
-msgstr "Por dominio"
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "同じドメインへのクリックをまとめて表示します。"
-msgstr "Agrupa los clics que llevan al mismo dominio."
-
-#: lib/page-access/click-analytics/filter-func.php
-msgid "表のまとめ方"
-msgstr "Agrupar filas de la tabla"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の除外イベント: %s"
-msgstr "Eventos excluidos en los últimos 14 días: %s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "直近14日の拒否リクエスト: %s"
-msgstr "Solicitudes rechazadas en los últimos 14 días: %s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "受理バッチ内のイベント除外率: %s"
-msgstr "Tasa de exclusión de eventos en lotes aceptados: %s"
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "拒否リクエストは、トークン不正や送信回数制限などで受理できなかった送信の件数です。除外イベントとは単位が異なるため、イベント除外率には含めません。"
-msgstr "Las solicitudes rechazadas son envíos no aceptados, por ejemplo, por un token no válido o un límite de solicitudes. Se cuentan solicitudes y no eventos, por lo que no se incluyen en la tasa de exclusión de eventos."
-
-#: lib/page-access/click-analytics/settings-form.php
-msgid "クリック解析の定期処理が未予約、失敗、または長時間未完了です。自動サンプリングやデータ整理が更新されない可能性があります。WP-Cronまたはサーバーの定期実行設定を確認してください。"
-msgstr "El mantenimiento del análisis de clics no está programado, ha fallado o lleva mucho tiempo sin completarse. Es posible que el muestreo automático y la limpieza de datos no se actualicen. Revise WP-Cron o las tareas programadas del servidor."
