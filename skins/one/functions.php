@@ -3,9 +3,10 @@
 //SILK WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
 //& one WordPress Theme Cocoon skin is derived from Simple-Darkmode WordPress Theme Cocoon skin, Copyright 2021 hiro(https://hirosite.com/)
 //Simple-Dark-mode WordPress Theme Cocoon sukin is distributed under the terms of the GNU GPL
-/* ブロックエディター用CSSの登録 */
+// 子テーマなどのadd_editor_style()による追加CSSとの互換性維持
 add_theme_support( 'editor-styles' );
 
+/* ブロックエディター用CSSの登録 */
 function org_theme_add_editor_styles() {
   $editor_style_url = get_theme_file_uri( '/skins/one/editor-style.css' );
   wp_enqueue_style( 'block-editor-style', $editor_style_url );
@@ -98,7 +99,7 @@ input[type="search"], input[type="tel"], input[type="time"], input[type="url"], 
   ';
 
   global $_THEME_OPTIONS;
-  $_THEME_OPTIONS['site_bakground_color'] = $_THEME_OPTIONS['site_key_color'] = $_THEME_OPTIONS['site_text_color'] = $_THEME_OPTIONS['site_key_text_color'] = '';
+  $_THEME_OPTIONS['site_background_color'] = $_THEME_OPTIONS['site_key_color'] = $_THEME_OPTIONS['site_text_color'] = $_THEME_OPTIONS['site_key_text_color'] = '';
 });
 
 add_action('cocoon_settings_after_save', function() {
@@ -201,55 +202,24 @@ function one_sanitize_checkbox( $checked ) {
 
 add_action( 'customize_register', 'one_customize_register' );
 
-if (get_theme_mod('checkbox_one',true)) {
-  add_filter( 'body_class', 'my_class_names' );
-  function my_class_names( $classes ) {
-    $classes[] = 'is-count-on';
-    return $classes;
+// プレビュー値が有効になるページ描画時点での設定判定
+add_filter('body_class', function($classes) {
+  $settings = array(
+    'checkbox_one'  => array('is-count-on', true),
+    'checkbox_one2' => array('is-pcmenu-on', true),
+    'checkbox_one3' => array('is-shadow-on', true),
+    'checkbox_one4' => array('is-dark-on', false),
+    'checkbox_one5' => array('is-border-0', true),
+    'checkbox_one6' => array('is-main-serif', true),
+    'checkbox_one7' => array('is-sidebar-serif', true),
+  );
+  foreach ($settings as $name => $setting) {
+    if (get_theme_mod($name, $setting[1])) {
+      $classes[] = $setting[0];
+    }
   }
-}
-if (get_theme_mod('checkbox_one2',true)) {
-  add_filter( 'body_class', 'my_class_names2' );
-  function my_class_names2( $classes ) {
-    $classes[] = 'is-pcmenu-on';
-    return $classes;
-  }
-}
-if (get_theme_mod('checkbox_one3',true)) {
-  add_filter( 'body_class', 'my_class_names3' );
-  function my_class_names3( $classes ) {
-    $classes[] = 'is-shadow-on';
-    return $classes;
-  }
-}
-if (get_theme_mod('checkbox_one4',false)) {
-  add_filter( 'body_class', 'my_class_names4' );
-  function my_class_names4( $classes ) {
-    $classes[] = 'is-dark-on';
-    return $classes;
-  }
-}
-if (get_theme_mod('checkbox_one5',true)) {
-  add_filter( 'body_class', 'my_class_names5' );
-  function my_class_names5( $classes ) {
-    $classes[] = 'is-border-0';
-    return $classes;
-  }
-}
-if (get_theme_mod('checkbox_one6',true)) {
-  add_filter( 'body_class', 'my_class_names6' );
-  function my_class_names6( $classes ) {
-    $classes[] = 'is-main-serif';
-    return $classes;
-  }
-}
-if (get_theme_mod('checkbox_one7',true)) {
-  add_filter( 'body_class', 'my_class_names7' );
-  function my_class_names7( $classes ) {
-    $classes[] = 'is-sidebar-serif';
-    return $classes;
-  }
-}
+  return $classes;
+});
 
 
 // ウィジェットエリアの追加
