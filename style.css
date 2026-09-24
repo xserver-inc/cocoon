@@ -8041,11 +8041,16 @@ div.fb-like-mobile {
   font-size: 9px;
   text-align: center;
   opacity: 0.8;
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 2.8em;
+  overflow: hidden;
 }
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 70px;
+  min-width: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -8053,6 +8058,7 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-button > a {
   display: block;
+  min-width: 0;
   color: var(--cocoon-black-color);
   text-decoration: none;
 }
@@ -8498,6 +8504,7 @@ div.fb-like-mobile {
 .footer-center,
 .footer-right {
   flex: 1;
+  min-width: 0;
 }
 
 .footer-widgets-mobile {

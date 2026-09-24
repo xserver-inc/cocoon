@@ -30,12 +30,21 @@
     font-size: 9px;
     text-align: center;
     opacity: 0.8;
-    display: block;
+
+    // 長いキャプションによる固定ボタンの過度な縦伸び防止
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 2.8em;
+    overflow: hidden;
   }
 
   .menu-button {
     position: relative;
     width: 70px;
+
+    // 長いキャプションによるボタンの押し広げ防止
+    min-width: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -43,6 +52,10 @@
 
     >a {
       display: block;
+
+      // キャプションを含むリンクの縮小余地の確保
+      min-width: 0;
+
       @include link_cancel(var(--cocoon-black-color));
     }
 
