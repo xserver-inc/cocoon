@@ -45,9 +45,16 @@ body {
 .article h2 {
   background: transparent;
   border-left: 1px solid #000;
+  border-radius: 0;
   margin: 40px -29px 20px;
   padding: 25px 30px;
   font-size: 26px;
+}
+
+.article .wp-block-group.is-layout-constrained:not(.has-background):not(.has-global-padding):not(.has-border-color):not([style]) > h2:not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull):not([style]) {
+  margin-left: -29px !important;
+  margin-right: -29px !important;
+  max-width: none;
 }
 
 .article h3 {
@@ -74,5 +81,9 @@ body {
   .article h2 {
     margin: 40px 0;
     padding: 14px;
+  }
+  .article .wp-block-group.is-layout-constrained:not(.has-background):not(.has-global-padding):not(.has-border-color):not([style]) > h2:not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull):not([style]) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
