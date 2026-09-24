@@ -5,6 +5,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+require_once dirname(__DIR__) . '/request-exclusion.php';
+
 add_action('rest_api_init', 'cocoon_click_register_rest_routes');
 
 if ( !function_exists( 'cocoon_click_register_rest_routes' ) ):
@@ -352,7 +354,7 @@ function cocoon_click_rest_receive_events($request){
   if (!is_array($payload)) return cocoon_click_rest_error('click_analytics_json', __('JSONが不正です。', THEME_NAME), 400);
   if (!cocoon_click_request_origin_is_valid($request)) return cocoon_click_rest_error('click_analytics_origin', __('送信元が不正です。', THEME_NAME), 403);
   if (cocoon_click_request_user_is_excluded()) return new WP_REST_Response(null, 204);
-  if (function_exists('is_useragent_robot') && is_useragent_robot()) return new WP_REST_Response(null, 204);
+  if (cocoon_analytics_request_is_excluded()) return new WP_REST_Response(null, 204);
   // 配列やオブジェクトを文字列へ変換せず、不正な型は受信時点で拒否します。
   foreach (array('batch_id', 'session_id', 'layout_revision', 'device', 'token') as $field) {
     if (!isset($payload[$field]) || !is_string($payload[$field])) return cocoon_click_rest_error('click_analytics_payload', __('送信内容が不正です。', THEME_NAME), 400);

@@ -7,6 +7,8 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+require_once __DIR__ . '/request-exclusion.php';
+
 //関数テキストテーブルのバージョン
 global $wpdb;
 define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.4');//rand(0, 99)
@@ -189,8 +191,8 @@ function logging_page_access($post_id = null, $post_type = 'post'){
   if (is_access_count_enable()
       //サイト管理者でないとき
       && (!is_user_administrator() || DEBUG_MODE)
-      //ボットでないとき
-      && !is_useragent_robot()
+      // ボット・自動操作・先読みを除いた閲覧のみの記録
+      && !cocoon_analytics_request_is_excluded()
     ) {
     if (!$post_id || !$post_type ) {
       global $post;

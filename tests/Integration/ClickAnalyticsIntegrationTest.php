@@ -7,9 +7,16 @@ namespace Cocoon\Tests\Integration;
 
 class ClickAnalyticsIntegrationTest extends IntegrationTestCase
 {
+    private array $requestServer = array();
+
     protected function setUp(): void
     {
         parent::setUp();
+        $this->requestServer = $_SERVER;
+        // 実ブラウザーからの通常リクエストに相当する受信条件
+        $_SERVER['HTTP_USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36';
+        $_SERVER['REMOTE_ADDR'] = '192.0.2.1';
+        unset($_SERVER['HTTP_PURPOSE'], $_SERVER['HTTP_SEC_PURPOSE'], $_SERVER['HTTP_X_MOZ']);
         if (!function_exists('create_click_analytics_tables')) {
             require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/_loader.php';
         }
@@ -20,6 +27,7 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
 
     protected function tearDown(): void
     {
+        $_SERVER = $this->requestServer;
         if (function_exists('cocoon_click_delete_all_data')) {
             cocoon_click_delete_all_data();
         }
@@ -346,6 +354,42 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
             return;
         }
         $this->fail('実行が毎回分境界をまたいだため、同一分内のレート制限を検証できませんでした。');
+    }
+
+    /**
+     * 除外対象の記録抑制と後続の通常リクエストにおけるバッチ再利用の確認
+     */
+    public function testAutomatedAndPrefetchedEventsDoNotWriteAnalyticsData(): void
+    {
+        global $wpdb;
+        $browserServer = $_SERVER;
+        $postId = $this->createPost(array('post_status' => 'publish', 'post_type' => 'post', 'post_title' => '除外判定テスト'));
+        $cases = array(
+            array('HTTP_USER_AGENT' => 'GPTBot/1.0'),
+            array('HTTP_USER_AGENT' => 'Mozilla/5.0 HeadlessChrome/154.0.0.0'),
+            array('HTTP_USER_AGENT' => ''),
+            array('HTTP_SEC_PURPOSE' => 'prefetch;prerender'),
+            array('HTTP_PURPOSE' => 'prefetch'),
+            array('HTTP_X_MOZ' => 'prefetch'),
+        );
+        try {
+            foreach ($cases as $index => $headers) {
+                $_SERVER = array_replace($browserServer, $headers);
+                list($response) = $this->receiveEvents(array($this->clickEvent()), 'excluded-request-batch-' . $index, true, $postId);
+                $this->assertSame(204, $response->get_status());
+                foreach (array(CLICK_LINKS_TABLE_NAME, CLICK_STATS_DAILY_TABLE_NAME, CLICK_HEATMAP_DAILY_TABLE_NAME, CLICK_BATCHES_TABLE_NAME, CLICK_UNIQUES_TABLE_NAME) as $table) {
+                    $this->assertSame('0', (string) $wpdb->get_var('SELECT COUNT(*) FROM `' . $table . '`'), $table);
+                }
+            }
+
+            // 先読み後の通常閲覧でも同じバッチを処理できることの確認
+            $_SERVER = $browserServer;
+            list($response) = $this->receiveEvents(array($this->clickEvent()), 'excluded-request-batch-5', true, $postId);
+            $this->assertSame(204, $response->get_status());
+            $this->assertSame('1', (string) $wpdb->get_var('SELECT SUM(clicks) FROM `' . CLICK_STATS_DAILY_TABLE_NAME . '`'));
+        } finally {
+            $_SERVER = $browserServer;
+        }
     }
 
     public function testDefinitionLimitAllowsExistingLinksButRejectsNewOnes(): void
