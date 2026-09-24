@@ -22,7 +22,19 @@
   .keyboard-key{
     box-shadow: 1px 2px 2px #6e6e6e;
   }
-  /*ダークモード時の吹き出し*/
+
+  // タブブロックの選択状態ごとの文字色と背景色
+  .tab-label-group .tab-label {
+    background-color: var(--bg2);
+    color: var(--text-main);
+  }
+
+  .tab-label-group .tab-label.is-active {
+    background-color: var(--text-main);
+    color: var(--bg3);
+  }
+
+  // ダークモード時の吹き出し
   .sbs-line.sbp-r .speech-balloon{
     background-color: var(--bg2);
     border-color: #85e249;

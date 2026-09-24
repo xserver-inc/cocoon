@@ -1288,6 +1288,16 @@ div.speech-balloon {
   background-color: #191919;
 }
 
+.tab-label-group .tab-label {
+  background-color: #191919;
+  color: #d3d3d3;
+}
+
+.tab-label-group .tab-label.is-active {
+  background-color: #e5e4e6;
+  color: #404453;
+}
+
 .list-more-button {
   color: #d3d3d3;
 }

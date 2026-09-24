@@ -603,6 +603,17 @@ _:lang(ja)+_:-webkit-full-screen-document, .list-title-in:before, .list-title-in
 	border: none;
 }
 
+/* タブブロックの選択状態ごとの文字色と背景色 */
+.tab-label-group .tab-label {
+	background-color: rgba(var(--black-color), 1);
+	color: rgba(var(--gray-color), 1);
+}
+
+.tab-label-group .tab-label.is-active {
+	background-color: rgba(var(--primary-color-tegaki-note), 1);
+	color: rgba(var(--back-color), 1);
+}
+
 /* 2カラム幅対応 */
 .ect-tile-card-2 .masonry-brick {
 	width: calc(49.5% - 2em);
