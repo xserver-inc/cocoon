@@ -94,3 +94,36 @@ for (const palette of palettes) {
     }
   }
 }
+
+for (const width of [390, 1023, 1024, 1280]) {
+  test(`ONE モバイルメニューボタンの文字色と表示 ${width}px`, async ({page}) => {
+    await page.setViewportSize({width, height: 900});
+    await page.setContent(`<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${css}</style></head>
+      <body class="body mblt-header-and-footer-mobile-buttons">
+        <ul class="mobile-header-menu-buttons mobile-menu-buttons">
+          <li class="home-menu-button menu-button"><a class="menu-button-in" href="#header">ヘッダー</a></li>
+        </ul>
+        <ul class="mobile-footer-menu-buttons mobile-menu-buttons">
+          <li class="navi-menu-button menu-button"><a class="menu-button-in" href="#footer">フッター</a></li>
+        </ul>
+      </body></html>`);
+    for (const pcMenu of [false, true]) {
+      for (const dark of [false, true]) {
+        // カスタマイザーの二つの設定によるbodyクラス切り替えの再現
+        await page.locator('body').evaluate((body, settings) => {
+          body.classList.toggle('is-pcmenu-on', settings.pcMenu);
+          body.classList.toggle('is-dark-on', settings.dark);
+        }, {pcMenu, dark});
+        const expectedColor = dark ? 'rgb(255, 255, 255)' : 'rgb(51, 51, 51)';
+        const footer = page.locator('.mobile-footer-menu-buttons');
+        if (width < 1024 || pcMenu) {
+          await expect(footer).toBeVisible();
+        } else {
+          await expect(footer).toBeHidden();
+        }
+        await expect(page.locator('.mobile-header-menu-buttons .menu-button > a')).toHaveCSS('color', expectedColor);
+        await expect(footer.locator('.menu-button > a')).toHaveCSS('color', expectedColor);
+      }
+    }
+  });
+}

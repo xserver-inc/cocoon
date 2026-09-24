@@ -49,9 +49,10 @@
 .one-fixed-sidebar:hover{
   width: 300px;
 }
+}
+/* ダークスキン時のモバイルメニューボタン文字色 */
 .is-dark-on .mobile-menu-buttons .menu-button > a{
   color: white;
-}
 }
 @media screen and (max-width: 1023px){
 .one-fixed-sidebar{
