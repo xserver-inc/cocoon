@@ -4412,7 +4412,7 @@ function is_current_url_same($url) {
 }
 endif;
 
-//JSON・CSVスキンが持つ表示文言を翻訳する
+//JSON・CSVスキンが持つ表示文言の翻訳
 if ( !function_exists( 'translate_skin_option_value' ) ):
 function translate_skin_option_value($name, $value) {
   $translatable_option_names = array(
@@ -4426,7 +4426,12 @@ function translate_skin_option_value($name, $value) {
     return $value;
   }
 
-  //動的な設定値をPOTへ確実に登録するため、対応する原文を静的に列挙する
+  //初期化前の翻訳読込を避け、after_setup_themeでの再翻訳まで原文の維持
+  if (!did_action('after_setup_theme')) {
+    return $value;
+  }
+
+  //動的な設定値のPOT登録に必要な翻訳原文の静的な列挙
   $translations = array(
     '<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>' => __( '<div class="blank-box bb-red">誹謗中傷は予告なく削除します</div>', THEME_NAME ),
     'スキンから入力したタイトル' => __( 'スキンから入力したタイトル', THEME_NAME ),
@@ -4438,7 +4443,7 @@ function translate_skin_option_value($name, $value) {
 }
 endif;
 
-//テーマ翻訳の読込後に、先行読込されたスキン表示文言を再翻訳する
+//テーマ翻訳の読込後における先行読込済みスキン表示文言の再翻訳
 if ( !function_exists( 'translate_loaded_skin_options' ) ):
 function translate_loaded_skin_options() {
   global $_THEME_OPTIONS;
