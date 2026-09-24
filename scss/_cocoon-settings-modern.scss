@@ -1,8 +1,5 @@
-/**
- * Cocoon設定画面専用のモダンUI
- *
- * 保存フォームのDOMと入力属性は変更せず、表示層だけを調整する。
- */
+// Cocoon設定画面専用のモダンUI
+// 保存フォームのDOMと入力属性を維持した表示層の調整
 .toplevel_page_theme-settings .wrap.admin-settings {
   --cocoon-settings-navigation-top: 32px;
   --cocoon-settings-surface: #fff;
@@ -21,10 +18,7 @@
   --cocoon-settings-radius-card: 6px;
   --cocoon-settings-radius-emphasis: 8px;
   --cocoon-settings-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --cocoon-settings-content-max: 1280px;
-
   box-sizing: border-box;
-  max-inline-size: var(--cocoon-settings-content-max);
   color: var(--cocoon-settings-text);
 
   > :where(h1) {
@@ -37,7 +31,6 @@
   }
 
   > :where(p:not(.submit)) {
-    max-inline-size: 86ch;
     margin-block: 0 20px;
     color: var(--cocoon-settings-text-muted);
     font-size: 14px;
@@ -45,7 +38,7 @@
   }
 
   // 子要素側のvisibility指定も上書きし、寸法を保ったまま初期タブ全体を確実に隠す。
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 初期描画中の既存プレビューの高詳細度指定の遮断 */
+  // stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 初期描画中の既存プレビューの高詳細度指定の遮断
   #tabs.is-navigation-booting,
   #tabs.is-navigation-booting *,
   #tabs.is-navigation-booting *::before,
@@ -56,15 +49,11 @@
   #tabs.is-navigation-booting {
     opacity: 0;
   }
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+  // stylelint-enable selector-max-specificity, selector-max-compound-selectors
 
   > :where(p:not(.submit)) :where(a) {
     font-weight: 500;
     white-space: nowrap;
-  }
-
-  > :where(.notice) {
-    max-inline-size: 960px;
   }
 
   :where(form.admin-settings) {
@@ -204,6 +193,7 @@
     position: absolute;
     inline-size: 1px;
     block-size: 1px;
+    min-inline-size: 0;
     margin: -1px;
     padding: 0;
     overflow: hidden;
@@ -219,7 +209,7 @@
   }
 
   // 既存の#tabs＋!importantより後勝ちさせるため、タブ部分だけID詳細度を許可する。
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important指定との局所的な競合解消 */
+  // stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important指定との局所的な競合解消
   #tabs > .tab-label {
     display: inline-flex !important;
     align-items: center;
@@ -275,7 +265,7 @@
     font-weight: 500;
     line-height: 1.35;
   }
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+  // stylelint-enable selector-max-specificity, selector-max-compound-selectors
 
   :where(#tabs > .cocoon-settings-navigation) {
     display: none;
@@ -463,7 +453,7 @@
   }
 
   // フォーム側にはpostbox直下型とmetabox-holder入れ子型の両方がある。
-  /* stylelint-disable selector-max-compound-selectors -- 既存2種類のDOM構造への限定 */
+  // stylelint-disable selector-max-compound-selectors -- 既存2種類のDOM構造への限定
   :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) {
     min-inline-size: 0;
     margin-block: 0 16px;
@@ -483,6 +473,7 @@
     font-size: 15px;
     font-weight: 600;
     line-height: 1.5;
+    cursor: default;
   }
 
   :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
@@ -520,7 +511,7 @@
     line-height: 1.65;
     vertical-align: top;
   }
-  /* stylelint-enable selector-max-compound-selectors */
+  // stylelint-enable selector-max-compound-selectors
 
   :where(.postbox > .inside)
     :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
@@ -540,14 +531,15 @@
     min-block-size: 36px;
   }
 
+  // 標準60文字幅の文章入力欄とWordPress標準入力欄のカラム幅への追従
   :where(.postbox > .inside)
-    :where(.regular-text):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
-    inline-size: min(100%, 520px);
+    :where(.regular-text, input[type='text'][size='60']):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+    inline-size: 100%;
   }
 
   :where(.postbox > .inside)
     :where(.large-text, textarea):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
-    inline-size: min(100%, 760px);
+    inline-size: 100%;
   }
 
   :where(.postbox > .inside)
@@ -568,7 +560,6 @@
 
   :where(#tabs > .metabox-holder) :where(.tips):not(:where(.demo *)) {
     box-sizing: border-box;
-    max-inline-size: 78ch;
     margin-block: 8px 12px !important;
     padding: 10px 12px;
     border: 1px solid var(--cocoon-settings-border-subtle);
@@ -576,6 +567,7 @@
     background: var(--cocoon-settings-surface-subtle);
     color: var(--cocoon-settings-text-muted);
     line-height: 1.65;
+    overflow-wrap: anywhere;
   }
 
   :where(#tabs > .metabox-holder) :where(.detail-area):not(:where(.demo *)) {
@@ -642,11 +634,11 @@
   }
 
   // 中間幅とモバイル幅で共通の分類付き項目選択UI
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- おすすめ表示での既存タブの非表示化 */
+  // stylelint-disable selector-max-specificity, selector-max-compound-selectors -- おすすめ表示での既存タブの非表示化
   #tabs.is-navigation-enhanced.is-navigation-mode-responsive > .tab-label {
     display: none !important;
   }
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+  // stylelint-enable selector-max-specificity, selector-max-compound-selectors
 
   :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .cocoon-settings-navigation) {
     position: sticky;
@@ -727,7 +719,7 @@
 
 @media screen and (width <= 960px) {
   .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
+    // stylelint-disable-next-line selector-max-compound-selectors -- 既存2種類のカードDOM内への限定
     :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(th) {
       inline-size: 200px;
       padding-inline-end: 18px;
@@ -743,7 +735,6 @@
   .toplevel_page_theme-settings .wrap.admin-settings {
     --cocoon-settings-navigation-top: 46px;
 
-    max-inline-size: none;
     margin-inline: 10px;
 
     > :where(h1) {
@@ -762,7 +753,7 @@
       table-layout: fixed;
     }
 
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消 */
+    // stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消
     #tabs > .tab-label {
       min-block-size: 44px;
       margin: 0 4px 6px 0 !important;
@@ -770,7 +761,7 @@
       font-size: 13px;
     }
 
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するモバイル操作領域の確保 */
+    // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するモバイル操作領域の確保
     #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
       min-block-size: 44px;
       margin: 0 4px 6px 0 !important;
@@ -802,7 +793,7 @@
       text-align: start;
     }
 
-    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
+    // stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定
     :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
       padding: 14px 16px;
     }
@@ -820,7 +811,7 @@
       inline-size: auto;
       padding: 4px 0 16px;
     }
-    /* stylelint-enable selector-max-compound-selectors */
+    // stylelint-enable selector-max-compound-selectors
 
     :where(.postbox > .inside)
       :where(input[type='text'], input[type='password'], input[type='search'], input[type='url'], input[type='email'], input[type='number'], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
@@ -886,7 +877,7 @@
 @media screen and (width <= 600px) {
   .toplevel_page_theme-settings .wrap.admin-settings {
     // スクロールアウトするWordPress管理バーに合わせた追従位置
-    /* stylelint-disable-next-line length-zero-no-unit -- calc()で加算するカスタムプロパティの単位保持 */
+    // stylelint-disable-next-line length-zero-no-unit -- calc()で加算するカスタムプロパティの単位保持
     --cocoon-settings-navigation-top: 0px;
 
     :where(#tabs > .metabox-holder) :where(.col-2):not(:where(.demo *)) {
@@ -916,17 +907,17 @@
       font-size: 13px;
     }
 
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消 */
+    // stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消
     #tabs > .tab-label {
       padding-inline: 9px !important;
     }
 
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- 従来タブのモバイル余白の統一 */
+    // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- 従来タブのモバイル余白の統一
     #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
       padding-inline: 9px !important;
     }
 
-    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
+    // stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定
     :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
       padding-inline: 14px;
     }
@@ -934,7 +925,7 @@
     :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
       padding-inline: 14px;
     }
-    /* stylelint-enable selector-max-compound-selectors */
+    // stylelint-enable selector-max-compound-selectors
 
     :where(.postbox > .inside)
       :where(.regular-text, .large-text, textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
@@ -946,12 +937,12 @@
 // タッチ操作が中心の端末では、画面幅にかかわらず主要操作領域を44px以上にする。
 @media (pointer: coarse) {
   .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブのID詳細度をタッチ端末時だけ上書きする。 */
+    // stylelint-disable-next-line selector-max-specificity -- 既存タブのID詳細度のタッチ端末時限定の上書き
     #tabs > .tab-label {
       min-block-size: 44px;
     }
 
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するタッチ操作領域の確保 */
+    // stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するタッチ操作領域の確保
     #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
       min-block-size: 44px;
     }
@@ -964,7 +955,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 通常時のタブ詳細度と揃える。 */
+    // stylelint-disable-next-line selector-max-specificity -- 通常時のタブ詳細度との統一
     #tabs > .tab-label {
       transition: none;
     }
@@ -985,7 +976,7 @@
 
 @media (forced-colors: active) {
   .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 通常時のタブ詳細度と揃える。 */
+    // stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 通常時のタブ詳細度との統一
     #tabs > .tab-input:checked + .tab-label {
       border: 2px solid CanvasText !important;
       box-shadow: none;
@@ -994,7 +985,7 @@
     #tabs > .tab-input:focus-visible + .tab-label {
       outline: 2px solid Highlight;
     }
-    /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
+    // stylelint-enable selector-max-specificity, selector-max-compound-selectors
 
     :where(.cocoon-settings-navigation-item.is-active) {
       border: 2px solid Highlight;

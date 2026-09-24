@@ -511,8 +511,8 @@ REGEX;
         $adminSource = $this->readThemeFile('lib/admin.php');
         $scope = '.toplevel_page_theme-settings .wrap.admin-settings';
 
-        $cssMarker = "/**\n * Cocoon設定画面専用のモダンUI";
-        $cssPosition = strpos($settingsCss, $cssMarker);
+        // 生成CSS内の最初の設定画面スコープを起点とする範囲確認
+        $cssPosition = strpos($settingsCss, $scope . ' {');
 
         $this->assertIsInt($cssPosition);
         $modernCss = substr($settingsCss, $cssPosition);

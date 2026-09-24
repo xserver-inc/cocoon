@@ -2,11 +2,6 @@
 /**
  * Cocoon設定画面専用スタイル
  */
-/**
- * Cocoon設定画面専用のモダンUI
- *
- * 保存フォームのDOMと入力属性は変更せず、表示層だけを調整する。
- */
 .toplevel_page_theme-settings .wrap.admin-settings {
   --cocoon-settings-navigation-top: 32px;
   --cocoon-settings-surface: #fff;
@@ -25,9 +20,7 @@
   --cocoon-settings-radius-card: 6px;
   --cocoon-settings-radius-emphasis: 8px;
   --cocoon-settings-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --cocoon-settings-content-max: 1280px;
   box-sizing: border-box;
-  max-inline-size: var(--cocoon-settings-content-max);
   color: var(--cocoon-settings-text);
 }
 .toplevel_page_theme-settings .wrap.admin-settings > :where(h1) {
@@ -39,14 +32,10 @@
   line-height: 1.35;
 }
 .toplevel_page_theme-settings .wrap.admin-settings > :where(p:not(.submit)) {
-  max-inline-size: 86ch;
   margin-block: 0 20px;
   color: var(--cocoon-settings-text-muted);
   font-size: 14px;
   line-height: 1.7;
-}
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 初期描画中の既存プレビューの高詳細度指定の遮断 */
 }
 .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-booting,
 .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-booting *,
@@ -57,15 +46,9 @@
 .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-booting {
   opacity: 0;
 }
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
-}
 .toplevel_page_theme-settings .wrap.admin-settings > :where(p:not(.submit)) :where(a) {
   font-weight: 500;
   white-space: nowrap;
-}
-.toplevel_page_theme-settings .wrap.admin-settings > :where(.notice) {
-  max-inline-size: 960px;
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(form.admin-settings) {
   margin-block-start: 22px;
@@ -183,6 +166,7 @@
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
+  min-inline-size: 0;
   margin: -1px;
   padding: 0;
   overflow: hidden;
@@ -193,9 +177,6 @@
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs.is-navigation-enhanced > .tab-input.is-navigation-excluded) {
   display: none !important;
-}
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 既存タブの!important指定との局所的な競合解消 */
 }
 .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
   display: inline-flex !important;
@@ -242,9 +223,6 @@
   padding: 4px 9px 3px !important;
   font-weight: 500;
   line-height: 1.35;
-}
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .cocoon-settings-navigation) {
   display: none;
@@ -405,9 +383,6 @@
   margin-block-start: 4px;
   scroll-margin-block-start: 64px;
 }
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-disable selector-max-compound-selectors -- 既存2種類のDOM構造への限定 */
-}
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) {
   min-inline-size: 0;
   margin-block: 0 16px;
@@ -426,6 +401,7 @@
   font-size: 15px;
   font-weight: 600;
   line-height: 1.5;
+  cursor: default;
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
   margin: 0;
@@ -457,9 +433,6 @@
   line-height: 1.65;
   vertical-align: top;
 }
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-enable selector-max-compound-selectors */
-}
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=text], input[type=password], input[type=search], input[type=url], input[type=email], input[type=number], textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
   box-sizing: border-box;
   max-inline-size: 100%;
@@ -471,11 +444,11 @@
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=text], input[type=password], input[type=search], input[type=url], input[type=email], input[type=number], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
   min-block-size: 36px;
 }
-.toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.regular-text):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
-  inline-size: min(100%, 520px);
+.toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.regular-text, input[type=text][size="60"]):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+  inline-size: 100%;
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.large-text, textarea):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
-  inline-size: min(100%, 760px);
+  inline-size: 100%;
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=range]):not(:where(.demo *, .wp-picker-container *, .iris-picker *)) {
   max-inline-size: 100%;
@@ -490,7 +463,6 @@
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.tips):not(:where(.demo *)) {
   box-sizing: border-box;
-  max-inline-size: 78ch;
   margin-block: 8px 12px !important;
   padding: 10px 12px;
   border: 1px solid var(--cocoon-settings-border-subtle);
@@ -498,6 +470,7 @@
   background: var(--cocoon-settings-surface-subtle);
   color: var(--cocoon-settings-text-muted);
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.detail-area):not(:where(.demo *)) {
   margin-block: 10px;
@@ -551,14 +524,8 @@
   border-block-end-color: var(--cocoon-settings-danger-border);
   color: #8a2424;
 }
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- おすすめ表示での既存タブの非表示化 */
-}
 .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-enhanced.is-navigation-mode-responsive > .tab-label {
   display: none !important;
-}
-.toplevel_page_theme-settings .wrap.admin-settings {
-  /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
 }
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive > .cocoon-settings-navigation) {
   position: sticky;
@@ -626,9 +593,6 @@
 }
 
 @media screen and (width <= 960px) {
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(th) {
     inline-size: 200px;
     padding-inline-end: 18px;
@@ -640,7 +604,6 @@
 @media screen and (width <= 782px) {
   .toplevel_page_theme-settings .wrap.admin-settings {
     --cocoon-settings-navigation-top: 46px;
-    max-inline-size: none;
     margin-inline: 10px;
   }
   .toplevel_page_theme-settings .wrap.admin-settings > :where(h1) {
@@ -655,17 +618,11 @@
     max-inline-size: 100%;
     table-layout: fixed;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
     min-block-size: 44px;
     margin: 0 4px 6px 0 !important;
     padding: 9px 11px !important;
     font-size: 13px;
-  }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するモバイル操作領域の確保 */
   }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
     min-block-size: 44px;
@@ -692,9 +649,6 @@
   .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-settings-view-mode-status) {
     text-align: start;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
     padding: 14px 16px;
   }
@@ -708,9 +662,6 @@
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) > :where(.form-table) > :where(tbody) > :where(tr) > :where(td) {
     inline-size: auto;
     padding: 4px 0 16px;
-  }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-enable selector-max-compound-selectors */
   }
   .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=text], input[type=password], input[type=search], input[type=url], input[type=email], input[type=number], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
     min-block-size: 44px;
@@ -759,7 +710,6 @@
 }
 @media screen and (width <= 600px) {
   .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line length-zero-no-unit -- calc()で加算するカスタムプロパティの単位保持 */
     --cocoon-settings-navigation-top: 0px;
   }
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.col-2):not(:where(.demo *)) {
@@ -782,20 +732,11 @@
   .toplevel_page_theme-settings .wrap.admin-settings > :where(p:not(.submit)) {
     font-size: 13px;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブの!important指定との局所的な競合解消 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
     padding-inline: 9px !important;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- 従来タブのモバイル余白の統一 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
     padding-inline: 9px !important;
-  }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable selector-max-compound-selectors -- 既存2種類のカードDOM内への限定 */
   }
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.hndle) {
     padding-inline: 14px;
@@ -803,22 +744,13 @@
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder > .postbox, #tabs > .metabox-holder > .metabox-holder > .postbox) > :where(.inside) {
     padding-inline: 14px;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-enable selector-max-compound-selectors */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.regular-text, .large-text, textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
     inline-size: 100%;
   }
 }
 @media (pointer: coarse) {
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 既存タブのID詳細度をタッチ端末時だけ上書きする。 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
     min-block-size: 44px;
-  }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors -- PC用の従来タブ寸法に優先するタッチ操作領域の確保 */
   }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs.is-navigation-enhanced.is-navigation-mode-tabs > .tab-label {
     min-block-size: 44px;
@@ -828,9 +760,6 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable-next-line selector-max-specificity -- 通常時のタブ詳細度と揃える。 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
     transition: none;
   }
@@ -845,18 +774,12 @@
   }
 }
 @media (forced-colors: active) {
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-disable selector-max-specificity, selector-max-compound-selectors -- 通常時のタブ詳細度と揃える。 */
-  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-input:checked + .tab-label {
     border: 2px solid CanvasText !important;
     box-shadow: none;
   }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-input:focus-visible + .tab-label {
     outline: 2px solid Highlight;
-  }
-  .toplevel_page_theme-settings .wrap.admin-settings {
-    /* stylelint-enable selector-max-specificity, selector-max-compound-selectors */
   }
   .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-settings-navigation-item.is-active) {
     border: 2px solid Highlight;

@@ -12,6 +12,8 @@ const modernScssPath = path.resolve(
   '../../scss/_cocoon-settings-modern.scss'
 );
 const cssPath = path.resolve( __dirname, '../../css/cocoon-settings.css' );
+const adminScssPath = path.resolve( __dirname, '../../scss/admin.scss' );
+const adminCssPath = path.resolve( __dirname, '../../css/admin.css' );
 const navigationScriptPath = path.resolve(
   __dirname,
   '../../js/cocoon-settings-navigation.js'
@@ -56,13 +58,104 @@ for ( const [ before, after ] of [
 const generatedCss = sass.compile( scssPath, { style: 'expanded' } ).css;
 const distributedCss = fs.readFileSync( cssPath, 'utf8' );
 const modernScss = fs.readFileSync( modernScssPath, 'utf8' );
+const inputDefinitions = fs.readFileSync( path.resolve( __dirname, '../../lib/_defins.php' ), 'utf8' );
 const navigationScript = fs.readFileSync( navigationScriptPath, 'utf8' );
+const adminCss = fs.readFileSync( adminCssPath, 'utf8' );
+const adminGeneratedCss = sass.compile( adminScssPath, { style: 'expanded' } ).css;
+
+// 生成CSSと既存CSSから同じセレクターの宣言だけを抽出
+const findDeclarations = ( css, selector ) => {
+  const matches = [];
+  postcss.parse( css ).walkRules( ( rule ) => {
+    if ( rule.selector === selector ) {
+      matches.push( rule.nodes.filter( ( node ) => node.type === 'decl' )
+        .map( ( node ) => [ node.prop, node.value, Boolean( node.important ) ] ) );
+    }
+  } );
+  return matches;
+};
 
 assert.deepStrictEqual(
   normalizeCss( distributedCss ),
   normalizeCss( generatedCss ),
   'scss/cocoon-settings.scssとcss/cocoon-settings.cssが一致しません。'
 );
+
+// 設定画面専用CSSの空ルール排除と通知欄の幅制限解除
+postcss.parse( distributedCss ).walkRules( ( rule ) => {
+  assert.ok(
+    rule.nodes.some( ( node ) => node.type !== 'comment' ),
+    `空のCSSルールが残っています: ${ rule.selector }`
+  );
+} );
+assert.doesNotMatch( modernScss, /> :where\(\.notice\)\s*\{/u );
+
+// 設定画面・説明文・文章入力欄の固定幅上限撤廃と画面内制約の維持
+const settingsSelector = '.toplevel_page_theme-settings .wrap.admin-settings';
+const settingsDeclarations = findDeclarations( distributedCss, settingsSelector );
+assert.ok( settingsDeclarations.length > 0 );
+assert.ok( settingsDeclarations.flat().every( ( [ property ] ) =>
+  property !== 'max-inline-size' && property !== '--cocoon-settings-content-max'
+) );
+const introDeclarations = findDeclarations( distributedCss, `${ settingsSelector } > :where(p:not(.submit))` );
+assert.ok( introDeclarations.length > 0 );
+assert.ok( introDeclarations.flat().every( ( [ property ] ) => property !== 'max-inline-size' ) );
+// PHPの標準入力文字幅とCSS属性セレクターの一致
+const defaultInputColumns = inputDefinitions.match( /define\(\s*'DEFAULT_INPUT_COLS'\s*,\s*(\d+)\s*\)/u );
+assert.ok( defaultInputColumns );
+assert.strictEqual( defaultInputColumns[ 1 ], '60' );
+for ( const fieldSelector of [ '.regular-text, input[type=text][size="60"]', '.large-text, textarea' ] ) {
+  const selector = `${ settingsSelector } :where(.postbox > .inside) :where(${ fieldSelector }):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *))`;
+  const declarations = findDeclarations( distributedCss, selector );
+  assert.strictEqual( declarations.length, 1 );
+  assert.ok( declarations[ 0 ].some( ( [ property, value ] ) =>
+    property === 'inline-size' && value === '100%'
+  ) );
+}
+
+// 常時表示のヒントの幅制限解除とポップアップの画面内制限の維持
+const tipsSelector = '.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.tips):not(:where(.demo *))';
+const tipsDeclarations = findDeclarations( distributedCss, tipsSelector );
+assert.strictEqual( tipsDeclarations.length, 1 );
+assert.ok( tipsDeclarations[ 0 ].every( ( [ property ] ) =>
+  property !== 'max-inline-size' && property !== 'max-width'
+) );
+assert.ok( tipsDeclarations[ 0 ].some( ( [ property, value ] ) =>
+  property === 'overflow-wrap' && value === 'anywhere'
+) );
+const tooltipSelector = '.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.tooltip .tip-content):not(:where(.demo *, .wp-editor-wrap *))';
+const tooltipDeclarations = findDeclarations( distributedCss, tooltipSelector );
+assert.ok( tooltipDeclarations.some( ( declarations ) => declarations.some( ( [ property, value ] ) =>
+  property === 'max-inline-size' && value === 'calc(100vw - 48px)'
+) ) );
+assert.ok( tooltipDeclarations.some( ( declarations ) => declarations.some( ( [ property, value ] ) =>
+  property === 'max-inline-size' && value === 'calc(100vw - 24px)'
+) ) );
+
+// 旧タブ入力のキーボード操作と生成CSSとの宣言一致
+const legacyTabSelector = '#tabs .tab-input';
+const legacyTabDeclarations = findDeclarations( adminCss, legacyTabSelector );
+assert.deepStrictEqual(
+  legacyTabDeclarations,
+  findDeclarations( adminGeneratedCss, legacyTabSelector ),
+  '旧タブ入力の配布CSSがSCSSの生成結果と一致しません。'
+);
+assert.strictEqual( legacyTabDeclarations.length, 1 );
+assert.ok( legacyTabDeclarations[ 0 ].some( ( [ property, value ] ) =>
+  property === 'position' && value === 'absolute'
+) );
+assert.ok( legacyTabDeclarations[ 0 ].some( ( [ property, value ] ) =>
+  property === 'min-width' && value === '0'
+) );
+assert.ok( legacyTabDeclarations[ 0 ].every( ( [ property ] ) => property !== 'display' ) );
+const legacyFocusSelector = '#tabs > .tab-input:focus-visible + .tab-label';
+const legacyFocusDeclarations = findDeclarations( adminCss, legacyFocusSelector );
+assert.strictEqual( legacyFocusDeclarations.length, 1 );
+assert.deepStrictEqual( legacyFocusDeclarations, findDeclarations( adminGeneratedCss, legacyFocusSelector ) );
+
+// 設定カード見出しの非ドラッグ表示とフォーカス表示の維持
+assert.match( distributedCss, /:where\(\.hndle\)\s*\{[^}]*cursor: default;/u );
+assert.match( distributedCss, /#tabs > \.tab-input:focus-visible \+ \.tab-label/u );
 
 // WordPress管理画面がモバイルレイアウトへ切り替わる782pxを、選択UI側でも同じ境界として固定する。
 const mobileBreakpointStart = modernScss.indexOf(

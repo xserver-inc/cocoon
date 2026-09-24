@@ -197,8 +197,19 @@ form.admin-settings{
 }
 
 #tabs{
+  // 旧タブ入力の見た目だけを隠し、キーボード操作は維持
   .tab-input{
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    min-width: 0;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
   }
 
   // .tabs-nav {
@@ -233,6 +244,12 @@ form.admin-settings{
   // 独自タブも含め、選択中の入力に続くラベルを強調する。
   > .tab-input:checked + .tab-label {
     background-color: #fff;
+  }
+
+  // 旧タブ入力へキーボードで移動した際のフォーカス位置表示
+  > .tab-input:focus-visible + .tab-label {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
   }
 
   input[type="text"], input[type="password"], input[type="search"], input[type="number"], textarea, select{

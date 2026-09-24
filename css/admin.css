@@ -20512,7 +20512,17 @@ form.admin-settings .postbox {
 }
 
 #tabs .tab-input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-width: 0;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 #tabs .tab-label {
   background-color: rgb(241, 241, 241);
@@ -20532,6 +20542,10 @@ form.admin-settings .postbox {
 }
 #tabs > .tab-input:checked + .tab-label {
   background-color: #fff;
+}
+#tabs > .tab-input:focus-visible + .tab-label {
+  outline: 2px solid #2271b1;
+  outline-offset: 2px;
 }
 #tabs input[type=text], #tabs input[type=password], #tabs input[type=search], #tabs input[type=number], #tabs textarea, #tabs select {
   border-color: #ddd;
