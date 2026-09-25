@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.5.5\n"
+"Project-Id-Version: Cocoon 2.9.5.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1360,7 +1360,7 @@ msgid "文字数"
 msgstr ""
 
 #: lib/admin.php:339
-#: lib/page-access/access-func.php:752
+#: lib/page-access/access-func.php:754
 #: lib/page-access/analytics/enqueue-func.php:137
 #: lib/page-access/analytics/render-func.php:455
 #: lib/page-access/analytics/render-func.php:1031
@@ -2377,12 +2377,12 @@ msgstr ""
 
 #: lib/custom-fields/update-field.php:88
 #: lib/custom-fields/update-field.php:90
-#: lib/page-access/access-func.php:780
+#: lib/page-access/access-func.php:782
 msgid "年"
 msgstr ""
 
 #: lib/custom-fields/update-field.php:92
-#: lib/page-access/access-func.php:779
+#: lib/page-access/access-func.php:781
 #: lib/page-access/analytics/dashboard-page.php:195
 #: lib/page-access/analytics/enqueue-func.php:98
 msgid "月"
@@ -2390,8 +2390,8 @@ msgstr ""
 
 #: lib/custom-fields/update-field.php:102
 #: lib/custom-fields/update-field.php:104
-#: lib/page-access/access-func.php:753
-#: lib/page-access/access-func.php:777
+#: lib/page-access/access-func.php:755
+#: lib/page-access/access-func.php:779
 #: lib/page-access/analytics/dashboard-page.php:193
 #: lib/page-access/analytics/enqueue-func.php:97
 #: lib/page-access/analytics/enqueue-func.php:142
@@ -3206,47 +3206,47 @@ msgstr ""
 msgid "設定間隔ごとに新しいキャッシュを生成します"
 msgstr ""
 
-#: lib/page-access/access-func.php:719
+#: lib/page-access/access-func.php:721
 msgid "アクセス推移 (Cocoon)"
 msgstr ""
 
-#: lib/page-access/access-func.php:751
+#: lib/page-access/access-func.php:753
 msgid "PV数"
 msgstr ""
 
-#: lib/page-access/access-func.php:754
+#: lib/page-access/access-func.php:756
 #: lib/page-access/analytics/enqueue-func.php:143
 msgid "日数"
 msgstr ""
 
-#: lib/page-access/access-func.php:755
+#: lib/page-access/access-func.php:757
 #: lib/page-access/analytics/enqueue-func.php:144
 msgid "部分週"
 msgstr ""
 
-#: lib/page-access/access-func.php:756
+#: lib/page-access/access-func.php:758
 msgid "集計データがまだありません。"
 msgstr ""
 
-#: lib/page-access/access-func.php:757
+#: lib/page-access/access-func.php:759
 msgid "データの取得に失敗しました。"
 msgstr ""
 
-#: lib/page-access/access-func.php:778
+#: lib/page-access/access-func.php:780
 #: lib/page-access/analytics/dashboard-page.php:194
 msgid "週"
 msgstr ""
 
-#: lib/page-access/access-func.php:787
+#: lib/page-access/access-func.php:789
 #: lib/page-access/analytics/enqueue-func.php:158
 msgid "読み込み中..."
 msgstr ""
 
-#: lib/page-access/access-func.php:799
+#: lib/page-access/access-func.php:801
 msgid "人気記事 TOP5"
 msgstr ""
 
-#: lib/page-access/access-func.php:817
+#: lib/page-access/access-func.php:819
 msgid "アクセス集計の詳細を見る"
 msgstr ""
 
@@ -4623,49 +4623,49 @@ msgstr ""
 msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:347
+#: lib/page-access/click-analytics/rest-func.php:349
 msgid "クリック解析は無効です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:348
+#: lib/page-access/click-analytics/rest-func.php:350
 msgid "クリック解析テーブルがありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:350
+#: lib/page-access/click-analytics/rest-func.php:352
 msgid "送信サイズが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:352
+#: lib/page-access/click-analytics/rest-func.php:354
 msgid "JSONが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:353
+#: lib/page-access/click-analytics/rest-func.php:355
 msgid "送信元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:358
-#: lib/page-access/click-analytics/rest-func.php:372
+#: lib/page-access/click-analytics/rest-func.php:360
+#: lib/page-access/click-analytics/rest-func.php:374
 msgid "送信内容が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:369
+#: lib/page-access/click-analytics/rest-func.php:371
 msgid "識別子が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:374
+#: lib/page-access/click-analytics/rest-func.php:376
 msgid "計測トークンが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:376
+#: lib/page-access/click-analytics/rest-func.php:378
 msgid "クリック元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:377
+#: lib/page-access/click-analytics/rest-func.php:379
 msgid "送信回数が多すぎます。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:382
-#: lib/page-access/click-analytics/rest-func.php:475
+#: lib/page-access/click-analytics/rest-func.php:384
+#: lib/page-access/click-analytics/rest-func.php:477
 msgid "計測データを保存できませんでした。再送してください。"
 msgstr ""
 
@@ -14565,21 +14565,21 @@ msgstr[1] ""
 msgid "%1$s%2$s"
 msgstr ""
 
-#: lib/utils.php:4431
+#: lib/utils.php:4436
 msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
 msgstr ""
 
-#: lib/utils.php:4432
+#: lib/utils.php:4437
 #: skins/skin-demo-php/functions.php:45
 msgid "スキンから入力したタイトル"
 msgstr ""
 
-#: lib/utils.php:4433
+#: lib/utils.php:4438
 #: skins/skin-demo-php/functions.php:46
 msgid "スキンから入力したアピールエリアメッセージです。"
 msgstr ""
 
-#: lib/utils.php:4434
+#: lib/utils.php:4439
 #: skins/skin-demo-php/functions.php:47
 msgid "スキンボタンキャプション"
 msgstr ""
@@ -15791,63 +15791,63 @@ msgstr ""
 msgid "画面幅 480px以下での表示枚数"
 msgstr ""
 
-#: skins/one/functions.php:115
+#: skins/one/functions.php:116
 msgid "スキンoneの設定"
 msgstr ""
 
-#: skins/one/functions.php:116
+#: skins/one/functions.php:117
 msgid "各項目を変更して、【公開】ボタンを押すことでデザインが反映されます。"
 msgstr ""
 
-#: skins/one/functions.php:124
+#: skins/one/functions.php:125
 msgid "本文見出し(H2)にカウントを付ける"
 msgstr ""
 
-#: skins/one/functions.php:125
+#: skins/one/functions.php:126
 msgid "本文の見出しにカウントをつけたくない場合はチェックを外してください"
 msgstr ""
 
-#: skins/one/functions.php:136
+#: skins/one/functions.php:137
 msgid "PCでもスマートフォン用の固定フッターメニューを表示する"
 msgstr ""
 
-#: skins/one/functions.php:137
+#: skins/one/functions.php:138
 msgid "従来どおりPCでスマートフォン用の固定フッターメニューを表示させたくない場合はチェックを外してください"
 msgstr ""
 
-#: skins/one/functions.php:147
+#: skins/one/functions.php:148
 msgid "全体的に影を付ける"
 msgstr ""
 
-#: skins/one/functions.php:157
+#: skins/one/functions.php:158
 msgid "ダークスキン対応にする"
 msgstr ""
 
-#: skins/one/functions.php:158
+#: skins/one/functions.php:159
 msgid "背景をダークにしたときはチェックを入れてください"
 msgstr ""
 
-#: skins/one/functions.php:168
+#: skins/one/functions.php:169
 msgid "丸みをなくす"
 msgstr ""
 
-#: skins/one/functions.php:169
+#: skins/one/functions.php:170
 msgid "ボタンなどの角の丸みをなくしたいときはチェックを入れてください"
 msgstr ""
 
-#: skins/one/functions.php:179
+#: skins/one/functions.php:180
 msgid "本文の見出しを明朝体にする"
 msgstr ""
 
-#: skins/one/functions.php:189
+#: skins/one/functions.php:190
 msgid "サイドバーの見出しを明朝体にする"
 msgstr ""
 
-#: skins/one/functions.php:260
+#: skins/one/functions.php:230
 msgid "左固定サイドバー"
 msgstr ""
 
-#: skins/one/functions.php:261
+#: skins/one/functions.php:231
 msgid "PCでの閲覧時左端に固定で表示されるサイドバーです。"
 msgstr ""
 
