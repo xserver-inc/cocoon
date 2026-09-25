@@ -180,7 +180,7 @@ h3.footer-title{
 	background: rgba(255,255,255,.3);
 	border-left:10px solid rgba(0,0,0,.1);
 }
-.article .toc,.a-wrap .blogcard,pre, table th, .pagination .current{
+.article .toc,.a-wrap .blogcard,pre, :where(.body) table th, .pagination .current{
 	border:3px solid #eee;
 }
 .toc-title{

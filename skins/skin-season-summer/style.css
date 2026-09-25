@@ -1106,13 +1106,13 @@ input[type='submit']:hover {
 /************************************
 ** テーブル
 ************************************/
-table th, table td {
+:where(.body) table th, :where(.body) table td {
 	border: 1px solid #eee;
 	font-weight: 400;
 	padding: 0.8em;
 	font-size: 0.8em;
 }
-table th {
+:where(.body) table th {
 	background: #FDF6F9;
 }
 /************************************

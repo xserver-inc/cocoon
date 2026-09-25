@@ -333,7 +333,7 @@ a:hover {
 		2px 0 0 0 #ffc107, 0 2px 0 0 #ffc107 !important;
 }
 /* カレンダー */
-table th {
+:where(.body) table th {
 	background: #fdf6f9;
 }
 .wp-calendar-table th:nth-child(6) {

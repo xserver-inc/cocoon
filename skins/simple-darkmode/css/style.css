@@ -492,15 +492,15 @@ div .footer-bottom-content {
 記事
 ---*/
 /*表*/
-tr {
+:where(.body) tr {
   background-color: var(--bg2);
 }
 
-table tr:nth-of-type(2n+1) {
+:where(.body) table tr:nth-of-type(2n+1) {
   background-color: var(--bg3);
 }
 
-table th,
+:where(.body) table th,
 .scrollable-table th {
   background-color: var(--bg1);
 }

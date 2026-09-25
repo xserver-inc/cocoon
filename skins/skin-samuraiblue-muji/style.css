@@ -633,17 +633,17 @@ input[type='submit'] {
 /* ---------------------------------------------------------
 / 『テーブル』
 --------------------------------------------------------- */
-table th, .scrollable-table th {
+:where(.body) table th, .scrollable-table th {
   color:#f5f3f3;
   background: linear-gradient(#282d48 0% , #4d5aa2 100%);
 }
 
 /* ----- ゼブラ（奇数行） ----- */
-table tr:nth-of-type(2n) {
+:where(.body) table tr:nth-of-type(2n) {
   background-color:#d3d6db;
 }
 /* ----- ゼブラ（偶数行） ----- */
-table tr:nth-of-type(2n+1) {
+:where(.body) table tr:nth-of-type(2n+1) {
   background-color:#fbfcfe;
 }
 

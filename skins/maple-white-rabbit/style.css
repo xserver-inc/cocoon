@@ -326,7 +326,7 @@ color: #ba91e2;
     box-shadow: inset 2px 2px 0 0 #7fbfff, 2px 2px 0 0 #7fbfff, 2px 0 0 0 #7fbfff, 0 2px 0 0 #7fbfff !important;
 }
 /* カレンダー */
-table th {
+:where(.body) table th {
     background: #FDF6F9;
 }
 .wp-calendar-table th:nth-child(6){

@@ -35,16 +35,16 @@ p {
 /************************************
 ** テーブル
 ************************************/
-table {
+:where(.body) table {
 	border: solid 1px #9998ae;
 }
 
-table th,
-table td {
+:where(.body) table th,
+:where(.body) table td {
 	border-color: #b5b4c5;
 }
 
-table th {
+:where(.body) table th {
 	font-weight: normal;
 	background-color: #eeeef1;
 }

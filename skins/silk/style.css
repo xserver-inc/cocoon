@@ -26,7 +26,7 @@
 .ranking-item-image-tag img,
 .ranking-item-link-buttons a,
 .toggle-button,
-table tfoot td > a,
+:where(.body) table tfoot td > a,
 .rect-entry-card .a-wrap .related-entry-card-thumb img,
 .rect-mini-card .a-wrap .related-entry-card-thumb img,
 .rect-vertical-card .a-wrap,
@@ -72,7 +72,7 @@ input[type="submit"],
 .btn-wrap > a:hover,
 .ranking-item-image-tag a:hover img,
 .ranking-item-link-buttons a:hover,
-table tfoot td > a:hover,
+:where(.body) table tfoot td > a:hover,
 .rect-entry-card .a-wrap:hover .related-entry-card-thumb img,
 .rect-mini-card .a-wrap:hover .related-entry-card-thumb img,
 .rect-vertical-card .a-wrap:hover,
@@ -2068,34 +2068,34 @@ div.speech-balloon {
 }
 
 /* テーブル */
-table img {
+:where(.body) table img {
   border-radius: 4px;
 }
 
-table th,
+:where(.body) table th,
 .scrollable-table th {
   background: inherit;
 }
 
-table th,
-table td,
+:where(.body) table th,
+:where(.body) table td,
 .scrollable-table th,
 .scrollable-table td {
   padding: 12px 6px;
   border-width: 0 0 1px 0;
 }
 
-table tfoot td,
+:where(.body) table tfoot td,
 .scrollable-table tfoot td {
   border-bottom-width: 0;
 }
 
-table tr:nth-of-type(2n + 1) {
+:where(.body) table tr:nth-of-type(2n + 1) {
   background: inherit;
 }
 
-table tfoot td > a,
-table tfoot td > a:hover {
+:where(.body) table tfoot td > a,
+:where(.body) table tfoot td > a:hover {
   display: block;
   padding: 0.3em 1em;
   color: #fff;
@@ -2106,7 +2106,7 @@ table tfoot td > a:hover {
   text-decoration: none;
 }
 
-table tfoot td > a .anchor-icon {
+:where(.body) table tfoot td > a .anchor-icon {
   display: none;
 }
 

@@ -302,7 +302,7 @@ input[type='submit'] {
 }
 
 /* テーブル */
-table {
+:where(.body) table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
@@ -310,19 +310,19 @@ table {
     font-size: 16px;
 }
 
-table th {
+:where(.body) table th {
     padding: 10px;
     font-weight: bold;
     background: $key-light-color;
     font-size: 18px;
 }
 
-table > th,
-td {
+:where(.body) table > th,
+:where(.body) td {
     border-bottom: 1.5px solid $key-color;
 }
 
-table tr:nth-child(even) {
+:where(.body) table tr:nth-child(even) {
     background: $key-light-color;
 }
 

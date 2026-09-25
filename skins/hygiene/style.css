@@ -21,7 +21,7 @@
 /*.logo-header img{
       filter: drop-shadow(0px 0px 3px #1b3868);
 }*/
-table tr:nth-of-type(2n+1), .page-numbers.dots, .a-wrap:hover, .a-wrap:hover .card-meta,
+:where(.body) table tr:nth-of-type(2n+1), .page-numbers.dots, .a-wrap:hover, .a-wrap:hover .card-meta,
    .widget_recent_entries ul li a:hover,
    .widget_categories ul li a:hover, .widget_archive ul li a:hover, .widget_pages ul li a:hover,
     .widget_meta ul li a:hover, .widget_rss ul li a:hover, .widget_nav_menu ul li a:hover,

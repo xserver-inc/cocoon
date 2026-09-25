@@ -333,10 +333,10 @@ blockquote::before, blockquote::after {
     color: #d9d9d9;
     font-family: sans-serif;
 }
-table tr:nth-of-type(2n+1) {
+:where(.body) table tr:nth-of-type(2n+1) {
     background-color: #fcf8f5;
 }
-table th, table td {
+:where(.body) table th, :where(.body) table td {
     border: 1px solid #efeae5;
     padding: 6px;
 }

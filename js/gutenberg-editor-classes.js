@@ -33,11 +33,12 @@
       document.querySelector( '.is-root-container' ) ||
       document.querySelector( '.block-editor-writing-flow' );
 
-    // 'article' クラスの存在で二重付与を防止する
-    if ( root && ! root.classList.contains( 'article' ) ) {
-      // 1 つずつ追加する（DOMTokenList の apply 互換性問題を回避）
+    // 欠けているテーマクラスのみの追加
+    if ( root ) {
       for ( var i = 0; i < addClasses.length; i++ ) {
-        root.classList.add( addClasses[ i ] );
+        if ( addClasses[ i ] && ! root.classList.contains( addClasses[ i ] ) ) {
+          root.classList.add( addClasses[ i ] );
+        }
       }
     }
   }

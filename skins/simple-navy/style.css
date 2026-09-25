@@ -200,7 +200,7 @@ input[type=submit] {
 }
 
 /* テーブル */
-table {
+:where(.body) table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
@@ -208,7 +208,7 @@ table {
   font-size: 16px;
 }
 
-table th {
+:where(.body) table th {
   padding: 10px;
   font-weight: bold;
   border-bottom: 1.5px solid #005488;

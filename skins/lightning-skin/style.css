@@ -328,7 +328,7 @@ blockquote {
 	width: auto;
 	margin: 1em auto;
 }
-table{
+:where(.body) table{
 	width: auto;
 }
 

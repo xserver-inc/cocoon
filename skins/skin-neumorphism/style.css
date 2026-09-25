@@ -240,20 +240,20 @@ hr{
 	margin: 14px;
 }
 
-thead th{
+:where(.body) thead th{
 	background: var(--color-bg);
 }
-th,tbody td{
+:where(.body) th,:where(.body) tbody td{
 	box-shadow: inset 1px 1px 3px var(--color-shadow-dark), inset -3px -3px 6px var(--color-shadow-light);
 }
 
 .wp-block-table tbody tr{
 	background: var(--color-hk);
 }
-tbody tr:nth-of-type(2n+1){
+:where(.body) tbody tr:nth-of-type(2n+1){
 	background: var(--color-hk);
 }
-tfoot td{
+:where(.body) tfoot td{
 	background: var(--color-shadow-dark);
 }
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd){

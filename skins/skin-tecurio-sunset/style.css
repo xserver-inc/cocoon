@@ -322,23 +322,23 @@ background-image: linear-gradient( 165deg, #ff6a00 0%, #ee0979 20%);
 }
 
 /* テーブル */
-.container table{
+.body table{
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 }
-.container table th, .container table td {
+.body table th, .body table td {
 	padding: 6px;
 }
-.container table td {
+.body table td {
 	border: none;
 }
-.container table th {
+.body table th {
 	font-weight: normal;
 	background-color: #37474F;
 	color: #ECEFF1;
 }
-.container table tr:nth-of-type(2n+1) {
+.body table tr:nth-of-type(2n+1) {
 	background-color: #f9acac;
 }
 

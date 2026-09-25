@@ -747,22 +747,22 @@ blockquote cite {
 /* □■-----------------------------------------------------
 / 『テーブル』
 -----------------------------------------------------■□ */
-table th, table td,
+:where(.body) table th, :where(.body) table td,
 .scrollable-table th,
 .scrollable-table td {
   border: solid 1px white;
 }
 
-table th, .scrollable-table th {
+:where(.body) table th, .scrollable-table th {
   background-color: rgba(50, 97, 171, 0.4);
   color: #043e0d;
 }
 
-table tr:nth-of-type(2n+1) {
+:where(.body) table tr:nth-of-type(2n+1) {
   background-color: rgba(0,146,80,.04);
 }
 
-table tr:nth-of-type(2n) {
+:where(.body) table tr:nth-of-type(2n) {
   background-color: rgba(0, 134, 171, 0.1);
 }
 
