@@ -1216,9 +1216,8 @@ class Skin_Silk_Functions {
 
   //設定項目
   public function option_field() {
-    if (isset($_POST[self::HIDDEN]) && wp_verify_nonce($_POST[self::HIDDEN], 'skin-option') && $_FILES['options']['name'] != '') {
-      if ($_FILES['options']['type'] === 'application/json') {
-        $this->update_option($_FILES);
+    if (isset($_POST[self::HIDDEN]) && is_string($_POST[self::HIDDEN]) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST[self::HIDDEN])), 'skin-option') && isset($_FILES['options'])) {
+      if ($this->update_option($_FILES['options'])) {
         echo '<div class="notice notice-success is-dismissible"><p><strong>'.esc_html__( '設定を追加しました。', THEME_NAME ).'</strong></p></div>';
       } else {
         echo '<div class="notice notice-error is-dismissible"><p><strong>'.esc_html__( 'JSONファイルを選択してください。', THEME_NAME ).'</strong></p></div>';
@@ -1258,30 +1257,34 @@ class Skin_Silk_Functions {
   }
 
   //オプション追加
-  private function update_option($files) {
-    if (is_user_administrator()) {
-      $path = get_theme_cache_path().'/'.basename($files['options']['name']);
+  private function update_option($file) {
+    // アップロードの内容だけを一時ファイルで検証する制限
+    if (!is_user_administrator() || !current_user_can('manage_options') ||
+        !is_array($file) || !isset($file['error'], $file['size'], $file['tmp_name']) ||
+        $file['error'] !== UPLOAD_ERR_OK || !is_string($file['tmp_name']) ||
+        !is_numeric($file['size']) || $file['size'] < 1 || $file['size'] > 300000 ||
+        !is_uploaded_file($file['tmp_name'])) {
+      return false;
+    }
 
-      if (move_uploaded_file($files['options']['tmp_name'], $path)) {
-        if ($json = wp_filesystem_get_contents($path)) {
-          $options = json_decode($json, true);
+    $json = file_get_contents($file['tmp_name'], false, null, 0, 300001);
+    if ($json === false || strlen($json) !== (int)$file['size']) {
+      return false;
+    }
+    $options = json_decode($json, true, 64);
+    if (!is_array($options) || json_last_error() !== JSON_ERROR_NONE) {
+      return false;
+    }
 
-          if (!is_null($options)) {
-            $mods = get_theme_mods();
-
-            foreach ($options as $name => $value) {
-              if (isset($mods[$name])) {
-                $mods[$name] = $value;
-              }
-            }
-
-            update_option("theme_mods_".get_option('stylesheet'), $mods);
-          }
-
-          wp_filesystem_delete($path);
-        }
+    $mods = get_theme_mods();
+    foreach ($options as $name => $value) {
+      if (isset($mods[$name])) {
+        $mods[$name] = $value;
       }
     }
+    $option_name = 'theme_mods_'.get_option('stylesheet');
+    // 既存値と同一で更新不要な場合も成功として扱う判定
+    return update_option($option_name, $mods) || get_option($option_name) === $mods;
   }
 
   //clipboard.js

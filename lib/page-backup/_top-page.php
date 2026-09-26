@@ -10,8 +10,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // ユーザーが何か情報を POST したかどうかを確認
 // POST していれば、隠しフィールドに 'Y' が設定されている
 if( isset($_POST[HIDDEN_FIELD_NAME]) &&
-    wp_verify_nonce($_POST[HIDDEN_FIELD_NAME], 'backup') &&
-    $_FILES['settings']['name'] != '' ){
+    is_string($_POST[HIDDEN_FIELD_NAME]) &&
+    wp_verify_nonce(sanitize_text_field(wp_unslash($_POST[HIDDEN_FIELD_NAME])), 'backup') &&
+    isset($_FILES['settings']) ){
   //var_dump($_POST[OP_RESET_ALL_SETTINGS]);
 
   ///////////////////////////////////////
@@ -22,10 +23,10 @@ if( isset($_POST[HIDDEN_FIELD_NAME]) &&
 
 //画面に「設定は保存されました」メッセージを表示
 ?>
-<div class="notice notice-success is-dismissible">
+<div class="notice <?php echo $restore_success ? 'notice-success' : 'notice-error'; ?> is-dismissible">
   <p>
     <strong>
-      <?php _e('設定をリストアしました。', THEME_NAME ); ?>
+      <?php $restore_success ? _e('設定をリストアしました。', THEME_NAME ) : _e('設定をリストアできませんでした。ファイル形式とサイズを確認してください。', THEME_NAME ); ?>
     </strong>
   </p>
 </div>

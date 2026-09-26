@@ -34,11 +34,8 @@ class BlogcardTimeoutTest extends TestCase
         $file = file_get_contents(dirname(__DIR__, 2) . '/lib/blogcard-out.php');
 
         // デフォルトの300秒だと画像サーバーが落ちている場合にハングアップするため
-        $this->assertStringContainsString(
-            'download_url($image, 5)',
-            $file,
-            '画像の単一処理でハングアップすることを防ぐため、download_urlのタイムアウトを5秒に設定する必要があります'
-        );
+        $this->assertStringContainsString("'timeout' => 5", $file);
+        $this->assertStringContainsString("'limit_response_size' => 3 * MB_IN_BYTES + 1", $file);
     }
 
     public function test_blogcard_out_ogp変数が明示的にnull初期化されている(): void
@@ -56,22 +53,20 @@ class BlogcardTimeoutTest extends TestCase
     // open-graph.php のタイムアウト連鎖対策検証
     // ========================================================================
 
-    public function test_open_graph_HTTPリクエストエラー時にフォールバックがブロックされる(): void
+    /**
+     * OGP取得が安全なHTTP関数だけを使う確認
+     */
+    public function test_open_graph_安全なHTTP関数だけで取得する(): void
     {
         $file = file_get_contents(dirname(__DIR__, 2) . '/lib/open-graph.php');
 
-        // フォールバック前に WP_Error 全体を弾いているか（http_request_failed だけでなく全件）
         $this->assertStringContainsString(
-            'if ( !is_wp_error( $res ) ) {',
+            'wp_safe_remote_get( $URI, $args )',
             $file,
-            'WP_Errorが発生した場合（接続タイムアウトやDNS拒否など）に、さらにHTTPリクエストを行うフォールバックを停止するガードが必要です（504 Time-outの多重加算回避）'
+            'OGP取得に安全なWordPress HTTP関数が必要です'
         );
 
-        // wp_filesystem_get_contents がそのガード内にあることの確認
-        $this->assertMatchesRegularExpression(
-            '/if \(\s*!is_wp_error\(\s*\$res\s*\)\s*\)\s*\{[\s\S]*?wp_filesystem_get_contents/',
-            $file,
-            'wp_filesystem_get_contents の前に !is_wp_error($res) ガードが正しく囲むように配置されている必要があります'
-        );
+        $this->assertStringNotContainsString('get_http_content($URI)', $file);
+        $this->assertStringNotContainsString('file_get_contents($URI)', $file);
     }
 }

@@ -105,7 +105,8 @@ class OpenGraphGetter implements Iterator
       $args['timeout'] = 15;
     }
 
-    $res = wp_remote_get( $URI, $args );
+    // 内部ネットワークと危険なリダイレクト先の拒否
+    $res = wp_safe_remote_get( $URI, $args );
     $response_code = wp_remote_retrieve_response_code( $res );
 
     $response = null;
@@ -123,17 +124,6 @@ class OpenGraphGetter implements Iterator
         return false;
       }
       $response = $res['body'];
-    } else if (!is_admin()) {
-      // wp_remote_get が WP_Error を返した場合（タイムアウト・DNS解決失敗・接続拒否等）は
-      // フォールバック（file_get_contents等）でリトライしても同じネットワーク障害で失敗する可能性が高く、
-      // タイムアウト時間が加算されて 504 Gateway Timeout を引き起こすため、フォールバックは行わない
-      if ( !is_wp_error( $res ) ) {
-        $response = wp_filesystem_get_contents($URI, true);
-
-        if (!$response) {
-          $response = get_http_content($URI);
-        }
-      }
     }
     if (!empty($response)) {
         return self::_parse($response, $URI);

@@ -105,11 +105,15 @@ function insert_custom_fields($post)
 
 function save_custom_fields($post_id)
 {
-  if (!isset($_POST['custom_field_meta_box_nonce'])) {
+  if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id) || !current_user_can('edit_post', $post_id)) {
     return;
   }
 
-  if (!wp_verify_nonce($_POST['custom_field_meta_box_nonce'], 'custom_field_save_meta_box_data')) {
+  if (!isset($_POST['custom_field_meta_box_nonce']) || !is_string($_POST['custom_field_meta_box_nonce'])) {
+    return;
+  }
+
+  if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['custom_field_meta_box_nonce'])), 'custom_field_save_meta_box_data')) {
     return;
   }
 
@@ -128,13 +132,21 @@ function save_custom_fields($post_id)
     $data = sanitize_text_field($_POST['fix_microcopy']);
     update_post_meta($post_id, 'fix_microcopy', $data);
   }
-  if (isset($_POST['cta_color'])) {
-    $data = sanitize_text_field($_POST['cta_color']);
-    update_post_meta($post_id, 'cta_color', $data);
+  if (isset($_POST['cta_color']) && is_string($_POST['cta_color'])) {
+    // 画面に表示するCTA配色だけの許可
+    $allowed_colors = array('cta_red', 'cta_blue', 'cta_green', 'cta_key');
+    $data = sanitize_key(wp_unslash($_POST['cta_color']));
+    if (in_array($data, $allowed_colors, true)) {
+      update_post_meta($post_id, 'cta_color', $data);
+    }
   }
-  if (isset($_POST['cta_layout'])) {
-    $data = sanitize_text_field($_POST['cta_layout']);
-    update_post_meta($post_id, 'cta_layout', $data);
+  if (isset($_POST['cta_layout']) && is_string($_POST['cta_layout'])) {
+    // 画面に表示するCTA配置だけの許可
+    $allowed_layouts = array('cta_v', 'cta_s');
+    $data = sanitize_key(wp_unslash($_POST['cta_layout']));
+    if (in_array($data, $allowed_layouts, true)) {
+      update_post_meta($post_id, 'cta_layout', $data);
+    }
   }
 }
 add_action('save_post', 'save_custom_fields');

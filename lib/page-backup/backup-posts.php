@@ -7,33 +7,5 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
-//管理者権限を持っているログインユーザーかどうか
-if (is_user_administrator()) {
-  // 4.1.0より前のPHPでは$FILESの代わりに$HTTP_POST_FILESを使用する必要あり
-
-  //テーマ用のキャッシュディレクトリの取得
-  $uploaddir = get_theme_cache_path();
-  //キャッシュディレクトリのアップロードファイルパス
-  $uploadfile = $uploaddir .'/'. basename($_FILES['settings']['name']);
-
-  if (move_uploaded_file($_FILES['settings']['tmp_name'], $uploadfile)) {
-
-    $text = wp_filesystem_get_contents($uploadfile);
-    if ( $text ) {
-      global $wpdb;
-      $option_name = get_theme_mods_option_name();
-      $wpdb->update(
-        $wpdb->options,
-        array(
-          'option_value' => $text,
-        ),
-        array( 'option_name' => $option_name ),
-        array(
-          '%s',
-        )
-      );
-      wp_filesystem_delete($uploadfile);
-    }
-  }
-
-}
+// 検証済みアップロードだけを復元処理へ渡す入口
+$restore_success = restore_theme_settings_from_upload($_FILES['settings'] ?? null);

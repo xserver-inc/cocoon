@@ -98,38 +98,56 @@ if ( is_external_blogcard_enable() ) {//外部リンクブログカードが有�
 //外部サイトからブログカードサムネイルを取得する
 if ( !function_exists( 'fetch_card_image' ) ):
 function fetch_card_image($image, $url = null){
-  // URLのクエリを除去（?以降を削除）
-  $image = preg_replace('/\?.*$/i', '', $image);
-
-  // ファイル名・拡張子をそのまま使用
-  $filename = basename($image);
-  $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-  // 拡張子がない場合（例: https://example.com/image）はjpgをデフォルトとする
-  if (!$ext) {
-    $ext = 'jpg';
+  if (!is_string($image) || !preg_match('#^https?://#i', $image)) {
+    return false;
   }
 
-  // キャッシュディレクトリを取得・存在しなければ作成
-  $dir = get_theme_blog_card_cache_path();
-  if ( !file_exists($dir) ) {
-    mkdir($dir, 0777);
+  // 公開領域外の一時ファイルへ、内部宛先の拒否と通信量上限を付けたダウンロード
+  $tmp = wp_tempnam($image);
+  if (!$tmp) {
+    return false;
   }
 
-  // キャッシュ保存先パス
-  $new_file = trailingslashit($dir) . md5($image) . '.' . $ext;
+  try {
+    $response = wp_safe_remote_get($image, array(
+      'timeout' => 5,
+      'stream' => true,
+      'filename' => $tmp,
+      'limit_response_size' => 3 * MB_IN_BYTES + 1,
+    ));
+    if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+      return false;
+    }
 
-  // WordPress関数を用い一時ダウンロード（タイムアウトをデフォルトの300秒から5秒に短縮してフリーズを防ぐ）
-  $tmp = download_url($image, 5);
-  if ( is_wp_error($tmp) ) {
-    return;
+    // 実ファイルのMIME判定と保存容量の制限
+    $file_size = is_file($tmp) ? filesize($tmp) : false;
+    if ($file_size === false || $file_size < 1 || $file_size > 3 * MB_IN_BYTES) {
+      return false;
+    }
+    $allowed_mimes = array(
+      'image/jpeg' => 'jpg',
+      'image/png'  => 'png',
+      'image/gif'  => 'gif',
+      'image/webp' => 'webp',
+      'image/avif' => 'avif',
+    );
+    $mime = wp_get_image_mime($tmp);
+    if (!isset($allowed_mimes[$mime])) {
+      return false;
+    }
+
+    // URLの拡張子に依存しない画像専用の保存名
+    $dir = get_theme_blog_card_cache_path();
+    $new_file = trailingslashit($dir) . md5($image) . '.' . $allowed_mimes[$mime];
+    if (!is_dir($dir) || !copy($tmp, $new_file)) {
+      return false;
+    }
+
+    // 公開URLへの変換
+    return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
+  } finally {
+    @unlink($tmp);
   }
-
-  // キャッシュにコピー
-  copy($tmp, $new_file);
-  @unlink($tmp);
-
-  // 公開URLに変換して返す
-  return str_replace(WP_CONTENT_DIR, content_url(), $new_file);
 }
 endif;
 
@@ -165,8 +183,8 @@ function url_to_external_ogp_blogcard_tag($url){
   }
   $url = ampersand_urldecode($url);
   $params = get_url_params($url);
-  $user_title = !empty($params['title']) ? $params['title'] : null;
-  $user_snippet = !empty($params['snippet']) ? $params['snippet'] : null;
+  $user_title = isset($params['title']) && is_string($params['title']) ? $params['title'] : null;
+  $user_snippet = isset($params['snippet']) && is_string($params['snippet']) ? $params['snippet'] : null;
 
   $url_hash = TRANSIENT_BLOGCARD_PREFIX.md5( $url );
   $error_title = $url; //エラーの場合はURLを表示
@@ -305,7 +323,7 @@ function url_to_external_ogp_blogcard_tag($url){
   '</div>';
 
   //サイトロゴ
-  $site_logo_tag = '<div class="blogcard-domain external-blogcard-domain">'.$domain.'</div>';
+  $site_logo_tag = '<div class="blogcard-domain external-blogcard-domain">'.esc_html($domain).'</div>';
   $site_logo_tag = '<div class="blogcard-site external-blogcard-site">'.$favicon_tag.$site_logo_tag.'</div>';
 
   //サムネイルを取得できた場合
@@ -326,8 +344,8 @@ function url_to_external_ogp_blogcard_tag($url){
       '</div>'.
       '<figure class="blogcard-thumbnail external-blogcard-thumbnail">'.$thumbnail.'</figure>'.
       '<div class="blogcard-content external-blogcard-content">'.
-        '<div class="blogcard-title external-blogcard-title">'.$title.'</div>'.
-        '<div class="blogcard-snippet external-blogcard-snippet">'.$snippet.'</div>'.
+        '<div class="blogcard-title external-blogcard-title">'.esc_html($title).'</div>'.
+        '<div class="blogcard-snippet external-blogcard-snippet">'.esc_html($snippet).'</div>'.
       '</div>'.
       '<div class="blogcard-footer external-blogcard-footer cf">'.$site_logo_tag.'</div>'.
     '</div>'.
