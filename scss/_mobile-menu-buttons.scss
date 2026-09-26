@@ -42,9 +42,6 @@
   .menu-button {
     position: relative;
     width: 70px;
-
-    // 長いキャプションによるボタンの押し広げ防止
-    min-width: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -52,10 +49,6 @@
 
     >a {
       display: block;
-
-      // キャプションを含むリンクの縮小余地の確保
-      min-width: 0;
-
       @include link_cancel(var(--cocoon-black-color));
     }
 

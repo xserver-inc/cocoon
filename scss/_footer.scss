@@ -26,9 +26,6 @@
 .footer-right {
   @extend %footer_widget;
   flex: 1;
-
-  // 長い連続文字によるフッター列の押し広げ防止
-  min-width: 0;
 }
 
 .footer-widgets-mobile{

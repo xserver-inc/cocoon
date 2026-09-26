@@ -571,8 +571,7 @@ html[lang=en] .ribbon-top-left::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .container {
@@ -8050,7 +8049,6 @@ div.fb-like-mobile {
 .mobile-menu-buttons .menu-button {
   position: relative;
   width: 70px;
-  min-width: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -8058,7 +8056,6 @@ div.fb-like-mobile {
 }
 .mobile-menu-buttons .menu-button > a {
   display: block;
-  min-width: 0;
   color: var(--cocoon-black-color);
   text-decoration: none;
 }
@@ -8504,7 +8501,6 @@ div.fb-like-mobile {
 .footer-center,
 .footer-right {
   flex: 1;
-  min-width: 0;
 }
 
 .footer-widgets-mobile {

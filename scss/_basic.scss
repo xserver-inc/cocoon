@@ -6,8 +6,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  // 長い連続文字の折り返しを含む最小幅の計算
+  overflow-wrap: anywhere;
 }
 
 .container{
