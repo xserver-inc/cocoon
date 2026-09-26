@@ -5,13 +5,13 @@ if (!defined('ABSPATH')) exit;
 //******************************************************************************
 //  文字
 //******************************************************************************
-$text = ['red', 'blue' , 'green'];
+$colors = ['red', 'blue', 'green'];
 
-for ($i=0; $i<count($text); $i++) {
-  $color = get_theme_mod("hvn_rich_text_color{$i}_setting");
-  if ($color) {
+foreach ($colors as $i => $name) {
+  $val = get_theme_mod("hvn_rich_text_color{$i}_setting");
+  if ($val) {
     echo <<<EOF
-.{$text[$i]},.bold-{$text[$i]} {color: {$color};}
+.{$name}, .bold-{$name} { color: {$val}; }
 
 EOF;
   }
@@ -21,38 +21,42 @@ EOF;
 //******************************************************************************
 //  マーカー
 //******************************************************************************
-$marker = [
+$markers = [
   ['',      '#ffff99'],
   ['-red',  '#ffd0d1'],
   ['-blue', '#a8dafb'],
 ];
 
-for ($i=0; $i<count($marker); $i++) {
-  $color = get_theme_mod("hvn_marker_color{$i}_setting", $marker[$i][1]);
-  if ($color) {
-    if (get_theme_mod('hvn_marker_color_set1_setting')) {
-      echo <<<EOF
-.marker{$marker[$i][0]} {
+$is_hatch_mode = get_theme_mod('hvn_marker_color_set1_setting');
+
+foreach ($markers as $i => $data) {
+  $suffix  = $data[0];
+  $default = $data[1];
+
+  $color = get_theme_mod("hvn_marker_color{$i}_setting", $default);
+
+  if ($is_hatch_mode) {
+    echo <<<EOF
+.marker{$suffix} {
   background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100%;
 }
 
-.marker-under{$marker[$i][0]} {
+.marker-under{$suffix} {
   background: repeating-linear-gradient(-45deg, {$color} 0, {$color} 2px, transparent 2px, transparent 4px) no-repeat left bottom / 100% 0.5em;
 }
 
 EOF;
-    } else {
-      echo <<<EOF
-.marker{$marker[$i][0]} {
+  } else {
+    echo <<<EOF
+.marker{$suffix} {
   background: {$color};
 }
 
-.marker-under{$marker[$i][0]} {
+.marker-under{$suffix} {
   background: linear-gradient(transparent 60%, {$color} 60%);
 }
 
 EOF;
-    }
   }
 }
 
@@ -60,36 +64,39 @@ EOF;
 //******************************************************************************
 //  バッジ
 //******************************************************************************
-$b_class = ['orange', 'red', 'pink', 'purple', 'blue', 'green', 'yellow', 'brown', 'grey'];
+$b_classes = ['orange', 'red', 'pink', 'purple', 'blue', 'green', 'yellow', 'brown', 'grey'];
 
-$css = null;
-for ($i=0; $i<count($b_class); $i++) {
+$styles = [];
+foreach ($b_classes as $i => $name) {
   $color = get_theme_mod("hvn_badge_color{$i}_setting");
+
   if ($color) {
-    $css .= "--cocoon-{$b_class[$i]}-color:{$color};";
+    $styles[] = "--cocoon-{$name}-color: {$color};";
   }
 }
-if ($css) {
-  echo '[class*="badge"] {' . $css . '}';
+
+if (!empty($styles)) {
+  echo '[class*="badge"] {' . implode('', $styles) . '}';
 }
 
 
 //******************************************************************************
 //  インラインボタン
 //******************************************************************************
-$i_class = ['black', 'red', 'blue', 'teal'];
+$i_classes = ['black', 'red', 'blue', 'teal'];
 
-$css = null;
-for ($i=0; $i<count($i_class); $i++) {
+$styles = [];
+foreach ($i_classes as $i => $name) {
   $color = get_theme_mod("hvn_inline_button_color{$i}_setting");
+
   if ($color) {
-    $css .= "--cocoon-{$i_class[$i]}-color:{$color};";
+    $styles[] = "--cocoon-{$name}-color:{$color};";
   }
 }
-if ($css) {
-  echo '[class*="inline-button"] {' . $css . '}';
-}
 
+if (!empty($styles)) {
+  echo '[class*="inline-button"] {' . implode('', $styles) . '}';
+}
 
 if (get_theme_mod('hvn_inline_button_set3_setting')) {
   echo <<<EOF
@@ -116,22 +123,22 @@ EOF;
 //******************************************************************************
 //  リスト丸数字
 //******************************************************************************
-$css = null;
-$color = get_theme_mod('hvn_numeric_list_set1_setting');
-if ($color) {
-  $css = "background-color: {$color};";
+$styles = [];
+if ($color = get_theme_mod('hvn_numeric_list_set1_setting')) {
+  $styles[] = "background-color: {$color};";
 }
 
-$no = get_theme_mod('hvn_numeric_list_set2_setting');
-if ($no) {
-  $css .= 'border-radius: 0;';
+if (get_theme_mod('hvn_numeric_list_set2_setting', '0')) {
+  $styles[] = "border-radius: 0;";
 }
 
-if ($css) {
+if (!empty($styles)) {
+  $inner_css = implode("\n  ", $styles);
+
   echo <<<EOF
 .editor-styles-wrapper .is-style-numeric-list-enclosed > li:before,
 .is-style-numeric-list-enclosed > li:before {
-  {$css}
+  {$inner_css}
 }
 
 EOF;
@@ -141,7 +148,7 @@ EOF;
 //******************************************************************************
 //  アイコンボックス
 //******************************************************************************
-$icon_box_class = [
+$icon_boxes = [
   ['blockquote'               ,'#cccccc'],
   ['.is-style-information-box','#87cefa'],
   ['.is-style-question-box'   ,'#ffe766'],
@@ -168,40 +175,40 @@ $icon_box_class = [
   ['.alert'                   ,'#f6b9b9']
 ];
 
-$id_array = [];
-for ($i=0; $i<count($icon_box_class); $i++) {
-  $id_array[$i] = $icon_box_class[$i][0];
-}
+$selectors = array_column($icon_boxes, 0);
 
-$no = get_theme_mod('hvn_icon_box_set1_setting');
-switch($no) {
-  case 1:
-    $id = implode(',', $id_array) ;
+$mode = get_theme_mod('hvn_icon_box_set1_setting', '0');
+
+switch($mode) {
+  case '1':
+    $id_list = implode(",\n", $selectors);
     echo <<<EOF
-{$id} {
+{$id_list} {
   background-color: transparent;
   border-width: 1px;
   color: var(--cocoon-text-color);
 }
 
 EOF;
-
     break;
 
-  case 2:
-    $id =  implode(':before,', $id_array);
+  case '2':
+    $before_id_list = implode(":before,\n", $selectors) . ':before';
     echo <<<EOF
-{$id}:before {
+{$before_id_list} {
   border: 0;
   color: #fff;
   margin: 0;
 }
+
 EOF;
 
-    for ($i=0; $i<count($icon_box_class); $i++) {
+    foreach ($icon_boxes as $box) {
+      $name  = $box[0];
+      $color = $box[1];
       echo <<<EOF
-{$icon_box_class[$i][0]}:before {
-  background-color: {$icon_box_class[$i][1]};
+{$name}:before {
+  background-color: {$color};
 }
 
 EOF;
@@ -213,9 +220,9 @@ EOF;
 //******************************************************************************
 //  タブボックス
 //******************************************************************************
-$no = get_theme_mod('hvn_tab_box_set1_setting');
+$no = get_theme_mod('hvn_tab_box_set1_setting', '0');
 switch($no) {
-  case 1:
+  case '1':
     echo <<<EOF
 .blank-box.bb-tab {
   margin-top: calc(var(--gap30) + 12.5px);
@@ -246,7 +253,7 @@ switch($no) {
 EOF;
     break;
 
-  case 2:
+  case '2':
     echo <<<EOF
 .blank-box.bb-tab {
   margin: 0 0 var(--gap30) 0;
@@ -276,9 +283,9 @@ EOF;
 //******************************************************************************
 //  FAQ
 //******************************************************************************
-$no = get_theme_mod('hvn_faq_set1_setting');
+$no = get_theme_mod('hvn_faq_set1_setting', '0');
 switch($no) {
-  case 1:
+  case '1':
     echo <<<EOF
 .faq .faq-item-label {
   background-color: var(--cocoon-custom-question-color);
@@ -291,7 +298,7 @@ switch($no) {
 EOF;
     break;
 
-  case 2:
+  case '2':
     echo <<<EOF
 .faq .faq-item-label {
   background-color: var(--cocoon-custom-question-color);

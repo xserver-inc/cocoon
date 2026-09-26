@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
 /* カメラ */
-
-.parapara {
+.carmera-wrap {
   animation-delay: 1.5s;
   animation-duration: 0.3s;
   animation-fill-mode: backwards;

@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 ?>
 
 <div class="loader-bg">
-  <div class="breeding-rhombus-spinner">
+  <div class="breeding-rhombus-wrap">
     <div class="rhombus child-1"></div>
     <div class="rhombus child-2"></div>
     <div class="rhombus child-3"></div>

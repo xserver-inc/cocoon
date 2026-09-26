@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 下線(メイン・グレー) */
-
 aside.widget .widget-title {
   border-bottom: 1px solid #ddd;
   padding: 0 0 14px;

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* WELCOME */
+:root {
+  --hvn-welcome-text: 'WELCOME';
+}
+
+@property --loader-r {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.body .loader-bg {
+  --loader-r: 0%;
+  animation: load-circle 1s ease-in-out 2s forwards;
+  background-color: var(--main-color);
+  mask: radial-gradient(circle, transparent var(--loader-r), #000 0);
+}
+
+.welcome-wrap:before {
+  color: var(--text-color);
+  content: var(--hvn-welcome-text);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@keyframes load-circle {
+  to { --loader-r: 150%; }
+}

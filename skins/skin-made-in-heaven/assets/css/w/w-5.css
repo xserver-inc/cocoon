@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 塗りつぶし */
-
 aside.widget .widget-title {
   background-color: var(--main-color);
   color: var(--text-color);

@@ -7,134 +7,16 @@
  Author: chu-ya
  Author URI: https://ss1.xrea.com/chuya.s239.xrea.com/temp/
  Screenshot URI: https://im-cocoon.net/wp-content/uploads/skin-made-in-heaven.png
- Version: 2.14.1
+ Version: 3.0.0
  Priority: 6900001000
 */
 
-
 /*******************************************************************************
 **
-**  履歴: 0.0.0   2023-06-01  新規作成
-**        0.0.1   2024-02-28  バグ対策
-**        0.0.2   2024-02-29  バグ対策
-**        0.0.3   2024-03-01  テキストを除外対象から削除
-**                            ウィジェットエリアSNSボタン下を除外対象から削除
-**                            テキスト、新着情報のCSS変更
-**                            最近のコメント、最近の投稿のCSSを追加
-**        0.0.4   2024-03-02  バグ対策
-**        0.0.5   2024-03-03  ラベルボックス、ブログカードのラベルのCSS変更
-**                            固定ページ一覧にスラッグ、投稿のステータス背景付けを追加
-**        0.0.6   2024-03-06  バグ対策
-**        0.0.7   2024-03-07  広告の表示位置のCSS追加
-**                            バグ対策
-**        0.0.8   2024-03-08  バグ対策
-**        0.0.9   2024-03-09  バグ対策
-**        0.0.10  2024-03-11  リストのCSS変更
-**                            アイコンリストのCSS変更
-**                            ランキングのCSS変更
-**                            [C]最近のコメントの変更
-**                            モバイルSNSシェア、SNSフォローボタンを白抜きに変更
-**                            バグ対策
-**        0.0.11  2024-03-15  タブ一覧のカテゴリーごと表示数修正
-**        0.0.12  2024-03-17  コメント分割ページのCSS修正
-**                            バグ対策
-**        0.0.13  2024-03-19  時刻フォーマットの変更
-**        0.0.14  2024-03-20  ウィジェットのCSS修正
-**        0.0.15  2024-03-22  コメントページャのCSS修正
-**        0.0.16  2024-03-23  アイコンボックスのCSS修正
-**        0.1.0   2024-03-27  改善
-**        0.1.1   2024-03-30  placeholderのCSS追加
-**                            [C]ランキングのCSS追加
-**                            [C]プロフィールのCSS修正
-**                            検索案内のCSS修正
-**                            タイムラインのCSS修正
-**        0.1.2   2024-03-31  タイムラインのCSS修正
-**                            FAQのCSS修正
-**                            タイムライン（ミニ）を追加
-**        0.1.3   2024-04-01  バグ対策
-**        1.0.0   2024-04-18  カスタマイザーエディターを追加
-**                            タイムライン（ライン）を追加
-**                            見出しデザインH2（塗りつぶしアクセント）を追加
-**                            見出しデザインH3（角括弧）を追加
-**                            FAQのCSS修正
-**                            大きなカードのCSS修正
-**                            「いいね」ボタンをLocalStorageに変更
-**                            拡張タイプを追加
-**                            目次スタイルを追加
-**                            アコーディオン化を追加
-**                            カテゴリーごと（2、3カード）縦型カードを追加
-**                            プロフィールのSNSフォローを非表示を追加
-**                            目次ボタンを追加
-**                            ダークモードを追加
-**                            タイトルとURLをコピーを変更
-**                            通知メッセージ複数表示を追加
-**                            エントリーカードにリボンを追加
-**                            タブのCSS追加
-**                            プルクオートのCSS追加
-**        1.0.1   2024-04-19  バグ対策
-**        2.0.0   2024-04-23  タイムラインのCSS追加
-**                            カラーパレットを追加
-**                            コメントアイコンを追加
-**                            ブログカードのスタイル追加
-**        2.0.1   2024-04-24  スキン制御「画像の拡大効果」を廃止
-**        2.1.0   2024-04-27  カスタマイザーのCSS変更
-**                            ダークカラー見出しのCSS変更
-**                            カスタマイザーのサニタイズを追加
-**                            カスタマイザーオプションを追加
-**        2.1.1   2024-04-29  カラーパレットを削除
-**        2.2.0   2024-05-01  通知メッセージにpatternショートコード許可
-**        2.2.1   2024-05-02  バグ対策
-**        2.2.2   2024-05-03  バグ対策
-**        2.3.0   2024-05-05  タグクラウドドロップダウン表示を追加
-**                            インデックスページソートを追加
-**                            通知エリア固定を追加
-**                            比較ボックスパターンを追加
-**        2.3.1   2024-05-08  バグ対策
-**        2.3.2   2024-05-09  バグ対策
-**        2.4.0   2024-05-11  パターンにカテゴリー追加
-**                            見出しボックスにアコーディオン追加
-**        2.5.0   2024-05-14  サムネイル画像の比率に従うを追加
-**                            コメントアイコンをオプションメニューに変更
-**        2.5.1   2024-05-15  オプション定義をdefineに変更
-**        2.6.0   2024-05-20  汎用ブロック内のブログカードのCSS追加
-**        2.6.1   2024-05-21  バグ対策
-**        2.7.0   2024-05-26  新着・人気記事、ナビカードスタイル追加
-**        2.8.0   2024-05-29  仕様変更
-**        2.8.1   2024-06-03  改善
-**        2.8.2   2024-06-04  バグ対策
-**        2.9.0   2024-06-15  目次省略表示を追加
-**                            タイムラインのタイトルHTMLタグ変更
-**                            FAQの質問HTMLタグ変更
-**        2.9.1   2024-06-16  バグ対策
-**        2.9.2   2024-06-25  バグ対策
-**        2.9.3   2024-06-26  改善
-**        2.10.0  2024-06-28  クイック編集にメモ追加
-**        2.11.0  2024-06-30  仕様変更
-**        2.12.0  2024-08-05  仕様変更
-**        2.12.1  2024-08-16  多言語対応
-**        2.12.2  2024-09-16  誤記修正
-**        2.12.3  2024-09-23  バグ対策
-**        2.13.0  2025-02-25  バグ対策
-**                            WordPress 6.7.0対応
-**                            吹き出し画像の比率変更
-**                            多言語対応
-**                            通知メッセージ横スクロール追加
-**                            通知メッセージフック追加
-**                            並び替え選択にコメント数順追加
-**                            リスト階層追加
-**                            グローバルナビメニューのサブメニュー変更
-**                            目次ボタンをモバイルでも表示に変更
-**                            スキン制御追加
-**                            Cocoon 2.8.2.3対応
-**                            important見直し
-**        2.14.0  2025-05-18  仕様変更
-**        2.14.1  2026-03-13  バグ対策
+**  履歴: 3.0.0  2026-09-24 仕様変更
 **
 *******************************************************************************/
-
-
 /* Cocoon変数 */
-
 :root {
   --cocoon-sns-color: #333;
   --border-color: #ccc;
@@ -150,13 +32,11 @@
   --cocoon-list-wide-padding: var(--padding15) var(--padding15) var(--padding15) 40px;
 }
 
-
 /*******************************************************************************
 **
 **  定義
 **
 *******************************************************************************/
-
 :root {
   --aspect-ratio: 16 / 9;
   --column: 1;
@@ -167,7 +47,7 @@
   --thumb-width: 120px;
   --main-padding: var(--gap30);
   --padding15: 15px;
-  --hvn-white-color: #fff;
+  --header-height: 80px;
 }
 
 .hvn-radius {
@@ -175,28 +55,7 @@
   --border-radius100: 100vmax;
 }
 
-.main .toc {
-  --main-padding: var(--gap30);
-}
-
-
-/* おすすめカード */
-
-.recommended {
-  --column: 3;
-  --gap: var(--padding15);
-}
-
-
-/* カード数≦3 */
-
-.recommended .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
-  --gap: var(--gap30);
-}
-
-
 /* 関連記事 */
-
 .related-list,
 .ect-2-columns {
   --column: 2;
@@ -210,9 +69,7 @@
   --column: 3;
 }
 
-
 /* カテゴリーごと */
-
 .fpt-columns .list {
   --column: 1;
 }
@@ -221,9 +78,7 @@
   --fpt-column: 3;
 }
 
-
 /* カード横型 */
-
 .no-sidebar .main,
 .container {
   --swiper: 3;
@@ -233,63 +88,52 @@
   --swiper: 2;
 }
 
-.nwa {
-  --swiper: 1;
-}
-
-
 /*******************************************************************************
 **  レスポンシブ
 *******************************************************************************/
-
 @media (width <=1023px) {
+  :root {
+    --header-height: 50px;
+  }
+
   .main {
     --swiper: 3;
   }
 }
 
 @media (width <=834px) {
-  .recommended {
-    --column: 2;
-    --gap: var(--gap30);
-  }
   .ect-3-columns {
     --column: 2;
   }
+
   .footer {
     --column: 1;
   }
+
   .fpt-columns {
     --fpt-column: 1;
   }
+
   .fpt-columns:has(.ect-vertical-card) {
     --fpt-column: 2;
-  }
-  .container,
-  .no-sidebar .main,
-  .main,
-  .footer {
-    --swiper: 2;
   }
 }
 
 @media (width <=480px) {
-  :root,
-  .main .toc {
+  :root {
     --main-padding: 15px;
   }
-  .recommended,
-  .recommended .widget-entry-cards:has(> :nth-child(-n+3):last-child) {
-    --gap: var(--padding15);
-  }
+
   .related-list,
   .ect-2-columns,
   .ect-3-columns {
     --column: 1;
   }
+
   .fpt-columns:has(.ect-vertical-card) {
     --fpt-column: 1;
   }
+
   .container,
   .no-sidebar .main,
   .main,
@@ -298,13 +142,11 @@
   }
 }
 
-
 /*******************************************************************************
 **
 **  全体
 **
 *******************************************************************************/
-
 .body {
   background-color: var(--body-color);
   overflow-x: clip;
@@ -326,10 +168,10 @@
 
 .body .a-wrap {
   background-color: transparent;
-  border: 0!important;
+  border: 0;
   margin: 0;
-  opacity: 1!important;
-  overflow: unset!important;
+  opacity: 1 !important;
+  overflow: unset !important;
   padding: 0;
   position: relative;
   transition: none;
@@ -350,13 +192,12 @@ figcaption {
   z-index: 0;
 }
 
-
 /* スクロールバー */
-
 pre::-webkit-scrollbar,
 .scrollable-table::-webkit-scrollbar,
 .tab-label-group::-webkit-scrollbar,
-.hvn-content-wrap::-webkit-scrollbar {
+.hvn-content-wrap .toc-content::-webkit-scrollbar,
+.sidebar-scroll .toc-content::-webkit-scrollbar {
   background-color: #fefefe;
   box-shadow: inset 0 0 2px 0 rgb(0 0 0 / 15%);
   height: 10px;
@@ -366,7 +207,8 @@ pre::-webkit-scrollbar,
 pre::-webkit-scrollbar-thumb,
 .scrollable-table::-webkit-scrollbar-thumb,
 .tab-label-group::-webkit-scrollbar-thumb,
-.hvn-content-wrap::-webkit-scrollbar-thumb {
+.hvn-content-wrap .toc-content::-webkit-scrollbar-thumb,
+.sidebar-scroll .toc-content::-webkit-scrollbar-thumb {
   background-clip: padding-box;
   background-color: #ccc;
   border: 3px solid transparent;
@@ -384,19 +226,17 @@ pre::-webkit-scrollbar-thumb,
   outline: none;
 }
 
-
 /*******************************************************************************
 **
 **  ヘッダー
 **
 *******************************************************************************/
+.body .header .header-in {
+  padding: 0 10px;
+}
 
 .header-container {
   background-color: #fff;
-}
-
-.body .header-in {
-  height: 80px;
 }
 
 .logo-image {
@@ -404,7 +244,13 @@ pre::-webkit-scrollbar-thumb,
 }
 
 .logo-text {
+  align-content: center;
   line-height: 1;
+  min-height: var(--header-height);
+  padding: 10px 0;
+}
+
+.site-name-text-link {
   padding: 0;
 }
 
@@ -423,11 +269,9 @@ pre::-webkit-scrollbar-thumb,
   line-height: 1;
 }
 
-
 /*******************************************************************************
 **  グローバルメニュー
 *******************************************************************************/
-
 .navi {
   background-color: var(--main-color);
 }
@@ -462,13 +306,11 @@ pre::-webkit-scrollbar-thumb,
   padding: 0 1.4em;
 }
 
-
 /*******************************************************************************
 **
 **  通知
 **
 *******************************************************************************/
-
 .notice-area:not(.nt-warning, .nt-danger) {
   background-color: var(--hover-color);
   color: var(--main-color);
@@ -526,13 +368,11 @@ pre::-webkit-scrollbar-thumb,
   color: #fff;
 }
 
-
 /*******************************************************************************
 **
 **  アピールエリア
 **
 *******************************************************************************/
-
 .appeal-in {
   padding: var(--gap30) 10px;
 }
@@ -551,14 +391,13 @@ pre::-webkit-scrollbar-thumb,
 }
 
 .appeal-content {
-  background-color: rgb(var(--body-rgb-color) / 85%);
+  color: #333;
   border-radius: var(--border-radius10);
   padding: var(--gap30) var(--main-padding);
+  width: 100%;
 }
 
-
 /* 背景画像固定 */
-
 .ba-fixed.appeal {
   clip-path: inset(0 0 0 0);
 }
@@ -576,13 +415,11 @@ pre::-webkit-scrollbar-thumb,
   z-index: -1;
 }
 
-
 /*******************************************************************************
 **
 **  おすすめカード
 **
 *******************************************************************************/
-
 .recommended {
   margin: var(--gap30) 0 0;
 }
@@ -591,56 +428,30 @@ pre::-webkit-scrollbar-thumb,
   padding: 0 10px;
 }
 
-.body .recommended .widget-entry-cards {
-  flex-direction: row;
-  gap: var(--gap);
-  justify-content: unset;
-  margin: 0;
+.body .recommended .navi-entry-cards {
+  margin-bottom: 0;
 }
 
 .body .container .recommended .a-wrap {
-  margin: 0!important;
-  max-width: calc((100% - var(--gap) * (var(--column) - 1)) / var(--column));
+  margin: 0;
 }
 
-.body .recommended .e-card {
-  border-radius: var(--border-radius10);
+.recommended.rcs-image-only .card-content {
+  display: block;
 }
-
-
-/* カード数＞4 */
-
-.body .recommended .navi-entry-cards .a-wrap:nth-of-type(n+5) {
-  display: none;
-}
-
-
-/* 画像のみ */
-
-.body .recommended.rcs-image-only .card-title {
-  display: none;
-}
-
-.body .recommended.rcs-image-only .card-content {
-  background-color: unset;
-}
-
 
 /*******************************************************************************
 **
 **  カラム
 **
 *******************************************************************************/
-
 .content {
   margin: var(--gap30) 0 0;
   position: relative;
   z-index: 1;
 }
 
-
 /* 本文のみ */
-
 .content-only .content {
   margin-bottom: var(--gap30)
 }
@@ -649,11 +460,9 @@ pre::-webkit-scrollbar-thumb,
   padding: 0 10px;
 }
 
-
 /*******************************************************************************
 **  フロントページ（固定ページ）
 *******************************************************************************/
-
 .front-top-page.page .article-header {
   display: none;
 }
@@ -670,11 +479,13 @@ pre::-webkit-scrollbar-thumb,
   display: none;
 }
 
+.front-top-page .pager-numbers {
+  margin-bottom: 0;
+}
 
 /*******************************************************************************
 **  メイン
 *******************************************************************************/
-
 .body .main {
   background-color: transparent;
   border: 0;
@@ -686,9 +497,7 @@ pre::-webkit-scrollbar-thumb,
   padding: 0;
 }
 
-
 /* 投稿・固定ページ */
-
 .body.error404 .main,
 .body.page .main,
 .body.single .main,
@@ -712,33 +521,31 @@ pre::-webkit-scrollbar-thumb,
   display: none;
 }
 
-
 /*******************************************************************************
 **  サイドバー
 *******************************************************************************/
-
 .sidebar {
   background-color: transparent;
   display: flex;
   flex-direction: column;
   gap: var(--gap30);
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0;
+}
+
+.body .sidebar {
+  padding: 0;
 }
 
 .body .sidebar:after {
   content: none;
 }
 
-
 /*******************************************************************************
 **
 **  フッター
 **
 *******************************************************************************/
-
-.footer {
-  background-color: #fff;
+.body #footer {
   margin: var(--gap30) 0 0;
   padding: 0;
 }
@@ -788,13 +595,11 @@ pre::-webkit-scrollbar-thumb,
   line-height: 1.4;
 }
 
-
 /*******************************************************************************
 **
 **  広告
 **
 *******************************************************************************/
-
 .pr-label-l {
   background-color: unset;
   border: 1px solid #eee;
@@ -818,28 +623,28 @@ pre::-webkit-scrollbar-thumb,
   margin-bottom: 0;
 }
 
-
 /*******************************************************************************
 **
 **  インデックス
 **
 *******************************************************************************/
+#list {
+  margin-bottom: 0;
+}
 
 .body .content .list {
   align-items: start;
   display: grid;
   gap: var(--gap30);
   grid-template-columns: repeat(var(--column), minmax(0, 1fr));
-  margin-bottom: 0!important;
+  margin-bottom: 0;
 }
 
 .body .list .a-wrap {
   max-width: unset;
 }
 
-
 /* 日付 */
-
 .body .container .entry-card-meta,
 .rss-entry-card-date {
   bottom: 0;
@@ -848,9 +653,7 @@ pre::-webkit-scrollbar-thumb,
   right: 0;
 }
 
-
 /* 投稿日 */
-
 .comment-meta:before,
 .rss-date:before,
 .recent-comment-date:before,
@@ -864,20 +667,16 @@ span.fas.fa-history:before {
   content: '\f2f1';
 }
 
-
 /* 関連情報 */
-
 .e-card-info,
 .widget-entry-card-info,
 .info-list-item-meta {
   gap: 5px;
 }
 
-
 /*******************************************************************************
 **  カテゴリーごと
 *******************************************************************************/
-
 .list-wrap,
 .list-new-entries,
 .list-columns {
@@ -892,11 +691,9 @@ span.fas.fa-history:before {
   display: none;
 }
 
-
 /*******************************************************************************
 **  カテゴリーごと（2カラム/3カラム）
 *******************************************************************************/
-
 .list-columns.fpt-columns {
   grid-template-columns: repeat(var(--fpt-column), minmax(0, 1fr));
 }
@@ -914,11 +711,9 @@ span.fas.fa-history:before {
   content: none;
 }
 
-
 /*******************************************************************************
 **  ボタン
 *******************************************************************************/
-
 .appeal-button,
 .ranking-item-link-buttons a,
 .cta-button .btn,
@@ -933,13 +728,13 @@ span.fas.fa-history:before {
   box-shadow: var(--shadow-color);
   color: #333;
   display: block;
-  font-size: var(--cocoon-text-size-s)!important;
+  font-size: var(--cocoon-text-size-s) !important;
   font-weight: normal;
   margin: 0;
   min-height: 40px;
-  padding: 0!important;
+  padding: 0 !important;
   text-align: center;
-  transition: none!important;
+  transition: none !important;
   width: 100%;
 }
 
@@ -969,9 +764,7 @@ span.fas.fa-history:before {
   content: none;
 }
 
-
 /* もっと見る */
-
 .list-more-button-wrap {
   margin-top: auto;
 }
@@ -980,9 +773,7 @@ span.fas.fa-history:before {
   margin: 0;
 }
 
-
 /* ページネーション */
-
 .pagination {
   gap: 5px;
   margin: 0;
@@ -998,13 +789,13 @@ span.fas.fa-history:before {
   border: 1px solid var(--main-color);
   border-radius: var(--border-radius100);
   box-shadow: var(--shadow-color);
-  font-size: var(--cocoon-text-size-s);
   color: #333;
+  font-size: var(--cocoon-text-size-s);
   height: 40px;
   line-height: 38px;
   margin: 0;
   padding: 0;
-  transition: none!important;
+  transition: none !important;
   width: 40px;
 }
 
@@ -1024,13 +815,11 @@ span.fas.fa-history:before {
   opacity: 1;
 }
 
-
 /*******************************************************************************
 **
 **  投稿
 **
 *******************************************************************************/
-
 .body .main > .article {
   margin-bottom: 0;
 }
@@ -1039,18 +828,14 @@ span.fas.fa-history:before {
   margin-bottom: var(--gap30);
 }
 
-
 /* タイトル */
-
 .body .entry-title {
   font-size: 22px;
   margin: 0 0 var(--padding15);
   padding: 0;
 }
 
-
 /* カテゴリー・タグ */
-
 .entry-categories-tags {
   margin-bottom: 0;
 }
@@ -1062,9 +847,7 @@ span.fas.fa-history:before {
   margin-bottom: var(--gap30);
 }
 
-
 /* 投稿日 */
-
 .date-tags {
   align-items: center;
   display: flex;
@@ -1089,11 +872,9 @@ span.fas.fa-history:before {
   order: -1;
 }
 
-
 /*******************************************************************************
 ** ページ送りナビ
 *******************************************************************************/
-
 .body .pager-post-navi.cf:after {
   content: none;
 }
@@ -1163,11 +944,9 @@ span.fas.fa-history:before {
   display: none;
 }
 
-
 /*******************************************************************************
 **  パンくずリスト
 *******************************************************************************/
-
 .archive .breadcrumb {
   display: none;
 }
@@ -1196,13 +975,11 @@ span.fas.fa-history:before {
   content: '\f3c5';
 }
 
-
 /*******************************************************************************
 **
 **  本文
 **
 *******************************************************************************/
-
 .entry-content {
   margin: var(--gap30) 0 0 0;
 }
@@ -1216,11 +993,9 @@ span.fas.fa-history:before {
   margin: var(--gap30) 0;
 }
 
-
 /*******************************************************************************
 **  関連記事
 *******************************************************************************/
-
 .body .under-entry-content > *:last-child {
   margin-bottom: 0;
 }
@@ -1236,9 +1011,7 @@ span.fas.fa-history:before {
   width: var(--thumb-width);
 }
 
-
 /* ミニカード */
-
 .body .related-list .e-card {
   border: 1px solid var(--cocoon-three-d-border-colors);
   padding: var(--padding15);
@@ -1248,13 +1021,11 @@ span.fas.fa-history:before {
   padding-bottom: 0;
 }
 
-
 /*******************************************************************************
 **
 **  目次
 **
 *******************************************************************************/
-
 .body .toc {
   display: block;
   font-size: 16px;
@@ -1264,7 +1035,7 @@ span.fas.fa-history:before {
 
 .main .toc {
   border: 1px solid var(--border-color);
-  padding: var(--gap30) var(--main-padding);
+  padding: var(--gap30);
 }
 
 .main .widget_toc .main-widget-label {
@@ -1327,14 +1098,12 @@ span.fas.fa-history:before {
   text-decoration: none;
 }
 
-
 /*******************************************************************************
 **
 **  SNSシェア
 **
 *******************************************************************************/
-
-.body .sns-buttons {
+.body.hvn .sns-buttons {
   gap: 5px;
   margin: 0;
 }
@@ -1378,12 +1147,10 @@ span.fas.fa-history:before {
 
 .article-footer .sns-share,
 .article-footer .sns-follow {
-  margin: var(--gap30) 0;
+  margin: var(--gap30) 0 0;
 }
 
-
 /* タイトルとURLをコピー */
-
 .copy-info {
   background-color: var(--hover-color);
   border: 1px solid var(--main-color);
@@ -1394,13 +1161,11 @@ span.fas.fa-history:before {
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **
 **  SNSフォロー
 **
 *******************************************************************************/
-
 .icon-x-corp-logo:before {
   content: '\e917';
 }
@@ -1419,6 +1184,14 @@ span.fas.fa-history:before {
 
 .icon-facebook-logo:before {
   content: '\e919';
+}
+
+.icon-threads-logo:before {
+  content: "\e92a";
+}
+
+.icon-reddit-logo:before {
+  content: "\eac7";
 }
 
 .icon-hatebu-logo:before {
@@ -1446,6 +1219,8 @@ span.fas.fa-history:before {
 .body .icon-bluesky-logo,
 .body .icon-misskey-logo,
 .body .icon-facebook-logo,
+.body .icon-threads-logo,
+.body .icon-reddit-logo,
 .body .icon-hatebu-logo,
 .body .icon-linkedin-logo,
 .body .icon-line-logo,
@@ -1453,13 +1228,11 @@ span.fas.fa-history:before {
   font-size: 16px;
 }
 
-
 /*******************************************************************************
 **
 **  画像
 **
 *******************************************************************************/
-
 .eye-catch img,
 .a-wrap figure img {
   height: 100%;
@@ -1473,7 +1246,7 @@ span.fas.fa-history:before {
   background-color: var(--hover-color);
   flex-shrink: 0;
   align-self: flex-start;
-  margin: 0!important;
+  margin: 0 !important;
   overflow: hidden;
   width: var(--thumb-width);
 }
@@ -1494,9 +1267,7 @@ span.fas.fa-history:before {
   width: 100%;
 }
 
-
 /* アイキャッチ */
-
 .eye-catch-wrap figure {
   background-color: var(--hover-color);
   border: 5px solid #fff;
@@ -1504,42 +1275,21 @@ span.fas.fa-history:before {
   margin: 0 0 var(--padding15);
 }
 
-
-/* 拡大 */
-
-.wp-lightbox-overlay .scrim {
-  background-color: #000!important;
-}
-
-.wp-lightbox-overlay svg {
-  display: none;
-}
-
-.wp-lightbox-overlay button:before {
-  content: '\f00d';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  color: #fff;
-  font-size: 20px;
-}
-
-
 /*******************************************************************************
 **
 **  ブログカード
 **
 *******************************************************************************/
-
+.body .wp-block-cocoon-blocks-blogcard .blogcard-wrap {
+  margin-bottom: 0;
+}
 
 /* ラベル有 */
-
 .blogcard-type[class*="bct-"] {
   padding-top: 12.5px;
 }
 
-
 /* ラベル無 */
-
 .blogcard-type.bct-none {
   padding-top: 0;
 }
@@ -1580,6 +1330,7 @@ span.fas.fa-history:before {
 .blogcard-site {
   float: unset;
   justify-content: flex-end;
+  line-height: 1;
 }
 
 .blogcard-domain {
@@ -1588,13 +1339,39 @@ span.fas.fa-history:before {
   white-space: nowrap;
 }
 
+.blogcard-label {
+  background-color: unset;
+  color: unset;
+  font-size: var(--cocoon-text-size-s);
+  letter-spacing: normal;
+  line-height: 25px;
+  padding: 0 var(--padding15);
+  top: -12.5px;
+  z-index: 1;
+}
+
+.blogcard-label:before {
+  background-color: var(--content-bgcolor);
+  bottom: 12.5px;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.blogcard-label .fa:before {
+  position: relative;
+  z-index: 1;
+}
 
 /*******************************************************************************
 **
 **  コメント
 **
 *******************************************************************************/
-
 .body .comment-area {
   margin-bottom: 0;
 }
@@ -1630,9 +1407,7 @@ span.fas.fa-history:before {
   margin: 0;
 }
 
-
 /* 返信ボタン */
-
 .comment-reply-link {
   background-color: #fff;
   border: 1px solid var(--main-color);
@@ -1682,18 +1457,14 @@ span.fas.fa-history:before {
   margin-top: var(--padding15);
 }
 
-
 /* コメントボタン */
-
 .body .comment-btn,
 .body .comment-respond .form-submit,
 .body .comment-respond {
   margin: var(--gap30) 0 0 0;
 }
 
-
 /* 返信フォーム */
-
 .commets-list li .comment-respond {
   margin-bottom: var(--gap30);
 }
@@ -1702,9 +1473,7 @@ span.fas.fa-history:before {
   margin-bottom: 0;
 }
 
-
 /* 分割ページボタン */
-
 .comment-page-link:has(.page-numbers) {
   gap: 5px;
   margin: var(--gap30) 0 0 0;
@@ -1714,13 +1483,11 @@ span.fas.fa-history:before {
   display: none;
 }
 
-
 /*******************************************************************************
 **
 **  ボタン
 **
 *******************************************************************************/
-
 .body .go-to-top {
   bottom: var(--gap30);
   right: var(--gap30);
@@ -1739,22 +1506,20 @@ span.fas.fa-history:before {
 }
 
 .go-to-top-button span {
+  background-clip: text;
   background-image: linear-gradient(0deg, #fff 0%, #fff var(--per), var(--main-color) var(--per), var(--main-color) 100%);
   color: transparent;
   display: grid;
   height: 100%;
   place-content: center;
   width: 100%;
-  -webkit-background-clip: text;
 }
-
 
 /*******************************************************************************
 **
 **  モバイル
 **
 *******************************************************************************/
-
 .mobile-menu-buttons .menu-caption {
   font-size: 11px;
   opacity: 1;
@@ -1773,11 +1538,9 @@ span.fas.fa-history:before {
   display: none;
 }
 
-
 /*******************************************************************************
 **  サイドバー
 *******************************************************************************/
-
 .menu-content {
   background-color: var(--body-color);
   max-width: 370px;
@@ -1798,13 +1561,11 @@ span.fas.fa-history:before {
   content: '\f061';
 }
 
-
 /*******************************************************************************
 **
 **  管理者画面
 **
 *******************************************************************************/
-
 .entry-card-content:has(.admin-pv) .e-card-title {
   margin: 0;
 }
@@ -1826,29 +1587,24 @@ span.fas.fa-history:before {
   margin-right: 3px;
 }
 
-
 /*******************************************************************************
 **
 **  ウィジェットエリア
 **
 *******************************************************************************/
 
-
 /*******************************************************************************
 **  サイドバースクロール追従
 *******************************************************************************/
-
 .sidebar-scroll {
   display: flex;
   flex-direction: column;
   gap: var(--gap30);
 }
 
-
 /*******************************************************************************
 **  コンテンツ上部、下部
 *******************************************************************************/
-
 .content-top,
 .content-bottom {
   margin: var(--gap30) 0 0;
@@ -1862,11 +1618,9 @@ span.fas.fa-history:before {
   padding: 0 10px;
 }
 
-
 /*******************************************************************************
 **  フッター左、中、右
 *******************************************************************************/
-
 .footer-widgets:after {
   content: none;
 }
@@ -1889,26 +1643,22 @@ span.fas.fa-history:before {
 }
 
 .footer-widgets > div:empty {
-  display: none; 
+  display: none;
 }
-
 
 /*******************************************************************************
 **  インデックスミドル
 *******************************************************************************/
-
 .ect-2-columns > *,
 .ect-3-columns > * {
   width: unset;
 }
-
 
 /*******************************************************************************
 **
 **  ウィジェット
 **
 *******************************************************************************/
-
 .body aside.widget {
   margin: 0;
 }
@@ -1920,11 +1670,9 @@ span.fas.fa-history:before {
   padding: 0;
 }
 
-
 /*******************************************************************************
 **  見出し
 *******************************************************************************/
-
 .list-title,
 .archive-title {
   font-size: 16px;
@@ -1970,16 +1718,14 @@ aside.widget .widget-title {
   margin-bottom: 0;
 }
 
-
 /*******************************************************************************
 **
 **  カード
 **
 *******************************************************************************/
-
 .body .blogcard-snippet,
 .body .widget-entry-cards .card-snippet {
-  display: none!important;
+  display: none;
 }
 
 .widget-entry-cards:after,
@@ -1989,11 +1735,9 @@ aside.widget .widget-title {
   content: none;
 }
 
-
 /*******************************************************************************
 **  デフォルトカード
 *******************************************************************************/
-
 .e-card {
   display: flex;
   gap: var(--padding15);
@@ -2004,7 +1748,7 @@ aside.widget .widget-title {
 .body .e-card .card-content {
   flex: 1;
   margin: 0;
-  padding: 0 0 20px;
+  padding: 0 0 var(--gap30);
   position: relative;
 }
 
@@ -2022,9 +1766,7 @@ aside.widget .widget-title {
   -webkit-line-clamp: var(--title-line);
 }
 
-
 /* 投稿日・更新日 */
-
 .widget-entry-card-meta.card-meta {
   bottom: 0;
   position: absolute;
@@ -2040,18 +1782,16 @@ aside.widget .widget-title {
 }
 
 .body .widget-entry-cards .widget-entry-card-content:has(.widget-entry-card-pv, .post-comment-count, .widget-entry-card-date:not(.display-none)) {
-  padding: 0 0 20px;
+  padding: 0 0 var(--gap30);
 }
 
 .large-thumb-on :is(.widget-entry-card-meta, .widget-entry-card-pv, .rss-entry-card-date) {
   display: none;
 }
 
-
 /*******************************************************************************
 **  縦型カード
 *******************************************************************************/
-
 .front-top-page .ect-big-card-first .a-wrap:first-child .e-card,
 .ect-big-card .e-card,
 .ect-vertical-card .e-card,
@@ -2072,26 +1812,19 @@ aside.widget .widget-title {
   gap: var(--gap30);
 }
 
-
 /*******************************************************************************
 **  区切り線
 *******************************************************************************/
-
 .body .border-partition {
   gap: var(--padding15);
 }
 
-.border-partition:not(.swiper) .a-wrap {
-  border-bottom: 1px dotted var(--border-color)!important;
+.border-partition .a-wrap {
+  border-bottom: 1px dotted var(--border-color);
   padding-bottom: var(--padding15);
 }
 
-.border-partition .a-wrap:first-of-type {
-  border-top: 0;
-}
-
 .border-partition .a-wrap:last-of-type {
-  border-bottom: 0!important;
   padding-bottom: 0;
 }
 
@@ -2099,31 +1832,27 @@ aside.widget .widget-title {
   padding-bottom: 0;
 }
 
-
 /*******************************************************************************
 **  囲み枠
 *******************************************************************************/
-
 .body .border-square .e-card {
   border: 1px solid var(--cocoon-three-d-border-colors);
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  タイトルを重ねた大きなサムネイル
 *******************************************************************************/
-
 .body .large-thumb-on .e-card {
-  padding: 0!important;
+  padding: 0;
 }
 
-.body .large-thumb-on .card-content {
-  background: rgb(0 0 0 / 30%)!important;
+.body .widget-entry-cards.large-thumb-on .a-wrap .card-content {
+  background: rgb(0 0 0 / 30%);
   display: grid;
   height: 100%;
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0;
+  padding: 0;
   place-content: center;
   position: absolute;
   width: 100%;
@@ -2140,11 +1869,9 @@ aside.widget .widget-title {
   transition: all 0.3s ease-in-out;
 }
 
-
 /*******************************************************************************
 **  横型表示
 *******************************************************************************/
-
 .swiper {
   overflow: hidden;
   position: relative;
@@ -2170,72 +1897,72 @@ aside.widget .widget-title {
   width: 100%;
 }
 
-.swiper-vertical>.swiper-wrapper {
+.swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
 
-.body .swiper .a-wrap {
+.body .widget-entry-cards.swiper .a-wrap {
   display: flex;
-  max-width: unset!important;
+  max-width: unset;
   width: calc((100% - var(--gap30) * (var(--swiper) - 1)) / var(--swiper));
 }
 
-.body .swiper-button-next:after,
-.body .swiper-button-prev:after {
-  border: 0!important;
+.body .swiper .swiper-button-next:after,
+.body .swiper .swiper-button-prev:after {
+  border: 0;
   color: var(--main-color);
-  content: '\f138'!important;
+  content: '\f138';
   display: block;
   font-family: 'Font Awesome 5 Free';
   font-size: 20px;
   font-weight: 900;
-  height: 100%!important;
-  margin: 0!important;
-  transform: unset!important;
-  width: unset!important;
+  height: 100%;
+  margin: 0;
+  transform: unset;
+  width: unset;
 }
 
-.body .swiper-button-prev:after {
-  content: '\f137'!important;
+.body .swiper .swiper-button-prev:after {
+  content: '\f137';
 }
 
-.body .swiper-button-next,
-.body .swiper-button-prev {
-  background-color: unset!important;
-  box-shadow: none!important;
-  display: block!important;
-  height: fit-content!important;
-  margin: 0!important;
-  top: 50%!important;
+.body .swiper .swiper-button-next,
+.body .swiper .swiper-button-prev {
+  background-color: unset;
+  box-shadow: none;
+  display: block;
+  height: fit-content;
+  margin: 0;
+  top: 50%;
   transform: translateY(-50%);
   transition: unset;
-  width: fit-content!important;
+  width: fit-content;
 }
 
-.body .swiper-button-next {
-  left: auto!important;
+.body .swiper .swiper-button-next {
+  left: auto;
   right: 0;
 }
 
-.body .swiper-button-prev {
-  left: 0!important;
+.body .swiper .swiper-button-prev {
+  left: 0;
   right: auto;
 }
 
-
 /* ボタン無効 */
-
-.body .swiper-button-lock {
+.body .swiper .swiper-button-lock {
   display: none;
 }
-
 
 /*******************************************************************************
 **  リボン
 *******************************************************************************/
+[class*="ribbon-color-"] span {
+  background-color: unset;
+}
 
 .body .swiper.ranking-visible,
-.body .swiper:has(.ribbon) {
+.body .swiper:has([class*="ribbon"]) {
   padding-top: 5px;
 }
 
@@ -2243,31 +1970,34 @@ aside.widget .widget-title {
   display: none;
 }
 
-.body .a-wrap:has(.ribbon-color-1):before {
+.navi-entry-cards .a-wrap:has(.ribbon-color-1):before,
+.list .a-wrap:has(.ribbon-color-1):before {
   content: var(--hvn-ribbon1);
 }
 
-.body .a-wrap:has(.ribbon-color-2):before {
+.navi-entry-cards .a-wrap:has(.ribbon-color-2):before,
+.list .a-wrap:has(.ribbon-color-2):before {
   content: var(--hvn-ribbon2);
 }
 
-.body .a-wrap:has(.ribbon-color-3):before {
+.navi-entry-cards .a-wrap:has(.ribbon-color-3):before,
+.list .a-wrap:has(.ribbon-color-3):before {
   content: var(--hvn-ribbon3);
 }
 
-.body .a-wrap:has(.ribbon-color-4):before {
+.navi-entry-cards .a-wrap:has(.ribbon-color-4):before,
+.list .a-wrap:has(.ribbon-color-4):before {
   content: var(--hvn-ribbon4);
 }
 
-.body .a-wrap:has(.ribbon-color-5):before {
+.navi-entry-cards .a-wrap:has(.ribbon-color-5):before,
+.body.hvn .a-wrap:has(.ribbon-color-5):before {
   content: var(--hvn-ribbon5);
 }
-
 
 /*******************************************************************************
 **  RSS
 *******************************************************************************/
-
 .rsswidget {
   text-decoration: none;
 }
@@ -2313,11 +2043,9 @@ aside.widget .widget-title {
   font-style: normal;
 }
 
-
 /*******************************************************************************
 **  [C]CTAボックス
 *************************************F******************************************/
-
 .cta-box {
   background-color: unset;
   border: 1px solid var(--border-color);
@@ -2336,13 +2064,15 @@ aside.widget .widget-title {
 }
 
 .body .cta-content {
-  display: flex;
   gap: var(--padding15);
 }
 
-.cta-left-and-right .cta-content div,
-.cta-right-and-left .cta-content div {
-  width: 100%;
+.body.hvn .cta-left-and-right .cta-content {
+  flex-direction: row;
+}
+
+.body.hvn .cta-right-and-left .cta-content {
+  flex-direction: row-reverse;
 }
 
 .body .cta-message {
@@ -2359,34 +2089,17 @@ aside.widget .widget-title {
   margin-top: 0;
 }
 
-.cta-right-and-left .cta-content {
-  flex-direction: row-reverse;
-}
-
-.nwa .cta-left-and-right .cta-content,
-.nwa .cta-right-and-left .cta-content {
-  flex-direction: column;
-}
-
-.nwa .cta-box .cta-content > div {
-  flex-shrink: 0;
-}
-
-
 /*******************************************************************************
 **  [C]人気記事
 *******************************************************************************/
-
-
 /* ランキング表示 */
-
-.body .widget-entry-cards.ranking-visible .a-wrap:nth-child(n+4):before,
-.body .widget-entry-cards.ranking-visible .a-wrap:nth-child(n+4):after {
+.body .widget-entry-cards.ranking-visible .a-wrap:not(:is(.no-1, .no-2, .no-3))::before,
+.body .widget-entry-cards.ranking-visible .a-wrap:not(:is(.no-1, .no-2, .no-3))::after {
   content: none;
 }
 
 .widget-entry-cards.ranking-visible .card-thumb:before {
-  content: none!important;
+  content: none;
 }
 
 .body .widget-entry-cards.ranking-visible .a-wrap:before {
@@ -2398,23 +2111,17 @@ aside.widget .widget-title {
   left: 20px;
 }
 
-
 /* PV表示 */
-
-.body .widget-entry-card-pv {
-  background-color: unset!important;
-  bottom: 0;
-  color: var(--s-text-color)!important;
+.body .popular-entry-cards .widget-entry-card-pv {
+  background-color: unset;
+  color: var(--s-text-color);
   font-size: var(--cocoon-text-size-s);
   font-style: normal;
-  left: 0;
   line-height: 1;
   margin: 0;
-  opacity: 1!important;
-  padding: 0!important;
-  position: absolute!important;
-  right: unset!important;
-  top: unset!important;
+  opacity: 1;
+  padding: 0;
+  position: unset;
 }
 
 .widget-entry-card-pv:before {
@@ -2423,28 +2130,24 @@ aside.widget .widget-title {
   margin-right: 3px;
 }
 
-
 /*******************************************************************************
 **  [C]プロフィール
 *******************************************************************************/
-
 .body .widget .author-box {
   margin-bottom: 0;
 }
 
-.nwa.widget_author_box .widget-title,
-.nwa .widget_author_box .widget-title,
 .author-widget-name {
   display: none;
 }
 
-.author-box {
+.body .author-box {
   align-items: center;
   display: flex;
   padding: var(--padding15);
 }
 
-.author-box .author-thumb {
+.body .author-box .author-thumb {
   flex-shrink: 0;
   float: unset;
   margin: 0;
@@ -2459,14 +2162,11 @@ aside.widget .widget-title {
   width: 100px;
 }
 
-.author-box .author-content {
+.body .author-box .author-content {
   border-left: 1px solid var(--border-color);
   margin-left: var(--padding15);
   padding-left: var(--padding15);
-}
-
-.author-box .author-name {
-  margin-bottom: 0;
+  width: 100%;
 }
 
 .author-box .author-name,
@@ -2474,7 +2174,9 @@ aside.widget .widget-title {
   color: unset;
   font-size: 16px;
   line-height: 1.8;
+  margin-bottom: 0;
   text-decoration: none;
+  text-align: left;
 }
 
 .body .author-description {
@@ -2493,7 +2195,11 @@ aside.widget .widget-title {
 }
 
 .author-box .sns-follow {
-  margin-bottom: 0;
+  margin: 0;
+}
+
+.body .author-box .sns-follow-buttons {
+  justify-content: unset;
 }
 
 .body .author-box .sns-follow-buttons a.follow-button {
@@ -2510,62 +2216,30 @@ aside.widget .widget-title {
   display: none;
 }
 
-.body .nwa .widget_author_box {
-  padding: 0!important;
-}
-
-.body .nwa .widget_author_box .author-box {
-  margin: 0;
-}
-
-.body .nwa .author-box {
-  border: 0;
-  border-radius: var(--border-radius10);
-  display: block;
-  overflow: hidden;
-  padding: 0;
-}
-
 .body .main :not(.widget-index-top, .widget-index-bottom) .author-box {
   border: 1px solid var(--border-color);
   border-radius: 0;
 }
 
-.nwa .author-box .author-thumb {
-  margin: var(--gap30) auto 0;
+.hvn-author-video {
+  display: none;
 }
-
-.body .nwa .author-thumb img {
-  border-radius: 50%;
-}
-
-.nwa .author-box .author-content {
-  border: 0;
-  padding: var(--padding15) var(--main-padding) var(--gap30);
-}
-
 
 /*******************************************************************************
 **  [C]ボックスメニュー
 *******************************************************************************/
-
-.no-sidebar .widget-index-top .box-menu,
-.no-sidebar .widget-index-bottom .box-menu,
-.wwa .box-menu {
-  width: calc(100% / 6);
-}
-
 .body .widget .box-menus {
   margin: 0;
 }
 
 .body .box-menu {
   background-color: transparent;
-  box-shadow: inset 1px 1px 0 0 var(--border-color), 1px 1px 0 0 var(--border-color), 1px 0 0 0 var(--border-color)!important;
+  box-shadow: inset 1px 1px 0 0 var(--border-color), 1px 1px 0 0 var(--border-color), 1px 0 0 0 var(--border-color) !important;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
+  width: 25%;
 }
 
 .body .box-menu-icon {
@@ -2589,15 +2263,9 @@ aside.widget .widget-title {
   background-color: var(--hover-color);
 }
 
-.nwa .box-menu:nth-last-child(1):nth-child(odd) {
-  width: 100%;
-}
-
-
 /*******************************************************************************
 **  [C]ランキング
 *******************************************************************************/
-
 .ranking-items {
   border: 1px solid var(--border-color);
   display: flex;
@@ -2607,17 +2275,17 @@ aside.widget .widget-title {
   padding: var(--padding15);
 }
 
-.ranking-item {
+.body .ranking-items .ranking-item {
   border: 0;
   border-bottom: 1px dotted var(--border-color);
   display: flex;
   flex-direction: column;
   gap: var(--padding15);
-  margin: 0!important;
+  margin: 0;
   padding: 0 0 var(--padding15);
 }
 
-.ranking-item:last-child {
+.body .ranking-item:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
@@ -2648,10 +2316,6 @@ aside.widget .widget-title {
   text-align: center;
 }
 
-.nwa .ranking-item-img-desc a {
-  padding: 0;
-}
-
 .body .ranking-items p {
   font-size: 16px;
   line-height: 1.8;
@@ -2659,8 +2323,8 @@ aside.widget .widget-title {
   word-break: break-all;
 }
 
-.ranking-item-link-buttons {
-  display: flex!important;
+.body .ranking-item-link-buttons {
+  display: flex;
   gap: var(--padding15);
   margin: 0;
 }
@@ -2669,22 +2333,7 @@ aside.widget .widget-title {
   padding: 0;
 }
 
-.body .nwa .ranking-item-img-desc {
-  flex-direction: column;
-}
-
-.body .nwa .ranking-item-link-buttons {
-  flex-direction: column;
-}
-
-.nwa .ranking-item .ranking-item-img-desc > div,
-.nwa .ranking-item .ranking-item-link-buttons > div {
-  flex-shrink: 0;
-}
-
-
 /* 王冠アイコン */
-
 .ranking-item-name-crown div {
   all: unset;
 }
@@ -2722,14 +2371,11 @@ aside.widget .widget-title {
   font-size: 16px;
 }
 
-
 /*******************************************************************************
 **  [C]新着情報
 *******************************************************************************/
-
 .info-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--padding15);
   padding: 0;
 }
@@ -2740,6 +2386,11 @@ aside.widget .widget-title {
 
 .info-list.is-style-frame-border {
   padding: var(--padding15);
+}
+
+.info-list-items {
+  display: grid;
+  gap: var(--padding15);
 }
 
 .info-list-item {
@@ -2788,11 +2439,9 @@ aside.widget .widget-title {
   text-decoration: none;
 }
 
-
 /*******************************************************************************
 **  [C]最近のコメント
 *******************************************************************************/
-
 .article .recent-comments:not(:last-of-type) {
   margin-bottom: var(--gap30);
 }
@@ -2862,9 +2511,7 @@ aside.widget .widget-title {
   content: none;
 }
 
-
 /* 承認待ち */
-
 .comment-awaiting-moderation {
   color: var(--cocoon-red-color);
   font-style: normal;
@@ -2884,11 +2531,9 @@ aside.widget .widget-title {
   padding-bottom: 0;
 }
 
-
 /*******************************************************************************
 **  アーカイブ、カテゴリー
 *******************************************************************************/
-
 select {
   background-color: #fff;
   color: #333;
@@ -2902,11 +2547,9 @@ select {
   position: relative;
 }
 
-
 /*******************************************************************************
 **  カレンダー
 *******************************************************************************/
-
 .calendar_wrap {
   margin: 0;
 }
@@ -2924,6 +2567,10 @@ select {
 .wp-calendar-nav a {
   color: unset;
   text-decoration: none;
+}
+
+.wp-calendar-nav i:before {
+  margin: 0 3px;
 }
 
 .body .wp-calendar-table td,
@@ -2949,15 +2596,14 @@ select {
   font-weight: bold;
 }
 
-.calendar_wrap i:before {
-  margin: 0 3px;
+.body .scrollable-table:has(.wp-calendar-table) {
+  margin-bottom: 0;
 }
 
 
 /*******************************************************************************
 **  アーカイブ、カテゴリー、タグクラウド、固定ページ
 *******************************************************************************/
-
 .widget .children {
   display: flex;
   flex-direction: column;
@@ -2980,7 +2626,7 @@ select {
   line-height: 1.8;
   min-width: 0;
   padding: 0 10px;
-  transition: none!important;
+  transition: none !important;
 }
 
 .tag-link:hover,
@@ -2988,7 +2634,7 @@ select {
 .body .widget_categories a:hover,
 .body .widget_tag_cloud a:hover,
 .body .widget_pages a:hover {
-  background-color: var(--hover-color)!important;
+  background-color: var(--hover-color) !important;
 }
 
 .tag-link,
@@ -3001,16 +2647,12 @@ select {
   white-space: nowrap;
 }
 
-
 /* サイトマップ */
-
 .sitemap .list-item-caption {
   white-space: unset;
 }
 
-
 /* タグクラウド */
-
 .tagcloud {
   gap: 5px;
 }
@@ -3028,11 +2670,9 @@ select {
   margin-right: 3px;
 }
 
-
 /*******************************************************************************
 **  モバイルメニュー、ナビゲーションメニュー
 *******************************************************************************/
-
 .body .widget_nav_menu ul {
   padding-left: 0;
 }
@@ -3043,6 +2683,10 @@ select {
 
 .body .navi-menu-content .menu-drawer {
   display: block;
+}
+
+.menu-drawer a {
+  padding: 0;
 }
 
 .body .navi-menu-content > ul,
@@ -3080,15 +2724,9 @@ select {
   display: list-item;
 }
 
-
 /*******************************************************************************
 **  検索
 *******************************************************************************/
-
-:placeholder {
-  color: transparent;
-}
-
 .body .widget_search .widget-title {
   display: none;
 }
@@ -3101,9 +2739,7 @@ select {
   padding: 10px;
 }
 
-
 /* 検索ページ */
-
 .archive-title + .search-box {
   display: none;
 }
@@ -3117,11 +2753,9 @@ select {
   width: 100%;
 }
 
-
 /*******************************************************************************
-**  最近の投稿
+**  最近の投稿（未使用）
 *******************************************************************************/
-
 .body .widget_recent_comments ul,
 .body .widget_recent_entries ul {
   gap: var(--padding15);
@@ -3156,11 +2790,9 @@ select {
   margin-right: 3px;
 }
 
-
 /*******************************************************************************
-**  最近のコメント
+**  最近のコメント（未使用）
 *******************************************************************************/
-
 .widget_recent_comments a {
   text-decoration: none;
   color: var(--cocoon-text-color);
@@ -3171,18 +2803,15 @@ select {
   padding-top: 0;
 }
 
-
 /*******************************************************************************
 **
 **  投稿関連
 **
 *******************************************************************************/
 
-
 /*******************************************************************************
 **  見出し
 *******************************************************************************/
-
 .main .article .widget-title,
 .main .under-entry-content h2,
 .article :is(h2, h3, h4, h5, h6) {
@@ -3202,11 +2831,13 @@ select {
   margin: calc(var(--gap30) * 3) 0 var(--gap30) 0;
 }
 
+.article {
+  counter-reset: number var(--h2-start-count, 0);
+}
 
 /*******************************************************************************
 **  リスト
 *******************************************************************************/
-
 [class*=is-style-icon-list-] > li {
   padding-left: 1.8em;
 }
@@ -3227,11 +2858,9 @@ select {
   padding-left: calc(40px - 1.8em);
 }
 
-
 /*******************************************************************************
 **  テーブル
 *******************************************************************************/
-
 .body figure .scrollable-table {
   margin-bottom: 0;
 }
@@ -3296,6 +2925,7 @@ figure.wp-block-table table,
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-10px);
   }
@@ -3306,11 +2936,9 @@ figure.wp-block-table table,
   white-space: unset;
 }
 
-
 /*******************************************************************************
 **  アイコンボックス
 *******************************************************************************/
-
 blockquote,
 .is-style-comment-box,
 .is-style-profile-box,
@@ -3403,11 +3031,9 @@ blockquote:before,
   content: '\f071';
 }
 
-
 /*******************************************************************************
 **  案内ボックス
 *******************************************************************************/
-
 .is-style-primary-box,
 .is-style-secondary-box,
 .is-style-success-box,
@@ -3428,11 +3054,9 @@ blockquote:before,
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  白抜きボックス
 *******************************************************************************/
-
 .blank-box {
   --cocoon-custom-border-color: var(--border-color);
   border-color: var(--cocoon-custom-border-color);
@@ -3446,11 +3070,9 @@ blockquote:before,
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  付箋風ボックス
 *******************************************************************************/
-
 [class*=is-style-sticky-],
 .blank-box.sticky {
   border-width: 0 0 0 5px;
@@ -3458,11 +3080,9 @@ blockquote:before,
   padding: var(--padding15) var(--padding15) var(--padding15) 10px;
 }
 
-
 /*******************************************************************************
 **  タブボックス
 *******************************************************************************/
-
 .blank-box.bb-tab .bb-label {
   font-family: unset;
 }
@@ -3482,11 +3102,9 @@ blockquote:before,
   margin-top: calc(var(--gap30) + 25px);
 }
 
-
 /*******************************************************************************
 **  吹き出し
 *******************************************************************************/
-
 .speech-icon img {
   aspect-ratio: 1 / 1;
   background-color: var(--hover-color);
@@ -3494,32 +3112,9 @@ blockquote:before,
   object-fit: cover;
 }
 
-.speech-balloon {
-  --cocoon-custom-text-color: #333;
-}
-
-
-/*******************************************************************************
-**  ブログカード
-*******************************************************************************/
-
-.blogcard-label {
-  background-color: var(--content-bgcolor);
-  border-radius: 0;
-  color: unset;
-  font-size: var(--cocoon-text-size-s);
-  left: 14px;
-  letter-spacing: normal;
-  line-height: 25px;
-  padding: 0 var(--padding15);
-  top: -12.5px;
-}
-
-
 /*******************************************************************************
 **  アイコンリスト
 *******************************************************************************/
-
 .iconlist-box {
   padding-left: 0;
 }
@@ -3541,13 +3136,11 @@ blockquote:before,
   padding-left: calc(40px - 1.8em);
 }
 
-
 /*******************************************************************************
 **  アコーディオン（トグル）
 *******************************************************************************/
-
 .toggle-wrap {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--cocoon-custom-border-color, var(--border-color));
 }
 
 .toggle-button {
@@ -3594,20 +3187,36 @@ blockquote:before,
   content: '\f106';
 }
 
+.is-style-accordion .caption-box-label,
+.is-style-accordion > .faq > .faq-question {
+  cursor: pointer;
+  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15);
+}
 
-/* FAQ */
+.body .is-style-accordion > .faq > .faq-answer {
+  padding: var(--padding15);
+}
 
-.faq-question {
-  margin-bottom: var(--gap30);
-  align-items: unset;
+.is-style-accordion .faq-question {
+  color: #333;
+}
+
+.is-style-accordion > .faq > .faq-question {
+  background-color: var(--border-color);
+}
+
+.faq-wrap.is-style-accordion {
+  padding: 0;
 }
 
 .faq-wrap:not(.is-style-accordion) {
   --cocoon-custom-border-color: transparent;
 }
 
-.faq-wrap.is-style-accordion {
-  padding: 0;
+/* FAQ */
+.faq-question {
+  align-items: unset;
+  margin-bottom: var(--gap30);
 }
 
 .body .faq .faq-item-label {
@@ -3624,29 +3233,9 @@ blockquote:before,
   margin: 0;
 }
 
-.is-style-accordion > .faq > .faq-question {
-  background-color: var(--border-color);
-}
-
-.is-style-accordion .caption-box-label,
-.is-style-accordion .faq-question {
-  cursor: pointer;
-  padding: var(--padding15) calc(var(--padding15) + 1em) var(--padding15) var(--padding15)!important;
-}
-
-.is-style-accordion .faq-question {
-  color: #333;
-}
-
-.body .is-style-accordion .faq-answer {
-  padding: var(--padding15)!important;
-}
-
-
 /*******************************************************************************
 **  検索案内
 *******************************************************************************/
-
 div.search-form {
   gap: 10px;
   margin-top: var(--gap30);
@@ -3679,11 +3268,9 @@ div.search-form {
   margin: 0;
 }
 
-
 /*******************************************************************************
 **  タイムライン
 *******************************************************************************/
-
 .timeline-box {
   padding: var(--padding15);
 }
@@ -3698,6 +3285,7 @@ div.search-form {
 
 .timeline-item-content {
   border-color: #eee;
+  overflow: hidden;
   padding: var(--padding15) 0 0 20px;
 }
 
@@ -3718,27 +3306,27 @@ div.search-form {
   background: unset;
   border: 0;
   box-shadow: unset;
-  color: unset!important;
+  color: unset;
   display: block;
   font-size: unset;
   line-height: unset;
   margin: unset;
   min-height: unset;
-  padding: 0!important;
+  padding: 0;
   position: relative;
   text-align: unset;
 }
 
+.body .faq .faq-question-content:before,
+.body .faq .faq-question-content:after,
 .body .timeline .timeline-item-title:before,
 .body .timeline .timeline-item-title:after {
   content: none;
 }
 
-
 /*******************************************************************************
 **  見出しボックス
 *******************************************************************************/
-
 .block-box-label:before {
   margin-right: 6px;
 }
@@ -3760,11 +3348,9 @@ div.search-form {
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  タブ見出しボックス
 *******************************************************************************/
-
 .tab-caption-box {
   --cocoon-custom-border-color: var(--border-color);
   position: relative;
@@ -3786,11 +3372,9 @@ div.search-form {
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  ラベルボックス
 *******************************************************************************/
-
 .label-box {
   padding-top: 12.5px;
   position: relative;
@@ -3815,7 +3399,7 @@ div.search-form {
 }
 
 .label-box-label:after {
-  background-color: var(--content-bgcolor, #fff);
+  background-color: var(--content-bgcolor);
   content: '';
   display: block;
   height: 1px;
@@ -3832,11 +3416,9 @@ div.search-form {
   padding: var(--padding15);
 }
 
-
 /*******************************************************************************
 **  マイクロバルーン
 *******************************************************************************/
-
 .micro-balloon {
   --cocoon-custom-border-color: var(--border-color);
   color: #333
@@ -3854,15 +3436,13 @@ div.search-form {
   top: calc(100% - 1px);
 }
 
-.micro-bottom.micro-balloon:before{
-   bottom: 100%; 
+.micro-bottom.micro-balloon:before {
+  bottom: 100%;
 }
-
 
 /*******************************************************************************
 **  インラインボタン
 *******************************************************************************/
-
 [class*=inline-button] {
   display: inline-flex;
 }
@@ -3871,14 +3451,10 @@ div.search-form {
   border-width: 2px;
 }
 
-
 /*******************************************************************************
 **  テキスト
 *******************************************************************************/
-
-
 /* キーボード */
-
 .keyboard-key {
   background-color: #f7f7f7;
   box-shadow: none;
@@ -3887,11 +3463,9 @@ div.search-form {
   margin: 0 3px;
 }
 
-
 /*******************************************************************************
 **  カエレバ
 *******************************************************************************/
-
 .booklink-box,
 .kaerebalink-box,
 .tomarebalink-box,
@@ -3901,15 +3475,16 @@ div.search-form {
   width: unset;
 }
 
+.booklink-image,
+.kaerebalink-image,
+.tomarebalink-image,
+.product-item-thumb {
+  margin-bottom: 0 !important;
+}
 
 /*******************************************************************************
 **  ページ区切り
 *******************************************************************************/
-
-.pager-prev-next {
-  display: none;
-}
-
 .pager-numbers {
   display: flex;
   flex-wrap: wrap;
@@ -3918,20 +3493,21 @@ div.search-form {
   margin: var(--gap30) 0;
 }
 
+.pager-numbers .prev,
+.pager-numbers .next {
+  display: none;
+}
 
 /*******************************************************************************
 **  区切り
 *******************************************************************************/
-
 .wp-block-separator {
   border-width: 1px;
 }
 
-
 /*******************************************************************************
 **  インラインコード
 *******************************************************************************/
-
 :not(pre) > code {
   background-color: #f7f7f7;
   border: 1px solid var(--border-color);
@@ -3943,11 +3519,9 @@ div.search-form {
   padding: 1px 3px;
 }
 
-
 /*******************************************************************************
 **  プルクオート
 *******************************************************************************/
-
 .wp-block-pullquote {
   font-size: 16px;
   padding: 0;
@@ -3992,37 +3566,33 @@ div.search-form {
   text-align: right;
 }
 
-
 /*******************************************************************************
 **  wpForo
 *******************************************************************************/
-
 .widget .wpforo-widget-wrap {
-  margin: 0!important;
+  margin: 0 !important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content {
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li:first-child {
-  padding-top: 0!important;
+  padding-top: 0 !important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li:last-child {
   border-bottom: 0;
-  padding-bottom: 0!important;
+  padding-bottom: 0 !important;
 }
 
 .body .wpforo-widget-wrap .wpforo-widget-content li {
-  padding: var(--padding15) 0!important;
+  padding: var(--padding15) 0 !important;
 }
-
 
 /*******************************************************************************
 **  タブ
 *******************************************************************************/
-
 .tab-label-group {
   gap: 0;
 }
@@ -4059,13 +3629,18 @@ div.search-form {
   text-align: right;
 }
 
+/*******************************************************************************
+**  ログインユーザー限定
+*******************************************************************************/
+.login-user-only {
+  padding: var(--padding15);
+}
 
 /*******************************************************************************
 **
 **  レスポンシブ
 **
 *******************************************************************************/
-
 @media (width >1023px) {
   .article-footer .sns-share {
     height: fit-content;
@@ -4075,16 +3650,20 @@ div.search-form {
     width: fit-content;
     z-index: 1;
   }
+
   .article-footer .sns-share-message {
     display: none;
   }
+
   .article-footer .sns-share .sns-buttons {
     flex-direction: column;
   }
+
   .article-footer .sns-share .sns-button {
     border-radius: var(--border-radius100);
     box-shadow: var(--shadow-color)
   }
+
   .body:not(.front-top-page) .article:has(.ad-area, .entry-tags, .article-footer .sns-follow, .article-footer .widget) .entry-content {
     border-bottom: 1px dotted var(--border-color);
     margin-bottom: var(--gap30);
@@ -4093,18 +3672,17 @@ div.search-form {
 }
 
 @media (width <=1023px) {
-  .body .header-in {
-    height: 50px;
-  }
   .logo-header img {
     max-height: 50px;
   }
+
   .body:not(.front-top-page) .article:has(.entry-tags, .article-footer .sns-button, .article-footer .widget) .entry-content {
     border-bottom: 1px dotted var(--border-color);
     margin-bottom: var(--gap30);
     padding-bottom: var(--gap30);
   }
-  .widget-index-top .box-menu, 
+
+  .widget-index-top .box-menu,
   .widget-index-bottom .box-menu {
     width: calc(100% / 6);
   }
@@ -4115,26 +3693,25 @@ div.search-form {
   .list-columns:not(.fpt-columns) .ect-vertical-card-3 .a-wrap:nth-of-type(4) {
     display: block;
   }
+
   .navi-footer-in > .menu-footer li.menu-item {
     margin: 0;
     width: 100%;
   }
+
   .scrollable-table th,
   .scrollable-table td {
     white-space: nowrap;
   }
-   :is(.footer-left, .footer-center, .footer-right):not(:has(.widget)) {
+
+  :is(.footer-left, .footer-center, .footer-right):not(:has(.widget)) {
     display: none;
   }
-  .body .box-menus .box-menu {
-    width: 50%;
-  }
-  .body .box-menus .box-menu:nth-last-child(1):nth-child(odd) {
-    width: 100%;
-  }
+
   .body .container .column-wrap {
     gap: var(--gap30);
   }
+
   .article :is(ul, ol) {
     padding-left: 40px;
   }
@@ -4144,19 +3721,133 @@ div.search-form {
   .timeline-box .timeline {
     padding-left: 19px;
   }
+
   .timeline > li.timeline-item {
     border-left: 3px solid #eee;
   }
+
   .timeline-item:before {
     left: -10px;
   }
+
   .timeline-item-label {
     padding-left: 20px;
   }
+
   .timeline-item-label:empty {
     display: none;
   }
+
   .body .widget-index-middle.widget_author_box .author-box {
     border: 0;
+  }
+}
+
+/*******************************************************************************
+**  コンテナクエリ
+*******************************************************************************/
+@media (width <=1023px) {
+  .content-in {
+    container-type: inline-size;
+    container-name: sidebar;
+  }
+}
+
+.appeal-content,
+.recommended-in,
+.content-top-in,
+.content-bottom-in,
+.sidebar,
+.footer-left,
+.footer-center,
+.footer-right {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+
+@container (width <=814px) {
+  .a-wrap {
+    --swiper: 2;
+  }
+
+  .body .box-menu {
+    width: 50%;
+  }
+
+  .box-menu:nth-last-child(1):nth-child(odd) {
+    width: 100%;
+  }
+}
+
+@container (width <=460px) {
+  .a-wrap {
+    --swiper: 1;
+  }
+
+  .body .ranking-item-img-desc {
+    flex-direction: column;
+  }
+
+  .body .ranking-item-link-buttons {
+    flex-direction: column;
+  }
+
+  .ranking-item .ranking-item-img-desc > div,
+  .ranking-item .ranking-item-link-buttons > div {
+    flex-shrink: 0;
+  }
+
+  .ranking-item-img-desc a {
+    padding: 0;
+  }
+
+  .body.hvn .widget.widget_author_box {
+    padding: 0;
+  }
+
+  .body .widget_author_box .widget-title {
+    display: none;
+  }
+
+  .body .author-box {
+    border: 0;
+    border-radius: var(--border-radius10);
+    display: block;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .author-box .author-name,
+  .author-box .author-name a {
+    text-align: center;
+  }
+
+  .body .author-box .author-thumb {
+    margin: var(--gap30) auto 0;
+    text-align: center;
+  }
+
+  .author-thumb img {
+    border-radius: 50%;
+  }
+
+  .body .author-box .author-content {
+    border: 0;
+    margin: 0;
+    padding: var(--padding15) var(--main-padding) var(--gap30);
+    text-align: center;
+  }
+
+  .author-box .author-description {
+    text-align: left;
+  }
+
+  .body.hvn .author-box .sns-follow-buttons {
+    justify-content: center;
+  }
+
+  .body.hvn .cta-left-and-right .cta-content,
+  .body.hvn .cta-right-and-left .cta-content {
+    flex-direction: column
   }
 }

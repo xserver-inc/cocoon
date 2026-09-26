@@ -1,8 +1,6 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-global $_HVN_EYECATCH;
-
 
 //******************************************************************************
 //  多言語
@@ -10,7 +8,7 @@ global $_HVN_EYECATCH;
 ?>
 :root{
   --hvn-notice: '<?php echo __('詳細はこちら', THEME_NAME); ?>';
-  --hvn-prev: '<?php echo __('過去の投稿', THEME_NAME); ?>';
+  --hvn-prev: '<?php echo __('古い投稿', THEME_NAME); ?>';
   --hvn-next: '<?php echo __('新しい投稿', THEME_NAME); ?>';
   --hvn-table: '<?php echo __('スクロールできます→', THEME_NAME); ?>';
   --hvn-ribbon1: '<?php echo __('お勧め', THEME_NAME); ?>';
@@ -18,152 +16,120 @@ global $_HVN_EYECATCH;
   --hvn-ribbon3: '<?php echo __('注目', THEME_NAME); ?>';
   --hvn-ribbon4: '<?php echo __('必見', THEME_NAME); ?>';
   --hvn-ribbon5: '<?php echo __('お得', THEME_NAME); ?>';
+  --hvn-profile: '<?php echo  __('プロフィール', THEME_NAME); ?>';
+  --hvn-new: 'NEW';
+  --hvn-up: 'UP';
+  --hvn-toc-height: 20lh;
 }
+
 <?php
 //******************************************************************************
-//  ダークモード
+//  アピールエリア画像
+//******************************************************************************
+if (!get_appeal_area_image_url()) {
+  echo <<<EOF
+.appeal-in {
+  padding-bottom: 0;
+}
+
+.appeal-content {
+  background-color: #fff;
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  ローディング画面
 //******************************************************************************
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
   echo <<<EOF
 .body {
   visibility: hidden;
 }
-EOF;
 
-}
-
-echo <<<EOF
-.body .is-auto-horizontal {
-  --swiper-pagination-bullet-inactive-color: var(--title-color);
-}
-
-.body.hvn-card-border .is-auto-horizontal {
-  --swiper-pagination-bullet-inactive-color: var(--dark-text-color, #333);
-}
-
-.hvn-dark {
-  --body-rgb-color: 51 51 51;
-  --hover-color: #777;
-  --dark-body-color: #333;
-  --dark-content-bgcolor: #444;
-  --dark-footer-color: #666;
-  --dark-category-color: 85 85 85;
-  --dark-text-color: #fff;
-
-  --cocoon-text-color: var(--dark-text-color);
-  --content-bgcolor: var(--dark-content-bgcolor);
-  --body-color:var(--dark-body-color);
-  --title-color: var(--dark-text-color);
-}
-
-.hvn-dark .author-thumb img {
-  background-color: var(--main-color);
-}
-
-.hvn-dark #footer {
-  background-color: var(--dark-footer-color);
-}
-
-.hvn-dark .footer-bottom,
-.hvn-dark .footer-bottom a,
-.hvn-dark .footer-bottom a:hover {
-  border-color: var(--dark-text-color);
-  color: var(--dark-text-color);
-}
-
-.hvn-dark .navi-footer-in > .menu-footer li,
-.hvn-dark .navi-footer-in > .menu-footer li:last-child,
-.hvn-dark .footer .footer-in .footer-bottom-content {
-  border-color: var(--dark-text-color);
-}
-
-.hvn-dark-switch {
-  display: inline-block;
-  margin-left: 5px;
-  width: fit-content;
-}
-
-#hvn-dark {
-  display: none;
-}
-
-.hvn-dark-switch label:before {
-  content: '\\f186';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 400;
-}
-
-#hvn-dark:checked + label:before {
-  color: #fff176;
-  font-weight: 900;
+.loader-bg {
+  background-color: var(--body-color);
+  display: grid;
+  height: 100svh;
+  margin: auto;
+  place-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 9999;
 }
 
 EOF;
+}
 
 
 //******************************************************************************
 //  モバイルSNSシェアボタン
 //******************************************************************************
 $css = [];
-$count = 0;
-$css_arr = [
-  ['is_bottom_twitter_share_button_visible'   ,'.twitter-button'],
-  ['is_bottom_mastodon_share_button_visible'  ,'.mastodon-button'],
-  ['is_bottom_bluesky_share_button_visible'   ,'.bluesky-button'],
-  ['is_bottom_misskey_share_button_visible'   ,'.misskey-button'],
-  ['is_bottom_facebook_share_button_visible'  ,'.facebook-button'],
-  ['is_bottom_hatebu_share_button_visible'    ,'.hatebu-button'],
-  ['is_bottom_pocket_share_button_visible'    ,'.pocket-button'],
-  ['is_bottom_line_at_share_button_visible'   ,'.line-button'],
-  ['is_bottom_pinterest_share_button_visible' ,'.pinterest-button'],
-  ['is_bottom_linkedin_share_button_visible'  ,'.linkedin-button'],
-  ['is_bottom_copy_share_button_visible'      ,'.copy-button']
+$sns_map = [
+  ['is_bottom_twitter_share_button_visible'   , '.twitter-button'],
+  ['is_bottom_mastodon_share_button_visible'  , '.mastodon-button'],
+  ['is_bottom_bluesky_share_button_visible'   , '.bluesky-button'],
+  ['is_bottom_misskey_share_button_visible'   , '.misskey-button'],
+  ['is_bottom_facebook_share_button_visible'  , '.facebook-button'],
+  ['is_bottom_threads_share_button_visible'   , '.threads-button'],
+  ['is_bottom_reddit_share_button_visible'    , '.reddit-button'],
+  ['is_bottom_hatebu_share_button_visible'    , '.hatebu-button'],
+  ['is_bottom_line_at_share_button_visible'   , '.line-button'],
+  ['is_bottom_pinterest_share_button_visible' , '.pinterest-button'],
+  ['is_bottom_linkedin_share_button_visible'  , '.linkedin-button'],
+  ['is_bottom_copy_share_button_visible'      , '.copy-button']
 ];
 
-for ($i=0; $i<count($css_arr); $i++){
-  $func = $css_arr[$i][0];
-  if (!$func()) {
-    $count ++;
-    $css[] = $css_arr[$i][1];
+foreach ($sns_map as [$check_func, $selector]) {
+  // SNSシェアボタン表示チェック
+  if (!$check_func()) {
+    $css[] = $selector;
   }
 }
 
-if ($count == count($css_arr)) {
+if (count($css) === count($sns_map)) {
   echo ".body .share-menu-button { display: none; }\n";
-} else if ($css) {
-  $css = implode(',', $css);
-  echo ".share-menu-content :is({$css}){ display: none; }\n";
+} else if (!empty($css)) {
+  $selectors = implode(', ', $css);
+  echo ".share-menu-content :is({$selectors}) { display: none; }\n";
 }
 
 
 //******************************************************************************
 //  タブ一覧
 //******************************************************************************
-$id_array = [];
 $tab_cnt = apply_filters('cocoon_index_max_category_tab_count', 3);
+$total_tabs = $tab_cnt + 1;
 
-for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']";
+$btn_selectors     = [];
+$arrow_selectors   = [];
+$content_selectors = [];
+
+for ($i=1; $i<=$total_tabs; $i++) {
+  $base = "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']";
+
+  $btn_selectors[]     = $base;
+  $arrow_selectors[]   = $base . ":before";
+  $content_selectors[] = "#index-tab-{$i}:checked ~ .tab-cont.tb{$i}";
 }
-$id = implode(',', $id_array ) ;
+
+$btn_id     = implode(",\n", $btn_selectors);
+$arrow_id   = implode(",\n", $arrow_selectors);
+$content_id = implode(",\n", $content_selectors);
 
 echo <<<EOF
-{$id} {
+{$btn_id} {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
   color: var(--text-color);
   font-weight: unset;
 }
 
-EOF;
-
-for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .index-tab-buttons .index-tab-button[for='index-tab-{$i}']:before";
-}
-$id = implode(',', $id_array ) ;
-
-echo <<<EOF
-{$id} {
+{$arrow_id} {
   background-color: var(--main-color);
   bottom: -11px;
   clip-path: polygon(0 0,100% 0, 50% 100%);
@@ -175,15 +141,7 @@ echo <<<EOF
   width: 22px;
 }
 
-EOF;
-
-for ($i=1; $i<=$tab_cnt + 1; $i++) {
-  $id_array [$i - 1] = "#index-tab-{$i}:checked ~ .tab-cont.tb{$i}";
-}
-$id = implode(',', $id_array ) ;
-
-echo <<<EOF
-{$id} {
+{$content_id} {
   animation: none;
   display: flex;
   flex-direction: column;
@@ -261,44 +219,98 @@ if (is_responsive_table_first_column_sticky_enable()) {
   top: -1px;
   width: 100%;
 }
+
 EOF;
 }
 
 
 //******************************************************************************
-//
-//  基本カラー
-//
+//  ダークモード
 //******************************************************************************
+if (get_theme_mod('hvn_darkmode_setting')) {
+  $body_color = '#333333';
+  $body_rgb = colorcode_to_rgb($body_color);
+
+  echo <<<EOF
+.hvn-dark {
+  --body-color: {$body_color};
+  --body-rgb-color: {$body_rgb['red']} {$body_rgb['green']} {$body_rgb['blue']};
+  --dark-content-color: #444;
+  --dark-footer-color: #666;
+  --hover-color: #777;
+  --dark-text-color: #fff;
+  --cocoon-text-color: var(--dark-text-color);
+  --title-color: var(--dark-text-color);
+}
+
+.hvn-dark-switch {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.hvn-dark .hvn-dark-switch .fa-moon:before {
+  color: #fff176;
+  font-weight: 900;
+}
+
+.hvn-dark .body:not(.hvn-content-border) {
+  --content-bgcolor: var(--body-color);
+}
+
+.hvn-dark .body:not(.hvn-content-border) .footer {
+  --content-bgcolor: var(--dark-footer-color);
+}
+
+.hvn-dark #footer {
+  background-color: var(--dark-footer-color);
+}
+
+.hvn-dark .body .appeal {
+  background-color: var(--body-color);
+}
+
+EOF;
+  if (get_theme_mod('hvn_category_color_setting')) {
+    echo <<<EOF
+.hvn-dark .front-top-page.no-sidebar #list-columns{
+  --title-color: #333;
+}
+
+EOF;
+  }
+}
+
 
 //******************************************************************************
-//  ヘッダー背景カラー
+//  フッターモバイルボタン
 //******************************************************************************
+$footer_text_color = 'var(--main-color)';
+$header_bg = get_header_background_color();
 
-// モバイルフッタボタン背景カラー
-$text = 'var(--main-color)';
-$color = get_header_background_color();
-if ($color) {
-  $text = '#ffffff';
+if ($header_bg) {
+  $footer_text_color = is_dark_hexcolor($header_bg) ? '#ffffff' : '#333333';
+
+  // 背景カラー
   echo <<<EOF
 .mobile-menu-buttons {
-  background-color: {$color};
+  background-color: {$header_bg};
 }
 
 EOF;
 }
 
-// モバイルフッタボタンテキスト
-$color = get_header_text_color();
-if ($color) {
-  $text = $color;
+$header_text = get_header_text_color();
+if ($header_text) {
+  $footer_text_color = $header_text;
 }
 
+// テキストカラー
 echo <<<EOF
 .mobile-menu-buttons .menu-button > a,
 .mobile-menu-buttons .menu-caption,
-.mobile-menu-buttons .menu-icon{
-  color: {$text};
+.mobile-menu-buttons .menu-icon {
+  color: {$footer_text_color};
 }
 
 EOF;
@@ -307,33 +319,84 @@ EOF;
 //******************************************************************************
 //  フッター背景カラー
 //******************************************************************************
-$text = '#333333';
-$footer_color = get_footer_background_color();
-if ($footer_color == null || $footer_color == "#ffffff") {
-  $footer_color = '#ffffff';
+$footer_bgcolor = get_footer_background_color() ?: '#fff';
+if (get_theme_mod('hvn_content_setting', true)) {
+  $content_color = '#fff';
+  $footer_color  = '#fff';
+} else {
+  $content_color = 'var(--body-color)';
+  $footer_color  = "{$footer_bgcolor}";
 }
 
-if (is_dark_hexcolor($footer_color)) {
-  $text = '#ffffff';
-}
-
+$footer_text_color = is_dark_hexcolor($footer_bgcolor) ? '#ffffff' : '#333333';
 
 echo <<<EOF
+:root {
+  --content-bgcolor: var(--dark-content-color, {$content_color});
+}
+
+.footer {
+  --content-bgcolor: var(--dark-content-color, {$footer_color});
+}
+
 .footer-bottom,
 .footer-bottom a,
 .footer-bottom a:hover {
-  border-color: {$text};
-  color: {$text};
+  color: var(--dark-text-color, {$footer_text_color});
 }
 
 .navi-footer-in > .menu-footer li,
-.navi-footer-in > .menu-footer li:last-child,
-.footer .footer-in .footer-bottom-content {
-  border-color: {$text};
+.navi-footer-in > .menu-footer li:last-child {
+  border-color: var(--dark-text-color, {$footer_text_color});
 }
 
-.hvn-dark-switch label:before {
-  color: {$text};
+EOF;
+
+
+//******************************************************************************
+//  コンテンツ枠
+//******************************************************************************
+echo <<<EOF
+.body:not(.hvn-content-border):is(.error404, .page, .single) .main,
+.body:not(.hvn-content-border).archive .entry-content,
+.body:not(.hvn-content-border) :is(.container, .navi-menu-content, .sidebar-menu-content) .widget {
+  --cocoon-text-color: var(--title-color);
+  --main-padding: 5px;
+  background-color: transparent;
+  color: var(--cocoon-text-color);
+}
+
+.body:not(.hvn-content-border) .footer aside.widget {
+  --cocoon-text-color: var(--dark-text-color, {$footer_text_color});
+}
+
+@container (width <= 460px) {
+  .body:not(.hvn-content-border) .widget_author_box .author-box {
+    --main-padding: var(--padding15);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+  }
+}
+
+EOF;
+
+//******************************************************************************
+//  カード枠
+//******************************************************************************
+echo <<<EOF
+.body :is(.list, .recommended) .e-card {
+  color: var(--title-color);
+}
+
+.body.hvn-card-border :is(.list, .recommended) .e-card {
+  background-color: var(--dark-content-color, #fff);
+  border-radius: var(--border-radius10);
+  color: var(--dark-text-color, var(--cocoon-text-color));
+  padding: var(--padding15);
+}
+
+.body:not(.hvn-card-border) :is(.list, .recommended) figure {
+  border-radius: var(--border-radius10);
 }
 
 EOF;
@@ -342,9 +405,15 @@ EOF;
 //******************************************************************************
 //  グローバルナビメニューデザイン
 //******************************************************************************
-$no = get_theme_mod('hvn_navi_setting');
-if ($no) {
-  $o_array = ['', 'center', 'left'];
+$navi_setting = get_theme_mod('hvn_navi_setting', '0');
+$origin_map = [
+  '1' => 'center',
+  '2' => 'left'
+];
+
+if ($navi_setting) {
+  $origin = $origin_map[$navi_setting];
+
   echo <<<EOF
 #navi .navi-in a:hover {
   background-color: unset;
@@ -356,10 +425,10 @@ if ($no) {
   content: '';
   height: 2px;
   left: 0;
+  position: absolute;
   transition: all .3s;
   transform: scale(0, 1);
-  transform-origin: {$o_array[$no]} top;
-  position: absolute;
+  transform-origin: {$origin} top;
   width: 100%;
 }
 
@@ -369,66 +438,6 @@ if ($no) {
 
 EOF;
 }
-
-
-//******************************************************************************
-//
-//  拡張
-//
-//******************************************************************************
-
-//******************************************************************************
-//  カード枠
-//******************************************************************************
-echo <<<EOF
-.body :is(.list, .is-auto-horizontal) .e-card {
-  color: var(--title-color);
-}
-
-.body.hvn-card-border :is(.list, .is-auto-horizontal) .e-card {
-  background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
-  border-radius: var(--border-radius10);
-  color: var(--dark-text-color, var(--cocoon-text-color));
-  padding: var(--padding15);
-}
-
-.body:not(.hvn-card-border) :is(.list, .is-auto-horizontal) figure {
-  border-radius: var(--border-radius10);
-}
-
-EOF;
-
-
-//******************************************************************************
-//  コンテンツ枠
-//******************************************************************************
-echo <<<EOF
-.body.hvn-content-border {
-  --content-bgcolor: var(--dark-content-bgcolor, var(--hvn-white-color));
-}
-
-.body:not(.hvn-content-border):is(.error404, .page, .single) .main,
-.body:not(.hvn-content-border).archive .entry-content,
-.body:not(.hvn-content-border) .container aside.widget {
-  --main-padding: 5px;
-  --content-bgcolor: var(--dark-body-color, var(--body-color));
-  --cocoon-text-color: var(--title-color);
-  color: var(--cocoon-text-color);
-}
-
-.body:not(.hvn-content-border) .footer aside.widget {
-  --content-bgcolor: var(--dark-footer-color, {$footer_color});
-  --cocoon-text-color: var(--dark-text-color, {$text});
-  color: var(--cocoon-text-color);
-}
-
-.body:not(.hvn-content-border) .nwa .widget_author_box .author-box {
-  --main-padding: var(--padding15);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-}
-
-EOF;
 
 
 //******************************************************************************
@@ -445,89 +454,57 @@ EOF;
 
 
 //******************************************************************************
-//  ローディング画面
-//******************************************************************************
-if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
-  if (!is_admin()) {
-    echo <<<EOF
-.loader-bg {
-  background-color: var(--body-color);
-  display: grid;
-  height: 100svh;
-  margin: auto;
-  place-content: center;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: 9999;
-}
-
-EOF;
-  }
-}
-
-
-//******************************************************************************
 //  拡張タイプ
 //******************************************************************************
 if (get_theme_mod('hvn_card_expansion_setting')) {
 
-  // カード2列
-  $css1 =<<<EOF
+  $css_parts = [
+    // カード2列
+    'column_2' => <<<EOF
 .list {
   --column: 2;
 }
 
-@media (width <=834px)  {
+@media (width <= 834px) {
   .list {
-    --column: 1;
+     --column: 1;
   }
 }
 
-EOF;
+EOF,
 
-  // 大きなカード（先頭のみ）
-  $css2 =<<<EOF
+    // 大きなカード（先頭のみ）
+    'first_big' => <<<EOF
 .front-top-page .list .a-wrap:first-child {
   grid-column: 1 / 3;
-  grid-row: 1 / 3;
 }
 
 @media (width <=834px)  {
   .front-top-page .list .a-wrap:first-child {
     grid-column: unset;
-    grid-row: unset;
   }
 }
 
-EOF;
+EOF,
 
-  // 縦型カード2、3列+カテゴリーごと（2、3カラム）
-  $css3 =<<<EOF
+    // 縦型カード2、3列+カテゴリーごと（2、3カラム）
+    'vertical_common' => <<<EOF
 .body .list-new-entries .card-content,
 .body .list-popular .card-content {
-  padding: 0 0 20px;
+  padding: 0 0 var(--gap30);
 }
-
-.body .list-new-entries .like,
-.body .list-popular .like {
-  display: flex;
-}
-
-
-/* 人気記事なし */
 
 .list.widget-entry-cards p {
   color: var(--title-color);
   width: 100%;
 }
 
-EOF;
+EOF,
 
-  // 大きなカード
-  $css4 =<<<EOF
+    // 大きなカード
+    'big_card_full' => <<<EOF
 .body.hvn-card-border .list.ect-big-card {
-  background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
+  background-color: var(--content-bgcolor);
   border-radius: var(--border-radius10);
   padding: var(--gap30) var(--main-padding);
 }
@@ -553,40 +530,34 @@ EOF;
   margin: 5px 0;
 }
 
-EOF;
+EOF
+  ];
 
   // カードタイプ
-  $card = [
-    'entry_card'      => 0,
-    'big_card_first'  => 1,
-    'big_card'        => 2,
-    'vertical_card_2' => 3,
-    'vertical_card_3' => 4
+  $presets = [
+    1 => $css_parts['column_2'],
+    2 => $css_parts['column_2'] . $css_parts['first_big'],
+    3 => $css_parts['first_big'],
+    4 => $css_parts['vertical_common'],
+    5 => $css_parts['big_card_full'],
   ];
 
-  // フロントページタイプ
-  $type = [
-    'index'               => 0,
-    'tab_index'           => 1,
-    'category'            => 2,
-    'category_2_columns'  => 3,
-    'category_3_columns'  => 4
+  // CSSマッピング（フロントページタイプとカードタイプ）
+  $matrix = [
+    'entry_card'      => ['index' => 1, 'tab_index' => 1, 'category' => 1, 'category_2_columns' => 1, 'category_3_columns' => 1],
+    'big_card_first'  => ['index' => 0, 'tab_index' => 0, 'category' => 2, 'category_2_columns' => 2, 'category_3_columns' => 2],
+    'big_card'        => ['index' => 5, 'tab_index' => 5, 'category' => 5, 'category_2_columns' => 5, 'category_3_columns' => 5],
+    'vertical_card_2' => ['index' => 0, 'tab_index' => 0, 'category' => 3, 'category_2_columns' => 4, 'category_3_columns' => 4],
+    'vertical_card_3' => ['index' => 0, 'tab_index' => 0, 'category' => 0, 'category_2_columns' => 4, 'category_3_columns' => 4],
   ];
 
-  // CSS
-  $css_array = [
-    [1, 1, 1, 1, 1],
-    [0, 0, 2, 2, 2],
-    [5, 5, 5, 5, 5],
-    [0, 0, 3, 4, 4],
-    [0, 0, 0, 4, 4]
-  ];
+  $card_type  = get_entry_card_type();
+  $page_type  = get_front_page_type();
 
-  $css =[ 0, $css1, $css1 . $css2, $css2, $css3, $css4];
-  $no = $css_array[$card[get_entry_card_type()]][$type[get_front_page_type()]];
+  $preset_no = $matrix[$card_type][$page_type] ?? 0;
 
-  if ($no) {
-    echo $css[$no];
+  if ($preset_no && isset($presets[$preset_no])) {
+    echo $presets[$preset_no];
   }
 }
 
@@ -594,20 +565,22 @@ EOF;
 //******************************************************************************
 //  カテゴリーごと背景色
 //******************************************************************************
-if (get_theme_mod('hvn_category_color_setting')) {
-  if (is_entry_card_type_vertical_card_3()
-   || is_front_page_type_category_3_columns()) {
-    $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
-    $rgb = hvn_color_mix_rgb($color, 0.25);
+if (
+  get_theme_mod('hvn_front_none_setting', true) &&
+  get_theme_mod('hvn_category_color_setting') &&
+  (is_entry_card_type_vertical_card_3() || is_front_page_type_category_3_columns())
+) {
+  $color = get_theme_mod('hvn_main_color_setting', HVN_MAIN_COLOR);
+  $rgb = hvn_color_mix_rgb($color, 0.25);
 
-    echo <<<EOF
+  echo <<<EOF
 :root {
   --category-color: {$rgb['red']} {$rgb['green']} {$rgb['blue']};
 }
 
 .front-top-page.no-sidebar #list-columns {
   --title-color: var(--dark-text-color, #333);
-  background-color: rgb(var(--dark-category-color, var(--category-color)) / 100%);
+  background-color: rgb(var(--category-color) / 100%);
   margin: 0 calc(50% - 50vw);
   padding: var(--gap30) calc(50vw - 50%);
 }
@@ -622,10 +595,10 @@ if (get_theme_mod('hvn_category_color_setting')) {
 
 EOF;
 
-    if (get_theme_mod('hvn_header_wave_setting')) {
-      echo <<<EOF
+  if (get_theme_mod('hvn_header_wave_setting')) {
+    echo <<<EOF
 .hvn-wave-category {
-  --body-rgb-color: var(--dark-category-color, var(--category-color));
+  --body-rgb-color: var(--category-color);
   display: block;
   height: 50px;
   margin: 0 calc(50% - 50vw) calc(var(--gap30) * -1);
@@ -634,7 +607,6 @@ EOF;
 }
 
 EOF;
-    }
   }
 }
 
@@ -647,7 +619,7 @@ if (!get_theme_mod('hvn_front_none_setting', true)) {
 .body .index-tab-button[for="index-tab-1"],
 .body .tab-cont.tb1,
 .body .list-new-entries {
-  display: none!important;
+  display: none;
 }
 
 EOF;
@@ -657,8 +629,8 @@ EOF;
 //******************************************************************************
 //  目次スタイル
 //******************************************************************************
-switch(get_theme_mod('hvn_toc_style_setting')) {
-  case 1:
+switch(get_theme_mod('hvn_toc_style_setting', '0')) {
+  case '1':
     echo <<<EOF
 .main .toc {
   border: 1px solid var(--main-color);
@@ -674,14 +646,14 @@ switch(get_theme_mod('hvn_toc_style_setting')) {
 }
 
 .main .toc-content {
-  padding: var(--gap30) var(--main-padding);
+  padding: var(--gap30);
 }
 
 EOF;
 
     break;
 
-  case 2:
+  case '2':
     echo <<<EOF
 .main .toc {
   background-clip: padding-box;
@@ -714,6 +686,11 @@ if (get_theme_mod('hvn_toc_setting')) {
   color: var(--hover-color);
 }
 
+.hvn-scroll-toc .sidebar-scroll .toc-content {
+  max-height: var(--hvn-toc-height);
+  overflow-y: auto;
+}
+
 EOF;
 }
 
@@ -724,32 +701,56 @@ EOF;
 if (get_theme_mod('hvn_toc_fix_setting')) {
   echo <<<EOF
 .hvn-modal {
-  display: none;
   height: 100%;
-  left: 0;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
-  top: 0;
+  transition: opacity .3s;
+  visibility: hidden;
   width: 100%;
   z-index: 9999;
 }
 
-#hvn-open:checked + .hvn-modal {
-  animation:hvn-animation .3s;
-  display:block;
+.hvn-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .hvn-content-wrap {
-  background-color: var(--dark-content-bgcolor, var(--hvn-white-color));
+  background-color: var(--content-bgcolor);
   border: 0;
+  display: flex;
+  flex-direction: column;
   left: 50%;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
+  max-height: calc(100% - 100px);
+  opacity: 0;
+  overflow: hidden;
   padding: var(--gap30);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 1170px;
   z-index: 2;
+}
+
+.hvn-modal:target .hvn-content-wrap {
+  opacity: 1;
+}
+
+.hvn-content-wrap .toc {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hvn-content-wrap .toc-content {
+  flex-grow: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 #hvn-toc .hvn-title {
@@ -769,7 +770,7 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   z-index: 1;
 }
 
-.hvn-open-btn {
+.hvn .hvn-open-btn {
   align-items: center;
   background-color: #fff;
   border: 1px solid var(--main-color);
@@ -782,22 +783,9 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
   place-content: center;
   position: fixed;
   right: var(--gap30);
-  visibility: hidden;
+  text-decoration: none;
   width: 50px;
   z-index: 999;
-}
-
-.hvn-open-btn.active{
-  visibility: visible;
-}
-
-@keyframes hvn-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (width < 1190px) {
@@ -807,10 +795,14 @@ if (get_theme_mod('hvn_toc_fix_setting')) {
 }
 
 @media (width <=1023px) {
-  .hvn-open-btn {
+  .hvn .hvn-open-btn {
     bottom: 60px;
     right: 10px;
   }
+}
+
+html:has(#hvn-toc:target) {
+  overflow: hidden;
 }
 
 EOF;
@@ -822,7 +814,12 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_notice_setting')) {
   echo <<<EOF
-.notice-area {
+.header-container {
+  position: relative;
+  z-index: 3;
+}
+
+.notice-area-wrap {
   position: sticky;
   top: 0;
   z-index: 3;
@@ -846,57 +843,6 @@ EOF;
 
 
 //******************************************************************************
-//  いいねボタン
-//******************************************************************************
-if (get_theme_mod('hvn_like_setting')) {
-  echo <<<EOF
-.body .list .like {
-  bottom: 0;
-  display: flex;
-  position: absolute;
-  z-index: 1;
-}
-
-
-.like {
-  font-size: var(--cocoon-text-size-s);
-  line-height: 1;
-}
-
-.date-tags .like {
-  display: flex;
-}
-
-.like .button:before {
-  color: var(--s-text-color);
-  content: '\\f004';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-.like .button.active:before {
-  color: #e589a2;
-}
-
-.like .count {
-  color: var(--s-text-color);
-  font-size: var(--cocoon-text-size-s);
-  margin-left: 3px;
-}
-
-.single .date-tags {
-  justify-content: space-between;
-}
-
-.like .button {
-  cursor: pointer;
-}
-
-EOF;
-}
-
-
-//******************************************************************************
 //  評価スター・ランキングハート
 //******************************************************************************
 if (get_theme_mod('hvn_star_setting')) {
@@ -908,7 +854,7 @@ if (get_theme_mod('hvn_star_setting')) {
 .rating-star .fa-star:before,
 .rating-star .fa-star-half-alt:before,
 .rating-star .fa-star-half-alt:after {
-  content: "\\f004";
+  content: '\\f004';
   color: #e589a2;
 }
 
@@ -945,30 +891,20 @@ EOF;
 
 
 //******************************************************************************
-//  横型カードオートプレイ
+//  オートプレイ
 //******************************************************************************
 if (get_theme_mod('hvn_swiper_auto_setting')) {
   echo <<<EOF
+.body .is-auto-horizontal {
+  --swiper-pagination-bullet-inactive-color: var(--dark-text-color, #333);
+}
+
 .body.hvn .swiper-pagination {
   bottom: 0;
 }
 
 .body .swiper-pagination-bullet-active {
   background-color: var(--main-color);
-}
-
-.body .content-top aside.widget_navi_entries:has(.swiper) {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0;
-}
-
-.body .content-top aside.widget_navi_entries:has(.swiper) .widget-title {
-  display: none;
-}
-
-.body .content-top .navi-entry-cards.swiper {
-  margin: 0;
 }
 
 EOF;
@@ -978,7 +914,7 @@ EOF;
 //******************************************************************************
 //  縦アイキャッチ背景ぼかし
 //******************************************************************************
-if ($_HVN_EYECATCH) {
+if ($GLOBALS['hvn_eyecatch']) {
   echo <<<EOF
 .eye-catch img {
   margin: 0 auto;
@@ -1029,7 +965,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
 }
 
 :is(.widget_pages, .widget_archive, .widget_categories) .children a {
-  padding-left: calc(1.5em + 5px);
+  text-indent: 1.5em;
 }
 
 :is(.widget_pages, .widget_archive, .widget_categories) ul:not(.children) > li > a:before {
@@ -1044,7 +980,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
   margin-left:auto;
 }
 
-.sidebar .widget_tag_cloud .tagcloud a {
+.widget_tag_cloud .tagcloud a {
   width: 100%;
 }
 
@@ -1091,18 +1027,73 @@ EOF;
 //******************************************************************************
 //  プロフィール背景画像
 //******************************************************************************
-if (wp_get_attachment_url(get_theme_mod('hvn_prof_setting'))) {
+$img_url   = wp_get_attachment_url(get_theme_mod('hvn_prof_setting'));
+$video_url = wp_get_attachment_url(get_theme_mod('hvn_prof_video_setting'));
+
+$bg_image = (!$video_url && $img_url) ? "url('$img_url')" : "none";
+
+if ($img_url || $video_url) {
   echo <<<EOF
-.body .nwa .author-thumb {
-  background: var(--prof-image) no-repeat center;
-  background-size: cover;
-  height: 200px;
-  margin: 0 0 50px;
-  width: 100%;
+@container (width <=460px) {
+  .body.hvn .author-thumb {
+    background: {$bg_image} no-repeat center;
+    background-size: cover;
+    height: 200px;
+    margin: 0 0 50px;
+    position: relative;
+    width: 100%;
+  }
+
+  .body.hvn .author-thumb img {
+    margin-top: 150px;
+  }
+
+  .body.hvn .hvn-author-video {
+    display: block;
+    height: 200px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
-.body .nwa .author-thumb img {
-  margin-top: 150px;
+.hvn-author-video {
+  display: none;
+}
+
+EOF;
+}
+
+
+/*******************************************************************************
+**  プロフィールボタン表示
+*******************************************************************************/
+if (get_theme_mod('hvn_profile_btn_setting')) {
+  echo <<<EOF
+.hvn-profile-btn a {
+  border-radius: 0;
+  display: grid;
+  margin: var(--padding15) 0 0 0;
+  text-decoration: none;
+}
+
+.hvn-profile-btn a:before {
+  content: var(--hvn-profile);
+}
+
+EOF;
+}
+
+
+/*******************************************************************************
+**  SNSフォローカラー表示
+*******************************************************************************/
+if (get_theme_mod('hvn_profile_follows_color_setting')) {
+  echo <<<EOF
+.body .author-box .sns-follow-buttons a.follow-button {
+  --cocoon-text-color: var(--cocoon-sns-color);
 }
 
 EOF;
@@ -1110,23 +1101,32 @@ EOF;
 
 
 //******************************************************************************
-//
-//  オプション
-//
-//******************************************************************************
-
-//******************************************************************************
 //  タイトル・説明文表示
 //******************************************************************************
 if (get_theme_mod('hvn_tcheck_option_setting')) {
-  $n_title= get_theme_mod('hvn_title_new_option_setting' ,'NewPost');
-  $n_sub  = get_theme_mod('hvn_title_new_sub_option_setting' ,'新着・更新された記事です');
+  $settings = hvn_get_title_settings();
+  $selectors = [
+    'new'      => '.list-new-entries',
+    'popular'  => '.list-popular',
+    'category' => '.list-columns',
+  ];
 
-  $p_title= get_theme_mod('hvn_title_popular_option_setting' ,'Popular');
-  $p_sub  = get_theme_mod('hvn_title_popular_sub_option_setting' ,'本日読まれている記事です');
+  $dynamic_css = '';
+  $all_selectors = implode(',', $selectors);
 
-  $c_title= get_theme_mod('hvn_title_category_option_setting','Category');
-  $c_sub  = get_theme_mod('hvn_title_category_sub_option_setting' ,'カテゴリーから記事を探す');
+  foreach ($selectors as $key => $sel) {
+    if (!isset($settings[$key])) continue;
+
+    $group = $settings[$key];
+    $t = get_theme_mod($group['title']['key'], $group['title']['default']);
+    $s = get_theme_mod($group['sub']['key'], $group['sub']['default']);
+
+    echo <<<EOF
+{$sel}:before { content: "{$t}"; }
+{$sel}:after  { content: "{$s}"; }
+
+EOF;
+  }
 
   echo <<<EOF
 :root {
@@ -1139,8 +1139,12 @@ if (get_theme_mod('hvn_tcheck_option_setting')) {
   display: none;
 }
 
-.hvn .list-new-entries:before,
-.hvn .list-columns:before {
+.hvn :is({$all_selectors}) {
+  position: relative;
+  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30))!important;
+}
+
+.hvn :is({$all_selectors}):before {
   color: var(--title-color);
   font-size: var(--main-font-size);
   font-weight: bold;
@@ -1151,49 +1155,19 @@ if (get_theme_mod('hvn_tcheck_option_setting')) {
   z-index: 1;
 }
 
-.hvn .list-new-entries:before {
-  content: "{$n_title}";
-}
-
-.hvn .list-columns.list-popular:before {
-  content: "{$p_title}";
-}
-
-.hvn .list-columns:before {
-  content: "{$c_title}";
-}
-
-.hvn .list-new-entries:after,
-.hvn .list-columns:after {
+.hvn :is({$all_selectors}):after {
   color: var(--title-color);
   display: block;
   font-size: var(--sub-font-size);
+  left: 0;
   position: absolute;
   text-align: center;
   width: 100%;
   top: calc(var(--main-font-size) * 1.8);
 }
 
-.hvn .list-new-entries:after {
-  content: "{$n_sub}";
-}
-
-.hvn .list-columns.list-popular:after {
-  content: "{$p_sub}";
-}
-
-.hvn .list-columns:after {
-  content: "{$c_sub}";
-}
-
-.hvn .list-new-entries,
-.hvn .list-columns {
-  padding-top: calc((var(--main-font-size) + var(--sub-font-size)) * 1.8 + var(--gap30))!important;
-}
-
 EOF;
 }
-
 
 //******************************************************************************
 //  コメント
@@ -1212,12 +1186,10 @@ if (get_theme_mod('hvn_comment_setting')) {
 
 }
 
-
 .hvn-comment figure {
   aspect-ratio: 1 / 1;
   width: 50px;
 }
-
 
 .hvn-comment img {
   object-fit: cover;
@@ -1229,10 +1201,36 @@ EOF;
 
 
 //******************************************************************************
-//
-//  メインビジュアル
-//
+//  「画像」ブロックに拡大効果
 //******************************************************************************
+if (get_theme_mod('image_zoom_effect', 'none') !== 'none') {
+  echo <<<EOF
+:is(.attachment, .wp-block-image) :is(
+  a[href$=".jpg"  i],
+  a[href$=".jpeg" i],
+  a[href$=".png"  i],
+  a[href$=".gif"  i],
+  a[href$=".webp" i]
+) {
+  cursor: zoom-in;
+}
+
+EOF;
+}
+
+
+//******************************************************************************
+//  フロントページヘッダー表示
+//******************************************************************************
+if (!get_theme_mod('hvn_header_option_setting', true)) {
+  echo <<<EOF
+.front-top-page .header {
+  display: none;
+}
+
+EOF;
+}
+
 
 //******************************************************************************
 //  波線
@@ -1249,36 +1247,19 @@ if (get_theme_mod('hvn_header_wave_setting')) {
 }
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  animation: move-forever var(--duration, 25s) cubic-bezier(.55, .5, .45, .5) infinite;
+  animation-delay: var(--delay, 0s);
 }
 
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
+/* 属性による個別設定の管理 */
+.parallax > use[data-wave-index="1"] { --duration: 7s;  --delay: -2s; }
+.parallax > use[data-wave-index="2"] { --duration: 10s; --delay: -3s; }
+.parallax > use[data-wave-index="3"] { --duration: 13s; --delay: -4s; }
+.parallax > use[data-wave-index="4"] { --duration: 20s; --delay: -5s; }
 
 @keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
+  0%   { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
 }
 
 EOF;
@@ -1286,12 +1267,22 @@ EOF;
 
 
 //******************************************************************************
-//  ヘッダーロゴ非表示
+//  フォント
 //******************************************************************************
-if (!get_theme_mod('hvn_header_option_setting', true)) {
+$selectors = [];
+$font_family = get_theme_mod('hvn_font_setting', '');
+if (!get_theme_mod('hv_header_option_setting')) {
+  $selectors[] = '.hvn-header .message';
+}
+
+$selectors[] = '.logo-text';
+
+if (!empty($font_family)) {
+  $selector_string = implode(",\n", $selectors);
+
   echo <<<EOF
-.front-top-page .header {
-  display: none;
+{$selector_string} {
+  font-family: "{$font_family}", sans-serif;
 }
 
 EOF;
@@ -1383,32 +1374,19 @@ EOF;
 
 
 //******************************************************************************
-//  ヘッダーロゴ表示
-//******************************************************************************
-if (get_theme_mod('hvn_header_logo_setting')) {
-  echo <<<EOF
-.front-top-page .header {
-  display: none;
-}
-
-EOF;
-}
-
-
-//******************************************************************************
 //  フィルター処理
 //******************************************************************************
 $url  = 'none';
-$no = get_theme_mod('hvn_header_filter_setting');
+$no = get_theme_mod('hvn_header_filter_setting', '0');
 switch($no) {
-  case 1:
-  case 2:
-  case 3:
+  case '1':
+  case '2':
+  case '3':
     $url = HVN_SKIN_URL . 'assets/img/' . $no . '.gif';
     $url = "url({$url})";
     break;
 
-  case 4:
+  case '4':
     echo <<<EOF
 .hvn-header video,
 .hvn-swiper {
@@ -1441,21 +1419,20 @@ echo <<<EOF
 
 EOF;
 
-if (get_theme_mod('hvn_header_setting') != 'image' && hvn_image_count() < 2) return;
-
 
 //******************************************************************************
 //  スライド中のズーム
 //******************************************************************************
-$zoom = get_theme_mod('hvn_header_animation_setting');
-if ($zoom != '0') {
-  if ($zoom == '1') {
-    $s_zoom = 1;
-    $e_zoom = 1.1;
-  } else {
-    $s_zoom = 1.1;
-    $e_zoom = 1;
-  }
+if (get_theme_mod('hvn_header_setting', 'none') != 'image' && hvn_image_count() < 2) return;
+
+$zoom_setting = get_theme_mod('hvn_header_animation_setting', '0');
+$zoom_map = [
+  '1' => ['s' => 1,   'e' => 1.1],
+  '2' => ['s' => 1.1, 'e' => 1],
+];
+if (isset($zoom_map[$zoom_setting])) {
+  $s_zoom = $zoom_map[$zoom_setting]['s'];
+  $e_zoom = $zoom_map[$zoom_setting]['e'];
 
   echo <<<EOF
 :root {
@@ -1502,7 +1479,7 @@ echo <<<EOF
 .hvn-swiper img {
   height: var(--height);
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   vertical-align: top;
   width: 100%;
 }
@@ -1515,92 +1492,46 @@ echo <<<EOF
   width: 100%;
 }
 
-.hvn-swiper .swiper-slide-active .img1 {
+.hvn-swiper.is-changed .swiper-slide-active .img1 {
   animation: slide1 var(--ani);
 }
 
-.hvn-swiper .swiper-slide-active .img2 {
+.hvn-swiper.is-changed .swiper-slide-active .img2 {
   animation: slide2 var(--ani);
 }
 
 EOF;
 
-switch(get_theme_mod('hvn_header_fade_setting')) {
-  // 横方向
-  case 'horizontal':
+$fade_setting = get_theme_mod('hvn_header_fade_setting', 'fade');
+$fade_map = [
+  'horizontal' => [
+    'slide1' => ['0%' => '100% 100%, 100% 100%, 100% 0, 100% 0', '100%' => '0 100%, 100% 100%, 100% 0, 0 0']
+  ],
+  'vertical' => [
+    'slide1' => ['0%' => '0 100%, 100% 100%, 100% 100%, 0 100%', '100%' => '0 0, 100% 0, 100% 100%, 0 100%']
+  ],
+  'h-split' => [
+    'slide1' => ['0%' => '100% 0, 100% 0, 100% 50%, 100% 50%', '100%' => '100% 0, 0 0, 0 50%, 100% 50%'],
+    'slide2' => ['0%' => '0 49%, 0 49%, 0 100%, 0 100%', '100%' => '0 49%, 100% 49%, 100% 100%, 0 100%']
+  ],
+  'v-split' => [
+    'slide1' => ['0%' => '0 100%, 50% 100%, 50% 100%, 0 100%', '100%' => '0 100%, 50% 100%, 50% 0, 0 0'],
+    'slide2' => ['0%' => '49% 0, 100% 0, 100% 0, 49% 0', '100%' => '49% 100%, 100% 100%, 100% 0, 49% 0']
+  ],
+];
+
+if (isset($fade_map[$fade_setting])) {
+  foreach ($fade_map[$fade_setting] as $name => $steps) {
     echo <<<EOF
-@keyframes slide1 {
+@keyframes {$name} {
   0% {
-    clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    clip-path: polygon({$steps['0%']});
   }
   100% {
-    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
+    clip-path: polygon({$steps['100%']});
   }
 }
 
 EOF;
-    break;
-
-  // 縦方向
-  case 'vertical':
-    echo <<<EOF
-@keyframes slide1 {
-  0% {
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-EOF;
-    break;
-
-  // 横分割
-  case 'h-split':
-    echo <<<EOF
-@keyframes slide1 {
-  0% {
-    clip-path: polygon(0 0, 0 0%, 0 50%, 0 50%);
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-  }
-}
-
-@keyframes slide2 {
-  0% {
-    clip-path: polygon(100% 49%, 100% 49%, 100% 100%, 100% 100%);
-  }
-  100% {
-    clip-path: polygon(100% 49%, 0 49%, 0 100%, 100% 100%);
-  }
-}
-
-EOF;
-    break;
-
-  // 縦分割
-  case 'v-split':
-    echo <<<EOF
-@keyframes slide1 {
-  0% {
-    clip-path: polygon(0 100%, 50% 100%, 50% 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 100%, 50% 100%, 50% 0, 0 0);
-  }
-}
-
-@keyframes slide2 {
-  0% {
-    clip-path: polygon(49% 0, 100% 0, 100% 0, 49% 0);
-  }
-  100% {
-    clip-path: polygon(49% 100%, 100% 100%, 100% 0, 49% 0);
-  }
-}
-
-EOF;
-    break;
 }

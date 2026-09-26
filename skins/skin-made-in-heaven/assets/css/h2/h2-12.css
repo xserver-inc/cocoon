@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 付箋(章番) */
-
 .editor-styles-wrapper .article h2,
 .article h2 {
   background: linear-gradient(135deg, transparent 25%, var(--hover-color) 26%, var(--hover-color) 50%, transparent 51%, transparent 75%, var(--hover-color) 76%, var(--hover-color));
@@ -41,7 +40,7 @@
 .toc-list > li:before {
   background-color: var(--main-color);
   border-radius: 50%;
-  color: var(--text-color)!important;
+  color: var(--text-color) !important;
   content: counter(toc-number);
   font-size: 12px;
   font-weight: normal;

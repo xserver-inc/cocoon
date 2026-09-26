@@ -4,8 +4,7 @@ if (!defined('ABSPATH')) exit;
 
 global $_THEME_OPTIONS;
 global $_MOBILE_COPY_BUTTON;
-global $_HVN_EYECATCH;
-global $_HVN_NOTICE;
+global $_IS_SWIPER_ENABLE;
 
 $skin_url = get_skin_url();
 // ふわっと追加
@@ -38,12 +37,12 @@ define('HVN_MAIN_COLOR'   , '#40210f');
 define('HVN_TEXT_COLOR'   , '#ffffff');
 define('HVN_BODY_COLOR'   , '#f5f4f1');
 define('HVN_SCROLL_COLOR' , '#ffffff');
+define('HVN_CONTENT_COLOR', '#ffffff');
 
 define('HVN_GAP' , 30);
-define('HVN_MAIN_WIDTH', 770);
-define('HVN_SIDE_WIDTH', 370);
 
 $_MOBILE_COPY_BUTTON = true;
+$_IS_SWIPER_ENABLE = true;
 $_THEME_OPTIONS = [
 // 全体
   'site_key_color' => '',
@@ -78,16 +77,34 @@ $_THEME_OPTIONS = [
   'global_navi_sub_menu_width' => 240,
 
 // 広告
+  'ad_pos_index_middle_visible' => 0,
   'pr_label_category_page_visible' => 0,
   'pr_label_tag_page_visible' => 0,
   'pr_label_small_visible' => 0,
   'pr_label_large_visible' => 1,
   'pr_label_small_caption' => '',
 
+// タイトル
+  'meta_description_to_singular' => 1,
+  'meta_keywords_to_singular' => 1,
+  'category_page_title_format' => hvn_category_title_format_mapping(),
+  'meta_description_to_category' => 1,
+  'meta_keywords_to_category' => 1,
+
+// SEO
+  'meta_referrer_content' => 'no-referrer-when-downgrade',
+  'seo_date_type' => 'both_date',
+
 // カラム
+  'main_column_contents_width' => 750,
   'main_column_padding' => 10,
   'main_column_border_width' => 0,
+
+  'sidebar_contents_width' => 350,
+  'sidebar_padding' => 10,
   'sidebar_border_width' => 0,
+
+  'main_sidebar_margin' => 50,
 
 // インデックス
   'index_new_entry_card_count' => 4,
@@ -120,9 +137,11 @@ $_THEME_OPTIONS = [
   'post_navi_visible' => 1,
   'post_navi_type' => 'square',
   'post_navi_position' => 'under_related',
+  'post_navi_exclude_category_ids' => get_theme_option('archive_exclude_category_ids', []),
   'post_navi_border_visible' => 0,
   'single_breadcrumbs_position' => 'main_top',
   'single_breadcrumbs_include_post' => 0,
+  'single_breadcrumbs_category_priority' => 'default',
 
 // 固定ページ
   'page_comment_visible' => 0,
@@ -140,14 +159,16 @@ $_THEME_OPTIONS = [
   'post_author_visible' => 0,
 
 // 目次
+  'toc_visible' => 1,
+  'multi_page_toc_visible' => 1,
+  'category_toc_visible' => 0,
+  'tag_toc_visible' => 0,
   'toc_toggle_switch_enable' => 0,
   'toc_display_count' => 2,
   'toc_depth' => 3,
   'toc_number_type' => 'none',
   'toc_position_center' => 0,
   'toc_heading_inner_html_tag_enable' => 0,
-  'category_toc_visible' => 0,
-  'tag_toc_visible' => 0,
 
 // SNSシェア
   'sns_top_share_buttons_visible' => 0,
@@ -157,19 +178,22 @@ $_THEME_OPTIONS = [
   'sns_bottom_share_logo_caption_position' => 'high_and_low_lc',
   'sns_bottom_share_buttons_count_visible' => 0,
   'sns_front_page_bottom_share_buttons_visible' => 0,
-  'sns_single_bottom_share_buttons_visible' => 1,
-  'sns_page_bottom_share_buttons_visible' => 1,
   'sns_category_bottom_share_buttons_visible' => 0,
   'sns_tag_bottom_share_buttons_visible' => 0,
+  'sns_share_count_cache_enable' => 1,
+  'sns_share_count_cache_interval' => 6,
+  'another_scheme_sns_share_count' => 0,
+
 
 // SNS フォロー
   'sns_front_page_follow_buttons_visible' => 0,
-  'sns_single_follow_buttons_visible' => 1,
-  'sns_page_follow_buttons_visible' => 1,
   'sns_category_follow_buttons_visible' => 0,
   'sns_tag_follow_buttons_visible' => 0,
   'sns_follow_button_color' => 'brand_color_white',
   'sns_follow_buttons_count_visible' => 0,
+  'sns_follow_count_cache_enable' => 1,
+  'sns_follow_count_cache_interval' => 12,
+  'another_scheme_sns_follow_count' => 0,
 
 // 画像
   'eyecatch_center_enable' => 1,
@@ -189,6 +213,7 @@ $_THEME_OPTIONS = [
   'external_blogcard_target_blank' => 1,
 
 // アピールエリア
+  'appeal_area_background_color' => '',
   'appeal_area_button_background_color' => '',
 
 // コード
@@ -205,7 +230,7 @@ $_THEME_OPTIONS = [
   'comment_form_display_type' => 'toggle_button',
 
 // おすすめカード
-  'recommended_cards_margin_enable' => 1,
+  'recommended_cards_style' => 'image_only',
   'recommended_cards_area_both_sides_margin_enable' => 1,
 
 // カルーセル
@@ -230,7 +255,7 @@ $_THEME_OPTIONS = [
   'slide_in_content_bottom_sidebar_visible' => 0,
 
 // 管理者画面
-  'admin_list_memo_visible' => 1,
+  'admin_panel_pv_type' => 'cocoon',
 
 // ウィジェット
   'exclude_widget_classes' => [
@@ -291,6 +316,9 @@ $_THEME_OPTIONS = [
   ],
 
 // エディター
+  'gutenberg_editor_enable' => 1,
   'visual_editor_style_enable' => 1,
   'admin_editor_counter_visible' => 1,
 ];
+
+$_THEME_OPTIONS = apply_filters('hvn_theme_options', $_THEME_OPTIONS);

@@ -1,20 +1,16 @@
 @charset "UTF-8";
 
 /* 矢印3（矢印マスク） */
-
 .scrolldown {
-  color: var(--hvn-scroll);
+  bottom: 0;
+  color: var(--scroll-color);
   height: fit-content;
-  inset: 0;
+  left: 50%;
   letter-spacing: 0.05em;
   margin: auto 0 40px;
   position: absolute;
-  text-align: center;
+  transform: translateX(-50%);
   z-index: 1;
-}
-
-.scrolldown span {
-  cursor: pointer;
 }
 
 .scrolldown .arrow-wrap {
@@ -31,11 +27,10 @@
   animation: flow 3s linear infinite;
   background: linear-gradient(var(--main-color) 40%, transparent 40%);
   background-clip: text;
-  -webkit-background-clip: text;
   background-size: 100% 200%;
   color: transparent;
-
 }
+
 .scrolldown .arrow {
   color: #fff;
   left: 0;
@@ -46,6 +41,11 @@
 }
 
 @keyframes flow {
-  0%   { background-position: 0 100%; }
-  100% { background-position: 0 -100%; }
+  0% {
+    background-position: 0 100%;
+  }
+
+  100% {
+    background-position: 0 -100%;
+  }
 }

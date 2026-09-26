@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 標準(左縦線) */
-
 .editor-styles-wrapper .article h4,
 .article h4 {
   border-left: 10px solid var(--hover-color);

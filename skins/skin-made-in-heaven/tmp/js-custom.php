@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
+
 global $_IS_SWIPER_ENABLE;
-global $_HVN_NOTICE;
 
 $n = HVN_COUNT;
 $button = '<button class="sub-item" aria-label="'. __('もっと見る', THEME_NAME) . '"></button>';
@@ -13,7 +13,7 @@ $button = '<button class="sub-item" aria-label="'. __('もっと見る', THEME_N
 //******************************************************************************
 if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') != 'none')) {
   echo <<<EOF
-(function($) {
+jQuery(function($) {
   $('body').css('overflow-y', 'hidden');
   if (sessionStorage.getItem('visited')) {
     $('.loader-bg').remove();
@@ -27,7 +27,7 @@ if (is_front_top_page() && (get_theme_mod('hvn_front_loading_setting', 'none') !
     }, 2000);
     sessionStorage.setItem('visited', 'first');
   }
-})(jQuery);
+});
 
 EOF;
 }
@@ -37,7 +37,7 @@ EOF;
 //  メインビジュアルy座標取得
 //******************************************************************************
 echo <<<EOF
-(function($) {
+jQuery(function($) {
   function setHeight() {
     var a = 0;
     if ($('.hvn-header').length) {
@@ -54,7 +54,7 @@ echo <<<EOF
   });
 
   setHeight();
-})(jQuery);
+});
 
 EOF;
 
@@ -64,7 +64,7 @@ EOF;
 //******************************************************************************
 if (is_responsive_table_first_column_sticky_enable()) {
   echo <<<EOF
-(function($) {
+jQuery(function($) {
   var flag = 0;
   var next = 0;
   $('.stfc-sticky tr').each(function(i) {
@@ -79,93 +79,40 @@ if (is_responsive_table_first_column_sticky_enable()) {
       }
     }
   });
-})(jQuery);
+});
 
 EOF;
 }
 
 
 //******************************************************************************
-//  FAQアコーディオン無効
+//  「FAQ」ブロック（アコーディオン）のアニメ無効
 //******************************************************************************
 echo <<<EOF
-(function($) {
+jQuery(function($) {
   $('.is-style-accordion > .faq > .faq-question').off('click').click(function() {
     $(this).next('.is-style-accordion .faq-answer').slideToggle(0);
     $(this).toggleClass('active');
   });
-})(jQuery);
-
-
-EOF;
-
-
-//******************************************************************************
-//  「新着記事」タブ表示
-//******************************************************************************
-if (is_front_top_page() &&  !get_theme_mod('hvn_front_none_setting', true)) {
-  echo <<<EOF
-(function($) {
-  $('#index-tab-2').prop('checked', true);
-})(jQuery);
+});
 
 EOF;
-}
 
 
 //******************************************************************************
 //  オートプレイ
 //******************************************************************************
-if (get_theme_mod('hvn_swiper_auto_setting') && $_IS_SWIPER_ENABLE) {
-  $js = <<<EOF
-    loop: true,
-    speed: 1000,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-EOF;
-  $swip_count = 0;
-
-  // [C]ナビウィジェットパラメータリスト取得
-  $info = get_option('widget_navi_entries');
-
-  // コンテンツ上部ウィジェット取得
-  $all_widgets = wp_get_sidebars_widgets();
-  $target_widgets = $all_widgets['content-top'];
-
-  // コンテンツ上部の[C]ナビカード数
-  $navis = preg_grep('/navi_entries/', $target_widgets);
-
-  if (count($navis)) {
-    foreach ($navis as $navi) {
-      // ウィジェット番号取得
-      $parsed = wp_parse_widget_id($navi);
-      $no = $parsed['number'];
-
-      // ウィジェット設定値取得
-      $name = $info[$no]['name'];
-      $swip = $info[$no]['is_horizontal'];
- 
-      if ($swip) {
-        $swip_count ++;
-
-        // メニュー数チェック
-        if (count(wp_get_nav_menu_items($name)) < 3) {
-          $js = null;
-        }
-      }
-    }
-
-    // 横型表示数チェック
-    if ($swip_count > 1) {
-      $js = null;
-    }
-    echo <<<EOF
+if (get_theme_mod('hvn_swiper_auto_setting') && is_recommended_cards_visible()) {
+  echo <<<EOF
 const autoSwiper = new Swiper('.is-auto-horizontal.swiper', {
   slidesPerView: 'auto',
   spaceBetween: 30,
-  {$js}
+  loop: true,
+  speed: 1000,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -177,7 +124,6 @@ const autoSwiper = new Swiper('.is-auto-horizontal.swiper', {
 });
 
 EOF;
-  }
 }
 
 
@@ -186,100 +132,96 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_toc_setting')) {
   echo <<<EOF
-(function($) {
-  // 見出し判定位置調整（font-size）
+jQuery(function($) {
   const val = 50;
-  let footerTop;
-  let lastBodyHeight = 0;
+  let pos = [];
+  let ticking = false;
 
-  // 表示対象の目次取得
-  const Tocs = $('.sidebar-scroll .toc-widget-box li:not(.display-none) > a');
-  let Pos = new Array();
+  const tocItems = $('.sidebar-scroll .toc-widget-box li:not(.display-none) > a');
 
-  // 章範囲設定
-  function init() {
-    let cnt = 0;
-    Pos = [];
-    for (var i=0; i<Tocs.length; i++) {
-      let ID = Tocs.eq(i).attr('href');
-
-      // 自ページの見出しだけ設定
-      if (!ID.startsWith('#')) {
-        continue;
+  // 目次の範囲設定
+  function updatePositions() {
+    pos = [];
+    tocItems.each(function() {
+      const a = $(this);
+      const id = a.attr('href');
+      if (id && id.startsWith('#') && $(id).length) {
+        pos.push({
+          top: $(id).offset().top - val,
+          bottom: 0,
+          element: a.parent()
+        });
       }
-      let top = $(ID).offset().top - val;
-      let bottom = null;
+    });
 
-      Pos[cnt] = {top: top, bottom: bottom};
-      Pos[cnt].no = i;
-
-      // 次の章までを領域とする
-      if (cnt > 0) {
-        Pos[cnt - 1].bottom = top;
-      }
-      cnt++;
+    const len = pos.length;
+    // 次の見出しまでの範囲設定
+    for (let i = 0; i < len - 1; i++) {
+      pos[i].bottom = pos[i + 1].top;
     }
 
-    // 最後の章の下位置を設定
-    if (cnt > 0) {
-      footerTop = $('.article').offset().top;
-      Pos[cnt - 1].bottom = footerTop + $('.article').height();
+    // 最後の見出し
+    if (len > 0) {
+      pos[len - 1].bottom = $('.article').offset().top + $('.article').outerHeight();
     }
-    lastBodyHeight = $('body').height();
   }
 
   // ハイライト表示
   function currentCheck() {
-    if ($('body').height() != lastBodyHeight) {
-      init();
-    }
+    const scrollTop = $(window).scrollTop();
+    let found = false;
 
-    let windowScrollTop = $(window).scrollTop();
-    Tocs.parent().removeClass('current');
-
-    // 章範囲内チェック
-    if (Pos[0].top <= windowScrollTop && Pos[Pos.length - 1].bottom > windowScrollTop) {
-      for (var i=0; i<Pos.length; i++) {
-        if (Pos[i].top <= windowScrollTop && Pos[i].bottom > windowScrollTop) {
-          Tocs.eq(Pos[i].no).parent().addClass('current');
-          break;
-        }
+    for (let i=pos.length - 1; i>=0; i--) {
+      if (
+        scrollTop >= pos[i].top &&
+        scrollTop < pos[i].bottom
+      ) {
+        tocItems.parent().removeClass('current');
+        pos[i].element.addClass('current');
+        found = true;
+        break;
       }
     }
+    if (!found) {
+      tocItems.parent().removeClass('current');
+    }
   }
 
+  // 初期化
   if ($('.sidebar-scroll .toc-widget-box').length) {
-    init();
-    $(window).on('load scroll resize', currentCheck);
+
+    updatePositions();
+    currentCheck();
+
+    // スクロール監視
+    $(window).on('scroll', function() {
+      // 1フレーム1回に制限
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          currentCheck();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // リサイズ時
+    $(window).on('resize', function() {
+      updatePositions();
+      currentCheck();
+    });
+
+    // .mainのサイズ変化を監視
+    const mainElement = document.querySelector('.main');
+    if (mainElement) {
+      const resizeObserver = new ResizeObserver(function() {
+        updatePositions();
+        currentCheck();
+      });
+      resizeObserver.observe(mainElement);
+    }
   }
-})(jQuery);
-
-EOF;
-}
-
-
-//******************************************************************************
-//  スクロールボタン
-//******************************************************************************
-if ((get_theme_mod('hvn_header_setting', 'none') != 'none') && is_front_top_page() && !is_singular_page_type_content_only()) {
-  echo <<<EOF
-(function($){
-  if ($('.appeal').length) {
-    elm = $('.appeal');
-  } else if ($('.recommended').length) {
-    elm = $('.recommended ');
-  } else if ($('.content-top').length) {  
-    elm = $('.content-top');
-  } else if ($('.content').length) {
-    elm = $('.content');
-  }
-
-  $('.scrolldown span').click(function() {
-    $('body, html').animate({
-      scrollTop: elm.offset().top
-    }, 800);
-  });
-})(jQuery);
+});
 
 EOF;
 }
@@ -288,10 +230,10 @@ EOF;
 //******************************************************************************
 //  メインビジュアル（画像）
 //******************************************************************************
-if (hvn_image_count() > 1 && get_theme_mod('hvn_header_setting') == 'image' && is_front_top_page()) {
+if (hvn_image_count() > 1 && get_theme_mod('hvn_header_setting', 'none') == 'image' && is_front_top_page()) {
   $speed = 2000;
   if (get_theme_mod('hvn_header_fade_setting', 'fade') != 'fade') {
-    $speed = 0;
+    $speed = 1;
   }
 
   echo <<<EOF
@@ -304,7 +246,16 @@ const swiper = new Swiper('.hvn-swiper', {
   autoplay: {
     delay: 8000,
   },
+  on: {
+    slideChange: function() {
+      // 初期表示の1枚目に対するスライド抑止
+      if (this.realIndex > 0) {
+        this.el.classList.add('is-changed');
+      }
+    }
+  }
 });
+
 EOF;
 }
 
@@ -317,7 +268,7 @@ if (get_theme_mod('hvn_like_setting')) {
   $nonce = wp_create_nonce('hvn_like_nonce');
 
   echo <<<EOF
-(function($) {
+jQuery(function($) {
   var cook = [];
 
   // 各ボタン毎に処理
@@ -344,7 +295,7 @@ if (get_theme_mod('hvn_like_setting')) {
         cook.push(id);
       }
 
-      // Cookie更新
+      // ローカルストレージ更新
       var cookArry = JSON.stringify(cook);
       localStorage.setItem('like_page', cookArry);
       check_cookie(this, id);
@@ -372,7 +323,7 @@ if (get_theme_mod('hvn_like_setting')) {
 
   // Cookieチェック処理
   function check_cookie(elm, id) {
-    // cookie取得
+    // ローカルストレージ取得
     cook = localStorage.getItem('like_page') ? JSON.parse(localStorage.getItem('like_page')) : [];
 
     // 同じ投稿IDのボタンを全部チェック
@@ -384,7 +335,7 @@ if (get_theme_mod('hvn_like_setting')) {
       }
     });
   }
-})(jQuery);
+});
 
 EOF;
 }
@@ -394,50 +345,30 @@ EOF;
 //  スクロール量
 //******************************************************************************
 echo <<<EOF
-(function($) {
-  $(window).on('load scroll', function() {
+jQuery(function($) {
+  let ticking = false;
+
+  // スクロール量取得
+  function updateScroll() {
     var scroll = $(window).scrollTop();
     var height = $(document).height() - $(window).height();
     var per = Math.floor(scroll / height * 100);
+
     $('html').css('--per', per + '%');
-  });
-})(jQuery);
+  }
 
-EOF;
+  $(window).on('load', updateScroll);
 
-
-//******************************************************************************
-//  プロフィール監視
-//******************************************************************************
-echo <<<EOF
-(function($) {
-  const size_835 = window.matchMedia("(min-width: 835px)");
-  const size_481 = window.matchMedia("(min-width: 481px)");
-
-  const size_835Listener = (event) => {
-    let count = $(".footer-widgets > div:visible").length;
-
-    // 835px未満 → すべて削除
-    if (!event.matches) {
-      $(".footer").removeClass("nwa wwa");
-      return;
+  $(window).on('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateScroll();
+        ticking = false;
+      });
+      ticking = true;
     }
-
-    // 835px以上の時のみ処理
-    $(".footer")
-      .toggleClass("wwa", count === 1)
-      .toggleClass("nwa", count > 1);
-  };
-  const size_481Listener = (event) => {
-    $(".container").toggleClass("nwa", !event.matches);
-  };
-
-  size_835.addEventListener("change", size_835Listener);
-  size_481.addEventListener("change", size_481Listener);
-
-  size_835Listener(size_835);
-  size_481Listener(size_481);
-})(jQuery);
+  });
+});
 
 EOF;
 
@@ -447,28 +378,29 @@ EOF;
 //******************************************************************************
 if (is_ssl()) {
   echo <<<EOF
-(function($) {
+jQuery(function($) {
   $(".wp-block-code").wrap('<div class="pre-wrap"></div>').before('<button class="code-copy">COPY</button>');
 
   $('.code-copy').click(function(event) {
     event.preventDefault();
 
-    var codeText = $(this).siblings('pre').find('code').text();
+    var \$btn = $(this);
+    var codeText = \$btn.siblings('pre').find('code').text();
 
     navigator.clipboard.writeText(codeText).then(() => {
-      $(".code-copy").text("COPIED");
+      \$btn.text("COPIED");
       setTimeout(function() {
-        $(".code-copy").text("COPY");
+        \$btn.text("COPY");
       }, 1000);
     });
   });
-})(jQuery);
+});
 
 EOF;
 
 } else {
   echo <<<EOF
-(function($) {
+jQuery(function($) {
   $(".wp-block-code").wrap('<div class="pre-wrap"></div>').before('<button class="code-copy">COPY</button>');
 
   const clip = new Clipboard(".code-copy", {
@@ -478,13 +410,14 @@ EOF;
   });
 
   clip.on("success", function(event) {
-    $(".code-copy").text("COPIED");
+    var \$btn = $(event.trigger);
+    \$btn.text("COPIED");
     setTimeout(function() {
-      $(".code-copy").text("COPY");
+      \$btn.text("COPY");
     }, 1000);
     event.clearSelection();
   });
-})(jQuery);
+});
 
 EOF;
 }
@@ -495,54 +428,8 @@ EOF;
 //******************************************************************************
 if (get_theme_mod('hvn_accordion_setting')) {
   echo <<<EOF
-// アーカイブ
-(function($) {
-  var html;
-  var li;
-  var pcount;
-  var year;
-  var byear;
-
-  $(".widget_archive").each(function() {
-    html = '';
-    li = '';
-    pcount = 0;
-    year   = 0;
-    byear  = 0;
-
-    $('li', this).each(function() {
-      var y = $(this).text().match(/(\d+)-/);
-      year = y[1];
-      if (byear == '') {
-        byear = y[1];
-      }
-
-      if (year != byear) {
-        out_html();
-        byear = y[1];
-        li = '';
-        pcount = 0;
-      }
-      li += '<li>' + $(this).html().replace(/(\d+)-/, '') + '</li>';
-      pcount += Number($('.post-count', this).text());
-    });
-
-    out_html();
-    $('ul', this).html(html);
-  });
-
-  function out_html() {
-    var p = '';
-    if (pcount != 0) {
-      p = '<span class="post-count">' + pcount + '</span>';
-    }
-    html += '<li><a><span class="list-item-caption">' + byear + '</span>' + p + '</a><ul class="children">' + li + '</ul></li>';
-  }
-})(jQuery);
-
-
 // カテゴリー、固定ページ
-(function($) {
+jQuery(function($) {
   $(".widget").each(function() {
     $('.children', this).hide();
     $('.children', this).before('{$button}');
@@ -552,14 +439,13 @@ if (get_theme_mod('hvn_accordion_setting')) {
       $(this).toggleClass('active');
     });
   });
-})(jQuery);
-
+});
 
 // タグクラウド
-(function($) {
+jQuery(function($) {
   var n = {$n};
 
-  $('.sidebar .widget_tag_cloud').each(function() {
+  $('.widget_tag_cloud').each(function() {
     var elm = $('.tagcloud a', this);
     var c   = elm.length;
     if (c > n) {
@@ -572,7 +458,7 @@ if (get_theme_mod('hvn_accordion_setting')) {
       $(this).toggleClass('active');
     });
   });
-})(jQuery);
+});
 
 EOF;
 }
@@ -581,34 +467,32 @@ EOF;
 //******************************************************************************
 //  ダークモード
 //******************************************************************************
-echo <<<EOF
-(function($) {
-  const btn = $('#hvn-dark');
-  btn.on('change', function() {
-   $('html').toggleClass('hvn-dark', btn.prop('checked'));
-   if (btn.prop('checked')) {
+if (get_theme_mod('hvn_darkmode_setting')) {
+  echo <<<EOF
+jQuery(function($) {
+  const toggle = $('#hvn-dark-toggle');
+
+  // クリックで切り替え
+  toggle.on('click', function() {
+    const isDark = $('html').toggleClass('hvn-dark').hasClass('hvn-dark');
+
+    // localStorageへの保存
+    if (isDark) {
       localStorage.setItem('hvn-dark', 'dark');
     } else {
       localStorage.removeItem('hvn-dark');
     }
   });
+});
 
-  //ローカルストレージ判定
-  if (localStorage.getItem('hvn-dark') ==='dark') {
-    $('html').addClass('hvn-dark');
-    btn.prop("checked", true);
-  } else {
-    $('html').removeClass('hvn-dark');
-  }
-  $('body').css('visibility', 'visible');
-})(jQuery);
 EOF;
+}
 
 
 //******************************************************************************
-//  通知エリア
+//  通知エリアスクロール
 //******************************************************************************
-if ($_HVN_NOTICE) {
+if ($GLOBALS['hvn_notice']) {
   $direction = 'vertical';
   $delay = 8000;
   $speed = 2000;
@@ -633,48 +517,16 @@ EOF;
 
 
 //******************************************************************************
-//  目次ボタン
-//******************************************************************************
-if (get_theme_mod('hvn_toc_fix_setting')) {
-  echo <<<EOF
-(function($) {
-  if (!($('.main .toc').length)) {
-    return;
-  }
-  $('.hvn-open-btn').addClass('active');
-  $('#hvn-toc a').click(function() {
-    $('#hvn-close').prop('checked', true);
-  });
-})(jQuery);
-
-EOF;
-}
-
-
-//******************************************************************************
-//  ブログスタイル
+//  「見出しボックス」ブロック（アコーディオン）
 //******************************************************************************
 echo <<<EOF
-(function($) {
-  $('.is-style-hvn-text').each(function(){
-    $('.blogcard-wrap', this).html($('.blogcard-title', this));
-  });
-})(jQuery);
-
-EOF;
-
-
-//******************************************************************************
-//  見出しボックスアコーディオン
-//******************************************************************************
-echo <<<EOF
-(function($) {
+jQuery(function($) {
   $('.is-style-accordion.cocoon-block-caption-box > .caption-box-content').hide();
   $('.is-style-accordion.cocoon-block-caption-box > .caption-box-label').click(function() {
     $(this).next('.caption-box-content').toggle();
     $(this).toggleClass('active');
   });
-})(jQuery);
+});
 
 EOF;
 
@@ -682,43 +534,47 @@ EOF;
 //******************************************************************************
 //  目次省略表示
 //******************************************************************************
-switch(get_theme_mod('hvn_toc_hidden_setting')) {
+switch(get_theme_mod('hvn_toc_hidden_setting', '0')) {
   case '1':
     echo <<<EOF
-(function($) {
+jQuery(function($) {
   var n = {$n};
 
-  var elm = $('.main .toc-content li');
-  var c = elm.length;
-  if (c > n) {
-    elm.slice({$n}).hide();
-    $('.main .toc-content').append('{$button}');
-  }
+  $('.main .toc-content').each(function() {
+    var toc = $(this);
+    var elm = toc.find('li');
+    var c = elm.length;
 
-  $('.toc button').click(function() {
-    elm.slice({$n}).toggle();
-    $(this).toggleClass('active');
+    if (c > n) {
+      elm.slice(n).hide();
+      toc.append('{$button}');
+      toc.find('button').on('click', function() {
+        elm.slice(n).toggle();
+        $(this).toggleClass('active');
+      });
+    }
   });
-})(jQuery);
+});
 
 EOF;
     break;
 
   case '2':
     echo <<<EOF
-(function($) {
-  var elm = $('.main .toc-content ul ul');
-  var c = elm.length;
-  if (c > 0) {
-    elm.hide();
-    $('.main .toc-content').append('{$button}');
-  }
-
-  $('.toc button').click(function() {
-    elm.toggle();
-    $(this).toggleClass('active');
+jQuery(function($) {
+  $('.main .toc-content').each(function() {
+    var toc = $(this);
+    var elm = toc.find('ul ul');
+    if (elm.length > 0) {
+      elm.hide();
+      toc.append('{$button}');
+      toc.find('button').on('click', function() {
+        elm.toggle();
+        $(this).toggleClass('active');
+      });
+    }
   });
-})(jQuery);
+});
 
 EOF;
     break;
@@ -726,13 +582,13 @@ EOF;
 
 
 //******************************************************************************
-//  タブブロックスクロール表示
+//  「タブ」ブロックのスクロールヒント表示
 //******************************************************************************
 echo <<<EOF
-(function($){
+jQuery(function($){
   new ScrollHint(".tab-label-group", {
     suggestClass: 'is-scroll-tab',
   });
-})(jQuery);
+});
 
 EOF;

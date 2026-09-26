@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* ボール */
+.dot-wrap {
+  height: 60px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+}
+
+.dot {
+  animation: dot .5s alternate infinite ease;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  height: 25px;
+  left: 15%;
+  position: absolute;
+  transform-origin: 50%;
+  width: 25px;
+}
+
+.dot:nth-child(2) {
+  animation-delay: .2s;
+  left: 45%;
+}
+
+.dot:nth-child(3) {
+  animation-delay: .3s;
+  left: auto;
+  right: 15%;
+}
+
+@keyframes dot {
+  0% {
+    border-radius: 50px 50px 25px 25px;
+    height: 5px;
+    top: 60px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    border-radius: 50%;
+    height: 25px;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+/* 影 */
+.shadow {
+  animation: shadow .5s alternate infinite ease;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 50%;
+  filter: blur(1px);
+  height: 4px;
+  left: 15%;
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  width: 25px;
+  z-index: -1;
+}
+
+.shadow:nth-child(4) {
+  animation-delay: .2s;
+  left: 45%;
+}
+
+.shadow:nth-child(5) {
+  animation-delay: .3s;
+  left: auto;
+  right: 15%;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: .7;
+  }
+
+  100% {
+    transform: scaleX(.2);
+    opacity: .4;
+  }
+}

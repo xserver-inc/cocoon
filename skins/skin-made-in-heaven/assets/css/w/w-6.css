@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 左縦線(2色) */
-
 aside.widget .widget-title {
   border-left: 10px solid var(--hover-color);
   padding: 10px;

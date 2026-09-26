@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 下線(章番) */
-
 .main .article .widget-title,
 .main .under-entry-content h2 {
   background-color: var(--hover-color);
@@ -43,7 +42,7 @@
 .toc-list > li:before {
   background-color: var(--main-color);
   border-radius: 50%;
-  color: var(--text-color)!important;
+  color: var(--text-color) !important;
   content: counter(toc-number);
   font-size: 12px;
   font-weight: normal;

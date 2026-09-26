@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /* ハート */
-
-.cp-spinner {
+.heart-wrap {
+  animation: heart-animate 2s ease-in-out infinite;
   box-sizing: border-box;
   display: inline-block;
   height: 48px;
@@ -10,11 +10,8 @@
   width: 48px;
 }
 
-.cp-heart {
-  animation: cp-heart-animate 2s ease-in-out infinite;
-}
 
-.cp-heart:before {
+.heart-wrap:before {
   background-color: var(--main-color);
   border-radius: 12px 12px 0 0;
   box-sizing: border-box;
@@ -28,7 +25,7 @@
   width: 24px;
 }
 
-.cp-heart:after {
+.heart-wrap:after {
   background-color: var(--main-color);
   border-radius: 12px 12px 0 0;
   box-sizing: border-box;
@@ -42,23 +39,27 @@
   width: 24px;
 }
 
-@keyframes cp-heart-animate {
+@keyframes heart-animate {
   0% {
     transform: scale(.9);
     transform-origin: center;
   }
+
   15% {
     transform: scale(1.4);
     transform-origin: center;
   }
+
   30% {
     transform: scale(.9);
     transform-origin: center;
   }
+
   45% {
     transform: scale(1.4);
     transform-origin: center;
   }
+
   100%,
   60% {
     transform: scale(.9);

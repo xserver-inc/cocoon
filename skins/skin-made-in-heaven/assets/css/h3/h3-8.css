@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 塗りつぶし（薄） */
-
 .editor-styles-wrapper .article h3,
 .article h3 {
   background-color: var(--hover-color);

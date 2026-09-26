@@ -1,20 +1,16 @@
 @charset "UTF-8";
 
 /* 矢印2（円広がる） */
-
 .scrolldown {
-  color: var(--hvn-scroll);
+  bottom: 0;
+  color: var(--scroll-color);
   height: fit-content;
-  inset: 0;
+  left: 50%;
   letter-spacing: 0.05em;
   margin: auto 0 40px;
   position: absolute;
-  text-align: center;
+  transform: translateX(-50%);
   z-index: 1;
-}
-
-.scrolldown span {
-  cursor: pointer;
 }
 
 .scrolldown .arrow {
@@ -53,13 +49,16 @@
   0% {
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   60% {
     box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.2);
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }

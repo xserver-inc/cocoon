@@ -5,7 +5,6 @@
 **  カスタマイザー
 **
 *******************************************************************************/
-
 #customize-theme-controls #accordion-panel-hvn_cocoon button:before {
   color: #e589a2;
   content: '\f487';
@@ -21,11 +20,9 @@
   max-width: unset;
 }
 
-
 /*******************************************************************************
 **  ラジオボタン
 *******************************************************************************/
-
 .wp-customizer [id*="section-hvn"] .wp-color-result-text,
 .wp-customizer [id*="section-hvn"] .color-picker-hex,
 .wp-customizer [id*="section-hvn"] select,
@@ -53,43 +50,33 @@
 }
 
 [id*="section-hvn"] .customize-control-radio label {
-  box-shadow: inset 1px 1px 0 0 #2271b1, 1px 1px 0 0 #2271b1, 1px 0 0 0 #2271b1, 0 1px 0 0 #2271b1;
-  color: #2271b1;
+  box-shadow: inset 1px 1px 0 0 var(--wp-admin-theme-color), 1px 1px 0 0 var(--wp-admin-theme-color), 1px 0 0 0 var(--wp-admin-theme-color), 0 1px 0 0 var(--wp-admin-theme-color);
+  color: var(--wp-admin-theme-color);
   padding: 5px 10px;
 }
 
 [id*="section-hvn"] .customize-control-radio input:checked ~ label {
-  background-color: #2271b1;
+  background-color: var(--wp-admin-theme-color);
   color: #fff;
 }
-
 
 /*******************************************************************************
 **  アコーディオン表示項目
 *******************************************************************************/
-
-
 /* コメント */
-
 body:not(:has(#_customize-input-hvn_comment_setting:checked)) [id*="customize-control-hvn_comment_img"] {
   display: none;
 }
 
-
 /* タイトル */
-
 body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="customize-control-hvn_title"] {
   display: none;
 }
 
-
 /*******************************************************************************
 **  エラー表示
 *******************************************************************************/
-
-
 /* カラーピッカー */
-
 .wp-color-picker.iris-error,
 [id*="_customize-input-hvn_"]:invalid {
   animation: shake-x 1s;
@@ -105,6 +92,7 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
   90% {
     transform: translateX(-4px);
   }
+
   20%,
   40%,
   60%,
@@ -114,11 +102,9 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
   }
 }
 
-
 /*******************************************************************************
 **  見出し
 *******************************************************************************/
-
 .customize-control-hidden label {
   background-color: #fff;
   border-bottom: 1px solid #dcdcde;
@@ -131,15 +117,14 @@ body:not(:has(#_customize-input-hvn_tcheck_option_setting:checked)) [id*="custom
   width: 100%;
 }
 
-
 /*******************************************************************************
 **  エディター
 *******************************************************************************/
-
 [id*="customize-control-hvn_rich_text_color"],
 [id*="customize-control-hvn_marker_color"],
 [id*="customize-control-hvn_badge_color"],
 [id*="customize-control-hvn_inline_button_color"] {
+  align-items: center;
   display: flex;
   gap: 15px;
 }

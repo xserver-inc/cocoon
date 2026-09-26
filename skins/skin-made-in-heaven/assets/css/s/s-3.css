@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /* 線2（Scroll＋線上下） */
-
 .scrolldown {
   animation: arrow-moving 2s ease-in-out infinite;
-  color: var(--hvn-scroll);
+  color: var(--scroll-color);
   display: flex;
   height: fit-content;
   inset: 0;
@@ -16,15 +15,14 @@
 }
 
 .scrolldown span {
-  cursor: pointer;
   display: block;
   margin-top: 10px;
   writing-mode: vertical-rl;
 }
 
 .scrolldown:after {
-  border-bottom: 2px solid var(--hvn-scroll);
-  border-left: 1px solid var(--hvn-scroll);
+  border-bottom: 2px solid var(--scroll-color);
+  border-left: 1px solid var(--scroll-color);
   content: '';
   display: block;
   height: 55px;
@@ -37,9 +35,11 @@
   0% {
     bottom: 0;
   }
+
   50% {
     bottom: 20px;
   }
+
   100% {
     bottom: 0;
   }

@@ -5,24 +5,19 @@
 **  ダッシュボード
 **
 *******************************************************************************/
-
-
 /* Cocoonアイコン */
-
 .menu-top.toplevel_page_theme-settings .wp-menu-image img {
   display: none;
 }
 
 .menu-top.toplevel_page_theme-settings .wp-menu-image:before {
-  color: #e589a2!important;
+  color: #e589a2 !important;
   content: '\f487';
 }
 
-
 /* 投稿、固定ページ一覧ステータス */
-
 .wp-admin.post-type-post .status-sticky {
-  background-color: #f1f8e9;
+  background-color: #fff3e0;
 }
 
 .wp-admin.post-type-post .status-future,
@@ -32,233 +27,284 @@
 
 .wp-admin.post-type-post .status-draft,
 .wp-admin.post-type-page .status-draft {
+  background-color: #f1f8e9;
+}
+
+.wp-admin.post-type-post .status-private,
+.wp-admin.post-type-page .status-private {
   background-color: #ffebee;
 }
 
-
 /* カラム調整 */
-
-.fixed th {
-  width: 100%!important;
+body:not(.block-editor-page) .fixed th {
+  width: 100%;
 }
 
+/* アイキャッチ */
+.wp-list-table .column-thumbnail img {
+  border: 1px solid #eee;
+  background-color: #fff;
+  display: block;
+  height: 75px !important;
+  object-fit: cover;
+  width: 75px !important;
+}
 
 /*******************************************************************************
 **
 **  Cocoon設定
 **
 *******************************************************************************/
-
-#tabs #tab-all-label,
-#tabs #tab-theme-header-label,
-#tabs #tab-column-label,
-#tabs #tab-page-page-label,
-#tabs #tab-blog-card-label,
-#tabs #tab-code-highlight-label,
-#tabs #tab-carousel-label,
-#tabs #tab-footer-label,
-#tabs #tab-buttons-label,
-#tabs #tab-mobile-buttons-label,
-#tabs #tab-page-404-label,
-#tabs #tab-widget-label,
-#tabs #tab-widget-area-label,
-#tabs #tab-reset-label {
-  display: none!important;
+#tabs :is(
+  #tab-all-label,
+  #tab-theme-header-label,
+  #tab-column-label,
+  #tab-page-page-label,
+  #tab-blog-card-label,
+  #tab-code-highlight-label,
+  #tab-carousel-label,
+  #tab-footer-label,
+  #tab-buttons-label,
+  #tab-mobile-buttons-label,
+  #tab-page-404-label,
+  #tab-widget-label,
+  #tab-widget-area-label,
+  #tab-reset-label
+) {
+  display: none !important;
 }
 
+
+#tabs .skin-control {
+  display: none;
+}
 
 /* 広告 */
-
-#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption],
-#tab-ads-content tr:nth-of-type(3) td label[for=pr_label_small_caption]+br,
-#exclude-pr-label tr:nth-child(2),
-#exclude-pr-label .skin-control,
-#exclude-pr-label .skin-control+.tips {
+#tabs #exclude-pr-label :is(
+  tr:nth-child(2),
+  tr:nth-of-type(3) td label[for=pr_label_small_caption],
+  tr:nth-of-type(3) td label[for=pr_label_small_caption] + br,
+  .skin-control + .tips
+) {
   display: none;
 }
 
+.skin-control + .toggle {
+  display: none;
+}
+
+/* タイトル */
+#tabs #title-singular :is(
+  tr:nth-child(3),
+  tr:nth-child(4)
+) {
+  display: none;
+}
+
+#tabs #title-category-tag {
+  display: none;
+}
+
+/* SEO */
+#tabs #seo-referrer,
+#tabs #seo-date {
+  display: none;
+}
 
 /* インデックス */
-
-#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"],
-#tab-index-page-content tr:nth-child(1) td label[for="front_page_type"]+ul,
-#tab-index-page-content tr:nth-child(1) td .tips:first-of-type,
-#tab-index-page-content tr:nth-child(1) td .toggle:last-of-type {
+#tabs #index-page :is(
+  tr:nth-child(1) td label[for="front_page_type"],
+  tr:nth-child(1) td label[for="front_page_type"] + ul,
+  tr:nth-child(1) td .tips:first-of-type,
+  tr:nth-child(1) td .toggle:last-of-type
+) {
   display: none;
 }
 
-#tab-index-page-content tr:nth-child(2),
-#tab-index-page-content tr:nth-child(3),
-#tab-index-page-content tr:nth-child(4),
-#tab-index-page-content tr:nth-child(5),
-#tab-index-page-content tr:nth-child(6) {
+#tabs #index-page :is(
+  tr:nth-child(2),
+  tr:nth-child(3),
+  tr:nth-child(4),
+  tr:nth-child(5),
+  tr:nth-child(6),
+  tr:nth-child(7)
+) {
   display: none;
 }
-
-#tab-index-page-content .skin-control,
-#tab-index-page-content .skin-control+br {
-  display: none;
-}
-
 
 /* 投稿 */
-
-#cat-tag-page,
-#single-bread {
+#tabs #cat-tag-page,
+#tabs #single-bread {
   display: none;
 }
 
-#single-relation tr:nth-child(1),
-#single-relation tr:nth-child(2),
-#single-relation tr:nth-child(3),
-#single-relation tr:nth-child(5),
-#single-relation tr:nth-child(6),
-#single-relation tr:nth-child(7),
-#single-relation tr:nth-child(8),
-#single-relation tr:nth-child(9),
-#single-relation tr:nth-child(10) {
+#tabs #single-relation :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(3),
+  tr:nth-child(5),
+  tr:nth-child(6),
+  tr:nth-child(7),
+  tr:nth-child(8),
+  tr:nth-child(9),
+  tr:nth-child(10)
+) {
+  display: none;
+}
+#tabs #single-relation .skin-control + p {
   display: none;
 }
 
-#single-relation .skin-control,
-#single-relation .skin-control+p {
+#tabs #single-nav :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(3),
+  tr:nth-child(4),
+  tr:nth-child(6)
+) {
   display: none;
 }
 
-#single-nav tr:nth-child(1),
-#single-nav tr:nth-child(2),
-#single-nav tr:nth-child(3),
-#single-nav tr:nth-child(4),
-#single-nav tr:nth-child(6) {
+
+#tabs #single-nav :is(
+  [for=post_navi_exclude_category_ids],
+  .post_navi_exclude_category_ids-list,
+  .post_navi_exclude_category_ids-list + .tips
+) {
   display: none;
 }
-
-#single-nav [for=post_navi_exclude_category_ids],
-#single-nav .post_navi_exclude_category_ids-list,
-#single-nav .post_navi_exclude_category_ids-list+.tips {
-  display: none;
-}
-
 
 /* 本文 */
-
-#entry-content-page {
+#tabs #entry-content-page {
   display: none;
 }
 
-#external-link tr:nth-child(1),
-#internal-link tr:nth-child(1),
-#internal-link tr:nth-child(4),
-#internal-link tr:nth-child(5) {
+#tabs :is(
+  #external-link tr:nth-child(1),
+  #internal-link tr:nth-child(1),
+  #internal-link tr:nth-child(4),
+  #internal-link tr:nth-child(5)
+) {
   display: none;
 }
 
-#post-info tr:nth-child(1) {
+#tabs #post-info tr:nth-child(1) {
   display: none;
 }
-
 
 /* 目次 */
-
-#tab-toc-page-content .skin-control,
-#tab-toc-page-content .skin-control+br {
+#tabs #tab-toc-page-content .skin-control + br {
   display: none;
 }
 
-#tab-toc-page-content tr:nth-child(1),
-#tab-toc-page-content tr:nth-child(5),
-#tab-toc-page-content tr:nth-child(6),
-#tab-toc-page-content tr:nth-child(7),
-#tab-toc-page-content tr:nth-child(8),
-#tab-toc-page-content tr:nth-child(9),
-#tab-toc-page-content tr:nth-child(11) {
+#tabs #toc :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(5),
+  tr:nth-child(6),
+  tr:nth-child(7),
+  tr:nth-child(8),
+  tr:nth-child(9),
+  tr:nth-child(11)
+) {
   display: none;
 }
-
 
 /* SNSシェア */
-
-#sns-share-top {
+#tabs #sns-share-top,
+#tabs #sns-share-cache {
   display: none;
 }
 
-#sns-share-bottom tr:nth-child(1),
-#sns-share-bottom tr:nth-child(2),
-#sns-share-bottom tr:nth-child(5),
-#sns-share-bottom tr:nth-child(6),
-#sns-share-bottom tr:nth-child(7),
-#sns-share-bottom tr:nth-child(8),
-#sns-share-bottom tr:nth-child(9) {
+#tabs #sns-share-bottom :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(6),
+  tr:nth-child(7),
+  tr:nth-child(8),
+  tr:nth-child(9)
+) {
   display: none;
 }
-
 
 /* SNSフォロー */
-
-#tab-sns-follow-content tr:nth-child(1),
-#tab-sns-follow-content tr:nth-child(5),
-#tab-sns-follow-content tr:nth-child(8),
-#tab-sns-follow-content tr:nth-child(10) {
+#tabs #sns-follow :is(
+  tr:nth-child(1),
+  tr:nth-child(8),
+  tr:nth-child(10)
+) {
   display: none;
 }
 
+#tabs #sns-follow-cache {
+  display: none;
+}
 
 /* 画像 */
-
-#content-image tr:nth-child(1),
-#content-image tr:nth-child(4) {
+#tabs #content-image :is(
+  tr:nth-child(1),
+  tr:nth-child(4)
+) {
   display: none;
 }
 
-#content-image tr:nth-child(2) .indent {
+#tabs #content-image tr:nth-child(2) .indent {
   display: none;
 }
-
 
 /* コメント */
-
-#tab-comment-content .skin-control,
-#tab-comment-content .skin-control+.tips {
+#tabs #tab-comment-content .skin-control + .tips {
   display: none;
 }
 
-#tab-comment-content tr:nth-child(1),
-#tab-comment-content tr:nth-child(3),
-#tab-comment-content tr:nth-child(5) {
+#tabs #tab-comment-content :is(
+  tr:nth-child(1),
+  tr:nth-child(3),
+  tr:nth-child(5)
+) {
   display: none;
 }
-
 
 /* アピールエリア */
-
-#tab-appeal-area-content tr:nth-child(11) {
+#tabs #appeal-area tr:nth-child(4),
+#tabs #appeal-area tr:nth-child(11) {
   display: none;
 }
-
 
 /* おすすめカード */
-
-#tab-recommended-content tr:nth-child(4),
-#tab-recommended-content tr:nth-child(5) {
+#tabs #recommended-cards :is(
+  tr:nth-child(3),
+  tr:nth-child(4),
+  tr:nth-child(5)
+) {
   display: none;
 }
 
-#tab-recommended-content tr:nth-child(3) li:nth-child(n+3) {
+/* 管理者画面 */
+#tabs #admin-index_ .tips + span,
+#tabs #admin-index_ .skin-control + .tips {
   display: none;
 }
-
-
-/* 管理画面 */
-
-.skin-control:has(#admin_list_memo_visible_1) {
-  display: none;
-}
-
 
 /* エディター */
+#tabs #editor :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(3),
+  tr:nth-child(4)
+) {
+  display: none;
+}
 
-#tab-editor-content tr:nth-child(2),
-#tab-editor-content tr:nth-child(3),
-#tab-editor-content tr:nth-child(4) {
+#tabs #block-editor :is(
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(3),
+  tr:nth-child(4)
+) {
+  display: none;
+}
+
+#tabs #old-editor {
   display: none;
 }

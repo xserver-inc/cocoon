@@ -1,25 +1,21 @@
 @charset "UTF-8";
 
 /* 線1（下に流れる） */
-
 .scrolldown {
-  color: var(--hvn-scroll);
+  bottom: 0;
+  color: var(--scroll-color);
   height: fit-content;
-  inset: 0;
+  left: 50%;
   letter-spacing: 0.05em;
   margin: auto 0 40px;
   position: absolute;
-  text-align: center;
+  transform: translateX(-50%);
   z-index: 1;
-}
-
-.scrolldown span {
-  cursor: pointer;
 }
 
 .scrolldown:after {
   animation: pathmove 1.4s ease-in-out infinite;
-  background-color: var(--hvn-scroll);
+  background-color: var(--scroll-color);
   content: '';
   display: block;
   height: 50px;
@@ -36,10 +32,12 @@
     opacity: 0;
     top: 25px;
   }
+
   30% {
     height: 30px;
     opacity: 1;
   }
+
   100% {
     height: 0;
     opacity: 0;
