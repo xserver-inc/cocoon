@@ -153,7 +153,8 @@
           );
         }
       } else if ( footerCurrentPos - footerStartPos < -8 ) {
-        footerMenu.css( 'bottom', 0 );
+        // スタイルシート側の安全領域の位置への復帰
+        footerMenu.css( 'bottom', '' );
       }
 
       footerStartPos = footerCurrentPos;

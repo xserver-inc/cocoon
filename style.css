@@ -8078,6 +8078,10 @@ div.fb-like-mobile {
 @supports (-moz-appearance: none) {
   .mobile-footer-menu-buttons {
     padding-bottom: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+  body:not(.scrollable-mobile-buttons) .mobile-footer-menu-buttons {
+    transition-property: opacity, transform;
   }
 }
 .logo-menu-button {
@@ -11724,6 +11728,12 @@ _:-ms-lang(x), .mc-circle {
   .mblt-footer-mobile-buttons,
   .mblt-header-and-footer-mobile-buttons {
     margin-bottom: 50px;
+  }
+  @supports (-moz-appearance: none) {
+    .mblt-footer-mobile-buttons:not(.scrollable-mobile-buttons),
+    .mblt-header-and-footer-mobile-buttons:not(.scrollable-mobile-buttons) {
+      margin-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
+    }
   }
   .scrollable-mobile-buttons {
     margin-bottom: 0;

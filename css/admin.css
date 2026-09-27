@@ -7571,6 +7571,10 @@ body.wp-admin {
 @supports (-moz-appearance: none) {
   .admin-settings .demo .mobile-footer-menu-buttons {
     padding-bottom: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .admin-settings .demo body:not(.scrollable-mobile-buttons) .mobile-footer-menu-buttons {
+    transition-property: opacity, transform;
   }
 }
 .admin-settings .demo .logo-menu-button {
@@ -16283,6 +16287,10 @@ body.wp-admin {
 @supports (-moz-appearance: none) {
   .admin-settings .demo .mobile-footer-menu-buttons {
     padding-bottom: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .admin-settings .demo body:not(.scrollable-mobile-buttons) .mobile-footer-menu-buttons {
+    transition-property: opacity, transform;
   }
 }
 .admin-settings .demo .logo-menu-button {
@@ -19373,6 +19381,12 @@ body.wp-admin {
   .admin-settings .demo .mblt-footer-mobile-buttons,
   .admin-settings .demo .mblt-header-and-footer-mobile-buttons {
     margin-bottom: 50px;
+  }
+  @supports (-moz-appearance: none) {
+    .admin-settings .demo .mblt-footer-mobile-buttons:not(.scrollable-mobile-buttons),
+    .admin-settings .demo .mblt-header-and-footer-mobile-buttons:not(.scrollable-mobile-buttons) {
+      margin-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
+    }
   }
   .admin-settings .demo .scrollable-mobile-buttons {
     margin-bottom: 0;

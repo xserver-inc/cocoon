@@ -43,6 +43,9 @@ vendor/
 tests/coverage/
 configs/
 
+# Playwrightの実行結果
+/test-results/
+
 # VS Code設定
 .vscode/
 

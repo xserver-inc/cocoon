@@ -135,6 +135,14 @@ div.sidebar {
   margin-bottom: 50px;
 }
 
+// Firefoxの固定フッターと安全領域に対応するページ末尾の余白
+@supports (-moz-appearance: none) {
+  .mblt-footer-mobile-buttons:not(.scrollable-mobile-buttons),
+  .mblt-header-and-footer-mobile-buttons:not(.scrollable-mobile-buttons) {
+    margin-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .scrollable-mobile-buttons {
   margin-bottom: 0;
 }

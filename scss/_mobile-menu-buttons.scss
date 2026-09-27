@@ -74,11 +74,16 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-//Firefoxはツールバーの開閉に連動してsafe-area-inset-bottomが動的に変わり、
-//スクロールのたびに余白が伸縮して見えてしまうため、Firefoxのみ固定値にする
+// Firefoxでの高さの固定と安全領域に合わせたフッターの位置調整
 @supports (-moz-appearance: none) {
   .mobile-footer-menu-buttons {
     padding-bottom: 0;
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  // 固定表示時のツールバー開閉による位置変更のアニメーション除外
+  body:not(.scrollable-mobile-buttons) .mobile-footer-menu-buttons {
+    transition-property: opacity, transform;
   }
 }
 
