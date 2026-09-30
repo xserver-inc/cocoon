@@ -603,7 +603,7 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
         }
       }
 
-      // メインカテゴリーを先頭にする
+      // メインカテゴリーの先頭への移動
       $main_cat_id = get_the_page_main_category(get_the_ID());
 
       if ($main_cat_id) {
