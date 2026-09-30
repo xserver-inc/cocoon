@@ -584,35 +584,62 @@ add_filter('cocoon_part__tmp/categories-tags', function($content) {
     // 投稿タイプに関連付けられたタクソノミーを取得
     $taxonomies = get_object_taxonomies($post_type);
 
-    // ターム取得
-    $args = array(
+    // タームを取得
+    $terms = wp_get_post_terms(get_the_ID(), $taxonomies, [
       'order'   => 'ASC',
       'orderby' => 'name',
-    );
-    $terms = wp_get_post_terms(get_the_ID(), $taxonomies, $args);
+    ]);
 
     if ($terms && !is_wp_error($terms)) {
-      $categories_html = '';  // 階層型タクソノミーのHTML
-      $tags_html = '';        // 非階層型タクソノミーのHTML
+      $categories = [];
+      $tags = [];
 
+      // カテゴリーとタグを分類
       foreach ($terms as $term) {
-        // タクソノミーが階層型（カテゴリー）かどうか
         if (is_taxonomy_hierarchical($term->taxonomy)) {
-          $categories_html .= '<a class="cat-link cat-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
-            <span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+          $categories[] = $term;
         } else {
-          $tags_html .= '<a class="tag-link tag-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
-            <span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+          $tags[] = $term;
         }
       }
 
+      // メインカテゴリーを先頭にする
+      $main_cat_id = get_the_page_main_category(get_the_ID());
+
+      if ($main_cat_id) {
+        foreach ($categories as $key => $term) {
+          if ($term->term_id == $main_cat_id) {
+            $main_category = $term;
+            unset($categories[$key]);
+            array_unshift($categories, $main_category);
+            break;
+          }
+        }
+      }
+
+      // カテゴリーHTMLを生成
+      $categories_html = '';
+
+      foreach ($categories as $term) {
+        $categories_html .= '<a class="cat-link cat-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+          <span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+      }
+
+      // タグHTMLを生成
+      $tags_html = '';
+
+      foreach ($tags as $term) {
+        $tags_html .= '<a class="tag-link tag-link-' . $term->term_id . '" href="' . esc_url(get_term_link($term)) . '">
+          <span class="fa fa-tag tag-icon tax-icon" aria-hidden="true"></span>' . esc_html($term->name) . '</a>';
+      }
+
       // カテゴリーがある場合は出力
-      if (!empty($categories_html)) {
+      if ($categories_html) {
         $categories_html = '<div class="entry-categories">' . $categories_html . '</div>';
       }
 
       // タグがある場合は出力
-      if (!empty($tags_html)) {
+      if ($tags_html) {
         $tags_html = '<div class="entry-tags">' . $tags_html . '</div>';
       }
 

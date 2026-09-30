@@ -91,17 +91,33 @@ endif;
 
 
 
-//カテゴリリンクの取得
+// カテゴリーリンクの取得
 if ( !function_exists( 'get_the_category_links' ) ):
 function get_the_category_links(){
   $categories = null;
   $category_list = get_the_category();
+
   if (is_array($category_list)) {
+    // メインカテゴリーを先頭にする
+    $main_cat_id = get_the_page_main_category();
+
+    if ($main_cat_id && in_category($main_cat_id)) {
+      foreach ($category_list as $key => $category) {
+        if ($category->cat_ID == $main_cat_id) {
+          unset($category_list[$key]);
+          array_unshift($category_list, $category);
+          break;
+        }
+      }
+    }
+
+    // カテゴリーリンクを生成
     foreach($category_list as $category){
       $style = null;
       $categories .= '<a class="cat-link cat-link-'.$category->cat_ID.'" href="'.get_category_link( $category->cat_ID ).'"'.$style.'><span class="fa fa-folder cat-icon tax-icon" aria-hidden="true"></span>'.$category->cat_name.'</a>';
     }
   }
+
   return $categories;
 }
 endif;
