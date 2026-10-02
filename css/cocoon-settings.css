@@ -492,7 +492,14 @@
   min-inline-size: 0;
   padding: 8px;
 }
-.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.uploded-thumbnail img, .iframe-demo, .mobile-demo):not(:where(.wp-editor-wrap *)) {
+.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.uploded-thumbnail img):not(:where(.wp-editor-wrap *)) {
+  box-sizing: border-box;
+  inline-size: auto;
+  block-size: auto;
+  max-inline-size: min(400px, 100%);
+  max-block-size: 300px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(#tabs > .metabox-holder) :where(.iframe-demo, .mobile-demo):not(:where(.wp-editor-wrap *)) {
   box-sizing: border-box;
   max-inline-size: 100%;
 }

@@ -593,8 +593,17 @@
     padding: 8px;
   }
 
-  // 設定プレビューだけを可変幅にし、TinyMCEなどの機能iframeは対象外にする。
-  :where(#tabs > .metabox-holder) :where(.uploded-thumbnail img, .iframe-demo, .mobile-demo):not(:where(.wp-editor-wrap *)) {
+  // 選択画像の比率維持と拡大・過大表示の防止
+  :where(#tabs > .metabox-holder) :where(.uploded-thumbnail img):not(:where(.wp-editor-wrap *)) {
+    box-sizing: border-box;
+    inline-size: auto;
+    block-size: auto;
+    max-inline-size: min(400px, 100%);
+    max-block-size: 300px;
+  }
+
+  // 設定プレビューの可変幅と機能用iframeの除外
+  :where(#tabs > .metabox-holder) :where(.iframe-demo, .mobile-demo):not(:where(.wp-editor-wrap *)) {
     box-sizing: border-box;
     max-inline-size: 100%;
   }
