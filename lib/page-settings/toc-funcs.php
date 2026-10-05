@@ -19,7 +19,7 @@ endif;
 define('OP_MULTI_PAGE_TOC_VISIBLE', 'multi_page_toc_visible');
 if ( !function_exists( 'is_multi_page_toc_visible' ) ):
 function is_multi_page_toc_visible(){
-  return get_theme_option(OP_MULTI_PAGE_TOC_VISIBLE, 0); // 後でする、デフォルトを有効に
+  return get_theme_option(OP_MULTI_PAGE_TOC_VISIBLE, 1);
 }
 endif;
 

@@ -98,6 +98,23 @@ class TocPaginationIntegrationTest extends IntegrationTestCase
     }
 
     /**
+     * 未保存時の全ページ目次の有効化と保存済みの無効設定の優先
+     */
+    public function test_default_toc_includes_all_pages_and_respects_saved_setting(): void
+    {
+        remove_theme_mod('multi_page_toc_visible');
+        $postId = $this->createArticle('<h2>一</h2><!--nextpage--><h2>二</h2>');
+        $default = $this->renderPage($postId, 1);
+        $this->assertSame(['#toc1', get_permalink($postId) . '2/#toc2'], $this->tocLinks($default));
+
+        set_theme_mod('multi_page_toc_visible', 0);
+        $this->assertSame(['#toc1'], $this->tocLinks($this->renderPage($postId, 1)));
+        $second = $this->renderPage($postId, 2);
+        $this->assertSame(['toc2'], $this->headingIds($second));
+        $this->assertSame(['#toc2'], $this->tocLinks($second));
+    }
+
+    /**
      * 全ページの目次と本文のアンカーの通し番号およびリンク先の一致
      */
     public function test_all_pages_use_continuous_heading_ids_and_correct_urls(): void
