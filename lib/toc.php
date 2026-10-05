@@ -35,47 +35,166 @@ function get_h_inner_content($h_content){
 }
 endif;
 
-//目次部分の取得（$expanded_contentには、ショートコードが展開された本文を入れる）
+// 目次と本文の採番対象となる見出しの共通抽出
+if ( !function_exists( 'get_toc_heading_matches' ) ):
+function get_toc_heading_matches($content, $depth = 0){
+  $depth = intval($depth) ?: 6;
+  $headers = array();
+
+  // 本文の再構築に必要なバイト位置を含む見出しの抽出
+  preg_match_all('/(<([hH][1-6])\b[^>]*>)(.*?)(<\/([hH][1-6])\s*>)/s', $content, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+  foreach ($matches as $match) {
+    $tag = strtolower($match[2][0]);
+    $level = intval(substr($tag, 1));
+
+    // H1・深さの対象外・入れ子・開始終了タグ不一致の見出しの除外
+    if ($level < 2 || $level > $depth ||
+        preg_match('/<[hH][1-6][\s>]/', $match[3][0]) ||
+        $tag !== strtolower($match[5][0])) {
+      continue;
+    }
+
+    $headers[] = array(
+      'tag'    => $tag,
+      'text'   => $match[3][0],
+      'html'   => $match[0][0],
+      'open'   => $match[1][0],
+      'close'  => $match[4][0],
+      'offset' => $match[0][1],
+    );
+  }
+  return $headers;
+}
+endif;
+
+// ブロック・クラシック形式の改ページによる本文の分割
+if ( !function_exists( 'get_toc_raw_pages' ) ):
+function get_toc_raw_pages($content){
+  $content = preg_replace('/<!--\s*wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*-->|<!--\s*nextpage\s*-->/is', '<!--nextpage-->', $content);
+  // WordPressと同じ改ページ前後の改行および先頭の改ページの除去
+  $content = str_replace(array("\n<!--nextpage-->\n", "\n<!--nextpage-->", "<!--nextpage-->\n"), '<!--nextpage-->', $content);
+  if (strpos($content, '<!--nextpage-->') === 0) {
+    $content = substr($content, 15);
+  }
+  return explode('<!--nextpage-->', $content);
+}
+endif;
+
+// WordPressが本文表示に使用するフィルター適用済みの分割ページの取得
+if ( !function_exists( 'get_toc_post_pages' ) ):
+function get_toc_post_pages($post){
+  global $id, $pages;
+  if (isset($post->ID) && intval($id) === intval($post->ID) && is_array($pages)) {
+    return $pages;
+  }
+  if (function_exists('generate_postdata')) {
+    $postdata = generate_postdata($post);
+    if (is_array($postdata) && isset($postdata['pages']) && is_array($postdata['pages'])) {
+      return $postdata['pages'];
+    }
+  }
+  return get_toc_raw_pages($post->post_content);
+}
+endif;
+
+// 別ページの採番に必要なブロック・同期パターン・ショートコードの展開
+if ( !function_exists( 'get_toc_expanded_page_content' ) ):
+function get_toc_expanded_page_content($content, $page_num = null){
+  $page_exists = array_key_exists('page', $GLOBALS);
+  $original_page = $GLOBALS['page'] ?? null;
+  $query = $GLOBALS['wp_query'] ?? null;
+  $query_page_exists = $query instanceof WP_Query && array_key_exists('page', $query->query_vars);
+  $original_query_page = $query_page_exists ? $query->query_vars['page'] : null;
+
+  // ページ依存のブロック・ショートコードに必要な対象ページの表示状態
+  if ($page_num !== null) {
+    $GLOBALS['page'] = $page_num;
+    if ($query instanceof WP_Query) {
+      $query->set('page', $page_num);
+    }
+  }
+  try {
+    $content = get_shortcode_removed_content($content);
+    if (function_exists('do_blocks')) {
+      $content = do_blocks($content);
+    }
+    $content = expand_synced_patterns($content);
+    return apply_filters('get_toc_expanded_content', do_shortcode($content));
+  } finally {
+    // 例外発生時を含む元のページ番号とクエリー変数の復元
+    if ($page_num !== null) {
+      if ($page_exists) {
+        $GLOBALS['page'] = $original_page;
+      } else {
+        unset($GLOBALS['page']);
+      }
+      if ($query instanceof WP_Query) {
+        if ($query_page_exists) {
+          $query->set('page', $original_query_page);
+        } else {
+          unset($query->query_vars['page']);
+        }
+      }
+    }
+  }
+}
+endif;
+
+// 公開APIによるパーマリンク設定・固定フロントページ・プレビュー対応の改ページURL
+if ( !function_exists( 'get_toc_page_url' ) ):
+function get_toc_page_url($post, $page_num){
+  global $wp_rewrite;
+  $post = get_post($post);
+  if (!$post) return '';
+  $url = get_permalink($post);
+  if (!$url) return '';
+
+  if ($page_num > 1) {
+    // クエリー形式のURLと公開前の投稿へのページ番号の付加
+    if (!$wp_rewrite->using_permalinks() || in_array($post->post_status, array('draft', 'pending'), true) || strpos($url, '?') !== false) {
+      $url = add_query_arg('page', $page_num, $url);
+    } elseif (get_option('show_on_front') === 'page' && intval(get_option('page_on_front')) === intval($post->ID)) {
+      $url = trailingslashit($url) . user_trailingslashit($wp_rewrite->pagination_base . '/' . $page_num, 'single_paged');
+    } else {
+      $url = trailingslashit($url) . user_trailingslashit($page_num, 'single_paged');
+    }
+  }
+  if (is_preview()) {
+    $query_args = array();
+    if (!in_array($post->post_status, array('draft', 'pending'), true) && isset($_GET['preview_id'], $_GET['preview_nonce'])) {
+      $query_args['preview_id'] = wp_unslash($_GET['preview_id']);
+      $query_args['preview_nonce'] = wp_unslash($_GET['preview_nonce']);
+    }
+    $url = get_preview_post_link($post, $query_args, $url);
+  }
+  return $url;
+}
+endif;
+
+/**
+ * 展開済み本文から目次を生成し、本文の採番に必要な前ページの見出し数を返します。
+ *
+ * @param string $expanded_content 展開済みの現在ページの本文
+ * @param array  $harray 本文のID付与対象となる見出しタグ
+ * @param bool   $is_widget ウィジェットからの呼び出し
+ * @param int    $depth_option 目次内で表示する深さ
+ * @param int    $heading_offset 現在ページより前の対象見出し数
+ * @return string|null 目次HTMLまたは目次非表示時の値
+ */
 if ( !function_exists( 'get_toc_tag' ) ):
-function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0){
-  global $post;
+function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_option = 0, &$heading_offset = null){
+  global $post, $page;
+  $heading_offset = 0;
   // 投稿情報がない場合でも、カテゴリ/タグページは処理を続行する
   if ((empty($post) || !isset($post->post_content)) && !is_category() && !is_tag()) return '';
 
+  $current_page = is_singular() ? max(1, intval($page)) : 1;
   // 分割ページ目次は投稿/固定ページのときだけ有効にする
   $is_multi_page_toc_visible = is_multi_page_toc_visible() && is_singular();
 
   //フォーラムページだと表示しない
   if (is_plugin_fourm_page()) {
     return;
-  }
-
-  // 目次生成には展開済み本文を使用する
-  $content     = $expanded_content;
-
-  // 分割ページ目次の場合
-  if ($is_multi_page_toc_visible) {
-    // 分割ページを抽出（ブロックエディター/クラシックの両方に対応）
-    if (function_exists('has_block') && has_block('core/nextpage', $post->post_content)) {
-      // ブロックエディター
-      $raw_pages = preg_split('/<!--\s*wp:nextpage\s*-->.*?<!--\s*\/wp:nextpage\s*-->/is', $post->post_content);
-    } else {
-      // クラシックエディター
-      $raw_pages = preg_split('/<!--\s*nextpage\s*-->/', $post->post_content);
-    }
-    $pages = [];
-
-    // 分割ページ単位にブロック・パターン・ショートコードを展開
-    foreach ($raw_pages as $page_content) {
-      $page_content = get_shortcode_removed_content($page_content);
-      if (function_exists('do_blocks')) {
-        $page_content = do_blocks($page_content);
-      }
-      // パターン展開（同期パターン）
-      $page_content = expand_synced_patterns($page_content);
-      $page_content = do_shortcode($page_content);
-      $pages[] = $page_content;
-    }
   }
 
   $headers     = array();
@@ -114,58 +233,43 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   if($targetclass===''){$targetclass = get_post_type();}
   for($h = $top_level; $h <= 6; $h++){$harray[] = 'h' . $h . '';}
 
-  if ($is_multi_page_toc_visible) {
-    // 分割ページごとに見出しを取得
+  if ($is_multi_page_toc_visible || (is_singular() && $current_page > 1)) {
+    $raw_pages = get_toc_post_pages($post);
     $toc_counter = 0;
-    $page_num = 1;
-    $past_page_num = 1;
-    foreach ($pages as $page_content) {
-      if (preg_match_all('/<([hH][1-6]).*?>(.*?)<\/([hH][1-6])>/us', $page_content, $matches, PREG_SET_ORDER)) {
-        foreach ($matches as $m) {
-          // 違うページになったらカウンターをリセットする
-          if ($page_num !== $past_page_num) {
-            $past_page_num = $page_num;
-            $toc_counter = 0;
-          }
+    foreach ($raw_pages as $page_index => $page_content) {
+      $page_num = $page_index + 1;
 
-          // 破損した見出し（本文飲み込み）は目次に追加しない。(1)内容に別の見出し開始タグ (2)開始/終了レベル不一致
-          if (preg_match('/<[hH][1-6][\s>]/', $m[2]) || strtolower($m[1]) !== strtolower($m[3])) {
-            continue;
-          }
+      // 現在ページだけの目次で不要な後続ページの展開の省略
+      if (!$is_multi_page_toc_visible && $page_num >= $current_page) {
+        break;
+      }
 
-          // 目次の深さ取得
-          $now_depth = intval(substr(strtolower($m[1]), 1, 1));
+      // 現在ページの展開済み本文の再利用
+      $page_content = $page_num === $current_page
+        ? $expanded_content
+        : get_toc_expanded_page_content($page_content, $page_num);
+      $page_headers = get_toc_heading_matches($page_content, $set_depth);
+      if ($page_num < $current_page) {
+        $heading_offset += count($page_headers);
+      }
 
-          // $set_depth より深い見出しは目次に追加しない
-          if ($now_depth <= $set_depth) {
-            $toc_counter++;
-            $headers[] = array(
-              'tag'  => $m[1],
-              'text' => $m[2],
-              'id'   => 'toc' . $toc_counter,
-              'page' => $page_num,
-            );
-          }
+      if ($is_multi_page_toc_visible) {
+        foreach ($page_headers as $header) {
+          $header['id'] = 'toc' . ++$toc_counter;
+          $header['page'] = $page_num;
+          $headers[] = $header;
         }
       }
-      $page_num++;
     }
-    $header_count = count($headers);
-  }else {
-    // 終了タグのレベルもキャプチャ（第3グループ）し、開始との不一致を判定できるようにする
-    preg_match_all('/<([hH][1-6]).*?>(.*?)<\/([hH][1-6]).*?>/us', $content, $headers);
-    $header_count = count($headers[0]);
-    // 破損した見出し（本文飲み込み）は目次から除外。(1)内容に別の見出し開始タグ (2)開始/終了レベル不一致
-    for ($hi = $header_count - 1; $hi >= 0; $hi--) {
-      if (preg_match('/<[hH][1-6][\s>]/', $headers[2][$hi]) || strtolower($headers[1][$hi]) !== strtolower($headers[3][$hi])) {
-        array_splice($headers[0], $hi, 1);
-        array_splice($headers[1], $hi, 1);
-        array_splice($headers[2], $hi, 1);
-        array_splice($headers[3], $hi, 1);
-      }
-    }
-    $header_count = count($headers[0]);
   }
+  if (!$is_multi_page_toc_visible) {
+    $headers = get_toc_heading_matches($expanded_content, $set_depth);
+    foreach ($headers as $index => $header) {
+      $headers[$index]['id'] = 'toc' . ($heading_offset + $index + 1);
+      $headers[$index]['page'] = $current_page;
+    }
+  }
+  $header_count = count($headers);
 
   if($top_level < 1){$top_level = 1;}
   if($top_level > 6){$top_level = 6;}
@@ -178,9 +282,10 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
   if($header_count > 0){
     $toc_list .= '<' . $list_tag . (($current_depth == $top_level - 1) ? ' class="toc-list open"' : '') . '>';
   }
+  $page_urls = array();
   for($i=0;$i < $header_count;$i++){
     $depth = 0;
-    $h_actual = $is_multi_page_toc_visible ? strtolower($headers[$i]['tag']) : strtolower($headers[1][$i]);
+    $h_actual = $headers[$i]['tag'];
 
     switch($h_actual) {
       case 'h1': $depth = 1 - $top_level + 1; break;
@@ -220,7 +325,7 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       $counter++;
 
       // 見出しテキストを取得
-      $text = $is_multi_page_toc_visible ? $headers[$i]['text'] : $headers[2][$i];
+      $text = $headers[$i]['text'];
       // アコーディオンボタンのアイコンを削除
       $text = str_replace(
         '<span class="wp-block-accordion-heading__toggle-icon" aria-hidden="true">+</span>',
@@ -229,18 +334,20 @@ function get_toc_tag($expanded_content, &$harray, $is_widget = false, $depth_opt
       );
       $text = strip_tags($text);
       if ($is_multi_page_toc_visible) {
-        global $page; // 現在のページ番号（未定義なら 0）
-        $current = $page ?: 1;
         $link = '';
-        // 現在のページでは、ページ遷移しないようにURLを出力しない
-        if ($current !== intval($headers[$i]['page'])) {
-          $link = get_permalink($post);
-          if ($headers[$i]['page'] > 1) $link = trailingslashit($link).$headers[$i]['page'].'/';
+        // 別ページの見出しへのページ付きURL
+        if ($current_page !== intval($headers[$i]['page'])) {
+          $target_page = intval($headers[$i]['page']);
+          // 同じページの複数見出しに対するURL生成の重複防止
+          if (!isset($page_urls[$target_page])) {
+            $page_urls[$target_page] = get_toc_page_url($post, $target_page);
+          }
+          $link = $page_urls[$target_page];
         }
 
-        $toc_list .= '<li'.$hide_class.'><a href="'.$link.'#'.$headers[$i]['id'].'" tabindex="0">' . $text . '</a>';
+        $toc_list .= '<li'.$hide_class.'><a href="'.esc_url($link.'#'.$headers[$i]['id']).'" tabindex="0">' . $text . '</a>';
       } else {
-        $toc_list .= '<li'.$hide_class.'><a href="#toc' . $counter . '" tabindex="0">' . $text . '</a>';
+        $toc_list .= '<li'.$hide_class.'><a href="#' . $headers[$i]['id'] . '" tabindex="0">' . $text . '</a>';
       }
       $prev_depth = $depth;
     }
@@ -377,64 +484,30 @@ function add_toc_before_1st_h2($the_content){
     $set_depth = 6;
   }
 
-  $html = get_toc_tag($the_content, $harray);
+  $heading_offset = 0;
+  $html = get_toc_tag($the_content, $harray, false, 0, $heading_offset);
 
-  //目次タグが出力されない（目次が不要）時は、そのまま本文を返す
-  if (!$html) {
-    return $the_content;
-  }
-
-  ///////////////////////////////////////
-  // PHPの見出し処理（条件によっては失敗するかも）
-  ///////////////////////////////////////
-  // 正規表現に先読みを含めると大規模な本文で PREG_JIT_STACKLIMIT_ERROR を起こすため、
-  // パターンは単純なままにし、飲み込みの除外は下のループ内の PHP 判定で行う。
-  $res = preg_match_all('/(<('.implode('|', $harray).')[^>]*?>)(.*?)(<\/h[2-6]>)/is', $the_content, $m);
-
-  $tag_all_index = 0;
-  $tag_index = 1;
-  $h_index = 2;
-  $h_content_index = 3;
-  $tag_end_index = 4;
-  if ($res && $m[0]) {
-    $i = 0;
-    $count = 1;
-    foreach ($m[$tag_all_index] as $value) {
-      //var_dump($m[0][$i]);
-      $tag_all = $m[$tag_all_index][$i];
-      $tag = $m[$tag_index][$i];
-      $h = $m[$h_index][$i];
-      $h_content = get_h_inner_content($m[$h_content_index][$i]);
-      $tag_end = $m[$tag_end_index][$i];
-
-      $now_depth = intval(str_replace('h', '', $h));
-
-      //破損した見出し（本文飲み込み）は id を付与しない。次のいずれかで検出:
-      // (1) 内容に別の見出し開始タグを含む（例: </h2>欠落で <h3> を巻き込む）
-      // (2) 開始と終了のレベルが不一致（例: <h2>…</h3>。開始タグも欠落した破損）
-      $close_h = strtolower(str_replace(array('</', '>'), '', $tag_end));
-      if (preg_match('/<[hH][1-6][\s>]/', $m[$h_content_index][$i]) || strtolower($h) !== $close_h) {
-        $i++;
-        continue;
-      }
-
-      //設定より見出しが深い場合はスキップ
-      if ($set_depth < $now_depth) {
-        $i++;
-        continue;
-      }
-
-      $new = $tag.'<span id="toc'.strval($count).'">'.$h_content.'</span>'.$tag_end;
-
-      $the_content = preg_replace('/'.preg_quote($value, '/').'/', $new, $the_content, 1);
-
-      $i++;
+  // 目次と同じ抽出条件による本文見出しの通し番号
+  $headers = get_toc_heading_matches($the_content, $set_depth);
+  if ($headers) {
+    $count = $heading_offset + 1;
+    $content_parts = array();
+    $content_offset = 0;
+    foreach ($headers as $header) {
+      // 同一テキストの見出しの誤置換を防ぐための本文位置による再構築
+      $content_parts[] = substr($the_content, $content_offset, $header['offset'] - $content_offset);
+      // 目次非表示時の従来の見出し内HTMLの維持
+      $heading_content = $html ? get_h_inner_content($header['text']) : $header['text'];
+      $content_parts[] = $header['open'].'<span id="toc'.$count.'">'.
+        $heading_content.'</span>'.$header['close'];
+      $content_offset = $header['offset'] + strlen($header['html']);
       $count++;
     }
-
+    $content_parts[] = substr($the_content, $content_offset);
+    $the_content = implode('', $content_parts);
   }
-  //機能が有効な時のみ（ショートコードでは実行しない）
-  if (is_total_the_page_toc_visible()) {
+  // 自動表示が有効な場合の目次HTMLの挿入
+  if ($html && is_total_the_page_toc_visible()) {
     $h2result = get_h2_included_in_body( $the_content );//本文にH2タグが含まれていれば取得
     $html = str_replace('<div class="toc ', '<div id="toc" class="toc ', $html);
     $the_content = preg_replace(H2_REG, $html.PHP_EOL.PHP_EOL.$h2result, $the_content, 1);

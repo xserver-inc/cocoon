@@ -3384,18 +3384,18 @@ endif;
 //不要なショートコードを除外した文字列を返す
 if ( !function_exists( 'get_shortcode_removed_content' ) ):
 function get_shortcode_removed_content($content){
-  $removed_content = $content;
-  //$removed_content = str_replace('[ad]', '', $removed_content);
-  $removed_content = preg_replace('/\[toc.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[amazon.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[rakuten.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[navi.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[new_list.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[popular_list.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[author_box.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[rank.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[star.*\]/', '', $removed_content);
-  $removed_content = preg_replace('/\[\[.*\]\]/', '', $removed_content);
+  global $shortcode_tags;
+  $removed_tags = array('toc', 'amazon', 'rakuten', 'navi', 'new_list', 'popular_list', 'author_box', 'rank', 'star');
+  // 既存の除外対象に含まれる登録済み派生ショートコード名の取得
+  foreach (array_keys((array) $shortcode_tags) as $tag) {
+    if (preg_match('/^(?:toc|amazon|rakuten|navi|new_list|popular_list|author_box|rank|star)/', $tag)) {
+      $removed_tags[] = $tag;
+    }
+  }
+  // 隣接する別ショートコードを巻き込まないWordPress標準の構文による除去
+  $removed_content = preg_replace('/' . get_shortcode_regex(array_unique($removed_tags)) . '/s', '', $content);
+  // 隣接する通常のショートコードを維持したエスケープ表記の除去
+  $removed_content = preg_replace('/\[\[[^\r\n]*?\]\]/', '', $removed_content);
   $removed_content = apply_filters('get_shortcode_removed_content', $removed_content);
   return $removed_content;
 }

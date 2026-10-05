@@ -155,6 +155,86 @@ class TocTest extends TestCase
     // という深い依存チェーンを持つため、$postがnullの早期リターンのみテスト可能
     // ========================================================================
 
+    /**
+     * H1の除外と大文字・小文字の見出しの統一した抽出
+     */
+    public function test_heading_matches_normalize_tags_and_exclude_h1(): void
+    {
+        $headers = \get_toc_heading_matches('<h1>題名</h1><H2 class="title">一</H2><h3>二</h3><h6>三</h6>');
+        $this->assertSame(['h2', 'h3', 'h6'], array_column($headers, 'tag'));
+        $this->assertSame(['一', '二', '三'], array_column($headers, 'text'));
+        $this->assertSame('<H2 class="title">', $headers[0]['open']);
+        $this->assertSame('</H2>', $headers[0]['close']);
+    }
+
+    /**
+     * 設定した目次の深さを超える見出しの採番対象からの除外
+     */
+    public function test_heading_matches_respect_depth(): void
+    {
+        $headers = \get_toc_heading_matches('<h2>一</h2><h3>二</h3><h4>対象外</h4><h2>三</h2>', 3);
+        $this->assertSame(['一', '二', '三'], array_column($headers, 'text'));
+    }
+
+    /**
+     * 入れ子と開始終了タグが不一致の見出しの除外
+     */
+    public function test_heading_matches_exclude_invalid_nested_headings(): void
+    {
+        $headers = \get_toc_heading_matches('<h2>外<h3>内</h3></h2><h2>不一致</h3><h2>正常</h2>');
+        $this->assertSame(['正常'], array_column($headers, 'text'));
+    }
+
+    /**
+     * 同じ見出しと日本語本文を含む場合の見出し位置の正確な抽出
+     */
+    public function test_repeated_headings_keep_distinct_byte_offsets(): void
+    {
+        $prefix = '<p>前の本文</p>';
+        $heading = '<h2>同じ見出し</h2>';
+        $between = '<p>間の本文</p>';
+        $headers = \get_toc_heading_matches($prefix . $heading . $between . $heading);
+        $this->assertSame([strlen($prefix), strlen($prefix . $heading . $between)], array_column($headers, 'offset'));
+        $this->assertSame([$heading, $heading], array_column($headers, 'html'));
+    }
+
+    /**
+     * 長い見出しテキストを含む本文の欠落しない抽出
+     */
+    public function test_long_heading_text_is_preserved(): void
+    {
+        $text = str_repeat('見出し', 10000);
+        $headers = \get_toc_heading_matches('<h2>' . $text . '</h2><h2>次の見出し</h2>');
+        $this->assertSame([$text, '次の見出し'], array_column($headers, 'text'));
+    }
+
+    /**
+     * ブロックとクラシックの改ページ混在時の余分なページの発生防止
+     */
+    public function test_raw_pages_support_mixed_page_break_formats(): void
+    {
+        $pages = \get_toc_raw_pages("一<!-- wp:nextpage -->\n<!--nextpage-->\n<!-- /wp:nextpage -->二<!--nextpage-->三");
+        $this->assertSame(['一', '二', '三'], $pages);
+    }
+
+    /**
+     * 見出しのない空ページを含む改ページ位置の保持
+     */
+    public function test_raw_pages_preserve_empty_middle_pages(): void
+    {
+        $this->assertSame(['一', '', '三'], \get_toc_raw_pages('一<!--nextpage--><!--nextpage-->三'));
+        $this->assertSame(['本文'], \get_toc_raw_pages('本文'));
+    }
+
+    /**
+     * WordPressと同じ先頭の改ページの無視によるページ位置の一致
+     */
+    public function test_raw_pages_ignore_leading_page_break(): void
+    {
+        $this->assertSame(['一', '二'], \get_toc_raw_pages("\n<!--nextpage-->\n一<!--nextpage-->\n二"));
+        $this->assertSame(['一', '二'], \get_toc_raw_pages('<!-- wp:nextpage --><!--nextpage--><!-- /wp:nextpage -->一<!--nextpage-->二'));
+    }
+
     public function test_get_toc_tag_postがない場合空文字列を返す(): void
     {
         // global $post が設定されていない、かつカテゴリ/タグページでもない場合
