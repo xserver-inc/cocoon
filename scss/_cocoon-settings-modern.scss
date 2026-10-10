@@ -721,6 +721,9 @@
   :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide > .metabox-holder) {
     grid-column: 2;
     grid-row: 1;
+
+    // WordPress標準の.widgetの自動余白による内容幅への縮小防止
+    inline-size: 100%;
     scroll-margin-block-start: 64px;
     margin-block-start: 0;
   }

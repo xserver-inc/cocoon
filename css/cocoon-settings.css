@@ -595,6 +595,7 @@
 .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide > .metabox-holder) {
   grid-column: 2;
   grid-row: 1;
+  inline-size: 100%;
   scroll-margin-block-start: 64px;
   margin-block-start: 0;
 }
