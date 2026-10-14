@@ -767,6 +767,19 @@ function get_additional_post_navi_classes($option = null){
 endif;
 
 
+// リンク先の記事が属する全カテゴリーの識別クラス
+if ( !function_exists( 'get_post_navi_category_classes' ) ):
+function get_post_navi_category_classes($post_id){
+  $classes = array();
+  foreach (get_the_category($post_id) as $category) {
+    $classes[] = 'post-navi-category-'.(int) $category->term_id;
+  }
+
+  return $classes ? ' '.implode(' ', $classes) : '';
+}
+endif;
+
+
 //コメントエリアのclass追加関数
 if ( !function_exists( 'get_additional_comment_area_classes' ) ):
 function get_additional_comment_area_classes($option = null){

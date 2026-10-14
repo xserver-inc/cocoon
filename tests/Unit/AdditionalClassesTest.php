@@ -8,6 +8,7 @@
 
 namespace Cocoon\Tests\Unit;
 
+use Brain\Monkey\Functions;
 use Cocoon\Tests\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
@@ -78,5 +79,38 @@ class AdditionalClassesTest extends TestCase
         $this->assertStringStartsWith('fw-', $result);
         // get_site_font_weight() → '400'
         $this->assertSame('fw-400', $result);
+    }
+
+    public function test_前後記事のカテゴリークラスは指定した投稿のカテゴリーIDを含む(): void
+    {
+        Functions\expect('get_the_category')
+            ->once()
+            ->with(123)
+            ->andReturn([(object) ['term_id' => 9]]);
+
+        $this->assertSame(' post-navi-category-9', get_post_navi_category_classes(123));
+    }
+
+    public function test_前後記事のカテゴリークラスは所属する全カテゴリーを含む(): void
+    {
+        Functions\expect('get_the_category')
+            ->once()
+            ->with(456)
+            ->andReturn([
+                (object) ['term_id' => 9],
+                (object) ['term_id' => 14],
+            ]);
+
+        $this->assertSame(
+            ' post-navi-category-9 post-navi-category-14',
+            get_post_navi_category_classes(456)
+        );
+    }
+
+    public function test_カテゴリーのない前後記事はクラスも余分な空白も追加しない(): void
+    {
+        Functions\expect('get_the_category')->once()->with(789)->andReturn([]);
+
+        $this->assertSame('', get_post_navi_category_classes(789));
     }
 }
