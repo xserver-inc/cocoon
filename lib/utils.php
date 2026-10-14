@@ -2949,6 +2949,9 @@ function get_singular_sns_share_image_url(){
     if (isset($image[2])) {
       $sns_image_url = $image[2];
     }
+  // 固定フロントページのホームイメージによる補完
+  } else if ( is_front_page() && ( $ogp_home_image_url = get_ogp_home_image_url() ) ) {
+    $sns_image_url = $ogp_home_image_url;
   } else if ( $no_image_url = get_no_image_url() ){//NO IMAGEが設定されている場合
     $sns_image_url = $no_image_url;
   } else if ( $ogp_home_image_url = get_ogp_home_image_url() ){//ホームイメージが設定されている場合
