@@ -130,52 +130,66 @@ function the_category_links(){
 }
 endif;
 
-//リンクのないカテゴリーの取得
-if ( !function_exists( 'get_the_nolink_category' ) ):
-function get_the_nolink_category($id = null, $is_visible = true){
+// カードラベルと前後記事ナビで共用するカテゴリーの選択
+if ( !function_exists( 'get_category_for_label' ) ):
+function get_category_for_label($id = null){
+  // 投稿オブジェクトから対象記事IDへの統一
+  if ($id instanceof WP_Post) {
+    $id = $id->ID;
+  }
+
   if ($id) {
     $categories = get_the_category($id);
   } else {
     $categories = get_the_category();
   }
-  $display_class = null;
-  if (!$is_visible) {
-    return;
-  }
 
-  //メインカテゴリーが指定してある場合は該当カテゴリーを適用
+  // 所属が確認できるメインカテゴリーの優先
   $category = isset($categories[0]) ? $categories[0] : null;
   $main_cat_id = get_the_page_main_category($id);
   if ($main_cat_id && in_category($main_cat_id, $id)) {
     $category = get_category($main_cat_id);
   }
 
-  //カテゴリーラベル制御用のフック
-  $category = apply_filters('get_the_nolink_category', $category, $categories);
+  // 既存の選択フィルターへの対象記事IDの追加
+  $post_id = $id ? $id : get_the_ID();
+  return apply_filters('get_the_nolink_category', $category, $categories, $post_id);
+}
+endif;
+
+
+// リンクのないカテゴリーラベルの取得
+if ( !function_exists( 'get_the_nolink_category' ) ):
+function get_the_nolink_category($id = null, $is_visible = true){
+  if (!$is_visible) {
+    return;
+  }
+
+  $category = get_category_for_label($id);
   if (isset($category->cat_ID) && isset($category->cat_name)) {
-    return '<span class="cat-label cat-label-'.$category->cat_ID.$display_class.'">'.$category->cat_name.'</span>';
+    return '<span class="cat-label cat-label-'.$category->cat_ID.'">'.$category->cat_name.'</span>';
   }
 }
 endif;
 
-add_filter('get_the_nolink_category', function($category, $categories) {
-  $post_type = get_post_type();
+add_filter('get_the_nolink_category', function($category, $categories, $post_id = null) {
+  $post_id = $post_id ? $post_id : get_the_ID();
+  $post_type = get_post_type($post_id);
 
-  // カスタム投稿の場合のみ処理
-  if ($post_type !== 'post') {
-    // 投稿タイプに関連付けられたタクソノミーを取得
+  // カスタム投稿に関連する分類の取得
+  if ($post_type && $post_type !== 'post') {
     $taxonomies = get_object_taxonomies($post_type);
 
-    // 階層型のタクソノミーのみを取得
+    // 階層型の分類への絞り込み
     $hierarchical_taxonomies = array_filter($taxonomies, 'is_taxonomy_hierarchical');
 
-    // 階層型タクソノミーが存在しない場合は処理を終了
+    // 階層型の分類がない場合の既存結果の維持
     if (empty($hierarchical_taxonomies)) {
       return $category;
     }
 
-    // メインのターム取得
-    $main_cat_id = get_the_page_main_category(get_the_ID());
+    // 対象記事のメインタームの取得
+    $main_cat_id = get_the_page_main_category($post_id);
     if ($main_cat_id) {
       $main_term = get_term($main_cat_id);
       if (!is_wp_error($main_term) && $main_term) {
@@ -187,17 +201,17 @@ add_filter('get_the_nolink_category', function($category, $categories) {
       }
     }
 
-    // 最初の階層型タクソノミーのタームを取得
+    // 最初の階層型分類から名前順で選ぶ代替タームの取得
     $args = array(
       'order'   => 'ASC',
       'orderby' => 'name',
     );
-    $terms = wp_get_post_terms(get_the_ID(), reset($hierarchical_taxonomies), $args);
+    $terms = wp_get_post_terms($post_id, reset($hierarchical_taxonomies), $args);
 
     if (!empty($terms) && !is_wp_error($terms)) {
       $term = $terms[0];
 
-      // $categoryに設定
+      // ラベル用カテゴリーの形式への統一
       $category = (object) array(
         'cat_ID'   => $term->term_id,
         'cat_name' => $term->name
@@ -206,7 +220,7 @@ add_filter('get_the_nolink_category', function($category, $categories) {
   }
 
   return $category;
-}, 10, 2);
+}, 10, 3);
 
 
 
