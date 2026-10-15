@@ -809,7 +809,12 @@ if (!function_exists('is_ad_pos_content_middle_visible')) {
 }
 
 if (!function_exists('in_category')) {
-    function in_category($ids) {
+    function in_category($ids, $post = null) {
+        global $test_mock_in_category_callback;
+        // テスト単位の所属判定と対象投稿IDの検証
+        if (is_callable($test_mock_in_category_callback)) {
+            return $test_mock_in_category_callback($ids, $post);
+        }
         return false;
     }
 }

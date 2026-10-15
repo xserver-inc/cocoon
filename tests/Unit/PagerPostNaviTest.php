@@ -11,6 +11,9 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class PagerPostNaviTest extends TestCase
 {
+    private bool $hadInCategoryCallback = false;
+    private mixed $originalInCategoryCallback = null;
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -28,6 +31,10 @@ class PagerPostNaviTest extends TestCase
     {
         parent::setUp();
 
+        // 所属判定コールバックの退避とテストごとの初期化
+        $this->hadInCategoryCallback = array_key_exists('test_mock_in_category_callback', $GLOBALS);
+        $this->originalInCategoryCallback = $GLOBALS['test_mock_in_category_callback'] ?? null;
+        unset($GLOBALS['test_mock_in_category_callback']);
         Functions\when('is_post_navi_visible')->justReturn(true);
         Functions\when('is_post_navi_same_category_enable')->justReturn(false);
         Functions\when('get_post_navi_exclude_category_ids')->justReturn([]);
@@ -36,33 +43,78 @@ class PagerPostNaviTest extends TestCase
         Functions\when('get_post_navi_type')->justReturn('default');
         Functions\when('is_post_navi_border_visible')->justReturn(true);
         Functions\when('is_post_navi_type_spuare')->justReturn(false);
+        Functions\when('get_the_page_main_category')->justReturn(null);
         Functions\when('wp_strip_all_tags')->alias('strip_tags');
         Functions\when('get_post_navi_thumbnail_tag')->alias(static function ($postId, $width, $height) {
             return '<img src="/thumbnail-' . $postId . '.jpg" width="' . $width . '" height="' . $height . '" alt="">';
         });
     }
 
-    public function test_前後のリンクは表示中の記事ではなく各リンク先の全カテゴリーを持つ(): void
+    protected function tearDown(): void
+    {
+        // テスト前の所属判定コールバックの復元
+        if ($this->hadInCategoryCallback) {
+            $GLOBALS['test_mock_in_category_callback'] = $this->originalInCategoryCallback;
+        } else {
+            unset($GLOBALS['test_mock_in_category_callback']);
+        }
+
+        parent::tearDown();
+    }
+
+    public function test_前後のリンクは各リンク先のラベル用カテゴリーを1つだけ持つ(): void
     {
         $this->mockAdjacentPosts(101, 303);
         Functions\expect('get_the_category')->once()->with(101)->andReturn([
-            (object) ['term_id' => 7],
-            (object) ['term_id' => 8],
+            (object) ['cat_ID' => 7, 'cat_name' => 'カテゴリー7'],
+            (object) ['cat_ID' => 8, 'cat_name' => 'カテゴリー8'],
         ]);
         Functions\expect('get_the_category')->once()->with(303)->andReturn([
-            (object) ['term_id' => 9],
+            (object) ['cat_ID' => 9, 'cat_name' => 'カテゴリー9'],
         ]);
 
         $html = $this->renderNavigation();
         $links = $this->navigationLinks($html);
 
         $this->assertCount(2, $links);
-        $this->assertSame('prev-post a-wrap border-element cf post-navi-category-7 post-navi-category-8', $links[0]['class']);
+        $this->assertSame('prev-post a-wrap border-element cf post-navi-category-7', $links[0]['class']);
         $this->assertSame('next-post a-wrap cf post-navi-category-9', $links[1]['class']);
+        $this->assertStringNotContainsString('cat-label', $html);
+    }
 
-        // 識別クラス以外の要素・属性・本文が従来のHTMLと同一であることの確認
-        $withoutCategoryClasses = preg_replace('/ post-navi-category-\d+/', '', $html);
-        $this->assertSame($this->normalizeHtml($this->originalNavigationHtml()), $this->normalizeHtml($withoutCategoryClasses));
+    public function test_前後のリンクは各投稿で指定された異なるメインカテゴリーを持つ(): void
+    {
+        $this->mockAdjacentPosts(101, 303);
+        $previousMain = (object) ['cat_ID' => 8, 'cat_name' => '前の記事のメインカテゴリー'];
+        $nextMain = (object) ['cat_ID' => 10, 'cat_name' => '次の記事のメインカテゴリー'];
+        Functions\expect('get_the_category')->once()->with(101)->andReturn([
+            (object) ['cat_ID' => 7, 'cat_name' => '前の記事の先頭カテゴリー'],
+            $previousMain,
+        ]);
+        Functions\expect('get_the_category')->once()->with(303)->andReturn([
+            (object) ['cat_ID' => 9, 'cat_name' => '次の記事の先頭カテゴリー'],
+            $nextMain,
+        ]);
+        $mainCategoryCalls = [];
+        Functions\when('get_the_page_main_category')->alias(static function ($postId) use (&$mainCategoryCalls) {
+            $mainCategoryCalls[] = $postId;
+            return [101 => 8, 303 => 10][$postId] ?? null;
+        });
+        $inCategoryCalls = [];
+        $GLOBALS['test_mock_in_category_callback'] = static function ($categoryId, $postId) use (&$inCategoryCalls) {
+            $inCategoryCalls[] = [$categoryId, $postId];
+            return true;
+        };
+        Functions\expect('get_category')->once()->with(8)->andReturn($previousMain);
+        Functions\expect('get_category')->once()->with(10)->andReturn($nextMain);
+
+        $links = $this->navigationLinks($this->renderNavigation());
+
+        $this->assertCount(2, $links);
+        $this->assertSame([101, 303], $mainCategoryCalls);
+        $this->assertSame([[8, 101], [10, 303]], $inCategoryCalls);
+        $this->assertSame('prev-post a-wrap border-element cf post-navi-category-8', $links[0]['class']);
+        $this->assertSame('next-post a-wrap cf post-navi-category-10', $links[1]['class']);
     }
 
     #[DataProvider('oneSidedNavigationProvider')]
@@ -77,7 +129,7 @@ class PagerPostNaviTest extends TestCase
         Functions\expect('get_the_category')
             ->once()
             ->with($previousId ?? $nextId)
-            ->andReturn([(object) ['term_id' => 17]]);
+            ->andReturn([(object) ['cat_ID' => 17, 'cat_name' => 'カテゴリー17']]);
 
         $links = $this->navigationLinks($this->renderNavigation());
 
@@ -97,16 +149,17 @@ class PagerPostNaviTest extends TestCase
         ];
     }
 
-    public function test_カテゴリーのない記事へのリンクは従来のクラスを維持する(): void
+    public function test_カテゴリーのない記事へのリンクにはカテゴリークラスを付けない(): void
     {
         $this->mockAdjacentPosts(101, 303);
         Functions\expect('get_the_category')->once()->with(101)->andReturn([]);
         Functions\expect('get_the_category')->once()->with(303)->andReturn([]);
 
-        $this->assertSame(
-            $this->normalizeHtml($this->originalNavigationHtml()),
-            $this->normalizeHtml($this->renderNavigation())
-        );
+        $links = $this->navigationLinks($this->renderNavigation());
+
+        $this->assertCount(2, $links);
+        $this->assertSame('prev-post a-wrap border-element cf', $links[0]['class']);
+        $this->assertSame('next-post a-wrap cf', $links[1]['class']);
     }
 
     public function test_隣接する記事がなければカテゴリーの取得もナビの表示も行わない(): void
@@ -156,24 +209,4 @@ class PagerPostNaviTest extends TestCase
         return $links;
     }
 
-    private function normalizeHtml(string $html): string
-    {
-        return trim((string) preg_replace('/\s+/', ' ', $html));
-    }
-
-    private function originalNavigationHtml(): string
-    {
-        return <<<'HTML'
-<div id="pager-post-navi" class="pager-post-navi post-navi-default post-navi-border cf">
-<a href="http://example.com/" title="Test Title" class="prev-post a-wrap border-element cf">
-<div class="fa fa-chevron-left iconfont" aria-hidden="true"></div>
-<figure class="prev-post-thumb card-thumb"><img src="/thumbnail-101.jpg" width="120" height="68" alt=""></figure>
-<div class="prev-post-title">Test Title</div></a><a href="http://example.com/" title="Test Title" class="next-post a-wrap cf">
-<div class="fa fa-chevron-right iconfont" aria-hidden="true"></div>
-<figure class="next-post-thumb card-thumb">
-<img src="/thumbnail-303.jpg" width="120" height="68" alt=""></figure>
-<div class="next-post-title">Test Title</div></a>
-</div><!-- /.pager-post-navi -->
-HTML;
-    }
 }

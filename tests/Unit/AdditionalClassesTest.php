@@ -14,11 +14,37 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class AdditionalClassesTest extends TestCase
 {
+    private bool $hadInCategoryCallback = false;
+    private mixed $originalInCategoryCallback = null;
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
 
         require_once dirname(__DIR__, 2) . '/lib/additional-classes.php';
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // 所属判定コールバックの退避とテストごとの初期化
+        $this->hadInCategoryCallback = array_key_exists('test_mock_in_category_callback', $GLOBALS);
+        $this->originalInCategoryCallback = $GLOBALS['test_mock_in_category_callback'] ?? null;
+        unset($GLOBALS['test_mock_in_category_callback']);
+        Functions\when('get_the_page_main_category')->justReturn(null);
+    }
+
+    protected function tearDown(): void
+    {
+        // テスト前の所属判定コールバックの復元
+        if ($this->hadInCategoryCallback) {
+            $GLOBALS['test_mock_in_category_callback'] = $this->originalInCategoryCallback;
+        } else {
+            unset($GLOBALS['test_mock_in_category_callback']);
+        }
+
+        parent::tearDown();
     }
 
     // ========================================================================
@@ -81,30 +107,55 @@ class AdditionalClassesTest extends TestCase
         $this->assertSame('fw-400', $result);
     }
 
-    public function test_前後記事のカテゴリークラスは指定した投稿のカテゴリーIDを含む(): void
-    {
-        Functions\expect('get_the_category')
-            ->once()
-            ->with(123)
-            ->andReturn([(object) ['term_id' => 9]]);
-
-        $this->assertSame(' post-navi-category-9', get_post_navi_category_classes(123));
-    }
-
-    public function test_前後記事のカテゴリークラスは所属する全カテゴリーを含む(): void
+    public function test_複数カテゴリーの前後記事はラベルと同じ先頭カテゴリーだけを含む(): void
     {
         Functions\expect('get_the_category')
             ->once()
             ->with(456)
             ->andReturn([
-                (object) ['term_id' => 9],
-                (object) ['term_id' => 14],
+                (object) ['cat_ID' => 9, 'cat_name' => 'カテゴリー9'],
+                (object) ['cat_ID' => 14, 'cat_name' => 'カテゴリー14'],
             ]);
 
         $this->assertSame(
-            ' post-navi-category-9 post-navi-category-14',
+            ' post-navi-category-9',
             get_post_navi_category_classes(456)
         );
+    }
+
+    public function test_前後記事のカテゴリークラスはラベルと同じメインカテゴリーを含む(): void
+    {
+        Functions\expect('get_the_category')->once()->with(456)->andReturn([
+            (object) ['cat_ID' => 9, 'cat_name' => 'カテゴリー9'],
+            (object) ['cat_ID' => 14, 'cat_name' => 'カテゴリー14'],
+        ]);
+        Functions\when('get_the_page_main_category')->justReturn(14);
+        $GLOBALS['test_mock_in_category_callback'] = function ($categoryId, $postId) {
+            $this->assertSame([14, 456], [$categoryId, $postId]);
+            return true;
+        };
+        Functions\expect('get_category')->once()->with(14)
+            ->andReturn((object) ['cat_ID' => '14', 'cat_name' => 'カテゴリー14']);
+
+        $this->assertSame(' post-navi-category-14', get_post_navi_category_classes(456));
+    }
+
+    #[DataProvider('invalidPostNaviCategoryProvider')]
+    public function test_カテゴリーIDが無効なら識別クラスを追加しない(object $category): void
+    {
+        Functions\expect('get_the_category')->once()->with(789)->andReturn([$category]);
+
+        $this->assertSame('', get_post_navi_category_classes(789));
+    }
+
+    public static function invalidPostNaviCategoryProvider(): array
+    {
+        return [
+            'カテゴリーIDなし' => [(object) ['cat_name' => 'IDなし']],
+            'カテゴリーIDが0' => [(object) ['cat_ID' => 0]],
+            'カテゴリーIDが負数' => [(object) ['cat_ID' => -9]],
+            'カテゴリーIDが数値以外' => [(object) ['cat_ID' => 'invalid']],
+        ];
     }
 
     public function test_カテゴリーのない前後記事はクラスも余分な空白も追加しない(): void
