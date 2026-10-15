@@ -430,14 +430,11 @@ add_action('init', function() {
 //******************************************************************************
 //  管理画面追加
 //******************************************************************************
-add_action('admin_enqueue_scripts', function() {
+add_action('admin_footer', function() {
   if (!get_theme_mod('hvn_admin_css_setting')) {
     wp_enqueue_style('hvn-admin', HVN_SKIN_URL . 'assets/css/admin.css');
   }
-});
 
-
-add_action('admin_footer', function() {
   // Cocoon設定画面以外の場合
   $screen = get_current_screen();
   if (strpos($screen->id, 'theme-settings') === false) return;
