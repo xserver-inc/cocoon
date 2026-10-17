@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.5.6\n"
+"Project-Id-Version: Cocoon 2.9.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -672,7 +672,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:338
 #: lib/admin-tinymce-qtag.php:1693
-#: lib/utils.php:1038
+#: lib/utils.php:1068
 #: blocks/src/block-extension/style-extension/style01.js:58
 #: blocks/src/block-extension/style-extension/style02.js:58
 #: blocks/src/block/blogcard/deprecated.js:150
@@ -703,7 +703,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:488
 #: lib/admin-tinymce-qtag.php:1699
-#: lib/utils.php:1037
+#: lib/utils.php:1067
 #: blocks/src/block/blogcard/deprecated.js:154
 #: blocks/src/block/blogcard/edit.js:68
 #: blocks/src/block/tab-box/edit.js:91
@@ -722,7 +722,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:1711
 #: lib/page-access/analytics/dashboard-page.php:659
 #: lib/page-access/click-analytics/render-func.php:63
-#: lib/utils.php:1042
+#: lib/utils.php:1072
 #: blocks/src/block/blogcard/deprecated.js:162
 #: blocks/src/block/blogcard/edit.js:76
 #: blocks/src/block/tab-box/edit.js:103
@@ -1171,7 +1171,7 @@ msgstr ""
 #: lib/page-access/click-analytics/render-func.php:50
 #: lib/page-settings/image-forms.php:214
 #: lib/page-settings/single-funcs.php:76
-#: lib/utils.php:1033
+#: lib/utils.php:1063
 #: lib/widgets/related-entries.php:19
 #: lib/widgets/related-entries.php:137
 #: lib/widgets/related-entries.php:147
@@ -1182,7 +1182,7 @@ msgid "関連記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1663
-#: lib/utils.php:1034
+#: lib/utils.php:1064
 #: blocks/src/block/blogcard/deprecated.js:130
 #: blocks/src/block/blogcard/edit.js:44
 #: blocks/src/old/blogcard-class/block.js:75
@@ -1190,7 +1190,7 @@ msgid "参考記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1669
-#: lib/utils.php:1035
+#: lib/utils.php:1065
 #: blocks/src/block/blogcard/deprecated.js:134
 #: blocks/src/block/blogcard/edit.js:48
 msgid "参考リンク"
@@ -1199,12 +1199,12 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:1675
 #: lib/page-settings/carousel-forms.php:64
 #: lib/page-settings/image-forms.php:213
-#: lib/utils.php:1036
+#: lib/utils.php:1066
 #: lib/widgets/popular-entries.php:21
 #: lib/widgets/popular-entries.php:137
 #: lib/widgets/popular-entries.php:151
 #: skins/skin-made-in-heaven/lib/function.php:398
-#: skins/skin-made-in-heaven/lib/hook-wp.php:1003
+#: skins/skin-made-in-heaven/lib/hook-wp.php:1000
 #: blocks/src/block/blogcard/deprecated.js:138
 #: blocks/src/block/blogcard/edit.js:52
 #: blocks/src/block/popular-list/index.js:28
@@ -1213,7 +1213,7 @@ msgid "人気記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1681
-#: lib/utils.php:1039
+#: lib/utils.php:1069
 #: blocks/src/block/blogcard/deprecated.js:142
 #: blocks/src/block/blogcard/edit.js:56
 #: blocks/src/old/blogcard-class/block.js:83
@@ -1222,7 +1222,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1687
 #: lib/shortcodes.php:1242
-#: lib/utils.php:1040
+#: lib/utils.php:1070
 #: lib/widgets/cta-box.php:34
 #: blocks/src/block/blogcard/deprecated.js:146
 #: blocks/src/block/blogcard/edit.js:60
@@ -1232,7 +1232,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1705
 #: lib/page-access/click-analytics/render-func.php:62
-#: lib/utils.php:1041
+#: lib/utils.php:1071
 #: blocks/src/block/blogcard/deprecated.js:158
 #: blocks/src/block/blogcard/edit.js:72
 #: blocks/src/old/blogcard-class/block.js:99
@@ -1240,13 +1240,13 @@ msgid "公式サイト"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1717
-#: lib/utils.php:1043
+#: lib/utils.php:1073
 #: blocks/src/block/blogcard/edit.js:80
 msgid "前回の記事"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1723
-#: lib/utils.php:1044
+#: lib/utils.php:1074
 #: blocks/src/block/blogcard/edit.js:84
 msgid "続きの記事"
 msgstr ""
@@ -1447,7 +1447,7 @@ msgid "ウィジェット"
 msgstr ""
 
 #: lib/admin.php:628
-#: skins/skin-made-in-heaven/lib/hook-wp.php:715
+#: skins/skin-made-in-heaven/lib/hook-wp.php:712
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
 #: blocks/src/block/navicard/edit.js:163
@@ -2751,7 +2751,7 @@ msgid "未入力"
 msgstr ""
 
 #: lib/html-forms.php:612
-#: skins/skin-made-in-heaven/lib/hook-wp.php:850
+#: skins/skin-made-in-heaven/lib/hook-wp.php:847
 #: blocks/src/block/cta/edit.js:130
 msgid "選択"
 msgstr ""
@@ -3036,7 +3036,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:230
 #: lib/page-item-ranking/_top-page.php:37
 #: lib/tinymce/item-rankings.php:54
-#: lib/utils.php:1072
+#: lib/utils.php:1102
 #: lib/widgets/item-ranking.php:19
 #: lib/widgets/item-ranking.php:72
 #: blocks/src/block/ranking/edit.js:111
@@ -3340,7 +3340,7 @@ msgstr ""
 #: lib/page-access/analytics/render-func.php:340
 #: lib/page-access/analytics/settings-forms.php:59
 #: lib/page-access/click-analytics/filter-func.php:73
-#: skins/skin-made-in-heaven/lib/hook-wp.php:1006
+#: skins/skin-made-in-heaven/lib/hook-wp.php:1003
 msgid "今月"
 msgstr ""
 
@@ -3364,7 +3364,7 @@ msgstr ""
 #: lib/page-settings/carousel-forms.php:72
 #: lib/page-settings/single-forms.php:193
 #: lib/widgets/popular-entries.php:205
-#: skins/skin-made-in-heaven/lib/hook-wp.php:1007
+#: skins/skin-made-in-heaven/lib/hook-wp.php:1004
 #: blocks/src/block/popular-list/edit.js:150
 msgid "全期間"
 msgstr ""
@@ -4391,9 +4391,9 @@ msgstr ""
 #: lib/page-settings/settings-tabs.php:26
 #: lib/page-settings/toc-forms.php:96
 #: lib/page-settings/toc-funcs.php:62
-#: lib/toc.php:98
+#: lib/toc.php:217
 #: lib/widgets/toc.php:19
-#: skins/skin-made-in-heaven/lib/hook-wp.php:505
+#: skins/skin-made-in-heaven/lib/hook-wp.php:502
 #: skins/skin-made-in-heaven/lib/panel-main.php:68
 msgid "目次"
 msgstr ""
@@ -5352,7 +5352,7 @@ msgid "項目の名前です。タグ・ショートコード入力も可能で�
 msgstr ""
 
 #: lib/page-item-ranking/form.php:131
-#: lib/utils.php:1073
+#: lib/utils.php:1103
 msgid "評価："
 msgstr ""
 
@@ -8322,7 +8322,7 @@ msgstr ""
 
 #: lib/page-settings/carousel-forms.php:68
 #: lib/widgets/popular-entries.php:201
-#: skins/skin-made-in-heaven/lib/hook-wp.php:1004
+#: skins/skin-made-in-heaven/lib/hook-wp.php:1001
 msgid "本日"
 msgstr ""
 
@@ -8895,7 +8895,7 @@ msgstr ""
 #: lib/page-settings/content-forms.php:149
 #: lib/page-settings/content-forms.php:269
 #: lib/page-settings/pwa-forms.php:85
-#: skins/skin-made-in-heaven/lib/hook-wp.php:747
+#: skins/skin-made-in-heaven/lib/hook-wp.php:744
 #: blocks/src/block-universal/caption-box/edit.js:114
 #: blocks/src/block-universal/label-box/edit.js:115
 #: blocks/src/block-universal/tab-caption-box/edit.js:115
@@ -14463,126 +14463,126 @@ msgstr ""
 msgid "キャンペーン期間中のみ表示"
 msgstr ""
 
-#: lib/utils.php:875
+#: lib/utils.php:905
 msgid "スクロールできます"
 msgstr ""
 
-#: lib/utils.php:933
+#: lib/utils.php:963
 msgid "公開"
 msgstr ""
 
-#: lib/utils.php:934
+#: lib/utils.php:964
 msgid "記事を公開してもよろしいですか？"
 msgstr ""
 
-#: lib/utils.php:1032
+#: lib/utils.php:1062
 msgid "ラベルなし"
 msgstr ""
 
-#: lib/utils.php:1074
+#: lib/utils.php:1104
 msgid "する"
 msgstr ""
 
-#: lib/utils.php:1075
+#: lib/utils.php:1105
 msgid "続きを読む"
 msgstr ""
 
-#: lib/utils.php:1076
+#: lib/utils.php:1106
 msgid "この記事は参考になりましたか？"
 msgstr ""
 
-#: lib/utils.php:1077
+#: lib/utils.php:1107
 msgid "前の記事を読む"
 msgstr ""
 
-#: lib/utils.php:1078
+#: lib/utils.php:1108
 msgid "次の記事を読む"
 msgstr ""
 
-#: lib/utils.php:1079
+#: lib/utils.php:1109
 msgid "この記事は役に立ちましたか？"
 msgstr ""
 
-#: lib/utils.php:1080
+#: lib/utils.php:1110
 msgid "スキン制御"
 msgstr ""
 
-#: lib/utils.php:2630
+#: lib/utils.php:2660
 msgid "Cocoon："
 msgstr ""
 
-#: lib/utils.php:2631
+#: lib/utils.php:2661
 msgid "「ホームページの表示」が「固定ページ」になっていますが、表示するページが選択されていません。このままでは設定が正常に反映されない場合があります。"
 msgstr ""
 
-#: lib/utils.php:2633
+#: lib/utils.php:2663
 msgid "表示設定を開く"
 msgstr ""
 
-#: lib/utils.php:2757
+#: lib/utils.php:2787
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2765
+#: lib/utils.php:2795
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2773
+#: lib/utils.php:2803
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2781
+#: lib/utils.php:2811
 #, php-format
 msgid "%s週間"
 msgid_plural "%s週間"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2789
-#: lib/utils.php:2804
+#: lib/utils.php:2819
+#: lib/utils.php:2834
 #, php-format
 msgid "%sヶ月"
 msgid_plural "%sヶ月"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2800
-#: lib/utils.php:2803
+#: lib/utils.php:2830
+#: lib/utils.php:2833
 #, php-format
 msgid "%s年"
 msgid_plural "%s年"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/utils.php:2805
+#: lib/utils.php:2835
 #, php-format
 msgid "%1$s%2$s"
 msgstr ""
 
-#: lib/utils.php:4436
+#: lib/utils.php:4469
 msgid "<div class=\"blank-box bb-red\">誹謗中傷は予告なく削除します</div>"
 msgstr ""
 
-#: lib/utils.php:4437
+#: lib/utils.php:4470
 #: skins/skin-demo-php/functions.php:45
 msgid "スキンから入力したタイトル"
 msgstr ""
 
-#: lib/utils.php:4438
+#: lib/utils.php:4471
 #: skins/skin-demo-php/functions.php:46
 msgid "スキンから入力したアピールエリアメッセージです。"
 msgstr ""
 
-#: lib/utils.php:4439
+#: lib/utils.php:4472
 #: skins/skin-demo-php/functions.php:47
 msgid "スキンボタンキャプション"
 msgstr ""
@@ -16927,7 +16927,7 @@ msgid "カテゴリーから記事を探す"
 msgstr ""
 
 #: skins/skin-made-in-heaven/lib/function.php:575
-#: skins/skin-made-in-heaven/lib/hook-wp.php:780
+#: skins/skin-made-in-heaven/lib/hook-wp.php:777
 msgid "アイコン番号"
 msgstr ""
 
@@ -16997,15 +16997,15 @@ msgstr ""
 msgid "通知エリア"
 msgstr ""
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:448
+#: skins/skin-made-in-heaven/lib/hook-wp.php:445
 msgid "スキンの詳細設定はこちら"
 msgstr ""
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:766
+#: skins/skin-made-in-heaven/lib/hook-wp.php:763
 msgid "カスタムフィールド"
 msgstr ""
 
-#: skins/skin-made-in-heaven/lib/hook-wp.php:1005
+#: skins/skin-made-in-heaven/lib/hook-wp.php:1002
 msgid "今週"
 msgstr ""
 
