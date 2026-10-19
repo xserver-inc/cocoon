@@ -9,16 +9,25 @@
 namespace Cocoon\Tests\Unit;
 
 use Cocoon\Tests\TestCase;
+use Brain\Monkey\Functions;
 
 class BlogcardTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        // 本番関数の読み込み後に各テストだけへ適用するカード生成モック
+        require_once dirname(__DIR__, 2) . '/lib/blogcard-in.php';
+        Functions\when('url_to_internal_blogcard_tag')->justReturn(null);
+    }
+
     protected function tearDown(): void
     {
         unset(
             $GLOBALS['test_mock_is_internal_blogcard_enable'],
             $GLOBALS['test_mock_is_external_blogcard_enable'],
             $GLOBALS['test_mock_is_internal_blogcard_url'],
-            $GLOBALS['test_mock_url_to_internal_blogcard_tag_return'],
             $GLOBALS['test_mock_url_to_external_blog_card_tag_return']
         );
         parent::tearDown();
@@ -35,8 +44,6 @@ class BlogcardTest extends TestCase
         if (!defined('TRANSIENT_BLOGCARD_PREFIX')) {
             define('TRANSIENT_BLOGCARD_PREFIX', 'blogcard_');
         }
-
-        require_once dirname(__DIR__, 2) . '/lib/blogcard-in.php';
     }
 
     // ========================================================================
@@ -447,11 +454,10 @@ class BlogcardTest extends TestCase
     {
         global $test_mock_is_internal_blogcard_enable;
         global $test_mock_is_internal_blogcard_url;
-        global $test_mock_url_to_internal_blogcard_tag_return;
 
         $test_mock_is_internal_blogcard_enable = true;
         $test_mock_is_internal_blogcard_url = true;
-        $test_mock_url_to_internal_blogcard_tag_return = '<div class="internal-blogcard">internal</div>';
+        Functions\when('url_to_internal_blogcard_tag')->justReturn('<div class="internal-blogcard">internal</div>');
 
         $attributes = ['url' => 'https://example.test/internal'];
         $result = cocoon_embed_blogcard_render($attributes);
@@ -531,11 +537,10 @@ class BlogcardTest extends TestCase
     {
         global $test_mock_is_internal_blogcard_enable;
         global $test_mock_is_internal_blogcard_url;
-        global $test_mock_url_to_internal_blogcard_tag_return;
 
         $test_mock_is_internal_blogcard_enable = true;
         $test_mock_is_internal_blogcard_url = true;
-        $test_mock_url_to_internal_blogcard_tag_return = null; // タグ生成失敗
+        Functions\when('url_to_internal_blogcard_tag')->justReturn(null);
 
         $attributes = ['url' => 'https://example.test/internal-fail'];
         $result = cocoon_embed_blogcard_render($attributes);

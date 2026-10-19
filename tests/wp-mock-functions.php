@@ -642,16 +642,6 @@ if (!function_exists('_n')) {
     }
 }
 
-if (!function_exists('url_to_internal_blogcard_tag')) {
-    function url_to_internal_blogcard_tag($url) {
-        global $test_mock_url_to_internal_blogcard_tag_return;
-        if (isset($test_mock_url_to_internal_blogcard_tag_return)) {
-            return $test_mock_url_to_internal_blogcard_tag_return;
-        }
-        return null;
-    }
-}
-
 if (!function_exists('is_ad_shortcode_enable')) {
     function is_ad_shortcode_enable() {
         return false;
