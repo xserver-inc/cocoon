@@ -458,7 +458,7 @@ class AccessExportIntegrationTest extends IntegrationTestCase
         $environment['WORDPRESS_DB_PASSWORD'] = DB_PASSWORD;
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, '-d', 'memory_limit=128M', dirname(__DIR__) . '/fixtures/access-export-worker.php', $format);
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('redirect', 1)), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('redirect', 1)), $pipes, null, $this->workerEnvironment($environment));
         $this->assertIsResource($process);
         try {
             fwrite($pipes[0], json_encode($template) . "\n");

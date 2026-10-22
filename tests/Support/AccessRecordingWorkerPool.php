@@ -4,6 +4,8 @@
  */
 namespace Cocoon\Tests\Support;
 
+require_once __DIR__ . '/ProcessEnvironment.php';
+
 class AccessRecordingWorkerPool
 {
     public const READY = 'COCOON_PV_READY';
@@ -18,7 +20,7 @@ class AccessRecordingWorkerPool
         try {
             foreach ($commands as $command) {
                 // PHPエラーと開始・結果メッセージの混同を防ぐ独立パイプ
-                $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+                $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, ProcessEnvironment::preserveEmptyValues($environment));
                 if (!is_resource($process)) throw new \RuntimeException('PV記録ワーカーの起動失敗');
                 stream_set_blocking($pipes[1], false);
                 stream_set_blocking($pipes[2], false);
@@ -38,7 +40,7 @@ class AccessRecordingWorkerPool
         } catch (\Throwable $error) {
             $message = $error->getMessage() . $this->diagnostics($workers);
             // 接続障害の診断に含まれる可能性があるDBパスワードの伏せ字
-            if (!empty($environment['WORDPRESS_DB_PASSWORD'])) $message = str_replace($environment['WORDPRESS_DB_PASSWORD'], '[伏せ字]', $message);
+            if (isset($environment['WORDPRESS_DB_PASSWORD']) && $environment['WORDPRESS_DB_PASSWORD'] !== '') $message = str_replace($environment['WORDPRESS_DB_PASSWORD'], '[伏せ字]', $message);
             throw new \RuntimeException($message);
         } finally {
             foreach ($workers as $worker) {

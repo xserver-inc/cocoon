@@ -45,6 +45,13 @@ class AccessRecordingWorkerPoolTest extends TestCase
         $this->assertSame(2, $this->runChild('usleep(800000);' . $this->readySource() . $this->resultSource(), 3, 0.5, 4));
     }
 
+    public function testEmptyAndZeroEnvironmentValuesReachBothWorkers(): void
+    {
+        $source = 'if (getenv("COCOON_PV_EMPTY_TEST") !== "" || getenv("COCOON_PV_ZERO_TEST") !== "0") exit(7);'
+            . $this->readySource() . $this->resultSource();
+        $this->assertSame(2, $this->runChild($source, 3, 2, 5, array('COCOON_PV_EMPTY_TEST' => '', 'COCOON_PV_ZERO_TEST' => '0')));
+    }
+
     public function testPartialLineCannotBypassTheStartupDeadline(): void
     {
         $this->expectException(\RuntimeException::class);
@@ -94,6 +101,17 @@ class AccessRecordingWorkerPoolTest extends TestCase
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('予期しない標準出力');
         $this->runChild('fwrite(STDOUT, "unexpected output\\n"); sleep(10);');
+    }
+
+    public function testZeroPasswordIsAlsoRedactedFromWorkerErrors(): void
+    {
+        try {
+            $this->runChild('fwrite(STDERR, "password=0"); sleep(10);', 3, 2, 5, array('WORDPRESS_DB_PASSWORD' => '0'));
+            $this->fail('文字列0のパスワードの伏せ字漏れ');
+        } catch (\RuntimeException $error) {
+            $this->assertStringContainsString('password=[伏せ字]', $error->getMessage());
+            $this->assertStringNotContainsString('password=0', $error->getMessage());
+        }
     }
 
     public function testUnterminatedStdoutAfterResultIsRejectedAtProcessExit(): void

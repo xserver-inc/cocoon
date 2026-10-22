@@ -48,7 +48,7 @@ class AccessExportTransactionIntegrationTest extends IntegrationTestCase
         $environment['WORDPRESS_DB_PASSWORD'] = DB_PASSWORD;
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, '-d', 'memory_limit=128M', dirname(__DIR__) . '/fixtures/access-export-transaction-worker.php');
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $this->workerEnvironment($environment));
         if (!is_resource($process)) throw new \RuntimeException('外側トランザクション書き出しワーカーの起動失敗');
         $stdout = '';
         $stderr = '';

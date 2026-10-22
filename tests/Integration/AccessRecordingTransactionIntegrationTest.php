@@ -166,7 +166,7 @@ class AccessRecordingTransactionIntegrationTest extends IntegrationTestCase
             // 同時2プロセスに限定した、異なる接続元IPの初回記録
             foreach (array('192.0.2.1', '192.0.2.2') as $ip) {
                 $command = array(PHP_BINARY, dirname(__DIR__) . '/fixtures/access-recording-transaction-worker.php', $table, $ip);
-                $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+                $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $this->workerEnvironment($environment));
                 if (!is_resource($process)) throw new \RuntimeException('トランザクション検証ワーカーの起動失敗');
                 stream_set_blocking($pipes[1], false);
                 stream_set_blocking($pipes[2], false);

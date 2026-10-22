@@ -93,7 +93,7 @@ class AccessRecordingFoundRowsIntegrationTest extends IntegrationTestCase
         $environment['WORDPRESS_DB_PASSWORD'] = DB_PASSWORD;
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, dirname(__DIR__) . '/fixtures/access-found-rows-worker.php', (string) $id, $mode);
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $this->workerEnvironment($environment));
         if (!is_resource($process)) throw new \RuntimeException('接続フラグ検証ワーカーの起動失敗');
         $stdout = '';
         $stderr = '';

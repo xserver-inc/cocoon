@@ -9,6 +9,9 @@
 namespace Cocoon\Tests\Integration;
 
 use PHPUnit\Framework\TestCase;
+use Cocoon\Tests\Support\ProcessEnvironment;
+
+require_once dirname(__DIR__) . '/Support/ProcessEnvironment.php';
 
 abstract class IntegrationTestCase extends TestCase
 {
@@ -20,6 +23,12 @@ abstract class IntegrationTestCase extends TestCase
 
     /** テスト開始時のパーマリンク構造 */
     private ?string $originalPermalinkStructure = null;
+
+    protected function workerEnvironment(array $environment): array
+    {
+        // 空文字と未設定を区別した、テスト用ワーカーへの環境変数の受け渡し
+        return ProcessEnvironment::preserveEmptyValues($environment);
+    }
 
     protected function setUp(): void
     {

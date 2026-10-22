@@ -183,7 +183,7 @@ class AccessRecordingLowerHelperOverrideIntegrationTest extends IntegrationTestC
         $environment['WORDPRESS_DB_PASSWORD'] = DB_PASSWORD;
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, dirname(__DIR__) . '/fixtures/access-lower-helper-override-worker.php', (string) $id, $mode);
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('redirect', 1)), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('redirect', 1)), $pipes, null, $this->workerEnvironment($environment));
         $this->assertIsResource($process);
         try {
             fclose($pipes[0]);

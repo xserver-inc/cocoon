@@ -163,7 +163,7 @@ class AccessExportConcurrencyIntegrationTest extends IntegrationTestCase
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, dirname(__DIR__) . '/fixtures/access-export-concurrency-worker.php', (string) $id, $date, $isolation, $transaction ? 'transaction' : 'autocommit', $gate, $signal);
         if ($snapshotIds) $command = array_merge($command, array('snapshot', (string) end($snapshotIds)));
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $this->workerEnvironment($environment));
         if (!is_resource($process)) throw new \RuntimeException('書き出し競合ワーカーの起動失敗');
         $stdout = '';
         $stderr = '';

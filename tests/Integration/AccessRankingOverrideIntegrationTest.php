@@ -101,7 +101,7 @@ class AccessRankingOverrideIntegrationTest extends IntegrationTestCase
         $environment['WORDPRESS_DB_PASSWORD'] = DB_PASSWORD;
         $environment['WORDPRESS_TABLE_PREFIX'] = $wpdb->prefix;
         $command = array(PHP_BINARY, dirname(__DIR__) . '/fixtures/access-ranking-override-worker.php', $mode, $format, (string) $ids[0], (string) $ids[1]);
-        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $environment);
+        $process = proc_open($command, array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes, null, $this->workerEnvironment($environment));
         $this->assertIsResource($process);
         $stdout = '';
         $stderr = '';
