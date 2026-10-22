@@ -151,7 +151,7 @@ services:
     environment:
       COMPOSER_ALLOW_SUPERUSER: "1"
       COMPOSER_CACHE_DIR: /tmp/composer-cache
-      COMPOSER_PROCESS_TIMEOUT: "600"
+      COMPOSER_PROCESS_TIMEOUT: "${COMPOSER_PROCESS_TIMEOUT:-600}"
     volumes:
       - ..:/workspace
       - composer_vendor:/workspace/vendor
@@ -176,7 +176,7 @@ services:
       <<: *wp-db-env
       COMPOSER_ALLOW_SUPERUSER: "1"
       COMPOSER_CACHE_DIR: /tmp/composer-cache
-      COMPOSER_PROCESS_TIMEOUT: "600"
+      COMPOSER_PROCESS_TIMEOUT: "${COMPOSER_PROCESS_TIMEOUT:-600}"
       WP_TESTS_DIR: /tmp/wordpress-develop/tests/phpunit
     volumes:
       - ..:/workspace

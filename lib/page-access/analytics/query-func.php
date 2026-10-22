@@ -73,6 +73,8 @@ endif;
  * 結果が null/false でも配列として扱えるよう、配列にラップして保存する。
  */
 if ( !function_exists( 'cocoon_analytics_cached' ) ):
+// 独自のキャッシュ経由の除外・補正と区別するための、標準実装の目印
+define('COCOON_ANALYTICS_DEFAULT_CACHED', true);
 function cocoon_analytics_cached($key_parts, callable $producer){
   $rev = cocoon_analytics_revision();
   $raw = is_array($key_parts) ? wp_json_encode($key_parts) : (string) $key_parts;
@@ -515,20 +517,43 @@ endif;
  * 人気記事ランキング
  */
 if ( !function_exists( 'cocoon_analytics_ranking' ) ):
+// 旧ランキング関数の上書きと区別するための、標準実装の目印
+define('COCOON_ANALYTICS_DEFAULT_RANKING', true);
 function cocoon_analytics_ranking($from, $to, $post_types = null, $limit = 10, $offset = 0){
   $limit = max(1, min(500, (int) $limit));
   $offset = max(0, (int) $offset);
   return cocoon_analytics_cached(array('ranking', $from, $to, $post_types, $limit, $offset), function() use ($from, $to, $post_types, $limit, $offset){
-    global $wpdb;
-    $table = ACCESSES_TABLE_NAME;
-    $types = cocoon_analytics_allowed_post_types($post_types);
-    $in = cocoon_analytics_in_placeholder($types);
-    // 投稿タイプの判定は記事別タブと同じく現在の投稿タイプ（p.post_type）基準
-    // アクセス記録側（a.post_type）での判定・グループ化は投稿タイプ変更時のPV分割の原因
-    // 内側で先に post_id 単位へ集約することで、アクセステーブル側は
-    // (date,post_type,post_id,count) のカバリングインデックスだけで完結する
-    // 同PV時の並び固定のため、公開日・投稿IDを第2・第3ソートキーに指定
-    $sql = "SELECT p.ID AS post_id, p.post_type, t.pv
+    return cocoon_analytics_ranking_batch($from, $to, $post_types, $limit, $offset);
+  });
+}
+endif;
+
+/**
+ * ランキングを最大500件ずつ取得する。全件書き出しでは結果をキャッシュしない。
+ */
+if (!function_exists('cocoon_analytics_ranking_batch')):
+function cocoon_analytics_ranking_batch($from, $to, $post_types, $limit, $offset){
+  global $wpdb;
+  $limit = max(1, min(500, (int) $limit));
+  $offset = max(0, (int) $offset);
+  $sql = cocoon_analytics_ranking_sql($from, $to, $post_types);
+  $rows = $wpdb->get_results($sql . $wpdb->prepare(' LIMIT %d OFFSET %d', $limit, $offset), ARRAY_A);
+  foreach ($rows as &$r) { $r['pv'] = (int) $r['pv']; $r['post_id'] = (int) $r['post_id']; }
+  return $rows ?: array();
+}
+endif;
+
+/**
+ * 画面表示用のランキングSQLを返す。
+ */
+if (!function_exists('cocoon_analytics_ranking_sql')):
+function cocoon_analytics_ranking_sql($from, $to, $post_types = null){
+  global $wpdb;
+  $table = ACCESSES_TABLE_NAME;
+  $types = cocoon_analytics_allowed_post_types($post_types);
+  $in = cocoon_analytics_in_placeholder($types);
+  // 現在の投稿タイプを基準にした集計と、同PV時の公開日・IDによる順序固定
+  $sql = "SELECT p.ID AS post_id, p.post_type, t.pv
             FROM (
               SELECT post_id, SUM(count) AS pv
               FROM `{$table}`
@@ -537,13 +562,8 @@ function cocoon_analytics_ranking($from, $to, $post_types = null, $limit = 10, $
             ) t
             INNER JOIN {$wpdb->posts} p ON p.ID = t.post_id AND p.post_status = 'publish'
             WHERE p.post_type IN ({$in['sql']})
-            ORDER BY t.pv DESC, p.post_date DESC, p.ID DESC
-            LIMIT %d OFFSET %d";
-    $args = array_merge(array($from, $to), $in['args'], array($limit, $offset));
-    $rows = $wpdb->get_results($wpdb->prepare($sql, $args), ARRAY_A);
-    foreach ($rows as &$r) { $r['pv'] = (int) $r['pv']; $r['post_id'] = (int) $r['post_id']; }
-    return $rows ?: array();
-  });
+            ORDER BY t.pv DESC, p.post_date DESC, p.ID DESC";
+  return $wpdb->prepare($sql, array_merge(array($from, $to), $in['args']));
 }
 endif;
 

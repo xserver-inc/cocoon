@@ -8,13 +8,16 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 require_once __DIR__ . '/request-exclusion.php';
+require_once __DIR__ . '/record-func.php';
+require_once __DIR__ . '/schema-lock-func.php';
 
 //関数テキストテーブルのバージョン
 global $wpdb;
-define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.4');//rand(0, 99)
+define('ACCESSES_TABLE_VERSION', DEBUG_MODE ? rand(0, 99) : '0.0.6');
 define('ACCESSES_TABLE_NAME',  $wpdb->prefix . THEME_NAME . '_accesses');
 
 define('INDEX_ACCESSES_PID_PTYPE_DATE', 'index_pid_ptype_date');
+define('INDEX_ACCESSES_RECORD_KEY', 'index_record_key');
 //期間集計（WHERE date BETWEEN …）用。date先頭でレンジスキャンが効き、countまで含むためテーブル本体を読まずに完結するカバリングインデックス
 define('INDEX_ACCESSES_DATE_PTYPE_PID_COUNT', 'index_date_ptype_pid_count');
 
@@ -80,6 +83,8 @@ endif;
 
 //レコードを追加
 if ( !function_exists( 'insert_accesses_record' ) ):
+// 旧ヘルパーの上書きの有無を識別する、標準実装の定義時だけの目印
+define('COCOON_ANALYTICS_DEFAULT_INSERT_ACCESSES_RECORD', true);
 function insert_accesses_record($posts){
   $table = ACCESSES_TABLE_NAME;
   $data = array(
@@ -96,12 +101,19 @@ function insert_accesses_record($posts){
     '%d',
     '%s',
   );
+  // 従来5項目の維持と、時刻指定のある標準保存時だけの計測時刻の追加
+  if (defined('COCOON_DEFAULT_INSERT_DB_TABLE_RECORD') && isset($posts['last_accessed_at'])) {
+    $data['last_accessed_at'] = (int) $posts['last_accessed_at'];
+    $format[] = '%d';
+  }
   return insert_db_table_record($table, $data, $format);
 }
 endif;
 
 //レコードの編集
 if ( !function_exists( 'update_accesses_record' ) ):
+// 旧ヘルパーの上書きの有無を識別する、標準実装の定義時だけの目印
+define('COCOON_ANALYTICS_DEFAULT_UPDATE_ACCESSES_RECORD', true);
 function update_accesses_record($id, $posts){
   $table = ACCESSES_TABLE_NAME;
   $data = array(
@@ -114,6 +126,11 @@ function update_accesses_record($id, $posts){
     '%s',
   );
   $where_format = array('%d');
+  // 下位の独自更新ヘルパーへの従来2項目の維持と、標準保存時だけの計測時刻の補完
+  if (defined('COCOON_DEFAULT_UPDATE_DB_TABLE_RECORD') && isset($posts['last_accessed_at'])) {
+    $data['last_accessed_at'] = (int) $posts['last_accessed_at'];
+    $format[] = '%d';
+  }
   return update_db_table_record($table, $data, $where, $format, $where_format);
 }
 endif;
@@ -128,6 +145,7 @@ endif;
 //テーブルの作成
 if ( !function_exists( 'create_accesses_table' ) ):
 function create_accesses_table() {
+  global $wpdb;
   $add_default_records = false;
   //テーブルが存在しない場合初期データを挿入（テーブル作成時のみ挿入）
   if (!is_accesses_table_exist()) {
@@ -141,7 +159,10 @@ function create_accesses_table() {
       date varchar(20),
       count bigint(20) DEFAULT 0,
       last_ip varchar(40),
+      last_accessed_at bigint(20) unsigned DEFAULT 0,
+      record_key varchar(64) DEFAULT NULL,
       PRIMARY KEY (id),
+      UNIQUE KEY `".INDEX_ACCESSES_RECORD_KEY."` (record_key),
       INDEX `".INDEX_ACCESSES_PID_PTYPE_DATE."` (post_id,post_type,date),
       INDEX `".INDEX_ACCESSES_DATE_PTYPE_PID_COUNT."` (date,post_type,post_id,count)
     )";
@@ -149,10 +170,15 @@ function create_accesses_table() {
   if (function_exists('set_time_limit')) {
     @set_time_limit(600);
   }
-  $res = create_db_table($sql);
-
+  create_db_table($sql);
+  // 更新失敗時に新バージョン扱いとしないための、追加列と一意制約の実在確認
+  $columns = $wpdb->get_col("SHOW COLUMNS FROM `" . ACCESSES_TABLE_NAME . "` WHERE Field IN ('last_accessed_at', 'record_key')");
+  if (count($columns) !== 2) return false;
+  $indexes = $wpdb->get_results($wpdb->prepare("SHOW INDEX FROM `" . ACCESSES_TABLE_NAME . "` WHERE Key_name = %s", INDEX_ACCESSES_RECORD_KEY));
+  if (count($indexes) !== 1 || (int) $indexes[0]->Non_unique !== 0
+      || $indexes[0]->Column_name !== 'record_key' || $indexes[0]->Sub_part !== null) return false;
   set_theme_mod( OP_ACCESSES_TABLE_VERSION, ACCESSES_TABLE_VERSION );
-  return $res;
+  return true;
 }
 endif;
 //update_accesses_table();
@@ -162,81 +188,54 @@ endif;
 //テーブルのアップデート
 if ( !function_exists( 'update_accesses_table' ) ):
 function update_accesses_table() {
-
-  // オプションに登録されたデータベースのバージョンを取得
-  $installed_ver = get_accesses_table_version();
-  //_v($installed_ver);
-  $now_ver = ACCESSES_TABLE_VERSION;
-  if (is_update_db_table($installed_ver, $now_ver)) {
-    //管理画面表示のたびに呼ばれるため、長時間かかるインデックス追加が同時多発してロック待ちになるのを防止
-    if (!DEBUG_MODE) {
-      if (get_transient(TRANSIENT_ACCESSES_TABLE_UPDATING)) {
-        return;
-      }
-      set_transient(TRANSIENT_ACCESSES_TABLE_UPDATING, 1, 15 * MINUTE_IN_SECONDS);
+  global $wpdb;
+  if (!is_update_db_table(get_accesses_table_version(), ACCESSES_TABLE_VERSION)) return true;
+  // 外側トランザクションの暗黙確定を防ぐための、自動コミット確認後だけの移行
+  if (!cocoon_analytics_database_is_autocommit($wpdb)) return false;
+  $suppressed = $wpdb->suppress_errors(true);
+  try {
+    // セッションの取得上限が0の場合にも必要な、バージョン1行の明示的な取得
+    $multiple_locks = cocoon_analytics_schema_supports_multiple_locks($wpdb->get_var('SELECT VERSION() LIMIT 1'));
+    if ($multiple_locks === null) return false;
+    if (!$multiple_locks) {
+      // 他処理の名前付きロックを保持したままの、DB側DDL排他と完成スキーマ検証
+      return create_accesses_table();
     }
-    create_accesses_table();
-    delete_transient(TRANSIENT_ACCESSES_TABLE_UPDATING);
+  } finally {
+    $wpdb->suppress_errors($suppressed);
   }
-
+  // フロントエンドからの初回計測も含めた、テーブル更新の多重実行の防止
+  $lock = 'cocoon_pv_schema_' . md5(DB_NAME . '|' . ACCESSES_TABLE_NAME);
+  if ((int) $wpdb->get_var($wpdb->prepare('SELECT GET_LOCK(%s, 0) LIMIT 1', $lock)) !== 1) return false;
+  try {
+    return create_accesses_table();
+  } finally {
+    $wpdb->get_var($wpdb->prepare('SELECT RELEASE_LOCK(%s) LIMIT 1', $lock));
+  }
 }
 endif;
 
 //DBにアクセスをカウントする
 if ( !function_exists( 'logging_page_access' ) ):
 function logging_page_access($post_id = null, $post_type = 'post'){
-
-  $res = false;
-  //投稿・固定ページのみでカウントする
-  if (is_access_count_enable()
-      //サイト管理者でないとき
-      && (!is_user_administrator() || DEBUG_MODE)
-      // ボット・自動操作・先読みを除いた閲覧のみの記録
-      && !cocoon_analytics_request_is_excluded()
-    ) {
-    if (!$post_id || !$post_type ) {
-      global $post;
-      if (isset($post->ID)) {
-        $post_id = $post->ID;
-      }
-      $post_type = get_accesses_post_type();
-    }
-    //IDとページタイプが取得できたとき
-    if ($post_id && $post_type) {
-      $date = current_time('Y-m-d');
-      $last_ip = $_SERVER['REMOTE_ADDR'];
-
-      $record = get_accesse_record_from($post_id, $date, $post_type);
-
-      $posts = array();
-
-
-      if ($record) {
-        //アクセスカウントの連続カウント防止
-        if (($record->last_ip != $last_ip) || DEBUG_MODE) {
-          $post_id = $record->id;
-          $posts['last_ip'] = $last_ip;
-          $posts['count'] = intval($record->count) + 1;
-          $res = update_accesses_record($post_id, $posts);
-        }
-      } else {
-        $posts['post_id'] = $post_id;
-        $posts['date'] = $date;
-        $posts['post_type'] = $post_type;
-        $posts['last_ip'] = $last_ip;
-        $posts['count'] = 1;
-        $res = insert_accesses_record($posts);
-      }
-    }//$id && $type
-  }//is_access_count_enable()
-  return $res;
+  if (!is_access_count_enable() || (is_user_administrator() && !DEBUG_MODE)
+      || cocoon_analytics_request_is_excluded()) return false;
+  if ($post_id === null) {
+    global $post;
+    $post_id = isset($post->ID) ? $post->ID : null;
+    $post_type = get_accesses_post_type();
+  }
+  if (!cocoon_analytics_is_valid_page_access($post_id, $post_type)) return false;
+  // 戻り値のない従来の上書き関数との互換性を保った、明示的な更新失敗の除外
+  if (update_accesses_table() === false) return false;
+  return cocoon_analytics_record_page_access_with_helpers((int) $post_id, current_time('Y-m-d'), $post_type, $_SERVER['REMOTE_ADDR']);
 }
 endif;
 // _v(is_singular());
 // logging_page_access();
 
 //投稿IDと日付からレコードを取得
-if ( !function_exists( 'get_accesse_record' ) ):
+if ( !function_exists( 'get_accesse_record_from' ) ):
 function get_accesse_record_from($post_id, $date, $post_type = 'post'){
   global $wpdb;
   $add_where = '';
@@ -244,7 +243,8 @@ function get_accesse_record_from($post_id, $date, $post_type = 'post'){
   $index = INDEX_ACCESSES_PID_PTYPE_DATE;
   $args = array($post_id, $date, $post_type);
 
-  $query = $wpdb->prepare("SELECT * FROM `{$table_name}` USE INDEX(`{$index}`) WHERE post_id = %d AND date = %s AND post_type = %s", $args);
+  // 既存の重複行が残っていても更新先が変わらない、ID順での1行取得
+  $query = $wpdb->prepare("SELECT * FROM `{$table_name}` USE INDEX(`{$index}`) WHERE post_id = %d AND date = %s AND post_type = %s ORDER BY id ASC LIMIT 1", $args);
 
   $record = $wpdb->get_row( $query );
   //_v($query);

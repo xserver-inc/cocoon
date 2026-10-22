@@ -23,6 +23,7 @@ class AccessRequestExclusionIntegrationTest extends IntegrationTestCase
             $browser = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36';
             $_SERVER['HTTP_USER_AGENT'] = $browser;
             $_SERVER['REMOTE_ADDR'] = '192.0.2.1';
+            $_SERVER['REQUEST_METHOD'] = 'GET';
             unset($_SERVER['HTTP_PURPOSE'], $_SERVER['HTTP_SEC_PURPOSE'], $_SERVER['HTTP_X_MOZ']);
             logging_page_access($postId, 'post');
             $sql = $wpdb->prepare('SELECT COALESCE(SUM(count), 0) FROM `' . ACCESSES_TABLE_NAME . '` WHERE post_id = %d', $postId);

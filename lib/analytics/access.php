@@ -14,10 +14,10 @@ if (!file_exists($wp_load)) {
 //wp-load.phpが存在する時だけ実行
 if (file_exists($wp_load)) {
   require_once($wp_load);
-  $post_id = !empty($_GET['post_id']) ? intval($_GET['post_id']) : null;
-  $post_type = !empty($_GET['post_type']) ? sanitize_key($_GET['post_type']) : null;
-  // 不正文字列の混入を防ぐための未登録投稿タイプの除外
-  if ($post_id && $post_type && post_type_exists($post_type)) {
+  $post_id = isset($_GET['post_id']) ? $_GET['post_id'] : null;
+  $post_type = isset($_GET['post_type']) && is_string($_GET['post_type']) ? sanitize_key($_GET['post_type']) : null;
+  // 不正なID・未公開記事・異なる投稿タイプ・GET以外のリクエストの除外
+  if (cocoon_analytics_is_valid_page_access($post_id, $post_type)) {
     logging_page_access($post_id, $post_type);
   }
 }

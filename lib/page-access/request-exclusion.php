@@ -6,6 +6,23 @@
  */
 if (!defined('ABSPATH')) exit;
 
+/**
+ * 公開記事のGETリクエストだけをPV記録の対象にする。
+ */
+if (!function_exists('cocoon_analytics_is_valid_page_access')):
+function cocoon_analytics_is_valid_page_access($post_id, $post_type){
+  if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'GET') return false;
+  if ((!is_int($post_id) && !is_string($post_id)) || !is_string($post_type)) return false;
+  $post_id = filter_var($post_id, FILTER_VALIDATE_INT, array('options' => array('min_range' => 1)));
+  if ($post_id === false) return false;
+
+  // 独自の公開ステータスも含めた、WordPressの公開判定と実際の投稿タイプの照合
+  $post = get_post($post_id);
+  return $post && $post->post_type === $post_type
+    && is_post_publicly_viewable($post);
+}
+endif;
+
 if (!function_exists('cocoon_analytics_compile_bot_patterns')):
 function cocoon_analytics_compile_bot_patterns($json){
   // 欠落・破損した同梱ファイルによる計測処理全体の停止の防止

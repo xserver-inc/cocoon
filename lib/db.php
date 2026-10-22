@@ -161,6 +161,8 @@ endif;
 
 //レコードを追加
 if ( !function_exists( 'insert_db_table_record' ) ):
+// 下位DBヘルパーの上書きを区別する、標準の挿入実装の目印
+define('COCOON_DEFAULT_INSERT_DB_TABLE_RECORD', true);
 function insert_db_table_record($table, $data, $format){
   global $wpdb;
   return $wpdb->insert( $table, $data, $format );
@@ -169,6 +171,8 @@ endif;
 
 //レコードの編集
 if ( !function_exists( 'update_db_table_record' ) ):
+// 下位DBヘルパーの上書きを区別する、標準の更新実装の目印
+define('COCOON_DEFAULT_UPDATE_DB_TABLE_RECORD', true);
 function update_db_table_record($table, $data, $where, $format, $where_format){
   global $wpdb;
   return $wpdb->update( $table, $data, $where, $format, $where_format );

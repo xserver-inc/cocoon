@@ -11,19 +11,70 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/request-exclusion.php';
 class AnalyticsRequestExclusionTest extends TestCase
 {
     private array $server;
+    private bool $hadPostFixture;
+    private $postFixture;
     private const BROWSER = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36';
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->server = $_SERVER;
+        $this->hadPostFixture = array_key_exists('test_mock_get_post', $GLOBALS);
+        $this->postFixture = $GLOBALS['test_mock_get_post'] ?? null;
         $_SERVER = array('HTTP_USER_AGENT' => self::BROWSER, 'REMOTE_ADDR' => '192.0.2.1');
     }
 
     protected function tearDown(): void
     {
         $_SERVER = $this->server;
+        if ($this->hadPostFixture) {
+            $GLOBALS['test_mock_get_post'] = $this->postFixture;
+        } else {
+            unset($GLOBALS['test_mock_get_post']);
+        }
         parent::tearDown();
+    }
+
+    /**
+     * GET以外と不正な記事IDを記事検索前に除外することの確認
+     */
+    public function testInvalidPageAccessInputsAreRejectedBeforePostLookup(): void
+    {
+        // 既存のget_postスタブを再定義せず、不正入力が通過した場合だけ成功する公開記事の配置
+        $GLOBALS['test_mock_get_post'] = (object) array('post_status' => 'publish', 'post_type' => 'post');
+        \Brain\Monkey\Functions\when('is_post_publicly_viewable')->justReturn(true);
+        foreach (array('HEAD', 'POST', 'OPTIONS', '', array('GET')) as $method) {
+            $_SERVER['REQUEST_METHOD'] = $method;
+            $this->assertFalse(cocoon_analytics_is_valid_page_access(42, 'post'));
+        }
+        $_SERVER['REQUEST_METHOD'] = 'GET';
+        foreach (array(null, 0, -1, 1.5, true, array(42), '42x', '999999999999999999999999999999') as $id) {
+            $this->assertFalse(cocoon_analytics_is_valid_page_access($id, 'post'));
+        }
+        $this->assertFalse(cocoon_analytics_is_valid_page_access(42, array('post')));
+    }
+
+    /**
+     * 投稿タイプの一致とWordPressの公開判定に従った記事の受理
+     */
+    public function testOnlyMatchingPubliclyViewablePostsAreCountable(): void
+    {
+        $_SERVER['REQUEST_METHOD'] = 'GET';
+        \Brain\Monkey\Functions\when('is_post_publicly_viewable')->justReturn(true);
+        foreach (array(null,
+            (object) array('post_status' => 'publish', 'post_type' => 'page')) as $post) {
+            $GLOBALS['test_mock_get_post'] = $post;
+            $this->assertFalse(cocoon_analytics_is_valid_page_access(42, 'post'));
+        }
+        $GLOBALS['test_mock_get_post'] = (object) array('post_status' => 'publish', 'post_type' => 'post');
+        $this->assertTrue(cocoon_analytics_is_valid_page_access('42', 'post'));
+        $GLOBALS['test_mock_get_post'] = (object) array('post_status' => 'custom_public', 'post_type' => 'book');
+        $this->assertTrue(cocoon_analytics_is_valid_page_access(42, 'book'));
+        \Brain\Monkey\Functions\when('is_post_publicly_viewable')->justReturn(false);
+        foreach (array('publish', 'draft', 'private', 'trash', 'custom_private') as $status) {
+            $GLOBALS['test_mock_get_post'] = (object) array('post_status' => $status, 'post_type' => 'post');
+            $this->assertFalse(cocoon_analytics_is_valid_page_access(42, 'post'));
+        }
     }
 
     /**
