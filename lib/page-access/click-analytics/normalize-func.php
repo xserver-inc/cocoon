@@ -105,6 +105,8 @@ endif;
 if ( !function_exists( 'cocoon_click_classify_external_destination' ) ):
 function cocoon_click_classify_external_destination($type, $host, $attributes = array()){
   if ($type !== 'external') return $type;
+  // 紹介タグを含まないAmazon短縮URLのホスト完全一致による補完判定
+  if (in_array(strtolower(rtrim((string) $host, '.')), array('link.amazon', 'amzn.to'), true)) return 'affiliate';
   $hint = isset($attributes['classification_hint']) ? sanitize_key($attributes['classification_hint']) : '';
   if (in_array($hint, array('official', 'reference'), true)) return $hint;
   $social_hosts = array('x.com', 'twitter.com', 'facebook.com', 'instagram.com', 'youtube.com', 'youtu.be', 'tiktok.com', 'linkedin.com', 'pinterest.com', 'line.me');

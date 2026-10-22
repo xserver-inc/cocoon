@@ -308,6 +308,70 @@ class ClickAnalyticsIntegrationTest extends IntegrationTestCase
             'sampled' => true, 'forced_impression' => true, 'x_bp' => 5000, 'y_bp' => 5000);
     }
 
+    public function testAmazonShortLinksAppearInAffiliateFilterWithoutClientHint(): void
+    {
+        $hosts = array('link.amazon', 'amzn.to');
+        $events = array();
+        foreach ($hosts as $host) {
+            $event = $this->clickEvent('https://' . $host . '/sample');
+            // 古い計測スクリプトから届く未分類イベントの再現
+            $event['is_affiliate'] = false;
+            $events[] = $event;
+        }
+        list($response) = $this->receiveEvents($events, 'amazon-short-links-0001', false);
+        $this->assertSame(204, $response->get_status());
+
+        cocoon_click_analytics_flush_cache();
+        $today = current_time('Y-m-d');
+        $table = cocoon_click_analytics_links_table($today, $today, array('scope' => 'external', 'link_type' => 'affiliate'));
+        $this->assertSame(2, $table['total']);
+        $this->assertCount(2, $table['rows']);
+        $actualHosts = array_column($table['rows'], 'destination_host');
+        sort($hosts);
+        sort($actualHosts);
+        $this->assertSame($hosts, $actualHosts);
+        foreach ($table['rows'] as $row) {
+            $this->assertSame('affiliate', $row['destination_type']);
+            $this->assertSame(1, (int) $row['is_affiliate']);
+            $this->assertSame(1, $row['clicks']);
+        }
+    }
+
+    public function testAffiliateClassificationChangesKeepFlagsAndStoredClicksConsistent(): void
+    {
+        global $wpdb;
+        $postId = $this->createPost(array('post_status' => 'publish', 'post_type' => 'post', 'post_title' => 'アフィリエイト分類の更新テスト'));
+        $linkId = null;
+        $linkKey = null;
+        $today = current_time('Y-m-d');
+        // 専用ラッパーの削除・再追加と同じ分類変更による既存定義の更新
+        foreach (array(true, false, true) as $index => $affiliate) {
+            $event = $this->clickEvent();
+            $event['is_affiliate'] = $affiliate;
+            list($response) = $this->receiveEvents(array($event), 'affiliate-state-' . $index, false, $postId);
+            $this->assertSame(204, $response->get_status());
+            $stored = $wpdb->get_row('SELECT id,link_key,destination_type,is_affiliate FROM `' . CLICK_LINKS_TABLE_NAME . '`', ARRAY_A);
+            $type = $affiliate ? 'affiliate' : 'external';
+            $this->assertSame($type, $stored['destination_type']);
+            $this->assertSame($affiliate ? 1 : 0, (int) $stored['is_affiliate']);
+            $linkId = $linkId ?? $stored['id'];
+            $linkKey = $linkKey ?? $stored['link_key'];
+            $this->assertSame($linkId, $stored['id']);
+            $this->assertSame($linkKey, $stored['link_key']);
+            $this->assertSame('1', $wpdb->get_var('SELECT COUNT(*) FROM `' . CLICK_LINKS_TABLE_NAME . '`'));
+
+            // 過去のクリックも同じリンクIDから現在の分類へ集計されることの確認
+            cocoon_click_analytics_flush_cache();
+            $table = cocoon_click_analytics_links_table($today, $today, array('scope' => 'external', 'link_type' => $type));
+            $this->assertSame(1, $table['total']);
+            $this->assertCount(1, $table['rows']);
+            $this->assertSame($index + 1, $table['rows'][0]['clicks']);
+            $other = cocoon_click_analytics_links_table($today, $today, array('scope' => 'external', 'link_type' => $affiliate ? 'external' : 'affiliate'));
+            $this->assertSame(0, $other['total']);
+            $this->assertSame(array(), $other['rows']);
+        }
+    }
+
     public function testFailedWritesRollBackAndCanBeRetried(): void
     {
         global $wpdb;

@@ -187,7 +187,8 @@ function cocoon_click_sanitize_link_event($event, $source_post_id, $source_url){
     'target_post_id' => isset($destination['target_post_id']) ? (int) $destination['target_post_id'] : 0,
     'rel_flags' => implode(' ', $rel),
     'target_blank' => !empty($event['target_blank']) ? 1 : 0,
-    'is_affiliate' => !empty($event['is_affiliate']) ? 1 : 0,
+    // 絞り込みと表示で使う最終分類へのアフィリエイトフラグの統一
+    'is_affiliate' => $destination['type'] === 'affiliate' ? 1 : 0,
   ));
   return array('type' => $event_type, 'event' => $event, 'definition' => $definition);
 }
@@ -232,7 +233,7 @@ function cocoon_click_upsert_link_definitions($definitions, $now, $new_definitio
   $sql = 'INSERT INTO `' . CLICK_LINKS_TABLE_NAME . '` '
     . '(link_key,slot_key,source_post_id,destination_key,destination_url,destination_host,destination_type,target_post_id,semantic_area,heading_key,heading_label,occurrence_no,anchor_text,image_url,element_type,rel_flags,target_blank,is_affiliate,first_seen_at,last_seen_at) VALUES '
     . implode(',', $placeholders)
-    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),target_post_id=GREATEST(target_post_id,VALUES(target_post_id)),is_affiliate=GREATEST(is_affiliate,VALUES(is_affiliate)),image_url=IF(VALUES(image_url)<>\'\',VALUES(image_url),image_url)';
+    . ' ON DUPLICATE KEY UPDATE destination_url=VALUES(destination_url),destination_host=VALUES(destination_host),destination_type=VALUES(destination_type),rel_flags=VALUES(rel_flags),target_blank=VALUES(target_blank),last_seen_at=VALUES(last_seen_at),target_post_id=GREATEST(target_post_id,VALUES(target_post_id)),is_affiliate=VALUES(is_affiliate),image_url=IF(VALUES(image_url)<>\'\',VALUES(image_url),image_url)';
   if ($wpdb->query($wpdb->prepare($sql, $args)) === false) return false;
   $keys = array_column($definitions, 'link_key');
   $in = implode(',', array_fill(0, count($keys), '%s'));

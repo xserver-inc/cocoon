@@ -19,6 +19,15 @@ require_once dirname(__DIR__, 2) . '/lib/page-access/click-analytics/filter-func
 
 class ClickAnalyticsTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+        // WordPressのキー正規化に合わせた識別子のモック
+        \Brain\Monkey\Functions\when('sanitize_key')->alias(static function ($value) {
+            return strtolower((string) preg_replace('/[^a-z0-9_\-]/i', '', $value));
+        });
+    }
+
     public function testFiltersExcludeTypesOutsideTheCurrentView(): void
     {
         foreach (array('internal', 'anchor', 'official') as $type) {
@@ -476,13 +485,66 @@ class ClickAnalyticsTest extends TestCase
 
     public function testSocialAndAffiliateDestinationsAreClassified(): void
     {
-        \Brain\Monkey\Functions\when('sanitize_key')->alias(static function ($value) {
-            return strtolower((string) preg_replace('/[^a-z0-9_\-]/i', '', $value));
-        });
         $social = cocoon_click_normalize_destination('https://www.youtube.com/watch?v=abc', 'https://example.com/article');
         $affiliate = cocoon_click_normalize_destination('https://shop.example.net/item/1', 'https://example.com/article', array('is_affiliate' => true));
         $this->assertSame('social', $social['type']);
         $this->assertSame('affiliate', $affiliate['type']);
+    }
+
+    public function testAmazonShortDestinationsAreClassifiedWithoutBrowserHints(): void
+    {
+        foreach (array('https://link.amazon/abc123', 'https://amzn.to/abc123', 'https://LINK.AMAZON./abc123', '//amzn.to/abc123') as $url) {
+            $destination = cocoon_click_normalize_destination($url, 'https://example.com/article', array('is_affiliate' => false));
+            $this->assertSame('affiliate', $destination['type'], $url);
+        }
+    }
+
+    public function testAmazonShortDomainsRequireAnExactHostMatch(): void
+    {
+        foreach (array('link.amazon.evil.test', 'amzn.to.evil.test', 'notlink.amazon', 'short.link.amazon', 'www.amazon.co.jp') as $host) {
+            $destination = cocoon_click_normalize_destination('https://' . $host . '/abc123', 'https://example.com/article');
+            $this->assertSame('external', $destination['type'], $host);
+        }
+        foreach (array('internal', 'download', 'anchor') as $type) {
+            $this->assertSame($type, cocoon_click_classify_external_destination($type, 'link.amazon'));
+        }
+    }
+
+    public function testSavedAffiliateFlagFollowsTheFinalDestinationType(): void
+    {
+        $cases = array(
+            array('https://link.amazon/abc123', false, 'affiliate'),
+            array('https://amzn.to/abc123', false, 'affiliate'),
+            array('https://shop.example.net/item', true, 'affiliate'),
+            array('https://shop.example.net/item', false, 'external'),
+            array('https://link.amazon/report.pdf', true, 'download'),
+            array('https://example.com/next', true, 'internal'),
+        );
+        foreach ($cases as $case) {
+            $event = array('type' => 'click', 'href' => $case[0], 'is_affiliate' => $case[1]);
+            $result = cocoon_click_sanitize_link_event($event, 10, 'https://example.com/article');
+            $this->assertIsArray($result);
+            $this->assertSame($case[2], $result['definition']['destination_type'], $case[0]);
+            $this->assertSame($case[2] === 'affiliate' ? 1 : 0, $result['definition']['is_affiliate'], $case[0]);
+        }
+    }
+
+    public function testSavedAffiliateFlagIncludesClassificationFilterResults(): void
+    {
+        $filters = $GLOBALS['test_mock_apply_filters_callbacks'] ?? array();
+        try {
+            // 拡張フィルターによる分類変更と保存フラグの一致
+            foreach (array('external', 'affiliate') as $type) {
+                $GLOBALS['test_mock_apply_filters_callbacks']['cocoon_click_analytics_classify_destination'] = static function () use ($type) { return $type; };
+                $event = array('type' => 'click', 'href' => 'https://shop.example.net/item', 'is_affiliate' => $type !== 'affiliate');
+                $result = cocoon_click_sanitize_link_event($event, 10, 'https://example.com/article');
+                $this->assertIsArray($result);
+                $this->assertSame($type, $result['definition']['destination_type']);
+                $this->assertSame($type === 'affiliate' ? 1 : 0, $result['definition']['is_affiliate']);
+            }
+        } finally {
+            $GLOBALS['test_mock_apply_filters_callbacks'] = $filters;
+        }
     }
 
     public function testOfficialAndReferenceDestinationsAreClassified(): void

@@ -112,6 +112,39 @@ test('通常・修飾・中クリックと各リンク形式を非同期送信�
   expect(clicks.every((event) => Number.isInteger(event.x_bp) && Number.isInteger(event.y_bp))).toBeTruthy();
 });
 
+test('Amazon短縮リンクを送信し専用ラッパーのアフィリエイト情報を維持する', async ({page, context}) => {
+  const payloads = await setupCollector(page, context);
+  const links = [
+    {id: 'amazon-short', href: 'https://link.amazon/short'},
+    {id: 'amazon-short-to', href: 'https://amzn.to/short'},
+    {id: 'amazon-product', href: 'https://link.amazon/product', wrapper: 'amazon-item-box'},
+    {id: 'amazon-affiliate-tag', href: 'https://link.amazon/registered', wrapper: 'affiliate-tag'}
+  ];
+  // 実際のクリック対象となる通常リンクと商品リンクの追加
+  await page.evaluate(items => {
+    const content = document.querySelector('.entry-content');
+    for (const item of items) {
+      const anchor = document.createElement('a');
+      anchor.id = item.id;
+      anchor.href = item.href;
+      anchor.target = '_blank';
+      anchor.textContent = item.id;
+      const wrapper = document.createElement('div');
+      if (item.wrapper) {wrapper.className = item.wrapper;}
+      wrapper.appendChild(anchor);
+      content.appendChild(wrapper);
+    }
+  }, links);
+  for (const item of links) {await page.click('#' + item.id);}
+
+  await expect.poll(() => events(payloads).filter(event => event.type === 'click').map(event => event.href)).toEqual(links.map(item => item.href));
+  const clicks = events(payloads).filter(event => event.type === 'click');
+  expect(clicks.every(event => event.kind === 'external')).toBeTruthy();
+  for (const item of links.filter(link => link.wrapper)) {
+    expect(clicks.find(event => event.href === item.href).is_affiliate).toBe(true);
+  }
+});
+
 test('未信頼イベントと2秒以内の連打を除外する', async ({page, context}) => {
   const payloads = await setupCollector(page, context);
   await page.evaluate(() => document.querySelector('#anchor').dispatchEvent(new MouseEvent('click', {bubbles: true})));
