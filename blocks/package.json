@@ -46,7 +46,7 @@
     "serialize-javascript": "^7.0.7",
     "minimatch@<4": "^3.1.5",
     "linkify-it": "^5.0.2",
-    "markdown-it": "^14.3.2",
+    "markdown-it": "^14.3.3",
     "uuid": "^11.1.1"
   }
 }
