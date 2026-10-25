@@ -124,18 +124,18 @@ msgstr ""
 msgid "コメントを書き込む"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:178
 msgid "キーワード指定なし"
 msgstr ""
 
-#: functions.php:199
-#: functions.php:203
-#: functions.php:205
+#: functions.php:202
+#: functions.php:206
+#: functions.php:208
 msgid "Archives"
 msgstr ""
 
-#: functions.php:562
-#: functions.php:563
+#: functions.php:565
+#: functions.php:566
 #: lib/admin.php:621
 msgid "パターン一覧"
 msgstr ""
@@ -3082,7 +3082,7 @@ msgstr ""
 #: lib/original-menu.php:163
 #: lib/original-menu.php:176
 #: lib/page-access/analytics/dashboard-page.php:12
-#: lib/page-access/analytics/export-func.php:15
+#: lib/page-access/analytics/export-func.php:282
 msgid "このページにアクセスする管理者権限がありません。"
 msgstr ""
 
@@ -3231,6 +3231,13 @@ msgid "集計データがまだありません。"
 msgstr ""
 
 #: lib/page-access/access-func.php:759
+#: lib/page-access/analytics/export-func.php:96
+#: lib/page-access/analytics/export-func.php:100
+#: lib/page-access/analytics/export-func.php:221
+#: lib/page-access/analytics/export-func.php:235
+#: lib/page-access/analytics/export-func.php:261
+#: lib/page-access/analytics/export-stream-func.php:147
+#: lib/page-access/analytics/export-stream-func.php:164
 msgid "データの取得に失敗しました。"
 msgstr ""
 
@@ -3289,7 +3296,7 @@ msgid "アクセスカレンダー（直近52週）"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:158
-#: lib/page-access/analytics/query-func.php:189
+#: lib/page-access/analytics/query-func.php:191
 #: lib/page-access/analytics/render-func.php:260
 #: lib/page-access/analytics/render-func.php:337
 #: lib/page-access/analytics/settings-forms.php:55
@@ -3306,7 +3313,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:160
 #: lib/page-access/analytics/dashboard-page.php:556
 #: lib/page-access/analytics/dashboard-page.php:584
-#: lib/page-access/analytics/query-func.php:190
+#: lib/page-access/analytics/query-func.php:192
 #: lib/page-access/analytics/render-func.php:262
 #: lib/page-access/analytics/render-func.php:339
 #: lib/page-access/analytics/settings-forms.php:56
@@ -3317,7 +3324,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:161
 #: lib/page-access/analytics/dashboard-page.php:557
 #: lib/page-access/analytics/dashboard-page.php:585
-#: lib/page-access/analytics/query-func.php:191
+#: lib/page-access/analytics/query-func.php:193
 #: lib/page-access/analytics/render-func.php:263
 #: lib/page-access/analytics/settings-forms.php:57
 #: lib/page-access/click-analytics/filter-func.php:73
@@ -3327,7 +3334,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:162
 #: lib/page-access/analytics/dashboard-page.php:558
 #: lib/page-access/analytics/dashboard-page.php:586
-#: lib/page-access/analytics/query-func.php:192
+#: lib/page-access/analytics/query-func.php:194
 #: lib/page-access/analytics/render-func.php:264
 #: lib/page-access/analytics/settings-forms.php:58
 #: lib/page-access/click-analytics/filter-func.php:73
@@ -3335,7 +3342,7 @@ msgid "直近90日"
 msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:163
-#: lib/page-access/analytics/query-func.php:193
+#: lib/page-access/analytics/query-func.php:195
 #: lib/page-access/analytics/render-func.php:265
 #: lib/page-access/analytics/render-func.php:340
 #: lib/page-access/analytics/settings-forms.php:59
@@ -3357,7 +3364,7 @@ msgstr ""
 #: lib/page-access/analytics/dashboard-page.php:166
 #: lib/page-access/analytics/dashboard-page.php:560
 #: lib/page-access/analytics/dashboard-page.php:588
-#: lib/page-access/analytics/query-func.php:195
+#: lib/page-access/analytics/query-func.php:197
 #: lib/page-access/analytics/render-func.php:268
 #: lib/page-access/analytics/settings-forms.php:60
 #: lib/page-access/click-analytics/filter-func.php:73
@@ -3592,7 +3599,7 @@ msgstr ""
 
 #: lib/page-access/analytics/dashboard-page.php:559
 #: lib/page-access/analytics/dashboard-page.php:587
-#: lib/page-access/analytics/query-func.php:194
+#: lib/page-access/analytics/query-func.php:196
 msgid "直近1年"
 msgstr ""
 
@@ -3805,11 +3812,11 @@ msgstr ""
 msgid "%s件の候補"
 msgstr ""
 
-#: lib/page-access/analytics/export-func.php:19
+#: lib/page-access/analytics/export-func.php:286
 msgid "エクスポート機能が無効です。"
 msgstr ""
 
-#: lib/page-access/analytics/export-func.php:77
+#: lib/page-access/analytics/export-func.php:342
 msgid "対象が不正です。"
 msgstr ""
 
@@ -4625,49 +4632,49 @@ msgstr ""
 msgid "プライバシー保護のため、外部画像などは自動で読み込まず、「画像を読み込む」を押したときに読み込みます。読み込むと、画像の配信元にお使いのIPアドレスなどが伝わります。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:349
+#: lib/page-access/click-analytics/rest-func.php:350
 msgid "クリック解析は無効です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:350
+#: lib/page-access/click-analytics/rest-func.php:351
 msgid "クリック解析テーブルがありません。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:352
+#: lib/page-access/click-analytics/rest-func.php:353
 msgid "送信サイズが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:354
+#: lib/page-access/click-analytics/rest-func.php:355
 msgid "JSONが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:355
+#: lib/page-access/click-analytics/rest-func.php:356
 msgid "送信元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:360
-#: lib/page-access/click-analytics/rest-func.php:374
+#: lib/page-access/click-analytics/rest-func.php:361
+#: lib/page-access/click-analytics/rest-func.php:375
 msgid "送信内容が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:371
+#: lib/page-access/click-analytics/rest-func.php:372
 msgid "識別子が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:376
+#: lib/page-access/click-analytics/rest-func.php:377
 msgid "計測トークンが不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:378
+#: lib/page-access/click-analytics/rest-func.php:379
 msgid "クリック元が不正です。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:379
+#: lib/page-access/click-analytics/rest-func.php:380
 msgid "送信回数が多すぎます。"
 msgstr ""
 
-#: lib/page-access/click-analytics/rest-func.php:384
-#: lib/page-access/click-analytics/rest-func.php:477
+#: lib/page-access/click-analytics/rest-func.php:385
+#: lib/page-access/click-analytics/rest-func.php:478
 msgid "計測データを保存できませんでした。再送してください。"
 msgstr ""
 
@@ -14209,6 +14216,16 @@ msgstr ""
 msgid "ja_JP"
 msgstr ""
 
+#: lib/theme-update-requirements.php:97
+msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
+msgstr ""
+
+#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
+#: lib/theme-update-requirements.php:103
+#, php-format
+msgid "このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP %4$sのため、更新できません。"
+msgstr ""
+
 #: lib/tinymce/html-tags.php:49
 #: lib/tinymce/speech-balloons.php:55
 msgid "内容を入力してください。"
@@ -20453,14 +20470,4 @@ msgstr ""
 #: blocks/src/micro/micro-text/block.json
 msgctxt "block keyword"
 msgid "text"
-msgstr ""
-
-#: lib/theme-update-requirements.php:97
-msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
-msgstr ""
-
-#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
-#: lib/theme-update-requirements.php:103
-#, php-format
-msgid "このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP %4$sのため、更新できません。"
 msgstr ""
