@@ -20485,6 +20485,20 @@ msgid ""
 "Cronまたはサーバーの定期実行設定を確認してください。"
 msgstr "点击分析的定期任务未安排、已失败或长时间未完成。自动抽样和数据清理可能无法更新。请检查 WP-Cron 或服务器的定时任务设置。"
 
+#: lib/theme-update-requirements.php:97
+msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
+msgstr "无法确认更新 ZIP 中的运行要求，已中止 Cocoon 更新。"
+
+#: lib/theme-update-requirements.php:103
+#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
+#, php-format
+msgid ""
+"このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP "
+"%4$sのため、更新できません。"
+msgstr ""
+"更新到此 Cocoon 版本需要 WordPress %1$s 或更高版本及 PHP %2$s 或更高版本。当前使用的是 WordPress %3$s "
+"和 PHP %4$s，因此无法更新。"
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -20799,13 +20813,3 @@ msgstr "在编辑器内搜索并选择乐天商品，插入静态商品链接。
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n-j"
-
-#: lib/theme-update-requirements.php:97
-msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
-msgstr "无法确认更新 ZIP 中的运行要求，已中止 Cocoon 更新。"
-
-#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
-#: lib/theme-update-requirements.php:103
-#, php-format
-msgid "このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP %4$sのため、更新できません。"
-msgstr "更新到此 Cocoon 版本需要 WordPress %1$s 或更高版本及 PHP %2$s 或更高版本。当前使用的是 WordPress %3$s 和 PHP %4$s，因此无法更新。"

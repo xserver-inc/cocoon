@@ -21533,6 +21533,23 @@ msgstr ""
 "completed for a long time. Automatic sampling and data cleanup may not be "
 "updated. Check WP-Cron or your server’s scheduled tasks."
 
+#: lib/theme-update-requirements.php:97
+msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
+msgstr ""
+"The Cocoon update was canceled because the requirements in the update ZIP "
+"could not be verified."
+
+#: lib/theme-update-requirements.php:103
+#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
+#, php-format
+msgid ""
+"このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP "
+"%4$sのため、更新できません。"
+msgstr ""
+"Updating to this version of Cocoon requires WordPress %1$s or later and PHP "
+"%2$s or later. This site is running WordPress %3$s and PHP %4$s, so the "
+"update cannot proceed."
+
 #: lib/plugin-update-checker/Puc/v5p6/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
@@ -21853,13 +21870,3 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "n/j"
-
-#: lib/theme-update-requirements.php:97
-msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
-msgstr "The Cocoon update was canceled because the requirements in the update ZIP could not be verified."
-
-#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
-#: lib/theme-update-requirements.php:103
-#, php-format
-msgid "このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP %4$sのため、更新できません。"
-msgstr "Updating to this version of Cocoon requires WordPress %1$s or later and PHP %2$s or later. This site is running WordPress %3$s and PHP %4$s, so the update cannot proceed."
