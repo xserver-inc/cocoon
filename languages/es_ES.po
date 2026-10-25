@@ -22292,3 +22292,13 @@ msgstr ""
 msgctxt "アクセス解析グラフ軸の短縮日付書式"
 msgid "n/j"
 msgstr "j/n"
+
+#: lib/theme-update-requirements.php:97
+msgid "更新ZIP内の動作要件を確認できないため、Cocoonの更新を中止しました。"
+msgstr "Se ha cancelado la actualización de Cocoon porque no se han podido verificar los requisitos del archivo ZIP de actualización."
+
+#. translators: 1: 必要なWordPressバージョン、2: 必要なPHPバージョン、3: 現在のWordPressバージョン、4: 現在のPHPバージョン
+#: lib/theme-update-requirements.php:103
+#, php-format
+msgid "このCocoonへの更新にはWordPress %1$s以上・PHP %2$s以上が必要です。現在はWordPress %3$s・PHP %4$sのため、更新できません。"
+msgstr "Para actualizar a esta versión de Cocoon se necesitan WordPress %1$s o posterior y PHP %2$s o posterior. Este sitio utiliza WordPress %3$s y PHP %4$s, por lo que no se puede realizar la actualización."

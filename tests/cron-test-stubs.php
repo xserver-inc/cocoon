@@ -142,12 +142,7 @@ if (!function_exists('cocoon_rakuten_block_generate_static_html')) {
 if (!function_exists('cocoon_rakuten_block_fetch_item')) {
     function cocoon_rakuten_block_fetch_item($itemCode) {
         global $test_rakuten_api_response;
-        // null または false の場合は false を返す（is_wp_error 非依存のスキップ条件）
-        // ※ wp-mock-functions.php の is_wp_error() が常に false を返すため、
-        //    楽天Cronコードの "if (is_wp_error($Item)) continue;" を通過してしまう。
-        //    テスト環境では extract_item_data に invalid データが渡され、
-        //    結果的にブロックは更新されるが staticHtml/innerHTML 整合性は維持される。
-        //    実環境では is_wp_error が正しく動作し WP_Error 時にスキップされる。
+        // 戻り値未指定時のfalseによるAPI取得失敗の再現
         return isset($test_rakuten_api_response) ? $test_rakuten_api_response : false;
     }
 }

@@ -58,6 +58,9 @@ add_action( 'init', function() {
         __FILE__,
         'cocoon-master'
     );
+    // 更新ZIP内の動作要件に基づくファイル置換前の環境確認
+    require_once abspath(__FILE__).'lib/theme-update-requirements.php';
+    new Cocoon_Theme_Update_Requirements(basename(get_cocoon_template_directory()));
 });
 
 

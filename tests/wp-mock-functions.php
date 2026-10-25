@@ -189,7 +189,7 @@ if (!function_exists('wp_date')) {
 
 if (!function_exists('is_wp_error')) {
     function is_wp_error($thing) {
-        return false;
+        return $thing instanceof WP_Error;
     }
 }
 
