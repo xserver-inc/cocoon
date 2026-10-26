@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.6\n"
+"Project-Id-Version: Cocoon 2.9.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1221,7 +1221,7 @@ msgid "あわせて読みたい"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:1687
-#: lib/shortcodes.php:1242
+#: lib/shortcodes.php:1245
 #: lib/utils.php:1070
 #: lib/widgets/cta-box.php:34
 #: blocks/src/block/blogcard/deprecated.js:146
@@ -2894,7 +2894,7 @@ msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
 #: lib/html-forms.php:1314
-#: lib/html-forms.php:1858
+#: lib/html-forms.php:1860
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
@@ -2912,28 +2912,28 @@ msgstr ""
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1714
+#: lib/html-forms.php:1716
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1717
+#: lib/html-forms.php:1719
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1720
+#: lib/html-forms.php:1722
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1723
+#: lib/html-forms.php:1725
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1726
+#: lib/html-forms.php:1728
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1769
-#: lib/shortcodes.php:1071
+#: lib/html-forms.php:1771
+#: lib/shortcodes.php:1074
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
 #: lib/widgets/info-list.php:105
@@ -11180,7 +11180,7 @@ msgid "関連記事見出し"
 msgstr ""
 
 #: lib/page-settings/single-forms.php:145
-#: lib/shortcodes.php:1238
+#: lib/shortcodes.php:1241
 #: lib/widgets/cta-box.php:117
 #: blocks/src/block-universal/caption-box/deprecated.js:25
 #: blocks/src/block-universal/caption-box/edit.js:20
@@ -13877,27 +13877,27 @@ msgstr ""
 msgid "月別アーカイブ"
 msgstr ""
 
-#: lib/shortcodes.php:919
+#: lib/shortcodes.php:922
 msgid "RSSフィードを取得できません"
 msgstr ""
 
-#: lib/shortcodes.php:1044
+#: lib/shortcodes.php:1047
 msgid "updatedショートコードは投稿・固定ページ以外では利用できません。"
 msgstr ""
 
-#: lib/shortcodes.php:1168
+#: lib/shortcodes.php:1171
 msgid "保存エラー"
 msgstr ""
 
-#: lib/shortcodes.php:1186
+#: lib/shortcodes.php:1189
 msgid "エラー："
 msgstr ""
 
-#: lib/shortcodes.php:1326
+#: lib/shortcodes.php:1329
 msgid "A,B,C,D,E"
 msgstr ""
 
-#: lib/shortcodes.php:1438
+#: lib/shortcodes.php:1441
 msgid "総計"
 msgstr ""
 
