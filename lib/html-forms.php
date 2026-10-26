@@ -1518,7 +1518,9 @@ function get_widget_entry_card_link_tag($atts){
   ), $atts, 'get_widget_entry_card_link_tag'));
 
   $class_text = null;
-  if (isset($classes[0]) && !empty($classes[0])) {
+  // クラス未指定時の配列化と空のクラス名の除去
+  $classes = array_filter((array)$classes, 'strlen');
+  if ($classes) {
     $class_text = ' '.implode(' ', $classes);
   }
 

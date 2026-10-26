@@ -661,10 +661,12 @@ function get_navi_card_list_tag($atts){
     $url = $menu->url;
     $title = escape_shortcodes($menu->title);
     $snippet = strip_shortcodes($menu->description);
-    $classes = $menu->classes;
+    // クラス未指定時の空配列化と空のクラス名の除去
+    $classes = is_array($menu->classes ?? null) ? $menu->classes : array();
+    $classes = array_values(array_filter($classes, 'strlen'));
     $object = $menu->object;
     $object_id = $menu->object_id;
-    $ribbon_no = isset($menu->classes[0]) ? $menu->classes[0] : null;
+    $ribbon_no = $classes[0] ?? null;
 
     // target 属性を取得
     $target = isset($menu->target) && $menu->target === '_blank' ? '_blank' : '';
