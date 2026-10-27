@@ -6,8 +6,10 @@
  * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
  */
 if ( !defined( 'ABSPATH' ) ) exit;
-//アイキャッチがない場合は非表示クラスを追加
-$display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' display-none'; ?>
+// 本文上アイキャッチの表示設定と画像の有無による表示可否の判定
+$eyecatch_visible = is_eyecatch_visible() && has_post_thumbnail();
+// アイキャッチ非表示時の非表示クラスの追加
+$display_none = $eyecatch_visible ? null : ' display-none'; ?>
 <div class="eye-catch-wrap<?php echo $display_none; ?>">
 <figure class="eye-catch" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
   <?php
@@ -49,14 +51,14 @@ $display_none = (is_eyecatch_visible() && has_post_thumbnail()) ? null : ' displ
   <meta itemprop="width" content="<?php echo $width; ?>">
   <meta itemprop="height" content="<?php echo $height; ?>">
   <?php
-  //アイキャッチラベルの表示
-  if (is_eyecatch_label_visible() && is_single()) {
+  // 表示中のアイキャッチに対するカテゴリーラベルの出力
+  if ($eyecatch_visible && is_eyecatch_label_visible() && is_single()) {
     the_nolink_category(null, apply_filters('is_eyecatch_category_label_visible', true)); //カテゴリーラベルの取得
   }
 
-  //アイキャッチにキャプションが設定されているとき
-  if (is_eyecatch_caption_visible() && isset(get_post( get_post_thumbnail_id() )->post_excerpt)) {
-    $eye_catch_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
+  // 表示中のアイキャッチに対する画像キャプションの取得
+  if ($eyecatch_visible && is_eyecatch_caption_visible()) {
+    $eye_catch_caption = get_the_post_thumbnail_caption();
     if( $eye_catch_caption ) {
         echo '<figcaption class="eye-catch-caption">' . $eye_catch_caption . '</figcaption>';
     }

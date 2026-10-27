@@ -17,20 +17,21 @@ if ($eye_catch_url || $content): ?>
     <?php //カテゴリータイトル
     cocoon_template_part('tmp/list-title'); ?>
     <?php if ($eye_catch_url):
-      //アイキャッチがない場合は非表示クラスを追加
-      $display_none = is_eyecatch_visible() ? null : ' display-none';
-      //アイキャッチからキャプションを取得
-      $caption = get_caption_from_image_url($eye_catch_url); ?>
+      // アイキャッチ非表示時の非表示クラスの追加
+      $display_none = is_eyecatch_visible() ? null : ' display-none'; ?>
       <div class="eye-catch-wrap<?php echo $display_none; ?>">
         <figure class="eye-catch">
           <img src="<?php echo esc_url($eye_catch_url); ?>" class="eye-catch-image wp-category-image" alt="">
           <?php //カテゴリーラベル
-          if (is_eyecatch_label_visible() && apply_filters('is_eyecatch_category_label_visible', true)) {
+          if (is_eyecatch_visible() && is_eyecatch_label_visible() && apply_filters('is_eyecatch_category_label_visible', true)) {
             echo '<span class="cat-label cat-label-'.$cat_id.'">'.single_cat_title( '', false ).'</span>';
           } ?>
-          <?php //キャプション
-          if (is_eyecatch_caption_visible() && $caption){
-            echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
+          <?php // 親設定とキャプション設定が有効な場合の画像キャプションの取得
+          if (is_eyecatch_visible() && is_eyecatch_caption_visible()){
+            $caption = get_caption_from_image_url($eye_catch_url);
+            if ($caption) {
+              echo '<figcaption class="eye-catch-caption">'.esc_html($caption).'</figcaption>';
+            }
           }; ?>
         </figure>
       </div>
