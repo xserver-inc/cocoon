@@ -13,6 +13,7 @@ function selected($value, $key) {if ((string) $value === (string) $key) echo 'se
 function wp_parse_args($args, $defaults) {return array_merge($defaults, $args);}
 function number_format_i18n($value) {return number_format($value);}
 require ABSPATH . 'lib/page-access/analytics/render-func.php';
+require ABSPATH . 'lib/page-access/click-analytics/settings-func.php';
 require ABSPATH . 'lib/page-access/analytics/map-post-picker.php';
 require ABSPATH . 'lib/page-access/click-analytics/render-func.php';
 require ABSPATH . 'lib/page-access/click-analytics/admin-query-func.php';

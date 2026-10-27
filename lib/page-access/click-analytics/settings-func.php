@@ -225,18 +225,44 @@ function cocoon_click_verify_tracking_token($post_id, $layout_revision, $samplin
 }
 endif;
 
+/**
+ * 投稿・固定ページと、個別ページを一般公開できるカスタム投稿タイプの一覧。
+ * 添付ファイルやメニューなど、WordPress内部用途の投稿タイプは対象外。
+ */
+if ( !function_exists( 'cocoon_click_trackable_post_types' ) ):
+function cocoon_click_trackable_post_types(){
+  // 標準の投稿・固定ページと、登録済みカスタム投稿タイプの候補
+  $types = array_merge(array('post', 'page'), array_values(get_post_types(array('_builtin' => false), 'names')));
+  return array_values(array_filter(array_unique($types), 'is_post_type_viewable'));
+}
+endif;
+
+/**
+ * クリック元・内部リンク先・解析画面で共通の、公開記事の対象判定。
+ * 投稿オブジェクトまたは投稿IDを受け取り、公開済みの対象記事に限り真を返す。
+ */
+if ( !function_exists( 'cocoon_click_is_trackable_post' ) ):
+function cocoon_click_is_trackable_post($post){
+  // 未指定値による現在の記事への意図しないフォールバックの防止
+  if (!$post) return false;
+  $post = get_post($post);
+  return $post && $post->post_status === 'publish'
+    && in_array($post->post_type, cocoon_click_trackable_post_types(), true);
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_should_enqueue' ) ):
 function cocoon_click_should_enqueue(){
   $enabled = is_click_analytics_enable()
     && !is_admin()
-    && is_singular(array('post', 'page'))
+    && is_singular()
     && (!function_exists('is_preview') || !is_preview())
     && (!function_exists('is_customize_preview') || !is_customize_preview());
   if ($enabled && function_exists('is_user_administrator') && is_user_administrator()) $enabled = false;
   if ($enabled && is_click_analytics_exclude_logged_in() && is_user_logged_in()) $enabled = false;
   if ($enabled && function_exists('is_useragent_robot') && is_useragent_robot()) $enabled = false;
   $post_id = $enabled ? (int) get_queried_object_id() : 0;
-  if ($enabled && (!$post_id || get_post_status($post_id) !== 'publish')) $enabled = false;
+  if ($enabled && !cocoon_click_is_trackable_post($post_id)) $enabled = false;
   return (bool) apply_filters('cocoon_click_analytics_should_enqueue', $enabled, $post_id);
 }
 endif;

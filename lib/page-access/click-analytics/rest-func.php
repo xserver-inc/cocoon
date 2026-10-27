@@ -376,7 +376,7 @@ function cocoon_click_rest_receive_events($request){
   }
   if (!cocoon_click_verify_tracking_token($source_post_id, $layout_revision, $sampling_rate, $token)) return cocoon_click_rest_error('click_analytics_token', __('計測トークンが不正です。', THEME_NAME), 403);
   $source_post = get_post($source_post_id);
-  if (!$source_post || $source_post->post_status !== 'publish' || !in_array($source_post->post_type, array('post', 'page'), true) || !is_post_type_viewable($source_post->post_type)) return cocoon_click_rest_error('click_analytics_source', __('クリック元が不正です。', THEME_NAME), 400);
+  if (!cocoon_click_is_trackable_post($source_post)) return cocoon_click_rest_error('click_analytics_source', __('クリック元が不正です。', THEME_NAME), 400);
   if (!cocoon_click_rate_limit_allows($session_id)) return cocoon_click_rest_error('click_analytics_rate', __('送信回数が多すぎます。', THEME_NAME), 429);
   $now = current_time('mysql');
   $date = current_time('Y-m-d');

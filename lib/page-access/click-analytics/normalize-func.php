@@ -119,6 +119,82 @@ function cocoon_click_classify_external_destination($type, $host, $attributes = 
 }
 endif;
 
+/**
+ * サイト内URLから、クリック解析の対象となる公開投稿を解決する。
+ * 通常URLの解決はCronでのみ有効にし、受信時の同期クエリー増加を避ける。
+ */
+if ( !function_exists( 'cocoon_click_resolve_internal_target' ) ):
+function cocoon_click_resolve_internal_target($url, $resolve_pretty = false){
+  if (!is_string($url) || $url === '' || strlen($url) > 2048) return false;
+  $parts = wp_parse_url($url);
+  if (!$parts || empty($parts['host']) || empty($parts['scheme'])
+      || !in_array(strtolower($parts['scheme']), array('http', 'https'), true)
+      || !cocoon_click_is_internal_host($parts['host'])) return false;
+
+  // 機微値のマスク前に限定した、WordPressと同じ解釈による最大20項目のクエリ解析
+  $query = array();
+  $raw_query = isset($parts['query']) ? $parts['query'] : '';
+  $query_pairs = array_slice(explode('&', $raw_query), 0, 20);
+  $scalar_pairs = array();
+  $array_keys = array();
+  foreach ($query_pairs as $pair) {
+    $key = urldecode(explode('=', $pair, 2)[0]);
+    // 深い配列キーによるPHP解析警告を避ける、識別子候補と無関係な配列条件の分離
+    if (strpos($key, '[') !== false || strpos($key, ']') !== false) {
+      $array_keys[] = preg_split('/[\[\]]/', $key, 2)[0];
+      continue;
+    }
+    $scalar_pairs[] = $pair;
+  }
+  if (array_intersect(array('p', 'page_id', 'post_type'), $array_keys)) return false;
+  parse_str(implode('&', $scalar_pairs), $query);
+  $target = false;
+  foreach (array('p', 'page_id') as $key) {
+    if (!array_key_exists($key, $query)) continue;
+    if (!is_string($query[$key]) || !ctype_digit($query[$key]) || (int) $query[$key] <= 0) return false;
+    $post = get_post((int) $query[$key]);
+    // 投稿IDと投稿タイプの矛盾、および複数IDによる曖昧な指定の除外
+    if (!cocoon_click_is_trackable_post($post)
+        || (isset($query['post_type']) && (!is_string($query['post_type']) || $query['post_type'] !== $post->post_type))
+        || ($target && (int) $target->ID !== (int) $post->ID)) return false;
+    $target = $post;
+  }
+  if ($target) return $target;
+
+  // サブディレクトリー設置を含む、基本クエリを受け付ける公開側の入口パス
+  $home_path = rtrim(cocoon_click_normalize_path((string) wp_parse_url(home_url('/'), PHP_URL_PATH)), '/');
+  $path = rtrim(cocoon_click_normalize_path(isset($parts['path']) ? $parts['path'] : '/'), '/');
+  $is_query_path = $path === $home_path || $path === $home_path . '/index.php';
+  if ($is_query_path && $raw_query !== '') {
+    $matched_type = '';
+    $slug = '';
+    foreach (cocoon_click_trackable_post_types() as $post_type) {
+      if (in_array($post_type, array('post', 'page'), true)) continue;
+      $type = get_post_type_object($post_type);
+      if (!$type) continue;
+      $query_var = $type->query_var === true ? $post_type : $type->query_var;
+      if (!is_string($query_var) || $query_var === '') continue;
+      if (in_array($query_var, $array_keys, true)) return false;
+      if (!array_key_exists($query_var, $query)) continue;
+      // 同名query_varや複数種類の指定による、リンク先記事の誤特定の防止
+      if ($matched_type !== '' || !is_string($query[$query_var]) || $query[$query_var] === '') return false;
+      $matched_type = $post_type;
+      $slug = $query[$query_var];
+    }
+    if ($matched_type === ''
+        || (isset($query['post_type']) && (!is_string($query['post_type']) || $query['post_type'] !== $matched_type))) return false;
+    // 階層型の親子パスに対応し、添付ファイルを暗黙に追加しない投稿タイプの限定
+    $post = get_page_by_path($slug, OBJECT, array($matched_type));
+    return cocoon_click_is_trackable_post($post) ? $post : false;
+  }
+
+  if (!$resolve_pretty) return false;
+  // クエリのないトップページと、通常URLに付いたマスク済みクエリの従来通りの補完
+  $post_id = url_to_postid($url);
+  return cocoon_click_is_trackable_post($post_id) ? get_post($post_id) : false;
+}
+endif;
+
 if ( !function_exists( 'cocoon_click_normalize_destination' ) ):
 function cocoon_click_normalize_destination($raw_url, $source_url, $attributes = array()){
   if (!is_string($raw_url) || !is_string($source_url)) return false;
@@ -178,15 +254,19 @@ function cocoon_click_normalize_destination($raw_url, $source_url, $attributes =
   $type = cocoon_click_classify_external_destination($type, $host, $attributes);
   $type = apply_filters('cocoon_click_analytics_classify_destination', $type, $canonical, $attributes);
   $target_post_id = 0;
-  // 基本パーマリンクの公開投稿IDはURLの機微な値とは分けて保持します。
+  // 基本パーマリンクの公開投稿IDとURL内の機微な値の分離
   if ($type === 'internal') {
-    foreach (array('p', 'page_id') as $post_key) {
-      if (isset($pairs[$post_key]) && ctype_digit($pairs[$post_key])) {
-        $target = get_post((int) $pairs[$post_key]);
-        if ($target && $target->post_status === 'publish' && in_array($target->post_type, array('post', 'page'), true)) {
-          $target_post_id = (int) $target->ID;
-          $display = $scheme . '://' . $host . $port_text . $path . '?' . $post_key . '=' . $target_post_id;
-        }
+    $target = cocoon_click_resolve_internal_target($absolute);
+    if ($target) {
+      $target_post_id = (int) $target->ID;
+      if (!in_array($target->post_type, array('post', 'page'), true)) {
+        // 元のslugや任意のクエリ値を残さない、公開カスタム投稿の安全な識別URL
+        $query = http_build_query(array('post_type' => $target->post_type, 'p' => $target_post_id), '', '&', PHP_QUERY_RFC3986);
+        $display = $scheme . '://' . $host . $port_text . $path . '?' . $query;
+        $canonical = $display;
+      } else {
+        $post_key = isset($pairs['page_id']) ? 'page_id' : 'p';
+        $display = $scheme . '://' . $host . $port_text . $path . '?' . $post_key . '=' . $target_post_id;
       }
     }
   }

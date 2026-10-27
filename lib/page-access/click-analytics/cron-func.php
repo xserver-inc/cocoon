@@ -151,9 +151,9 @@ function cocoon_click_enrich_internal_targets(){
   $rows = $wpdb->get_results($wpdb->prepare("SELECT id,destination_url FROM `" . CLICK_LINKS_TABLE_NAME . "` WHERE destination_type='internal' AND target_post_id=0 AND id>%d ORDER BY id ASC LIMIT 50", $cursor), ARRAY_A);
   if ($wpdb->last_error) return false;
   foreach ((array) $rows as $row) {
-    // 解決不能なURLも処理済み位置を進め、後続の投稿リンクを補完します。
-    $post_id = url_to_postid($row['destination_url']);
-    if ($post_id > 0 && $wpdb->update(CLICK_LINKS_TABLE_NAME, array('target_post_id' => $post_id), array('id' => (int) $row['id']), array('%d'), array('%d')) === false) return false;
+    // 解決不能なURLも含む処理済み位置の更新と、公開対象の内部リンク先IDの補完
+    $post = cocoon_click_resolve_internal_target($row['destination_url'], true);
+    if ($post && $wpdb->update(CLICK_LINKS_TABLE_NAME, array('target_post_id' => (int) $post->ID), array('id' => (int) $row['id']), array('%d'), array('%d')) === false) return false;
     $cursor = (int) $row['id'];
   }
   set_theme_mod('click_analytics_enrichment_cursor', count((array) $rows) === 50 ? $cursor : 0);

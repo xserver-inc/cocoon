@@ -26,6 +26,14 @@ class ClickAnalyticsTest extends TestCase
         \Brain\Monkey\Functions\when('sanitize_key')->alias(static function ($value) {
             return strtolower((string) preg_replace('/[^a-z0-9_\-]/i', '', $value));
         });
+        // URL正規化テストで使用する標準投稿タイプの登録情報
+        \Brain\Monkey\Functions\when('get_post_types')->justReturn(array());
+        \Brain\Monkey\Functions\when('is_post_type_viewable')->alias(static function ($type) {
+            return in_array($type, array('post', 'page'), true);
+        });
+        \Brain\Monkey\Functions\when('get_post_type_object')->alias(static function ($type) {
+            return in_array($type, array('post', 'page'), true) ? (object) array('name' => $type, 'query_var' => false, '_builtin' => true) : null;
+        });
     }
 
     public function testFiltersExcludeTypesOutsideTheCurrentView(): void

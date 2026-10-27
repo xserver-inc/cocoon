@@ -42,15 +42,19 @@ function cocoon_analytics_search_posts($keyword, $limit = 20){
   // 数字のみの入力時における記事ID完全一致の優先検索
   if (preg_match('/^[1-9][0-9]*$/', $keyword)) {
     $post = get_post((int) $keyword);
-    if ($post && $post->post_status === 'publish' && in_array($post->post_type, array('post', 'page'), true)) {
+    if (cocoon_click_is_trackable_post($post)) {
       return array(cocoon_analytics_post_picker_item($post));
     }
     return array();
   }
 
+  // 計測と同じ閲覧可能な投稿タイプに限定した検索対象
+  $post_types = cocoon_click_trackable_post_types();
+  if (!$post_types) return array();
+
   // 全件読み込みを避けた、入力時のみの最大20件の候補検索
   $query = new WP_Query(array(
-    'post_type'           => array('post', 'page'),
+    'post_type'           => $post_types,
     'post_status'         => 'publish',
     's'                   => $keyword,
     'posts_per_page'      => $limit,
@@ -60,6 +64,7 @@ function cocoon_analytics_search_posts($keyword, $limit = 20){
   ));
   $items = array();
   foreach ($query->posts as $post) {
+    if (!cocoon_click_is_trackable_post($post)) continue;
     $items[] = cocoon_analytics_post_picker_item($post);
   }
   return $items;

@@ -131,7 +131,7 @@ if ($click_view === 'overview') {
     echo '<div class="notice notice-info inline"><p>' . esc_html__('人気記事または検索結果から記事を選び、「表示」を押してください。', THEME_NAME) . '</p></div>';
   } else {
     $post = get_post($source_post_id);
-    if (!$post || $post->post_status !== 'publish') {
+    if (!cocoon_click_is_trackable_post($post)) {
       echo '<div class="notice notice-error inline"><p>' . esc_html__('公開中の記事を指定してください。', THEME_NAME) . '</p></div>';
     } else {
       $device = $filters['device'] === 'all' ? 'desktop' : $filters['device'];

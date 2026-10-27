@@ -20,6 +20,31 @@ function cocoon_analytics_map_post_period($preset, $from = '', $to = ''){
 endif;
 
 /**
+ * クリック計測の対象タイプに限定した、期間内PVの多い記事10件の取得
+ */
+if ( !function_exists( 'cocoon_analytics_map_post_ranking' ) ):
+function cocoon_analytics_map_post_ranking($from, $to){
+  $post_types = cocoon_click_trackable_post_types();
+  if (!$post_types) return array();
+  return cocoon_analytics_cached(array('map_post_ranking', $from, $to, $post_types), function() use ($from, $to, $post_types){
+    global $wpdb;
+    $table = ACCESSES_TABLE_NAME;
+    $in = cocoon_analytics_in_placeholder($post_types);
+    // PV画面の公開タイプ制限に依存しない、閲覧可能なカスタム投稿を含む候補集計
+    $sql = "SELECT p.ID AS post_id, t.pv
+              FROM (
+                SELECT post_id, SUM(count) AS pv FROM `{$table}`
+                WHERE date BETWEEN %s AND %s AND post_id > 0 GROUP BY post_id
+              ) t
+              INNER JOIN {$wpdb->posts} p ON p.ID = t.post_id AND p.post_status = 'publish'
+              WHERE p.post_type IN ({$in['sql']}) AND t.pv > 0
+              ORDER BY t.pv DESC, p.post_date DESC, p.ID DESC LIMIT 10";
+    return $wpdb->get_results($wpdb->prepare($sql, array_merge(array($from, $to), $in['args'])), ARRAY_A) ?: array();
+  });
+}
+endif;
+
+/**
  * 人気記事または検索結果のクリックマップ候補への整形
  */
 if ( !function_exists( 'cocoon_analytics_map_post_candidates' ) ):
@@ -28,12 +53,12 @@ function cocoon_analytics_map_post_candidates($keyword, $from, $to, $device = 'd
   if ($keyword !== '') {
     $items = cocoon_analytics_search_posts($keyword);
   } elseif (is_accesses_table_exist()) {
-    $rows = cocoon_analytics_ranking($from, $to, array('post', 'page'), 10);
+    $rows = cocoon_analytics_map_post_ranking($from, $to);
     // 候補の記事情報をまとめて取得するためのキャッシュ準備
     _prime_post_caches(wp_list_pluck($rows, 'post_id'), false, false);
     foreach ($rows as $row) {
       $post = get_post($row['post_id']);
-      if (!$post || $post->post_status !== 'publish' || !in_array($post->post_type, array('post', 'page'), true) || $row['pv'] <= 0) continue;
+      if (!cocoon_click_is_trackable_post($post) || $row['pv'] <= 0) continue;
       $item = cocoon_analytics_post_picker_item($post);
       $item['rank'] = count($items) + 1;
       $item['pv'] = number_format_i18n($row['pv']);
@@ -102,6 +127,7 @@ endif;
 if ( !function_exists( 'cocoon_analytics_render_map_post_picker' ) ):
 function cocoon_analytics_render_map_post_picker($selected_post_id){
   $post = $selected_post_id > 0 ? get_post($selected_post_id) : null;
+  if (!cocoon_click_is_trackable_post($post)) $post = null;
   $title = $post ? cocoon_analytics_plain_title($post) : '';
   if ($post && $title === '') $title = __('（無題）', THEME_NAME);
   $placeholder = __('アクセスの多い記事から選ぶ', THEME_NAME);
