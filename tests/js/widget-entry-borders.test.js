@@ -18,7 +18,9 @@ function partitionRules(css) {
   const rules = [];
   postcss.parse(css).walkRules(rule => {
     if (rule.selector.includes('.border-partition')) {
-      rules.push([rule.selector, rule.nodes.filter(node => node.type === 'decl').map(node => [node.prop, node.value, Boolean(node.important)])]);
+      // GitによるCRLF化とSass出力のLFとの差だけを除外したセレクターの比較
+      const selector = rule.selector.replace(/\r\n/gu, '\n');
+      rules.push([selector, rule.nodes.filter(node => node.type === 'decl').map(node => [node.prop, node.value, Boolean(node.important)])]);
     }
   });
   return rules;

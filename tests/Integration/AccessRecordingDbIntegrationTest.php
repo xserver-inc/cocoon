@@ -52,6 +52,12 @@ class AccessRecordingDbIntegrationTest extends IntegrationTestCase
 
     protected function tearDown(): void
     {
+        // WordPress環境の初期化前にスキップされた場合の復元処理の除外
+        if (!isset($this->server)) {
+            parent::tearDown();
+            return;
+        }
+
         global $wpdb;
         foreach ($this->accessPostIds as $id) $wpdb->delete(ACCESSES_TABLE_NAME, array('post_id' => $id), array('%d'));
         $_SERVER = $this->server;
