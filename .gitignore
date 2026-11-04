@@ -10,6 +10,7 @@ package-lock.json
 
 # Agent
 AGENTS.md
+/CONTRIBUTING.md
 .agent
 .agents/
 .codex/
