@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cocoon 2.9.6.1\n"
+"Project-Id-Version: Cocoon 2.9.6.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cocoon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3260,16 +3260,16 @@ msgid "アクセス集計の詳細を見る"
 msgstr ""
 
 #: lib/page-access/analytics/ajax-func.php:21
-#: lib/page-access/analytics/map-post-picker.php:106
+#: lib/page-access/analytics/map-post-picker.php:132
 msgid "（無題）"
 msgstr ""
 
-#: lib/page-access/analytics/ajax-func.php:103
+#: lib/page-access/analytics/ajax-func.php:108
 msgid "(タイトルなし)"
 msgstr ""
 
-#: lib/page-access/analytics/ajax-func.php:244
-#: lib/page-access/analytics/ajax-func.php:284
+#: lib/page-access/analytics/ajax-func.php:249
+#: lib/page-access/analytics/ajax-func.php:289
 #: lib/page-access/analytics/dashboard-page.php:520
 #: lib/page-access/analytics/dashboard-page.php:540
 msgid "不明"
@@ -3786,7 +3786,7 @@ msgid "記事を検索中..."
 msgstr ""
 
 #: lib/page-access/analytics/enqueue-func.php:164
-#: lib/page-access/analytics/map-post-picker.php:118
+#: lib/page-access/analytics/map-post-picker.php:144
 msgid "人気記事トップ10"
 msgstr ""
 
@@ -3820,17 +3820,17 @@ msgstr ""
 msgid "対象が不正です。"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:87
+#: lib/page-access/analytics/map-post-picker.php:112
 #: lib/page-access/click-analytics/filter-func.php:8
 msgid "PC"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:87
+#: lib/page-access/analytics/map-post-picker.php:112
 #: lib/page-access/click-analytics/filter-func.php:8
 msgid "タブレット"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:87
+#: lib/page-access/analytics/map-post-picker.php:112
 #: lib/page-access/click-analytics/filter-func.php:8
 #: lib/page-settings/settings-tabs.php:39
 #: skins/silk/functions.php:229
@@ -3838,25 +3838,25 @@ msgid "モバイル"
 msgstr ""
 
 #. translators: %s: クリックマップの表示端末名
-#: lib/page-access/analytics/map-post-picker.php:94
+#: lib/page-access/analytics/map-post-picker.php:119
 #, php-format
 msgid "%sのクリック記録なし"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:107
+#: lib/page-access/analytics/map-post-picker.php:133
 msgid "アクセスの多い記事から選ぶ"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:110
+#: lib/page-access/analytics/map-post-picker.php:136
 msgid "クリック元記事:"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:116
+#: lib/page-access/analytics/map-post-picker.php:142
 #: lib/page-access/analytics/render-func.php:172
 msgid "記事の選択を解除"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:118
+#: lib/page-access/analytics/map-post-picker.php:144
 #: lib/page-access/click-analytics/render-func.php:125
 #: lib/page-settings/toc-forms.php:119
 #: lib/page-settings/toc-funcs.php:86
@@ -3864,16 +3864,16 @@ msgstr ""
 msgid "閉じる"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:119
-#: lib/page-access/analytics/map-post-picker.php:120
+#: lib/page-access/analytics/map-post-picker.php:145
+#: lib/page-access/analytics/map-post-picker.php:146
 msgid "ほかの記事を検索"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:122
+#: lib/page-access/analytics/map-post-picker.php:148
 msgid "記事候補"
 msgstr ""
 
-#: lib/page-access/analytics/map-post-picker.php:124
+#: lib/page-access/analytics/map-post-picker.php:150
 msgid "再試行"
 msgstr ""
 
