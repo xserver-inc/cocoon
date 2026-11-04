@@ -8714,7 +8714,8 @@ div.fb-like-mobile {
 .search-submit {
   position: absolute;
   right: 3px;
-  top: calc(50% - 12px);
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 20px;
   cursor: pointer;
   border: none;

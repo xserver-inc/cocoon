@@ -596,9 +596,6 @@ a.prev-post:hover::before,a.next-post:hover::before{
 	padding:4px 10px 2px;
 	font-size: 14px;
 }
-.search-submit{
-	top: 4px;
-}
 .popular-entry-card-thumb{
 	width: 120px;
 }

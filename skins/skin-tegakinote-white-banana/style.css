@@ -1792,7 +1792,6 @@ pre {
 }
 
 .search-submit {
-	top: 0;
 	right: 0;
 	border: none;
 	color: rgba(var(--black-color), 1);

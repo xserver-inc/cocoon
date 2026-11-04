@@ -522,7 +522,6 @@ input[type='submit'], #bbp_reply_submit, .bp-login-widget-register-link a {
 }
 .search-submit {
     right: 0.7em;
-    top: calc(50% - 12.7px);
 }
 .search-edit:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
     outline: none;

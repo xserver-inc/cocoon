@@ -257,7 +257,6 @@ a:hover {
 	outline: none;
 }
 [type="submit"].search-submit {
-	top: 0;
 	right: 0;
 	height: 100%;
 	padding: 8px 15px;
