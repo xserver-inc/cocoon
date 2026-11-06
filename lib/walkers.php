@@ -35,6 +35,8 @@ class menu_description_walker extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
     $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
     $attributes .= ! empty( $url )        ? ' href="'   . esc_attr( $url ) .'"' : '';
+    // WordPressの判定に基づく、現在のページへのリンクの明示
+    $attributes .= ! empty( $item->current ) ? ' aria-current="page"' : '';
 
     ///////////////////////////////////////////
     // 説明文の作成
