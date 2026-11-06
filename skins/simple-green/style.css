@@ -124,7 +124,9 @@
 }
 
 /* 検索ボタン */
-input[type=text].search-edit {
+
+input[type=text].search-edit,
+input[type=search].search-edit {
   font-size: 16px;
   border-radius: 46px;
 }

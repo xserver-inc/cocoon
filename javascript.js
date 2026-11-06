@@ -66,13 +66,30 @@
     );
   } );
 
-  //検索ボタンクリックでフォーカスを入力エリアに移す
+  // 検索メニューの開閉に応じた入力欄へのフォーカス移動
   $( '#search-menu-input' ).change( ( e ) => {
-    const searchEdit = $( '#search-menu-content .search-edit' ).first();
+    const searchEdit = document.querySelector( '#search-menu-content .search-edit' );
+    if ( ! searchEdit ) {
+      return;
+    }
     if ( e.target.checked ) {
-      searchEdit.focus();
+      // 表示途中の入力欄へのフォーカスによる、親画面のスクロール防止
+      searchEdit.focus( { preventScroll: true } );
     } else {
       searchEdit.blur();
+    }
+  } );
+
+  // スキンの表示アニメーション完了後の、未フォーカス入力欄への再移動
+  $( '#search-menu-content' ).on( 'transitionend', ( e ) => {
+    if ( e.target !== e.currentTarget ||
+      ! $( '#search-menu-input' ).prop( 'checked' ) ||
+      document.activeElement !== document.body ) {
+      return;
+    }
+    const searchEdit = e.currentTarget.querySelector( '.search-edit' );
+    if ( searchEdit ) {
+      searchEdit.focus( { preventScroll: true } );
     }
   } );
 
@@ -357,6 +374,70 @@
 
   // スクロール時にも更新（固定ヘッダーの表示切り替えに追従するため）
   window.addEventListener( 'scroll', updateHeaderOffset );
+} )();
+
+// スキンごとの検索ボタンの実寸に合わせた、標準消去ボタンの余白調整
+( function cocoonSearchFormSpacing() {
+  function initializeSearchFormSpacing() {
+    // 入力欄と検索ボタンがそろったフォームの抽出
+    const forms = Array.from( document.querySelectorAll( '.search-box' ) )
+      .map( ( form ) => ( {
+        input: form.querySelector( '.search-edit[type="search"]' ),
+        button: form.querySelector( '.search-submit' ),
+      } ) )
+      .filter( ( form ) => form.input && form.button );
+    if ( ! forms.length ) {
+      return;
+    }
+
+    let scheduled = false;
+    function updateSpacing() {
+      scheduled = false;
+      // 読み取りと書き込みの分離による、連続したレイアウト再計算の抑制
+      const measurements = forms.map( ( { input, button } ) => {
+        const inputRect = input.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        if ( ! inputRect.width || ! buttonRect.width ) {
+          return null;
+        }
+        const border = parseFloat( getComputedStyle( input ).borderRightWidth ) || 0;
+        // ボタンの左端までの距離と、消去領域の右側の4pxの余白
+        const padding = Math.max( 0, inputRect.right - buttonRect.left - border + 4 );
+        return { input, value: padding.toFixed( 2 ) + 'px' };
+      } );
+      measurements.forEach( ( measurement ) => {
+        if ( measurement && measurement.input.style.getPropertyValue( '--cocoon-search-input-padding' ) !== measurement.value ) {
+          measurement.input.style.setProperty( '--cocoon-search-input-padding', measurement.value );
+        }
+      } );
+    }
+
+    // 同じフレーム内に届く表示変更・サイズ変更の計測の集約
+    function scheduleSpacing() {
+      if ( ! scheduled ) {
+        scheduled = true;
+        window.requestAnimationFrame( updateSpacing );
+      }
+    }
+
+    if ( 'ResizeObserver' in window ) {
+      const observer = new ResizeObserver( scheduleSpacing );
+      forms.forEach( ( { input, button } ) => {
+        observer.observe( input );
+        observer.observe( button );
+      } );
+    }
+    window.addEventListener( 'resize', scheduleSpacing );
+    window.addEventListener( 'load', scheduleSpacing, { once: true } );
+    document.addEventListener( 'change', scheduleSpacing );
+    scheduleSpacing();
+  }
+
+  if ( document.readyState === 'loading' ) {
+    document.addEventListener( 'DOMContentLoaded', initializeSearchFormSpacing );
+  } else {
+    initializeSearchFormSpacing();
+  }
 } )();
 
 // スキップリンクの移動先へのフォーカス付与

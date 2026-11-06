@@ -8104,18 +8104,29 @@ body.wp-admin {
 .admin-settings .demo .search-edit {
   font-family: inherit;
 }
+.admin-settings .demo .search-edit[type=search] {
+  width: 100%;
+}
+.admin-settings .demo .search-box .search-edit[type=search] {
+  padding-right: var(--cocoon-search-input-padding, 4.5em);
+}
 .admin-settings .demo #search-menu-content .search-edit {
   font-size: 16px;
 }
 .admin-settings .demo .search-submit {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   right: 3px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
   cursor: pointer;
   border: none;
-  color: var(--cocoon-thin-color);
+  color: inherit;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }
@@ -16821,18 +16832,29 @@ body.wp-admin {
 .admin-settings .demo .search-edit {
   font-family: inherit;
 }
+.admin-settings .demo .search-edit[type=search] {
+  width: 100%;
+}
+.admin-settings .demo .search-box .search-edit[type=search] {
+  padding-right: var(--cocoon-search-input-padding, 4.5em);
+}
 .admin-settings .demo #search-menu-content .search-edit {
   font-size: 16px;
 }
 .admin-settings .demo .search-submit {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   right: 3px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
   cursor: pointer;
   border: none;
-  color: var(--cocoon-thin-color);
+  color: inherit;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }

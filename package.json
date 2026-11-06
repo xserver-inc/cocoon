@@ -69,6 +69,8 @@
     "test:skin-colors": "node tests/js/one-skin-colors.test.js",
     "test:skin-table-scope": "node tests/js/skin-table-scope.test.js",
     "test:skin-table-browser": "playwright test tests/e2e/skin-table-scope.spec.js --workers=2",
+    "test:search-browser": "playwright test --config=playwright.search.config.js",
+    "test:search-wordpress": "playwright test --config=playwright.search.config.js tests/e2e/search-form-wordpress.spec.js --project=chrome --project=firefox --workers=1",
     "test:widget-borders": "node tests/js/widget-entry-borders.test.js",
     "test:widget-borders-browser": "playwright test tests/e2e/widget-entry-borders.spec.js",
     "test:unit": "composer test:unit",

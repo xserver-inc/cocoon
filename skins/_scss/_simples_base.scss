@@ -119,9 +119,10 @@
   background-color: $white;
 }
 
-/* 検索ボタン */
+// 検索入力欄
 
-input[type='text'].search-edit {
+input[type='text'].search-edit,
+input[type='search'].search-edit {
   font-size: 16px;
   border-radius: 46px;
 }

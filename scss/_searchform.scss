@@ -9,6 +9,16 @@
 .search-edit{
   font-family : inherit;
   @extend %form_common;
+
+  // 検索入力欄の標準幅と、スキンごとの幅指定の維持
+  &[type="search"]{
+    width: 100%;
+  }
+}
+
+// 検索ボタンの実寸に合わせた右余白と、計測前の重なり防止用の余白
+.search-box .search-edit[type="search"]{
+  padding-right: var(--cocoon-search-input-padding, 4.5em);
 }
 
 //iPhoneのフォーカス対策
@@ -18,6 +28,11 @@
 
 .search-submit{
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   right: 3px;
   // 検索ボタン自身の高さを基準にした縦中央への配置
   top: 50%;
@@ -25,7 +40,7 @@
   font-size: 20px;
   cursor: pointer;
   border: none;
-  color: var(--cocoon-thin-color);
+  color: inherit;
   padding: 0 8px;
   background-color: rgba(255, 255, 255, 0);
 }
