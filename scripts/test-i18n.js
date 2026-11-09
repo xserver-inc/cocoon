@@ -666,7 +666,7 @@ for ( const stylePath of [
 
 //Cocoon固有文言の翻訳呼び出しが、必ずテーマのテキストドメインを使うことを確認する
 const themeDomainRequirements = {
-  'lib/comments.php': [ '名前:</span>' ],
+  'lib/comments.php': [ '名前:' ],
   'lib/original-menu.php': [
     'このページにアクセスする管理者権限がありません。',
   ],

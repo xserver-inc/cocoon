@@ -1683,18 +1683,11 @@ msgstr "Y/m/d(D)"
 msgid "H:i:s"
 msgstr "H:i:s"
 
-#: lib/comments.php:104
-#, php-format
-msgid ""
-"<span class=\"comment-author-label\">名前:</span><cite class=\"fn "
-"comment-author\">%s<span class=\"admin\"></span></a></cite><span "
-"class=\"comment-author-separator\"> :</span>"
-msgstr ""
-"<span class=\"comment-author-label\">姓名:</span><cite class=\"fn "
-"comment-author\">%s<span class=\"admin\"></span></a></cite><span "
-"class=\"comment-author-separator\"> :</span>"
+#: lib/comments.php:107
+msgid "名前:"
+msgstr "姓名:"
 
-#: lib/comments.php:106
+#: lib/comments.php:112
 msgid "投稿日："
 msgstr "发布日期："
 
