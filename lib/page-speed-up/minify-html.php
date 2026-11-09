@@ -103,15 +103,22 @@ add_action('get_header', 'code_minify_buffer_start', 99999999);
 add_action('get_template_part_tmp/amp-header', 'code_minify_buffer_start', 99999999);//AMP
 if ( !function_exists( 'code_minify_buffer_start' ) ):
 function code_minify_buffer_start() {
-  ob_start('code_minify_call_back');
+  // REST APIの応答をHTML処理から除外
+  if (is_rest()) {
+    return;
+  }
+  if (ob_start('code_minify_call_back')) {
+    add_action('shutdown', 'code_minify_buffer_end');
+  }
 }
 endif;
 
 //最終HTML取得終了
-add_action('shutdown', 'code_minify_buffer_end');
 if ( !function_exists( 'code_minify_buffer_end' ) ):
 function code_minify_buffer_end() {
-  if (ob_get_length()){
+  // 最上段がCocoonのHTMLバッファの場合だけ終了
+  $buffer = ob_get_status();
+  if (($buffer['name'] ?? '') === 'code_minify_call_back') {
     ob_end_flush();
   }
 }
