@@ -7,6 +7,18 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// WP External Links側の適用可否判定より後の実行
+add_filter('wpel_apply_settings', 'cocoon_wpel_apply_settings', PHP_INT_MAX);
+if ( !function_exists( 'cocoon_wpel_apply_settings' ) ):
+function cocoon_wpel_apply_settings($apply_settings) {
+  // REST APIの完成済み応答に対するリンク解析の除外
+  if (is_rest() && doing_filter('final_output')) {
+    return false;
+  }
+  return $apply_settings;
+}
+endif;
+
 if ( !function_exists( 'is_jetpack_exist' ) ):
 function is_jetpack_exist(){
   return class_exists('Jetpack');
