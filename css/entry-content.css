@@ -139,6 +139,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   z-index: 2;
 }
 
+@supports (field-sizing: content) {
+  #comment {
+    field-sizing: content;
+    min-height: calc(8lh + 24px);
+  }
+}
+
 /* クリアフィックス */
 .cf::after {
   clear: both;

@@ -6575,6 +6575,13 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
   font-weight: bold;
 }
 
+@supports (field-sizing: content) {
+  #comment {
+    field-sizing: content;
+    min-height: calc(8lh + 24px);
+  }
+}
+
 .comment-form .required {
   color: red;
 }

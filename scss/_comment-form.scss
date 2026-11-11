@@ -1,0 +1,8 @@
+// 対応ブラウザーでのコメント入力欄の自動伸長
+@supports (field-sizing: content) {
+  #comment {
+    field-sizing: content;
+    // 8行分の入力領域に上下の余白と枠線を加えた最小の高さ
+    min-height: calc(8lh + #{($form_padding + 1px) * 2});
+  }
+}
