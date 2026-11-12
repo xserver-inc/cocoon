@@ -160,6 +160,7 @@ export function ButtonWrapEdit( props ) {
             fallbackFontSize={ fallbackFontSize }
             value={ fontSize.size }
             onChange={ setFontSize }
+            __nextHasNoMarginBottom={ true }
             __next40pxDefaultSize={ true }
           />
         </PanelBody>

@@ -7,6 +7,9 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+// ブロックエディターのスタイル配置とREST事前取得の互換処理
+require_once __DIR__ . '/block-editor-compatibility.php';
+
 //カラーパレット色の取得
 if ( !function_exists( 'get_cocoon_editor_color_palette_colors' ) ):
 function get_cocoon_editor_color_palette_colors(){
