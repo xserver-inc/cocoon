@@ -43,6 +43,7 @@ claudedocs
 vendor/
 
 # PHPUnit
+/.phpunit.result.cache
 .phpunit.cache/
 tests/coverage/
 configs/
