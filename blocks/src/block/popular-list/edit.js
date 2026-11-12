@@ -22,9 +22,9 @@ import {
   ToggleControl,
   SearchControl,
   RangeControl,
-  __experimentalDivider as Divider,
   Disabled,
 } from '@wordpress/components';
+import Divider from '../../components/Divider';
 import { Fragment, useState } from '@wordpress/element';
 import ServerSideRender from '../../server-side-render';
 import { useSelect } from '@wordpress/data';

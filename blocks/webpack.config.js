@@ -8,10 +8,19 @@ const path = require( 'path' );
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+// ビルド中のCPU占有を抑える圧縮処理の並列数制限
+for ( const minimizer of defaultConfig.optimization?.minimizer || [] ) {
+  if ( minimizer.options?.parallel === true || minimizer.options?.parallel > 2 ) {
+    minimizer.options.parallel = 2;
+  }
+}
+
 module.exports = {
   ...defaultConfig,
+  parallelism: 2,
   entry: {
     'blocks.build': path.resolve( './src', 'blocks.js' ),
+    'legacy-jsx-runtime': path.resolve( './src', 'legacy-jsx-runtime.js' ),
   },
   output: {
     path: path.join( __dirname, './dist' ),

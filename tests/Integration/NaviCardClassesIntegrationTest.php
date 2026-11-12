@@ -52,8 +52,8 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
             foreach (['navi', 'navi_list'] as $shortcode) {
                 $html = do_shortcode('[' . $shortcode . ' name="' . $menuId . '"]');
                 $link = $this->getCardLink($html);
-                $this->assertSame($this->baseLinkClass() . ' ' . $ribbonNo . ' extra second', $link->get_attribute('class'));
-                $this->assertSame('_blank', $link->get_attribute('target'));
+                $this->assertSame($this->baseLinkClass() . ' ' . $ribbonNo . ' extra second', $link->getAttribute('class'));
+                $this->assertSame('_blank', $link->getAttribute('target'));
                 $this->assertStringContainsString('ribbon-color-' . $ribbonNo, $html);
             }
         }
@@ -67,7 +67,7 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
         $menuId = $this->createMenu('3 extra');
         $html = do_shortcode('[navi name="' . $menuId . '"]');
 
-        $this->assertSame($this->baseLinkClass() . ' 3 extra', $this->getCardLink($html)->get_attribute('class'));
+        $this->assertSame($this->baseLinkClass() . ' 3 extra', $this->getCardLink($html)->getAttribute('class'));
         $this->assertStringContainsString('ribbon-color-3', $html);
     }
 
@@ -80,7 +80,7 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
             $menuId = $this->createMenu($classes);
             $html = do_shortcode('[navi_list name="' . $menuId . '"]');
 
-            $this->assertSame($this->baseLinkClass(), $this->getCardLink($html)->get_attribute('class'));
+            $this->assertSame($this->baseLinkClass(), $this->getCardLink($html)->getAttribute('class'));
             $this->assertStringNotContainsString('ribbon-color-', $html);
         }
     }
@@ -94,7 +94,7 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
             $menuId = $this->createMenu(' ' . $classes . ' ');
             $html = do_shortcode('[navi name="' . $menuId . '"]');
 
-            $this->assertSame($this->baseLinkClass() . ' ' . $classes, $this->getCardLink($html)->get_attribute('class'));
+            $this->assertSame($this->baseLinkClass() . ' ' . $classes, $this->getCardLink($html)->getAttribute('class'));
             $this->assertStringNotContainsString('ribbon-color-', $html);
         }
     }
@@ -108,7 +108,7 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
         $atts['classes'] = ['', 'extra', '', '0', 'second', ''];
         $html = get_widget_entry_card_link_tag($atts);
 
-        $this->assertSame($this->baseLinkClass() . ' extra 0 second', $this->getCardLink($html)->get_attribute('class'));
+        $this->assertSame($this->baseLinkClass() . ' extra 0 second', $this->getCardLink($html)->getAttribute('class'));
     }
 
     /**
@@ -118,7 +118,7 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
     {
         $atts = $this->cardAttributes();
         $html = get_widget_entry_card_link_tag($atts);
-        $this->assertSame($this->baseLinkClass(), $this->getCardLink($html)->get_attribute('class'));
+        $this->assertSame($this->baseLinkClass(), $this->getCardLink($html)->getAttribute('class'));
 
         $atts['classes'] = null;
         $this->assertSame($html, get_widget_entry_card_link_tag($atts));
@@ -154,8 +154,8 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
                 foreach (['navi', 'navi_list'] as $shortcode) {
                     $html = do_shortcode('[' . $shortcode . ' name="' . $menuId . '"]');
                     $link = $this->getCardLink($html);
-                    $this->assertSame($this->baseLinkClass(), $link->get_attribute('class'));
-                    $this->assertSame('_blank', $link->get_attribute('target'));
+                    $this->assertSame($this->baseLinkClass(), $link->getAttribute('class'));
+                    $this->assertSame('_blank', $link->getAttribute('target'));
                     $this->assertStringNotContainsString('ribbon-color-', $html);
                 }
             } finally {
@@ -201,15 +201,14 @@ class NaviCardClassesIntegrationTest extends IntegrationTestCase
         ];
     }
 
-    private function getCardLink(string $html): \WP_HTML_Tag_Processor
+    private function getCardLink(string $html): \DOMElement
     {
         // HTML属性の文字列比較に必要なカードリンク要素の抽出
-        $processor = new \WP_HTML_Tag_Processor($html);
-        $this->assertTrue($processor->next_tag([
-            'tag_name' => 'A',
-            'class_name' => WIDGET_NAVI_ENTRY_CARD_PREFIX . '-entry-card-link',
-        ]));
-        return $processor;
+        $element = $this->getHtmlElementsByXPath($html,
+            '//a[contains(concat(" ", normalize-space(@class), " "), " ' . WIDGET_NAVI_ENTRY_CARD_PREFIX . '-entry-card-link ")]'
+        )->item(0);
+        $this->assertInstanceOf(\DOMElement::class, $element);
+        return $element;
     }
 
     private function baseLinkClass(): string

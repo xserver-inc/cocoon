@@ -1,4 +1,5 @@
 import { BUTTON_BLOCK } from '../../helpers';
+import { normalizeCustomFontSize } from '../../components/custom-font-size';
 import {
   RichText,
   getColorClassName,
@@ -21,6 +22,7 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    customFontSize,
     width,
     justifyContent,
     verticalAlignment,
@@ -55,6 +57,8 @@ export default function save( { attributes } ) {
   } );
 
   const styles = {
+    // 定型サイズの既存HTMLを保つカスタム文字サイズの保存
+    fontSize: fontSize ? undefined : normalizeCustomFontSize( customFontSize ),
     '--cocoon-custom-background-color': customBackgroundColor || undefined,
     '--cocoon-custom-text-color': customTextColor || undefined,
     '--cocoon-custom-border-color': customBorderColor || undefined,

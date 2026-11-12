@@ -13,6 +13,7 @@ class ThemeUpdateRequirementsIntegrationTest extends IntegrationTestCase
     private mixed $originalFilesystem = null;
     private bool $hadFilesystem = false;
     private mixed $originalUpdates = false;
+    private array $originalCorePluginUpdates = [];
     private mixed $originalThemeRoots = false;
     private array $originalThemeDirectories = [];
     private mixed $originalAutoUpdates = false;
@@ -33,6 +34,9 @@ class ThemeUpdateRequirementsIntegrationTest extends IntegrationTestCase
         require_once dirname(__DIR__, 2) . '/lib/theme-update-requirements.php';
 
         $this->originalUpdates = get_site_transient('update_themes');
+        foreach (['update_core', 'update_plugins'] as $name) {
+            $this->originalCorePluginUpdates[$name] = get_site_transient($name);
+        }
         $this->originalThemeRoots = get_site_transient('theme_roots');
         $this->originalThemeDirectories = $GLOBALS['wp_theme_directories'];
         $this->originalAutoUpdates = get_site_option('auto_update_themes', false);
@@ -48,9 +52,19 @@ class ThemeUpdateRequirementsIntegrationTest extends IntegrationTestCase
         register_theme_directory($this->fixtureRoot . '/themes');
         $this->addFilter('theme_root', function () { return $this->fixtureRoot . '/themes'; });
         $this->addFilter('filesystem_method', static function () { return 'direct'; });
-        $this->addFilter('pre_http_request', static function () {
+        $this->addFilter('pre_http_request', static function ($preempt, $args, $url) {
+            // 旧WordPressの更新後処理に対する、外部通信なしの更新確認応答
+            if (wp_parse_url($url, PHP_URL_HOST) === 'api.wordpress.org'
+                && preg_match('~^/(?:core/version-check|plugins/update-check|themes/update-check)/~', (string) wp_parse_url($url, PHP_URL_PATH))) {
+                return [
+                    'response' => ['code' => 200, 'message' => 'OK'],
+                    'headers' => [],
+                    'body' => wp_json_encode(['offers' => [], 'plugins' => [], 'themes' => [], 'translations' => [], 'no_update' => []]),
+                    'cookies' => [],
+                ];
+            }
             return new \WP_Error('integration-http-disabled', '統合テスト中の外部通信の停止');
-        });
+        }, 10, 3);
         wp_clean_themes_cache(false);
         update_site_option('auto_update_themes', []);
         $this->assertTrue(WP_Filesystem(false, $this->fixtureRoot, true));
@@ -76,6 +90,9 @@ class ThemeUpdateRequirementsIntegrationTest extends IntegrationTestCase
             $GLOBALS['wp_theme_directories'] = $this->originalThemeDirectories;
             wp_clean_themes_cache(false);
             $this->restoreTransient('update_themes', $this->originalUpdates);
+            foreach ($this->originalCorePluginUpdates as $name => $value) {
+                $this->restoreTransient($name, $value);
+            }
             $this->restoreTransient('theme_roots', $this->originalThemeRoots);
             if ($this->originalAutoUpdates === false) {
                 delete_site_option('auto_update_themes');

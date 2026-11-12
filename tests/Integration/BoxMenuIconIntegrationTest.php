@@ -69,9 +69,9 @@ class BoxMenuIconIntegrationTest extends IntegrationTestCase
 
         foreach ($this->renderMenu($menuId) as $html) {
             $icon = $this->getIconElement($html);
-            $this->assertSame('DIV', $icon->get_tag());
-            $this->assertSame($classes, $icon->get_attribute('class'));
-            $this->assertSame('true', $icon->get_attribute('aria-hidden'));
+            $this->assertSame('DIV', strtoupper($icon->tagName));
+            $this->assertSame($classes, $icon->getAttribute('class'));
+            $this->assertSame('true', $icon->getAttribute('aria-hidden'));
             $this->assertStringNotContainsString('class="fa fa-star"', $html);
         }
     }
@@ -107,8 +107,8 @@ class BoxMenuIconIntegrationTest extends IntegrationTestCase
 
         foreach ($this->renderMenu($menuId) as $html) {
             $icon = $this->getIconElement($html);
-            $this->assertSame('fa fa-star', $icon->get_attribute('class'));
-            $this->assertSame('true', $icon->get_attribute('aria-hidden'));
+            $this->assertSame('fa fa-star', $icon->getAttribute('class'));
+            $this->assertSame('true', $icon->getAttribute('aria-hidden'));
         }
     }
 
@@ -130,8 +130,8 @@ class BoxMenuIconIntegrationTest extends IntegrationTestCase
 
         foreach ($this->renderMenu($menuId) as $html) {
             $icon = $this->getIconElement($html);
-            $this->assertSame('fa fa-star', $icon->get_attribute('class'));
-            $this->assertSame('true', $icon->get_attribute('aria-hidden'));
+            $this->assertSame('fa fa-star', $icon->getAttribute('class'));
+            $this->assertSame('true', $icon->getAttribute('aria-hidden'));
         }
     }
 
@@ -145,9 +145,9 @@ class BoxMenuIconIntegrationTest extends IntegrationTestCase
 
         foreach ($this->renderMenu($menuId) as $html) {
             $icon = $this->getIconElement($html);
-            $this->assertSame('IMG', $icon->get_tag());
-            $this->assertSame($imageUrl, $icon->get_attribute('src'));
-            $this->assertSame('', $icon->get_attribute('alt'));
+            $this->assertSame('IMG', strtoupper($icon->tagName));
+            $this->assertSame($imageUrl, $icon->getAttribute('src'));
+            $this->assertSame('', $icon->getAttribute('alt'));
             $this->assertStringNotContainsString('class="fa fa-star"', $html);
             $this->assertStringNotContainsString('class="fab fa-500px"', $html);
         }
@@ -182,16 +182,13 @@ class BoxMenuIconIntegrationTest extends IntegrationTestCase
         ];
     }
 
-    private function getIconElement(string $html): \WP_HTML_Tag_Processor
+    private function getIconElement(string $html): \DOMElement
     {
-        // アイコン専用のラッパーから実際の画像またはアイコン要素への移動
-        $processor = new \WP_HTML_Tag_Processor($html);
-        $this->assertTrue($processor->next_tag([
-            'tag_name' => 'DIV',
-            'class_name' => 'box-menu-icon',
-        ]));
-        $this->assertTrue($processor->next_tag());
-
-        return $processor;
+        // アイコン専用のラッパー内にある最初の画像またはアイコン要素の取得
+        $element = $this->getHtmlElementsByXPath($html,
+            '//div[contains(concat(" ", normalize-space(@class), " "), " box-menu-icon ")]/*[1]'
+        )->item(0);
+        $this->assertInstanceOf(\DOMElement::class, $element);
+        return $element;
     }
 }

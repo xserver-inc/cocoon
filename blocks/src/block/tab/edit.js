@@ -9,8 +9,8 @@ import {
   PanelBody,
   Button,
   TextControl,
-  __experimentalDivider as Divider,
 } from '@wordpress/components';
+import Divider from '../../components/Divider';
 import { Fragment, useEffect, RawHTML, useState } from '@wordpress/element';
 import { useDispatch } from '@wordpress/data';
 import { createBlock } from '@wordpress/blocks';

@@ -55,6 +55,9 @@
     "fontSize": {
       "type": "string"
     },
+    "customFontSize": {
+      "type": [ "number", "string" ]
+    },
     "width": {
       "type": "string"
     },

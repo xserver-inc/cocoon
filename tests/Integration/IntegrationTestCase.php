@@ -30,6 +30,25 @@ abstract class IntegrationTestCase extends TestCase
         return ProcessEnvironment::preserveEmptyValues($environment);
     }
 
+    /**
+     * WordPressの版に依存しないDOM解析によるHTML要素の取得
+     */
+    protected function getHtmlElementsByXPath(string $html, string $query): \DOMNodeList
+    {
+        $document = new \DOMDocument('1.0', 'UTF-8');
+        $previous = libxml_use_internal_errors(true);
+        try {
+            // 外部通信を禁止した検証専用HTML断片の解析
+            $this->assertTrue($document->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NONET));
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previous);
+        }
+        $elements = (new \DOMXPath($document))->query($query);
+        $this->assertNotFalse($elements);
+        return $elements;
+    }
+
     protected function setUp(): void
     {
         parent::setUp();

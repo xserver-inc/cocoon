@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.wp.element;function t(t,n,i){const o=void 0!==i&&void 0===n?.key?{...n,key:i}:n;return(0,e.createElement)(t,o)}window.ReactJSXRuntime||(window.ReactJSXRuntime={jsx:t,jsxs:t,Fragment:e.Fragment})})();

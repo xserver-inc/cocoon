@@ -7,7 +7,7 @@ Author: わいひら
 Author URI: https://nelog.jp/
 Text Domain: cocoon
 Version: 2.9.6.3
-Requires at least: 6.1.0
+Requires at least: 6.1
 Requires PHP: 7.4.0
 Tags: two-columns, left-sidebar, right-sidebar
 License: GNU General Public License
@@ -128,7 +128,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .related-entry-card-title, .entry-card-title {
   font-size: 18px;
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.4em;
   line-height: 1.6;
   font-weight: bold;
   display: -webkit-box;
@@ -139,7 +139,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .related-entry-card-snippet, .entry-card-snippet {
   font-size: var(--cocoon-text-size-s);
-  margin: 0 0 0.4em 0;
+  margin: 0 0 0.4em;
   line-height: 1.3;
   display: -webkit-box;
   overflow: hidden;
@@ -223,11 +223,11 @@ select, .search-edit {
 
 .copy-info {
   display: none;
-  /*初期状態は非表示*/
+  /* 初期状態は非表示 */
   padding: 1em 2em;
   color: #fff;
   border-radius: 8px;
-  /*画面上部に表示*/
+  /* 画面上部に表示 */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1193,7 +1193,6 @@ img.emoji {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  /*サブメニュー*/
 }
 .navi-in > ul li {
   display: block;
@@ -1215,6 +1214,9 @@ img.emoji {
 .navi-in > ul .caption-wrap > div {
   width: 100%;
 }
+.navi-in > ul {
+  /*サブメニュー*/
+}
 .navi-in > ul .sub-menu {
   display: none;
   position: absolute;
@@ -1225,7 +1227,6 @@ img.emoji {
   background-color: var(--cocoon-xxx-thin-color);
   z-index: 99;
   text-align: left;
-  /*サブメニューのサブメニュー*/
 }
 .navi-in > ul .sub-menu li {
   width: auto;
@@ -1233,6 +1234,9 @@ img.emoji {
 .navi-in > ul .sub-menu a {
   padding-left: 16px;
   padding-right: 16px;
+}
+.navi-in > ul .sub-menu {
+  /*サブメニューのサブメニュー*/
 }
 .navi-in > ul .sub-menu ul {
   top: -60px;
@@ -2014,9 +2018,6 @@ figure.wp-block-table.alignright table {
   overflow: hidden;
 }
 
-.article {
-  margin-bottom: 2em;
-}
 .article dd {
   margin-left: 40px;
 }
@@ -2076,6 +2077,9 @@ figure.wp-block-table.alignright table {
 }
 .article .column-wrap h1, .article .column-wrap h2, .article .column-wrap h3, .article .column-wrap h4, .article .column-wrap h5, .article .column-wrap h6 {
   margin-top: 0;
+}
+.article {
+  margin-bottom: 2em;
 }
 
 /************************************
@@ -3568,13 +3572,15 @@ ul.wp-block-archives {
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+}
+.blank-box ol, .blank-box ul {
+  margin: 0;
+}
+.blank-box {
   border-style: solid;
   border-width: 3px;
   border-color: var(--cocoon-custom-border-color);
   background-clip: padding-box;
-}
-.blank-box ol, .blank-box ul {
-  margin: 0;
 }
 .blank-box.bb-red {
   border-color: var(--cocoon-red-color);
@@ -3740,12 +3746,14 @@ ul.wp-block-archives {
 
 [class*=is-style-blank-box-] {
   border-radius: var(--cocoon-basic-border-radius);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-grey-color);
 }
 [class*=is-style-blank-box-] ol, [class*=is-style-blank-box-] ul {
   margin: 0;
+}
+[class*=is-style-blank-box-] {
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-grey-color);
 }
 
 .is-style-blank-box-red {
@@ -3786,13 +3794,15 @@ ul.wp-block-archives {
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+}
+[class*=is-style-sticky-] ol, [class*=is-style-sticky-] ul {
+  margin: 0;
+}
+[class*=is-style-sticky-] {
   border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
-}
-[class*=is-style-sticky-] ol, [class*=is-style-sticky-] ul {
-  margin: 0;
 }
 
 .is-style-sticky-yellow {
@@ -4174,6 +4184,10 @@ div.search-form {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.btn-wrap.btn-wrap-block[style*="font-size:"] > a {
+  font-size: inherit;
 }
 
 .button-block > [class~=btn-l] {
@@ -5440,7 +5454,7 @@ html .body .tab-caption-box.has-white-background-color .box-content {
   padding: 0 0.8em;
   font-size: 0.9em;
   font-weight: bold;
-  text-shadow: var(--cocoon-white-color) 3px 0px 0px, var(--cocoon-white-color) 2px 1px 0px, var(--cocoon-white-color) 2px 2px 0px, var(--cocoon-white-color) 2px 3px 0px, var(--cocoon-white-color) 1px 3px 0px, var(--cocoon-white-color) 0px 3px 0px, var(--cocoon-white-color) -1px 3px 0px, var(--cocoon-white-color) -2px 2px 0px, var(--cocoon-white-color) -3px 1px 0px, var(--cocoon-white-color) -3px 0px 0px, var(--cocoon-white-color) -3px -1px 0px, var(--cocoon-white-color) -3px -2px 0px, var(--cocoon-white-color) -2px -2px 0px, var(--cocoon-white-color) -1px -3px 0px, var(--cocoon-white-color) 0px -3px 0px, var(--cocoon-white-color) 1px -3px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 3px -1px 0px;
+  text-shadow: var(--cocoon-white-color) 3px 0px 0px, var(--cocoon-white-color) 2px 1px 0px, var(--cocoon-white-color) 2px 2px 0px, var(--cocoon-white-color) 2px 3px 0px, var(--cocoon-white-color) 1px 3px 0px, var(--cocoon-white-color) -0px 3px 0px, var(--cocoon-white-color) -1px 3px 0px, var(--cocoon-white-color) -2px 2px 0px, var(--cocoon-white-color) -3px 1px 0px, var(--cocoon-white-color) -3px 0px 0px, var(--cocoon-white-color) -3px -1px 0px, var(--cocoon-white-color) -3px -2px 0px, var(--cocoon-white-color) -2px -2px 0px, var(--cocoon-white-color) -1px -3px 0px, var(--cocoon-white-color) -0px -3px 0px, var(--cocoon-white-color) 1px -3px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 3px -1px 0px;
 }
 
 .label-box-content {
@@ -6581,7 +6595,6 @@ th:has(.s-circle), th:has(.d-circle), th:has(.triangle), th:has(.cross), th:has(
     min-height: calc(8lh + 24px);
   }
 }
-
 .comment-form .required {
   color: red;
 }
@@ -7133,11 +7146,11 @@ div.speech-balloon p {
 .sbp-r {
   flex-direction: row-reverse;
 }
-.sbp-r:not(.not-nested-style) {
-  /* アイコンを右に表示 */
-}
 .sbp-r:not(.not-nested-style) .speech-balloon {
   margin-right: 20px;
+}
+.sbp-r:not(.not-nested-style) {
+  /* アイコンを右に表示 */
 }
 .sbp-r:not(.not-nested-style) .speech-balloon::before {
   right: -12px;
@@ -8704,7 +8717,6 @@ div.fb-like-mobile {
   margin: 0;
 }
 
-/*検索フォーム*/
 .search-box {
   margin: 1em 0 2em;
   position: relative;
@@ -9697,7 +9709,6 @@ https://codepen.io/nxworld/pen/oLdoWb
   flex-direction: row;
   position: relative;
   /* カードのサムネイル幅200px */
-  /* Swiper初期化前はナビゲーションボタンを非表示にする（チラつき防止） */
 }
 .is-list-horizontal .widget-entry-card-link {
   flex-shrink: 0;
@@ -10977,7 +10988,6 @@ input[name=tab_item] {
   float: left;
   height: 100%;
   min-height: 1px;
-  display: none;
 }
 [dir=rtl] .slick-slide {
   float: right;
@@ -10986,6 +10996,9 @@ input[name=tab_item] {
   display: block;
 }
 .slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide {
   display: none;
 }
 .slick-slide.dragging img {
@@ -12634,9 +12647,6 @@ _:-ms-lang(x), .mc-circle {
   /************************************
   ** 印刷用スタイル
   ************************************/
-  #container {
-    font-size: 11pt;
-  }
   #container .header-container,
   #container .ad-area,
   #container .pager-links,
@@ -12688,6 +12698,9 @@ _:-ms-lang(x), .mc-circle {
     padding: 0;
     margin: 10px 0;
     color: #333;
+  }
+  #container {
+    font-size: 11pt;
   }
   #container h1 {
     font-size: 21.5pt;

@@ -19,7 +19,7 @@ const metadata = require( './block/button-wrap/block.json' );
 const save = require( './block/button-wrap/save' ).default;
 const deprecatedModule = require( './block/button-wrap/deprecated' );
 const deprecated = deprecatedModule.default;
-const { v1 } = deprecatedModule;
+const { v1, preNoopenerFix } = deprecatedModule;
 const {
   addNoopenerToBlankTargets,
 } = require( './block/button-wrap/add-noopener' );
@@ -765,7 +765,6 @@ describe( '囲みボタンのリンク保存と旧形式往復互換性', () => 
   } );
 
   test( '複雑な属性を持つ現行破損形式を属性欠落なしで移行する', () => {
-    const preNoopenerFix = deprecated[ 0 ];
     const tag =
       '<a href="https://example.com/complex?first=1&amp;second=2" target="_blank" rel="noopener noreferrer" data-track="complex">複雑な旧形式</a>';
     const attributes = {

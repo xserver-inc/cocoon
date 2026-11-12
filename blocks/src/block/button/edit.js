@@ -1,5 +1,6 @@
 import { THEME_NAME, BUTTON_BLOCK } from '../../helpers';
 import { WidthPanel } from '../../components';
+import { normalizeCustomFontSize } from '../../components/custom-font-size';
 import { __ } from '@wordpress/i18n';
 import {
   InspectorControls,
@@ -49,6 +50,7 @@ export function ButtonEdit( props ) {
     customBackgroundColor,
     customTextColor,
     customBorderColor,
+    customFontSize,
     width,
     justifyContent,
     verticalAlignment,
@@ -71,6 +73,11 @@ export function ButtonEdit( props ) {
     className: classes,
     style: styles,
   } );
+
+  // 定型サイズを優先したカスタム文字サイズの反映
+  const buttonStyles = {
+    fontSize: attributes.fontSize ? undefined : normalizeCustomFontSize( customFontSize ),
+  };
 
   return (
     <Fragment>
@@ -209,6 +216,7 @@ export function ButtonEdit( props ) {
           } ) }
           href={ url }
           target={ target }
+          style={ buttonStyles }
         >
           <RichText
             value={ content }

@@ -19,6 +19,9 @@ if (!defined('ABSPATH')) {
 	exit();
 }
 
+// 旧WordPress向けのJSXランタイム登録処理の読み込み
+require_once __DIR__ . '/legacy-jsx-runtime.php';
+
 //個々でフックに対してis_admin()で条件分岐しているのは、このようにしないとwpForoフォーラム画面が真っ白になってしまうため
 //何か不都合がありましたら以下まで。
 //https://wp-cocoon.com/community/
@@ -98,6 +101,8 @@ if ( !function_exists( 'cocoon_blocks_cgb_editor_assets' ) ):
 function cocoon_blocks_cgb_editor_assets()
 {
   $asset_file = require get_cocoon_template_directory() . '/blocks/dist/blocks.build.asset.php';
+  // 未登録のJSXランタイムによる旧エディターの読み込み停止の防止
+  cocoon_register_legacy_jsx_runtime($asset_file['dependencies']);
 	// phpcs:ignore
 	// Scripts.
 	wp_enqueue_script(

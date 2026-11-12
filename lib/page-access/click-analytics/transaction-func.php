@@ -6,11 +6,15 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 if (class_exists('wpdb') && !class_exists('Cocoon_Click_Transaction_DB')):
-// 同じ接続を使い、接続切断後に途中のSQLだけが自動確定されることを防ぎます。
+// 同じ接続の維持による、切断後の途中SQLの自動確定の防止
 class Cocoon_Click_Transaction_DB extends wpdb {
   public function __construct($source){
     foreach (get_object_vars($source) as $name => $value) {
       if (property_exists('wpdb', $name)) $this->$name = $value;
+    }
+    // get_object_varsでは取得できない旧wpdbの非公開MySQLiフラグの継承
+    if (property_exists('wpdb', 'use_mysqli')) {
+      $this->use_mysqli = $source->use_mysqli;
     }
   }
 

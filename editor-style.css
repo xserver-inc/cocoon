@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+@import 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
 :root {
   --cocoon-twitter-color: #000000;
   --cocoon-mastodon-color: #6364FF;
@@ -146,7 +146,6 @@
   font-weight: 400;
 }
 
-/*ビジュアルエディターのスタイルを書く*/
 body#tinymce {
   padding: 1em 20px !important;
   margin-top: 0 !important;
@@ -218,7 +217,7 @@ html[lang="en"] .column-3::before{
 }
 
 span.btn-wrap {
-  padding: 6px 18px 6px;
+  padding: 6px 18px;
   display: inline-block;
   font-size: 0.8em;
 }
@@ -308,7 +307,7 @@ span.btn-wrap {
   content: "\f138" "  " var(--cocoon-bct-next-text, "続きの記事");
 }
 
-/*ビジュアルエディターにinstagramの引用符が表示される対応*/
+/* ビジュアルエディターにinstagramの引用符が表示される対応 */
 .instagram-media {
   position: relative !important;
 }

@@ -1469,13 +1469,15 @@ html[lang=en] .ribbon-top-left::after {
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+}
+.blank-box ol, .blank-box ul {
+  margin: 0;
+}
+.blank-box {
   border-style: solid;
   border-width: 3px;
   border-color: var(--cocoon-custom-border-color);
   background-clip: padding-box;
-}
-.blank-box ol, .blank-box ul {
-  margin: 0;
 }
 .blank-box.bb-red {
   border-color: var(--cocoon-red-color);
@@ -1641,12 +1643,14 @@ html[lang=en] .ribbon-top-left::after {
 
 [class*=is-style-blank-box-] {
   border-radius: var(--cocoon-basic-border-radius);
-  border-style: solid;
-  border-width: 3px;
-  border-color: var(--cocoon-grey-color);
 }
 [class*=is-style-blank-box-] ol, [class*=is-style-blank-box-] ul {
   margin: 0;
+}
+[class*=is-style-blank-box-] {
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--cocoon-grey-color);
 }
 
 .is-style-blank-box-red {
@@ -1687,13 +1691,15 @@ html[lang=en] .ribbon-top-left::after {
   border-radius: var(--cocoon-basic-border-radius);
   background-color: var(--cocoon-custom-background-color);
   color: var(--cocoon-custom-text-color);
+}
+[class*=is-style-sticky-] ol, [class*=is-style-sticky-] ul {
+  margin: 0;
+}
+[class*=is-style-sticky-] {
   border-style: solid;
   border-width: 0 0 0 6px;
   border-color: var(--cocoon-x-pallid-text-color);
   background-color: var(--cocoon-xx-thin-color);
-}
-[class*=is-style-sticky-] ol, [class*=is-style-sticky-] ul {
-  margin: 0;
 }
 
 .is-style-sticky-yellow {
@@ -2074,6 +2080,10 @@ div.search-form {
   position: absolute;
   right: 0;
   font-size: 20px;
+}
+
+.btn-wrap.btn-wrap-block[style*="font-size:"] > a {
+  font-size: inherit;
 }
 
 .button-block > [class~=btn-l] {
@@ -3340,7 +3350,7 @@ html .body .tab-caption-box.has-white-background-color .box-content {
   padding: 0 0.8em;
   font-size: 0.9em;
   font-weight: bold;
-  text-shadow: var(--cocoon-white-color) 3px 0px 0px, var(--cocoon-white-color) 2px 1px 0px, var(--cocoon-white-color) 2px 2px 0px, var(--cocoon-white-color) 2px 3px 0px, var(--cocoon-white-color) 1px 3px 0px, var(--cocoon-white-color) 0px 3px 0px, var(--cocoon-white-color) -1px 3px 0px, var(--cocoon-white-color) -2px 2px 0px, var(--cocoon-white-color) -3px 1px 0px, var(--cocoon-white-color) -3px 0px 0px, var(--cocoon-white-color) -3px -1px 0px, var(--cocoon-white-color) -3px -2px 0px, var(--cocoon-white-color) -2px -2px 0px, var(--cocoon-white-color) -1px -3px 0px, var(--cocoon-white-color) 0px -3px 0px, var(--cocoon-white-color) 1px -3px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 3px -1px 0px;
+  text-shadow: var(--cocoon-white-color) 3px 0px 0px, var(--cocoon-white-color) 2px 1px 0px, var(--cocoon-white-color) 2px 2px 0px, var(--cocoon-white-color) 2px 3px 0px, var(--cocoon-white-color) 1px 3px 0px, var(--cocoon-white-color) -0px 3px 0px, var(--cocoon-white-color) -1px 3px 0px, var(--cocoon-white-color) -2px 2px 0px, var(--cocoon-white-color) -3px 1px 0px, var(--cocoon-white-color) -3px 0px 0px, var(--cocoon-white-color) -3px -1px 0px, var(--cocoon-white-color) -3px -2px 0px, var(--cocoon-white-color) -2px -2px 0px, var(--cocoon-white-color) -1px -3px 0px, var(--cocoon-white-color) -0px -3px 0px, var(--cocoon-white-color) 1px -3px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 2px -2px 0px, var(--cocoon-white-color) 3px -1px 0px;
 }
 
 .label-box-content {
@@ -6010,7 +6020,7 @@ div.cocoon-render-dropdown select option[disabled] {
   width: auto !important;
 }
 
-.em5sgkm6 {
+.components-input-control__suffix {
   margin-bottom: 8px;
 }
 
@@ -6212,14 +6222,14 @@ div.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
   margin: 0.2em 0;
 }
 
-.block-editor-block-list__block.blogcard-type {
-  line-height: 3;
-}
 .block-editor-block-list__block.blogcard-type p {
   margin: 0;
 }
 .block-editor-block-list__block.blogcard-type br {
   display: initial !important;
+}
+.block-editor-block-list__block.blogcard-type {
+  line-height: 3;
 }
 
 .components-button.display-none {

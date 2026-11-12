@@ -5,8 +5,8 @@ import {
   SelectControl,
   PanelBody,
   ToggleControl,
-  __experimentalDivider as Divider,
 } from '@wordpress/components';
+import Divider from '../../components/Divider';
 import { Fragment } from '@wordpress/element';
 import ServerSideRender from '../../server-side-render';
 import classnames from 'classnames';

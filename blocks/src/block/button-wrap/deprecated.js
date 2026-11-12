@@ -19,6 +19,7 @@ import {
   useBlockProps,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
+import { addNoopenerToBlankTargetsV1 } from './deprecated/add-noopener-v1';
 
 const { createBlock } = wp.blocks;
 
@@ -207,7 +208,7 @@ const preNoopenerFixAttributes = {
 };
 
 // 修正前の現行saveが生成したHTMLを将来の変更から守る固定定義。
-const preNoopenerFix = {
+export const preNoopenerFix = {
   apiVersion: 3,
   attributes: preNoopenerFixAttributes,
   supports: {
@@ -295,4 +296,82 @@ const preNoopenerFix = {
   },
 };
 
-export default [ preNoopenerFix, v2, v1 ];
+// カスタム文字サイズがHTMLに反映されていない旧保存形式
+export const preCustomFontSize = {
+  apiVersion: 3,
+  attributes: {
+    ...preNoopenerFixAttributes,
+    // 旧入力欄の数値・単位付き文字列を失わない属性定義
+    customFontSize: { type: [ 'number', 'string' ] },
+  },
+  supports: {
+    align: [ 'left', 'center', 'right' ],
+    customClassName: true,
+    anchor: true,
+    html: false,
+  },
+  save( { attributes } ) {
+    const {
+      tag,
+      size,
+      isCircle,
+      isShine,
+      backgroundColor,
+      textColor,
+      borderColor,
+      customBackgroundColor,
+      customTextColor,
+      customBorderColor,
+      fontSize,
+      width,
+      justifyContent,
+      verticalAlignment,
+    } = attributes;
+    const classes = classnames( {
+      'btn-wrap': true,
+      'btn-wrap-block': true,
+      [ BUTTON_BLOCK ]: true,
+      [ `is-content-justification-${ justifyContent }` ]: justifyContent,
+      [ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
+      [ size ]: size,
+      'btn-wrap-circle': !! isCircle,
+      'btn-wrap-shine': !! isShine,
+      'has-text-color': textColor || customTextColor,
+      'has-background': backgroundColor || customBackgroundColor,
+      'has-border-color': borderColor || customBorderColor,
+      [ getColorClassName( 'color', textColor ) ]: textColor,
+      [ getColorClassName( 'background-color', backgroundColor ) ]: backgroundColor,
+      [ getColorClassName( 'border-color', borderColor ) ]: borderColor,
+      [ getFontSizeClass( fontSize ) ]: fontSize,
+      'has-custom-width': width,
+      [ `cocoon-block-button__width-${ width }` ]: width,
+    } );
+    const blockProps = useBlockProps.save( {
+      className: classes,
+      style: {
+        '--cocoon-custom-background-color': customBackgroundColor || undefined,
+        '--cocoon-custom-text-color': customTextColor || undefined,
+        '--cocoon-custom-border-color': customBorderColor || undefined,
+      },
+    } );
+    return (
+      <div { ...blockProps }>
+        <RichText.Content value={ addNoopenerToBlankTargetsV1( tag ) } />
+      </div>
+    );
+  },
+};
+
+// 旧版の空HTMLからリンクとカスタム文字サイズを同時に復元する定義
+const preCustomFontSizeEmpty = {
+  ...preNoopenerFix,
+  attributes: preCustomFontSize.attributes,
+};
+
+export default [
+  preCustomFontSize,
+  preCustomFontSizeEmpty,
+  preNoopenerFix,
+  v2,
+  v1,
+];

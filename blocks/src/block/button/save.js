@@ -1,4 +1,5 @@
 import { BUTTON_BLOCK } from '../../helpers';
+import { normalizeCustomFontSize } from '../../components/custom-font-size';
 import {
   RichText,
   getColorClassName,
@@ -22,6 +23,7 @@ export default function save( { attributes } ) {
     customTextColor,
     customBorderColor,
     fontSize,
+    customFontSize,
     width,
     justifyContent,
     verticalAlignment,
@@ -53,6 +55,11 @@ export default function save( { attributes } ) {
     style: styles,
   } );
 
+  // 定型サイズの既存HTMLを保つカスタム文字サイズの保存
+  const buttonStyles = {
+    fontSize: fontSize ? undefined : normalizeCustomFontSize( customFontSize ),
+  };
+
   return (
     <div { ...blockProps }>
       <a
@@ -74,6 +81,7 @@ export default function save( { attributes } ) {
         } ) }
         target={ target }
         rel="noopener"
+        style={ buttonStyles }
       >
         <RichText.Content value={ content } />
       </a>

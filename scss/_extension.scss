@@ -1015,6 +1015,11 @@ div.search-form{
   }
 }
 
+// カスタム文字サイズの囲みボタン内リンクへの継承
+.btn-wrap.btn-wrap-block[style*="font-size:"] > a {
+  font-size: inherit;
+}
+
 // .btn-lのSass @extendをランキングへ波及させず、通常ボタン内の改行だけを同じインライン整形コンテキストで処理する
 .button-block > [class~="btn-l"] {
   display: block;
