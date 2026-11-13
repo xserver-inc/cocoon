@@ -22,8 +22,11 @@ AGENTS.md
 # 一時作業フォルダ
 /scratch/
 
-# Dockerのローカル検証用プラグイン
-/docker/mu-plugins/
+# Dockerのローカル検証環境と専用ツール
+/docker/
+/.dockerignore
+/scripts/dev-loop.js
+/tests/js/docker-integration-lock.test.js
 
 # GitHub Copilot
 .github/copilot-instructions.md

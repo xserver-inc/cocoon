@@ -138,7 +138,7 @@ jobs:
       - name: Install WordPress-compatible PHPUnit
         run: |
           mkdir -p /tmp/cocoon-integration-tools
-          cp docker/phpunit/composer.integration.json /tmp/cocoon-integration-tools/composer.json
+          cp tests/Integration/composer.json /tmp/cocoon-integration-tools/composer.json
           composer install --working-dir=/tmp/cocoon-integration-tools --prefer-dist --no-progress
 
       - name: Install WordPress test suite
