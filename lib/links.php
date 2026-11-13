@@ -32,6 +32,10 @@ function replace_anchor_links($the_content) {
   //_v($m);
   //Aリンクがある場合
   if ($res && $m[0]) {
+    // HTTP・HTTPSの違いに依存しない自サイトのホスト名
+    $home_host = wp_parse_url(home_url(), PHP_URL_HOST);
+    // 引用符内・連続文字・空白の一括読み飛ばしによるhref属性の抽出
+    $href_pattern = '{^<a\b(?:[^\s\'">]++|"[^"]*"|\'[^\']*\'|\s++(?!href\s*=))*+\s+href\s*=\s*(?:"([^"]*)"|\'([^\']*)\')}is';
 
     foreach ($m[0] as $value) {
       //初期値の設定
@@ -48,8 +52,21 @@ function replace_anchor_links($the_content) {
         $rels = explode(' ', $m[1]);
       }
 
-      //目次リンク（#リンク）の場合
-      if ((strpos($value, 'href="#') > 0)) {
+      // 元のHTMLを保持した、判定用URLの取得と正規化
+      $link_url = '';
+      $href_result = preg_match($href_pattern, $old_a, $href_match, PREG_UNMATCHED_AS_NULL);
+      // URL抽出エラー時の元リンクの保持
+      if ($href_result === false) {
+        continue;
+      }
+      if ($href_result === 1) {
+        $link_url = html_entity_decode($href_match[1] ?? $href_match[2], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        // URL内のタブ・改行と前後の制御文字・空白の除去
+        $link_url = trim(str_replace(array("\t", "\n", "\r"), '', $link_url), "\x00..\x20");
+      }
+
+      // ページ内リンクの設定変更の除外
+      if (strpos($link_url, '#') === 0) {
         continue;
       }
 
@@ -61,16 +78,14 @@ function replace_anchor_links($the_content) {
       */
       $is_img_ilnk = preg_match('{<a[^>]+?href="[^"]+?"[^>]*?>\s*?<img .+?>\s*?</a>}is', $value);
 
-      // _v($value);
-      // _v(includes_string($value, 'href="'.home_url()));
-      if (
-          //ホームURLを含んでいるか
-          includes_string($value, 'href="'.home_url()) ||
-          //http,httpsなしのURLだった場合
-          includes_string($value, 'href="'.preg_replace('/https?:/', '', home_url())) ||
-        !preg_match('{href="(https?:)?//}', $value)
-      ) {//内部リンクの場合
-      //if ( preg_match('{href="https?://'.get_the_site_domain().'}i') ) {//内部リンクの場合
+      // 相対URLなどの既存動作を維持したWebリンクのホスト名の照合
+      $is_internal_link = true;
+      if (preg_match('{^(https?:)?//}i', $link_url)) {
+        $link_host = wp_parse_url($link_url, PHP_URL_HOST);
+        $is_internal_link = $home_host && $link_host && strcasecmp($home_host, $link_host) === 0;
+      }
+
+      if ($is_internal_link) {//内部リンクの場合
         //リンクの開き方を変更する
         $new_a = replace_target_attr_tag( get_internal_link_open_type(), $new_a );
 
