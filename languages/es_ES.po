@@ -9601,6 +9601,18 @@ msgstr ""
 "anuncios\" en la pantalla de publicación. No se pueden migrar "
 "configuraciones como el personalizador de temas."
 
+#: lib/page-settings/others-forms.php:51
+msgid "ランダム投稿転送"
+msgstr "Redirecciones a entradas aleatorias"
+
+#: lib/page-settings/others-forms.php:55
+msgid "WordPressのランダム投稿転送を無効にする"
+msgstr "Desactivar las redirecciones aleatorias de WordPress"
+
+#: lib/page-settings/others-forms.php:56
+msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
+msgstr "Disponible a partir de WordPress 7.2. Deja esta casilla sin marcar para respetar el comportamiento predeterminado de WordPress y la configuración de otros plugins. No afecta a las listas aleatorias, como las entradas relacionadas de Cocoon."
+
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
 msgstr "Slug en japonés"

@@ -23,6 +23,50 @@ function is_request_filesystem_credentials_enable(){
 }
 endif;
 
+// WordPressのランダム投稿転送の無効化設定
+define('OP_RANDOM_CONTENT_REDIRECT_DISABLE', 'random_content_redirect_disable');
+if ( !function_exists( 'is_random_content_redirect_disabled' ) ):
+function is_random_content_redirect_disabled(){
+  return (bool) get_theme_option(OP_RANDOM_CONTENT_REDIRECT_DISABLE, false);
+}
+endif;
+
+// WordPress 7.2以降のランダム投稿転送APIの有無
+if ( !function_exists( 'cocoon_supports_random_content_redirect' ) ):
+function cocoon_supports_random_content_redirect(){
+  return function_exists('wp_is_random_content_redirect_enabled');
+}
+endif;
+
+// 未チェック時のWordPress標準動作と他プラグインの設定の維持
+add_filter('wp_enable_random_content_redirect', 'cocoon_filter_random_content_redirect_enabled');
+if ( !function_exists( 'cocoon_filter_random_content_redirect_enabled' ) ):
+function cocoon_filter_random_content_redirect_enabled($enabled){
+  return is_random_content_redirect_disabled() ? false : $enabled;
+}
+endif;
+
+// 設定保存・復元・リセット後のランダム投稿転送用URLルールの同期
+add_action('wp_loaded', 'cocoon_sync_random_content_redirect_rewrite_rules');
+add_action('cocoon_settings_after_save', 'cocoon_sync_random_content_redirect_rewrite_rules');
+if ( !function_exists( 'cocoon_sync_random_content_redirect_rewrite_rules' ) ):
+function cocoon_sync_random_content_redirect_rewrite_rules(){
+  if (!cocoon_supports_random_content_redirect()) {
+    return;
+  }
+
+  $disabled = is_random_content_redirect_disabled();
+  $previous = (bool) get_option('cocoon_random_content_redirect_disabled', false);
+  if ($disabled === $previous) {
+    return;
+  }
+
+  // 有効状態の変更時だけの再生成と、サーバー設定ファイルへの書き込みの回避
+  flush_rewrite_rules(false);
+  update_option('cocoon_random_content_redirect_disabled', $disabled, false);
+}
+endif;
+
 //Simplicityから設定情報の移行
 define('OP_MIGRATE_FROM_SIMPLICITY', 'migrate_from_simplicity');
 if ( !function_exists( 'is_migrate_from_simplicity' ) ):

@@ -9380,6 +9380,18 @@ msgstr ""
 "\"SEO Settings\" and \"Ad Exclusions\" items on the post screen. Settings "
 "such as the theme customizer cannot be migrated."
 
+#: lib/page-settings/others-forms.php:51
+msgid "ランダム投稿転送"
+msgstr "Random post redirects"
+
+#: lib/page-settings/others-forms.php:55
+msgid "WordPressのランダム投稿転送を無効にする"
+msgstr "Disable WordPress random post redirects"
+
+#: lib/page-settings/others-forms.php:56
+msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
+msgstr "Available in WordPress 7.2 and later. Leave unchecked to follow WordPress defaults and settings from other plugins. This does not affect random post lists such as Cocoon's related posts."
+
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
 msgstr "Japanese slug"

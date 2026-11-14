@@ -13,6 +13,11 @@ update_theme_option(OP_EASY_SSL_ENABLE);
 //ファイルシステム認証を有効にする
 update_theme_option(OP_REQUEST_FILESYSTEM_CREDENTIALS_ENABLE);
 
+// 対応するWordPress環境だけでのランダム投稿転送の無効化設定の保存
+if (cocoon_supports_random_content_redirect()) {
+  update_theme_option(OP_RANDOM_CONTENT_REDIRECT_DISABLE);
+}
+
 //Simplicityから設定情報の移行
 update_theme_option(OP_MIGRATE_FROM_SIMPLICITY);
 

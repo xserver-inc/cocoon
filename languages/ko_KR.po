@@ -8994,6 +8994,18 @@ msgstr ""
 "Simplicity에서 이용 가능한 Post meta 정보를 이용합니다. 예를 들면 글 발행 화면의 「SEO 설정」 「광고 제외」 "
 "항목등. ※테마 커스터마이즈등의 설정은 할 수 없습니다."
 
+#: lib/page-settings/others-forms.php:51
+msgid "ランダム投稿転送"
+msgstr "무작위 글 리디렉션"
+
+#: lib/page-settings/others-forms.php:55
+msgid "WordPressのランダム投稿転送を無効にする"
+msgstr "WordPress의 무작위 글 리디렉션 비활성화"
+
+#: lib/page-settings/others-forms.php:56
+msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
+msgstr "WordPress 7.2 이상에서 제공되는 기능입니다. 선택하지 않으면 WordPress의 기본 동작과 다른 플러그인의 설정을 따릅니다. Cocoon의 관련 글 등 무작위 글 표시에는 영향을 주지 않습니다."
+
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
 msgstr "일본어 슬러그"

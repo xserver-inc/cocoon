@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- テーマの出力バッファーを経由しない、進捗と結果の標準エラー出力 -->
 <phpunit bootstrap="tests/Integration/bootstrap.php"
          colors="true"
+         stderr="true"
          failOnRisky="true"
          failOnWarning="true">
     <testsuites>

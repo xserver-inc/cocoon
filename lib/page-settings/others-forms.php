@@ -44,6 +44,21 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
           </td>
         </tr>
 
+        <?php if (cocoon_supports_random_content_redirect()): ?>
+        <!-- WordPressのランダム投稿転送 -->
+        <tr>
+          <th scope="row">
+            <?php generate_label_tag(OP_RANDOM_CONTENT_REDIRECT_DISABLE, __('ランダム投稿転送', THEME_NAME)); ?>
+          </th>
+          <td>
+            <?php
+            generate_checkbox_tag(OP_RANDOM_CONTENT_REDIRECT_DISABLE, is_random_content_redirect_disabled(), __('WordPressのランダム投稿転送を無効にする', THEME_NAME));
+            generate_tips_tag(__('WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。', THEME_NAME));
+            ?>
+          </td>
+        </tr>
+        <?php endif; ?>
+
         <!-- Simplicity設定の移行 -->
         <tr>
           <th scope="row">
