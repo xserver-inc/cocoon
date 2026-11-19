@@ -127,7 +127,7 @@ describe.each( [ true, false ] )(
 	}
 );
 
-test( 'エディター装飾CSSがなくても区切り線の表示と意味を保持できる', () => {
+test( 'エディター装飾CSSがなくても区切り線と上下の余白を表示できる', () => {
 	const Divider = require( './components/Divider' ).default;
 	document.body.innerHTML = renderToStaticMarkup(
 		React.createElement( Divider )
@@ -138,7 +138,8 @@ test( 'エディター装飾CSSがなくても区切り線の表示と意味を�
 	expect( styles.borderTopWidth ).toBe( '0px' );
 	expect( styles.borderBottomWidth ).toBe( '1px' );
 	expect( styles.borderBottomStyle ).toBe( 'solid' );
-	expect( styles.marginTop ).toBe( '0px' );
+	expect( styles.marginTop ).toBe( '1.5em' );
+	expect( styles.marginBottom ).toBe( '1.5em' );
 } );
 
 describe( '入力欄の接尾要素のWordPress互換性', () => {

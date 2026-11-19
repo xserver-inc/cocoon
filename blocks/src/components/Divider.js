@@ -7,7 +7,8 @@ export default function Divider() {
 				border: 0,
 				borderBottom: '1px solid currentColor',
 				height: 0,
-				margin: 0,
+				// WordPressの設定パネルに合わせた上下の余白
+				margin: '1.5em 0',
 				width: 'auto',
 			} }
 		/>
