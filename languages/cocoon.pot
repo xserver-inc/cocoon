@@ -46,41 +46,41 @@ msgstr ""
 msgid "こちらのコンテンツはログインユーザーのみに表示されます。"
 msgstr ""
 
-#: blocks/src/init.php:292
+#: blocks/src/init.php:297
 #: lib/page-settings/apis-forms.php:59
 msgid "Creators API"
 msgstr ""
 
-#: blocks/src/init.php:298
+#: blocks/src/init.php:303
 #: lib/page-settings/apis-forms.php:35
 msgid "PA-API"
 msgstr ""
 
-#: blocks/src/init.php:340
+#: blocks/src/init.php:345
 msgid "楽天商品検索API"
 msgstr ""
 
-#: blocks/src/init.php:403
+#: blocks/src/init.php:408
 msgid "Cocoonブロック"
 msgstr ""
 
-#: blocks/src/init.php:408
+#: blocks/src/init.php:413
 msgid "Cocoon汎用ブロック"
 msgstr ""
 
-#: blocks/src/init.php:413
+#: blocks/src/init.php:418
 msgid "Cocoonマイクロコピー"
 msgstr ""
 
-#: blocks/src/init.php:418
+#: blocks/src/init.php:423
 msgid "Cocoonレイアウト"
 msgstr ""
 
-#: blocks/src/init.php:423
+#: blocks/src/init.php:428
 msgid "Cocoonショートコード"
 msgstr ""
 
-#: blocks/src/init.php:428
+#: blocks/src/init.php:433
 msgid "Cocoon旧ブロック（非推奨）"
 msgstr ""
 
@@ -507,7 +507,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:766
 #: lib/admin-tinymce-qtag.php:797
 #: lib/admin-tinymce-qtag.php:830
-#: lib/gutenberg.php:110
+#: lib/gutenberg.php:113
 #: lib/widgets/cta-box.php:193
 #: blocks/src/block/cta/edit.js:224
 #: blocks/src/block/sticky-box/deprecated.js:221
@@ -535,7 +535,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:771
 #: lib/admin-tinymce-qtag.php:802
 #: lib/admin-tinymce-qtag.php:835
-#: lib/gutenberg.php:80
+#: lib/gutenberg.php:83
 #: lib/widgets/cta-box.php:188
 #: blocks/src/block/cta/edit.js:213
 #: blocks/src/block/sticky-box/deprecated.js:225
@@ -570,7 +570,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:776
 #: lib/admin-tinymce-qtag.php:807
 #: lib/admin-tinymce-qtag.php:840
-#: lib/gutenberg.php:20
+#: lib/gutenberg.php:23
 #: lib/widgets/cta-box.php:176
 #: blocks/src/block/cta/edit.js:189
 #: blocks/src/block/sticky-box/deprecated.js:229
@@ -608,7 +608,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:781
 #: lib/admin-tinymce-qtag.php:812
 #: lib/admin-tinymce-qtag.php:845
-#: lib/gutenberg.php:45
+#: lib/gutenberg.php:48
 #: lib/widgets/cta-box.php:181
 #: blocks/src/block/cta/edit.js:197
 #: blocks/src/block/sticky-box/deprecated.js:233
@@ -646,7 +646,7 @@ msgstr ""
 #: lib/admin-tinymce-qtag.php:786
 #: lib/admin-tinymce-qtag.php:817
 #: lib/admin-tinymce-qtag.php:850
-#: lib/gutenberg.php:65
+#: lib/gutenberg.php:68
 #: lib/widgets/cta-box.php:185
 #: blocks/src/block/cta/edit.js:207
 #: blocks/src/block/sticky-box/deprecated.js:237
@@ -749,7 +749,7 @@ msgid "ボックス（付箋風）"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:860
-#: lib/gutenberg.php:90
+#: lib/gutenberg.php:93
 #: lib/widgets/cta-box.php:190
 #: blocks/src/block/cta/edit.js:218
 #: blocks/src/old/button-wrap/block.js:143
@@ -765,7 +765,7 @@ msgid "レッド"
 msgstr ""
 
 #: lib/admin-tinymce-qtag.php:870
-#: lib/gutenberg.php:25
+#: lib/gutenberg.php:28
 #: lib/widgets/cta-box.php:177
 #: blocks/src/block/cta/edit.js:190
 #: blocks/src/old/button-wrap/block.js:91
@@ -1676,8 +1676,8 @@ msgstr ""
 #: blocks/src/block-universal/tab-caption-box/edit.js:147
 #: blocks/src/block/balloon/edit.js:299
 #: blocks/src/block/blank-box/edit.js:67
-#: blocks/src/block/button-wrap/edit.js:168
-#: blocks/src/block/button/edit.js:174
+#: blocks/src/block/button-wrap/edit.js:173
+#: blocks/src/block/button/edit.js:182
 #: blocks/src/block/faq/edit.js:180
 #: blocks/src/block/icon-list/edit.js:128
 #: blocks/src/block/radar/edit.js:307
@@ -1729,13 +1729,13 @@ msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
 #: lib/comments.php:50
-#: lib/comments.php:119
+#: lib/comments.php:125
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: 1: date, 2: time
 #: lib/comments.php:57
-#: lib/comments.php:106
+#: lib/comments.php:112
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -1761,7 +1761,7 @@ msgstr ""
 msgid "投稿日："
 msgstr ""
 
-#: lib/comments.php:116
+#: lib/comments.php:122
 msgid "Edit"
 msgstr ""
 
@@ -1793,8 +1793,8 @@ msgstr ""
 #: blocks/src/block-universal/tab-caption-box/edit.js:152
 #: blocks/src/block/balloon/edit.js:304
 #: blocks/src/block/blank-box/edit.js:72
-#: blocks/src/block/button-wrap/edit.js:173
-#: blocks/src/block/button/edit.js:179
+#: blocks/src/block/button-wrap/edit.js:178
+#: blocks/src/block/button/edit.js:187
 #: blocks/src/block/faq/edit.js:185
 #: blocks/src/block/icon-list/edit.js:133
 #: blocks/src/block/radar/edit.js:313
@@ -2422,45 +2422,45 @@ msgstr ""
 msgid "タイトルからアイキャッチを生成する"
 msgstr ""
 
-#: lib/gutenberg.php:15
+#: lib/gutenberg.php:18
 #: lib/page-settings/all-forms.php:31
 #: skins/nagi/functions.php:94
 #: skins/silk/functions.php:233
 msgid "キーカラー"
 msgstr ""
 
-#: lib/gutenberg.php:30
+#: lib/gutenberg.php:33
 #: lib/widgets/cta-box.php:178
 #: blocks/src/block/cta/edit.js:191
 #: blocks/src/toolbutton/badge-purple.js:14
 msgid "紫色"
 msgstr ""
 
-#: lib/gutenberg.php:35
+#: lib/gutenberg.php:38
 msgid "深紫色"
 msgstr ""
 
-#: lib/gutenberg.php:40
+#: lib/gutenberg.php:43
 msgid "紺色"
 msgstr ""
 
-#: lib/gutenberg.php:50
+#: lib/gutenberg.php:53
 msgid "天色"
 msgstr ""
 
-#: lib/gutenberg.php:55
+#: lib/gutenberg.php:58
 msgid "浅葱色"
 msgstr ""
 
-#: lib/gutenberg.php:60
+#: lib/gutenberg.php:63
 msgid "深緑色"
 msgstr ""
 
-#: lib/gutenberg.php:70
+#: lib/gutenberg.php:73
 msgid "黄緑色"
 msgstr ""
 
-#: lib/gutenberg.php:75
+#: lib/gutenberg.php:78
 #: lib/widgets/cta-box.php:187
 #: blocks/src/block/cta/edit.js:212
 #: blocks/src/old/button-wrap/block.js:131
@@ -2468,11 +2468,11 @@ msgstr ""
 msgid "ライム"
 msgstr ""
 
-#: lib/gutenberg.php:85
+#: lib/gutenberg.php:88
 msgid "アンバー"
 msgstr ""
 
-#: lib/gutenberg.php:95
+#: lib/gutenberg.php:98
 #: lib/widgets/cta-box.php:191
 #: blocks/src/block/cta/edit.js:220
 #: blocks/src/old/button-wrap/block.js:147
@@ -2480,192 +2480,192 @@ msgstr ""
 msgid "ディープオレンジ"
 msgstr ""
 
-#: lib/gutenberg.php:100
+#: lib/gutenberg.php:103
 #: lib/widgets/cta-box.php:192
 #: blocks/src/block/cta/edit.js:223
 #: blocks/src/toolbutton/badge-brown.js:14
 msgid "茶色"
 msgstr ""
 
-#: lib/gutenberg.php:105
+#: lib/gutenberg.php:108
 msgid "ライトグレー"
 msgstr ""
 
-#: lib/gutenberg.php:115
+#: lib/gutenberg.php:118
 msgid "ダークグレー"
 msgstr ""
 
-#: lib/gutenberg.php:120
+#: lib/gutenberg.php:123
 msgid "黒"
 msgstr ""
 
-#: lib/gutenberg.php:125
+#: lib/gutenberg.php:128
 msgid "白"
 msgstr ""
 
-#: lib/gutenberg.php:130
+#: lib/gutenberg.php:133
 msgid "淡い青"
 msgstr ""
 
-#: lib/gutenberg.php:135
+#: lib/gutenberg.php:138
 msgid "淡い黄色"
 msgstr ""
 
-#: lib/gutenberg.php:140
+#: lib/gutenberg.php:143
 msgid "淡い赤"
 msgstr ""
 
-#: lib/gutenberg.php:145
+#: lib/gutenberg.php:148
 msgid "淡い緑"
 msgstr ""
 
-#: lib/gutenberg.php:190
+#: lib/gutenberg.php:193
 #: lib/page-settings/editor-forms.php:219
 msgid "拡張色A"
 msgstr ""
 
-#: lib/gutenberg.php:195
+#: lib/gutenberg.php:198
 #: lib/page-settings/editor-forms.php:220
 msgid "拡張色B"
 msgstr ""
 
-#: lib/gutenberg.php:200
+#: lib/gutenberg.php:203
 #: lib/page-settings/editor-forms.php:221
 msgid "拡張色C"
 msgstr ""
 
-#: lib/gutenberg.php:205
+#: lib/gutenberg.php:208
 #: lib/page-settings/editor-forms.php:222
 msgid "拡張色D"
 msgstr ""
 
-#: lib/gutenberg.php:210
+#: lib/gutenberg.php:213
 #: lib/page-settings/editor-forms.php:223
 msgid "拡張色E"
 msgstr ""
 
-#: lib/gutenberg.php:215
+#: lib/gutenberg.php:218
 #: lib/page-settings/editor-forms.php:224
 msgid "拡張色F"
 msgstr ""
 
-#: lib/gutenberg.php:232
+#: lib/gutenberg.php:235
 msgid "ハイライト表示しない"
 msgstr ""
 
-#: lib/gutenberg.php:236
+#: lib/gutenberg.php:239
 msgid "プレーンテキスト"
 msgstr ""
 
-#: lib/gutenberg.php:240
+#: lib/gutenberg.php:243
 msgid "Bash"
 msgstr ""
 
-#: lib/gutenberg.php:244
+#: lib/gutenberg.php:247
 msgid "Basic"
 msgstr ""
 
-#: lib/gutenberg.php:248
+#: lib/gutenberg.php:251
 msgid "C#"
 msgstr ""
 
-#: lib/gutenberg.php:252
+#: lib/gutenberg.php:255
 msgid "C++"
 msgstr ""
 
-#: lib/gutenberg.php:256
+#: lib/gutenberg.php:259
 msgid "CSS"
 msgstr ""
 
-#: lib/gutenberg.php:260
+#: lib/gutenberg.php:263
 msgid "D"
 msgstr ""
 
-#: lib/gutenberg.php:264
+#: lib/gutenberg.php:267
 msgid "DOS"
 msgstr ""
 
-#: lib/gutenberg.php:268
+#: lib/gutenberg.php:271
 msgid "Delphi"
 msgstr ""
 
-#: lib/gutenberg.php:272
+#: lib/gutenberg.php:275
 msgid "Go"
 msgstr ""
 
-#: lib/gutenberg.php:276
+#: lib/gutenberg.php:279
 msgid "HTML"
 msgstr ""
 
-#: lib/gutenberg.php:280
+#: lib/gutenberg.php:283
 msgid "Haml"
 msgstr ""
 
-#: lib/gutenberg.php:284
+#: lib/gutenberg.php:287
 msgid "JSON"
 msgstr ""
 
-#: lib/gutenberg.php:288
+#: lib/gutenberg.php:291
 msgid "Java"
 msgstr ""
 
-#: lib/gutenberg.php:292
+#: lib/gutenberg.php:295
 msgid "JavaScript"
 msgstr ""
 
-#: lib/gutenberg.php:296
+#: lib/gutenberg.php:299
 msgid "Less"
 msgstr ""
 
-#: lib/gutenberg.php:300
+#: lib/gutenberg.php:303
 msgid "Markdown"
 msgstr ""
 
-#: lib/gutenberg.php:304
+#: lib/gutenberg.php:307
 msgid "Objective C"
 msgstr ""
 
-#: lib/gutenberg.php:308
+#: lib/gutenberg.php:311
 msgid "PHP"
 msgstr ""
 
-#: lib/gutenberg.php:312
+#: lib/gutenberg.php:315
 msgid "Perl"
 msgstr ""
 
-#: lib/gutenberg.php:316
+#: lib/gutenberg.php:319
 msgid "Python"
 msgstr ""
 
-#: lib/gutenberg.php:320
+#: lib/gutenberg.php:323
 msgid "R"
 msgstr ""
 
-#: lib/gutenberg.php:324
+#: lib/gutenberg.php:327
 msgid "Ruby"
 msgstr ""
 
-#: lib/gutenberg.php:328
+#: lib/gutenberg.php:331
 msgid "Rust"
 msgstr ""
 
-#: lib/gutenberg.php:332
+#: lib/gutenberg.php:335
 msgid "SCSS"
 msgstr ""
 
-#: lib/gutenberg.php:336
+#: lib/gutenberg.php:339
 msgid "SQL"
 msgstr ""
 
-#: lib/gutenberg.php:340
+#: lib/gutenberg.php:343
 msgid "Swift"
 msgstr ""
 
-#: lib/gutenberg.php:344
+#: lib/gutenberg.php:347
 msgid "VBScript"
 msgstr ""
 
-#: lib/gutenberg.php:348
+#: lib/gutenberg.php:351
 msgid "XML"
 msgstr ""
 
@@ -6884,8 +6884,8 @@ msgid "22px"
 msgstr ""
 
 #: lib/page-settings/all-forms.php:99
-#: blocks/src/block/button-wrap/edit.js:152
-#: blocks/src/block/button/edit.js:158
+#: blocks/src/block/button-wrap/edit.js:156
+#: blocks/src/block/button/edit.js:165
 msgid "文字サイズ"
 msgstr ""
 
@@ -8175,7 +8175,7 @@ msgstr ""
 #: lib/page-settings/blogcard-in-forms.php:122
 #: lib/page-settings/blogcard-out-forms.php:101
 #: lib/page-settings/notice-forms.php:75
-#: blocks/src/block/button/edit.js:101
+#: blocks/src/block/button/edit.js:108
 #: blocks/src/old/button-1/block.js:100
 #: blocks/src/old/button/block.js:81
 msgid "リンクの開き方"
@@ -8184,7 +8184,7 @@ msgstr ""
 #: lib/page-settings/blogcard-in-forms.php:127
 #: lib/page-settings/blogcard-out-forms.php:106
 #: blocks/src/block-extension/group-link.js:101
-#: blocks/src/block/button/edit.js:111
+#: blocks/src/block/button/edit.js:118
 #: blocks/src/old/button-1/block.js:110
 #: blocks/src/old/button/block.js:91
 msgid "新しいタブで開く"
@@ -8595,8 +8595,8 @@ msgstr ""
 #: blocks/src/block-universal/tab-caption-box/edit.js:142
 #: blocks/src/block/balloon/edit.js:309
 #: blocks/src/block/blank-box/edit.js:62
-#: blocks/src/block/button-wrap/edit.js:178
-#: blocks/src/block/button/edit.js:184
+#: blocks/src/block/button-wrap/edit.js:183
+#: blocks/src/block/button/edit.js:192
 #: blocks/src/block/faq/edit.js:175
 #: blocks/src/block/icon-list/edit.js:123
 #: blocks/src/block/tab-box/edit.js:144
@@ -10497,18 +10497,6 @@ msgstr ""
 msgid "KUSANAGI等のファイルシステム認証が必要なサーバの場合に有効にしてください。"
 msgstr ""
 
-#: lib/page-settings/others-forms.php:50
-msgid "Simplicity設定"
-msgstr ""
-
-#: lib/page-settings/others-forms.php:54
-msgid "Simplicityから投稿設定を引き継ぐ"
-msgstr ""
-
-#: lib/page-settings/others-forms.php:55
-msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
-msgstr ""
-
 #: lib/page-settings/others-forms.php:51
 msgid "ランダム投稿転送"
 msgstr ""
@@ -10521,15 +10509,27 @@ msgstr ""
 msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
 msgstr ""
 
-#: lib/page-settings/others-forms.php:63
+#: lib/page-settings/others-forms.php:65
+msgid "Simplicity設定"
+msgstr ""
+
+#: lib/page-settings/others-forms.php:69
+msgid "Simplicityから投稿設定を引き継ぐ"
+msgstr ""
+
+#: lib/page-settings/others-forms.php:70
+msgid "Simplicityから利用可能なPost meta情報を利用します。例えば投稿画面の「SEO設定」「広告除外」項目とか。※テーマカスタマイザーとかの設定は移行できません。"
+msgstr ""
+
+#: lib/page-settings/others-forms.php:78
 msgid "日本語スラッグ"
 msgstr ""
 
-#: lib/page-settings/others-forms.php:67
+#: lib/page-settings/others-forms.php:82
 msgid "日本語スラッグを半角英数字にする"
 msgstr ""
 
-#: lib/page-settings/others-forms.php:68
+#: lib/page-settings/others-forms.php:83
 msgid "日本語スラッグを投稿の場合は「post-XXXX」、固定ページの場合は「page-XXXX」のような短縮文字列に変更します。"
 msgstr ""
 
@@ -17120,8 +17120,8 @@ msgid "インラインボタン"
 msgstr ""
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:92
-#: blocks/src/block/button-wrap/edit.js:136
-#: blocks/src/block/button/edit.js:142
+#: blocks/src/block/button-wrap/edit.js:140
+#: blocks/src/block/button/edit.js:149
 #: blocks/src/micro/micro-balloon/edit.js:98
 #: blocks/src/old/button-1/block.js:141
 #: blocks/src/old/button-wrap-1/block.js:129
@@ -17131,8 +17131,8 @@ msgid "円形にする"
 msgstr ""
 
 #: skins/skin-made-in-heaven/lib/panel-editor.php:93
-#: blocks/src/block/button-wrap/edit.js:143
-#: blocks/src/block/button/edit.js:149
+#: blocks/src/block/button-wrap/edit.js:147
+#: blocks/src/block/button/edit.js:156
 #: blocks/src/old/button-1/block.js:148
 #: blocks/src/old/button-wrap-1/block.js:135
 msgid "光らせる"
@@ -18388,8 +18388,8 @@ msgstr ""
 #: blocks/src/block-universal/label-box/edit.js:138
 #: blocks/src/block-universal/tab-caption-box/edit.js:138
 #: blocks/src/block/blank-box/edit.js:58
-#: blocks/src/block/button-wrap/edit.js:164
-#: blocks/src/block/button/edit.js:170
+#: blocks/src/block/button-wrap/edit.js:169
+#: blocks/src/block/button/edit.js:178
 #: blocks/src/block/faq/edit.js:161
 #: blocks/src/block/icon-list/edit.js:114
 #: blocks/src/block/radar/edit.js:296
@@ -18743,26 +18743,26 @@ msgstr ""
 msgid "登録されているボックスメニューを表示します。"
 msgstr ""
 
-#: blocks/src/block/button-wrap/deprecated.js:29
+#: blocks/src/block/button-wrap/deprecated.js:30
 #: blocks/src/old/button-wrap-1/block.js:62
 #: blocks/src/old/button-wrap/block.js:37
 msgid "こちらをクリックしてリンクタグを設定エリア入力してください。この入力は公開ページで反映されません。"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:104
+#: blocks/src/block/button-wrap/edit.js:108
 #: blocks/src/old/button-wrap-1/block.js:98
 #: blocks/src/old/button-wrap/block.js:72
 msgid "囲みボタン設定"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:107
+#: blocks/src/block/button-wrap/edit.js:111
 #: blocks/src/old/button-wrap-1/block.js:101
 #: blocks/src/old/button-wrap/block.js:75
 msgid "リンクタグ・ショートコード"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:113
-#: blocks/src/block/button/edit.js:119
+#: blocks/src/block/button-wrap/edit.js:117
+#: blocks/src/block/button/edit.js:126
 #: blocks/src/old/button-1/block.js:118
 #: blocks/src/old/button-wrap-1/block.js:107
 #: blocks/src/old/button-wrap/block.js:163
@@ -18770,8 +18770,8 @@ msgstr ""
 msgid "サイズ"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:119
-#: blocks/src/block/button/edit.js:125
+#: blocks/src/block/button-wrap/edit.js:123
+#: blocks/src/block/button/edit.js:132
 #: blocks/src/old/button-1/block.js:124
 #: blocks/src/old/button-wrap-1/block.js:113
 #: blocks/src/old/button-wrap/block.js:169
@@ -18779,8 +18779,8 @@ msgstr ""
 msgid "小"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:123
-#: blocks/src/block/button/edit.js:129
+#: blocks/src/block/button-wrap/edit.js:127
+#: blocks/src/block/button/edit.js:136
 #: blocks/src/old/button-1/block.js:128
 #: blocks/src/old/button-wrap-1/block.js:117
 #: blocks/src/old/button-wrap/block.js:173
@@ -18788,8 +18788,8 @@ msgstr ""
 msgid "中"
 msgstr ""
 
-#: blocks/src/block/button-wrap/edit.js:127
-#: blocks/src/block/button/edit.js:133
+#: blocks/src/block/button-wrap/edit.js:131
+#: blocks/src/block/button/edit.js:140
 #: blocks/src/old/button-1/block.js:132
 #: blocks/src/old/button-wrap-1/block.js:121
 #: blocks/src/old/button-wrap/block.js:177
@@ -18803,19 +18803,19 @@ msgstr ""
 msgid "アスリートタグ等のタグを変更できないリンクをボタン化します。"
 msgstr ""
 
-#: blocks/src/block/button/edit.js:91
+#: blocks/src/block/button/edit.js:98
 #: blocks/src/old/button-1/block.js:90
 #: blocks/src/old/button/block.js:71
 msgid "ボタン設定"
 msgstr ""
 
-#: blocks/src/block/button/edit.js:95
+#: blocks/src/block/button/edit.js:102
 #: blocks/src/old/button-1/block.js:94
 #: blocks/src/old/button/block.js:75
 msgid "URL"
 msgstr ""
 
-#: blocks/src/block/button/edit.js:107
+#: blocks/src/block/button/edit.js:114
 #: blocks/src/old/button-1/block.js:106
 #: blocks/src/old/button/block.js:87
 msgid "現在のタブで開く"
