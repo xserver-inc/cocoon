@@ -8923,8 +8923,13 @@ msgid "WordPressのランダム投稿転送を無効にする"
 msgstr "禁用 WordPress 的随机文章跳转"
 
 #: lib/page-settings/others-forms.php:56
-msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
-msgstr "此功能适用于 WordPress 7.2 及更高版本。不勾选时，将遵循 WordPress 的默认行为和其他插件的设置。不会影响 Cocoon 相关文章等随机文章列表。"
+msgid ""
+"WordPress "
+"7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響し"
+"ません。"
+msgstr ""
+"此功能适用于 WordPress 7.2 及更高版本。不勾选时，将遵循 WordPress 的默认行为和其他插件的设置。不会影响 Cocoon "
+"相关文章等随机文章列表。"
 
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"

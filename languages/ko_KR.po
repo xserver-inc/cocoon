@@ -9003,8 +9003,13 @@ msgid "WordPressのランダム投稿転送を無効にする"
 msgstr "WordPress의 무작위 글 리디렉션 비활성화"
 
 #: lib/page-settings/others-forms.php:56
-msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
-msgstr "WordPress 7.2 이상에서 제공되는 기능입니다. 선택하지 않으면 WordPress의 기본 동작과 다른 플러그인의 설정을 따릅니다. Cocoon의 관련 글 등 무작위 글 표시에는 영향을 주지 않습니다."
+msgid ""
+"WordPress "
+"7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響し"
+"ません。"
+msgstr ""
+"WordPress 7.2 이상에서 제공되는 기능입니다. 선택하지 않으면 WordPress의 기본 동작과 다른 플러그인의 설정을 "
+"따릅니다. Cocoon의 관련 글 등 무작위 글 표시에는 영향을 주지 않습니다."
 
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"

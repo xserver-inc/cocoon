@@ -9498,8 +9498,15 @@ msgid "WordPressのランダム投稿転送を無効にする"
 msgstr "Desactivar o redireccionamento aleatório de artigos do WordPress"
 
 #: lib/page-settings/others-forms.php:56
-msgid "WordPress 7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響しません。"
-msgstr "Disponível no WordPress 7.2 ou superior. Deixe esta opção desmarcada para seguir as predefinições do WordPress e as definições de outros plugins. A apresentação aleatória de artigos, como os artigos relacionados do Cocoon, não é afectada."
+msgid ""
+"WordPress "
+"7.2以降の機能です。未チェックの場合はWordPressの標準動作と他のプラグインの設定に従います。Cocoonの関連記事などのランダム表示には影響し"
+"ません。"
+msgstr ""
+"Disponível no WordPress 7.2 ou superior. Deixe esta opção desmarcada para "
+"seguir as predefinições do WordPress e as definições de outros plugins. A "
+"apresentação aleatória de artigos, como os artigos relacionados do Cocoon, "
+"não é afectada."
 
 #: lib/page-settings/others-forms.php:63
 msgid "日本語スラッグ"
