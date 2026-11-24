@@ -664,20 +664,13 @@ button#comment-reply-btn {
 }
 
 .nwa .author-box .author-thumb {
-	position: relative;
 	margin-top: 17px;
-	z-index: 1;
 }
 
-.nwa .author-box .author-thumb:before {
-	content: "";
-	position: absolute;
-	width: calc(100% + 20px);
-	height: calc(100% + 20px);
+.nwa .author-box .author-thumb img {
+	/* 画像の輪郭に沿う白い背景と縁 */
 	background-color: #fff;
-	border-radius: 50%;
-	transform: translate(-10px, -10px);
-	z-index: -1;
+	box-shadow: 0 0 0 10px #fff;
 }
 
 .nwa .author-box .author-content {
