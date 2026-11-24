@@ -183,27 +183,13 @@ function cocoon_rakuten_block_update_post_blocks($post){
   // 更新後のコンテンツを生成
   $new_content = serialize_blocks($blocks);
 
-  // $wpdb->updateでpost_contentのみ直接更新（リビジョン生成・更新日時変更を防止）
-  global $wpdb;
-  $result = $wpdb->update(
-    $wpdb->posts,
-    array('post_content' => $new_content),
-    array('ID' => $post->ID),
-    array('%s'),
-    array('%d')
-  );
+  // 更新日時とリビジョンを保つ、wp_update_post() を介さない本文の書き戻し
+  $result = cocoon_product_block_update_post_content($post->ID, $content, $new_content);
 
-  // 更新失敗時はログを残して抜ける
+  // データベース更新エラー時のログ出力
   if ($result === false) {
     cocoon_product_block_debug_log('cron: post '.$post->ID.' update failed', 'RakutenCron');
-    return;
   }
-
-  // キャッシュをクリア
-  clean_post_cache($post->ID);
-  // 注意: wp_update_post() を介さないため、save_postやpost_updatedアクションは発火しません。
-  // サードパーティの静的HTMLキャッシュプラグインに更新が通知されず古いキャッシュが見える
-  // 可能性がありますが、Cronのバックグラウンド更新の性質上、許容範囲としています。
 }
 endif;
 

@@ -152,6 +152,46 @@ function get_rakuten_api_transient_bk_id($id){
 }
 endif;
 
+/**
+ * 読み込み時から本文が変わっていない公開済みの投稿・固定ページへ、商品リンクブロックの更新結果を書き戻します。
+ * 投稿の保存フックやリビジョンの生成、更新日時の変更を避けるため、本文だけを直接更新します。
+ *
+ * @return int|false 更新した行数。本文の検証やSQLの実行に失敗した場合は false。
+ */
+if ( !function_exists( 'cocoon_product_block_update_post_content' ) ):
+function cocoon_product_block_update_post_content($post_id, $original_content, $new_content){
+  global $wpdb;
+
+  // 従来の書き込みと同じ、本文列の文字コードと長さの検証
+  if ($wpdb->strip_invalid_text_for_column($wpdb->posts, 'post_content', $new_content) !== $new_content) {
+    return false;
+  }
+
+  // 元の本文の再送を避けるハッシュ照合と、SHA-256を使えないDBでのSHA-1への切り替え
+  $result = $wpdb->query($wpdb->prepare(
+    "UPDATE `{$wpdb->posts}`
+     SET post_content = %s
+     WHERE ID = %d
+       AND post_status = 'publish'
+       AND post_type IN ('post', 'page')
+       AND COALESCE(
+         SHA2(CAST(post_content AS CHAR), 256),
+         SHA1(CAST(post_content AS CHAR))
+       ) IN (%s, %s)",
+    $new_content,
+    $post_id,
+    hash('sha256', $original_content),
+    sha1($original_content)
+  ));
+
+  // 本文を書き戻した投稿のキャッシュ削除
+  if ($result > 0) {
+    clean_post_cache($post_id);
+  }
+  return $result;
+}
+endif;
+
 //Amazonインプレッションタブの取得
 if ( !function_exists( 'get_moshimo_amazon_impression_tag' ) ):
 function get_moshimo_amazon_impression_tag(){
