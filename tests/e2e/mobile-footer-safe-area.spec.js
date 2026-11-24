@@ -33,10 +33,10 @@ async function setBottomInset(cdp, bottom) {
   });
 }
 
-for (const {layout, width} of [
+for (const {layout, width, tablet} of [
   {layout: 'footer_mobile_buttons', width: 390},
   {layout: 'header_and_footer_mobile_buttons', width: 390},
-  {layout: 'footer_mobile_buttons', width: 1023}
+  {layout: 'footer_mobile_buttons', width: 1023, tablet: true}
 ]) {
   test(`固定フッターの末尾リンクが安全領域の変化で隠れない (${layout} / ${width}px)`, async ({page}) => {
     const cdp = await preparePage(page, {
@@ -64,7 +64,8 @@ for (const {layout, width} of [
             linkReceivesClick: Boolean(hit && link.contains(hit))
           };
         });
-        expect(result.bottomGap).toBeCloseTo(inset, 1);
+        // タブレット幅ではFirefoxが返す安全領域を使わず画面下端に固定する
+        expect(result.bottomGap).toBeCloseTo(tablet ? 0 : inset, 1);
         expect(result.menuHeight).toBeCloseTo(50, 1);
         expect(result.linkBottom).toBeLessThanOrEqual(result.menuTop);
         expect(result.linkReceivesClick).toBe(true);
