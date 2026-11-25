@@ -36,6 +36,10 @@ async function setBottomInset(cdp, bottom) {
 for (const {layout, width, tablet} of [
   {layout: 'footer_mobile_buttons', width: 390},
   {layout: 'header_and_footer_mobile_buttons', width: 390},
+  {layout: 'footer_mobile_buttons', width: 599},
+  {layout: 'header_and_footer_mobile_buttons', width: 599},
+  {layout: 'footer_mobile_buttons', width: 600, tablet: true},
+  {layout: 'header_and_footer_mobile_buttons', width: 600, tablet: true},
   {layout: 'footer_mobile_buttons', width: 1023, tablet: true}
 ]) {
   test(`固定フッターの末尾リンクが安全領域の変化で隠れない (${layout} / ${width}px)`, async ({page}) => {
