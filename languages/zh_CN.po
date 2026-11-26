@@ -9799,6 +9799,20 @@ msgstr "皮肤设置"
 msgid "スキンを変更することで、サイトのデザインを手軽に変更できます。"
 msgstr "通过更换皮肤，可以轻松更改网站的设计。"
 
+#: lib/page-settings/skin-forms.php:78
+msgid "選択中"
+msgstr "已选择"
+
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
+#: lib/page-settings/skin-forms.php:125
+#, php-format
+msgid "ほかの候補 (%d)"
+msgstr "其他选项（%d）"
+
+#: lib/page-settings/skin-forms.php:126
+msgid "候補を閉じる"
+msgstr "收起选项"
+
 #: lib/page-settings/skin-forms.php:31
 msgid "スキン一覧"
 msgstr "皮肤列表"

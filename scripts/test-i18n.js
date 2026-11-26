@@ -541,7 +541,7 @@ const rakuColorChanging = readThemeFile(
 
 assert.match(
   skinFunctions,
-  /translate_skin_metadata\(trim\(strip_tags\(\$matches\[2\]\)\)\)/,
+  /\$name\s*=\s*trim\(strip_tags\(\$matches\[2\]\)\);\s*\$skin_name\s*=\s*translate_skin_metadata\(\$name\)/,
   'スキン名が実行時翻訳になっていません。'
 );
 assert.match(

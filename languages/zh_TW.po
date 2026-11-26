@@ -9797,6 +9797,20 @@ msgstr "外觀設定"
 msgid "スキンを変更することで、サイトのデザインを手軽に変更できます。"
 msgstr "通過更換外觀，可以輕鬆改變網站的設計。"
 
+#: lib/page-settings/skin-forms.php:78
+msgid "選択中"
+msgstr "已選取"
+
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
+#: lib/page-settings/skin-forms.php:125
+#, php-format
+msgid "ほかの候補 (%d)"
+msgstr "其他選項（%d）"
+
+#: lib/page-settings/skin-forms.php:126
+msgid "候補を閉じる"
+msgstr "收合選項"
+
 #: lib/page-settings/skin-forms.php:31
 msgid "スキン一覧"
 msgstr "外觀列表"

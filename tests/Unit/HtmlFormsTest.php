@@ -93,6 +93,43 @@ class HtmlFormsTest extends TestCase
         require_once dirname(__DIR__, 2) . '/lib/html-forms.php';
     }
 
+    public function test_generate_radiobox_tag_シリーズ内の選択状態と単独の候補を表示する(): void
+    {
+        $options = ['' => 'なし', 'red' => '赤', 'one' => '単独', 'blue' => '青', 'rose' => 'ローズ'];
+        $groups = ['blue' => 'COLORS & 系列', 'red' => 'COLORS & 系列', 'rose' => 'アリス'];
+
+        ob_start();
+        generate_radiobox_tag('skin_url', $options, 'blue', null, $groups);
+        $html = ob_get_clean();
+
+        $this->assertSame(1, substr_count($html, '<details '));
+        $this->assertSame(5, substr_count($html, 'name="skin_url"'));
+        $this->assertMatchesRegularExpression(
+            '/<details class="cocoon-radiobox-group" open>\s*<summary>COLORS &amp; 系列 .*?\(2\).*?<\/summary>.*?value="red".*?value="blue" checked="checked".*?<\/details>/s',
+            $html
+        );
+        $this->assertStringContainsString('value="one"', $html);
+        $this->assertStringContainsString('value="rose"', $html);
+    }
+
+    public function test_generate_radiobox_tag_共通の作者とラベルから独立した操作を表示する(): void
+    {
+        $options = [
+            'red' => ['label' => '赤', 'controls' => '<a href="/preview">プレビュー</a>'],
+            'blue' => '青',
+        ];
+        $groups = ['red' => 'COLORS', 'blue' => 'COLORS'];
+
+        ob_start();
+        generate_radiobox_tag('skin_url', $options, '', null, $groups, ['COLORS' => '共通の作者名']);
+        $html = ob_get_clean();
+
+        $this->assertStringContainsString('<div class="cocoon-radiobox-group-caption">共通の作者名</div>', $html);
+        $this->assertSame(1, substr_count($html, '共通の作者名'));
+        $this->assertStringContainsString('<label for="skin_url_0">赤</label><a href="/preview">プレビュー</a>', $html);
+        $this->assertStringContainsString('<label for="skin_url_1">青</label>', $html);
+    }
+
     // ========================================================================
     // get_howto_tag()
     // ========================================================================

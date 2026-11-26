@@ -132,8 +132,16 @@ function admin_print_styles_custom() {
   ///////////////////////////////////////
   // 管理画面でのJavaScript読み込み
   ///////////////////////////////////////
-  //管理画面用での独自JavaScriptの読み込み
-  wp_enqueue_script( 'admin-javascript', get_cocoon_template_directory_uri() . '/js/admin-javascript.js', array(), false, true );
+  // 管理画面用JavaScriptの更新時刻を使ったキャッシュの更新
+  $admin_js = '/js/admin-javascript.js';
+  $admin_js_path = get_cocoon_template_directory() . $admin_js;
+  wp_enqueue_script(
+    'admin-javascript',
+    get_cocoon_template_directory_uri() . $admin_js,
+    array(),
+    file_exists( $admin_js_path ) ? filemtime( $admin_js_path ) : false,
+    true
+  );
 
   // Cocoon設定画面だけで、既存radioと同期する表示専用ナビゲーションを読み込む。
   if (is_admin_php_page()) {

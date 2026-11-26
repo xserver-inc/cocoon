@@ -10573,6 +10573,20 @@ msgstr "Skin-Einstellungen"
 msgid "スキンを変更することで、サイトのデザインを手軽に変更できます。"
 msgstr "Durch das Ändern des Skins können Sie das Design der Website einfach ändern."
 
+#: lib/page-settings/skin-forms.php:78
+msgid "選択中"
+msgstr "Ausgewählt"
+
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
+#: lib/page-settings/skin-forms.php:125
+#, php-format
+msgid "ほかの候補 (%d)"
+msgstr "Weitere Varianten (%d)"
+
+#: lib/page-settings/skin-forms.php:126
+msgid "候補を閉じる"
+msgstr "Varianten ausblenden"
+
 #: lib/page-settings/skin-forms.php:31
 msgid "スキン一覧"
 msgstr "Skin-Liste"

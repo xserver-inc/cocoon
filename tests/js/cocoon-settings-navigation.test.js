@@ -1435,7 +1435,131 @@ const testClosedGroupKeyboardNavigation = async () => {
   }
 };
 
-// 失敗時は終了コードを1にし、npmやCIから確実に検出できる自己完結テストにする。
+const testSkinSeriesSelectionPreservesFormValue = () => {
+  const dom = new JSDOM(
+    `<form>
+      <div class="cocoon-skin-options" data-no-image-uri="/images/skin-no-image.svg" data-show-variants="ほかの候補 (%d)" data-hide-variants="候補を閉じる">
+        <ul>
+          <li>
+            <input type="radio" name="skin_url" value=""><label><span class="cocoon-skin-option-label" data-skin-name="なし" data-skin-label="なし" data-skin-color="">なし</span></label>
+            <span class="cocoon-skin-option-thumbnail is-no-image is-none"><img src="/images/skin-none.svg" alt=""></span>
+          </li>
+          <li>
+            <details class="cocoon-radiobox-group" open>
+              <summary>COLORS (3)</summary>
+              <div class="cocoon-radiobox-group-caption">作者: テスト</div>
+              <ul>
+                <li>
+                  <input type="radio" name="skin_url" value="green"><label><span class="cocoon-skin-option-label" data-skin-name="COLORS（グリーン）" data-skin-label="グリーン" data-skin-color="#007b43">グリーン</span></label>
+                  <span class="cocoon-skin-option-thumbnail"><img src="/green.png" alt=""></span>
+                  <a class="cocoon-skin-option-action" href="/green.png">プレビュー</a>
+                </li>
+                <li>
+                  <input type="radio" name="skin_url" value="blue" checked><label><span class="cocoon-skin-option-label" data-skin-name="COLORS（ブルー）" data-skin-label="ブルー" data-skin-color="#0095d9">ブルー</span></label>
+                  <span class="cocoon-skin-option-thumbnail"><img src="/blue.png" alt=""></span>
+                  <a class="cocoon-skin-option-action" href="/blue.png">プレビュー</a>
+                </li>
+                <li>
+                  <input type="radio" name="skin_url" value="red"><label><span class="cocoon-skin-option-label" data-skin-name="COLORS（レッド）" data-skin-label="レッド" data-skin-color="#d3381c">レッド</span></label>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="cocoon-radiobox-group">
+              <summary>Simple-Darkmode (2)</summary>
+              <ul>
+                <li><input type="radio" name="skin_url" value="dark-auto"><label><span class="cocoon-skin-option-label" data-skin-name="Simple-Darkmode" data-skin-label="自動" data-skin-color="">自動</span></label></li>
+                <li><input type="radio" name="skin_url" value="dark-always"><label><span class="cocoon-skin-option-label" data-skin-name="Simple-Darkmode（常時）" data-skin-label="常時" data-skin-color="">常時</span></label></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </form>`,
+    { runScripts: 'outside-only' }
+  );
+  try {
+    const { window } = dom;
+    const { document } = window;
+    window.eval(
+      fs.readFileSync(
+        path.resolve( __dirname, '../../js/admin-javascript.js' ),
+        'utf8'
+      )
+    );
+    const form = document.querySelector( 'form' );
+    const seriesCards = form.querySelectorAll( '.cocoon-skin-series' );
+    const colorsCard = seriesCards[ 0 ];
+    const darkCard = seriesCards[ 1 ];
+    const primary = colorsCard.querySelector( '.cocoon-skin-series-primary' );
+    const variants = colorsCard.querySelector( '.cocoon-skin-series-options' );
+    const swatches = colorsCard.querySelectorAll(
+      '.cocoon-skin-variant-button.is-swatch'
+    );
+    const chips = darkCard.querySelectorAll(
+      '.cocoon-skin-variant-button.is-chip'
+    );
+    const selected = () =>
+      Array.from( new window.FormData( form ).getAll( 'skin_url' ) );
+
+    assert.strictEqual( swatches.length, 3 );
+    assert.strictEqual( chips.length, 2 );
+    assert.strictEqual( primary.querySelector( 'input:checked' ).value, 'blue' );
+    assert.strictEqual( swatches[ 1 ].getAttribute( 'aria-pressed' ), 'true' );
+    assert.strictEqual( swatches[ 0 ].getAttribute( 'aria-pressed' ), 'false' );
+    assert.deepStrictEqual( selected(), [ 'blue' ] );
+    assert.ok( variants.hidden );
+
+    // 別色のスウォッチ選択による代表カードと送信値の即時切替
+    swatches[ 0 ].click();
+    assert.strictEqual( primary.querySelector( 'input:checked' ).value, 'green' );
+    assert.strictEqual( swatches[ 0 ].getAttribute( 'aria-pressed' ), 'true' );
+    assert.strictEqual( swatches[ 1 ].getAttribute( 'aria-pressed' ), 'false' );
+    assert.ok( primary.querySelector( '.cocoon-skin-option-author' ) );
+    assert.deepStrictEqual( selected(), [ 'green' ] );
+    assert.deepStrictEqual(
+      Array.from( variants.querySelectorAll( 'input' ), ( input ) => input.value ),
+      [ 'blue', 'red' ]
+    );
+
+    // 画像読み込み失敗時のNo Image画像差し替えと再失敗時のプレースホルダー退避
+    const thumbnail = primary.querySelector( '.cocoon-skin-option-thumbnail img' );
+    const thumbnailBox = primary.querySelector( '.cocoon-skin-option-thumbnail' );
+    const preview = primary.querySelector( '.cocoon-skin-option-action' );
+    assert.strictEqual( thumbnail.getAttribute( 'src' ), preview.getAttribute( 'href' ) );
+    thumbnail.dispatchEvent( new window.Event( 'error' ) );
+    assert.strictEqual( thumbnail.getAttribute( 'src' ), '/images/skin-no-image.svg' );
+    assert.ok( thumbnailBox.classList.contains( 'is-no-image' ) );
+    thumbnail.dispatchEvent( new window.Event( 'error' ) );
+    assert.strictEqual( primary.querySelector( '.cocoon-skin-option-thumbnail img' ), null );
+    assert.ok( thumbnailBox.classList.contains( 'is-placeholder' ) );
+    assert.ok( ! thumbnailBox.classList.contains( 'is-no-image' ) );
+    assert.ok( primary.contains( preview ) );
+    assert.deepStrictEqual( selected(), [ 'green' ] );
+
+    // カラー未設定シリーズでのチップ切替と単一送信値の維持
+    chips[ 1 ].click();
+    assert.strictEqual(
+      darkCard.querySelector( '.cocoon-skin-series-primary input:checked' ).value,
+      'dark-always'
+    );
+    assert.strictEqual( chips[ 1 ].getAttribute( 'aria-pressed' ), 'true' );
+    assert.deepStrictEqual( selected(), [ 'dark-always' ] );
+
+    // なしアイコン自体の読み込み失敗時はNo Imageへ誤置換せず直接プレースホルダーへ退避
+    const noneThumb = form.querySelector( '.cocoon-skin-option-thumbnail.is-none' );
+    const noneImg = noneThumb.querySelector( 'img' );
+    noneImg.dispatchEvent( new window.Event( 'error' ) );
+    assert.strictEqual( noneThumb.querySelector( 'img' ), null );
+    assert.ok( noneThumb.classList.contains( 'is-placeholder' ) );
+    assert.ok( ! noneThumb.classList.contains( 'is-no-image' ) );
+  } finally {
+    dom.window.close();
+  }
+};
+
+// 失敗時に終了コードを返す自己完結テスト
 ( async () => {
   process.stdout.write( 'Running navigation and form behavior test...\n' );
   await testNavigationAndFormBehavior();
@@ -1480,6 +1604,8 @@ const testClosedGroupKeyboardNavigation = async () => {
   testMissingSettingsReleasesBootMask();
   process.stdout.write( 'Running inline boot-script fallback test...\n' );
   testInlineBootScriptFallback();
+  process.stdout.write( 'スキンの代表行と保存値の同期を検証中...\n' );
+  testSkinSeriesSelectionPreservesFormValue();
   process.stdout.write( 'Cocoon settings navigation DOM tests passed.\n' );
 } )().catch( ( error ) => {
   process.stderr.write( `${ error.stack || error }\n` );

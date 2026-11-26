@@ -433,6 +433,408 @@
   line-height: 1.65;
   vertical-align: top;
 }
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-picker-section) {
+  box-sizing: border-box;
+  inline-size: 100%;
+  margin-block: 16px 4px;
+  padding-block-end: 16px;
+  border-block-end: 1px solid #f0f0f1;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-picker-heading) {
+  margin-block-end: 12px;
+  color: var(--cocoon-settings-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options) {
+  inline-size: 100%;
+  max-inline-size: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options ul, .cocoon-skin-options li) {
+  margin: 0;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options ul) {
+  padding: 0;
+  list-style: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> .cocoon-radiobox-group)) {
+  align-self: start;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> .cocoon-radiobox-group[open])) {
+  grid-column: 1/-1;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options .cocoon-radiobox-group) {
+  border: 1px solid var(--cocoon-settings-border-subtle);
+  border-radius: var(--cocoon-settings-radius-emphasis);
+  background: var(--cocoon-settings-surface);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options .cocoon-radiobox-group > summary) {
+  box-sizing: border-box;
+  min-block-size: 38px;
+  padding: 8px 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-radiobox-group-count, .cocoon-radiobox-group-caption) {
+  color: var(--cocoon-settings-text-muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-radiobox-group > ul) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 12px;
+  padding: 0 12px 12px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]), .cocoon-skin-series, .cocoon-radiobox-group li:has(> input[name=skin_url])) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-inline-size: 0;
+  overflow: hidden;
+  border: 1px solid var(--cocoon-settings-border-subtle);
+  border-radius: var(--cocoon-settings-radius-emphasis);
+  background: var(--cocoon-settings-surface);
+  box-shadow: var(--cocoon-settings-shadow-card);
+  transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]):hover, .cocoon-skin-series:hover, .cocoon-radiobox-group li:has(> input[name=skin_url]):hover) {
+  border-color: var(--cocoon-settings-border-control);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]:checked), .cocoon-skin-series:has(input[name=skin_url]:checked), .cocoon-radiobox-group li:has(> input[name=skin_url]:checked)) {
+  border-color: var(--cocoon-settings-accent);
+  background: color-mix(in srgb, var(--cocoon-settings-accent) 5%, var(--cocoon-settings-surface));
+  box-shadow: 0 0 0 1px var(--cocoon-settings-accent), 0 8px 20px color-mix(in srgb, var(--cocoon-settings-accent) 16%, transparent);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]:focus-visible), .cocoon-skin-series:has(input[name=skin_url]:focus-visible), .cocoon-radiobox-group li:has(> input[name=skin_url]:focus-visible)) {
+  outline: 2px solid var(--cocoon-settings-accent);
+  outline-offset: 2px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series-primary) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url])) {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-inline-size: 0;
+  container-type: inline-size;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options input[name=skin_url]) {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-start: 10px;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  clip-path: inset(50%);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url]) > label) {
+  display: block;
+  margin: 0;
+  padding: 11px 12px 4px;
+  cursor: pointer;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url]) > label)::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-radiobox-group-caption) {
+  margin-block: 0 6px;
+  margin-inline: 12px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-thumbnail) {
+  position: relative;
+  order: -1;
+  box-sizing: border-box;
+  inline-size: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-block-end: 1px solid #f0f0f1;
+  background: var(--cocoon-settings-surface-subtle);
+  pointer-events: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-thumbnail img) {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 220ms ease;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url]):hover .cocoon-skin-option-thumbnail:not(.is-no-image) img) {
+  transform: scale(1.02);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-thumbnail.is-placeholder) {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba(29, 35, 39, 0.08) 1px, transparent 1px), var(--cocoon-settings-surface-subtle);
+  background-size: 14px 14px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-thumbnail.is-placeholder)::before {
+  box-sizing: border-box;
+  inline-size: 56%;
+  block-size: 58%;
+  border: 1px solid var(--cocoon-settings-border-subtle);
+  border-radius: var(--cocoon-settings-radius-card);
+  background: linear-gradient(to bottom, #e8eaed 0 24%, var(--cocoon-settings-surface) 24% 100%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  content: "";
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-label) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  color: var(--cocoon-settings-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series-name, .cocoon-skin-selection-status) {
+  display: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series-primary .cocoon-skin-series-name) {
+  display: inline;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options input:checked + label .cocoon-skin-selection-status) {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  z-index: 2;
+  display: inline-block;
+  box-sizing: border-box;
+  max-inline-size: calc(100% - 16px);
+  padding: 3px 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--cocoon-settings-accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-swatch) {
+  flex: 0 0 12px;
+  box-sizing: border-box;
+  inline-size: 12px;
+  block-size: 12px;
+  border: 1px solid var(--cocoon-settings-border-control);
+  border-radius: 50%;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series .cocoon-skin-swatch) {
+  display: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-name, .cocoon-skin-option-author) {
+  overflow-wrap: anywhere;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-author) {
+  padding: 0 12px 11px;
+  color: var(--cocoon-settings-text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-author a) {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action).button {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-inline-size: calc(100% - 16px);
+  min-block-size: 28px;
+  margin: 0;
+  padding: 0 9px;
+  border-color: rgba(29, 35, 39, 0.16);
+  border-radius: var(--cocoon-settings-radius-control);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  color: var(--cocoon-settings-text);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  backdrop-filter: blur(4px);
+  transition: opacity 140ms ease, background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+@supports (height: 1cqi) {
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action).button {
+    inset-block-start: calc(62.5cqi - 36px);
+  }
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action:hover, .cocoon-skin-option-action:focus-visible).button {
+  border-color: var(--cocoon-settings-accent);
+  background: var(--cocoon-settings-surface);
+  color: var(--cocoon-settings-accent);
+}
+@media (hover: hover) {
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action).button {
+    opacity: 0.78;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url]):hover .cocoon-skin-option-action, .cocoon-skin-options li:has(> input[name=skin_url]:checked) .cocoon-skin-option-action, .cocoon-skin-option-action:focus-visible).button {
+    opacity: 1;
+  }
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series-variants) {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-block-start: auto;
+  padding: 8px 12px 11px;
+  border-block-start: 1px solid #f0f0f1;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--cocoon-settings-text);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button:focus-visible) {
+  outline: 2px solid var(--cocoon-settings-accent);
+  outline-offset: 2px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-swatch) {
+  inline-size: 24px;
+  block-size: 24px;
+  min-block-size: 0;
+  padding: 2px;
+  border-width: 1.5px;
+  border-radius: 50%;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-swatch:hover) {
+  border-color: var(--cocoon-settings-border-control);
+  transform: scale(1.1);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-swatch.is-active) {
+  border-color: var(--cocoon-settings-border-control);
+  box-shadow: 0 0 0 1px rgba(29, 35, 39, 0.2);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series:has(input[name=skin_url]:checked) .cocoon-skin-variant-button.is-swatch.is-active) {
+  border-color: var(--cocoon-settings-accent);
+  box-shadow: 0 0 0 1px var(--cocoon-settings-accent);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-swatch) {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-chip) {
+  min-block-size: 24px;
+  padding: 2px 9px;
+  border-color: var(--cocoon-settings-border-subtle);
+  border-radius: 999px;
+  background: var(--cocoon-settings-surface-subtle);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-chip:hover) {
+  border-color: var(--cocoon-settings-border-control);
+  background: var(--cocoon-settings-surface);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-chip.is-active) {
+  border-color: var(--cocoon-settings-border-control);
+  background: var(--cocoon-settings-surface);
+  color: var(--cocoon-settings-text);
+  font-weight: 600;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-series:has(input[name=skin_url]:checked) .cocoon-skin-variant-button.is-chip.is-active) {
+  border-color: var(--cocoon-settings-accent);
+  background: color-mix(in srgb, var(--cocoon-settings-accent) 12%, var(--cocoon-settings-surface));
+  color: var(--cocoon-settings-accent-hover);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-close).button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 44px;
+  margin: 0;
+  padding-inline: 12px;
+  border-color: var(--cocoon-settings-border-subtle);
+  background: var(--cocoon-settings-surface);
+  font-size: 12px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-dialog) {
+  box-sizing: border-box;
+  inline-size: min(720px, 100% - 24px);
+  max-block-size: calc(100vh - 24px);
+  max-block-size: calc(100dvh - 24px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--cocoon-settings-border-subtle);
+  border-radius: var(--cocoon-settings-radius-emphasis);
+  background: var(--cocoon-settings-surface);
+  color: var(--cocoon-settings-text);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-dialog)::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-header) {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px;
+  border-block-end: 1px solid var(--cocoon-settings-border-subtle);
+  background: var(--cocoon-settings-surface);
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-header h3) {
+  margin: 0;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-body) {
+  padding: 12px 14px 14px;
+}
+.toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-preview-media img) {
+  display: block;
+  max-inline-size: 100%;
+  max-block-size: 65vh;
+  max-block-size: 65dvh;
+  margin-inline: auto;
+  object-fit: contain;
+}
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=text], input[type=password], input[type=search], input[type=url], input[type=email], input[type=number], textarea, select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
   box-sizing: border-box;
   max-inline-size: 100%;
@@ -453,7 +855,7 @@
 .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=range]):not(:where(.demo *, .wp-picker-container *, .iris-picker *)) {
   max-inline-size: 100%;
 }
-.toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+.toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *, .cocoon-skin-variant-button, .cocoon-skin-option-action)) {
   min-block-size: 36px;
   border-radius: var(--cocoon-settings-radius-control);
 }
@@ -674,7 +1076,7 @@
   .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(input[type=text], input[type=password], input[type=search], input[type=url], input[type=email], input[type=number], select):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
     min-block-size: 44px;
   }
-  .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *)) {
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.postbox > .inside) :where(.button, button):not(:where(.demo *, .wp-picker-container *, .iris-picker *, .wp-editor-wrap *, .cocoon-skin-variant-button, .cocoon-skin-option-action)) {
     min-block-size: 44px;
   }
   .toplevel_page_theme-settings .wrap.admin-settings :where(form.admin-settings > .submit:last-of-type) {
@@ -757,6 +1159,26 @@
   }
 }
 @media (pointer: coarse) {
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-radiobox-group > summary) {
+    min-block-size: 44px;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action).button {
+    min-block-size: 36px;
+    opacity: 1;
+  }
+  @supports (height: 1cqi) {
+    .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-option-action).button {
+      inset-block-start: calc(62.5cqi - 44px);
+    }
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-swatch) {
+    inline-size: 30px;
+    block-size: 30px;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-chip) {
+    min-block-size: 32px;
+    padding-inline: 10px;
+  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-label {
     min-block-size: 44px;
   }
@@ -780,8 +1202,27 @@
   .toplevel_page_theme-settings .wrap.admin-settings :where(#tabs input:invalid) {
     animation: none;
   }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]), .cocoon-skin-series, .cocoon-skin-option-thumbnail img, .cocoon-skin-option-action, .cocoon-skin-variant-button) {
+    transition: none;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options li:has(> input[name=skin_url]):hover .cocoon-skin-option-thumbnail img) {
+    transform: none;
+  }
 }
 @media (forced-colors: active) {
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options > ul > li:has(> input[name=skin_url]:checked), .cocoon-skin-series:has(input[name=skin_url]:checked)) {
+    border: 2px solid Highlight;
+    box-shadow: none;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-options input:checked + label .cocoon-skin-selection-status) {
+    border: 1px solid Highlight;
+    background: Highlight;
+    color: HighlightText;
+  }
+  .toplevel_page_theme-settings .wrap.admin-settings :where(.cocoon-skin-variant-button.is-swatch.is-active, .cocoon-skin-variant-button.is-chip.is-active) {
+    border-color: Highlight;
+    box-shadow: none;
+  }
   .toplevel_page_theme-settings .wrap.admin-settings #tabs > .tab-input:checked + .tab-label {
     border: 2px solid CanvasText !important;
     box-shadow: none;

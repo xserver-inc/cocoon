@@ -153,25 +153,62 @@ function generate_checkbox_tag($name, $now_value, $label, $default_value = 1){
 endif;
 
 
-//ラジオボックスの生成
+/**
+ * ラジオボックスを生成します。
+ * $options のキャプションは HTML 文字列、または label と任意の controls を持つ配列です。
+ */
 if ( !function_exists( 'generate_radiobox_tag' ) ):
-function generate_radiobox_tag($name, $options, $now_value, $label = null){
+function generate_radiobox_tag($name, $options, $now_value, $label = null, $option_groups = array(), $group_captions = array()){
   ob_start();
   $i = 0;
+  $groups = array();
+  // 選択肢の表示順に沿ったシリーズの作成
+  if ( $option_groups ) {
+    foreach ( $options as $value => $caption ) {
+      $group = $option_groups[$value] ?? '';
+      if ( '' !== $group ) {
+        $groups[$group][$value] = $caption;
+      }
+    }
+  }
   if ($label) {
     generate_label_tag($name, $label);
     generate_br_tag();
   }?>
   <ul>
-    <?php foreach ($options as $value => $caption) {
-    $id = $name.'_'.$i;
-    // _v($value.' == '.$now_value);
-    // _v($value == $now_value);
-    ?>
-    <li><input type="radio" name="<?php echo $name; ?>" id="<?php echo $id; ?>" value="<?php echo $value; ?>"<?php the_checkbox_checked($value, $now_value) ?>><label for="<?php echo $id; ?>"><?php echo $caption; ?></label></li>
-    <?php
-    $i++;
-    } ?>
+    <?php foreach ( $options as $value => $caption ) :
+      $group = $option_groups[$value] ?? '';
+      $is_grouped = '' !== $group && count( $groups[$group] ) > 1;
+      // シリーズ内の先頭候補の位置に折りたたみを1回だけ表示
+      if ( $is_grouped && array_key_first( $groups[$group] ) !== $value ) {
+        continue;
+      }
+      $row_options = $is_grouped ? $groups[$group] : array( $value => $caption );
+      if ( $is_grouped ) :
+        $is_open = in_array( $now_value, array_keys( $row_options ), true );
+        ?>
+        <li>
+          <details class="cocoon-radiobox-group"<?php echo $is_open ? ' open' : ''; ?>>
+            <summary><?php echo esc_html( $group ); ?> <span class="cocoon-radiobox-group-count">(<?php echo count( $row_options ); ?>)</span></summary>
+            <?php if ( ! empty( $group_captions[$group] ) ) : ?>
+              <div class="cocoon-radiobox-group-caption"><?php echo $group_captions[$group]; ?></div>
+            <?php endif; ?>
+            <ul>
+      <?php endif;
+      foreach ( $row_options as $option_value => $option_caption ) :
+        $id = $name.'_'.$i++;
+        // ラベル外に置くプレビューなどの独立した操作
+        $option_label = is_array( $option_caption ) ? $option_caption['label'] : $option_caption;
+        $option_controls = is_array( $option_caption ) ? ( $option_caption['controls'] ?? '' ) : '';
+        ?>
+        <li><input type="radio" name="<?php echo $name; ?>" id="<?php echo $id; ?>" value="<?php echo $option_value; ?>"<?php the_checkbox_checked($option_value, $now_value) ?>><label for="<?php echo $id; ?>"><?php echo $option_label; ?></label><?php echo $option_controls; ?></li>
+      <?php endforeach;
+      if ( $is_grouped ) : ?>
+            </ul>
+          </details>
+        </li>
+      <?php endif;
+    endforeach; ?>
   </ul>
   <?php
   $res = ob_get_clean();

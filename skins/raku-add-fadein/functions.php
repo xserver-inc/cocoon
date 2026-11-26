@@ -293,10 +293,11 @@ class SkinRaku {
         // skin_urlのリストからtdを作成
         skin_url_list.each(function() {
             const li = $(this).closest('li');
-            const skin_tooltip = li.find('.tooltip').eq(0).text(); // スキン概要
-            const skin_label   = li.find('label').eq(0).text();    // スキンラベル
-            const skin_url     = $(this).val();                    // スキンURL
-            const skin_label2  = skin_label.replace(new RegExp(skin_tooltip,'g'), ''); // スキンラベルから概要を除外
+            const label = li.find('label').first();
+            const skin_url = $(this).val();
+            // 候補の正式名の取得と従来のラベルへのフォールバック
+            const skin_label2 = label.find('[data-skin-name]').attr('data-skin-name') ??
+                label.clone().find('.tooltip').remove().end().text().trim();
             if (skin_url.indexOf('/<?=self::MYSKIN?>/') !== -1) {
                 // 当スキン（名前を避けておく）
                 myskin_name = skin_label2;
@@ -305,11 +306,11 @@ class SkinRaku {
                 if (skin_url === '') {
                     tr_base_skin += '<option value=""><?php _e('なし', THEME_NAME); ?></option>';
                 } else {
-                    let selected = '';
+                    const option = $('<option>').val(skin_url).text(skin_label2);
                     if (skin_url === '<?=$this->skin_base?>') {
-                        selected = 'selected';
+                        option.attr('selected', 'selected');
                     }
-                    tr_base_skin += '<option '+selected+' value="'+skin_url+'">'+skin_label2+'</option>';
+                    tr_base_skin += option.prop('outerHTML');
                 }
             }
         });

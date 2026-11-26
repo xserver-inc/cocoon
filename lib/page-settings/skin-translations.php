@@ -4,6 +4,31 @@
  */
 if ( !defined( 'ABSPATH' ) ) exit;
 
+/**
+ * スキン一覧で表示する短い名前を取得します。
+ * 短い名前の翻訳がなければ、翻訳済みの正式名から括弧内の候補名を取り出します。
+ */
+if ( !function_exists( 'get_skin_list_label' ) ):
+function get_skin_list_label($name, $translated_name, $label) {
+  if ($label === '') {
+    return $translated_name;
+  }
+
+  // テーマの翻訳カタログに登録済みの短い候補名の取得
+  $translated_label = __( $label, THEME_NAME );
+  if ($translated_name === $name || $translated_label !== $label) {
+    return $translated_label;
+  }
+
+  // 日英などで使われる括弧内の候補名の取得
+  if (preg_match('/[（(][^()（）]+[）)]$/u', $name) && preg_match('/[（(]([^()（）]+)[）)]$/u', $translated_name, $matches)) {
+    return trim($matches[1]);
+  }
+
+  return $translated_name;
+}
+endif;
+
 //style.cssのヘッダーは動的に読み込まれるため、翻訳抽出対象をここへ静的に登録する
 if ( !function_exists( 'translate_skin_metadata' ) ):
 function translate_skin_metadata($text) {

@@ -110,6 +110,27 @@ function get_skin_dirs($dir) {
 }
 endif;
 
+// 同梱スキン用ローカル軽量サムネイルURLの取得
+if ( !function_exists( 'get_skin_thumbnail_uri' ) ):
+function get_skin_thumbnail_uri($skin_dir, $screenshot_uri = null, $thumbs_dir = null, $thumbs_uri = null){
+  $slug = basename(rtrim((string) $skin_dir, '/\\'));
+  // 不正なディレクトリ名による意図しないファイル参照の防止
+  if ($slug !== '' && preg_match('/^[a-zA-Z0-9._-]+$/', $slug)) {
+    if (null === $thumbs_dir) {
+      $thumbs_dir = get_cocoon_template_directory().'/images/skin-thumbs';
+    }
+    if (null === $thumbs_uri) {
+      $thumbs_uri = get_cocoon_template_directory_uri().'/images/skin-thumbs';
+    }
+    $local_file = rtrim($thumbs_dir, '/\\').'/'.$slug.'.webp';
+    if (is_file($local_file)) {
+      return rtrim($thumbs_uri, '/').'/'.$slug.'.webp';
+    }
+  }
+  return $screenshot_uri;
+}
+endif;
+
 //スキン情報の取得
 if ( !function_exists( 'get_skin_infos' ) ):
 function get_skin_infos(){
@@ -152,7 +173,24 @@ function get_skin_infos(){
       if ( $css ) {
         //Skin Name:の記述があるとき
         if (preg_match('/(Skin )?Name: *(.+)/i', $css, $matches)) {
-          $skin_name = translate_skin_metadata(trim(strip_tags($matches[2])));
+          $name = trim(strip_tags($matches[2]));
+          $skin_name = translate_skin_metadata($name);
+          // 既存CSSに記載された任意のシリーズ名の取得
+          $skin_group = '';
+          if (preg_match('/^[ \t*]*Skin Group:[ \t]*([^\r\n]+)/mi', $css, $m)) {
+            $skin_group = trim(strip_tags($m[1]));
+          }
+          // 一覧で使う任意の短い名前
+          $skin_label = '';
+          if (preg_match('/^[ \t*]*Skin Label:[ \t]*([^\r\n]+)/mi', $css, $m)) {
+            $skin_label = trim(strip_tags($m[1]));
+          }
+          $skin_label = get_skin_list_label($name, $skin_name, $skin_label);
+          // 色見本の6桁のカラーコード
+          $skin_color = '';
+          if (preg_match('/^[ \t*]*Skin Color:[ \t]*(#[a-f0-9]{6})(?=[ \t\r\n]|$)/mi', $css, $m)) {
+            $skin_color = $m[1];
+          }
           //優先度（順番）が設定されている場合は順番取得
           if (preg_match('/Priority: *(.+)/i', $css, $m)) {
             $priority = floatval(trim($m[1]));
@@ -204,12 +242,22 @@ function get_skin_infos(){
 
           $file_url = local_to_url($style_css_file);
           $dir_url = local_to_url($dir);
-          if (is_child_theme() && strpos($file_url, get_cocoon_stylesheet_directory_uri()) !== false) {
+          $is_child_skin = is_child_theme() && strpos($file_url, get_cocoon_stylesheet_directory_uri()) !== false;
+          if ($is_child_skin) {
             $skin_name = '[Child]'.$skin_name;
+            $skin_label = '[Child]'.$skin_label;
+          }
+          // 親テーマ同梱スキンのローカル軽量サムネイルの優先取得
+          $thumbnail_uri = $screenshot_uri;
+          if ($screenshot_uri && !$is_child_skin) {
+            $thumbnail_uri = get_skin_thumbnail_uri($dir, $screenshot_uri);
           }
           //返り値の設定
           $results[] = array(
             'skin_name' => $skin_name,
+            'skin_label' => $skin_label,
+            'skin_group' => $skin_group,
+            'skin_color' => $skin_color,
             'description' => $description,
             'dir_url' => $dir_url,
             'priority' => $priority,
@@ -218,6 +266,7 @@ function get_skin_infos(){
             'author' => $author,
             'author_uri' => $author_uri,
             'screenshot_uri' => $screenshot_uri,
+            'thumbnail_uri' => $thumbnail_uri,
             'version' => $version,
             'visibility' => $visibility,
           );

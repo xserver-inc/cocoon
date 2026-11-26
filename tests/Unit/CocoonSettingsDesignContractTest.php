@@ -437,10 +437,7 @@ REGEX;
     {
         $partial = $this->readThemeFile('scss/_cocoon-settings-modern.scss');
 
-        // 広い領域はResizeObserverが付けるクラスで縦型2カラムへ切り替え、fixed UIの基準を変えない。
-        $this->assertStringNotContainsString('container-name:', $partial);
-        $this->assertStringNotContainsString('container-type:', $partial);
-        $this->assertStringNotContainsString('@container', $partial);
+        // ResizeObserverが付けるクラスによる広い領域の縦型2カラム表示
         $this->assertStringContainsString(
             '#tabs.is-navigation-enhanced.is-navigation-mode-responsive.is-navigation-wide',
             $partial
@@ -531,8 +528,6 @@ REGEX;
         $this->assertStringContainsString("'/css/cocoon-settings.css'", $adminSource);
         $this->assertStringContainsString("'cocoon-settings',", $adminSource);
         $this->assertStringContainsString('filemtime( $settings_navigation_css_path )', $adminSource);
-        $this->assertStringNotContainsString('container-type:', $settingsCss);
-        $this->assertStringNotContainsString('@container', $settingsCss);
 
         // 選択タブは細い境界線と文字色で示し、強い下線を再導入しない。
         $this->assertMatchesRegularExpression(
@@ -707,30 +702,39 @@ REGEX;
         $this->assertNotEmpty($blocks);
 
         foreach ($blocks as $block) {
-            if (
-                str_starts_with($block['header'], '@media')
-                || str_starts_with($block['header'], '@container')
-            ) {
-                $mediaBlocks = $this->extractImmediateStyleBlocks($block['body']);
-                $this->assertNotEmpty($mediaBlocks);
+            $isContainerQuery = str_starts_with($block['header'], '@container');
+            if ($isContainerQuery || str_starts_with($block['header'], '@media')) {
+                $nestedBlocks = $this->extractImmediateStyleBlocks($block['body']);
+                $this->assertNotEmpty($nestedBlocks);
 
-                foreach ($mediaBlocks as $mediaBlock) {
-                    $this->assertStyleBlockHeaderIsScoped($mediaBlock['header'], $scope, $isScss);
+                foreach ($nestedBlocks as $nestedBlock) {
+                    $this->assertStyleBlockIsScoped($nestedBlock, $scope, $isScss, $isContainerQuery);
                 }
 
                 continue;
             }
 
-            $this->assertStyleBlockHeaderIsScoped($block['header'], $scope, $isScss);
+            $this->assertStyleBlockIsScoped($block, $scope, $isScss);
         }
     }
 
     /**
-     * スタイルブロックの全セレクター枝が設定画面スコープ内にあることを検証する。
+     * スタイルの適用範囲とコンテナクエリの適用先を検証する。
+     *
+     * @param array{header: string, body: string} $block
      */
-    private function assertStyleBlockHeaderIsScoped(string $header, string $scope, bool $isScss): void
-    {
-        foreach ($this->splitTopLevelSelectors($header) as $selector) {
+    private function assertStyleBlockIsScoped(
+        array $block,
+        string $scope,
+        bool $isScss,
+        bool $isContainerQuery = false
+    ): void {
+        // 固定UIの基準に影響しないスキン一覧へのコンテナ宣言の限定
+        if (!$isScss && preg_match('/(?:^|[;\s])container(?:-name|-type)?\s*:/', $block['body']) === 1) {
+            $this->assertSame($scope . ' :where(.cocoon-skin-options)', $block['header']);
+        }
+
+        foreach ($this->splitTopLevelSelectors($block['header']) as $selector) {
             if ($isScss) {
                 $this->assertSame($scope, $selector);
                 continue;
@@ -740,6 +744,12 @@ REGEX;
                 $selector === $scope || str_starts_with($selector, $scope . ' '),
                 'Cocoon設定画面の外へ漏れているセレクター: ' . $selector
             );
+            if ($isContainerQuery) {
+                $this->assertMatchesRegularExpression(
+                    '/^' . preg_quote($scope, '/') . ' :where\(\.cocoon-skin-[^,]+\)$/',
+                    $selector
+                );
+            }
         }
     }
 

@@ -30,6 +30,22 @@ class SkinFuncsTest extends TestCase
         require_once dirname(__DIR__, 2) . '/lib/page-settings/skin-funcs.php';
     }
 
+    public function test_get_skin_list_label_正式名と異なる表記の指定(): void
+    {
+        $this->assertSame('白うさぎ', get_skin_list_label('アリス（白ウサギ）', 'アリス（白ウサギ）', '白うさぎ'));
+    }
+
+    public function test_get_skin_list_label_翻訳済みの正式名から候補名を取得(): void
+    {
+        $this->assertSame('White Rabbit', get_skin_list_label('アリス（白ウサギ）', 'Alice (White Rabbit)', '白うさぎ'));
+    }
+
+    public function test_get_skin_list_label_候補名が未指定の場合は正式名を使用(): void
+    {
+        $this->assertSame('Alice (White Rabbit)', get_skin_list_label('アリス（白ウサギ）', 'Alice (White Rabbit)', ''));
+        $this->assertSame('Alice: White Rabbit', get_skin_list_label('アリス（白ウサギ）', 'Alice: White Rabbit', '白うさぎ'));
+    }
+
     // ========================================================================
     // skin_files_comp()
     // ========================================================================
@@ -146,5 +162,68 @@ class SkinFuncsTest extends TestCase
         $exclude = ['dark-theme'];
         // 除外判定は '/style.css' で終わるURLのみ
         $this->assertFalse(is_exclude_skin($url, $exclude));
+    }
+
+    // ========================================================================
+    // get_skin_thumbnail_uri()
+    // ========================================================================
+
+    public function test_get_skin_thumbnail_uri_ローカルWebPが存在する場合は優先して返す(): void
+    {
+        $thumbsDir = sys_get_temp_dir() . '/cocoon-skin-thumbs-' . uniqid('', true);
+        mkdir($thumbsDir, 0777, true);
+        file_put_contents($thumbsDir . '/skin-colors-pink.webp', 'dummy');
+
+        try {
+            $result = get_skin_thumbnail_uri(
+                '/var/www/html/wp-content/themes/cocoon/skins/skin-colors-pink',
+                'https://im-cocoon.net/wp-content/uploads/pink.png',
+                $thumbsDir,
+                'https://example.com/wp-content/themes/cocoon/images/skin-thumbs'
+            );
+            $this->assertSame(
+                'https://example.com/wp-content/themes/cocoon/images/skin-thumbs/skin-colors-pink.webp',
+                $result
+            );
+        } finally {
+            @unlink($thumbsDir . '/skin-colors-pink.webp');
+            @rmdir($thumbsDir);
+        }
+    }
+
+    public function test_get_skin_thumbnail_uri_ローカルWebPがない場合は外部URLへフォールバックする(): void
+    {
+        $thumbsDir = sys_get_temp_dir() . '/cocoon-skin-thumbs-empty-' . uniqid('', true);
+        mkdir($thumbsDir, 0777, true);
+
+        try {
+            $result = get_skin_thumbnail_uri(
+                '/var/www/html/wp-content/themes/cocoon/skins/unknown-skin',
+                'https://example.com/external.png',
+                $thumbsDir,
+                'https://example.com/wp-content/themes/cocoon/images/skin-thumbs'
+            );
+            $this->assertSame('https://example.com/external.png', $result);
+        } finally {
+            @rmdir($thumbsDir);
+        }
+    }
+
+    public function test_get_skin_thumbnail_uri_不正なディレクトリ名はフォールバックする(): void
+    {
+        $thumbsDir = sys_get_temp_dir() . '/cocoon-skin-thumbs-invalid-' . uniqid('', true);
+        mkdir($thumbsDir, 0777, true);
+
+        try {
+            $result = get_skin_thumbnail_uri(
+                '../invalid name!',
+                'https://example.com/external.png',
+                $thumbsDir,
+                'https://example.com/wp-content/themes/cocoon/images/skin-thumbs'
+            );
+            $this->assertSame('https://example.com/external.png', $result);
+        } finally {
+            @rmdir($thumbsDir);
+        }
     }
 }
