@@ -78,7 +78,13 @@
 @supports (-moz-appearance: none) {
   .mobile-footer-menu-buttons {
     padding-bottom: 0;
-    bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  // タブレットではFirefoxが不要な安全領域を返し隙間になるため、スマートフォン幅のみ位置を調整
+  @media (max-width: 599px) {
+    .mobile-footer-menu-buttons {
+      bottom: env(safe-area-inset-bottom, 0px);
+    }
   }
 
   // 固定表示時のツールバー開閉による位置変更のアニメーション除外
