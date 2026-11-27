@@ -9801,8 +9801,8 @@ msgstr "通過更換外觀，可以輕鬆改變網站的設計。"
 msgid "選択中"
 msgstr "已選取"
 
-#. translators: %d: 代表候補を除いたシリーズ内の候補数
 #: lib/page-settings/skin-forms.php:125
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
 #, php-format
 msgid "ほかの候補 (%d)"
 msgstr "其他選項（%d）"

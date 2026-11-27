@@ -10602,8 +10602,8 @@ msgstr "En changeant de skin, vous pouvez facilement modifier le design du site.
 msgid "選択中"
 msgstr "Sélectionné"
 
-#. translators: %d: 代表候補を除いたシリーズ内の候補数
 #: lib/page-settings/skin-forms.php:125
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
 #, php-format
 msgid "ほかの候補 (%d)"
 msgstr "Autres variantes (%d)"
