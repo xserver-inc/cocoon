@@ -136,7 +136,7 @@ msgstr ""
 
 #: functions.php:565
 #: functions.php:566
-#: lib/admin.php:621
+#: lib/admin.php:629
 msgid "パターン一覧"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 
 #: lib/admin-tinymce-qtag.php:221
 #: lib/admin-tinymce-qtag.php:548
-#: lib/admin.php:341
+#: lib/admin.php:349
 #: lib/block-editor-styles-group.php:42
 #: lib/block-editor-styles-paragraph.php:77
 #: lib/custom-fields/memo-field.php:17
@@ -1255,105 +1255,105 @@ msgstr ""
 msgid "商品リンクの追加"
 msgstr ""
 
-#: lib/admin.php:169
+#: lib/admin.php:177
 msgid "設定メニューの表示"
 msgstr ""
 
-#: lib/admin.php:170
+#: lib/admin.php:178
 msgid "おすすめ表示では、画面の広さに応じて設定メニューを自動で見やすく切り替えます。設定内容には影響しません。"
 msgstr ""
 
-#: lib/admin.php:171
+#: lib/admin.php:179
 msgid "おすすめ表示"
 msgstr ""
 
-#: lib/admin.php:172
+#: lib/admin.php:180
 msgid "画面の広さに応じて設定メニューを自動で見やすく切り替えます。"
 msgstr ""
 
-#: lib/admin.php:173
+#: lib/admin.php:181
 msgid "従来の表示"
 msgstr ""
 
-#: lib/admin.php:174
+#: lib/admin.php:182
 msgid "これまでと同じ順番でタブを表示します。"
 msgstr ""
 
-#: lib/admin.php:175
+#: lib/admin.php:183
 msgid "表示モードを保存できませんでした。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
 msgstr ""
 
-#: lib/admin.php:176
+#: lib/admin.php:184
 msgid "表示モードの保存期限が切れました。この画面の表示は維持されますが、次回以降には引き継がれません。入力中の設定を確認してから、ページを再読み込みしてください。"
 msgstr ""
 
-#: lib/admin.php:177
+#: lib/admin.php:185
 msgid "表示モードの保存がタイムアウトしました。この画面の表示は維持されますが、次回以降に引き継がれない可能性があります。通信状態を確認し、選択中の表示ボタンを押して再試行してください。"
 msgstr ""
 
-#: lib/admin.php:178
+#: lib/admin.php:186
 msgid "表示モードを保存する権限がありません。この画面の表示は維持されますが、次回以降には引き継がれません。サイト管理者に権限を確認してください。"
 msgstr ""
 
-#: lib/admin.php:179
+#: lib/admin.php:187
 msgid "Cocoon設定項目"
 msgstr ""
 
-#: lib/admin.php:180
+#: lib/admin.php:188
 msgid "設定メニュー"
 msgstr ""
 
-#: lib/admin.php:181
+#: lib/admin.php:189
 msgid "設定項目"
 msgstr ""
 
-#: lib/admin.php:182
-#: lib/admin.php:183
+#: lib/admin.php:190
+#: lib/admin.php:191
 msgid "設定項目を検索"
 msgstr ""
 
-#: lib/admin.php:184
+#: lib/admin.php:192
 msgid "該当する設定項目がありません。"
 msgstr ""
 
-#: lib/admin.php:185
+#: lib/admin.php:193
 #, php-format
 msgid "%d件の設定項目が見つかりました。"
 msgstr ""
 
-#: lib/admin.php:186
+#: lib/admin.php:194
 msgid "追加の設定"
 msgstr ""
 
-#: lib/admin.php:189
+#: lib/admin.php:197
 msgid "外観・レイアウト"
 msgstr ""
 
-#: lib/admin.php:200
+#: lib/admin.php:208
 msgid "コンテンツ"
 msgstr ""
 
-#: lib/admin.php:215
+#: lib/admin.php:223
 msgid "集客・計測"
 msgstr ""
 
-#: lib/admin.php:226
+#: lib/admin.php:234
 msgid "パーツ・導線"
 msgstr ""
 
-#: lib/admin.php:239
+#: lib/admin.php:247
 msgid "管理・拡張"
 msgstr ""
 
-#: lib/admin.php:250
+#: lib/admin.php:258
 msgid "システム・情報"
 msgstr ""
 
-#: lib/admin.php:337
+#: lib/admin.php:345
 msgid "ID"
 msgstr ""
 
-#: lib/admin.php:338
+#: lib/admin.php:346
 #: lib/custom-fields/seo-field.php:62
 #: lib/custom-fields/seo-field.php:88
 #: lib/custom-fields/seo-field.php:132
@@ -1362,7 +1362,7 @@ msgstr ""
 msgid "文字数"
 msgstr ""
 
-#: lib/admin.php:339
+#: lib/admin.php:347
 #: lib/page-access/access-func.php:754
 #: lib/page-access/analytics/enqueue-func.php:137
 #: lib/page-access/analytics/render-func.php:455
@@ -1370,7 +1370,7 @@ msgstr ""
 msgid "PV"
 msgstr ""
 
-#: lib/admin.php:340
+#: lib/admin.php:348
 #: lib/content-category.php:266
 #: lib/content-tag.php:242
 #: lib/page-settings/editor-forms.php:97
@@ -1378,75 +1378,75 @@ msgstr ""
 msgid "アイキャッチ"
 msgstr ""
 
-#: lib/admin.php:375
+#: lib/admin.php:383
 msgid "　題："
 msgstr ""
 
-#: lib/admin.php:383
+#: lib/admin.php:391
 msgid "本文："
 msgstr ""
 
-#: lib/admin.php:409
+#: lib/admin.php:417
 msgid "日："
 msgstr ""
 
-#: lib/admin.php:417
+#: lib/admin.php:425
 msgid "週："
 msgstr ""
 
-#: lib/admin.php:425
+#: lib/admin.php:433
 msgid "月："
 msgstr ""
 
-#: lib/admin.php:433
+#: lib/admin.php:441
 msgid "全："
 msgstr ""
 
-#: lib/admin.php:518
+#: lib/admin.php:526
 #: lib/tinymce/shortcodes.php:48
 #: blocks/src/toolbutton/dropdown-shortcodes.js:312
 msgid "ショートコード"
 msgstr ""
 
-#: lib/admin.php:606
+#: lib/admin.php:614
 #: lib/page-settings/admin-forms.php:24
 msgid "管理メニュー"
 msgstr ""
 
-#: lib/admin.php:612
+#: lib/admin.php:620
 #: lib/page-access/analytics/render-func.php:228
 #: tmp/admin-panel.php:31
 msgid "ダッシュボード"
 msgstr ""
 
-#: lib/admin.php:613
+#: lib/admin.php:621
 #: lib/shortcodes.php:528
 msgid "投稿一覧"
 msgstr ""
 
-#: lib/admin.php:614
+#: lib/admin.php:622
 msgid "固定ページ一覧"
 msgstr ""
 
-#: lib/admin.php:615
+#: lib/admin.php:623
 msgid "メディア一覧"
 msgstr ""
 
-#: lib/admin.php:616
+#: lib/admin.php:624
 msgid "テーマ"
 msgstr ""
 
-#: lib/admin.php:626
+#: lib/admin.php:634
 msgid "カスタマイズ"
 msgstr ""
 
-#: lib/admin.php:627
+#: lib/admin.php:635
 #: lib/page-settings/settings-tabs.php:44
 #: skins/skin-made-in-heaven/lib/panel-color.php:68
 msgid "ウィジェット"
 msgstr ""
 
-#: lib/admin.php:628
+#: lib/admin.php:636
 #: skins/skin-made-in-heaven/lib/hook-wp.php:712
 #: skins/skin-made-in-heaven/lib/panel-color.php:75
 #: tmp/mobile-navi-button.php:21
@@ -1454,25 +1454,25 @@ msgstr ""
 msgid "メニュー"
 msgstr ""
 
-#: lib/admin.php:629
+#: lib/admin.php:637
 msgid "テーマの編集"
 msgstr ""
 
-#: lib/admin.php:630
+#: lib/admin.php:638
 msgid "プラグイン一覧"
 msgstr ""
 
-#: lib/admin.php:674
+#: lib/admin.php:682
 msgid "すべてのユーザー"
 msgstr ""
 
-#: lib/admin.php:730
+#: lib/admin.php:738
 #: blocks/src/block/info-list/edit.js:75
 msgid "カテゴリー検索"
 msgstr ""
 
-#: lib/admin.php:790
-#: lib/admin.php:804
+#: lib/admin.php:798
+#: lib/admin.php:812
 msgid "Excerpt"
 msgstr ""
 
@@ -2327,8 +2327,8 @@ msgid "ページ内容が類似もしくは重複しているURLが複数存在�
 msgstr ""
 
 #: lib/custom-fields/seo-field.php:166
-#: lib/html-forms.php:518
-#: lib/html-forms.php:584
+#: lib/html-forms.php:555
+#: lib/html-forms.php:621
 msgid "詳細設定"
 msgstr ""
 
@@ -2669,76 +2669,76 @@ msgstr ""
 msgid "XML"
 msgstr ""
 
-#: lib/html-forms.php:273
+#: lib/html-forms.php:310
 msgid "解説ページ"
 msgstr ""
 
-#: lib/html-forms.php:374
+#: lib/html-forms.php:411
 msgid "タイトル検索"
 msgstr ""
 
-#: lib/html-forms.php:378
+#: lib/html-forms.php:415
 msgid "タイトル昇順"
 msgstr ""
 
-#: lib/html-forms.php:379
+#: lib/html-forms.php:416
 msgid "タイトル降順"
 msgstr ""
 
-#: lib/html-forms.php:380
+#: lib/html-forms.php:417
 msgid "作成日昇順"
 msgstr ""
 
-#: lib/html-forms.php:381
+#: lib/html-forms.php:418
 msgid "作成日降順"
 msgstr ""
 
-#: lib/html-forms.php:382
+#: lib/html-forms.php:419
 msgid "編集日昇順"
 msgstr ""
 
-#: lib/html-forms.php:383
+#: lib/html-forms.php:420
 msgid "編集日降順"
 msgstr ""
 
-#: lib/html-forms.php:387
+#: lib/html-forms.php:424
 msgid "抽出"
 msgstr ""
 
-#: lib/html-forms.php:524
-#: lib/html-forms.php:590
+#: lib/html-forms.php:561
+#: lib/html-forms.php:627
 msgid "フォーマット（広告ユニット）"
 msgstr ""
 
-#: lib/html-forms.php:528
-#: lib/html-forms.php:593
+#: lib/html-forms.php:565
+#: lib/html-forms.php:630
 #: lib/widgets/ad.php:79
 #: lib/widgets/mobile-ad.php:79
 #: lib/widgets/pc-ad.php:83
 msgid "広告ラベルを表示する"
 msgstr ""
 
-#: lib/html-forms.php:535
+#: lib/html-forms.php:572
 msgid "広告の表示数を制御する"
 msgstr ""
 
-#: lib/html-forms.php:537
+#: lib/html-forms.php:574
 msgid "先頭から"
 msgstr ""
 
-#: lib/html-forms.php:539
+#: lib/html-forms.php:576
 msgid "個まで"
 msgstr ""
 
-#: lib/html-forms.php:541
+#: lib/html-forms.php:578
 msgid "※-1で全てのH2見出し手前に広告を挿入"
 msgstr ""
 
-#: lib/html-forms.php:571
+#: lib/html-forms.php:608
 msgid "入力済"
 msgstr ""
 
-#: lib/html-forms.php:573
+#: lib/html-forms.php:610
 #: blocks/src/block/balloon/edit.js:24
 #: blocks/src/old/balloon-1/block.js:22
 #: blocks/src/old/balloon-2/block.js:29
@@ -2749,40 +2749,40 @@ msgstr ""
 msgid "未入力"
 msgstr ""
 
-#: lib/html-forms.php:612
+#: lib/html-forms.php:649
 #: skins/skin-made-in-heaven/lib/hook-wp.php:847
 #: blocks/src/block/cta/edit.js:130
 msgid "選択"
 msgstr ""
 
-#: lib/html-forms.php:613
+#: lib/html-forms.php:650
 #: skins/skin-made-in-heaven/lib/function.php:144
 #: blocks/src/block/campaign/edit.js:89
 #: blocks/src/block/campaign/edit.js:126
 msgid "クリア"
 msgstr ""
 
-#: lib/html-forms.php:616
+#: lib/html-forms.php:653
 msgid "選択中の画像"
 msgstr ""
 
-#: lib/html-forms.php:620
+#: lib/html-forms.php:657
 msgid "大きな画像は縮小して表示されます。"
 msgstr ""
 
-#: lib/html-forms.php:641
+#: lib/html-forms.php:678
 msgid "画像を選択してください。"
 msgstr ""
 
-#: lib/html-forms.php:649
+#: lib/html-forms.php:686
 msgid "画像の選択"
 msgstr ""
 
-#: lib/html-forms.php:802
+#: lib/html-forms.php:839
 msgid "フロントページのみ"
 msgstr ""
 
-#: lib/html-forms.php:803
+#: lib/html-forms.php:840
 #: lib/page-settings/settings-tabs.php:23
 #: lib/page-settings/sns-follow-forms.php:97
 #: lib/page-settings/sns-share-forms-bottom.php:101
@@ -2791,7 +2791,7 @@ msgstr ""
 msgid "投稿"
 msgstr ""
 
-#: lib/html-forms.php:804
+#: lib/html-forms.php:841
 #: lib/page-settings/about-forms.php:82
 #: lib/page-settings/settings-tabs.php:24
 #: lib/page-settings/sns-follow-forms.php:100
@@ -2803,135 +2803,135 @@ msgstr ""
 msgid "固定ページ"
 msgstr ""
 
-#: lib/html-forms.php:805
+#: lib/html-forms.php:842
 msgid "カテゴリー一覧"
 msgstr ""
 
-#: lib/html-forms.php:806
+#: lib/html-forms.php:843
 msgid "タグ一覧"
 msgstr ""
 
-#: lib/html-forms.php:807
+#: lib/html-forms.php:844
 msgid "著者一覧"
 msgstr ""
 
-#: lib/html-forms.php:808
+#: lib/html-forms.php:845
 msgid "アーカイブ一覧"
 msgstr ""
 
-#: lib/html-forms.php:809
+#: lib/html-forms.php:846
 msgid "検索結果一覧"
 msgstr ""
 
-#: lib/html-forms.php:810
+#: lib/html-forms.php:847
 #: lib/page-settings/settings-tabs.php:40
 #: lib/widget-areas.php:501
 msgid "404ページ"
 msgstr ""
 
-#: lib/html-forms.php:815
+#: lib/html-forms.php:852
 msgid "AMPページ"
 msgstr ""
 
-#: lib/html-forms.php:818
+#: lib/html-forms.php:855
 msgid "wpForoページ"
 msgstr ""
 
-#: lib/html-forms.php:821
+#: lib/html-forms.php:858
 msgid "bbPressページ"
 msgstr ""
 
-#: lib/html-forms.php:824
+#: lib/html-forms.php:861
 msgid "BuddyPressページ"
 msgstr ""
 
-#: lib/html-forms.php:827
+#: lib/html-forms.php:864
 msgid "プラグインフォーラムページ（bbPress、BuddyPress、wpForo）"
 msgstr ""
 
-#: lib/html-forms.php:886
+#: lib/html-forms.php:923
 msgid "投稿ID入力"
 msgstr ""
 
-#: lib/html-forms.php:887
-#: lib/html-forms.php:907
-#: lib/html-forms.php:927
+#: lib/html-forms.php:924
+#: lib/html-forms.php:944
+#: lib/html-forms.php:964
 msgid "例：111,222,333"
 msgstr ""
 
-#: lib/html-forms.php:888
+#: lib/html-forms.php:925
 msgid "投稿IDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:906
+#: lib/html-forms.php:943
 msgid "固定ページID入力"
 msgstr ""
 
-#: lib/html-forms.php:908
+#: lib/html-forms.php:945
 msgid "固定ページIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:926
+#: lib/html-forms.php:963
 msgid "タグID入力"
 msgstr ""
 
-#: lib/html-forms.php:928
+#: lib/html-forms.php:965
 msgid "タグIDをカンマ区切りで入力してください。"
 msgstr ""
 
-#: lib/html-forms.php:966
+#: lib/html-forms.php:1003
 msgid "現在、「カスタム投稿タイプ」は存在しません。"
 msgstr ""
 
-#: lib/html-forms.php:982
+#: lib/html-forms.php:1019
 #: tmp/admin-panel.php:39
 msgid "WLWで編集"
 msgstr ""
 
-#: lib/html-forms.php:1066
+#: lib/html-forms.php:1103
 msgid "人気記事は見つかりませんでした。"
 msgstr ""
 
-#: lib/html-forms.php:1314
-#: lib/html-forms.php:1860
+#: lib/html-forms.php:1351
+#: lib/html-forms.php:1897
 msgid "記事は見つかりませんでした。"
 msgstr ""
 
 #. translators: %s: author's display name
-#: lib/html-forms.php:1438
+#: lib/html-forms.php:1475
 #, php-format
 msgid "Posts by %s"
 msgstr ""
 
-#: lib/html-forms.php:1442
+#: lib/html-forms.php:1479
 msgid "NO USER"
 msgstr ""
 
-#: lib/html-forms.php:1481
+#: lib/html-forms.php:1518
 msgid "管理者用エラーメッセージ"
 msgstr ""
 
-#: lib/html-forms.php:1716
+#: lib/html-forms.php:1753
 msgid "おすすめ"
 msgstr ""
 
-#: lib/html-forms.php:1719
+#: lib/html-forms.php:1756
 msgid "新着"
 msgstr ""
 
-#: lib/html-forms.php:1722
+#: lib/html-forms.php:1759
 msgid "注目"
 msgstr ""
 
-#: lib/html-forms.php:1725
+#: lib/html-forms.php:1762
 msgid "必見"
 msgstr ""
 
-#: lib/html-forms.php:1728
+#: lib/html-forms.php:1765
 msgid "お得"
 msgstr ""
 
-#: lib/html-forms.php:1771
+#: lib/html-forms.php:1808
 #: lib/shortcodes.php:1074
 #: lib/widgets/info-list.php:19
 #: lib/widgets/info-list.php:96
@@ -3067,7 +3067,7 @@ msgstr ""
 #: lib/original-menu.php:22
 #: lib/page-cache/cache-forms.php:14
 #: lib/page-cache/_top-page.php:65
-#: lib/shortcodes-product-func.php:373
+#: lib/shortcodes-product-func.php:413
 msgid "キャッシュ削除"
 msgstr ""
 
@@ -3857,6 +3857,7 @@ msgstr ""
 
 #: lib/page-access/analytics/map-post-picker.php:144
 #: lib/page-access/click-analytics/render-func.php:125
+#: lib/page-settings/skin-forms.php:192
 #: lib/page-settings/toc-forms.php:119
 #: lib/page-settings/toc-funcs.php:86
 #: skins/skin-grayish-topfull/tmp-grayish/cstm-mobile-search-button.php:23
@@ -4491,6 +4492,8 @@ msgid "画像"
 msgstr ""
 
 #: lib/page-access/click-analytics/render-func.php:121
+#: lib/page-settings/skin-forms.php:135
+#: lib/page-settings/skin-forms.php:198
 msgid "詳細"
 msgstr ""
 
@@ -4614,6 +4617,7 @@ msgid "読み込み先: %s"
 msgstr ""
 
 #: lib/page-access/click-analytics/render-func.php:230
+#: lib/page-settings/skin-forms.php:196
 msgid "画像を読み込めませんでした。"
 msgstr ""
 
@@ -4915,8 +4919,8 @@ msgstr ""
 #: lib/page-settings/blogcard-in-forms.php:108
 #: lib/page-settings/image-forms.php:109
 #: lib/page-settings/image-forms.php:129
-#: lib/page-settings/skin-forms.php:36
-#: skins/raku-add-fadein/functions.php:306
+#: lib/page-settings/skin-forms.php:32
+#: skins/raku-add-fadein/functions.php:307
 #: skins/skin-made-in-heaven/lib/panel-main.php:81
 #: skins/skin-made-in-heaven/lib/panel-visual.php:41
 #: skins/skin-made-in-heaven/lib/panel-visual.php:88
@@ -5327,6 +5331,8 @@ msgstr ""
 #: lib/page-settings/single-forms.php:95
 #: lib/page-settings/single-forms.php:285
 #: lib/page-settings/skin-forms.php:18
+#: lib/page-settings/skin-forms.php:115
+#: lib/page-settings/skin-forms.php:118
 #: lib/page-settings/sns-follow-forms.php:23
 #: lib/page-settings/sns-share-forms-bottom.php:21
 #: lib/page-settings/sns-share-forms-top.php:21
@@ -11435,323 +11441,323 @@ msgstr ""
 msgid "スキンを変更することで、サイトのデザインを手軽に変更できます。"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:78
+#: lib/page-settings/skin-forms.php:28
+msgid "スキン一覧"
+msgstr ""
+
+#: lib/page-settings/skin-forms.php:53
+msgid "作者"
+msgstr ""
+
+#: lib/page-settings/skin-forms.php:77
 msgid "選択中"
 msgstr ""
 
 #. translators: %d: 代表候補を除いたシリーズ内の候補数
-#: lib/page-settings/skin-forms.php:125
+#: lib/page-settings/skin-forms.php:146
 #, php-format
 msgid "ほかの候補 (%d)"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:126
+#. translators: %d: 代表候補を除いたシリーズ内の候補数
+#: lib/page-settings/skin-forms.php:147
 msgid "候補を閉じる"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:31
-msgid "スキン一覧"
-msgstr ""
-
-#: lib/page-settings/skin-forms.php:63
-#: lib/page-settings/skin-forms.php:65
-msgid "作者"
-msgstr ""
-
-#: lib/page-settings/skin-forms.php:88
-#: skins/raku-add-fadein/functions.php:317
+#: lib/page-settings/skin-forms.php:150
+#: skins/raku-add-fadein/functions.php:318
 msgid "スキンを選択してください。"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:97
+#: lib/page-settings/skin-forms.php:159
 msgid "スキン一覧表示"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:102
+#: lib/page-settings/skin-forms.php:164
 msgid "全てのスキンを表示する"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:103
+#: lib/page-settings/skin-forms.php:165
 msgid "親テーマのスキンのみ表示する"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:104
+#: lib/page-settings/skin-forms.php:166
 msgid "子テーマのスキンのみ表示する"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:107
+#: lib/page-settings/skin-forms.php:169
 msgid "スキン一覧に含めて表示するスキンを選択してください。"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:115
+#: lib/page-settings/skin-forms.php:177
 msgid "オリジナルスキン"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:118
+#: lib/page-settings/skin-forms.php:180
 msgid "もしスキンを作成された際には、是非ご連絡ください。サイトで紹介させていただければと思います。"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:119
+#: lib/page-settings/skin-forms.php:181
 msgid "詳しくはこちら"
 msgstr ""
 
-#: lib/page-settings/skin-forms.php:119
+#: lib/page-settings/skin-forms.php:181
 msgid "オリジナルスキンのCocoonサイト紹介について"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:17
+#: lib/page-settings/skin-translations.php:42
 msgid "Bizarre-food（グリーンソバ）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:18
+#: lib/page-settings/skin-translations.php:43
 msgid "Bizarre-food（ピンクワイン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:19
+#: lib/page-settings/skin-translations.php:44
 msgid "Bizarre-food（ブラックバーガー）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:20
+#: lib/page-settings/skin-translations.php:45
 msgid "Bizarre-food（ブルーカレー）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:21
+#: lib/page-settings/skin-translations.php:46
 msgid "Bizarre-food（ホワイトラーメン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:22
+#: lib/page-settings/skin-translations.php:47
 msgid "COLORS（イエロー）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:23
+#: lib/page-settings/skin-translations.php:48
 msgid "COLORS（グリーン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:24
+#: lib/page-settings/skin-translations.php:49
 msgid "COLORS（ピンク）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:25
+#: lib/page-settings/skin-translations.php:50
 msgid "COLORS（ブラック）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:26
+#: lib/page-settings/skin-translations.php:51
 msgid "COLORS（ブルー）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:27
+#: lib/page-settings/skin-translations.php:52
 msgid "COLORS（レッド）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:28
+#: lib/page-settings/skin-translations.php:53
 msgid "Fuwari -御召茶(おめしちゃ)-"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:29
+#: lib/page-settings/skin-translations.php:54
 msgid "Fuwari -海松茶(みるちゃ)-"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:30
+#: lib/page-settings/skin-translations.php:55
 msgid "Fuwari -海老茶(えびちゃ)-"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:31
+#: lib/page-settings/skin-translations.php:56
 msgid "Fuwari -褐色(かちいろ)-"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:32
+#: lib/page-settings/skin-translations.php:57
 msgid "Momoon（アクア）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:33
+#: lib/page-settings/skin-translations.php:58
 msgid "Momoon（オレンジ）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:34
+#: lib/page-settings/skin-translations.php:59
 msgid "Momoon（グリーン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:35
+#: lib/page-settings/skin-translations.php:60
 msgid "Momoon（パープル）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:36
+#: lib/page-settings/skin-translations.php:61
 msgid "Momoon（ピンク）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:37
+#: lib/page-settings/skin-translations.php:62
 msgid "Natural（グリーン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:38
+#: lib/page-settings/skin-translations.php:63
 msgid "Natural（ブルー）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:39
+#: lib/page-settings/skin-translations.php:64
 msgid "SILK（シルク）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:40
+#: lib/page-settings/skin-translations.php:65
 msgid "Simple‐Darkmode Always（常時ダークモード）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:41
+#: lib/page-settings/skin-translations.php:66
 msgid "いつものコーヒー"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:42
+#: lib/page-settings/skin-translations.php:67
 msgid "いつものローズ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:43
+#: lib/page-settings/skin-translations.php:68
 msgid "いつもの深海"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:44
+#: lib/page-settings/skin-translations.php:69
 msgid "おでかけピンク"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:45
+#: lib/page-settings/skin-translations.php:70
 msgid "おでかけブルー"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:46
+#: lib/page-settings/skin-translations.php:71
 msgid "おでかけレモン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:47
+#: lib/page-settings/skin-translations.php:72
 msgid "てがきノート(グリーンオレンジ)"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:48
+#: lib/page-settings/skin-translations.php:73
 msgid "てがきノート(ダークスカイ)"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:49
+#: lib/page-settings/skin-translations.php:74
 msgid "てがきノート(ピンクレモン)"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:50
+#: lib/page-settings/skin-translations.php:75
 msgid "てがきノート(ブルーコーラル)"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:51
+#: lib/page-settings/skin-translations.php:76
 msgid "てがきノート(ホワイトバナナ)"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:52
+#: lib/page-settings/skin-translations.php:77
 msgid "ふわっと追加"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:53
+#: lib/page-settings/skin-translations.php:78
 msgid "ほんわかライトニング"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:54
+#: lib/page-settings/skin-translations.php:79
 msgid "みるらいと"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:55
+#: lib/page-settings/skin-translations.php:80
 msgid "ゆっくり色が変化"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:56
+#: lib/page-settings/skin-translations.php:81
 msgid "アリス（チェシャ猫）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:57
+#: lib/page-settings/skin-translations.php:82
 msgid "アリス（ビタミン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:58
+#: lib/page-settings/skin-translations.php:83
 msgid "アリス（ユニコーン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:59
+#: lib/page-settings/skin-translations.php:84
 msgid "アリス（ローズ）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:60
+#: lib/page-settings/skin-translations.php:85
 msgid "アリス（無印）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:61
+#: lib/page-settings/skin-translations.php:86
 msgid "アリス（白ウサギ）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:62
+#: lib/page-settings/skin-translations.php:87
 msgid "イノセンス"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:63
+#: lib/page-settings/skin-translations.php:88
 msgid "カラフルライン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:64
+#: lib/page-settings/skin-translations.php:89
 msgid "サムライブルー（勝色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:65
+#: lib/page-settings/skin-translations.php:90
 msgid "サムライブルー（無印）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:66
+#: lib/page-settings/skin-translations.php:91
 msgid "スキンからオプション変更サンプル（CSV）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:67
+#: lib/page-settings/skin-translations.php:92
 msgid "スキンからオプション変更サンプル（JSON）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:68
+#: lib/page-settings/skin-translations.php:93
 msgid "スキンからオプション変更サンプル（PHP）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:69
+#: lib/page-settings/skin-translations.php:94
 msgid "スキンテンプレート"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:70
+#: lib/page-settings/skin-translations.php:95
 msgid "ダークエンジ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:71
+#: lib/page-settings/skin-translations.php:96
 msgid "ダークカモノハ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:72
+#: lib/page-settings/skin-translations.php:97
 msgid "ダークルリ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:73
+#: lib/page-settings/skin-translations.php:98
 msgid "テスト中"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:74
+#: lib/page-settings/skin-translations.php:99
 msgid "ドット・レイニーブルー"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:75
+#: lib/page-settings/skin-translations.php:100
 msgid "ドット・ワインレッド"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:76
+#: lib/page-settings/skin-translations.php:101
 msgid "ミックスグリーン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:77
+#: lib/page-settings/skin-translations.php:102
 msgid "ミックスブルー"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:78
+#: lib/page-settings/skin-translations.php:103
 msgid "ミックスレッド"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:79
+#: lib/page-settings/skin-translations.php:104
 msgid "モダンブラック"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:80
+#: lib/page-settings/skin-translations.php:105
 #: lib/page-settings/sns-follow-forms.php:148
 #: lib/page-settings/sns-share-forms-bottom.php:126
 #: lib/page-settings/sns-share-forms-top.php:113
@@ -11759,375 +11765,375 @@ msgstr ""
 msgid "モノクロ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:81
+#: lib/page-settings/skin-translations.php:106
 msgid "凸凹"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:82
+#: lib/page-settings/skin-translations.php:107
 msgid "旅カメラ"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:83
+#: lib/page-settings/skin-translations.php:108
 msgid "#73c3fbをベースにした優しい色合いで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:84
+#: lib/page-settings/skin-translations.php:109
 msgid "#86cfcfをベースにした優しい色合いで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:85
+#: lib/page-settings/skin-translations.php:110
 msgid "Cocoonらしさを薄めて、所々に青系とピンク系を基調としたグラデーションを取り入れたスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:86
+#: lib/page-settings/skin-translations.php:111
 msgid "Hirositeさんが作成されたSimple‐Darkmodeスキンを元に、ブラウザやOSの設定に関わらず常にダークモードになるよう作成されたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:87
+#: lib/page-settings/skin-translations.php:112
 msgid "PCでもフッターモバイルボタンが使える"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:88
+#: lib/page-settings/skin-translations.php:113
 msgid "functions.phpファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のfunctions.phpファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:89
+#: lib/page-settings/skin-translations.php:114
 msgid "marine がお届けする Cocoon のスキン m-tomato です。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:90
+#: lib/page-settings/skin-translations.php:115
 msgid "marineがお届けするテーマ「sora」"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:91
+#: lib/page-settings/skin-translations.php:116
 msgid "option.csvファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption.csvファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:92
+#: lib/page-settings/skin-translations.php:117
 msgid "option.jsonファイルの変更により、テーマのデザインを変更するデモ。詳細は、スキンフォルダー内のoption.jsonファイルを参照してください。サンプルですので、実用性はありません。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:93
+#: lib/page-settings/skin-translations.php:118
 msgid "「勝手にライトニング！」で使用しているオリジナルスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:94
+#: lib/page-settings/skin-translations.php:119
 msgid "「大人可愛さ」と「知的さ」を兼ね備えた居心地の良いスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:95
+#: lib/page-settings/skin-translations.php:120
 msgid "ふわっとした居心地のよいシンプルなデザイン。「みるめも」というサイトのデザインを「らいと」に表現したスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:96
+#: lib/page-settings/skin-translations.php:121
 msgid "アナログな手書き風をイメージした少し抜けのあるスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:97
+#: lib/page-settings/skin-translations.php:122
 msgid "アリスの色違い。ピンクを基調とした、パステルカラーの可愛らしいスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:98
+#: lib/page-settings/skin-translations.php:123
 msgid "アリスの色違い。ユニコーンカラーを基調とした、パステルカラーの可愛らしいスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:99
+#: lib/page-settings/skin-translations.php:124
 msgid "アリスの色違い。白×ブルーを基調とした、パステルカラーの可愛らしいスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:100
+#: lib/page-settings/skin-translations.php:125
 msgid "オレンジを基調とした「cocoon」用のデザインスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:101
+#: lib/page-settings/skin-translations.php:126
 msgid "キーカラー設定やダークスキン対応のブロックエディター向けCocoonスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:102
+#: lib/page-settings/skin-translations.php:127
 msgid "グリーンを基調とした「cocoon」用のデザインスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:103
+#: lib/page-settings/skin-translations.php:128
 msgid "グレイベースのシンプルデザイン フロントページにメインビジュアルを画面高さいっぱいに表示するスキンです"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:104
+#: lib/page-settings/skin-translations.php:129
 msgid "サムライブルーを基調としたサッカー向けのコンセプトスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:105
+#: lib/page-settings/skin-translations.php:130
 msgid "サムライブルー（勝色モデル）を基調としたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:106
+#: lib/page-settings/skin-translations.php:131
 msgid "シンプルな1カラムスキン。文章メインのサイトなどに。1カラムスキンなのでサイドバーなどは利用できません。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:107
+#: lib/page-settings/skin-translations.php:132
 msgid "シンプルなブログスキン（オレンジ色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:108
+#: lib/page-settings/skin-translations.php:133
 msgid "シンプルなブログスキン（シアン）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:109
+#: lib/page-settings/skin-translations.php:134
 msgid "シンプルなブログスキン（ピンク）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:110
+#: lib/page-settings/skin-translations.php:135
 msgid "シンプルなブログスキン（ライム）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:111
+#: lib/page-settings/skin-translations.php:136
 msgid "シンプルなブログスキン（明るい緑色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:112
+#: lib/page-settings/skin-translations.php:137
 msgid "シンプルなブログスキン（濃いオレンジ色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:113
+#: lib/page-settings/skin-translations.php:138
 msgid "シンプルなブログスキン（濃紫色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:114
+#: lib/page-settings/skin-translations.php:139
 msgid "シンプルなブログスキン（琥珀色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:115
+#: lib/page-settings/skin-translations.php:140
 msgid "シンプルなブログスキン（紫色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:116
+#: lib/page-settings/skin-translations.php:141
 msgid "シンプルなブログスキン（緑色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:117
+#: lib/page-settings/skin-translations.php:142
 msgid "シンプルなブログスキン（群青色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:118
+#: lib/page-settings/skin-translations.php:143
 msgid "シンプルなブログスキン（茶色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:119
+#: lib/page-settings/skin-translations.php:144
 msgid "シンプルなブログスキン（赤色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:120
+#: lib/page-settings/skin-translations.php:145
 msgid "シンプルなブログスキン（青色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:121
+#: lib/page-settings/skin-translations.php:146
 msgid "シンプルなブログスキン（鴨の羽色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:122
+#: lib/page-settings/skin-translations.php:147
 msgid "シンプルなブログスキン（黄色）"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:123
+#: lib/page-settings/skin-translations.php:148
 msgid "ジューシーな白桃をイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:124
+#: lib/page-settings/skin-translations.php:149
 msgid "スキン自作の際にひな型となるスキンです。スタイルは何も入っていません。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:125
+#: lib/page-settings/skin-translations.php:150
 msgid "テスト中のスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:126
+#: lib/page-settings/skin-translations.php:151
 msgid "パステルカラーの可愛らしいスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:127
+#: lib/page-settings/skin-translations.php:152
 msgid "パステルカラー調のカラフルなスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:128
+#: lib/page-settings/skin-translations.php:153
 msgid "パープルを基調とした「cocoon」用のデザインスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:129
+#: lib/page-settings/skin-translations.php:154
 msgid "ピンクをベースにしたシンプルで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:130
+#: lib/page-settings/skin-translations.php:155
 msgid "ピンクを基調とした「cocoon」用のデザインスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:131
+#: lib/page-settings/skin-translations.php:156
 msgid "ブドウをイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:132
+#: lib/page-settings/skin-translations.php:157
 msgid "マンゴーをイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:133
+#: lib/page-settings/skin-translations.php:158
 msgid "モノクロを基調としています。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:134
+#: lib/page-settings/skin-translations.php:159
 msgid "ライムをイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:135
+#: lib/page-settings/skin-translations.php:160
 msgid "一番の特徴といえばアフィリエイトボタンをフッターに固定表示できるところですかね。。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:136
+#: lib/page-settings/skin-translations.php:161
 msgid "和色「御召茶(おめしちゃ)」をベースにしたふわりと色づいたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:137
+#: lib/page-settings/skin-translations.php:162
 msgid "和色「海松茶(みるちゃ)」をベースにしたふわりと色づいたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:138
+#: lib/page-settings/skin-translations.php:163
 msgid "和色「海老茶(えびちゃ)」をベースにしたふわりと色づいたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:139
+#: lib/page-settings/skin-translations.php:164
 msgid "和色「褐色(かちいろ)」をベースにしたふわりと色づいたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:140
+#: lib/page-settings/skin-translations.php:165
 msgid "土壌をイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:141
+#: lib/page-settings/skin-translations.php:166
 msgid "夕焼けをイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:142
+#: lib/page-settings/skin-translations.php:167
 msgid "女性が春色のスプリングコートを羽織っておでかけするイメージで作りました。ファッション・女性向けコンテンツにいかがでしょうか。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:143
+#: lib/page-settings/skin-translations.php:168
 msgid "好きなスキンにふわっと動き（フェイドイン）を追加します。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:144
+#: lib/page-settings/skin-translations.php:169
 msgid "旅ブログ専用スキンです。旅行写真が美しく見えるように工夫しています。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:145
+#: lib/page-settings/skin-translations.php:170
 msgid "日本の伝統色・山吹色（#f8b500）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:146
+#: lib/page-settings/skin-translations.php:171
 msgid "日本の伝統色・常磐色（#007b43）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:147
+#: lib/page-settings/skin-translations.php:172
 msgid "日本の伝統色・緋色（#d3381c）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:148
+#: lib/page-settings/skin-translations.php:173
 msgid "日本の伝統色・藍鉄（#393f4c）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:149
+#: lib/page-settings/skin-translations.php:174
 msgid "日本の伝統色・躑躅色（#e95295）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:150
+#: lib/page-settings/skin-translations.php:175
 msgid "日本の伝統色・青色（#0095d9）をベースとしたシンプルスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:151
+#: lib/page-settings/skin-translations.php:176
 msgid "春夏秋冬のような季節をモチーフにして優しさを感じられるデザインを目指して作成されたスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:152
+#: lib/page-settings/skin-translations.php:177
 msgid "暗めの赤をベースにドット柄を背景にしたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:153
+#: lib/page-settings/skin-translations.php:178
 msgid "暗めの青をベースにドット柄を背景にしたスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:154
+#: lib/page-settings/skin-translations.php:179
 msgid "月の表面をイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:155
+#: lib/page-settings/skin-translations.php:180
 msgid "某無料WordPressテーマっぽいスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:156
+#: lib/page-settings/skin-translations.php:181
 msgid "毎日使っても飽きないデザインを目指しました。スキンカラーや背景画像を変えることでレイアウトは同じでも部屋のカーテンを変えるように雰囲気をチェンジできます。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:157
+#: lib/page-settings/skin-translations.php:182
 msgid "水色を基調とした「cocoon」用のデザインスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:158
+#: lib/page-settings/skin-translations.php:183
 msgid "瑠璃色（るりいろ）のダークスキン。濃い紫みの鮮やかな青色をキーカラーにした暗色のスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:159
+#: lib/page-settings/skin-translations.php:184
 msgid "空・海・葉をイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:160
+#: lib/page-settings/skin-translations.php:185
 msgid "立体感のあるニューモフィズムデザインにするためのスキンです。※全体の色と角の丸みは外観⇒カスタマイズ⇒Neumorphismで変更できます。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:161
+#: lib/page-settings/skin-translations.php:186
 msgid "紺をベースにしたシンプルで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:162
+#: lib/page-settings/skin-translations.php:187
 msgid "緑をベースにしたシンプルで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:163
+#: lib/page-settings/skin-translations.php:188
 msgid "緑を基調としたシンプルなスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:164
+#: lib/page-settings/skin-translations.php:189
 msgid "背景の色がゆっくり変化していきます（4つの色を選べます）。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:165
+#: lib/page-settings/skin-translations.php:190
 msgid "臙脂色（えんじいろ）のダークスキン。黒みをおびた深く艶やかな紅色をキーカラーにした暗色のスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:166
+#: lib/page-settings/skin-translations.php:191
 msgid "装飾は控えめかつダークモードに対応したシンプルスキン。OSやブラウザーがダークモード設定の場合はダークモードで表示されます。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:167
+#: lib/page-settings/skin-translations.php:192
 msgid "赤をベースにしたシンプルで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:168
+#: lib/page-settings/skin-translations.php:193
 msgid "赤を基調としたシンプルなスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:169
+#: lib/page-settings/skin-translations.php:194
 msgid "青をベースにしたシンプルで使いやすいスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:170
+#: lib/page-settings/skin-translations.php:195
 msgid "青を基調としたシンプルなスキン"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:171
+#: lib/page-settings/skin-translations.php:196
 msgid "青空をイメージしたスキンです。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:172
+#: lib/page-settings/skin-translations.php:197
 msgid "鴨の羽色（かものはいろ）のダークスキン。真鴨 の頭の羽色に由来する少し暗い青緑色をキーカラーにした暗色のスキン。"
 msgstr ""
 
-#: lib/page-settings/skin-translations.php:173
+#: lib/page-settings/skin-translations.php:198
 msgid "黒をベースにしたシンプルなスキン"
 msgstr ""
 
@@ -13857,12 +13863,12 @@ msgstr ""
 msgid "Creators APIの認証情報が正しくない"
 msgstr ""
 
-#: lib/shortcodes-product-func.php:387
+#: lib/shortcodes-product-func.php:427
 #, php-format
 msgid "（%s時点）"
 msgstr ""
 
-#: lib/shortcodes-product-func.php:456
+#: lib/shortcodes-product-func.php:496
 msgid "楽天で詳細を見る"
 msgstr ""
 
@@ -15928,11 +15934,11 @@ msgstr ""
 msgid "スキン一覧表示（ベース）"
 msgstr ""
 
-#: skins/raku-add-fadein/functions.php:317
+#: skins/raku-add-fadein/functions.php:318
 msgid "こちらで選択したスキンが表示されます。"
 msgstr ""
 
-#: skins/raku-add-fadein/functions.php:318
+#: skins/raku-add-fadein/functions.php:319
 #, php-format
 msgid "※現在選択中の【%s】は動作を追加するものです"
 msgstr ""
