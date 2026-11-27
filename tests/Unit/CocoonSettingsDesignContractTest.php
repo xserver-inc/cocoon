@@ -702,20 +702,43 @@ REGEX;
         $this->assertNotEmpty($blocks);
 
         foreach ($blocks as $block) {
-            $isContainerQuery = str_starts_with($block['header'], '@container');
-            if ($isContainerQuery || str_starts_with($block['header'], '@media')) {
-                $nestedBlocks = $this->extractImmediateStyleBlocks($block['body']);
-                $this->assertNotEmpty($nestedBlocks);
+            $this->assertStyleBlockOrAtRuleIsScoped($block, $scope, $isScss);
+        }
+    }
 
-                foreach ($nestedBlocks as $nestedBlock) {
-                    $this->assertStyleBlockIsScoped($nestedBlock, $scope, $isScss, $isContainerQuery);
-                }
+    /**
+     * アットルール（@media / @container / @supports）の入れ子を含めて適用範囲を検証する。
+     *
+     * @param array{header: string, body: string} $block
+     */
+    private function assertStyleBlockOrAtRuleIsScoped(
+        array $block,
+        string $scope,
+        bool $isScss,
+        bool $isContainerQuery = false
+    ): void {
+        $isCurrentContainer = str_starts_with($block['header'], '@container');
+        if (
+            $isCurrentContainer
+            || str_starts_with($block['header'], '@media')
+            || str_starts_with($block['header'], '@supports')
+        ) {
+            $nestedBlocks = $this->extractImmediateStyleBlocks($block['body']);
+            $this->assertNotEmpty($nestedBlocks);
 
-                continue;
+            foreach ($nestedBlocks as $nestedBlock) {
+                $this->assertStyleBlockOrAtRuleIsScoped(
+                    $nestedBlock,
+                    $scope,
+                    $isScss,
+                    $isContainerQuery || $isCurrentContainer
+                );
             }
 
-            $this->assertStyleBlockIsScoped($block, $scope, $isScss);
+            return;
         }
+
+        $this->assertStyleBlockIsScoped($block, $scope, $isScss, $isContainerQuery);
     }
 
     /**
@@ -729,9 +752,12 @@ REGEX;
         bool $isScss,
         bool $isContainerQuery = false
     ): void {
-        // 固定UIの基準に影響しないスキン一覧へのコンテナ宣言の限定
+        // 固定UIの基準に影響しないスキン一覧配下へのコンテナ宣言の限定
         if (!$isScss && preg_match('/(?:^|[;\s])container(?:-name|-type)?\s*:/', $block['body']) === 1) {
-            $this->assertSame($scope . ' :where(.cocoon-skin-options)', $block['header']);
+            $this->assertMatchesRegularExpression(
+                '/^' . preg_quote($scope, '/') . ' :where\(\.cocoon-skin-options(?:\s[^,]+)?\)$/',
+                $block['header']
+            );
         }
 
         foreach ($this->splitTopLevelSelectors($block['header']) as $selector) {
